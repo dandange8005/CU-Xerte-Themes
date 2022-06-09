@@ -1,0 +1,47 @@
+/* ----------------------
+    MEDIA QUERIES 
+-------------------------*/
+
+// /* --LARGE DESKTOP and Up---------- */
+@media (min-width: 1200px) {}
+
+// /* --DESKTOP and Up ---------- */
+@media (min-width: 980px) {
+    #overview.logoL .logoL {
+        margin-right: var(--size-7);
+    }
+    // #overview .container {
+    //     width: 100%;
+    // }
+}
+
+/* --TABLETS TO DESKTOPS-------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 980px) {
+    .jumbotron {
+        margin-top: 0;
+    }
+}
+
+
+/* --TABLETS-------------------------------------------------------------- */
+@media (max-width: 767px) {
+    
+    #overview.logoL {
+        .container {
+            flex-direction: column;
+        }
+    }
+    #overview .container {
+        padding: 0 var(--size-4);
+      }
+
+    body {
+        padding-block: 0;
+      }
+    
+      
+
+}
+
+/* --LANDSCAPE PHONES-------------------------------------------------------------- */
+@media (max-width: 480px) {}

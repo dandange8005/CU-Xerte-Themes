@@ -1,0 +1,105 @@
+/* Bootstrap Navigators */
+
+.panel:after {
+	background-color: #f2f2f2;
+}
+
+/* Tabs */
+ul.nav-tabs, ul.nav-pills {
+    display: block;
+    margin-bottom: 0;
+}
+
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus, a.accordion-toggle:hover, a.accordion-toggle:focus {
+	background-color: var(--gray-2);
+	text-decoration: none;
+}
+
+.nav-tabs > li > a, a.accordion-toggle  {
+	color: var(--clr-link);
+	font-weight: bold;
+	// font-size: 1.2em;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color: var(--clr-accent);
+}
+
+.tab-pane {
+    padding-inline: var(--size-2);
+}
+
+/* Pills */
+.nav-pills {
+    margin-bottom: var(--size-3);
+}
+
+
+.nav-pills > li > a {
+	color: var(--clr-link);
+	font-weight: 500;
+	// font-size: 1.2em;
+	border-radius: 4px;
+    border: 1px solid var(--clr-border);
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+	color: white;
+	background-color: var(--clr-link);
+    border-color: var(--clr-link);
+}
+
+.nav-pills > li:not(.active):hover > a, .nav-pills > li:not(.active):focus > a {
+	background-color: var(--gray-2);
+}
+
+.nav-pills > li:not(:first-child) {
+	margin-left: 2px;
+}
+
+/* carousel */
+
+.carousel-control {
+	background-color: var(--navy-2);
+    font-size: var(--fs-lg);
+    font-weight: 900;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+}
+
+.carousel-indicators {
+    display: block;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    right: auto;
+}
+
+/* Accordions */
+.accordion-heading .accordion-toggle {
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+
+
+a.accordion-toggle::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    right: 0.75rem;
+    vertical-align: middle;
+    position: absolute;
+}
+
+a.accordion-toggle.collapsed::after {
+    content: "\f054";
+}

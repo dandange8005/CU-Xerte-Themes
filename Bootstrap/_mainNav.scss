@@ -1,0 +1,23 @@
+
+.navbar-inverse .navbar-inner {
+	font-size: 1rem;
+	font-weight: var(--font-weight-4);
+    background: var(--neutral-6);
+	box-shadow: none;
+    border: 0;
+}
+
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a, .navbar-inverse .brand, .navbar-inverse .nav > li > a {
+	color: var(--white);
+	text-shadow: none;
+	border-radius: 0;
+	transition: 0.25s ease-in-out;
+}
+
+/*top navbar text colour when hover or focused*/
+.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+    // color: var(--neutral-3);
+    background-color: var(--neutral-6);
+    color: var(--light);
+    
+}

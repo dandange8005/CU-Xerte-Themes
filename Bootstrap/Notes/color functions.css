@@ -1,0 +1,60 @@
+/* 
+This is a note on how to use custom property and hsl to manipulate colors
+Reference: https://codesalad.dev/blog/color-manipulation-with-css-variables-and-hsl-16
+*/
+
+:root {
+    --h: 353;
+    --s: 65%;
+    --l: 52%;
+    --accent: hsl(var(--h), var(--s), var(--l));
+}
+
+/* Shift Hue */
+.shift-hue {
+    background: hsl(
+        calc(var(--h) + 80),
+        var(--s),
+        var(--l)
+    );
+}
+
+/* Transparentize (Alpha) */
+.transparent {
+    background: hsl(
+            var(--h),
+            var(--s),
+            var(--l),
+            .5
+        );
+}
+
+/* Lightness */
+/* 0 < n < 1 darkens, n > 1 lightens */
+.lightness {
+    background: hsl(
+            var(--h),
+            var(--s),
+            calc(var(--l) * 1.2)
+        );
+}
+
+/* Darken to Black */
+/* 0 (no change) to 1 (black) */
+.darken {
+    background: hsl(
+        var(--h),
+        var(--s),
+        calc(var(--l) - var(--l) * 0.3)
+      );
+}
+
+/* Lighten to White */
+.lighten {
+    /* 0 (no change) to 1 (white) */
+    background: hsl(
+        var(--h),
+        var(--s),
+        calc(var(--l) + (100% - var(--l)) * 0.4)
+      );
+}

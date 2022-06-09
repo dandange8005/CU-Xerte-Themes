@@ -1,0 +1,31 @@
+// An example block
+
+/* Example block */
+
+.example {
+    padding: 3em 1em;
+    border: 1px solid var(--clr-border);
+    position: relative;
+    background: var(--white);
+    // max-width: 56em;
+    // margin: 3em auto;
+
+    &::before {
+        content: 'example';
+        position: absolute;
+        font-size: var(--font-size-0);
+        color: var(--white);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        top: 0;
+        left: 0;
+        padding: 8px;
+        background: var(--gray-6);
+        border-bottom-right-radius: 4px;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+
+}

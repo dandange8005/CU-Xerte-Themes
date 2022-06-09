@@ -1,0 +1,143 @@
+@use 'sass:color';
+@use 'abstract'as *;
+
+/* ------ Project Information --------
+Author: Nan Zhang
+update date: change from my old Macbook pro
+*/
+
+/* Import Open Props */
+@import "https://unpkg.com/open-props";
+
+
+/* -------------------
+    PROJECT CUSTOM PROPERTIES
+----------------------*/
+
+
+:root {
+
+    // /* Sass generated colour map */
+    // @each $name,
+    // $value in $colours {
+    //     --#{$name}:#{$value};
+    //     --#{$name}-light:#{color.adjust($value, $lightness: 30%)};
+    //     --#{$name}-dark:#{color.adjust($value, $lightness: -20%)};
+
+    // }
+
+
+
+    /* CU Primary Colours */
+    --cu-red: hsl(353, 65%, 52%);
+    --cu-blue: hsl(224, 61%, 34%);
+    --cu-blue-dark: hsl(222, 44%, 21%);
+    --cu-sky: hsl(206, 100%, 33%);
+    --cu-gold: hsl(41, 46%, 57%);
+    --cu-gold-light: hsl(46, 44%, 69%);
+
+    --navy-1:hsl(204, 29%, 28%);
+    --navy-2:hsl(204, 14%, 46%);
+    --navy-3:hsl(201, 27%, 20%);
+
+    /* Neutral colour */
+    --black: hsl(348, 7%, 13%);
+    --white: hsl(0, 0%, 100%);
+    --light: hsl(210, 17%, 98%);
+
+    --neutral-0: hsl(0, 0%, 98%);
+    --neutral-1:hsl(0, 0%, 96%);
+    --neutral-2:hsl(0, 0%, 90%);
+    --neutral-3:hsl(0, 0%, 83%);
+    --neutral-4:hsl(0, 0%, 64%);
+    --neutral-5:hsl(0, 0%, 45%);
+    --neutral-6:hsl(0, 0%, 32%);
+    --neutral-7:hsl(0, 0%, 25%);
+    --neutral-8:hsl(0, 0%, 15%);
+    --neutral-9:hsl(0, 0%, 9%);
+
+    // Function colours
+    --success:hsl(148, 100%, 25%);
+    --danger: hsl(4, 77%, 48%);
+
+    /* Colour Theme */
+
+    /* main accent colour */
+
+    // --clr-accent: var(--cu-red);
+    --clr-accent: hsl(353, 65%, 52%);
+    --clr-h: 353;
+    --clr-s: 65%;
+    --clr-l: 52%;
+
+    /* main accent colour shades */
+
+    --clr-accent-1: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) + (100% - var(--clr-l)) * 0.9));
+    --clr-accent-2: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) + (100% - var(--clr-l)) * 0.7));
+    --clr-accent-3: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) + (100% - var(--clr-l)) * 0.5));
+    --clr-accent-4: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) + (100% - var(--clr-l)) * 0.3));
+    --clr-accent-5: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) - var(--clr-l) * 0.2));
+    --clr-accent-6: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) - var(--clr-l) * 0.4));
+    --clr-accent-7: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) - var(--clr-l) * 0.6));
+    --clr-accent-8: hsl(var(--clr-h),
+        var(--clr-s),
+        calc(var(--clr-l) - var(--clr-l) * 0.8));
+
+    // Compliment colour: hue + 180 
+    --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
+
+    // Gradient from the accent colour
+    --gradient-accent: linear-gradient(45deg,
+        var(--clr-accent),
+        var(--clr-accent-6));
+
+    --gradient-neutral: linear-gradient(45deg,
+        var(--neutral-5),
+        var(--neutral-8));
+
+    /* Project theme */
+
+    --clr-body: var(--black);
+    --clr-link: var(--cu-sky);
+    --clr-border: hsl(216, 12%, 84%);
+    --clr-header-bg: var(--gradient-23);
+    --clr-footer-bg: var(--navy-3);
+    --clr-main-bg: var(--light);
+    --text-1: var(--neutral-8);
+    --text-2: var(--neutral-7);
+    --text-3: var(--neutral-5);
+    --gap: var(--size-fluid-1);
+
+    /* Typography */
+
+    --ff-sans: 'Inter', sans-serif;
+    --ff-serif: var(--font-serif);
+    --ff-mono: var(--font-mono);
+
+    // Fluid font size
+
+    --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
+    --fs-sm: clamp(0.83rem, 0.79rem + 0.20vw, 0.94rem);
+    --fs-base: clamp(0.94rem, 0.86rem + 0.37vw, 1.05rem);
+    --fs-lg: clamp(1.06rem, 0.94rem + 0.58vw, 1.35rem);
+    --fs-xl: clamp(1.19rem, 1.02rem + 0.85vw, 1.62rem);
+    --fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
+    --fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
+    --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
+
+
+}

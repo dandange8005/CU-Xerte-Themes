@@ -1,0 +1,37 @@
+/* Cards Component */
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--clr-border);
+    position: relative;
+    width: 100%;
+
+    &__content {
+        padding: var(--size-5);
+        position: relative;
+
+        >:first-child {
+            margin-top: 0;
+        }
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__heading,
+    &__metadata,
+    &__description {
+        margin-bottom: var(--size-3);
+    }
+
+    &__image {
+        border-bottom: 1px solid var(--gray-2);
+        display: block;
+        width: 100%;
+    }
+
+    &--clickable {
+        border-bottom-width: var(--border-size-3);
+    }
+}

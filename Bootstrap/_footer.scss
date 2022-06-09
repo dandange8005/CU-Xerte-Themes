@@ -1,0 +1,43 @@
+/* ======================
+    FOOTER
+=======================*/
+@use 'customProperties' as *;
+
+.footer {
+    padding-block: var(--size-fluid-5);
+    position: relative;
+    background-color: transparent!important;
+    border: 0;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: calc(-50vw + 50%);
+    z-index: -1;
+    top: 0;
+    background-color: var(--clr-footer-bg);
+}
+
+.footer p {
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer a {
+    color: var(--white);
+    text-decoration: underline;
+  }
+  
+  .footer a:hover, .footer a:focus {
+    text-decoration: none;
+  }
+
+.footer-logo {
+    max-width: 250px;
+    height: auto;
+    margin: auto;
+}

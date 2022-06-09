@@ -1,0 +1,43 @@
+/* ----------------------
+	OVERALL RESET
+-------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+input, button, textarea, select {
+font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+:focus {
+    outline:none;
+}
