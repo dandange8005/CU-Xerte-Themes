@@ -825,6 +825,10 @@ hr.section-break-m {
   margin-bottom: 0;
 }
 
+.navbar {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+}
+
 .navbar-inverse .navbar-inner {
   font-size: 1rem;
   font-weight: var(--font-weight-4);
@@ -840,7 +844,7 @@ hr.section-break-m {
   transition: 0.25s ease-in-out;
 }
 
-/*top navbar text colour when hover or focused*/
+/* top navbar text colour when hover or focused */
 .navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
   background-color: var(--neutral-6);
   color: var(--light);
@@ -1387,6 +1391,13 @@ code[class*=language-], pre[class*=language-] {
 
   body {
     padding-block: 0;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 /* --LANDSCAPE PHONES-------------------------------------------------------------- *//*# sourceMappingURL=bs_main.css.map */

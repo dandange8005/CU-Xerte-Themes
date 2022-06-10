@@ -1,4 +1,10 @@
 Project Notes:
+## Main styles link
+github page link: 
+- https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.css
+- https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css
+
+
 
 ## Thrid party tools
 1. Open Props: https://open-props.style/
