@@ -101,6 +101,10 @@ update date: change from my old Macbook pro
 /* ------------------- */
 /* UTILITY CLASSES     */
 /* ------------------- */
+.text-center {
+  text-align: center;
+}
+
 /* Flex Utility Classes   */
 .flex {
   display: flex;
@@ -690,6 +694,19 @@ table tr:nth-child(even) {
 }
 
 /* Quotes */
+blockquote::before,
+blockquote::after {
+  content: none;
+}
+
+blockquote .quote::before {
+  content: open-quote;
+}
+
+blockquote .quote::after {
+  content: close-quote;
+}
+
 blockquote {
   font-family: var(--ff-sans);
   font-weight: 400;

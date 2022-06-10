@@ -306,10 +306,18 @@ table tr:nth-child(even) {
 
 // blockquote
 /* Quotes */
-// blockquote::before,
-// blockquote::after {
-//     content: none;
-// }
+blockquote::before,
+blockquote::after {
+    content: none;
+}
+
+blockquote .quote::before {
+    content: open-quote;
+}
+
+blockquote .quote::after {
+    content: close-quote;
+}
 
 blockquote {
     font-family: var(--ff-sans);
