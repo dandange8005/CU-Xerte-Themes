@@ -690,11 +690,6 @@ table tr:nth-child(even) {
 }
 
 /* Quotes */
-blockquote::before,
-blockquote::after {
-  content: none;
-}
-
 blockquote {
   font-family: var(--ff-sans);
   font-weight: 400;
