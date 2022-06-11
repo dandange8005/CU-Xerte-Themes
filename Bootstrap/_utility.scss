@@ -159,24 +159,64 @@
 }
 
 // Background
-.bg-accent {
-    background-color: var(--clr-accent);
+// CU colours
+.bg-red {
+    background-color: var(--cu-red);
 }
 
-.bg-compliment {
-    background-color: var(--clr-compliment);
+.bg-blue {
+    background-color: var(--cu-blue);
 }
 
-.bg-dark-blue {
+.bg-blue-dark {
     background-color: var(--cu-blue-dark);
+}
+
+.bg-sky {
+    background-color: var(--cu-sky);
 }
 
 .bg-gold {
     background-color: var(--cu-gold);
 }
 
+.bg-gold-light {
+    background-color: var(--cu-gold-light);
+}
+
+.bg-navy-1 {
+    background-color: var(--navy-1);
+}
+
+.bg-navy-2 {
+    background-color: var(--navy-2);
+}
+
+.bg-navy-3 {
+    background-color: var(--navy-3);
+}
+
 .bg-light {
-    background-color: var(--gray-2);
+    background-color: var(--light);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+
+// Theme colours
+
+.bg-accent {
+    background-color: var(--clr-accent);
+}
+
+.bg-compliment {
+    background-color: var(--clr-compliment);
 }
 
 .bg-success {
@@ -187,9 +227,6 @@
     background-color: var(--clr-danger);
 }
 
-.bg-gray {
-    background-color: var(--gray-4);
-}
 
 // Text colour
 .text-1 {
@@ -206,6 +243,14 @@
 
 .text-white {
     color: var(--white);
+}
+
+.text-success {
+    color: var(--clr-success);
+}
+
+.text-danger {
+    color: var(--clr-danger);
 }
 
 // Font size
