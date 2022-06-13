@@ -1395,11 +1395,16 @@ a.accordion-toggle.collapsed::after {
 /* project information style */
 #project-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 14px;
   margin-top: var(--size-8);
   margin-bottom: var(--size-6);
   color: var(--neutral-6);
+}
+
+#project-info::before,
+#project-info::after {
+  content: none;
 }
 
 /* prism custom styles */
@@ -1439,7 +1444,6 @@ code[class*=language-], pre[class*=language-] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 }
 /* --LANDSCAPE PHONES-------------------------------------------------------------- *//*# sourceMappingURL=bs_main.css.map */

@@ -1,9 +1,14 @@
 /* project information style */
 #project-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 14px;
     margin-top: var(--size-8);
     margin-bottom: var(--size-6);
     color: var(--neutral-6);
   }
+
+#project-info::before,
+#project-info::after {
+  content: none;
+}
