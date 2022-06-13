@@ -882,13 +882,13 @@ hr.section-break-m {
   color: var(--white);
   text-shadow: none;
   border-radius: 0;
+  transition: 0.25s ease-in-out;
 }
 
 /* top navbar text colour when hover or focused */
 .navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
   background-color: var(--neutral-5);
   color: var(--light);
-  border-bottom: 2px solid var(--white);
   box-sizing: border-box;
 }
 
