@@ -887,8 +887,9 @@ hr.section-break-m {
 
 /* top navbar text colour when hover or focused */
 .navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
-  background-color: var(--neutral-6);
+  background-color: var(--neutral-5);
   color: var(--light);
+  border-bottom: 2px solid var(--white);
 }
 
 /* ======================
