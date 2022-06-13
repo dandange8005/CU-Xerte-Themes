@@ -1395,9 +1395,10 @@ a.accordion-toggle.collapsed::after {
 /* project information style */
 #project-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 14px;
   margin-top: var(--size-8);
+  margin-bottom: var(--size-6);
   color: var(--neutral-6);
 }
 
