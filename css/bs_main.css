@@ -1398,8 +1398,7 @@ a.accordion-toggle.collapsed::after {
   display: flex;
   justify-content: space-around;
   font-size: 14px;
-  margin-top: var(--size-8);
-  margin-bottom: var(--size-6);
+  margin-block: var(--size-8);
   color: var(--neutral-6);
 }
 
