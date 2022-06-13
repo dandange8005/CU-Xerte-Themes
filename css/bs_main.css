@@ -882,7 +882,6 @@ hr.section-break-m {
   color: var(--white);
   text-shadow: none;
   border-radius: 0;
-  transition: 0.25s ease-in-out;
 }
 
 /* top navbar text colour when hover or focused */
