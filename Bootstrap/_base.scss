@@ -33,7 +33,7 @@ h1 {
 }
 
 h2 {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-xl);
     line-height: var(--font-lineheight-1);
 }
 
@@ -144,7 +144,7 @@ section h2,
 section h3 {
     margin-bottom: var(--size-2);
     margin-top: var(--size-4);
-    color: var(--neutral-7);
+    color: var(--neutral-6);
 }
 
 section p:not(:last-child) {

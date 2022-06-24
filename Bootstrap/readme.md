@@ -1,6 +1,5 @@
 ## SASS Structure
 
-
 abstract/ (things that are not compiled into css)
 - _colours.scss
 - _openProps.scss (not included)
