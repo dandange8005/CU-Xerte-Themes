@@ -1,4 +1,4 @@
-## SASS Structure
+## Bootstrap SASS Structure
 
 abstract/ (things that are not compiled into css)
 - _colours.scss
@@ -43,14 +43,9 @@ components/
 
 
 pages/
-```
-DigEd guide - single page
-DigEd guide - multipage
-DigEd guide - single page no toc
-```
+- article.css
+- articleWide.css
 
-- Artile.css
-- wideArticle.css
 
 
 vendors/

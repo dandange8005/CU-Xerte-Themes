@@ -1,12 +1,5 @@
-@use 'customProperties';
-@use 'abstract';
-@use 'utility';
-@use 'overall-reset';
 @use 'base';
-@use 'header';
-@use 'mainNav';
-@use 'sideNav';
-@use 'footer';
+@use 'layouts';
 @use 'components';
 @use 'vendors';
 @use 'mediaQueries';
