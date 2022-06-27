@@ -1,16 +1,22 @@
-This document outlines the folder structure of this template scss project
+## XOT Theme Document
+
+This document outlines the folder structure of XOT Sass folder structure
 
 Folder Map
 XOT/
     xot-master.scss
+    /abstract
+        _tailwind
+
     /base
         _index.scss
+        _customProperties.scss
         _ovverall-reset.scss
         _xerte-reset.scss
         _typography.scss
+        _utilityClass.scss
     /pages
         _index.scss
-        _home.scss
         _titlePage.scss
         _graphicPage.scss
         _mediaPage.scss
@@ -21,10 +27,10 @@ XOT/
         _index.scss
         _header.scss
         _footer.scss
+        _contentMenu.scss
         _base.scss
         _flex.scss
         _grid.scss
-
     /Components
         _index.scss
         _menu.scss

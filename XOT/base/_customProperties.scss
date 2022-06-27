@@ -18,11 +18,14 @@ Date:
 /* Import open props */
 @import "https://unpkg.com/open-props";
 
-/* GOOGLE FONT IMPORT DECLARATION */
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
+// /* GOOGLE FONT IMPORT DECLARATION */
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
 
 
-/* Custom properties for CU projects */
+/* ----------------------
+	CUSTOM PROPERTIES
+-------------------------- */
+
 :root {
 /* CU Colours */
 --cu-red: hsl(353, 65%, 52%);
