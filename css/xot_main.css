@@ -1,180 +1,157 @@
+/* ------ Project Information --------
+Name: DigEd Xerte XOT Project Theme
+Author: Nan Zhang
+Date:
+*/
 /* Import open props */
 @import "https://unpkg.com/open-props";
 /* GOOGLE FONT IMPORT DECLARATION */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i");
 /* Custom properties for CU projects */
 :root {
-  --cu-red: #CE0538;
-  --cu-blue: #1D2B4E;
-  --cu-gold:#D2C392;
-  --ff-sans: "Lato", sans-serif;
+  /* CU Colours */
+  --cu-red: hsl(353, 65%, 52%);
+  --cu-blue: hsl(224, 61%, 34%);
+  --cu-blue-dark: hsl(222, 44%, 21%);
+  --cu-sky: hsl(206, 100%, 33%);
+  --cu-gold: hsl(41, 46%, 57%);
+  --cu-gold-light: hsl(46, 44%, 69%);
+  --navy-1:hsl(204, 29%, 28%);
+  --navy-2:hsl(204, 14%, 46%);
+  --navy-3:hsl(201, 27%, 20%);
+  /* Neutral colour */
+  --black: hsl(348, 7%, 13%);
+  --white: hsl(0, 0%, 100%);
+  --light: hsl(210, 17%, 98%);
+  /* Neutral colour shades */
+  --neutral-0: hsl(0, 0%, 98%);
+  --neutral-1:hsl(0, 0%, 96%);
+  --neutral-2:hsl(0, 0%, 90%);
+  --neutral-3:hsl(0, 0%, 83%);
+  --neutral-4:hsl(0, 0%, 64%);
+  --neutral-5:hsl(0, 0%, 45%);
+  --neutral-6:hsl(0, 0%, 32%);
+  --neutral-7:hsl(0, 0%, 25%);
+  --neutral-8:hsl(0, 0%, 15%);
+  --neutral-9:hsl(0, 0%, 9%);
+  --success:hsl(148, 100%, 25%);
+  --danger: hsl(4, 77%, 48%);
+  /* Colour Theme */
+  --clr-primary: var(--cu-red);
+  --clr-accent: var(--cu-blue);
+  --clr-header-bg: var(--gradient-23);
+  --clr-footder-bg: var(--gray-3);
+  --clr-main-bg: var(--light);
+  --clr-body: var(--black);
+  --clr-link: var(--cu-sky);
+  --clr-border: hsl(216, 12%, 84%);
+  --ff-sans: "Inter", sans-serif;
+  --ff-serif: var(--font-serif);
+  --ff-mono: var(--font-mono);
+  --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
+  --fs-sm: clamp(0.83rem, 0.79rem + 0.20vw, 0.94rem);
+  --fs-base: clamp(0.94rem, 0.86rem + 0.37vw, 1.05rem);
+  --fs-lg: clamp(1.06rem, 0.94rem + 0.58vw, 1.35rem);
+  --fs-xl: clamp(1.19rem, 1.02rem + 0.85vw, 1.62rem);
+  --fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
+  --fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
+  --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
+  --gap: var(--size-fluid-1);
 }
 
-/* THEME: Cardiff Uni Digital Education */
-/* DESCRIPTION:  */
-/* ===============
-    FONT
-================== */
+/* ----------------------
+	OVERALL RESET
+-------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
 body {
-  font-family: var(--ff-sans);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ===============
-    HEADER
-================== */
-#x_headerBlock {
-  background: var(--cu-blue);
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
-#x_headerBlock h1 {
-  color: #ffffff;
+input, button, textarea, select {
+  font: inherit;
 }
 
-#x_headerBlock h2 {
-  color: #ffffff;
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
 }
 
-/* ===============
-    FOOTER
-================== */
-/* ===============
-    BODY
-================== */
-/* BODY BACKGROUND */
-/* BODY BORDER */
-/* PARAGRAPH COLOUR */
-/* LINK COLOUR */
-/* ===============
-    MENUS
-================== */
-/* ===============
-    FOOTER ICONS
-================== */
-/* ========================================
-    PRESERVE INVERT FUNCTIONALITY FOR ACCESSIBILITY
-========================================== */
-.filter_inv #x_headerBlock h1, .filter_inv #x_headerBlock h2, .filter_inv #x_pageNo, .filter_inv #x_footerChevron {
-  color: black;
+:focus {
+  outline: none;
 }
 
-.filter_inv #x_mainHolder p, .filter_inv #textHolder, .filter_inv #x_mainHolder a, .filter_inv #x_mainHolder a:hover, .filter_inv #x_mainHolder a.x_glossary {
-  color: white;
+/* ----------------------
+	XERTE XOT Project RESET
+-------------------------- */
+/* prevent elements from overflowing width of screen on mobile */
+#x_mobileScroll {
+  overflow-x: hidden;
 }
 
-.filter_inv #x_pageNo {
-  background-color: white;
-  border: none;
+/* MAIN HOLDER STYLE */
+#x_mainHolder {
+  border: 1px solid var(--clr-border);
+  width: 100% !important;
+  background-color: var(--clr-main-bg);
 }
 
-.filter_inv .ui-dialog {
-  background-color: #ffffff;
+/*stop scrollbar from showing when pseudo elements extend beyond the page view width*/
+#x_pageHolder {
+  overflow-x: hidden;
 }
 
-.filter_inv .ui-dialog .ui-widget-header {
-  border: 1px solid #666666;
-  background: #000000;
-  color: #ffffff;
-  font-weight: bold;
+/* XERTE PAGE WIDTH */
+#x_headerBlock div,
+#x_pageDiv {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 0;
 }
 
-.filter_inv .ui-state-default {
-  color: #000000;
-  background: #ffffff;
+@media (min-width: 768px) {
+  #x_headerBlock div,
+#x_pageDiv {
+    width: 85%;
+  }
+}
+/* CONTENT RESET */
+#x_pageDiv {
+  padding-top: 2rem;
 }
 
-.filter_inv p.pbTxt {
-  color: #000000 !important;
+h1,
+h2,
+h3 {
+  padding: 0;
 }
 
-.filter_inv .pbContainer {
-  background-color: #000000;
-}
-
-.filter_inv #x_footerBlock .ui-button:after {
-  color: #000000;
-}
-
-.filter_inv #x_footerBlock .ui-button.ui-state-hover:after {
-  color: #404040;
-}
-
-.filter_inv #x_mainHolder a {
-  color: #000000;
-}
-
-.filter_inv #x_mainHolder a:hover {
-  color: #404040;
-}
-
-.filter_inv .x_tooltip {
-  background: #ffffff;
-  color: #000000;
-}
-
-/* ========================================
-    PRESERVE BLACK ON YELLOW FUNCTIONALITY FOR ACCESSIBILITY
-========================================== */
-.filter_boy #x_mainHolder p, .filter_boy #textHolder, .filter_boy #x_mainHolder a, .filter_boy #x_mainHolder a:hover, .filter_boy #x_mainHolder a.x_glossary {
-  color: black;
-}
-
-.filter_boy .ui-dialog .ui-widget-header {
-  border: 1px solid #666666;
-  background: #000000;
-  color: #ffff99;
-  font-weight: bold;
-}
-
-.filter_boy .ui-dialog {
-  background-color: #ffff99;
-}
-
-.filter_boy .ui-state-default {
-  color: #ffff99;
-  background: #000000;
-}
-
-.filter_boy p.pbTxt {
-  color: #ffff99 !important;
-}
-
-.filter_boy .pbContainer {
-  background-color: #ffff99;
-}
-
-.filter_boy #x_footerBlock {
-  border-top: 1px solid #ffff99;
-}
-
-.filter_boy #x_headerBlock {
-  border-bottom: 1px solid #ffff99;
-}
-
-.filter_boy #x_footerBlock .ui-button:after {
-  color: #ffff99;
-}
-
-.filter_boy #x_footerBlock .ui-button.ui-state-hover:after {
-  color: #B2B235;
-}
-
-.filter_boy #x_pageNo, .filter_boy #x_footerChevron {
-  color: #ffff99;
-}
-
-.filter_boy #x_mainHolder a {
-  color: #ffff99;
-}
-
-.filter_boy #x_mainHolder a:hover {
-  color: #B2B235;
-}
-
-.filter_boy .ui-widget-content {
-  background: #ffff99;
-}
-
-.filter_boy .x_tooltip {
-  background: #000000;
-  color: #ffff99;
+p {
+  padding: 0;
 }/*# sourceMappingURL=xot_main.css.map */

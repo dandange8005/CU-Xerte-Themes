@@ -1,0 +1,50 @@
+/* ----------------------
+	XERTE XOT Project RESET
+-------------------------- */
+/* prevent elements from overflowing width of screen on mobile */
+#x_mobileScroll {
+    overflow-x: hidden;
+}
+
+/* MAIN HOLDER STYLE */
+#x_mainHolder {
+    border: 1px solid var(--clr-border);
+    width: 100% !important;
+    background-color: var(--clr-main-bg);
+}
+/*stop scrollbar from showing when pseudo elements extend beyond the page view width*/
+#x_pageHolder {
+    overflow-x: hidden;
+}
+
+/* XERTE PAGE WIDTH */
+#x_headerBlock div,
+#x_pageDiv {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+	padding-inline: 0;
+}
+
+@media (min-width: 768px) {
+
+    #x_headerBlock div,
+    #x_pageDiv {
+        width: 85%;
+    }
+}
+
+/* CONTENT RESET */
+#x_pageDiv {
+    padding-top: 2rem;
+}
+
+h1,
+h2,
+h3 {
+    padding: 0;
+}
+
+p {
+    padding: 0;
+}
