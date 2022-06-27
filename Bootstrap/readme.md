@@ -1,5 +1,8 @@
 ## Bootstrap SASS Structure
 
+This is a document of how this SASS project structured.
+
+
 abstract/ (things that are not compiled into css)
 - _colours.scss
 - _openProps.scss (not included)
