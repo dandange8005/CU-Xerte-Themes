@@ -1,0 +1,38 @@
+/* ======================
+    LAYOUT - BASE
+=======================*/
+
+
+
+/* XERTE PAGE WIDTH */
+#x_headerBlock div,
+#x_pageDiv {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+	padding-inline: 0;
+}
+
+@media (min-width: 768px) {
+
+    #x_headerBlock div,
+    #x_pageDiv {
+        width: 85%;
+    }
+}
+
+/* CONTENT RESET */
+#x_pageDiv {
+    padding-top: var(--size-7);
+}
+
+h1,
+h2,
+h3 {
+    padding: 0;
+}
+
+p {
+    padding: 0;
+}
+

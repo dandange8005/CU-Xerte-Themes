@@ -22,9 +22,10 @@ Date:
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
 
 
-/* ----------------------
-	CUSTOM PROPERTIES
--------------------------- */
+/* ======================
+    CUSTOM PROPERTIES
+=======================*/
+
 
 :root {
 /* CU Colours */
@@ -73,7 +74,8 @@ Date:
 --clr-header-bg: var(--gradient-23);
 --clr-footder-bg: var(--gray-3);
 --clr-main-bg: var(--light);
---clr-body: var(--black);
+--clr-body: var(--neutral-8);
+--clr-heading: var(--clr-primary);
 --clr-link: var(--cu-sky);
 --clr-border: hsl(216, 12%, 84%);
 

@@ -1,9 +1,8 @@
-@use "customProperties" as *;
-
 // This is the theme style for the project
 
 /* THEME: Cardiff Uni Digital Education */
 /* DESCRIPTION:  */
+
 
 /* ===============
     FONT
@@ -17,12 +16,12 @@ body {
 ================== */
 // Header bg
 #x_headerBlock {
-    background: var(--cu-blue);
+    background: var(--clr-header-bg);
 }
 
 // Main Heading
 #x_headerBlock h1 {
-	color: #ffffff;
+	color: var(--light);
 }
 
 // Secondary Heading
