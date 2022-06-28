@@ -5,6 +5,10 @@ Date:
 */
 /* Import open props */
 @import "https://unpkg.com/open-props";
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i");
+/* Import Google Fonts and materials icons */
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Round");
 /* ======================
     CUSTOM PROPERTIES
 =======================*/
@@ -36,6 +40,7 @@ Date:
   --neutral-9:hsl(0, 0%, 9%);
   --success:hsl(148, 100%, 25%);
   --danger: hsl(4, 77%, 48%);
+  --main-logo: url("https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham//media/Template_Images/CMET_brandings/QED_Cardiff_MET_Logo_white.svg");
   /* Colour Theme */
   --clr-primary: var(--cu-red);
   --clr-accent: var(--cu-blue);
@@ -274,7 +279,8 @@ li ul {
   margin-right: var(--size-3);
   color: var(--neutral-7);
   font-size: var(--fs-lg);
-  margin-top: -1px;
+  margin-top: 3px;
+  line-height: 0;
 }
 
 .list-counter {
@@ -367,7 +373,7 @@ blockquote {
   left: 0;
   width: 70px;
   height: 70px;
-  background-image: url("https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham//media/Template_Images/CMET_brandings/QED_Cardiff_MET_Logo_white.svg");
+  background-image: var(--main-logo);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -402,7 +408,7 @@ blockquote {
 }
 /* CONTENT RESET */
 #x_pageDiv {
-  padding-top: var(--size-7);
+  padding-block: var(--size-7);
 }
 
 h1,

@@ -69,7 +69,7 @@
     left: 0;
     width: 70px;
     height: 70px;
-    background-image: url("https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham//media/Template_Images/CMET_brandings/QED_Cardiff_MET_Logo_white.svg");
+    background-image: var(--main-logo);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
