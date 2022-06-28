@@ -241,7 +241,7 @@ a.action-link:focus::after {
 ul,
 ol {
   padding: 0;
-  padding-left: var(--size-5);
+  padding-left: var(--size-7);
   display: grid;
   gap: var(--size-3);
 }
@@ -311,6 +311,74 @@ blockquote {
   line-height: 1.625;
 }
 
+/*-------- Layout Header ----- */
+#x_headerBlock {
+  box-shadow: none;
+  background: var(--clr-header-bg);
+  /* background: linear-gradient(50deg, rgba(0, 106, 175, 0.8) 0%, 
+                                          rgba(0, 106, 175, 0.98) 45%, 
+                                          rgba(0, 106, 175, 0.98) 45%, 
+                                          rgba(0, 106, 175, 0.8) 100%), 
+                                          url("https://xerte.cardiff.ac.uk/USER-FILES/10067-sopnz-Nottingham/media/carbs_001.jpg");
+    background-size: cover;
+    background-position: center 65%; */
+}
+
+#x_headerBlock div {
+  padding: 1.2em 0;
+}
+
+#x_headerBlock::after {
+  position: absolute;
+  content: "";
+  bottom: -12px;
+  left: 0px;
+  width: 100%;
+  background-image: url("https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham/media/Template_Images/shadow.png");
+  background-repeat: repeat-x;
+  background-size: 1px 12px;
+  height: 12px;
+  z-index: 2;
+}
+
+#x_headerBlock h1 {
+  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  color: var(--light);
+  opacity: 0.8;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+#x_headerBlock h2 {
+  font-size: var(--fs-lg);
+  color: var(--white);
+  margin-bottom: 0;
+}
+
+#x_headerBlock div {
+  padding-left: 70px;
+  position: relative;
+}
+
+#x_headerBlock div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  background-image: url("https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham//media/Template_Images/CMET_brandings/QED_Cardiff_MET_Logo_white.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#x_headerBlock h1, #x_headerBlock h2 {
+  margin-left: 1rem;
+}
+
 /* ======================
     LAYOUT - BASE
 =======================*/
@@ -320,6 +388,9 @@ blockquote {
   width: 95%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+#x_pageDiv {
   padding-inline: 0;
 }
 
