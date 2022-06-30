@@ -1,5 +1,5 @@
 /* ======================
-    NO TOC Page Template - Wide
+    NO TOC Page Template - Article Wide
 =======================*/
 
 /* A single page template with no table of content with default container width*/
@@ -30,7 +30,7 @@ section {
     border-radius: 0;
     background: none;
     margin: 0;
-    padding-block: var(--size-fluid-4);
+    padding-block: var(--size-fluid-5);
 }
 
 section::before {

@@ -40,7 +40,7 @@ Date:
   --neutral-9:hsl(0, 0%, 9%);
   --success:hsl(148, 100%, 25%);
   --danger: hsl(4, 77%, 48%);
-  --main-logo: url("https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham//media/Template_Images/CMET_brandings/QED_Cardiff_MET_Logo_white.svg");
+  --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/XOT/assets/CU_logo.png");
   /* Colour Theme */
   --clr-primary: var(--cu-red);
   --clr-accent: var(--cu-blue);
@@ -340,7 +340,7 @@ blockquote {
   bottom: -12px;
   left: 0px;
   width: 100%;
-  background-image: url("https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham/media/Template_Images/shadow.png");
+  background-image: url("https://dandange8005.github.io/CU-Xerte-Themes/XOT/assets/shadow.png");
   background-repeat: repeat-x;
   background-size: 1px 12px;
   height: 12px;
@@ -371,8 +371,8 @@ blockquote {
   content: "";
   position: absolute;
   left: 0;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  aspect-ratio: 1;
   background-image: var(--main-logo);
   background-size: cover;
   background-position: center;

@@ -1,5 +1,5 @@
 /* ======================
-    NO TOC Page Template - Narrow
+    NO TOC Page Template - Article
 =======================*/
 
 /* A single page template with no table of content with container maximum width of 724px to improve readability*/
@@ -23,9 +23,12 @@ body {
     margin-bottom: 0;
 }
 
-.container {
-    max-width: 724px;
-}
+@media (min-width: 1200px) {
+    .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+      width: 900px;
+  }
+  
+  }
 
 /* Add full width background to the section container */
 section {
@@ -60,7 +63,7 @@ section::before {
 }
 
 /* Section heading */
-.page-header {
+/* .page-header {
     border: none;
 }
 
@@ -76,7 +79,16 @@ section::before {
     display: block;
     border-bottom: 5px solid var(--cu-red);
 
+} */
+
+.page-header h1 {
+    font-size: var(--fs-3xl);
+    font-weight: var(--font-weight-3);
+    margin-top: var(--size-6);
+    margin-bottom: var(--size-2);
+    color: var(--clr-accent);
 }
+
 
 /*remove scroll to the top button*/
 .btn-mini {

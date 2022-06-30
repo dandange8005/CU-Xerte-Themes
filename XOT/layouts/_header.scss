@@ -10,7 +10,6 @@
 #x_headerBlock {
     box-shadow: none;
     background: var(--clr-header-bg);
-    // background: linear-gradient(var(--qed-gradient));
     // Add gradient and background image to the header
     /* background: linear-gradient(50deg, rgba(0, 106, 175, 0.8) 0%, 
                                             rgba(0, 106, 175, 0.98) 45%, 
@@ -33,7 +32,7 @@
     left: 0px;
     width: 100%;
     //change the following image url to github
-    background-image: url('https://preprodxerte.cardiffmet.ac.uk/USER-FILES/735-sm80513-Nottingham/media/Template_Images/shadow.png');
+    background-image: url('https://dandange8005.github.io/CU-Xerte-Themes/XOT/assets/shadow.png');
     background-repeat: repeat-x;
     background-size: 1px 12px;
     height: 12px;
@@ -67,8 +66,8 @@
     content: "";
     position: absolute;
     left: 0;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    aspect-ratio: 1;
     background-image: var(--main-logo);
     background-size: cover;
     background-position: center;
