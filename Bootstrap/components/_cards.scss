@@ -25,6 +25,17 @@
         margin-bottom: var(--size-3);
     }
 
+    &__link {
+        text-decoration: underline;
+        text-decoration-thickness: max(0.08em, 1.5px);
+        text-underline-offset: 0.15em;
+        color: var(--clr-link);
+
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+    }
+
     &__image {
         border-bottom: 1px solid var(--gray-2);
         display: block;
@@ -33,5 +44,20 @@
 
     &--clickable {
         border-bottom-width: var(--border-size-3);
+        padding-bottom: var(--size-2);
+    }
+    &--clickable::after {
+        position: absolute;
+        right: var(--size-3);
+        bottom: var(--size-2);
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f061";
+        color: var(--clr-link);
     }
 }
