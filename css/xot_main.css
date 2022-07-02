@@ -47,7 +47,7 @@ Date:
   --clr-heading: var(--clr-primary);
   --clr-link: var(--cu-sky);
   --clr-border: hsl(216, 12%, 84%);
-  --ff-sans: "Inter", sans-serif;
+  --ff-sans: var(--font-sans);
   --ff-serif: var(--font-serif);
   --ff-mono: var(--font-mono);
   --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
@@ -313,7 +313,9 @@ blockquote {
   line-height: 1.625;
 }
 
-/*-------- Layout Header ----- */
+/* =====================
+  Layouts - Header 
+======================== */
 #x_headerBlock {
   box-shadow: none;
   background: var(--clr-header-bg);
