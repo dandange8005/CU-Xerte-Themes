@@ -11,11 +11,13 @@ github page link:
 
 
 
-## Thrid party tools
+## Tools for developers
 1. Open Props: https://open-props.style/
 2. Color picker: http://color.aurlien.net/
 3. Color Converter: https://htmlcolors.com/color-converter
 4. Code block: prism
+5. html encoder: http://htmlencode.net/
+6. svg encoder: https://yoksel.github.io/url-encoder/
 
 
 ## Short tutorials
