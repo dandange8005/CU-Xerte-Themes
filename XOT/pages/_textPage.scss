@@ -1,0 +1,27 @@
+/* ----------------------
+	PAGES - TEXT
+-------------------------- */
+ 
+// Text pages selectors:
+// .x_bullets_page
+// .x_text_page
+// .x_orient_page
+// .x_summary_page
+
+
+// Set page max width
+.x_orient_page, .x_summary_page {
+    #pageContents{
+        max-width: 80ch;
+        margin: 0 auto;
+    }
+}
+
+// Text > Title Page
+.x_title_page {
+    #pageContents {
+        margin:0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

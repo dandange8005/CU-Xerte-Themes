@@ -38,8 +38,8 @@ Date:
 --cu-sky: hsl(206, 100%, 33%);
 --cu-gold: hsl(41, 46%, 57%);
 --cu-gold-light: hsl(46, 44%, 69%);
---navy-1:hsl(204, 29%, 28%);
---navy-2:hsl(204, 14%, 46%);
+--navy-1:#334c5c;
+--navy-2:#657986;
 --navy-3:hsl(201, 27%, 20%);
 
 /* Neutral colour */
@@ -92,8 +92,8 @@ Date:
 
 
 // button colours
---clr-btn: #0069A7;
---clr-btn-rollover: #004D85;
+--clr-btn: var(--clr-heading);
+--clr-btn-rollover: var(--clr-headershade);
 
 
 // Typography
