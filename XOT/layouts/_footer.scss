@@ -1,0 +1,28 @@
+/* ======================
+    LAYOUT - FOOTER
+=======================*/
+
+
+#x_footerBlock {
+    background: var(--clr-footder-bg);
+    color: var(--cu-blue-dark);
+}
+
+/*hide resize button*/
+#x_cssBtn {
+    display: none !important;
+}
+
+.ui-button:after,
+#x_footerChevron {
+    color: var(--cu-blue-dark);
+}
+
+.ui-button.ui-state-hover::after {
+    color: var(--gray-7);
+}
+
+// progress bar
+.pbBar {
+    background-color: var(--cu-blue);
+}
