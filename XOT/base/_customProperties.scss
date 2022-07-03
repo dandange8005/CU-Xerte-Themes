@@ -60,32 +60,41 @@ Date:
 --neutral-9:hsl(0, 0%, 9%);
 
 // Function colours
---success:hsl(148, 100%, 25%);
---danger: hsl(4, 77%, 48%);
+--clr-success:hsl(148, 100%, 25%);
+--clr-danger: hsl(4, 77%, 48%);
 
 // Gradients
+--gradient-text: var(--gradient-23);
+--gradient-image: url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
 
 
 // Images
 --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
     
-/* Colour Theme */
-
-
-// XOT element colours
-
---clr-primary: var(--cu-red);
---clr-accent: var(--cu-blue);
-
+/* XOT element colours */
 --clr-header-bg: var(--gradient-23);
 --clr-footder-bg: var(--gray-4);
 --clr-main-bg: var(--light);
 --clr-body: var(--neutral-8);
---clr-heading: var(--clr-primary);
 --clr-link: var(--cu-sky);
 --clr-border: hsl(216, 12%, 84%);
 
+
+--clr-heading: var(--navy-1);
+--clr-headershade: var(--navy-2);
+--clr-panelborder: var(--gray-5);
+--clr-shaded: #f2f2f2;
+
+// XOT Theme
+
+--clr-primary: var(--cu-red);
+--clr-accent: var(--cu-blue);
+
+
 // button colours
+--clr-btn: #0069A7;
+--clr-btn-rollover: #004D85;
+
 
 // Typography
 --ff-sans: var(--font-sans);

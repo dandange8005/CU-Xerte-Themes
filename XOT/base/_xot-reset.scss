@@ -17,3 +17,41 @@
 #x_pageHolder {
     overflow-x: hidden;
 }
+
+/* --MAIN CONTENT--- */
+
+#x_pageHolder button {
+	font-family: var(--ff-sans);
+	font-weight: bold;
+}
+
+.x_tooltip {
+	border-color: var(--clr-headershade);
+	background-color: var(--clr-headershade);
+}
+
+a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active {
+	color: var(--clr-body);
+}
+
+/* PANEL */
+#x_mainHolder:not(.x_flashCards_page) .panel:not(.ui-draggable) {
+	border: 1px solid var(--clr-panelborder);
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-ms-filter: none;
+	filter: none;
+}
+
+.fa-x-tick, .fa-x-tick:before {
+	color: var(--clr-success);
+}
+
+.fa-x-cross, .fa-x-cross:before {
+	color: var(--clr-danger);
+}
+
+#infoHolder {
+    border: none;
+}

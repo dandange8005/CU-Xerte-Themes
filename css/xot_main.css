@@ -34,19 +34,26 @@ Date:
   --neutral-7:hsl(0, 0%, 25%);
   --neutral-8:hsl(0, 0%, 15%);
   --neutral-9:hsl(0, 0%, 9%);
-  --success:hsl(148, 100%, 25%);
-  --danger: hsl(4, 77%, 48%);
+  --clr-success:hsl(148, 100%, 25%);
+  --clr-danger: hsl(4, 77%, 48%);
+  --gradient-text: var(--gradient-23);
+  --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
-  /* Colour Theme */
-  --clr-primary: var(--cu-red);
-  --clr-accent: var(--cu-blue);
+  /* XOT element colours */
   --clr-header-bg: var(--gradient-23);
   --clr-footder-bg: var(--gray-4);
   --clr-main-bg: var(--light);
   --clr-body: var(--neutral-8);
-  --clr-heading: var(--clr-primary);
   --clr-link: var(--cu-sky);
   --clr-border: hsl(216, 12%, 84%);
+  --clr-heading: var(--navy-1);
+  --clr-headershade: var(--navy-2);
+  --clr-panelborder: var(--gray-5);
+  --clr-shaded: #f2f2f2;
+  --clr-primary: var(--cu-red);
+  --clr-accent: var(--cu-blue);
+  --clr-btn: #0069A7;
+  --clr-btn-rollover: #004D85;
   --ff-sans: var(--font-sans);
   --ff-serif: var(--font-serif);
   --ff-mono: var(--font-mono);
@@ -130,6 +137,41 @@ html {
 /*stop scrollbar from showing when pseudo elements extend beyond the page view width*/
 #x_pageHolder {
   overflow-x: hidden;
+}
+
+/* --MAIN CONTENT--- */
+#x_pageHolder button {
+  font-family: var(--ff-sans);
+  font-weight: bold;
+}
+
+.x_tooltip {
+  border-color: var(--clr-headershade);
+  background-color: var(--clr-headershade);
+}
+
+a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active {
+  color: var(--clr-body);
+}
+
+/* PANEL */
+#x_mainHolder:not(.x_flashCards_page) .panel:not(.ui-draggable) {
+  border: 1px solid var(--clr-panelborder);
+  box-shadow: none;
+  -ms-filter: none;
+  filter: none;
+}
+
+.fa-x-tick, .fa-x-tick:before {
+  color: var(--clr-success);
+}
+
+.fa-x-cross, .fa-x-cross:before {
+  color: var(--clr-danger);
+}
+
+#infoHolder {
+  border: none;
 }
 
 /* ======================
@@ -337,13 +379,13 @@ table td {
 }
 
 thead th {
-  background: var(--cu-blue-dark);
+  background: var(--clr-headershade);
   color: var(--light);
   font-weight: bold;
 }
 
 table tr td:not(:first-of-type) {
-  border-left: 1px solid var(--cu-blue-dark);
+  border-left: 1px solid var(--navy-2);
 }
 
 thead th:not(:first-of-type) {
@@ -590,11 +632,70 @@ p {
   background-color: var(--cu-blue);
 }
 
-/* ------------------- */
-/* UTILITY CLASSES     */
-/* ------------------- */
-.text-center {
-  text-align: center;
+/* ================================
+    LAYOUT - TABLE OF CONTENT MENU
+===================================*/
+.ui-dialog {
+  padding: 0;
+  border: 1px solid var(--clr-border);
+  border-radius: 5px;
+  box-shadow: var(--shadow-2);
+  font-family: var(--ff-sans);
+}
+
+#menuItems {
+  background: var(--gray-1);
+}
+
+#menuItems .menuItem {
+  font-size: 0.85rem;
+  background: var(--gray-1);
+  color: var(--clr-body);
+  border: none;
+}
+
+#menuItems .sectionHeader {
+  opacity: 0.7;
+  color: var(--clr-header-bg);
+}
+
+#menuItems .sectionHeader::after {
+  content: " - ";
+}
+
+.ui-dialog .ui-widget-header {
+  color: var(--white);
+  background: var(--clr-header-bg);
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  border-radius: 0;
+  border: none;
+  padding: 8px;
+}
+
+.ui-widget-header .ui-state-default {
+  color: var(--white);
+}
+
+.ui-widget-header .ui-state-hover {
+  color: var(--gray-2);
+}
+
+#menuItems .menuItem.current {
+  border: none !important;
+  background: var(--gray-4);
+  border-radius: 0;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  border: none;
+  background: transparent;
+  right: 0;
+}
+
+#menuItems .ui-state-hover {
+  background: var(--gray-4) !important;
+  border-radius: 0;
 }
 
 /* Flex Utility Classes   */
@@ -673,7 +774,6 @@ p {
   flex: 1 1 600px;
 }
 
-/* Another Flex System */
 .flexContainer {
   position: relative;
   display: flex;
@@ -749,6 +849,65 @@ p {
 .grid {
   display: grid;
   gap: var(--gap);
+}
+
+/* ----------------------
+	PAGES - TABLE
+-------------------------- */
+table.full td, table.simple, table.horizontal tr, table.vertical td, table.header.simple tr:first-child, table.footer.simple tr:last-child, table.headerCol.simple td:first-child {
+  border-color: var(--clr-headershade);
+}
+
+table.header.shaded tr:first-child, table.footer.shaded tr:last-child, table.headerCol.shaded td.header {
+  background: var(--clr-headershade);
+  color: var(--white);
+}
+
+table.header tr:first-child, table.footer tr:last-child {
+  color: var(--clr-heading);
+}
+
+table.header.shaded.full tr:first-child td:not(:last-child), table.header.shaded.vertical tr:first-child td:not(:last-child), table.footer.shaded.full tr:last-child td:not(:last-child), table.header.footer.vertical tr:last-child td:not(:last-child) {
+  border-right-color: var(--white);
+}
+
+table.headerCol.shaded.full tr:not(:last-child) td:first-child, table.headerCol.shaded.horizontal tr:not(:last-child) td:first-child {
+  border-bottom: 1px solid var(--white);
+}
+
+table tr.shaded, table.glossary tr.shaded {
+  background: var(--clr-shaded);
+}
+
+table.glossary tr td:first-child {
+  border-color: var(--clr-shaded);
+}
+
+.x_table_page #tableName {
+  color: var(--clr-heading);
+}
+
+.x_table_page #footnote {
+  border-color: var(--clr-border);
+}
+
+/* ----------------------
+	PAGES - GRAPHIC
+-------------------------- */
+.x_textGraphics_page #imgCaption {
+  color: var(--clr-heading);
+}
+
+.x_textGraphics_page #imgCaption.transcript {
+  /* hr */
+  border-color: var(--clr-border);
+}
+
+/* ------------------- */
+/* UTILITY CLASSES     */
+/* ------------------- */
+.text-center {
+  text-align: center;
 }
 
 .bg-red {
@@ -837,6 +996,13 @@ p {
 
 .text-danger {
   color: var(--clr-danger);
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .uppercase {

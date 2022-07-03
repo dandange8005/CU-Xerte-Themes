@@ -72,6 +72,7 @@ Author: Nan Zhang
   --gradient-neutral: linear-gradient(45deg,
       var(--neutral-5),
       var(--neutral-8));
+  --gradient-text: var(--gradient-23);
   /* Project theme */
   --clr-body: var(--black);
   --clr-link: var(--cu-sky);
@@ -758,6 +759,13 @@ hr.section-break-m {
 
 .text-danger {
   color: var(--clr-danger);
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .uppercase {

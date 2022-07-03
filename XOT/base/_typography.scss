@@ -219,13 +219,13 @@ table td {
 }
 
 thead th {
-    background: var(--cu-blue-dark);
+    background: var(--clr-headershade);
     color: var(--light);
     font-weight: bold;
 }
 
 table tr td:not(:first-of-type) {
-    border-left: 1px solid var(--cu-blue-dark);
+    border-left: 1px solid var(--navy-2);
 }
 
 thead th:not(:first-of-type) {

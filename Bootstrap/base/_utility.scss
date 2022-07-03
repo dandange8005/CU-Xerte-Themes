@@ -253,6 +253,13 @@
     color: var(--clr-danger);
 }
 
+.gradient-text {
+    background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 // Font size
 
 .uppercase {
