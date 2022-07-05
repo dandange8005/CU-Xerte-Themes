@@ -285,13 +285,13 @@ table td {
 }
 
 thead th {
-    background: var(--cu-blue-dark);
+    background: var(--navy-2);
     color: var(--light);
     font-weight: bold;
 }
 
 table tr td:not(:first-of-type) {
-    border-left: 1px solid var(--cu-blue-dark);
+    border-left: 1px solid var(--clr-border);
 }
 
 thead th:not(:first-of-type) {

@@ -401,13 +401,13 @@ table td {
 }
 
 thead th {
-  background: var(--cu-blue-dark);
+  background: var(--navy-2);
   color: var(--light);
   font-weight: bold;
 }
 
 table tr td:not(:first-of-type) {
-  border-left: 1px solid var(--cu-blue-dark);
+  border-left: 1px solid var(--clr-border);
 }
 
 thead th:not(:first-of-type) {
@@ -805,6 +805,50 @@ hr.section-break-m {
   font-size: var(--fs-xs);
 }
 
+.shadow-1 {
+  box-shadow: var(--shadow-1);
+}
+
+.shadow-2 {
+  box-shadow: var(--shadow-2);
+}
+
+.shadow-3 {
+  box-shadow: var(--shadow-3);
+}
+
+.shadow-4 {
+  box-shadow: var(--shadow-4);
+}
+
+.shadow-5 {
+  box-shadow: var(--shadow-5);
+}
+
+.shadow-6 {
+  box-shadow: var(--shadow-6);
+}
+
+.shadow-inner-0 {
+  box-shadow: var(--inner-shadow-0);
+}
+
+.shadow-inner-1 {
+  box-shadow: var(--inner-shadow-1);
+}
+
+.shadow-inner-2 {
+  box-shadow: var(--inner-shadow-2);
+}
+
+.shadow-inner-3 {
+  box-shadow: var(--inner-shadow-3);
+}
+
+.shadow-inner-4 {
+  box-shadow: var(--inner-shadow-4);
+}
+
 .square {
   aspect-ratio: var(--ratio-square);
 }
@@ -1093,7 +1137,7 @@ section:nth-child(even)::before {
   top: 0;
   left: 0;
   padding: 8px;
-  background: var(--gray-6);
+  background: var(--navy-2);
   border-bottom-right-radius: 4px;
 }
 .example > *:last-child {

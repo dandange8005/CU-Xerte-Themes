@@ -66,6 +66,7 @@ Date:
   --fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
   --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
   --gap: var(--size-fluid-1);
+  --container-width: 47rem;
 }
 
 /* ======================
@@ -226,6 +227,7 @@ h4 {
 }
 
 #pageContents > *:where(:not(:last-child)),
+.container > *:where(:not(:last-child)),
 .flow > *:where(:not(:last-child)) {
   margin-bottom: var(--size-fluid-2);
 }
@@ -609,6 +611,11 @@ h3 {
 
 p {
   padding: 0;
+}
+
+.container {
+  width: min(var(--container-width), 100% - 2rem);
+  margin-inline: auto;
 }
 
 /* ======================

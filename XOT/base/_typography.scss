@@ -52,6 +52,7 @@ h4 {
 
 // spacing
 #pageContents>*:where(:not(:last-child)),
+.container>*:where(:not(:last-child)),
 .flow>*:where(:not(:last-child)) {
     margin-bottom: var(--size-fluid-2);
 }

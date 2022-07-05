@@ -39,3 +39,7 @@ p {
     padding: 0;
 }
 
+.container {
+    width: min(var(--container-width),100% - 2rem);
+    margin-inline: auto;
+}
