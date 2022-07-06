@@ -737,6 +737,22 @@ hr.section-break-m {
   background-color: var(--clr-danger);
 }
 
+.text-cu-red {
+  color: var(--cu-red);
+}
+
+.text-cu-blue {
+  color: var(--cu-blue);
+}
+
+.text-cu-blue-dark {
+  color: var(--cu-blue-dark);
+}
+
+.text-cu-gold {
+  color: var(--cu-gold);
+}
+
 .text-1 {
   color: var(--text-1);
 }
