@@ -116,11 +116,12 @@ Author: Nan Zhang
         var(--neutral-5),
         var(--neutral-8));
 
-    --gradient-text: var(--gradient-23);
+    --text-gradient: var(--gradient-23);
 
 
     /*Spacing*/
-    --gap: var(--size-fluid-1);
+    --flex-gap: var(--size-fluid-2);
+    --grid-gap: var(--size-fluid-1);
 
     /* Typography */
     --ff-sans: 'Inter', sans-serif;

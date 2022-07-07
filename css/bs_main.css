@@ -81,9 +81,10 @@ Author: Nan Zhang
   --gradient-neutral: linear-gradient(45deg,
       var(--neutral-5),
       var(--neutral-8));
-  --gradient-text: var(--gradient-23);
+  --text-gradient: var(--gradient-23);
   /*Spacing*/
-  --gap: var(--size-fluid-1);
+  --flex-gap: var(--size-fluid-2);
+  --grid-gap: var(--size-fluid-1);
   /* Typography */
   --ff-sans: "Inter", sans-serif;
   --ff-serif: var(--font-serif);
@@ -600,12 +601,13 @@ hr.section-break-m {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  margin-block: var(--size-fluid-3);
 }
 
 .flexItem {
   width: 100%;
   padding: 0;
-  margin-bottom: 32px;
+  margin-bottom: var(--flex-gap);
 }
 
 .flexItem h3 {
@@ -663,14 +665,14 @@ hr.section-break-m {
   }
 
   .flexItem {
-    padding-right: 2rem;
+    padding-right: var(--flex-gap);
     margin-bottom: 0;
   }
 }
 /* Grid Utility Classes */
 .grid {
   display: grid;
-  gap: var(--gap);
+  gap: var(--grid-gap);
 }
 
 .bg-red {
@@ -793,8 +795,8 @@ hr.section-break-m {
   color: var(--clr-danger);
 }
 
-.gradient-text {
-  background: var(--gradient-text);
+.text-gradient {
+  background: var(--text-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

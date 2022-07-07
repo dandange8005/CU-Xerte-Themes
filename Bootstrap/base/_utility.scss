@@ -97,12 +97,13 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    margin-block: var(--size-fluid-3);
 }
 
 .flexItem {
     width: 100%;
     padding: 0;
-    margin-bottom: 32px;
+    margin-bottom: var(--flex-gap);
 }
 .flexItem h3 {
     margin-top: 0;
@@ -146,7 +147,7 @@
         width: 10%;
     }
     .flexItem {
-        padding-right: 2rem;
+        padding-right: var(--flex-gap);
         margin-bottom: 0;
     }
 }
@@ -155,7 +156,7 @@
 
 .grid {
     display: grid;
-    gap: var(--gap);
+    gap: var(--grid-gap);
 }
 
 // Background
@@ -278,8 +279,8 @@
     color: var(--clr-danger);
 }
 
-.gradient-text {
-    background: var(--gradient-text);
+.text-gradient {
+    background: var(--text-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
