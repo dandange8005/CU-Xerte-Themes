@@ -83,7 +83,7 @@ Author: Nan Zhang
       var(--neutral-8));
   --text-gradient: var(--gradient-23);
   /*Spacing*/
-  --flex-gap: var(--size-fluid-2);
+  --flex-gap: var(--size-fluid-3);
   --grid-gap: var(--size-fluid-1);
   /* Typography */
   --ff-sans: "Inter", sans-serif;
