@@ -229,6 +229,9 @@
 
 
 // Text colour
+.text-accent {
+    color: var(--clr-accent);
+}
 .text-cu-red {
     color: var(--cu-red);
 }
@@ -240,6 +243,15 @@
 }
 .text-cu-gold {
     color: var(--cu-gold);
+}
+.text-navy-1 {
+    color: var(--navy-1);
+}
+.text-navy-2 {
+    color: var(--navy-2);
+}
+.text-navy-3 {
+    color: var(--navy-3);
 }
 
 .text-1 {

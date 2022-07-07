@@ -8,7 +8,7 @@ Author: Nan Zhang
     PROJECT CUSTOM PROPERTIES
 ----------------------*/
 :root {
-  /* CU Primary Colours */
+  /* CU Colours */
   --cu-red: hsl(353, 65%, 52%);
   --cu-blue: hsl(224, 61%, 34%);
   --cu-blue-dark: hsl(222, 44%, 21%);
@@ -32,10 +32,9 @@ Author: Nan Zhang
   --neutral-7:hsl(0, 0%, 25%);
   --neutral-8:hsl(0, 0%, 15%);
   --neutral-9:hsl(0, 0%, 9%);
-  --success:hsl(148, 100%, 25%);
-  --danger: hsl(4, 77%, 48%);
-  /* Colour Theme */
-  /* main accent colour */
+  --clr-success:hsl(148, 100%, 25%);
+  --clr-danger: hsl(4, 77%, 48%);
+  /* Bootstrap Project theme */
   --clr-accent: hsl(353, 65%, 52%);
   --clr-h: 353;
   --clr-s: 65%;
@@ -66,14 +65,6 @@ Author: Nan Zhang
       var(--clr-s),
       calc(var(--clr-l) - var(--clr-l) * 0.8));
   --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
-  --gradient-accent: linear-gradient(45deg,
-      var(--clr-accent),
-      var(--clr-accent-6));
-  --gradient-neutral: linear-gradient(45deg,
-      var(--neutral-5),
-      var(--neutral-8));
-  --gradient-text: var(--gradient-23);
-  /* Project theme */
   --clr-body: var(--black);
   --clr-link: var(--cu-sky);
   --clr-border: hsl(216, 12%, 84%);
@@ -83,6 +74,15 @@ Author: Nan Zhang
   --text-1: var(--neutral-8);
   --text-2: var(--neutral-7);
   --text-3: var(--neutral-5);
+  /* Gradients */
+  --gradient-accent: linear-gradient(45deg,
+      var(--clr-accent),
+      var(--clr-accent-6));
+  --gradient-neutral: linear-gradient(45deg,
+      var(--neutral-5),
+      var(--neutral-8));
+  --gradient-text: var(--gradient-23);
+  /*Spacing*/
   --gap: var(--size-fluid-1);
   /* Typography */
   --ff-sans: "Inter", sans-serif;
@@ -238,7 +238,7 @@ a[target=_blank]:focus::after,
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: var(--size-2);
-  color: var(--success);
+  color: var(--clr-success);
   font-size: var(--fs-lg);
 }
 
@@ -737,6 +737,10 @@ hr.section-break-m {
   background-color: var(--clr-danger);
 }
 
+.text-accent {
+  color: var(--clr-accent);
+}
+
 .text-cu-red {
   color: var(--cu-red);
 }
@@ -751,6 +755,18 @@ hr.section-break-m {
 
 .text-cu-gold {
   color: var(--cu-gold);
+}
+
+.text-navy-1 {
+  color: var(--navy-1);
+}
+
+.text-navy-2 {
+  color: var(--navy-2);
+}
+
+.text-navy-3 {
+  color: var(--navy-3);
 }
 
 .text-1 {

@@ -62,25 +62,19 @@ Date:
 // Images
 --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
     
-/* XOT element colours */
+/* XOT Project Theme */
+--clr-primary: var(--cu-red);
+--clr-accent: var(--cu-blue);
 --clr-header-bg: var(--gradient-23);
 --clr-footder-bg: var(--gray-4);
 --clr-main-bg: var(--light);
 --clr-body: var(--neutral-8);
 --clr-link: var(--cu-sky);
 --clr-border: hsl(216, 12%, 84%);
-
-
 --clr-heading: var(--navy-1);
 --clr-headershade: var(--navy-2);
 --clr-panelborder: var(--gray-5);
 --clr-shaded: #f2f2f2;
-
-// XOT Theme
-
---clr-primary: var(--cu-red);
---clr-accent: var(--cu-blue);
-
 
 // button colours
 --clr-btn: var(--clr-heading);

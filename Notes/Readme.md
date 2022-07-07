@@ -1,5 +1,5 @@
 Project Notes:
-## Main styles link
+## Main styles linkS
 github page link: 
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css
@@ -8,7 +8,6 @@ github page link:
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU_logo.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png
 - 
-
 
 
 ## Tools for developers

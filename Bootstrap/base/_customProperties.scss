@@ -27,7 +27,7 @@ Author: Nan Zhang
 
 
 
-    /* CU Primary Colours */
+    /* CU Colours */
     --cu-red: hsl(353, 65%, 52%);
     --cu-blue: hsl(224, 61%, 34%);
     --cu-blue-dark: hsl(222, 44%, 21%);
@@ -55,12 +55,11 @@ Author: Nan Zhang
     --neutral-9:hsl(0, 0%, 9%);
 
     // Function colours
-    --success:hsl(148, 100%, 25%);
-    --danger: hsl(4, 77%, 48%);
+    --clr-success:hsl(148, 100%, 25%);
+    --clr-danger: hsl(4, 77%, 48%);
 
-    /* Colour Theme */
-
-    /* main accent colour */
+        
+    /* Bootstrap Project theme */
 
     // --clr-accent: var(--cu-red);
     --clr-accent: hsl(353, 65%, 52%);
@@ -97,18 +96,6 @@ Author: Nan Zhang
     // Compliment colour: hue + 180 
     --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
 
-    // Gradients
-    --gradient-accent: linear-gradient(45deg,
-        var(--clr-accent),
-        var(--clr-accent-6));
-
-    --gradient-neutral: linear-gradient(45deg,
-        var(--neutral-5),
-        var(--neutral-8));
-
-    --gradient-text: var(--gradient-23);
-
-    /* Project theme */
 
     --clr-body: var(--black);
     --clr-link: var(--cu-sky);
@@ -119,6 +106,20 @@ Author: Nan Zhang
     --text-1: var(--neutral-8);
     --text-2: var(--neutral-7);
     --text-3: var(--neutral-5);
+
+    /* Gradients */
+    --gradient-accent: linear-gradient(45deg,
+        var(--clr-accent),
+        var(--clr-accent-6));
+
+    --gradient-neutral: linear-gradient(45deg,
+        var(--neutral-5),
+        var(--neutral-8));
+
+    --gradient-text: var(--gradient-23);
+
+
+    /*Spacing*/
     --gap: var(--size-fluid-1);
 
     /* Typography */

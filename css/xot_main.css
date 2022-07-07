@@ -39,7 +39,9 @@ Date:
   --gradient-text: var(--gradient-23);
   --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
-  /* XOT element colours */
+  /* XOT Project Theme */
+  --clr-primary: var(--cu-red);
+  --clr-accent: var(--cu-blue);
   --clr-header-bg: var(--gradient-23);
   --clr-footder-bg: var(--gray-4);
   --clr-main-bg: var(--light);
@@ -50,8 +52,6 @@ Date:
   --clr-headershade: var(--navy-2);
   --clr-panelborder: var(--gray-5);
   --clr-shaded: #f2f2f2;
-  --clr-primary: var(--cu-red);
-  --clr-accent: var(--cu-blue);
   --clr-btn: var(--clr-heading);
   --clr-btn-rollover: var(--clr-headershade);
   --ff-sans: var(--font-sans);
