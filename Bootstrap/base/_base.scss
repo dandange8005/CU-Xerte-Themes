@@ -84,6 +84,8 @@ a[href^="mailto"]:hover::before,
 a[href^="mailto"]:focus::before,
 a[target='_blank']:hover::after,
 a[target='_blank']:focus::after,
+.link-action:hover::before,
+.link-action:focus::before,
 .action-link:hover::before,
 .action-link:focus::before {
     text-decoration: none;
@@ -91,17 +93,18 @@ a[target='_blank']:focus::after,
 }
 
 /* action link */
-a.link-action {
+a.link-action::before {
     content:"\f0a9";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: var(--size-2);
     color: var(--clr-success);
     font-size: var(--fs-lg);
+}
 
-    &:hover::after, &:focus::after {
-        content: none;
-    }
+a.link-action:hover::after, 
+a.link-action:focus::after {
+    content: none;
 }
 
 
