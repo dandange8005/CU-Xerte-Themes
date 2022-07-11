@@ -5,6 +5,7 @@ github page link:
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_article.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_articleWide.min.css
+- https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU_logo.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png
 - 

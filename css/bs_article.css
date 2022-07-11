@@ -3,7 +3,7 @@
 Author: Nan Zhang
 */
 /* Import Open Props */
-@import "https://unpkg.com/open-props";
+@import "https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css";
 /* -------------------
     PROJECT CUSTOM PROPERTIES
 ----------------------*/
@@ -648,39 +648,30 @@ hr.section-break-m {
   .c80 {
     width: 80%;
   }
-
   .c70 {
     width: 70%;
   }
-
   .c60 {
     width: 60%;
   }
-
   .c50 {
     width: 50%;
   }
-
   .c40 {
     width: 40%;
   }
-
   .c30 {
     width: 30%;
   }
-
   .c33 {
     width: 33.33%;
   }
-
   .c20 {
     width: 20%;
   }
-
   .c10 {
     width: 10%;
   }
-
   .flexItem {
     padding-right: var(--flex-gap);
     margin-bottom: 0;
@@ -1647,15 +1638,12 @@ code[class*=language-], pre[class*=language-] {
   #overview.logoL .container {
     flex-direction: column;
   }
-
   #overview .container {
     padding: 0 var(--size-4);
   }
-
   body {
     padding-block: 0;
   }
-
   .info-item {
     display: flex;
     flex-direction: column;

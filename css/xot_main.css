@@ -819,39 +819,30 @@ p {
   .c80 {
     width: 80%;
   }
-
   .c70 {
     width: 70%;
   }
-
   .c60 {
     width: 60%;
   }
-
   .c50 {
     width: 50%;
   }
-
   .c40 {
     width: 40%;
   }
-
   .c30 {
     width: 30%;
   }
-
   .c33 {
     width: 33.33%;
   }
-
   .c20 {
     width: 20%;
   }
-
   .c10 {
     width: 10%;
   }
-
   .flexItem {
     padding-right: 2rem;
     margin-bottom: 0;
@@ -924,8 +915,7 @@ table.glossary tr td:first-child {
   color: var(--clr-heading);
 }
 
-.x_textGraphics_page #imgCaption.transcript {
-  /* hr */
+.x_textGraphics_page #imgCaption.transcript { /* hr */
   border-color: var(--clr-border);
 }
 
