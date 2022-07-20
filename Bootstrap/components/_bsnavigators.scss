@@ -78,6 +78,11 @@ ul.nav-tabs, ul.nav-pills {
 }
 
 /* Accordions */
+.navigator.accordion {
+    margin-block: var(--size-7);
+}
+
+
 .accordion-heading .accordion-toggle {
     display: flex;
     align-items: center;
