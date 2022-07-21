@@ -1532,6 +1532,7 @@ a.accordion-toggle.collapsed::after {
   font-size: var(--fs-xl);
   color: var(--neutral-6);
   line-height: var(--font-lineheight-1);
+  font-weight: 300;
 }
 
 /* prism custom styles */
