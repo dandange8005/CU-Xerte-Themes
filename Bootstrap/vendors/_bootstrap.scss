@@ -1,1 +1,7 @@
 // Customised style for bootstrap components
+
+.lead {
+    font-size: var(--fs-xl);
+    color: var(--neutral-6);
+    line-height: var(--font-lineheight-1);
+}
