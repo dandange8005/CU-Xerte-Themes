@@ -1132,10 +1132,11 @@ section::before {
 /* Callout component */
 .callout {
   background: var(--gray-2);
-  padding: var(--size-5);
+  padding: var(--size-4);
   padding-left: var(--size-8);
   border-radius: var(--radius-2);
-  box-shadow: var(--shadow-3);
+  font-size: var(--font-size-fluid-0);
+  color: var(--neutral-7);
   position: relative;
 }
 .callout::before {
