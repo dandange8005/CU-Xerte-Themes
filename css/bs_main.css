@@ -1062,21 +1062,21 @@ hr.section-break-m {
   margin-bottom: var(--size-2);
 }
 .callout.warning {
-  background-color: var(--yellow-1);
+  background-color: var(--yellow-0);
   border: 1px solid var(--yellow-2);
 }
 .callout.warning::before {
   content: "⚠️";
 }
 .callout.danger {
-  background-color: var(--red-1);
+  background-color: var(--red-0);
   border: 1px solid var(--red-2);
 }
 .callout.danger::before {
   content: "❌";
 }
 .callout.info {
-  background-color: var(--blue-1);
+  background-color: var(--blue-0);
   border: 1px solid var(--blue-2);
 }
 .callout.info::before {
@@ -1486,6 +1486,10 @@ ul.nav-tabs, ul.nav-pills {
 }
 
 /* Accordions */
+.navigator.accordion {
+  margin-block: var(--size-7);
+}
+
 .accordion-heading .accordion-toggle {
   display: flex;
   align-items: center;
