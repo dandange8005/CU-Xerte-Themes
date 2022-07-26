@@ -12,7 +12,7 @@
 
     //   margin: 2rem 0;
     &::before {
-        content: '☝️';
+        content: attr(emoji-data);
         font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
         position: absolute;
         top: var(--size-3);
