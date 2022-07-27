@@ -382,6 +382,14 @@ section li ul {
 }
 
 /* Styles to the screenshots */
+.image-screenshots {
+  border: 1px solid var(--clr-border);
+  margin: 2rem auto;
+  clear: both;
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-3);
+}
+
 .screenshots {
   border: 1px solid var(--clr-border);
   margin: 2rem auto;
