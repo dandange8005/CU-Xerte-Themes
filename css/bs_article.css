@@ -312,7 +312,7 @@ section ol {
   padding: 0;
   margin-left: var(--size-5);
   display: grid;
-  gap: var(--size-3);
+  gap: var(--size-2);
 }
 section li {
   line-height: var(--font-lineheight-3);
@@ -926,6 +926,11 @@ hr.section-break-m {
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
+}
+
+.content-wrapper {
+  max-width: 56rem;
+  margin-inline: auto;
 }
 
 /* ======================
