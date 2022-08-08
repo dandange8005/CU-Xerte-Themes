@@ -189,7 +189,7 @@ h3 {
 }
 
 h4 {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
   line-height: var(--font-lineheight-3);
 }
 
@@ -298,8 +298,8 @@ section p + h2 {
 section h2,
 section h3 {
   margin-bottom: var(--size-2);
-  margin-top: var(--size-4);
-  color: var(--neutral-6);
+  margin-top: var(--size-6);
+  color: var(--text-1);
 }
 
 section p:not(:last-child) {
