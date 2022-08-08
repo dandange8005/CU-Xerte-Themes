@@ -302,6 +302,10 @@ section h3 {
   color: var(--text-1);
 }
 
+section h4 {
+  color: var(--text-2);
+}
+
 section p:not(:last-child) {
   margin-bottom: var(--size-3);
 }
