@@ -87,3 +87,5 @@ sass/
 |
 `– main.scss             # Main Sass file
 
+
+## Using comments
