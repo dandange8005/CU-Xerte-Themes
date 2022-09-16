@@ -1,5 +1,40 @@
 /* ------------------- */
-/* UTILITY CLASSES     */
+/* UTILITY CLASSES
+
+Items that can be added to the Utility Class style list
+
+- layout
+    flex
+    grid
+- Text Styles (inline)
+    - Title 
+    - Subtitle
+    - Heading
+    - caption
+    - focus
+    - text colour
+    - highlight
+    - font
+        - system
+        - serif
+        - mono
+        - round
+
+- Block style
+    - background colour
+    - focus decoration
+    - shadow
+    - ratio
+    
+
+
+- List
+    - todo list
+    - toggle list
+    - counter list
+    - icon list
+- decoration
+
 /* ------------------- */
 
 // text centre
@@ -366,7 +401,7 @@
 	box-shadow: var(--inner-shadow-4);
 }
 
-// Ration size
+// Ratio size
 
 .square {
     aspect-ratio: var(--ratio-square);

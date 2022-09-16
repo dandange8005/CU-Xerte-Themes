@@ -16,8 +16,8 @@ Date:
   --cu-sky: hsl(206, 100%, 33%);
   --cu-gold: hsl(41, 46%, 57%);
   --cu-gold-light: hsl(46, 44%, 69%);
-  --navy-1:#334c5c;
-  --navy-2:#657986;
+  --navy-1:hsl(203, 29%, 28%);
+  --navy-2:hsl(204, 14%, 46%);
   --navy-3:hsl(201, 27%, 20%);
   /* Neutral colour */
   --black: hsl(340, 5%, 12%);
@@ -40,6 +40,35 @@ Date:
   --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
   /* XOT Project Theme */
+  /* ======================
+
+      XOT Project Custom Properties
+
+      Header
+          --clr-header-bg
+          --clr-header-title
+          --logo
+      Footer
+          --clr-footer-bg
+      Body
+          --clr-body-bg
+          --clr-body-text
+          --clr-body-title
+      link
+          --clr-link
+          --clr-link-visited
+      button
+          --clr-btn
+          --clr-btn-hover
+      Typography
+          --ff-body
+          --ff-heading
+          --ff-mono
+          --ff-serif
+
+
+
+  */
   --clr-primary: var(--cu-red);
   --clr-accent: var(--cu-blue);
   --clr-header-bg: var(--gradient-23);

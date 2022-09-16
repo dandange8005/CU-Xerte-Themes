@@ -8,6 +8,7 @@ Author: Nan Zhang
     PROJECT CUSTOM PROPERTIES
 ----------------------*/
 :root {
+  /* Sass generated colour map */
   /* CU Colours */
   --cu-red: hsl(353, 65%, 52%);
   --cu-blue: hsl(224, 61%, 34%);
@@ -329,9 +330,17 @@ section li ul {
   margin-top: var(--size-3);
 }
 
+/*  
+- todo list
+- toggle list
+- bullet list
+- numbered list
+- no list    
+*/
 .list-none {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .list-icon {
@@ -544,7 +553,42 @@ hr.section-break-m {
 }
 
 /* ------------------- */
-/* UTILITY CLASSES     */
+/* UTILITY CLASSES
+
+Items that can be added to the Utility Class style list
+
+- layout
+    flex
+    grid
+- Text Styles (inline)
+    - Title 
+    - Subtitle
+    - Heading
+    - caption
+    - focus
+    - text colour
+    - highlight
+    - font
+        - system
+        - serif
+        - mono
+        - round
+
+- Block style
+    - background colour
+    - focus decoration
+    - shadow
+    - ratio
+
+
+
+- List
+    - todo list
+    - toggle list
+    - counter list
+    - icon list
+- decoration
+
 /* ------------------- */
 .text-center {
   text-align: center;

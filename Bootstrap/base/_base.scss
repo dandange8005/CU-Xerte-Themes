@@ -202,10 +202,19 @@ section {
 }
 
 // Utility classes for list
+/*  
+- todo list
+- toggle list
+- bullet list
+- numbered list
+- no list    
+*/
+
 
 .list-none {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 // Icon list
