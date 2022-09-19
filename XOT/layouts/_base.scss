@@ -2,18 +2,19 @@
     LAYOUT - BASE
 =======================*/
 
+/* ===============
+    XERTE PAGE WIDTH
+================== */
 
-
-/* XERTE PAGE WIDTH */
 #x_headerBlock div,
 #x_pageDiv {
-    width: 95%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 #x_pageDiv {
-    padding-inline: 0;
+    padding-top: var(--size-5);
 }
 
 @media (min-width: 768px) {
@@ -24,10 +25,27 @@
     }
 }
 
-/* CONTENT RESET */
-#x_pageDiv {
-    padding-block: var(--size-7);
+
+/* ===============
+    BODY
+================== */
+/* BODY BACKGROUND */
+#x_mainHolder {
+    background-color: var(--clr-body-bg);
+    border: none;
+    width: 100% !important;
 }
+
+/* PARAGRAPH COLOUR */
+#x_mainHolder p, #textHolder {
+	color: var(--clr-body-text);
+}
+
+
+/* CONTENT RESET */
+// #x_pageDiv {
+//     padding-block: var(--size-7);
+// }
 
 h1,
 h2,

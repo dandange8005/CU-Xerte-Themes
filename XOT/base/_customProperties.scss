@@ -6,7 +6,13 @@ Date:
 
 
 /* Import open props */
-@import "https://unpkg.com/open-props";
+// @import "https://unpkg.com/open-props";
+// @import "https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css";
+
+@import "../abstract/openProps";
+
+
+
 
 // /* GOOGLE FONT IMPORT DECLARATION */
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
@@ -59,11 +65,13 @@ Date:
 
 
 // Images
---main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
-    
-/* XOT Project Theme */
-/* ======================
 
+
+
+
+/* ========== XOT Project Theme ============*/
+
+/*
     XOT Project Custom Properties
 
     Header
@@ -88,22 +96,36 @@ Date:
         --ff-mono
         --ff-serif
 
-
-
 */
 
+// Header
+--clr-header-bg: hsl(233, 22%, 93%);
+--clr-header-h1: var(--black);
+--clr-header-h2: var(--cu-red);
+--main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
 
+// Footer
+--clr-footder-bg: var(--gray-4);
+--clr-footer-text: var(--cu-blue-dark);
+--clr-progress-bar: var(--cu-blue-dark);
 
+// Body
+--clr-body-bg: #F8F6FA;
+--clr-body-text: var(--neutral-8);
+--clr-heading: var(--navy-1);
 
+// Link
+--clr-link: var(--cu-sky);
+--clr-link-visited: #330072;
+
+// Main colours
 --clr-primary: var(--cu-red);
 --clr-accent: var(--cu-blue);
---clr-header-bg: var(--gradient-23);
---clr-footder-bg: var(--gray-4);
---clr-main-bg: var(--light);
---clr-body: var(--neutral-8);
---clr-link: var(--cu-sky);
 --clr-border: hsl(216, 12%, 84%);
---clr-heading: var(--navy-1);
+
+
+
+
 --clr-headershade: var(--navy-2);
 --clr-panelborder: var(--gray-5);
 --clr-shaded: #f2f2f2;

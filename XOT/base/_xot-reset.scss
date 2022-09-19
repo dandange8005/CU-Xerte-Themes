@@ -7,12 +7,6 @@
     overflow-x: hidden;
 }
 
-/* MAIN HOLDER STYLE */
-#x_mainHolder {
-    border: none;
-    width: 100% !important;
-    background-color: var(--clr-main-bg);
-}
 /*stop scrollbar from showing when pseudo elements extend beyond the page view width*/
 #x_pageHolder {
     overflow-x: hidden;

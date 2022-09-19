@@ -2,10 +2,15 @@
     LAYOUT - FOOTER
 =======================*/
 
+// Footer bg #x_footerBlock
+// Top border of footer #x_footerBlock
+// Footer TEXTURE #x_footerBg
+// FOOTER PAGE NUMBERING BOX #x_pageNo
+
 
 #x_footerBlock {
     background: var(--clr-footder-bg);
-    color: var(--cu-blue-dark);
+    color: var(--clr-footer-text);
 }
 
 /*hide resize button*/
@@ -24,5 +29,5 @@
 
 // progress bar
 .pbBar {
-    background-color: var(--navy-1);
+    background-color: var(--clr-progress-bar);
 }

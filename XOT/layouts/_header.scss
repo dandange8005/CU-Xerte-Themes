@@ -23,10 +23,10 @@
   }
 
   #x_headerBlock div {
-    padding: 1.2em 0;
+    padding: 1.5rem 0;
   }
   
-  // header area drop shadow 
+// Header bottom decoration
 #x_headerBlock::after {
     position: absolute;
     content: '';
@@ -45,7 +45,7 @@
     // font-family: $ff-condensed;
     text-transform: uppercase;
     font-size: var(--fs-sm);
-    color: var(--light);
+    color: var(--clr-header-h1);
     opacity: .8;
     margin-bottom: 5px;
     font-weight: 600;
@@ -53,7 +53,7 @@
 
   #x_headerBlock h2 {
     font-size: var(--fs-lg);
-    color: var(--white);
+    color: var(--clr-header-h2);
     margin-bottom: 0;
   }
 
