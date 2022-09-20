@@ -1,3 +1,21 @@
+## Old project structure
+
+Google Fonts
+Custom Properties
+XERTE GENERAL FIXES
+Typography
+Header and Footer
+Base
+media
+layout
+    flex
+    grid    
+jquery ui
+    buttons
+    accordion
+    tab
+
+
 ## XOT Theme Document
 
 This document outlines the folder structure of XOT Sass folder structure

@@ -8,9 +8,14 @@
 // FOOTER PAGE NUMBERING BOX #x_pageNo
 
 
-#x_footerBlock {
-    background: var(--clr-footder-bg);
-    color: var(--clr-footer-text);
+#x_footerBg {
+    background: var(--clr-footer-bg);
+}
+
+#x_pageNo {
+    background: transparent;
+    color: var(--white);
+    width:4.5rem;
 }
 
 /*hide resize button*/
@@ -18,14 +23,14 @@
     display: none !important;
 }
 
-.ui-button:after,
-#x_footerChevron {
-    color: var(--cu-blue-dark);
-}
+// .ui-button:after,
+// #x_footerChevron {
+//     color: var(--cu-blue-dark);
+// }
 
-.ui-button.ui-state-hover::after {
-    color: var(--gray-7);
-}
+// .ui-button.ui-state-hover::after {
+//     color: var(--gray-7);
+// }
 
 // progress bar
 .pbBar {

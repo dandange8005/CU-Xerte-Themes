@@ -12,10 +12,15 @@
     overflow-x: hidden;
 }
 
+/*remove mainHolder border*/
+  #x_mainHolder {
+	border: none;
+}
+
 /* --MAIN CONTENT--- */
 
 #x_pageHolder button {
-	font-family: var(--ff-sans);
+	font-family: var(--ff-body);
 	font-weight: bold;
 }
 

@@ -2,6 +2,15 @@
 /* UTILITY CLASSES     */
 /* ------------------- */
 
+.container {
+    width: min(var(--container-width),100% - 2rem);
+    margin-inline: auto;
+}
+
+.center {
+    margin-inline: auto;
+}
+
 // text centre
 .text-center {
     text-align: center;

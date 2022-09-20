@@ -368,19 +368,19 @@ This is the openProps referencing and should not included in the main stylesheet
 }
 
 /* ======================
-    CUSTOM PROPERTIES
+    GENERAL CUSTOM PROPERTIES
 =======================*/
-:root {
+:where(html) {
   /* CU Colours */
-  --cu-red: hsl(353, 65%, 52%);
-  --cu-blue: hsl(224, 61%, 34%);
-  --cu-blue-dark: hsl(222, 44%, 21%);
-  --cu-sky: hsl(206, 100%, 33%);
-  --cu-gold: hsl(41, 46%, 57%);
-  --cu-gold-light: hsl(46, 44%, 69%);
-  --navy-1:hsl(203, 29%, 28%);
-  --navy-2:hsl(204, 14%, 46%);
-  --navy-3:hsl(201, 27%, 20%);
+  --cu-red: #d43548;
+  --cu-blue: #223e8c;
+  --cu-blue-dark: #1e2c4d;
+  --cu-sky: #005fa8;
+  --cu-gold: #c4a45f;
+  --cu-gold-light: #d3c38d;
+  --navy-1:#334c5c;
+  --navy-2:#657986;
+  --navy-3:#253741;
   /* Neutral colour */
   --black: hsl(340, 5%, 12%);
   --white: hsl(0, 0%, 100%);
@@ -427,15 +427,15 @@ This is the openProps referencing and should not included in the main stylesheet
           --ff-serif
 
   */
-  --clr-header-bg: hsl(233, 22%, 93%);
-  --clr-header-h1: var(--black);
-  --clr-header-h2: var(--cu-red);
+  --clr-header-bg: #323441;
+  --clr-header-h1: var(--light);
+  --clr-header-h2: var(--white);
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
-  --clr-footder-bg: var(--gray-4);
+  --clr-footder-bg: #3D3B3C;
   --clr-footer-text: var(--cu-blue-dark);
   --clr-progress-bar: var(--cu-blue-dark);
-  --clr-body-bg: #F8F6FA;
-  --clr-body-text: var(--neutral-8);
+  --clr-body-bg: #F6F4EA;
+  --clr-body-text: var(--neutral-7);
   --clr-heading: var(--navy-1);
   --clr-link: var(--cu-sky);
   --clr-link-visited: #330072;
@@ -447,7 +447,8 @@ This is the openProps referencing and should not included in the main stylesheet
   --clr-shaded: #f2f2f2;
   --clr-btn: var(--clr-heading);
   --clr-btn-rollover: var(--clr-headershade);
-  --ff-sans: var(--font-sans);
+  --ff-body: "Lato", sans-serif;
+  --ff-heading: "Lato", sans-serif;
   --ff-serif: var(--font-serif);
   --ff-mono: var(--font-mono);
   --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
@@ -526,9 +527,14 @@ html {
   overflow-x: hidden;
 }
 
+/*remove mainHolder border*/
+#x_mainHolder {
+  border: none;
+}
+
 /* --MAIN CONTENT--- */
 #x_pageHolder button {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-body);
   font-weight: bold;
 }
 
@@ -562,6 +568,198 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 }
 
 /* ======================
+    BASE - MEDIA
+
+    - images
+    - figures
+    - video
+    - embeded links
+
+=======================*/
+img {
+  height: auto;
+}
+
+figure.image {
+  margin: 0;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+figcaption {
+  background: var(--gray-2);
+  color: var(--text-3);
+  font-size: var(--fs-sm);
+  padding: var(--size-2);
+  caption-side: bottom;
+}
+
+.image-inline {
+  display: inline-block;
+}
+
+.image-full {
+  width: 100%;
+  height: auto;
+}
+
+.image-round {
+  border-radius: var(--radius-2);
+}
+
+/* Styles to the screenshots */
+.image-screenshots {
+  border: 1px solid var(--clr-border);
+  margin: 2rem auto;
+  clear: both;
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-3);
+}
+
+/* Media - iframe Block */
+/* iframe Block */
+.video-720 {
+  max-width: 720px;
+  aspect-ratio: 16/9;
+}
+
+.iframe-block {
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.32%;
+  box-shadow: var(--shadow-3);
+}
+.iframe-block iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 0;
+}
+.iframe-block--xerte, .iframe-block--h5p {
+  border: 4px solid var(--clr-border);
+}
+.iframe-block--xerte {
+  padding-bottom: 75%;
+}
+.iframe-block__caption {
+  background: var(--light);
+  color: var(--clr-body);
+  font-style: italic;
+  font-size: var(--fs-sm);
+  padding: 4px;
+  margin-top: 0;
+}
+
+/* =====================
+  Layouts - Header 
+======================== */
+#x_headerBlock {
+  box-shadow: none;
+  background: var(--clr-header-bg);
+  /* background: linear-gradient(50deg, rgba(0, 106, 175, 0.8) 0%, 
+                                          rgba(0, 106, 175, 0.98) 45%, 
+                                          rgba(0, 106, 175, 0.98) 45%, 
+                                          rgba(0, 106, 175, 0.8) 100%), 
+                                          url("https://xerte.cardiff.ac.uk/USER-FILES/10067-sopnz-Nottingham/media/carbs_001.jpg");
+    background-size: cover;
+    background-position: center 65%; */
+}
+
+#x_headerBlock div {
+  padding: 1.5rem 0;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#x_headerBlock::after {
+  position: absolute;
+  content: "";
+  bottom: -12px;
+  left: 0px;
+  width: 100%;
+  background-image: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png");
+  background-repeat: repeat-x;
+  background-size: 1px 12px;
+  height: 12px;
+  z-index: 2;
+}
+
+#x_headerBlock h1 {
+  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  color: var(--clr-header-h1);
+  opacity: 0.8;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+#x_headerBlock h2 {
+  font-size: var(--fs-lg);
+  color: var(--clr-header-h2);
+  margin-bottom: 0;
+}
+
+#x_headerBlock div {
+  padding-left: 70px;
+  position: relative;
+}
+
+#x_headerBlock div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 60px;
+  aspect-ratio: 1;
+  background-image: var(--main-logo);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#x_headerBlock h1, #x_headerBlock h2 {
+  margin-left: 1rem;
+}
+
+/* ======================
+    LAYOUT - BASE
+=======================*/
+/* ===============
+    XERTE PAGE WIDTH
+================== */
+/* ===============
+    BODY
+================== */
+/* BODY BACKGROUND */
+#x_mainHolder {
+  background-color: var(--clr-body-bg);
+  border: none;
+  width: 100% !important;
+}
+
+/* PARAGRAPH COLOUR */
+#x_mainHolder p, #textHolder {
+  color: var(--clr-body-text);
+}
+
+/* CONTENT RESET */
+h1,
+h2,
+h3 {
+  padding: 0;
+}
+
+p {
+  padding: 0;
+}
+
+/* ======================
     TYPOGRAPHY
 
     - body
@@ -573,7 +771,7 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
     - horizontal rule
 =======================*/
 body {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-body);
   font-weight: 400;
   font-size: var(--fs-base) !important;
   color: var(--clr-body-text);
@@ -587,9 +785,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--ff-sans);
-  font-weight: var(--font-weight-7);
-  color: var(--clr-heading);
+  font-family: var(--ff-heading);
+  font-weight: 700;
 }
 
 h1 {
@@ -610,6 +807,15 @@ h3 {
 h4 {
   font-size: var(--fs-lg);
   line-height: var(--font-lineheight-3);
+}
+
+.page-title {
+  font-size: var(--fs-3xl);
+  color: var(--clr-primary);
+  font-weight: 900;
+  max-width: var(--size-header-3);
+  margin-top: var(--size-fluid-3);
+  text-transform: uppercase;
 }
 
 #pageContents > *:where(:not(:last-child)),
@@ -634,6 +840,10 @@ a:focus {
   text-decoration-thickness: max(0.08em, 1.5px);
   text-underline-offset: 0.15em;
   color: var(--clr-link);
+}
+
+a:visited {
+  color: var(--clr-link-visited);
 }
 
 a[href^=mailto]::before {
@@ -806,237 +1016,29 @@ hr {
   margin-block: var(--size-fluid-3);
 }
 
-/* ======================
-    BASE - MEDIA
-
-    - images
-    - figures
-    - video
-    - embeded links
-
-=======================*/
-img {
-  height: auto;
-}
-
-figure.image {
-  margin: 0;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-}
-
-figcaption {
-  background: var(--gray-2);
-  color: var(--text-3);
-  font-size: var(--fs-sm);
-  padding: var(--size-2);
-  caption-side: bottom;
-}
-
-.image-inline {
-  display: inline-block;
-}
-
-.image-full {
-  width: 100%;
-  height: auto;
-}
-
-.image-round {
-  border-radius: var(--radius-2);
-}
-
-/* Styles to the screenshots */
-.image-screenshots {
-  border: 1px solid var(--clr-border);
-  margin: 2rem auto;
-  clear: both;
-  border-radius: var(--radius-2);
-  box-shadow: var(--shadow-3);
-}
-
-/* Media - iframe Block */
-/* iframe Block */
-.video-720 {
-  max-width: 720px;
-  aspect-ratio: 16/9;
-}
-
-.iframe-block {
-  height: 0;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 56.32%;
-  box-shadow: var(--shadow-3);
-}
-.iframe-block iframe {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border: 0;
-}
-.iframe-block--xerte, .iframe-block--h5p {
-  border: 4px solid var(--clr-border);
-}
-.iframe-block--xerte {
-  padding-bottom: 75%;
-}
-.iframe-block__caption {
-  background: var(--light);
-  color: var(--clr-body);
-  font-style: italic;
-  font-size: var(--fs-sm);
-  padding: 4px;
-  margin-top: 0;
-}
-
-/* =====================
-  Layouts - Header 
-======================== */
-#x_headerBlock {
-  box-shadow: none;
-  background: var(--clr-header-bg);
-  /* background: linear-gradient(50deg, rgba(0, 106, 175, 0.8) 0%, 
-                                          rgba(0, 106, 175, 0.98) 45%, 
-                                          rgba(0, 106, 175, 0.98) 45%, 
-                                          rgba(0, 106, 175, 0.8) 100%), 
-                                          url("https://xerte.cardiff.ac.uk/USER-FILES/10067-sopnz-Nottingham/media/carbs_001.jpg");
-    background-size: cover;
-    background-position: center 65%; */
-}
-
-#x_headerBlock div {
-  padding: 1.5rem 0;
-}
-
-#x_headerBlock::after {
-  position: absolute;
-  content: "";
-  bottom: -12px;
-  left: 0px;
-  width: 100%;
-  background-image: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png");
-  background-repeat: repeat-x;
-  background-size: 1px 12px;
-  height: 12px;
-  z-index: 2;
-}
-
-#x_headerBlock h1 {
-  text-transform: uppercase;
-  font-size: var(--fs-sm);
-  color: var(--clr-header-h1);
-  opacity: 0.8;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-#x_headerBlock h2 {
-  font-size: var(--fs-lg);
-  color: var(--clr-header-h2);
-  margin-bottom: 0;
-}
-
-#x_headerBlock div {
-  padding-left: 70px;
-  position: relative;
-}
-
-#x_headerBlock div::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 60px;
-  aspect-ratio: 1;
-  background-image: var(--main-logo);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#x_headerBlock h1, #x_headerBlock h2 {
-  margin-left: 1rem;
-}
-
-/* ======================
-    LAYOUT - BASE
-=======================*/
-/* ===============
-    XERTE PAGE WIDTH
-================== */
-#x_headerBlock div,
-#x_pageDiv {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#x_pageDiv {
-  padding-top: var(--size-5);
-}
-
+/* XERTE PAGE WIDTH Small screen*/
 @media (min-width: 768px) {
   #x_headerBlock div,
 #x_pageDiv {
     width: 85%;
   }
 }
-/* ===============
-    BODY
-================== */
-/* BODY BACKGROUND */
-#x_mainHolder {
-  background-color: var(--clr-body-bg);
-  border: none;
-  width: 100% !important;
-}
-
-/* PARAGRAPH COLOUR */
-#x_mainHolder p, #textHolder {
-  color: var(--clr-body-text);
-}
-
-/* CONTENT RESET */
-h1,
-h2,
-h3 {
-  padding: 0;
-}
-
-p {
-  padding: 0;
-}
-
-.container {
-  width: min(var(--container-width), 100% - 2rem);
-  margin-inline: auto;
-}
-
 /* ======================
     LAYOUT - FOOTER
 =======================*/
-#x_footerBlock {
-  background: var(--clr-footder-bg);
-  color: var(--clr-footer-text);
+#x_footerBg {
+  background: var(--clr-footer-bg);
+}
+
+#x_pageNo {
+  background: transparent;
+  color: var(--white);
+  width: 4.5rem;
 }
 
 /*hide resize button*/
 #x_cssBtn {
   display: none !important;
-}
-
-.ui-button:after,
-#x_footerChevron {
-  color: var(--cu-blue-dark);
-}
-
-.ui-button.ui-state-hover::after {
-  color: var(--gray-7);
 }
 
 .pbBar {
@@ -1391,6 +1393,15 @@ table.glossary tr td:first-child {
 /* ------------------- */
 /* UTILITY CLASSES     */
 /* ------------------- */
+.container {
+  width: min(var(--container-width), 100% - 2rem);
+  margin-inline: auto;
+}
+
+.center {
+  margin-inline: auto;
+}
+
 .text-center {
   text-align: center;
 }

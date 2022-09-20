@@ -12,8 +12,6 @@ Date:
 @import "../abstract/openProps";
 
 
-
-
 // /* GOOGLE FONT IMPORT DECLARATION */
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
 // /* Import Google Fonts and materials icons */
@@ -22,21 +20,22 @@ Date:
 
 
 /* ======================
-    CUSTOM PROPERTIES
+    GENERAL CUSTOM PROPERTIES
 =======================*/
 
 
-:root {
+
+:where(html) {
 /* CU Colours */
---cu-red: hsl(353, 65%, 52%);
---cu-blue: hsl(224, 61%, 34%);
---cu-blue-dark: hsl(222, 44%, 21%);
---cu-sky: hsl(206, 100%, 33%);
---cu-gold: hsl(41, 46%, 57%);
---cu-gold-light: hsl(46, 44%, 69%);
---navy-1:hsl(203, 29%, 28%);
---navy-2:hsl(204, 14%, 46%);
---navy-3:hsl(201, 27%, 20%);
+--cu-red: #d43548;
+--cu-blue: #223e8c;
+--cu-blue-dark: #1e2c4d;
+--cu-sky: #005fa8;
+--cu-gold: #c4a45f;
+--cu-gold-light: #d3c38d;
+--navy-1:#334c5c;
+--navy-2:#657986;
+--navy-3:#253741;
 
 /* Neutral colour */
 --black: hsl(340, 5%, 12%);
@@ -62,11 +61,6 @@ Date:
 // Gradients
 --gradient-text: var(--gradient-23);
 --gradient-image: url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
-
-
-// Images
-
-
 
 
 /* ========== XOT Project Theme ============*/
@@ -99,19 +93,19 @@ Date:
 */
 
 // Header
---clr-header-bg: hsl(233, 22%, 93%);
---clr-header-h1: var(--black);
---clr-header-h2: var(--cu-red);
+--clr-header-bg: #323441;
+--clr-header-h1: var(--light);
+--clr-header-h2: var(--white);
 --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
 
 // Footer
---clr-footder-bg: var(--gray-4);
+--clr-footder-bg: #3D3B3C;
 --clr-footer-text: var(--cu-blue-dark);
 --clr-progress-bar: var(--cu-blue-dark);
 
 // Body
---clr-body-bg: #F8F6FA;
---clr-body-text: var(--neutral-8);
+--clr-body-bg: #F6F4EA;
+--clr-body-text: var(--neutral-7);
 --clr-heading: var(--navy-1);
 
 // Link
@@ -136,7 +130,8 @@ Date:
 
 
 // Typography
---ff-sans: var(--font-sans);
+--ff-body: 'Lato', sans-serif;
+--ff-heading: 'Lato', sans-serif;
 --ff-serif: var(--font-serif);
 --ff-mono: var(--font-mono);
 
