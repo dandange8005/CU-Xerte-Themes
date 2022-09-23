@@ -14,6 +14,8 @@
 
 /* ===============
     XERTE PAGE WIDTH
+
+    This is now available in optional property 
 ================== */
 
 // #x_headerBlock div,
@@ -35,8 +37,9 @@
 }
 
 /* PARAGRAPH COLOUR */
-#x_mainHolder p, #textHolder {
-	color: var(--clr-body-text);
+#x_mainHolder p,
+#textHolder {
+    color: var(--clr-body-text);
 }
 
 /* CONTENT RESET */
@@ -54,11 +57,10 @@ p {
     padding: 0;
 }
 
-
 body {
     font-family: var(--ff-body);
     font-weight: 400;
-    font-size: var(--fs-base)!important;
+    font-size: var(--fs-base) !important;
     color: var(--clr-body-text);
     line-height: 1.625;
 }
@@ -67,44 +69,52 @@ body {
     HEADING
 ================== */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--ff-heading);
-    font-weight: 700;
+#pageContents {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--ff-heading);
+        font-weight: 700;
+        color: var(--clr-heading);
+        margin-bottom: var(--size-fluid-1);
+    }
+
+    h1 {
+        font-size: var(--fs-3xl);
+        line-height: var(--font-lineheight-0);
+    }
+
+    h2 {
+        font-size: var(--fs-2xl);
+        line-height: var(--font-lineheight-1);
+    }
+
+    h3 {
+        font-size: var(--fs-xl);
+        line-height: var(--font-lineheight-2);
+
+    }
+
+    h4 {
+        font-size: var(--fs-lg);
+        line-height: var(--font-lineheight-3);
+    }
+
+    .page-title {
+        font-size: var(--fs-3xl);
+        color: var(--clr-accent);
+        font-weight: 900;
+        max-width: var(--size-header-3);
+        margin-top: var(--size-fluid-3);
+        text-transform: uppercase;
+    }
+
 }
 
-h1 {
-    font-size: var(--fs-3xl);
-    line-height: var(--font-lineheight-0);
-}
-h2 {
-    font-size: var(--fs-2xl);
-    line-height: var(--font-lineheight-1);
-}
-
-h3 {
-    font-size: var(--fs-xl);
-    line-height: var(--font-lineheight-2);
-
-}
-
-h4 {
-    font-size: var(--fs-lg);
-    line-height: var(--font-lineheight-3);
-}
-
-.page-title {
-    font-size: var(--fs-3xl);
-    color: var(--clr-primary);
-    font-weight:900;
-    max-width: var(--size-header-3);
-    margin-top: var(--size-fluid-3);
-    text-transform: uppercase;
-}
 
 /* ===============
     SPCACING
@@ -114,12 +124,6 @@ h4 {
 .container>*:where(:not(:last-child)),
 .flow>*:where(:not(:last-child)) {
     margin-bottom: var(--size-fluid-2);
-}
-
-#pageContents {
-    h2, h3, h4, h5 {
-        margin-bottom: var(--size-fluid-1);
-    }
 }
 
 
@@ -132,6 +136,7 @@ a {
     text-decoration: none;
     position: relative;
 }
+
 a:hover,
 a:focus {
     text-decoration: underline;
@@ -139,6 +144,7 @@ a:focus {
     text-underline-offset: 0.15em;
     color: var(--clr-link);
 }
+
 a:visited {
     color: var(--clr-link-visited);
 }
@@ -151,6 +157,7 @@ a[href^="mailto"]::before {
     font-size: var(--fs-xs);
 
 }
+
 a[target='_blank']:hover::after,
 a[target='_blank']:focus::after {
     content: "\f35d";
@@ -172,7 +179,7 @@ a[target='_blank']:focus::after,
 
 /* action link */
 .action-link::before {
-    content:"\f0a9";
+    content: "\f0a9";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: var(--size-2);
@@ -198,7 +205,8 @@ ol {
     gap: var(--size-3);
 }
 
-ul#tabHolder, ul.tabList {
+ul#tabHolder,
+ul.tabList {
     display: block;
 }
 
@@ -211,10 +219,11 @@ ol li {
     padding-left: var(--size-2);
 }
 
-li  ul {
+li ul {
     margin-top: var(--size-3);
 
 }
+
 // Utility classes for list
 
 .list-none {

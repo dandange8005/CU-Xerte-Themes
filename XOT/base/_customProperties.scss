@@ -20,105 +20,108 @@ Date:
 
 
 /* ======================
-    GENERAL CUSTOM PROPERTIES
+    CUSTOM PROPERTIES
 =======================*/
 
-//CU Colours
-
+//Cardiff University Colours
 :where(html) {
-/* CU Colours */
---cu-red: #d43548;
---cu-blue: #223e8c;
---cu-blue-dark: #1e2c4d;
---cu-sky: #005fa8;
---cu-gold: #c4a45f;
---cu-gold-light: #d3c38d;
---navy-1:#334c5c;
---navy-2:#657986;
---navy-3:#253741;
+    /* CU Colours */
+    --cu-red: #d43548;
+    --cu-blue: #223e8c;
+    --cu-blue-dark: #1e2c4d;
+    --cu-sky: #005fa8;
+    --cu-gold: #c4a45f;
+    --cu-gold-light: #d3c38d;
+    --navy-1: #334c5c;
+    --navy-2: #657986;
+    --navy-3: #253741;
 
-/* Neutral colour */
---black: hsl(340, 5%, 12%);
---white: hsl(0, 0%, 100%);
---light: hsl(210, 17%, 98%);
+    /* Neutral colour */
+    --black: hsl(340, 5%, 12%);
+    --white: hsl(0, 0%, 100%);
+    --light: hsl(210, 17%, 98%);
 
-/* Neutral colour shades */
---neutral-0: hsl(0, 0%, 98%);
---neutral-1:hsl(0, 0%, 96%);
---neutral-2:hsl(0, 0%, 90%);
---neutral-3:hsl(0, 0%, 83%);
---neutral-4:hsl(0, 0%, 64%);
---neutral-5:hsl(0, 0%, 45%);
---neutral-6:hsl(0, 0%, 32%);
---neutral-7:hsl(0, 0%, 25%);
---neutral-8:hsl(0, 0%, 15%);
---neutral-9:hsl(0, 0%, 9%);
+    /* Neutral colour shades */
+    --neutral-0: hsl(0, 0%, 98%);
+    --neutral-1: hsl(0, 0%, 96%);
+    --neutral-2: hsl(0, 0%, 90%);
+    --neutral-3: hsl(0, 0%, 83%);
+    --neutral-4: hsl(0, 0%, 64%);
+    --neutral-5: hsl(0, 0%, 45%);
+    --neutral-6: hsl(0, 0%, 32%);
+    --neutral-7: hsl(0, 0%, 25%);
+    --neutral-8: hsl(0, 0%, 15%);
+    --neutral-9: hsl(0, 0%, 9%);
 
-// Function colours
---clr-success:hsl(148, 100%, 25%);
---clr-danger: hsl(4, 77%, 48%);
+}
 
-// Gradients
---gradient-text: var(--gradient-23);
---gradient-image: url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+// XERTE Project Theme
+:where(html) {
 
 
-/* ========== XERTE Project Theme ============*/
-
---clr-accent: var(--cu-blue-dark);
+    --clr-accent: var(--cu-blue-dark);
 
 
-// XOT HEADER
---clr-header-bg: var(--clr-accent);
---clr-header-h1: var(--light);
---clr-header-h2: var(--white);
---main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
+    // XOT HEADER
+    --clr-header-bg: var(--clr-accent);
+    --clr-header-h1: var(--light);
+    --clr-header-h2: var(--white);
+    --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
 
-// XOT Footer
---clr-footer-bg: var(--neutral-5);
-// --clr-footer-text: var(--cu-blue-dark);
+    // XOT Footer
+    --clr-footer-bg: var(--neutral-5);
+    // --clr-footer-text: var(--cu-blue-dark);
 
-// Body
---clr-body-bg: #deddd8;
---clr-body-text: var(--neutral-7);
---clr-heading: var(--navy-1);
+    // Body
+    --clr-body-bg: #eae9e6;
+    --clr-body-text: var(--neutral-7);
+    --clr-heading: var(--clr-body-text);
 
-// Link
---clr-link: var(--cu-sky);
---clr-link-visited: #330072;
+    // Link
+    --clr-link: var(--cu-sky);
+    --clr-link-visited: #330072;
 
-// colour theme
+    // colour theme
 
---clr-border: hsl(216, 12%, 84%);
+    --clr-border: hsl(216, 12%, 84%);
 
---clr-headershade: var(--navy-2);
---clr-panelborder: var(--gray-5);
---clr-shaded: #f2f2f2;
+    --clr-headershade: var(--navy-2);
+    --clr-panelborder: var(--gray-5);
+    --clr-shaded: #f2f2f2;
 
-// button colours
---clr-btn: var(--clr-accent);
---clr-btn-rollover: var(--clr-headershade);
+    // button colours
+    --clr-btn: var(--clr-accent);
+    --clr-btn-rollover: var(--clr-headershade);
+
+    // Function colours
+    --clr-success: hsl(148, 100%, 25%);
+    --clr-danger: hsl(4, 77%, 48%);
+
+    // Gradients
+    --gradient-text: var(--gradient-23);
+    --gradient-image: url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
 
 
-// Typography
---ff-body: 'Lato', sans-serif;
---ff-heading: 'Lato', sans-serif;
---ff-serif: var(--font-serif);
---ff-mono: var(--font-mono);
+    // Typography
+    --ff-body: 'Lato', sans-serif;
+    --ff-heading: 'Lato', sans-serif;
+    --ff-serif: var(--font-serif);
+    --ff-mono: var(--font-mono);
 
-// Fluid font size
---fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
---fs-sm: clamp(0.83rem, 0.79rem + 0.20vw, 0.94rem);
---fs-base: clamp(0.94rem, 0.86rem + 0.37vw, 1.05rem);
---fs-lg: clamp(1.06rem, 0.94rem + 0.58vw, 1.35rem);
---fs-xl: clamp(1.19rem, 1.02rem + 0.85vw, 1.62rem);
---fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
---fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
---fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
+    // Fluid font size
+    --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
+    --fs-sm: clamp(0.83rem, 0.79rem + 0.20vw, 0.94rem);
+    --fs-base: clamp(0.94rem, 0.86rem + 0.37vw, 1.05rem);
+    --fs-lg: clamp(1.06rem, 0.94rem + 0.58vw, 1.35rem);
+    --fs-xl: clamp(1.19rem, 1.02rem + 0.85vw, 1.62rem);
+    --fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
+    --fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
+    --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
 
-// Spacing
---gap: var(--size-fluid-1);
+    // Spacing
+    --gap: var(--size-fluid-1);
 
-// Container
---container-width: 47rem;
+    // Container
+    --container-width: 47rem;
+
 }

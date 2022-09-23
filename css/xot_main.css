@@ -368,7 +368,7 @@ This is the openProps referencing and should not included in the main stylesheet
 }
 
 /* ======================
-    GENERAL CUSTOM PROPERTIES
+    CUSTOM PROPERTIES
 =======================*/
 :where(html) {
   /* CU Colours */
@@ -378,38 +378,36 @@ This is the openProps referencing and should not included in the main stylesheet
   --cu-sky: #005fa8;
   --cu-gold: #c4a45f;
   --cu-gold-light: #d3c38d;
-  --navy-1:#334c5c;
-  --navy-2:#657986;
-  --navy-3:#253741;
+  --navy-1: #334c5c;
+  --navy-2: #657986;
+  --navy-3: #253741;
   /* Neutral colour */
   --black: hsl(340, 5%, 12%);
   --white: hsl(0, 0%, 100%);
   --light: hsl(210, 17%, 98%);
   /* Neutral colour shades */
   --neutral-0: hsl(0, 0%, 98%);
-  --neutral-1:hsl(0, 0%, 96%);
-  --neutral-2:hsl(0, 0%, 90%);
-  --neutral-3:hsl(0, 0%, 83%);
-  --neutral-4:hsl(0, 0%, 64%);
-  --neutral-5:hsl(0, 0%, 45%);
-  --neutral-6:hsl(0, 0%, 32%);
-  --neutral-7:hsl(0, 0%, 25%);
-  --neutral-8:hsl(0, 0%, 15%);
-  --neutral-9:hsl(0, 0%, 9%);
-  --clr-success:hsl(148, 100%, 25%);
-  --clr-danger: hsl(4, 77%, 48%);
-  --gradient-text: var(--gradient-23);
-  --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
-  /* ========== XERTE Project Theme ============*/
+  --neutral-1: hsl(0, 0%, 96%);
+  --neutral-2: hsl(0, 0%, 90%);
+  --neutral-3: hsl(0, 0%, 83%);
+  --neutral-4: hsl(0, 0%, 64%);
+  --neutral-5: hsl(0, 0%, 45%);
+  --neutral-6: hsl(0, 0%, 32%);
+  --neutral-7: hsl(0, 0%, 25%);
+  --neutral-8: hsl(0, 0%, 15%);
+  --neutral-9: hsl(0, 0%, 9%);
+}
+
+:where(html) {
   --clr-accent: var(--cu-blue-dark);
   --clr-header-bg: var(--clr-accent);
   --clr-header-h1: var(--light);
   --clr-header-h2: var(--white);
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
   --clr-footer-bg: var(--neutral-5);
-  --clr-body-bg: #deddd8;
+  --clr-body-bg: #eae9e6;
   --clr-body-text: var(--neutral-7);
-  --clr-heading: var(--navy-1);
+  --clr-heading: var(--clr-body-text);
   --clr-link: var(--cu-sky);
   --clr-link-visited: #330072;
   --clr-border: hsl(216, 12%, 84%);
@@ -418,6 +416,10 @@ This is the openProps referencing and should not included in the main stylesheet
   --clr-shaded: #f2f2f2;
   --clr-btn: var(--clr-accent);
   --clr-btn-rollover: var(--clr-headershade);
+  --clr-success: hsl(148, 100%, 25%);
+  --clr-danger: hsl(4, 77%, 48%);
+  --gradient-text: var(--gradient-23);
+  --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
   --ff-body: "Lato", sans-serif;
   --ff-heading: "Lato", sans-serif;
   --ff-serif: var(--font-serif);
@@ -677,6 +679,8 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 =======================*/
 /* ===============
     XERTE PAGE WIDTH
+
+    This is now available in optional property 
 ================== */
 /* ===============
     BODY
@@ -689,7 +693,8 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 }
 
 /* PARAGRAPH COLOUR */
-#x_mainHolder p, #textHolder {
+#x_mainHolder p,
+#textHolder {
   color: var(--clr-body-text);
 }
 
@@ -715,39 +720,36 @@ body {
 /* ===============
     HEADING
 ================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+#pageContents h1,
+#pageContents h2,
+#pageContents h3,
+#pageContents h4,
+#pageContents h5,
+#pageContents h6 {
   font-family: var(--ff-heading);
   font-weight: 700;
+  color: var(--clr-heading);
+  margin-bottom: var(--size-fluid-1);
 }
-
-h1 {
+#pageContents h1 {
   font-size: var(--fs-3xl);
   line-height: var(--font-lineheight-0);
 }
-
-h2 {
+#pageContents h2 {
   font-size: var(--fs-2xl);
   line-height: var(--font-lineheight-1);
 }
-
-h3 {
+#pageContents h3 {
   font-size: var(--fs-xl);
   line-height: var(--font-lineheight-2);
 }
-
-h4 {
+#pageContents h4 {
   font-size: var(--fs-lg);
   line-height: var(--font-lineheight-3);
 }
-
-.page-title {
+#pageContents .page-title {
   font-size: var(--fs-3xl);
-  color: var(--clr-primary);
+  color: var(--clr-accent);
   font-weight: 900;
   max-width: var(--size-header-3);
   margin-top: var(--size-fluid-3);
@@ -761,10 +763,6 @@ h4 {
 .container > *:where(:not(:last-child)),
 .flow > *:where(:not(:last-child)) {
   margin-bottom: var(--size-fluid-2);
-}
-
-#pageContents h2, #pageContents h3, #pageContents h4, #pageContents h5 {
-  margin-bottom: var(--size-fluid-1);
 }
 
 /* ===============
@@ -841,7 +839,8 @@ ol {
   gap: var(--size-3);
 }
 
-ul#tabHolder, ul.tabList {
+ul#tabHolder,
+ul.tabList {
   display: block;
 }
 
@@ -1515,10 +1514,9 @@ table.glossary tr td:first-child {
 /* ------------------- */
 .container {
   width: min(var(--container-width), 100% - 2rem);
-  margin-inline: auto;
 }
 
-.center {
+.mx-auto {
   margin-inline: auto;
 }
 
