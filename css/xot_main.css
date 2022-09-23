@@ -400,52 +400,23 @@ This is the openProps referencing and should not included in the main stylesheet
   --clr-danger: hsl(4, 77%, 48%);
   --gradient-text: var(--gradient-23);
   --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
-  /* ========== XOT Project Theme ============*/
-  /*
-      XOT Project Custom Properties
-
-      Header
-          --clr-header-bg
-          --clr-header-title
-          --logo
-      Footer
-          --clr-footer-bg
-      Body
-          --clr-body-bg
-          --clr-body-text
-          --clr-body-title
-      link
-          --clr-link
-          --clr-link-visited
-      button
-          --clr-btn
-          --clr-btn-hover
-      Typography
-          --ff-body
-          --ff-heading
-          --ff-mono
-          --ff-serif
-
-  */
-  --clr-header-bg: #323441;
+  /* ========== XERTE Project Theme ============*/
+  --clr-accent: var(--cu-blue-dark);
+  --clr-header-bg: var(--clr-accent);
   --clr-header-h1: var(--light);
   --clr-header-h2: var(--white);
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
-  --clr-footder-bg: #3D3B3C;
-  --clr-footer-text: var(--cu-blue-dark);
-  --clr-progress-bar: var(--cu-blue-dark);
-  --clr-body-bg: #F6F4EA;
+  --clr-footer-bg: var(--neutral-5);
+  --clr-body-bg: #deddd8;
   --clr-body-text: var(--neutral-7);
   --clr-heading: var(--navy-1);
   --clr-link: var(--cu-sky);
   --clr-link-visited: #330072;
-  --clr-primary: var(--cu-red);
-  --clr-accent: var(--cu-blue);
   --clr-border: hsl(216, 12%, 84%);
   --clr-headershade: var(--navy-2);
   --clr-panelborder: var(--gray-5);
   --clr-shaded: #f2f2f2;
-  --clr-btn: var(--clr-heading);
+  --clr-btn: var(--clr-accent);
   --clr-btn-rollover: var(--clr-headershade);
   --ff-body: "Lato", sans-serif;
   --ff-heading: "Lato", sans-serif;
@@ -544,10 +515,10 @@ html {
 }
 
 a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active {
-  color: var(--clr-body);
+  color: var(--clr-body-text);
 }
 
-/* PANEL */
+/* RESET PANEL STYLE */
 #x_mainHolder:not(.x_flashCards_page) .panel:not(.ui-draggable) {
   border: 1px solid var(--clr-panelborder);
   box-shadow: none;
@@ -565,6 +536,436 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 
 #infoHolder {
   border: none;
+}
+
+/* PRESERVE INVERT FUNCTIONALITY FOR ACCESSIBILITY */
+.filter_inv #x_headerBlock h1, .filter_inv #x_headerBlock h2, .filter_inv #x_pageNo, .filter_inv #x_footerChevron {
+  color: black;
+}
+
+.filter_inv #x_mainHolder p, .filter_inv #textHolder, .filter_inv #x_mainHolder a, .filter_inv #x_mainHolder a:hover, .filter_inv #x_mainHolder a.x_glossary {
+  color: white;
+}
+
+.filter_inv #x_pageNo {
+  background-color: white;
+  border: none;
+}
+
+.filter_inv .ui-dialog {
+  background-color: #ffffff;
+}
+
+.filter_inv .ui-dialog .ui-widget-header {
+  border: 1px solid #666666;
+  background: #000000;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.filter_inv .ui-state-default {
+  color: #000000;
+  background: #ffffff;
+}
+
+.filter_inv p.pbTxt {
+  color: #000000 !important;
+}
+
+.filter_inv .pbContainer {
+  background-color: #000000;
+}
+
+.filter_inv #x_footerBlock .ui-button:after {
+  color: #000000;
+}
+
+.filter_inv #x_footerBlock .ui-button.ui-state-hover:after {
+  color: #404040;
+}
+
+.filter_inv #x_mainHolder a {
+  color: #000000;
+}
+
+.filter_inv #x_mainHolder a:hover {
+  color: #404040;
+}
+
+.filter_inv .x_tooltip {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* PRESERVE BLACK ON YELLOW FUNCTIONALITY FOR ACCESSIBILITY */
+.filter_boy #x_mainHolder p, .filter_boy #textHolder, .filter_boy #x_mainHolder a, .filter_boy #x_mainHolder a:hover, .filter_boy #x_mainHolder a.x_glossary {
+  color: black;
+}
+
+.filter_boy .ui-dialog .ui-widget-header {
+  border: 1px solid #666666;
+  background: #000000;
+  color: #ffff99;
+  font-weight: bold;
+}
+
+.filter_boy .ui-dialog {
+  background-color: #ffff99;
+}
+
+.filter_boy .ui-state-default {
+  color: #ffff99;
+  background: #000000;
+}
+
+.filter_boy p.pbTxt {
+  color: #ffff99 !important;
+}
+
+.filter_boy .pbContainer {
+  background-color: #ffff99;
+}
+
+.filter_boy #x_footerBlock {
+  border-top: 1px solid #ffff99;
+}
+
+.filter_boy #x_headerBlock {
+  border-bottom: 1px solid #ffff99;
+}
+
+.filter_boy #x_footerBlock .ui-button:after {
+  color: #ffff99;
+}
+
+.filter_boy #x_footerBlock .ui-button.ui-state-hover:after {
+  color: #B2B235;
+}
+
+.filter_boy #x_pageNo, .filter_boy #x_footerChevron {
+  color: #ffff99;
+}
+
+.filter_boy #x_mainHolder a {
+  color: #ffff99;
+}
+
+.filter_boy #x_mainHolder a:hover {
+  color: #B2B235;
+}
+
+.filter_boy .ui-widget-content {
+  background: #ffff99;
+}
+
+.filter_boy .x_tooltip {
+  background: #000000;
+  color: #ffff99;
+}
+
+/* ======================
+    LAYOUT - BASE
+
+    - body
+    - headers
+    - spacing
+    - link
+    - list
+    - blockquote
+    - horizontal rule
+
+=======================*/
+/* ===============
+    XERTE PAGE WIDTH
+================== */
+/* ===============
+    BODY
+================== */
+/* BODY BACKGROUND */
+#x_mainHolder {
+  background-color: var(--clr-body-bg);
+  border: none;
+  width: 100% !important;
+}
+
+/* PARAGRAPH COLOUR */
+#x_mainHolder p, #textHolder {
+  color: var(--clr-body-text);
+}
+
+/* CONTENT RESET */
+h1,
+h2,
+h3 {
+  padding: 0;
+}
+
+p {
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: var(--fs-base) !important;
+  color: var(--clr-body-text);
+  line-height: 1.625;
+}
+
+/* ===============
+    HEADING
+================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--fs-3xl);
+  line-height: var(--font-lineheight-0);
+}
+
+h2 {
+  font-size: var(--fs-2xl);
+  line-height: var(--font-lineheight-1);
+}
+
+h3 {
+  font-size: var(--fs-xl);
+  line-height: var(--font-lineheight-2);
+}
+
+h4 {
+  font-size: var(--fs-lg);
+  line-height: var(--font-lineheight-3);
+}
+
+.page-title {
+  font-size: var(--fs-3xl);
+  color: var(--clr-primary);
+  font-weight: 900;
+  max-width: var(--size-header-3);
+  margin-top: var(--size-fluid-3);
+  text-transform: uppercase;
+}
+
+/* ===============
+    SPCACING
+================== */
+#pageContents > *:where(:not(:last-child)),
+.container > *:where(:not(:last-child)),
+.flow > *:where(:not(:last-child)) {
+  margin-bottom: var(--size-fluid-2);
+}
+
+#pageContents h2, #pageContents h3, #pageContents h4, #pageContents h5 {
+  margin-bottom: var(--size-fluid-1);
+}
+
+/* ===============
+    LINK
+================== */
+a {
+  color: var(--clr-link);
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  text-decoration-thickness: max(0.08em, 1.5px);
+  text-underline-offset: 0.15em;
+  color: var(--clr-link);
+}
+
+a:visited {
+  color: var(--clr-link-visited);
+}
+
+a[href^=mailto]::before {
+  content: "\f0e0";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: var(--size-1);
+  font-size: var(--fs-xs);
+}
+
+a[target=_blank]:hover::after,
+a[target=_blank]:focus::after {
+  content: "\f35d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: var(--size-1);
+  font-size: var(--fs-xs);
+}
+
+a[href^=mailto]:hover::before,
+a[href^=mailto]:focus::before,
+a[target=_blank]:hover::after,
+a[target=_blank]:focus::after,
+.action-link:hover::before,
+.action-link:focus::before {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* action link */
+.action-link::before {
+  content: "\f0a9";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: var(--size-2);
+  color: var(--success);
+  font-size: var(--fs-lg);
+}
+
+a.action-link:hover::after,
+a.action-link:focus::after {
+  content: none;
+}
+
+/* ===============
+    LISTS
+================== */
+ul,
+ol {
+  padding: 0;
+  padding-left: var(--size-5);
+  display: grid;
+  gap: var(--size-3);
+}
+
+ul#tabHolder, ul.tabList {
+  display: block;
+}
+
+li {
+  line-height: var(--font-lineheight-3);
+}
+
+ul li,
+ol li {
+  padding-left: var(--size-2);
+}
+
+li ul {
+  margin-top: var(--size-3);
+}
+
+.list-none {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-icon {
+  margin-left: 0;
+  padding-left: var(--size-1);
+}
+.list-icon li {
+  display: flex;
+}
+.list-icon li span {
+  margin-right: var(--size-3);
+  color: var(--neutral-7);
+  font-size: var(--fs-lg);
+  margin-top: 3px;
+  line-height: 0;
+}
+
+.list-counter {
+  counter-reset: orderedlist;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: var(--size-1);
+}
+.list-counter li {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.list-counter li::before {
+  counter-increment: orderedlist;
+  content: counter(orderedlist);
+  width: var(--size-5);
+  height: var(--size-5);
+  background: var(--gray-2);
+  color: var(--gray-7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ===============
+    BLOCKQUOTE
+================== */
+blockquote {
+  margin-left: 0;
+  padding: 0.5rem 1rem;
+  border-left: 5px solid var(--clr-primary);
+  font-family: var(--ff-serif);
+  font-size: var(--fs-lg);
+  line-height: 1.625;
+}
+
+/* ===============
+    TABLE
+================== */
+table {
+  background: var(--white);
+  box-shadow: var(--shadow-2);
+  font-size: var(--fs-sm);
+}
+
+table,
+table tr,
+table td {
+  border: none;
+}
+
+thead th {
+  background: var(--clr-headershade);
+  color: var(--light);
+  font-weight: bold;
+}
+
+table tr td:not(:first-of-type) {
+  border-left: 1px solid var(--clr-border);
+}
+
+thead th:not(:first-of-type) {
+  border-left: 1px solid var(--light);
+}
+
+table tr:nth-child(even) {
+  background: var(--light);
+}
+
+/* ==================
+    horizontal rule
+==================== */
+hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-block: var(--size-fluid-2);
+  border: 0;
+  border-top: 0.0625rem solid var(--clr-border);
+}
+
+.break-l {
+  margin-block: var(--size-fluid-4);
+}
+
+.break-m {
+  margin-block: var(--size-fluid-3);
 }
 
 /* ======================
@@ -654,6 +1055,13 @@ figcaption {
   margin-top: 0;
 }
 
+/* XERTE PAGE WIDTH Small screen*/
+@media (min-width: 768px) {
+  #x_headerBlock div,
+#x_pageDiv {
+    width: 85%;
+  }
+}
 /* =====================
   Layouts - Header 
 ======================== */
@@ -728,312 +1136,17 @@ figcaption {
 }
 
 /* ======================
-    LAYOUT - BASE
-=======================*/
-/* ===============
-    XERTE PAGE WIDTH
-================== */
-/* ===============
-    BODY
-================== */
-/* BODY BACKGROUND */
-#x_mainHolder {
-  background-color: var(--clr-body-bg);
-  border: none;
-  width: 100% !important;
-}
-
-/* PARAGRAPH COLOUR */
-#x_mainHolder p, #textHolder {
-  color: var(--clr-body-text);
-}
-
-/* CONTENT RESET */
-h1,
-h2,
-h3 {
-  padding: 0;
-}
-
-p {
-  padding: 0;
-}
-
-/* ======================
-    TYPOGRAPHY
-
-    - body
-    - headers
-    - spacing
-    - link
-    - list
-    - blockquote
-    - horizontal rule
-=======================*/
-body {
-  font-family: var(--ff-body);
-  font-weight: 400;
-  font-size: var(--fs-base) !important;
-  color: var(--clr-body-text);
-  line-height: 1.625;
-}
-
-/* heading */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--ff-heading);
-  font-weight: 700;
-}
-
-h1 {
-  font-size: var(--fs-3xl);
-  line-height: var(--font-lineheight-0);
-}
-
-h2 {
-  font-size: var(--fs-2xl);
-  line-height: var(--font-lineheight-1);
-}
-
-h3 {
-  font-size: var(--fs-xl);
-  line-height: var(--font-lineheight-2);
-}
-
-h4 {
-  font-size: var(--fs-lg);
-  line-height: var(--font-lineheight-3);
-}
-
-.page-title {
-  font-size: var(--fs-3xl);
-  color: var(--clr-primary);
-  font-weight: 900;
-  max-width: var(--size-header-3);
-  margin-top: var(--size-fluid-3);
-  text-transform: uppercase;
-}
-
-#pageContents > *:where(:not(:last-child)),
-.container > *:where(:not(:last-child)),
-.flow > *:where(:not(:last-child)) {
-  margin-bottom: var(--size-fluid-2);
-}
-
-#pageContents h2, #pageContents h3, #pageContents h4, #pageContents h5 {
-  margin-bottom: var(--size-fluid-1);
-}
-
-a {
-  color: var(--clr-link);
-  text-decoration: none;
-  position: relative;
-}
-
-a:hover,
-a:focus {
-  text-decoration: underline;
-  text-decoration-thickness: max(0.08em, 1.5px);
-  text-underline-offset: 0.15em;
-  color: var(--clr-link);
-}
-
-a:visited {
-  color: var(--clr-link-visited);
-}
-
-a[href^=mailto]::before {
-  content: "\f0e0";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: var(--size-1);
-  font-size: var(--fs-xs);
-}
-
-a[target=_blank]:hover::after,
-a[target=_blank]:focus::after {
-  content: "\f35d";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-left: var(--size-1);
-  font-size: var(--fs-xs);
-}
-
-a[href^=mailto]:hover::before,
-a[href^=mailto]:focus::before,
-a[target=_blank]:hover::after,
-a[target=_blank]:focus::after,
-.action-link:hover::before,
-.action-link:focus::before {
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* action link */
-.action-link::before {
-  content: "\f0a9";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: var(--size-2);
-  color: var(--success);
-  font-size: var(--fs-lg);
-}
-
-a.action-link:hover::after,
-a.action-link:focus::after {
-  content: none;
-}
-
-ul,
-ol {
-  padding: 0;
-  padding-left: var(--size-5);
-  display: grid;
-  gap: var(--size-3);
-}
-
-ul#tabHolder, ul.tabList {
-  display: block;
-}
-
-li {
-  line-height: var(--font-lineheight-3);
-}
-
-ul li,
-ol li {
-  padding-left: var(--size-2);
-}
-
-li ul {
-  margin-top: var(--size-3);
-}
-
-.list-none {
-  list-style-type: none;
-  padding: 0;
-}
-
-.list-icon {
-  margin-left: 0;
-  padding-left: var(--size-1);
-}
-.list-icon li {
-  display: flex;
-}
-.list-icon li span {
-  margin-right: var(--size-3);
-  color: var(--neutral-7);
-  font-size: var(--fs-lg);
-  margin-top: 3px;
-  line-height: 0;
-}
-
-.list-counter {
-  counter-reset: orderedlist;
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: var(--size-1);
-}
-.list-counter li {
-  position: relative;
-  padding-left: 2.5rem;
-}
-.list-counter li::before {
-  counter-increment: orderedlist;
-  content: counter(orderedlist);
-  width: var(--size-5);
-  height: var(--size-5);
-  background: var(--gray-2);
-  color: var(--gray-7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-blockquote {
-  margin-left: 0;
-  padding: 0.5rem 1rem;
-  border-left: 5px solid var(--clr-primary);
-  font-family: var(--ff-serif);
-  font-size: var(--fs-lg);
-  line-height: 1.625;
-}
-
-/* Table */
-table {
-  background: var(--white);
-  box-shadow: var(--shadow-2);
-  font-size: var(--fs-sm);
-}
-
-table,
-table tr,
-table td {
-  border: none;
-}
-
-thead th {
-  background: var(--clr-headershade);
-  color: var(--light);
-  font-weight: bold;
-}
-
-table tr td:not(:first-of-type) {
-  border-left: 1px solid var(--clr-border);
-}
-
-thead th:not(:first-of-type) {
-  border-left: 1px solid var(--light);
-}
-
-table tr:nth-child(even) {
-  background: var(--light);
-}
-
-/* horizontal rule */
-hr {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-block: var(--size-fluid-2);
-  border: 0;
-  border-top: 0.0625rem solid var(--clr-border);
-}
-
-.break-l {
-  margin-block: var(--size-fluid-4);
-}
-
-.break-m {
-  margin-block: var(--size-fluid-3);
-}
-
-/* XERTE PAGE WIDTH Small screen*/
-@media (min-width: 768px) {
-  #x_headerBlock div,
-#x_pageDiv {
-    width: 85%;
-  }
-}
-/* ======================
     LAYOUT - FOOTER
 =======================*/
-#x_footerBg {
+/* Footer background colour */
+#x_footerBlock {
   background: var(--clr-footer-bg);
 }
 
+/* remove page number background */
 #x_pageNo {
   background: transparent;
-  color: var(--white);
-  width: 4.5rem;
+  padding-top: 8px;
 }
 
 /*hide resize button*/
@@ -1041,10 +1154,17 @@ hr {
   display: none !important;
 }
 
-.pbBar {
-  background-color: var(--clr-progress-bar);
+/* progress bar background and text */
+#x_footerProgress .pbBar {
+  background-color: var(--clr-header-bg);
+}
+#x_footerProgress .pbTxt {
+  color: var(--white);
 }
 
+/* SETUP FOR FONT AWESOME ICONS */
+/* (Already present in Xhibit Base Theme, but needed here for older versions of Xerte that do not have the base theme) */
+/* ICONS */
 /* ================================
     LAYOUT - TABLE OF CONTENT MENU
 ===================================*/

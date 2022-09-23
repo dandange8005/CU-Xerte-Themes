@@ -23,7 +23,7 @@ Date:
     GENERAL CUSTOM PROPERTIES
 =======================*/
 
-
+//CU Colours
 
 :where(html) {
 /* CU Colours */
@@ -63,48 +63,23 @@ Date:
 --gradient-image: url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
 
 
-/* ========== XOT Project Theme ============*/
+/* ========== XERTE Project Theme ============*/
 
-/*
-    XOT Project Custom Properties
+--clr-accent: var(--cu-blue-dark);
 
-    Header
-        --clr-header-bg
-        --clr-header-title
-        --logo
-    Footer
-        --clr-footer-bg
-    Body
-        --clr-body-bg
-        --clr-body-text
-        --clr-body-title
-    link
-        --clr-link
-        --clr-link-visited
-    button
-        --clr-btn
-        --clr-btn-hover
-    Typography
-        --ff-body
-        --ff-heading
-        --ff-mono
-        --ff-serif
 
-*/
-
-// Header
---clr-header-bg: #323441;
+// XOT HEADER
+--clr-header-bg: var(--clr-accent);
 --clr-header-h1: var(--light);
 --clr-header-h2: var(--white);
 --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
 
-// Footer
---clr-footder-bg: #3D3B3C;
---clr-footer-text: var(--cu-blue-dark);
---clr-progress-bar: var(--cu-blue-dark);
+// XOT Footer
+--clr-footer-bg: var(--neutral-5);
+// --clr-footer-text: var(--cu-blue-dark);
 
 // Body
---clr-body-bg: #F6F4EA;
+--clr-body-bg: #deddd8;
 --clr-body-text: var(--neutral-7);
 --clr-heading: var(--navy-1);
 
@@ -112,20 +87,16 @@ Date:
 --clr-link: var(--cu-sky);
 --clr-link-visited: #330072;
 
-// Main colours
---clr-primary: var(--cu-red);
---clr-accent: var(--cu-blue);
+// colour theme
+
 --clr-border: hsl(216, 12%, 84%);
-
-
-
 
 --clr-headershade: var(--navy-2);
 --clr-panelborder: var(--gray-5);
 --clr-shaded: #f2f2f2;
 
 // button colours
---clr-btn: var(--clr-heading);
+--clr-btn: var(--clr-accent);
 --clr-btn-rollover: var(--clr-headershade);
 
 
