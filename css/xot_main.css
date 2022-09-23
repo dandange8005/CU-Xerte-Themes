@@ -665,6 +665,96 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
   color: #ffff99;
 }
 
+/* =====================
+  Layouts - Header 
+======================== */
+#x_headerBlock {
+  box-shadow: none;
+  background: var(--clr-header-bg);
+  /* background: linear-gradient(50deg, rgba(0, 106, 175, 0.8) 0%, 
+                                          rgba(0, 106, 175, 0.98) 45%, 
+                                          rgba(0, 106, 175, 0.98) 45%, 
+                                          rgba(0, 106, 175, 0.8) 100%), 
+                                          url("https://xerte.cardiff.ac.uk/USER-FILES/10067-sopnz-Nottingham/media/carbs_001.jpg");
+    background-size: cover;
+    background-position: center 65%; */
+}
+
+#x_headerBlock div {
+  padding: 1.5rem 0;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#x_headerBlock h1 {
+  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  color: var(--clr-header-h1);
+  opacity: 0.8;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+#x_headerBlock h2 {
+  font-size: var(--fs-lg);
+  color: var(--clr-header-h2);
+  margin-bottom: 0;
+}
+
+#x_headerBlock div {
+  padding-left: 70px;
+  position: relative;
+}
+
+#x_headerBlock div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 60px;
+  aspect-ratio: 1;
+  background-image: var(--main-logo);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#x_headerBlock h1, #x_headerBlock h2 {
+  margin-left: 1rem;
+}
+
+/* ======================
+    LAYOUT - FOOTER
+=======================*/
+/* Footer background colour */
+#x_footerBlock {
+  background: var(--clr-footer-bg);
+}
+
+/* remove page number background */
+#x_pageNo {
+  background: transparent;
+  padding-top: 8px;
+}
+
+/*hide resize button*/
+#x_cssBtn {
+  display: none !important;
+}
+
+/* progress bar background and text */
+#x_footerProgress .pbBar {
+  background-color: var(--clr-header-bg);
+}
+#x_footerProgress .pbTxt {
+  color: var(--white);
+}
+
+/* SETUP FOR FONT AWESOME ICONS */
+/* (Already present in Xhibit Base Theme, but needed here for older versions of Xerte that do not have the base theme) */
+/* ICONS */
 /* ======================
     LAYOUT - BASE
 
@@ -1066,96 +1156,6 @@ figcaption {
     width: 85%;
   }
 }
-/* =====================
-  Layouts - Header 
-======================== */
-#x_headerBlock {
-  box-shadow: none;
-  background: var(--clr-header-bg);
-  /* background: linear-gradient(50deg, rgba(0, 106, 175, 0.8) 0%, 
-                                          rgba(0, 106, 175, 0.98) 45%, 
-                                          rgba(0, 106, 175, 0.98) 45%, 
-                                          rgba(0, 106, 175, 0.8) 100%), 
-                                          url("https://xerte.cardiff.ac.uk/USER-FILES/10067-sopnz-Nottingham/media/carbs_001.jpg");
-    background-size: cover;
-    background-position: center 65%; */
-}
-
-#x_headerBlock div {
-  padding: 1.5rem 0;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#x_headerBlock h1 {
-  text-transform: uppercase;
-  font-size: var(--fs-sm);
-  color: var(--clr-header-h1);
-  opacity: 0.8;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-#x_headerBlock h2 {
-  font-size: var(--fs-lg);
-  color: var(--clr-header-h2);
-  margin-bottom: 0;
-}
-
-#x_headerBlock div {
-  padding-left: 70px;
-  position: relative;
-}
-
-#x_headerBlock div::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 60px;
-  aspect-ratio: 1;
-  background-image: var(--main-logo);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#x_headerBlock h1, #x_headerBlock h2 {
-  margin-left: 1rem;
-}
-
-/* ======================
-    LAYOUT - FOOTER
-=======================*/
-/* Footer background colour */
-#x_footerBlock {
-  background: var(--clr-footer-bg);
-}
-
-/* remove page number background */
-#x_pageNo {
-  background: transparent;
-  padding-top: 8px;
-}
-
-/*hide resize button*/
-#x_cssBtn {
-  display: none !important;
-}
-
-/* progress bar background and text */
-#x_footerProgress .pbBar {
-  background-color: var(--clr-header-bg);
-}
-#x_footerProgress .pbTxt {
-  color: var(--white);
-}
-
-/* SETUP FOR FONT AWESOME ICONS */
-/* (Already present in Xhibit Base Theme, but needed here for older versions of Xerte that do not have the base theme) */
-/* ICONS */
 /* ================================
     LAYOUT - TABLE OF CONTENT MENU
 ===================================*/
