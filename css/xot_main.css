@@ -699,6 +699,10 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 }
 
 /* CONTENT RESET */
+#x_pageDiv {
+  padding-top: var(--size-5);
+}
+
 h1,
 h2,
 h3 {
@@ -1081,19 +1085,6 @@ figcaption {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-#x_headerBlock::after {
-  position: absolute;
-  content: "";
-  bottom: -12px;
-  left: 0px;
-  width: 100%;
-  background-image: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png");
-  background-repeat: repeat-x;
-  background-size: 1px 12px;
-  height: 12px;
-  z-index: 2;
 }
 
 #x_headerBlock h1 {

@@ -8,7 +8,7 @@ github page link:
 - https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU_logo.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png
-- 
+- https://dandange8005.github.io/CU-Xerte-Themes/css/xot_main.min.css
 
 
 ## Tools for developers
