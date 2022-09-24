@@ -371,44 +371,66 @@ This is the openProps referencing and should not included in the main stylesheet
     CUSTOM PROPERTIES
 =======================*/
 :where(html) {
-  /* CU Colours */
+  /* CU Core Colours */
   --cu-red: #d43548;
-  --cu-blue: #223e8c;
-  --cu-blue-dark: #1e2c4d;
-  --cu-sky: #005fa8;
-  --cu-gold: #c4a45f;
-  --cu-gold-light: #d3c38d;
+  --cu-cabaret: #D94C5D;
+  --cu-yellow: #F8D349;
+  --cu-green: #008458;
+  --cu-purple: #73479C;
+  --cu-magenta: #D63694;
+  --cu-bossanova: #3C2C59;
+  --cu-gold: #BD9E5E;
+  --cu-yuma: #C8BB8D;
+  --cu-timberwolf: #D4D2CA;
+  --cu-cararra: #EBE9E1;
+  --cu-blue: #233E8B;
+  --cu-PrussianBlue: #002554;
+  --cu-BlueZodiac: #152C51;
+  --cu-link: #045BC6;
+  --cu-allports: #006AAF;
+  --cu-poloBlue:#7598CB;
+  --cu-regentgrey: #8A94A8;
+  --cu-navy-1: #657986;
+  --cu-navy-2: #4D5E69;
+  --cu-navy-3: #2F444E;
   --navy-1: #334c5c;
   --navy-2: #657986;
   --navy-3: #253741;
   /* Neutral colour */
-  --black: hsl(340, 5%, 12%);
-  --white: hsl(0, 0%, 100%);
-  --light: hsl(210, 17%, 98%);
+  --black: #22211f;
+  --white: #ffffff;
+  --light: #f9fafb;
   /* Neutral colour shades */
-  --neutral-0: hsl(0, 0%, 98%);
-  --neutral-1: hsl(0, 0%, 96%);
-  --neutral-2: hsl(0, 0%, 90%);
-  --neutral-3: hsl(0, 0%, 83%);
-  --neutral-4: hsl(0, 0%, 64%);
-  --neutral-5: hsl(0, 0%, 45%);
-  --neutral-6: hsl(0, 0%, 32%);
-  --neutral-7: hsl(0, 0%, 25%);
-  --neutral-8: hsl(0, 0%, 15%);
-  --neutral-9: hsl(0, 0%, 9%);
+  --neutral-0: #F6F6F6;
+  --neutral-1: #F0F0F0;
+  --neutral-2: #cccccc;
+  --neutral-3: #BBBBBB;
+  --neutral-4: #999999;
+  --neutral-5: #8A8A8A;
+  --neutral-6: #666666;
+  --neutral-7: #555555;
+  --neutral-8: #333333;
+  --neutral-9: #1A1A18;
+  /* Shades */
+  --shade-gray: #D9D9D9;
+  --shade-gold: #EEE7D7;
+  --shade-sand: #EBE9E1;
+  --shade-blue: #EFF3F5;
+  --shade-green: #F0F5EF;
 }
 
 :where(html) {
-  --clr-accent: var(--cu-blue-dark);
+  --clr-accent: var(--cu-PrussianBlue);
+  --clr-gradient: var(--gradient-23);
   --clr-header-bg: var(--clr-accent);
   --clr-header-h1: var(--light);
   --clr-header-h2: var(--white);
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
   --clr-footer-bg: var(--neutral-5);
-  --clr-body-bg: #eae9e6;
-  --clr-body-text: var(--neutral-7);
-  --clr-heading: var(--clr-body-text);
-  --clr-link: var(--cu-sky);
+  --clr-body-bg: var(--shade-sand);
+  --clr-body-text: var(--neutral-8);
+  --clr-heading: var(--black);
+  --clr-link: var(--cu-link);
   --clr-link-visited: #330072;
   --clr-border: hsl(216, 12%, 84%);
   --clr-headershade: var(--navy-2);
@@ -418,7 +440,6 @@ This is the openProps referencing and should not included in the main stylesheet
   --clr-btn-rollover: var(--clr-headershade);
   --clr-success: hsl(148, 100%, 25%);
   --clr-danger: hsl(4, 77%, 48%);
-  --gradient-text: var(--gradient-23);
   --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
   --ff-body: "Lato", sans-serif;
   --ff-heading: "Lato", sans-serif;
@@ -432,6 +453,10 @@ This is the openProps referencing and should not included in the main stylesheet
   --fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
   --fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
   --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
+  --text-dark: var(--black);
+  --text-gray: var(--neutral-7);
+  --text-light: var(--neutral-5);
+  --gradient-text: var(--clr-gradient);
   --gap: var(--size-fluid-1);
   --container-width: 47rem;
 }
@@ -1516,62 +1541,6 @@ table.glossary tr td:first-child {
   text-align: center;
 }
 
-.bg-red {
-  background-color: var(--cu-red);
-}
-
-.bg-blue {
-  background-color: var(--cu-blue);
-}
-
-.bg-blue-dark {
-  background-color: var(--cu-blue-dark);
-}
-
-.bg-sky {
-  background-color: var(--cu-sky);
-}
-
-.bg-gold {
-  background-color: var(--cu-gold);
-}
-
-.bg-gold-light {
-  background-color: var(--cu-gold-light);
-}
-
-.bg-navy-1 {
-  background-color: var(--navy-1);
-}
-
-.bg-navy-2 {
-  background-color: var(--navy-2);
-}
-
-.bg-navy-3 {
-  background-color: var(--navy-3);
-}
-
-.bg-light {
-  background-color: var(--light);
-}
-
-.bg-black {
-  background-color: var(--black);
-}
-
-.bg-white {
-  background-color: var(--white);
-}
-
-.bg-accent {
-  background-color: var(--clr-accent);
-}
-
-.bg-compliment {
-  background-color: var(--clr-compliment);
-}
-
 .bg-success {
   background-color: var(--clr-success);
 }
@@ -1580,16 +1549,16 @@ table.glossary tr td:first-child {
   background-color: var(--clr-danger);
 }
 
-.text-1 {
-  color: var(--text-1);
+.text-dark {
+  color: var(--text-dark);
 }
 
-.text-2 {
-  color: var(--text-2);
+.text-gray {
+  color: var(--text-gray);
 }
 
-.text-3 {
-  color: var(--text-3);
+.text-light {
+  color: var(--text-light);
 }
 
 .text-white {

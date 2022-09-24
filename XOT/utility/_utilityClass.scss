@@ -15,66 +15,6 @@
     text-align: center;
 }
 
-// Background Colours
-.bg-red {
-    background-color: var(--cu-red);
-}
-
-.bg-blue {
-    background-color: var(--cu-blue);
-}
-
-.bg-blue-dark {
-    background-color: var(--cu-blue-dark);
-}
-
-.bg-sky {
-    background-color: var(--cu-sky);
-}
-
-.bg-gold {
-    background-color: var(--cu-gold);
-}
-
-.bg-gold-light {
-    background-color: var(--cu-gold-light);
-}
-
-.bg-navy-1 {
-    background-color: var(--navy-1);
-}
-
-.bg-navy-2 {
-    background-color: var(--navy-2);
-}
-
-.bg-navy-3 {
-    background-color: var(--navy-3);
-}
-
-.bg-light {
-    background-color: var(--light);
-}
-
-.bg-black {
-    background-color: var(--black);
-}
-
-.bg-white {
-    background-color: var(--white);
-}
-
-
-// Theme colours
-
-.bg-accent {
-    background-color: var(--clr-accent);
-}
-
-.bg-compliment {
-    background-color: var(--clr-compliment);
-}
-
 .bg-success {
     background-color: var(--clr-success);
 }
@@ -85,16 +25,16 @@
 
 
 // Text colour
-.text-1 {
-    color: var(--text-1);
+.text-dark {
+    color: var(--text-dark);
 }
 
-.text-2 {
-    color: var(--text-2);
+.text-gray {
+    color: var(--text-gray);
 }
 
-.text-3 {
-    color: var(--text-3);
+.text-light {
+    color: var(--text-light);
 }
 
 .text-white {
