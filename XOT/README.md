@@ -20,19 +20,29 @@ jquery ui
 
 This document outlines the folder structure of XOT Sass folder structure
 
-Folder Map
+XOT SASS Structure
 XOT/
-    xot-master.scss
+    xot_main.scss
+    
     /abstract
-        _tailwind
-
+        _openProps.scss
+        _xibit.scss
     /base
         _index.scss
         _customProperties.scss
-        _ovverall-reset.scss
-        _xerte-reset.scss
-        _typography.scss
-        _utilityClass.scss
+        _overall-reset.scss
+        _xot-reset.scss
+        _header.scss
+        _footer.scss
+        _base.scss
+    /components
+        _index.scss
+        _forms.scss
+    /layouts
+        _index.scss
+        _contentMenu.scss
+        _flex.scss
+        _grid.scss
     /pages
         _index.scss
         _titlePage.scss
@@ -41,20 +51,10 @@ XOT/
         _navigatorsPage.scss
         _quizPage.scss
         _textPage.scss
-    /Layout
-        _index.scss
-        _header.scss
-        _footer.scss
-        _contentMenu.scss
-        _base.scss
-        _flex.scss
-        _grid.scss
-    /Components
-        _index.scss
-        _menu.scss
     /utility
-        _utility.scss
+        _utilityClass.scss
     /vendors
+        _index.scss
         _jquery-ui.scss
 
 
