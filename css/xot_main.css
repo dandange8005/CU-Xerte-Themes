@@ -816,7 +816,7 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 /* CONTENT RESET */
 #x_pageDiv {
   padding: 0;
-  padding-top: var(--size-5);
+  padding-top: var(--size-fluid-3);
   width: 90%;
 }
 
