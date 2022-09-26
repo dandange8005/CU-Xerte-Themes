@@ -153,14 +153,14 @@ section>*:where(:not(:last-child)),
     margin-bottom: var(--size-7);
 }
 
-section p+h2 {
-    margin-top: var(--size-8);
-}
+// section p+h2 {
+//     margin-top: var(--size-8);
+// }
 
 section h2,
 section h3 {
-    margin-bottom: var(--size-2);
-    margin-top: var(--size-6);
+    margin-bottom: var(--size-4);
+    margin-top: var(--size-7);
     color: var(--text-2);
 }
 
