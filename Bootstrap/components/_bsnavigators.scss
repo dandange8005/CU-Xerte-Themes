@@ -89,8 +89,6 @@ ul.nav-tabs, ul.nav-pills {
     padding-right: 2rem;
 }
 
-
-
 a.accordion-toggle::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -107,4 +105,9 @@ a.accordion-toggle::after {
 
 a.accordion-toggle.collapsed::after {
     content: "\f054";
+}
+
+//add space to content elements within accordion
+.accordion-inner>*:where(:not(:last-child)) {
+    margin-bottom: var(--size-3);
 }

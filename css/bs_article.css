@@ -1239,6 +1239,10 @@ a.accordion-toggle.collapsed::after {
   content: "\f054";
 }
 
+.accordion-inner > *:where(:not(:last-child)) {
+  margin-bottom: var(--size-3);
+}
+
 /* project information style */
 #project-info {
   display: flex;
