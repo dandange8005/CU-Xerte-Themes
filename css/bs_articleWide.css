@@ -69,7 +69,8 @@ Author: Nan Zhang
   --clr-body: var(--black);
   --clr-link: var(--cu-sky);
   --clr-border: hsl(216, 12%, 84%);
-  --clr-jumbotron-bg: var(--gradient-23);
+  --clr-jumbotron-bg: #152C51;
+  --clr-jumbotron-bg-gradient: var(--gradient-23);
   --clr-footer-bg: var(--navy-3);
   --clr-main-bg: var(--light);
   --text-1: var(--neutral-8);
@@ -988,6 +989,7 @@ Items that can be added to the Utility Class style list
 /* JUMBOTRON */
 .jumbotron {
   background: var(--clr-jumbotron-bg) !important;
+  background-image: var(--clr-jumbotron-bg-gradient);
   padding: var(--size-fluid-6) var(--size-7);
   background-size: cover !important;
 }
