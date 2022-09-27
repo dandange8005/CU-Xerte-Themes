@@ -153,24 +153,31 @@ section>*:where(:not(:last-child)),
     margin-bottom: var(--size-7);
 }
 
-// section p+h2 {
-//     margin-top: var(--size-8);
-// }
 
-section h2,
-section h3 {
-    margin-bottom: var(--size-4);
-    margin-top: var(--size-7);
-    color: var(--text-2);
+section {
+
+    h2, h3, h4 {
+        color: var(--text-2);
+        margin-bottom: var(--size-4);
+    }
+
+    h2 {
+        margin-top: var(--size-8);
+    }
+
+    h3 {
+        margin-top: var(--size-7);
+    }
+    
+    h4 {
+        margin-top: var(--size-6);
+    }
+
+    p:not(:last-child) {
+        margin-bottom: var(--size-3);
+    }
 }
 
-section h4 {
-    color: var(--text-2);
-}
-
-section p:not(:last-child) {
-    margin-bottom: var(--size-3);
-}
 
 // lists
 /* reset the base style for list */
@@ -296,6 +303,7 @@ section {
     box-shadow: var(--shadow-3);
 }
 
+// Image with caption
 figure img {
     width: 100%;
     max-width: max-content;
