@@ -4,21 +4,30 @@ Author: Nan Zhang
 Date:
 */
 
+// use CU colours
+// @use '../abstract/cuColours'as *;
 
-/* Import open props */
-// @import "https://unpkg.com/open-props";
+
+
+/* ============================
+    OPEN PROP CUSTOM PROPERTIES
+==============================*/
+
+
+// @import "https://unpkg.com/open-props"; //open-props CDN link
 // @import "https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css";
 
-@import "../abstract/openProps";
+@import "../../openprop/openProps";
 
 
-// /* GOOGLE FONT IMPORT DECLARATION */
+/* ============================
+    GOOGLE FONT IMPORT DECLARATION
+==============================*/
+
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
 // /* Import Google Fonts and materials icons */
 // @import url('https://fonts.googleapis.com/css2?family=Georama:wght@600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap');
 // @import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Round');
-
-
 
 
 /* ======================
@@ -28,8 +37,8 @@ Date:
 //Cardiff University Colours
 :where(html) {
     /* CU Core Colours */
-    --cu-red: #d43548;
-    --cu-cabaret: #D94C5D;
+    --cu-red: #d4374a;
+    --cu-cabaret: #d94c5d;
     --cu-yellow: #F8D349;
     --cu-green: #008458;
     --cu-purple: #73479C;
@@ -91,6 +100,9 @@ Date:
 
     // The accent colour of the project
     --clr-accent: var(--cu-PrussianBlue);
+    // The compliment colour of the project
+    --clr-compliment: 
+
     // The main gradient of the project
     --clr-gradient: var(--gradient-23);
 
@@ -163,4 +175,5 @@ Date:
     // Container
     --container-width: 47rem;
 
+    --op-red: var(--pink-6);
 }

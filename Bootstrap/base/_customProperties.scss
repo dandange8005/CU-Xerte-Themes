@@ -5,11 +5,25 @@
 Author: Nan Zhang
 */
 
-/* Import Open Props */
+/* ============================
+    OPEN PROP CUSTOM PROPERTIES
+==============================*/
+
+
 // @import "https://unpkg.com/open-props";
-@import "https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css";
-// @import '../abstract/openProps';
-// @import '../abstract/open-props.min';
+// @import "https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css";
+
+@import "../../openprop/openProps";
+
+
+/* ============================
+    GOOGLE FONT IMPORT DECLARATION
+==============================*/
+
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
+// /* Import Google Fonts and materials icons */
+// @import url('https://fonts.googleapis.com/css2?family=Georama:wght@600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Round');
 
 
 /* -------------------
@@ -21,7 +35,7 @@ Author: Nan Zhang
 
 
 
-    /* Sass generated colour map */
+    // /* Sass generated colour map */
     // @each $name,
     // $value in $colours {
     //     --#{$name}:#{$value};
@@ -106,7 +120,7 @@ Author: Nan Zhang
     --clr-link: var(--cu-sky);
     --clr-border: hsl(216, 12%, 84%);
     --clr-jumbotron-bg: #152C51;
-    --clr-jumbotron-bg-gradient: var(--gradient-23);
+    --clr-jumbotron-bg: var(--gradient-23);
     --clr-footer-bg: var(--navy-3);
     --clr-main-bg: var(--light);
     --text-1: var(--neutral-8);
