@@ -3,7 +3,7 @@
 Author: Nan Zhang
 */
 /* ============================
-    OPEN PROP CUSTOM PROPERTIES
+    OPEN-PROP CUSTOM PROPERTIES
 ==============================*/
 /* ---------------------------
     https://unpkg.com/open-props
@@ -705,9 +705,9 @@ Author: Nan Zhang
 /* ============================
     GOOGLE FONT IMPORT DECLARATION
 ==============================*/
-/* -------------------
-    PROJECT CUSTOM PROPERTIES
-----------------------*/
+/* ============================
+    BOOTSTRAP CUSTOM PROPERTIES
+==============================*/
 :root {
   /* CU Colours */
   --cu-red: hsl(353, 65%, 52%);
