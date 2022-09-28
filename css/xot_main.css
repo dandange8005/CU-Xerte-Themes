@@ -760,8 +760,6 @@ Date:
 
 :where(html) {
   --clr-accent: var(--cu-PrussianBlue);
-  --clr-compliment:
-  // The main gradient of the project
   --clr-gradient: var(--gradient-23);
   --clr-header-bg: var(--clr-accent);
   --clr-header-h1: var(--light);

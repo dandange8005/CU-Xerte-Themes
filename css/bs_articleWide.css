@@ -770,7 +770,7 @@ Author: Nan Zhang
   --clr-link: var(--cu-sky);
   --clr-border: hsl(216, 12%, 84%);
   --clr-jumbotron-bg: #152C51;
-  --clr-jumbotron-bg: var(--gradient-23);
+  --clr-jumbotron-bg-gradient: var(--gradient-23);
   --clr-footer-bg: var(--navy-3);
   --clr-main-bg: var(--light);
   --text-1: var(--neutral-8);
