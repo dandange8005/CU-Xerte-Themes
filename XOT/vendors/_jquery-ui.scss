@@ -98,19 +98,25 @@
 	left: 0.7em;
 }
 
-.ui-accordion .ui-accordion-header.ui-state-hover {
-	.ui-icon {
-		color: var(--white);
-	}
-}
+// // .ui-accordion .ui-accordion-header.ui-state-hover {
+// // 	.ui-icon {
+// // 		color: var(--white);
+// // 	}
+// // }
+
+// .ui-accordion .ui-accordion-header.ui-state-hover .ui-icon:before {
+	
+// 	color: var(--white);
+// 	background: white;
+// }
 
 .ui-accordion .ui-accordion-content {
 	border-top: 1px solid var(--clr-border);
 }
 
-.ui-accordion .ui-accordion-header-active a {
-    font-weight: bold;
-}
+// .ui-accordion .ui-accordion-header-active a {
+//     // font-weight: bold;
+// }
 
 .x_nav_page #pageContents.button button.ui-state-hover:not(.selected), .x_nav_page #pageContents.button button.ui-state-focus:not(.selected) {
 	background-color: var(--clr-shaded);

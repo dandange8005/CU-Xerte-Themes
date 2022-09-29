@@ -759,7 +759,8 @@ Date:
 }
 
 :where(html) {
-  --clr-accent: var(--cu-PrussianBlue);
+  --clr-accent: var(--cu-BlueZodiac);
+  --clr-compliment: var(--cu-gold);
   --clr-gradient: var(--gradient-23);
   --clr-header-bg: var(--clr-accent);
   --clr-header-h1: var(--light);
@@ -772,9 +773,9 @@ Date:
   --clr-link: var(--cu-link);
   --clr-link-visited: #330072;
   --clr-border: hsl(216, 12%, 84%);
-  --clr-headershade: var(--navy-2);
+  --clr-headershade: #4E597E;
   --clr-panelborder: var(--gray-5);
-  --clr-shaded: #f2f2f2;
+  --clr-shaded: var(--light);
   --clr-btn: var(--clr-accent);
   --clr-btn-rollover: var(--clr-headershade);
   --clr-success: hsl(148, 100%, 25%);
@@ -1182,7 +1183,7 @@ body {
 ================== */
 #pageContents h1,
 #pageContents h2,
-#pageContents h3,
+#pageContents h3:not(.ui-accordion-header),
 #pageContents h4,
 #pageContents h5,
 #pageContents h6 {
@@ -1199,7 +1200,7 @@ body {
   font-size: var(--fs-2xl);
   line-height: var(--font-lineheight-1);
 }
-#pageContents h3 {
+#pageContents h3:not(.ui-accordion-header) {
   font-size: var(--fs-xl);
   line-height: var(--font-lineheight-2);
 }
@@ -2068,27 +2069,6 @@ table.glossary tr td:first-child {
 }
 
 /* Accordion */
-.ui-accordion-header {
-  margin-bottom: 0 !important;
-}
-
-.ui-accordion .ui-accordion-header .ui-icon {
-  color: var(--clr-btn);
-  left: 0.7em;
-}
-
-.ui-accordion .ui-accordion-header.ui-state-hover .ui-icon {
-  color: var(--white);
-}
-
-.ui-accordion .ui-accordion-content {
-  border-top: 1px solid var(--clr-border);
-}
-
-.ui-accordion .ui-accordion-header-active a {
-  font-weight: bold;
-}
-
 .x_nav_page #pageContents.button button.ui-state-hover:not(.selected), .x_nav_page #pageContents.button button.ui-state-focus:not(.selected) {
   background-color: var(--clr-shaded);
   border-color: var(--clr-panelborder);

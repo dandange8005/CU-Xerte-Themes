@@ -93,9 +93,9 @@ Date:
 :where(html) {
 
     // The accent colour of the project
-    --clr-accent: var(--cu-PrussianBlue);
+    --clr-accent: var(--cu-BlueZodiac);
     // The compliment colour of the project
-    // --clr-compliment: 
+    --clr-compliment: var(--cu-gold);
 
     // The main gradient of the project
     --clr-gradient: var(--gradient-23);
@@ -123,9 +123,9 @@ Date:
     // jQuery UI
 
     --clr-border: hsl(216, 12%, 84%);
-    --clr-headershade: var(--navy-2);
+    --clr-headershade: #4E597E;
     --clr-panelborder: var(--gray-5);
-    --clr-shaded: #f2f2f2;
+    --clr-shaded: var(--light);
 
     // button colours
     --clr-btn: var(--clr-accent);
