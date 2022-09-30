@@ -51,7 +51,7 @@ Date:
     //Blue colours
     --cu-blue: #233E8B;
     --cu-PrussianBlue: #002554;
-    --cu-BlueZodiac: #152C51;
+    --cu-BlueZodiac: hsl(217, 59%, 20%);
     --cu-link: #045BC6;
     --cu-allports: #006AAF;
     --cu-poloBlue:#7598CB;
@@ -92,8 +92,46 @@ Date:
 // XERTE Project Theme
 :where(html) {
 
+    
+        // --clr-accent: var(--cu-BlueZodiac);
+        --clr-accent: hsl(217, 59%, 20%);
+        --clr-h: 217;
+        --clr-s: 59%;
+        --clr-l: 20%;
+    
+        /* Accent colour shades */
+        --clr-accent-1: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) + (100% - var(--clr-l)) * 0.9));
+        --clr-accent-2: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) + (100% - var(--clr-l)) * 0.7));
+        --clr-accent-3: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) + (100% - var(--clr-l)) * 0.5));
+        --clr-accent-4: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) + (100% - var(--clr-l)) * 0.3));
+        --clr-accent-5: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) - var(--clr-l) * 0.2));
+        --clr-accent-6: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) - var(--clr-l) * 0.4));
+        --clr-accent-7: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) - var(--clr-l) * 0.6));
+        --clr-accent-8: hsl(var(--clr-h),
+            var(--clr-s),
+            calc(var(--clr-l) - var(--clr-l) * 0.8));
+        
+            
+        //Compliment colour: hue + 180 
+        --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
+
     // The accent colour of the project
-    --clr-accent: var(--cu-BlueZodiac);
+    
+
     // The compliment colour of the project
     --clr-compliment: var(--cu-gold);
 

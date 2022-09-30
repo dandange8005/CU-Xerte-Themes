@@ -724,7 +724,7 @@ Date:
   --cu-cararra: #EBE9E1;
   --cu-blue: #233E8B;
   --cu-PrussianBlue: #002554;
-  --cu-BlueZodiac: #152C51;
+  --cu-BlueZodiac: hsl(217, 59%, 20%);
   --cu-link: #045BC6;
   --cu-allports: #006AAF;
   --cu-poloBlue:#7598CB;
@@ -759,7 +759,36 @@ Date:
 }
 
 :where(html) {
-  --clr-accent: var(--cu-BlueZodiac);
+  --clr-accent: hsl(217, 59%, 20%);
+  --clr-h: 217;
+  --clr-s: 59%;
+  --clr-l: 20%;
+  /* Accent colour shades */
+  --clr-accent-1: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) + (100% - var(--clr-l)) * 0.9));
+  --clr-accent-2: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) + (100% - var(--clr-l)) * 0.7));
+  --clr-accent-3: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) + (100% - var(--clr-l)) * 0.5));
+  --clr-accent-4: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) + (100% - var(--clr-l)) * 0.3));
+  --clr-accent-5: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) - var(--clr-l) * 0.2));
+  --clr-accent-6: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) - var(--clr-l) * 0.4));
+  --clr-accent-7: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) - var(--clr-l) * 0.6));
+  --clr-accent-8: hsl(var(--clr-h),
+      var(--clr-s),
+      calc(var(--clr-l) - var(--clr-l) * 0.8));
+  --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
   --clr-compliment: var(--cu-gold);
   --clr-gradient: var(--gradient-23);
   --clr-header-bg: var(--clr-accent);
@@ -2069,6 +2098,19 @@ table.glossary tr td:first-child {
 }
 
 /* Accordion */
+.ui-accordion-header {
+  margin-bottom: 0 !important;
+}
+
+.ui-accordion .ui-accordion-header .ui-icon {
+  color: var(--clr-btn);
+  left: 0.7em;
+}
+
+.ui-accordion .ui-accordion-content {
+  border-top: 1px solid var(--clr-border);
+}
+
 .x_nav_page #pageContents.button button.ui-state-hover:not(.selected), .x_nav_page #pageContents.button button.ui-state-focus:not(.selected) {
   background-color: var(--clr-shaded);
   border-color: var(--clr-panelborder);
