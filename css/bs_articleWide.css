@@ -1846,6 +1846,7 @@ ul.nav-tabs, ul.nav-pills {
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
   color: var(--clr-accent);
+  background: var(--clr-body-bg);
 }
 
 .tab-pane {
