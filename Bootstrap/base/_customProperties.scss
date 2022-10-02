@@ -1,9 +1,11 @@
-@use 'sass:color';
-@use '../abstract/'as *;
+// @use 'sass:color';
+// @use '../abstract/'as *;
 
-/* ------ Project Information --------
-Author: Nan Zhang
-*/
+/* ============================
+    PROJECT INFO
+    Author: Nan Zhang
+==============================*/
+
 
 /* ============================
     OPEN-PROP CUSTOM PROPERTIES
@@ -52,6 +54,7 @@ Author: Nan Zhang
     --navy-2:hsl(204, 14%, 46%);
     --navy-3:hsl(201, 27%, 20%);
 
+
     /* Neutral colour */
     --black: hsl(348, 7%, 13%);
     --white: hsl(0, 0%, 100%);
@@ -75,11 +78,13 @@ Author: Nan Zhang
         
     /* Bootstrap Project theme */
 
-    // --clr-accent: var(--cu-red);
-    --clr-accent: hsl(353, 65%, 52%);
+    // Main accent colour's hsl values
     --clr-h: 353;
     --clr-s: 65%;
     --clr-l: 52%;
+
+    // --clr-accent: hsl(353, 65%, 52%);
+    --clr-accent: hsl(var(--clr-h), var(--clr-s),var(--clr-l));
 
     /* Accent colour shades */
     --clr-accent-1: hsl(var(--clr-h),
@@ -132,7 +137,6 @@ Author: Nan Zhang
         var(--neutral-8));
 
     --text-gradient: var(--gradient-23);
-
 
     /*Spacing*/
     --gap: var(--size-fluid-1);
