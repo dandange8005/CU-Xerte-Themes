@@ -9,6 +9,8 @@ Author: Nan Zhang
     https://unpkg.com/open-props
     @1.4.16
 ---------------------------------*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&display=swap");
 :where(html) {
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   --font-serif: ui-serif, serif;
@@ -702,6 +704,10 @@ Author: Nan Zhang
     transform: scale(0.9);
   }
 }
+/* ============================
+    ANIMATE
+    Animation css library https://animate.style/
+==============================*/
 /* ============================
     GOOGLE FONT IMPORT DECLARATION
 ==============================*/
