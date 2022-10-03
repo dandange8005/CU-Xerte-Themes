@@ -7,7 +7,7 @@
 .jumbotron {
     // fallback for old broswer
     background: var(--clr-jumbotron-bg)!important; 
-    background: var(--clr-jumbotron-bg-gradient)!important;
+    background-image: var(--clr-jumbotron-bg-gradient)!important;
     padding: var(--size-fluid-6) var(--size-7);
     background-size: cover!important;
 
