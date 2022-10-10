@@ -36,11 +36,11 @@
     width: 100% !important;
 }
 
-/* PARAGRAPH COLOUR */
-#x_mainHolder p,
-#textHolder {
-    color: var(--clr-body-text);
-}
+// /* PARAGRAPH COLOUR */
+// #x_mainHolder p,
+// #textHolder {
+//     color: var(--clr-body-text);
+// }
 
 /* CONTENT RESET */
 #x_pageDiv {
@@ -126,6 +126,9 @@ h4 {
     margin-bottom: var(--size-fluid-2);
 }
 
+#x_mainHolder p + p {
+    margin-top: var(--size-fluid-3);
+}
 
 /* ===============
     LINK
