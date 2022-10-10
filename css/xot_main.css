@@ -1215,40 +1215,44 @@ body {
 /* ===============
     HEADING
 ================== */
-#pageContents h1,
-#pageContents h2,
-#pageContents h3:not(.ui-accordion-header),
-#pageContents h4,
-#pageContents h5,
-#pageContents h6 {
+h1,
+h2,
+h3:not(.ui-accordion-header),
+h4,
+h5,
+h6 {
   font-family: var(--ff-heading);
   font-weight: 700;
   color: var(--clr-heading);
   margin-bottom: var(--size-fluid-1);
 }
-#pageContents h1 {
+
+h1 {
   font-size: var(--fs-3xl);
   line-height: var(--font-lineheight-0);
 }
-#pageContents h2 {
+
+h2 {
   font-size: var(--fs-2xl);
   line-height: var(--font-lineheight-1);
 }
-#pageContents h3:not(.ui-accordion-header) {
+
+h3:not(.ui-accordion-header) {
   font-size: var(--fs-xl);
   line-height: var(--font-lineheight-2);
 }
-#pageContents h4 {
+
+h4 {
   font-size: var(--fs-lg);
   line-height: var(--font-lineheight-3);
 }
+
 #pageContents .page-title {
   font-size: var(--fs-3xl);
   color: var(--clr-accent);
   font-weight: 900;
   max-width: var(--size-header-3);
-  margin-top: var(--size-fluid-3);
-  text-transform: uppercase;
+  margin-block: var(--size-fluid-3);
 }
 
 /* ===============
