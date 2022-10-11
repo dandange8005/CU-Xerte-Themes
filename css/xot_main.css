@@ -2007,6 +2007,21 @@ table.glossary tr td:first-child {
   color: var(--clr-link);
 }
 
+/* Interactivity > Categories Page */
+#categoryHolder h3 {
+  font-size: var(--fs-lg);
+}
+
+ul.category {
+  display: initial;
+}
+
+.category.highlight {
+  background: var(--shade-sand);
+  border-radius: var(--radius-2);
+  border: 1px solid var(--clr-border);
+}
+
 /* ------------------- */
 /* UTILITY CLASSES     */
 /* ------------------- */
