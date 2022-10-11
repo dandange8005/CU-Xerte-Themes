@@ -1181,12 +1181,6 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
   width: 100% !important;
 }
 
-/* PARAGRAPH COLOUR */
-#x_mainHolder p,
-#textHolder {
-  color: var(--clr-body-text);
-}
-
 /* CONTENT RESET */
 #x_pageDiv {
   padding: 0;
@@ -1262,6 +1256,10 @@ h4 {
 .container > *:where(:not(:last-child)),
 .flow > *:where(:not(:last-child)) {
   margin-bottom: var(--size-fluid-2);
+}
+
+#x_mainHolder p + p {
+  margin-top: var(--size-fluid-3);
 }
 
 /* ===============
