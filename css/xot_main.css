@@ -1259,7 +1259,7 @@ h4 {
 }
 
 #x_mainHolder p + p {
-  margin-top: var(--size-fluid-3);
+  margin-top: 1rem;
 }
 
 /* ===============
