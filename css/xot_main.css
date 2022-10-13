@@ -800,7 +800,7 @@ Author: Nan Zhang
   --clr-header-h1: var(--light);
   --clr-header-h2: var(--white);
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
-  --clr-footer-bg: var(--neutral-5);
+  --clr-footer-bg: #495057;
   --clr-body-bg: var(--shade-sand);
   --clr-body-text: var(--neutral-8);
   --clr-heading: var(--black);
@@ -2017,7 +2017,7 @@ ul.category {
 }
 
 .category.highlight {
-  background: var(--shade-sand);
+  background: var(--light);
   border-radius: var(--radius-2);
   border: 1px solid var(--clr-border);
 }
