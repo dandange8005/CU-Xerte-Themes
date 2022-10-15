@@ -2033,6 +2033,16 @@ ul.category {
   text-align: center;
 }
 
+.box {
+  background: var(--shade-gray);
+  padding: var(--size-5);
+  border-radius: var(--radius-2);
+}
+
+.box > *:where(:not(:last-child)) {
+  margin-bottom: var(--size-fluid-2);
+}
+
 .bg-success {
   background-color: var(--clr-success);
 }
