@@ -2023,7 +2023,6 @@ ul.category {
 /* ------------------- */
 .container {
   width: min(var(--container-width), 100% - 2rem);
-  margin-inline: auto;
 }
 
 .mx-auto {
