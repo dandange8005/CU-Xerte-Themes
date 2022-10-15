@@ -5,6 +5,7 @@
 // Flex container
 .flex {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--gap);
 }
 
@@ -23,11 +24,6 @@
 
 .flex-col-reverse {
     flex-direction: column-reverse;
-}
-
-/* Flex Wrap */
-.flex-wrap {
-    flex-wrap: wrap;
 }
 
 .flex-wrap-reverse {

@@ -4,6 +4,7 @@
 
 .container {
     width: min(var(--container-width),100% - 2rem);
+    margin-inline: auto;
 }
 
 .mx-auto {
@@ -124,4 +125,5 @@
     word-break: break-word;
     hyphens: auto;
   }
+
 

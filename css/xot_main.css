@@ -1627,6 +1627,7 @@ figcaption {
 /* Flex Utility Classes   */
 .flex {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--gap);
 }
 
@@ -1645,11 +1646,6 @@ figcaption {
 
 .flex-col-reverse {
   flex-direction: column-reverse;
-}
-
-/* Flex Wrap */
-.flex-wrap {
-  flex-wrap: wrap;
 }
 
 .flex-wrap-reverse {
@@ -2027,6 +2023,7 @@ ul.category {
 /* ------------------- */
 .container {
   width: min(var(--container-width), 100% - 2rem);
+  margin-inline: auto;
 }
 
 .mx-auto {
