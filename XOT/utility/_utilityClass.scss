@@ -11,13 +11,22 @@
     margin-inline: auto;
 }
 
+// position
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
 // text centre
 .text-center {
     text-align: center;
 }
 
 .box{
-    background: var(--shade-gray);
+    background: var(--white);
     padding: var(--size-5);
     border-radius: var(--radius-2);
 

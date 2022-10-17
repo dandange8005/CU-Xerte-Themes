@@ -2029,6 +2029,14 @@ ul.category {
   margin-inline: auto;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
 .text-center {
   text-align: center;
 }
