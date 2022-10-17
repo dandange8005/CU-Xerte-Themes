@@ -29,7 +29,7 @@
     background: var(--white);
     padding: var(--size-5);
     border-radius: var(--radius-2);
-
+    border: 1px solid var(--clr-border);
 }
 
 .box>*:where(:not(:last-child)) {
