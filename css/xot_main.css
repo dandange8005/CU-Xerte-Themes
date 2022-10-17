@@ -1720,6 +1720,7 @@ figcaption {
   max-width: -moz-max-content;
   max-width: max-content;
   margin: 0 auto;
+  width: 100%;
 }
 
 @media (min-width: 806px) {
@@ -2042,7 +2043,7 @@ ul.category {
 }
 
 .box {
-  background: var(--shade-gray);
+  background: var(--white);
   padding: var(--size-5);
   border-radius: var(--radius-2);
 }
