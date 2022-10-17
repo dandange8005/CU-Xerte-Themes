@@ -2038,6 +2038,14 @@ ul.category {
   position: relative;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
 .text-center {
   text-align: center;
 }
