@@ -1745,6 +1745,9 @@ figcaption {
   .c33 {
     width: 33.33%;
   }
+  .c25 {
+    width: 25%;
+  }
   .c20 {
     width: 20%;
   }
@@ -2016,6 +2019,12 @@ ul.category {
   background: var(--light);
   border-radius: var(--radius-2);
   border: 1px solid var(--clr-border);
+}
+
+#dragDropHolder .label {
+  background: var(--yellow-0);
+  text-align: center;
+  box-shadow: var(--shadow-3);
 }
 
 /* ------------------- */

@@ -14,3 +14,9 @@ ul.category {
     border: 1px solid var(--clr-border);
 }
 
+// category page label
+#dragDropHolder .label{
+    background: var(--yellow-0);
+    text-align: center;
+    box-shadow: var(--shadow-3);
+}

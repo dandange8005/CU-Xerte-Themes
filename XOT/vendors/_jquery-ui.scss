@@ -10,6 +10,7 @@
 
 
 /* --jquery ui-- */
+
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
 	color: var(--clr-btn);
 }
@@ -118,6 +119,9 @@
 //     // font-weight: bold;
 // }
 
+
+// Navigation page
+
 .x_nav_page #pageContents.button button.ui-state-hover:not(.selected), .x_nav_page #pageContents.button button.ui-state-focus:not(.selected) {
 	background-color: var(--clr-shaded);
 	border-color: var(--clr-panelborder);
@@ -132,3 +136,13 @@
 .x_nav_page #pageContents.slide #btnHolder {
 	border-color: var(--clr-panelborder);
 }
+
+// //Button
+// // button state
+// .ui-button {
+
+// }
+
+// .ui-button.ui-state-hover {
+
+// }
