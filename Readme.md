@@ -1,14 +1,26 @@
 Project Notes:
-## Main styles linkS
+## Main styles direct urls
 github page link: 
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_article.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_articleWide.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css
+- https://dandange8005.github.io/CU-Xerte-Themes/css/xot_main.min.css
+
+
+Assets
+Images
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU_logo.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png
-- https://dandange8005.github.io/CU-Xerte-Themes/css/xot_main.min.css
+
+webfonts
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-Book.woff
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-BookIt.woff
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-Demi.woff
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-Med.woff
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-MedIt-webfont.woff
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothicURW-Lig.woff
 
 
 ## Tools for developers
