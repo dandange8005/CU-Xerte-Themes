@@ -803,7 +803,7 @@ Author: Nan Zhang
   --clr-footer-bg: #495057;
   --clr-body-bg: var(--shade-sand);
   --clr-body-text: var(--neutral-8);
-  --clr-heading: var(--black);
+  --clr-headline: var(--black);
   --clr-link: var(--cu-link);
   --clr-link-visited: #330072;
   --clr-border: hsl(216, 12%, 84%);
@@ -816,7 +816,7 @@ Author: Nan Zhang
   --clr-danger: hsl(4, 77%, 48%);
   --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
   --ff-body: "Lato", sans-serif;
-  --ff-heading: "Lato", sans-serif;
+  --ff-headline: "Lato", sans-serif;
   --ff-serif: var(--font-serif);
   --ff-mono: var(--font-mono);
   --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
@@ -1214,9 +1214,9 @@ h3:not(.ui-accordion-header),
 h4,
 h5,
 h6 {
-  font-family: var(--ff-heading);
+  font-family: var(--ff-headline);
   font-weight: 700;
-  color: var(--clr-heading);
+  color: var(--clr-headline);
   margin-bottom: var(--size-fluid-1);
 }
 

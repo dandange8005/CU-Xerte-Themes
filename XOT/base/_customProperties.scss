@@ -159,7 +159,7 @@ Author: Nan Zhang
     // Body
     --clr-body-bg: var(--shade-sand);
     --clr-body-text: var(--neutral-8);
-    --clr-heading: var(--black);
+    --clr-headline: var(--black);
 
     // Link
     --clr-link: var(--cu-link);
@@ -188,7 +188,7 @@ Author: Nan Zhang
     // Typography
     //font family
     --ff-body: 'Lato', sans-serif;
-    --ff-heading: 'Lato', sans-serif;
+    --ff-headline: 'Lato', sans-serif;
     --ff-serif: var(--font-serif);
     --ff-mono: var(--font-mono);
 
@@ -208,10 +208,10 @@ Author: Nan Zhang
     --text-light: var(--neutral-5);
     --gradient-text: var(--clr-gradient);
 
-    // Spacing
+    // Spacing for flex and grid
     --gap: var(--size-fluid-1);
 
-    // Container
+    // a readable content container
     --container-width: 47rem;
 
 }
