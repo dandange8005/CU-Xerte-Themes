@@ -11,6 +11,11 @@
 
 // Panel component
 
+.panel {
+    padding-left: 2rem;
+    padding-top: var(--size-8);
+}
+
 .panel.tips:after {
     color: var(--clr-primary);
     font-size: var(--fs-sm);
