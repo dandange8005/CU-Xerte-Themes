@@ -1,5 +1,6 @@
 // Customised style for bootstrap components
 
+// lead component
 .lead {
     font-size: var(--fs-xl);
     color: var(--neutral-6);
@@ -8,4 +9,20 @@
 }
 
 
-// List of Bootstrap Utility classes
+// Panel component
+
+.panel.tips:after {
+    color: var(--clr-cu-blue);
+    font-size: var(--fs-sm);
+    padding-inline: var(--size-3);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.panel>*:first-child {
+  margin-top:0;
+}
+
+.panel>*:last-child {
+    margin-bottom: 0;
+}
