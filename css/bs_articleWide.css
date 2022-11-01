@@ -2383,6 +2383,27 @@ Items that can be added to the Utility Class style list
   font-weight: 300;
 }
 
+.panel {
+  padding-left: 2rem;
+  padding-top: var(--size-8);
+}
+
+.panel.tips:after {
+  color: var(--clr-primary);
+  font-size: var(--fs-sm);
+  padding-inline: var(--size-3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.panel > *:first-child {
+  margin-top: 0;
+}
+
+.panel > *:last-child {
+  margin-bottom: 0;
+}
+
 /* prism custom styles */
 code[class*=language-], pre[class*=language-] {
   font-size: var(--fs-sm) !important;
