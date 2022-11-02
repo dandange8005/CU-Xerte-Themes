@@ -2404,7 +2404,8 @@ Items that can be added to the Utility Class style list
 }
 .panel.tips::after {
   color: var(--pink-7);
-  background: var(--pink-3);
+  background: var(--pink-0);
+  border: 1px solid var(--pink-3);
 }
 
 .panel.reflection {
@@ -2412,7 +2413,8 @@ Items that can be added to the Utility Class style list
 }
 .panel.reflection::after {
   color: var(--blue-7);
-  background: var(--blue-3);
+  background: var(--blue-0);
+  border: 1px solid var(--blue-3);
 }
 
 /* prism custom styles */
