@@ -7,8 +7,7 @@
     OPEN-PROP CUSTOM PROPERTIES
 ==============================*/
 /* ---------------------------
-    https://unpkg.com/open-props
-    @1.4.16
+    https://unpkg.com/open-props@1.4.20
 ---------------------------------*/
 :where(html) {
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
@@ -2308,21 +2307,33 @@ Items that can be added to the Utility Class style list
   padding-left: 2rem;
   padding-top: var(--size-8);
 }
-
-.panel.tips:after {
-  color: var(--clr-accent);
+.panel::after {
   font-size: var(--fs-sm);
   padding-inline: var(--size-3);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
-
 .panel > *:first-child {
   margin-top: 0;
 }
-
 .panel > *:last-child {
   margin-bottom: 0;
+}
+
+.panel.tips {
+  border: 1px solid var(--pink-3);
+}
+.panel.tips::after {
+  color: var(--pink-7);
+  background: var(--pink-3);
+}
+
+.panel.reflection {
+  border: 1px solid var(--blue-3);
+}
+.panel.reflection::after {
+  color: var(--blue-7);
+  background: var(--blue-3);
 }
 
 /* prism custom styles */

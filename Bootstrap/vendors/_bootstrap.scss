@@ -14,20 +14,38 @@
 .panel {
     padding-left: 2rem;
     padding-top: var(--size-8);
+
+    &::after {
+        font-size: var(--fs-sm);
+        padding-inline: var(--size-3);
+        text-transform: uppercase;
+        letter-spacing: .8px;
+    }
+
+    &>*:first-child{
+        margin-top:0;
+    }
+    &>*:last-child{
+        margin-bottom:0;
+    }
+
 }
 
-.panel.tips:after {
-    color: var(--clr-accent);
-    font-size: var(--fs-sm);
-    padding-inline: var(--size-3);
-    text-transform: uppercase;
-    letter-spacing: .8px;
+.panel.tips {
+    border: 1px solid var(--pink-3);
+
+    &::after {
+        color: var(--pink-7);
+        background: var(--pink-3);
+    }
 }
 
-.panel>*:first-child {
-  margin-top:0;
-}
+.panel.reflection {
+    border: 1px solid var(--blue-3);
 
-.panel>*:last-child {
-    margin-bottom: 0;
+    &::after {
+        color: var(--blue-7);
+        background: var(--blue-3);
+    }
+
 }
