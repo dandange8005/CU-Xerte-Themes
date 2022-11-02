@@ -2310,7 +2310,7 @@ Items that can be added to the Utility Class style list
 }
 
 .panel.tips:after {
-  color: var(--clr-primary);
+  color: var(--clr-accent);
   font-size: var(--fs-sm);
   padding-inline: var(--size-3);
   text-transform: uppercase;
