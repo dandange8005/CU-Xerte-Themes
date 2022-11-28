@@ -1046,13 +1046,10 @@ section li ul {
   list-style: none;
   margin-left: 0;
 }
-.list-icon li {
-  display: flex;
-}
 .list-icon li span {
-  margin-right: var(--size-3);
+  margin-right: 10px;
   color: var(--clr-accent);
-  font-size: var(--fs-lg);
+  font-size: 20px;
 }
 
 .list-counter {
