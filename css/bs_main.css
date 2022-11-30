@@ -1766,7 +1766,7 @@ ul.nav-tabs, ul.nav-pills {
   color: var(--clr-accent);
 }
 
-.tab-content {
+.nav-tabs + .tab-content {
   background: #fff;
   border: 1px solid #ddd;
   border-top: 0;
