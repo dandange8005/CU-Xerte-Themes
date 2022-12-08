@@ -17,4 +17,4 @@ In the documentation, I would like to be able to insert the following media item
 
 Click here [[Markdown syntax]] and you will understand what I mean.
 
-how do I [[link]] to another page
+how do I [link](Documentation/Markdown syntax.md) to another page
