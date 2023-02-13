@@ -375,28 +375,8 @@ Author: Nan Zhang
     --shadow-strength: 25% ;
   }
 }
-@-webkit-keyframes fade-in {
-  to {
-    opacity: 1;
-  }
-}
 @keyframes fade-in {
   to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fade-in-bloom {
-  0% {
-    filter: brightness(1) blur(20px);
-    opacity: 0;
-  }
-  10% {
-    filter: brightness(2) blur(10px);
-    filter: brightness(0.5) blur(10px);
-    opacity: 1;
-  }
-  to {
-    filter: brightness(1) blur(0);
     opacity: 1;
   }
 }
@@ -415,29 +395,9 @@ Author: Nan Zhang
     opacity: 1;
   }
 }
-@-webkit-keyframes fade-out {
-  to {
-    opacity: 0;
-  }
-}
 @keyframes fade-out {
   to {
     opacity: 0;
-  }
-}
-@-webkit-keyframes fade-out-bloom {
-  to {
-    filter: brightness(1) blur(20px);
-    opacity: 0;
-  }
-  10% {
-    filter: brightness(2) blur(10px);
-    filter: brightness(0.5) blur(10px);
-    opacity: 1;
-  }
-  0% {
-    filter: brightness(1) blur(0);
-    opacity: 1;
   }
 }
 @keyframes fade-out-bloom {
@@ -455,19 +415,9 @@ Author: Nan Zhang
     opacity: 1;
   }
 }
-@-webkit-keyframes scale-up {
-  to {
-    transform: scale(1.25);
-  }
-}
 @keyframes scale-up {
   to {
     transform: scale(1.25);
-  }
-}
-@-webkit-keyframes scale-down {
-  to {
-    transform: scale(0.75);
   }
 }
 @keyframes scale-down {
@@ -475,19 +425,9 @@ Author: Nan Zhang
     transform: scale(0.75);
   }
 }
-@-webkit-keyframes slide-out-up {
-  to {
-    transform: translateY(-100%);
-  }
-}
 @keyframes slide-out-up {
   to {
     transform: translateY(-100%);
-  }
-}
-@-webkit-keyframes slide-out-down {
-  to {
-    transform: translateY(100%);
   }
 }
 @keyframes slide-out-down {
@@ -495,19 +435,9 @@ Author: Nan Zhang
     transform: translateY(100%);
   }
 }
-@-webkit-keyframes slide-out-right {
-  to {
-    transform: translateX(100%);
-  }
-}
 @keyframes slide-out-right {
   to {
     transform: translateX(100%);
-  }
-}
-@-webkit-keyframes slide-out-left {
-  to {
-    transform: translateX(-100%);
   }
 }
 @keyframes slide-out-left {
@@ -515,19 +445,9 @@ Author: Nan Zhang
     transform: translateX(-100%);
   }
 }
-@-webkit-keyframes slide-in-up {
-  0% {
-    transform: translateY(100%);
-  }
-}
 @keyframes slide-in-up {
   0% {
     transform: translateY(100%);
-  }
-}
-@-webkit-keyframes slide-in-down {
-  0% {
-    transform: translateY(-100%);
   }
 }
 @keyframes slide-in-down {
@@ -535,41 +455,14 @@ Author: Nan Zhang
     transform: translateY(-100%);
   }
 }
-@-webkit-keyframes slide-in-right {
-  0% {
-    transform: translateX(-100%);
-  }
-}
 @keyframes slide-in-right {
   0% {
     transform: translateX(-100%);
   }
 }
-@-webkit-keyframes slide-in-left {
-  0% {
-    transform: translateX(100%);
-  }
-}
 @keyframes slide-in-left {
   0% {
     transform: translateX(100%);
-  }
-}
-@-webkit-keyframes shake-x {
-  0%, to {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-5%);
-  }
-  40% {
-    transform: translateX(5%);
-  }
-  60% {
-    transform: translateX(-5%);
-  }
-  80% {
-    transform: translateX(5%);
   }
 }
 @keyframes shake-x {
@@ -589,23 +482,6 @@ Author: Nan Zhang
     transform: translateX(5%);
   }
 }
-@-webkit-keyframes shake-y {
-  0%, to {
-    transform: translateY(0);
-  }
-  20% {
-    transform: translateY(-5%);
-  }
-  40% {
-    transform: translateY(5%);
-  }
-  60% {
-    transform: translateY(-5%);
-  }
-  80% {
-    transform: translateY(5%);
-  }
-}
 @keyframes shake-y {
   0%, to {
     transform: translateY(0);
@@ -623,34 +499,15 @@ Author: Nan Zhang
     transform: translateY(5%);
   }
 }
-@-webkit-keyframes spin {
-  to {
-    transform: rotate(1turn);
-  }
-}
 @keyframes spin {
   to {
     transform: rotate(1turn);
-  }
-}
-@-webkit-keyframes ping {
-  90%, to {
-    opacity: 0;
-    transform: scale(2);
   }
 }
 @keyframes ping {
   90%, to {
     opacity: 0;
     transform: scale(2);
-  }
-}
-@-webkit-keyframes blink {
-  0%, to {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
   }
 }
 @keyframes blink {
@@ -661,25 +518,9 @@ Author: Nan Zhang
     opacity: 0.5;
   }
 }
-@-webkit-keyframes float {
-  50% {
-    transform: translateY(-25%);
-  }
-}
 @keyframes float {
   50% {
     transform: translateY(-25%);
-  }
-}
-@-webkit-keyframes bounce {
-  25% {
-    transform: translateY(-20%);
-  }
-  40% {
-    transform: translateY(-3%);
-  }
-  0%, 60%, to {
-    transform: translateY(0);
   }
 }
 @keyframes bounce {
@@ -691,11 +532,6 @@ Author: Nan Zhang
   }
   0%, 60%, to {
     transform: translateY(0);
-  }
-}
-@-webkit-keyframes pulse {
-  50% {
-    transform: scale(0.9);
   }
 }
 @keyframes pulse {
@@ -1477,7 +1313,6 @@ img {
 
 figure.image {
   margin: 0;
-  max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
 }
@@ -1552,7 +1387,7 @@ figcaption {
 /* XERTE PAGE WIDTH Small screen*/
 @media (min-width: 768px) {
   #x_headerBlock div,
-#x_pageDiv {
+  #x_pageDiv {
     width: 85%;
   }
 }
@@ -1715,7 +1550,6 @@ figcaption {
 }
 
 .flexItem img {
-  max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
   margin: 0 auto;
@@ -2171,7 +2005,6 @@ ul.category {
   word-wrap: break-word;
   word-break: break-word;
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
 }
 
