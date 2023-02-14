@@ -2181,18 +2181,20 @@ code[class*=language-], pre[class*=language-] {
 /* ----------------------
     MEDIA QUERIES 
 -------------------------*/
+/* --LARGE DESKTOP and Up ---*/
+/* --DESKTOP and Up ---------- */
 @media (min-width: 980px) {
   #overview.logoL .logoL {
     margin-right: var(--size-7);
   }
 }
-/* --TABLETS TO DESKTOPS-------------------------------------------------------------- */
+/* --TABLETS TO DESKTOPS ---------------------- */
 @media (min-width: 768px) and (max-width: 980px) {
   .jumbotron {
     margin-top: 0;
   }
 }
-/* --TABLETS-------------------------------------------------------------- */
+/* --TABLETS--------- */
 @media (max-width: 767px) {
   #overview.logoL .container {
     flex-direction: column;
@@ -2209,14 +2211,6 @@ code[class*=language-], pre[class*=language-] {
     align-items: center;
   }
 }
-/* --LANDSCAPE PHONES-------------------------------------------------------------- */
-/* custom nav for bb embed */
-@media screen and (max-width: 770px) {
-  .bs-docs-sidebar {
-    display: block;
-    float: none;
-    width: 100%;
-    margin-left: 0;
-    box-sizing: border-box;
-  }
-}/*# sourceMappingURL=bs_main.css.map */
+/* --LANDSCAPE PHONES
+@media (max-width: 480px) {}
+-------------------------------------------------------------- *//*# sourceMappingURL=bs_main.css.map */

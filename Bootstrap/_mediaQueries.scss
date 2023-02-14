@@ -2,10 +2,12 @@
     MEDIA QUERIES 
 -------------------------*/
 
-// /* --LARGE DESKTOP and Up---------- */
-@media (min-width: 1200px) {}
+/* --LARGE DESKTOP and Up ---*/
+// @media (min-width: 1200px) {}
 
-// /* --DESKTOP and Up ---------- */
+
+
+/* --DESKTOP and Up ---------- */
 @media (min-width: 980px) {
     #overview.logoL .logoL {
         margin-right: var(--size-7);
@@ -15,7 +17,7 @@
     // }
 }
 
-/* --TABLETS TO DESKTOPS-------------------------------------------------------------- */
+/* --TABLETS TO DESKTOPS ---------------------- */
 @media (min-width: 768px) and (max-width: 980px) {
     .jumbotron {
         margin-top: 0;
@@ -23,7 +25,7 @@
 }
 
 
-/* --TABLETS-------------------------------------------------------------- */
+/* --TABLETS--------- */
 @media (max-width: 767px) {
     
     #overview.logoL {
@@ -49,18 +51,6 @@
 
 }
 
-/* --LANDSCAPE PHONES-------------------------------------------------------------- */
+/* --LANDSCAPE PHONES
 @media (max-width: 480px) {}
-
-
-/* custom nav for bb embed */
-
-@media screen and (max-width: 770px) {
-    .bs-docs-sidebar {
-        display: block;
-        float: none;
-        width: 100%;
-        margin-left: 0;
-        box-sizing: border-box;
-    }
-}
+-------------------------------------------------------------- */
