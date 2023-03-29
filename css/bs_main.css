@@ -1538,6 +1538,7 @@ a.button--block, button.button--block {
   border: 1px solid var(--clr-border);
   position: relative;
   width: 100%;
+  border-radius: var(--radius-2);
 }
 .card__content {
   padding: var(--size-5);

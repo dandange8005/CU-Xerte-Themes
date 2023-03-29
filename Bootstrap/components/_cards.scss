@@ -4,6 +4,7 @@
     border: 1px solid var(--clr-border);
     position: relative;
     width: 100%;
+    border-radius: var(--radius-2);
 
     &__content {
         padding: var(--size-5);
