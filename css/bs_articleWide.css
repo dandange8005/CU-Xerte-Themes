@@ -1898,9 +1898,8 @@ a.accordion-toggle.collapsed::after {
   content: none;
 }
 
-/* ------------------- */
-/* UTILITY CLASSES
-
+/* UTILITY CLASSES */
+/*
 Items that can be added to the Utility Class style list
 
 - layout
@@ -1926,8 +1925,6 @@ Items that can be added to the Utility Class style list
     - shadow
     - ratio
 
-
-
 - List
     - todo list
     - toggle list
@@ -1935,7 +1932,7 @@ Items that can be added to the Utility Class style list
     - icon list
 - decoration
 
-/* ------------------- */
+ */
 .text-center {
   text-align: center;
 }
