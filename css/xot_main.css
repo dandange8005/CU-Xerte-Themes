@@ -5,7 +5,7 @@ Author: Nan Zhang
 /* ============================
     OPEN-PROP CUSTOM PROPERTIES
 ==============================*/
-/* https://unpkg.com/open-props@1.5.5/open-props.min.css */
+/* https://unpkg.com/open-props@1.5.6/open-props.min.css */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&display=swap");
 :where(html) {
