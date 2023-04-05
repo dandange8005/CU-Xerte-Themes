@@ -94,7 +94,7 @@ a[target='_blank']:focus::after,
 
 /* action link */
 a.link-action::before {
-    content:"\f0a9";
+    content: "\f0a9";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: var(--size-2);
@@ -102,14 +102,14 @@ a.link-action::before {
     font-size: var(--fs-lg);
 }
 
-a.link-action:hover::after, 
+a.link-action:hover::after,
 a.link-action:focus::after {
     content: none;
 }
 
 
 .action-link::before {
-    content:"\f0a9";
+    content: "\f0a9";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: var(--size-2);
@@ -126,6 +126,7 @@ a.action-link:focus::after {
 .page-header {
     margin-top: 0;
 }
+
 // section heading
 .page-header h1 {
     font-size: var(--fs-3xl);
@@ -136,7 +137,7 @@ a.action-link:focus::after {
 
     // remove extra margin of p in heading
     p {
-        margin-bottom: 0!important;
+        margin-bottom: 0 !important;
     }
 }
 
@@ -156,7 +157,9 @@ section>*:where(:not(:last-child)),
 
 section {
 
-    h2, h3, h4 {
+    h2,
+    h3,
+    h4 {
         color: var(--text-2);
         margin-bottom: var(--size-4);
     }
@@ -168,7 +171,7 @@ section {
     h3 {
         margin-top: var(--size-7);
     }
-    
+
     h4 {
         margin-top: var(--size-6);
     }
@@ -201,7 +204,7 @@ section {
         padding-left: var(--size-2);
     }
 
-    li  ul {
+    li ul {
         margin-top: var(--size-3);
 
     }
@@ -449,4 +452,3 @@ hr.section-break-l {
 hr.section-break-m {
     margin: 32px 0;
 }
-

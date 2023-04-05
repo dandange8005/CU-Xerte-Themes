@@ -944,7 +944,9 @@ section > *:where(:not(:last-child)),
   margin-bottom: var(--size-7);
 }
 
-section h2, section h3, section h4 {
+section h2,
+section h3,
+section h4 {
   color: var(--text-2);
   margin-bottom: var(--size-4);
 }
