@@ -1336,7 +1336,7 @@ hr.section-break-m {
   position: absolute;
   top: var(--size-4);
   left: var(--size-3);
-  font-size: var(--font-size-fluid-0);
+  font-size: var(--font-size-2);
 }
 .callout h4 {
   font-size: var(--fs-base);
