@@ -1413,9 +1413,9 @@ section:nth-child(even)::before {
   content: attr(emoji-data);
   font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
   position: absolute;
-  top: var(--size-3);
+  top: var(--size-4);
   left: var(--size-3);
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-fluid-0);
 }
 .callout h4 {
   font-size: var(--fs-base);
