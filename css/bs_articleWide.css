@@ -1241,6 +1241,23 @@ hr.section-break-m {
   margin-bottom: 0;
 }
 
+/* Welsh language toggle */
+#language-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+#language-toggle i {
+  color: var(--orange-5);
+  margin-right: 4px;
+  font-size: var(--fs-lg);
+}
+
 .navbar {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: var(--size-3);
