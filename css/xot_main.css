@@ -4,10 +4,10 @@ Author: Nan Zhang
 */
 /* ============================
     OPEN-PROP CUSTOM PROPERTIES
+    Add in Openprops custom properties
 ==============================*/
 /* https://unpkg.com/open-props@1.5.6/open-props.min.css */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&display=swap");
 :where(html) {
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   --font-serif: ui-serif, serif;
@@ -656,7 +656,7 @@ Author: Nan Zhang
 }
 /* ============================
     ANIMATE
-    Animation css library https://animate.style/
+    Add in Animation css library https://animate.style/
 ==============================*/
 /* ============================
     GOOGLE FONT IMPORT DECLARATION
@@ -751,9 +751,9 @@ Author: Nan Zhang
   --clr-header-h2: var(--white);
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
   --clr-footer-bg: #495057;
-  --clr-body-bg: var(--shade-sand);
-  --clr-body-text: var(--neutral-8);
-  --clr-headline: var(--black);
+  --clr-body-bg: #EBE9E1;
+  --clr-body-text: #333333;
+  --clr-headline: #22211f;
   --clr-link: var(--cu-link);
   --clr-link-visited: #330072;
   --clr-border: hsl(216, 12%, 84%);
@@ -764,14 +764,14 @@ Author: Nan Zhang
   --clr-btn-rollover: var(--clr-headershade);
   --clr-success: hsl(148, 100%, 25%);
   --clr-danger: hsl(4, 77%, 48%);
-  --gradient-image: url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
-  --ff-body: "Lato", sans-serif;
-  --ff-headline: "Lato", sans-serif;
+  /* Typography */
+  --ff-body: var(--font-sans);
+  --ff-headline: var(--font-sans);
   --ff-serif: var(--font-serif);
   --ff-mono: var(--font-mono);
   --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
   --fs-sm: clamp(0.83rem, 0.79rem + 0.20vw, 0.94rem);
-  --fs-base: clamp(0.94rem, 0.86rem + 0.37vw, 1.05rem);
+  --fs-base: clamp(0.94rem, 0.86rem + 0.37vw, 1rem);
   --fs-lg: clamp(1.06rem, 0.94rem + 0.58vw, 1.35rem);
   --fs-xl: clamp(1.19rem, 1.02rem + 0.85vw, 1.62rem);
   --fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
@@ -1514,7 +1514,7 @@ figcaption {
   border: 1px solid var(--clr-border);
   border-radius: 5px;
   box-shadow: var(--shadow-2);
-  font-family: var(--ff-sans);
+  font-family: var(--ff-body);
 }
 
 #menuItems {

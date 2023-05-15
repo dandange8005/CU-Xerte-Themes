@@ -7,6 +7,7 @@
     OPEN-PROP CUSTOM PROPERTIES
 ==============================*/
 /* https://unpkg.com/open-props@1.5.6/open-props.min.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap");
 :where(html) {
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   --font-serif: ui-serif, serif;
@@ -657,7 +658,7 @@
     GOOGLE FONT IMPORT DECLARATION
 ==============================*/
 /* ============================
-    BOOTSTRAP CUSTOM PROPERTIES
+    CUSTOM PROPERTIES
 ==============================*/
 :root {
   /* CU Colours */
@@ -740,7 +741,8 @@
   --flex-gap: var(--size-fluid-3);
   --grid-gap: var(--size-fluid-1);
   /* Typography */
-  --ff-sans: "Inter", sans-serif;
+  --ff-body: "Inter", sans-serif;
+  --ff-heading: "Inter", sans-serif;
   --ff-serif: var(--font-serif);
   --ff-mono: var(--font-mono);
   --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
@@ -808,7 +810,7 @@ html {
 }
 
 body {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-body);
   font-size: var(--fs-base);
   line-height: 1.625;
   color: var(--clr-body);
@@ -822,7 +824,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-heading);
   font-weight: var(--font-weight-7);
 }
 
@@ -1120,7 +1122,7 @@ blockquote .quote::after {
 }
 
 blockquote {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-body);
   font-weight: 400;
   line-height: var(--font-lineheight-3);
   font-size: var(--fs-base);
@@ -1134,7 +1136,7 @@ blockquote {
 }
 
 blockquote p {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-body);
   font-weight: 400;
   line-height: var(--font-lineheight-3);
   font-size: var(--fs-base);
@@ -1221,7 +1223,7 @@ hr.section-break-m {
 }
 
 #pageTitle {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-heading);
   color: var(--white);
   line-height: var(--font-lineheight-1);
   letter-spacing: 1px;
@@ -1318,6 +1320,37 @@ hr.section-break-m {
   max-width: 250px;
   height: auto;
   margin: auto;
+}
+
+/* Feedback button for the project*/
+#feedback_button {
+  writing-mode: vertical-lr;
+  background: var(--clr-accent);
+  color: white;
+  padding-inline: 16px;
+  padding-block: 6px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  right: 0;
+  top: 62%;
+  z-index: 1;
+  transform: translateX(10px);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 300ms var(--ease-in-out-1);
+  box-shadow: -2px 9px 20px 4px rgba(0, 0, 0, 0.1);
+}
+#feedback_button:hover {
+  transform: translateX(2px);
+}
+#feedback_button i {
+  transform: rotate(90deg);
+  -webkit-margin-end: var(--size-2);
+          margin-inline-end: var(--size-2);
+}
+#feedback_button a {
+  text-decoration: none;
 }
 
 /* ======================

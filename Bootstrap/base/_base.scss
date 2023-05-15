@@ -8,7 +8,7 @@ html {
 
 // body
 body {
-    font-family: var(--ff-sans);
+    font-family: var(--ff-body);
     font-size: var(--fs-base);
     line-height: 1.625;
     color: var(--clr-body);
@@ -23,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--ff-sans);
+    font-family: var(--ff-heading);
     font-weight: var(--font-weight-7);
 }
 
@@ -363,7 +363,7 @@ blockquote .quote::after {
 }
 
 blockquote {
-    font-family: var(--ff-sans);
+    font-family: var(--ff-body);
     font-weight: 400;
     line-height: var(--font-lineheight-3);
     font-size: var(--fs-base);
@@ -378,7 +378,7 @@ blockquote {
 
 
 blockquote p {
-    font-family: var(--ff-sans);
+    font-family: var(--ff-body);
     font-weight: 400;
     line-height: var(--font-lineheight-3);
     font-size: var(--fs-base);

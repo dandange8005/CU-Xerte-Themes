@@ -19,14 +19,11 @@
     GOOGLE FONT IMPORT DECLARATION
 ==============================*/
 
-// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap');
 
-// /* Import Google Fonts and materials icons */
-// @import url('https://fonts.googleapis.com/css2?family=Georama:wght@600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap');
-// @import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Round');
 
 /* ============================
-    BOOTSTRAP CUSTOM PROPERTIES
+    CUSTOM PROPERTIES
 ==============================*/
 
 :root {
@@ -39,8 +36,7 @@
 //     --#{$name}-dark:#{color.adjust($value, $lightness: -20%)};
 
 // }
-
-    
+   
 
 /* CU Colours */
 --cu-red: hsl(353, 65%, 52%);
@@ -143,7 +139,9 @@
 --grid-gap: var(--size-fluid-1);
 
 /* Typography */
---ff-sans: 'Inter', sans-serif;
+//font family
+--ff-body: 'Inter', sans-serif;
+--ff-heading: 'Inter', sans-serif;
 --ff-serif: var(--font-serif);
 --ff-mono: var(--font-mono);
 
