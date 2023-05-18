@@ -1681,6 +1681,7 @@ a.button--block, button.button--block {
   position: relative;
   width: 100%;
   border-radius: var(--radius-2);
+  overflow: hidden;
 }
 .card__content {
   padding: var(--size-5);
