@@ -68,9 +68,8 @@
         content: "\f061";
         color: var(--clr-link);
         transition: transform 0.5s ease-in-out;
-
+    }
     &--clickable:hover::after {
         transform: translateX(4px);
-    }
     }
 }

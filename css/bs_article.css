@@ -1734,7 +1734,7 @@ a.button--block, button.button--block {
   color: var(--clr-link);
   transition: transform 0.5s ease-in-out;
 }
-.card--clickable::after--clickable:hover::after {
+.card--clickable:hover::after {
   transform: translateX(4px);
 }
 
