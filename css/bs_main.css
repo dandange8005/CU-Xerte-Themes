@@ -1595,7 +1595,6 @@ a.button--block, button.button--block {
 }
 .card__content {
   padding: var(--size-5);
-  position: relative;
 }
 .card__content > :first-child {
   margin-top: 0;
