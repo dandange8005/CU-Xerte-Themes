@@ -29,14 +29,14 @@
 
     &__link {
         position: initial;
-        text-decoration: underline;
-        text-decoration-thickness: max(0.08em, 1.5px);
-        text-underline-offset: 0.15em;
-        color: var(--clr-link);
+        // text-decoration: underline;
+        // text-decoration-thickness: max(0.08em, 1.5px);
+        // text-underline-offset: 0.15em;
+        // color: var(--clr-link);
 
-        &:hover, &:focus {
-            text-decoration: none;
-        }
+        // &:hover, &:focus {
+        //     text-decoration: none;
+        // }
 
         &::before {
             content: "";

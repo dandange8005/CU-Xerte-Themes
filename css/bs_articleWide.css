@@ -1686,13 +1686,6 @@ a.button--block, button.button--block {
 }
 .card__link {
   position: initial;
-  text-decoration: underline;
-  text-decoration-thickness: max(0.08em, 1.5px);
-  text-underline-offset: 0.15em;
-  color: var(--clr-link);
-}
-.card__link:hover, .card__link:focus {
-  text-decoration: none;
 }
 .card__link::before {
   content: "";
