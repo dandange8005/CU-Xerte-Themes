@@ -27,6 +27,7 @@
     }
 
     &__link {
+        position: initial;
         text-decoration: underline;
         text-decoration-thickness: max(0.08em, 1.5px);
         text-underline-offset: 0.15em;
@@ -34,6 +35,12 @@
 
         &:hover, &:focus {
             text-decoration: none;
+        }
+
+        &::before {
+            content: "";
+            position:absolute;
+            inset: 0;
         }
     }
 
@@ -60,5 +67,10 @@
         font-weight: 900;
         content: "\f061";
         color: var(--clr-link);
+        transition: transform 0.5s ease-in-out;
+
+    &--clickable:hover::after {
+        transform: translateX(4px);
+    }
     }
 }

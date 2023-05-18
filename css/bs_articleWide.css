@@ -1685,6 +1685,7 @@ a.button--block, button.button--block {
   margin-bottom: var(--size-3);
 }
 .card__link {
+  position: initial;
   text-decoration: underline;
   text-decoration-thickness: max(0.08em, 1.5px);
   text-underline-offset: 0.15em;
@@ -1692,6 +1693,11 @@ a.button--block, button.button--block {
 }
 .card__link:hover, .card__link:focus {
   text-decoration: none;
+}
+.card__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 .card__image {
   border-bottom: 1px solid var(--gray-2);
@@ -1715,6 +1721,10 @@ a.button--block, button.button--block {
   font-weight: 900;
   content: "\f061";
   color: var(--clr-link);
+  transition: transform 0.5s ease-in-out;
+}
+.card--clickable::after--clickable:hover::after {
+  transform: translateX(4px);
 }
 
 /* Details Block */
