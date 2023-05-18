@@ -1725,10 +1725,10 @@ a.button--block, button.button--block {
   font-weight: 900;
   content: "\f061";
   color: var(--clr-link);
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 .card--clickable:hover::after {
-  transform: translateX(4px);
+  transform: translateX(5px);
 }
 
 /* Details Block */
