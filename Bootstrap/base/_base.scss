@@ -62,14 +62,7 @@ a:focus {
     color: var(--clr-link);
 }
 
-a[href^="mailto"]::before {
-    content: "\f0e0";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: var(--size-1);
-    font-size: var(--fs-xs);
 
-}
 
 a[target='_blank']:hover::after,
 a[target='_blank']:focus::after {
@@ -80,8 +73,15 @@ a[target='_blank']:focus::after {
     font-size: var(--fs-xs);
 }
 
-a[href^="mailto"]:hover::before,
-a[href^="mailto"]:focus::before,
+// a[href^="mailto"]::before {
+//     content: "\f0e0";
+//     font-family: "Font Awesome 5 Free";
+//     font-weight: 900;
+//     margin-right: var(--size-1);
+//     font-size: var(--fs-xs);
+
+// }
+
 a[target='_blank']:hover::after,
 a[target='_blank']:focus::after,
 .link-action:hover::before,
