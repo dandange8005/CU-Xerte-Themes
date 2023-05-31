@@ -8,7 +8,7 @@
     overflow: hidden;
 
     &__content {
-        padding: var(--size-5);
+        padding: var(--size-4);
         // position: relative;
 
         >:first-child {
@@ -46,14 +46,26 @@
     }
 
     &__image {
-        border-bottom: 1px solid var(--gray-2);
-        display: block;
-        width: 100%;
-    }
+        overflow: hidden;
+        // border-bottom: 1px solid var(--gray-2);
+        // display: block;
+        // width: 100%;
+
+        img {
+            transition: all .5s ease;
+            aspect-ratio: var(--ratio-widescreen);
+            object-fit: cover;
+        }
+    };
+    
 
     &--clickable {
         border-bottom-width: var(--border-size-3);
         padding-bottom: var(--size-2);
+        transition: all .5s ease;
+    }
+    &--clickable:hover img {
+        transform: scale(1.05);
     }
     &--clickable::after {
         position: absolute;

@@ -1584,7 +1584,7 @@ a.button--block, button.button--block {
   overflow: hidden;
 }
 .card__content {
-  padding: var(--size-5);
+  padding: var(--size-4);
 }
 .card__content > :first-child {
   margin-top: 0;
@@ -1604,13 +1604,21 @@ a.button--block, button.button--block {
   inset: 0;
 }
 .card__image {
-  border-bottom: 1px solid var(--gray-2);
-  display: block;
-  width: 100%;
+  overflow: hidden;
+}
+.card__image img {
+  transition: all 0.5s ease;
+  aspect-ratio: var(--ratio-widescreen);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card--clickable {
   border-bottom-width: var(--border-size-3);
   padding-bottom: var(--size-2);
+  transition: all 0.5s ease;
+}
+.card--clickable:hover img {
+  transform: scale(1.05);
 }
 .card--clickable::after {
   position: absolute;
