@@ -63,10 +63,20 @@
         border-bottom-width: var(--border-size-3);
         padding-bottom: var(--size-2);
         transition: all .5s ease;
+
+        &:hover {
+            box-shadow: var(--shadow-4);
+
+            img {
+                transform: scale(1.05);
+            }
+
+            &::after {
+                transform: translateX(5px);
+            }
+        }
     }
-    &--clickable:hover img {
-        transform: scale(1.05);
-    }
+
     &--clickable::after {
         position: absolute;
         right: var(--size-3);
@@ -81,8 +91,5 @@
         content: "\f061";
         color: var(--clr-link);
         transition: all .5s ease;
-    }
-    &--clickable:hover::after {
-        transform: translateX(5px);
     }
 }

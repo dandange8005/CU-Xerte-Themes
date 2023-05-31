@@ -1617,8 +1617,14 @@ a.button--block, button.button--block {
   padding-bottom: var(--size-2);
   transition: all 0.5s ease;
 }
+.card--clickable:hover {
+  box-shadow: var(--shadow-4);
+}
 .card--clickable:hover img {
   transform: scale(1.05);
+}
+.card--clickable:hover::after {
+  transform: translateX(5px);
 }
 .card--clickable::after {
   position: absolute;
@@ -1634,9 +1640,6 @@ a.button--block, button.button--block {
   content: "\f061";
   color: var(--clr-link);
   transition: all 0.5s ease;
-}
-.card--clickable:hover::after {
-  transform: translateX(5px);
 }
 
 /* Details Block */
