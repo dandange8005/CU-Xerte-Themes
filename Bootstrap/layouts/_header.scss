@@ -8,7 +8,7 @@
     // fallback for old broswer
     background: var(--clr-jumbotron-bg)!important; 
     background-image: var(--clr-jumbotron-bg-gradient)!important;
-    padding: var(--size-fluid-6) var(--size-7);
+    padding: var(--size-fluid-5) var(--size-7);
     background-size: cover!important;
 
 }
@@ -29,6 +29,11 @@
 }
 
 // main page title
+.titles {
+    padding: 0;
+}
+
+
 #pageTitle {
     font-family: var(--ff-heading);
     color: var(--white);
