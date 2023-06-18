@@ -1235,23 +1235,6 @@ hr.section-break-m {
   margin-bottom: 0;
 }
 
-/* Welsh language toggle */
-#language-toggle {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  font-size: var(--fs-sm);
-  cursor: pointer;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-}
-#language-toggle i {
-  color: var(--orange-5);
-  margin-right: 4px;
-  font-size: var(--fs-lg);
-}
-
 .navbar {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: var(--size-3);
@@ -1879,6 +1862,80 @@ a.accordion-toggle.collapsed::after {
   content: none;
 }
 
+.link-asset {
+  display: flex;
+  background: var(--gray-1);
+  align-items: center;
+  padding: var(--size-3);
+  border-radius: var(--radius-2);
+  color: unset;
+}
+.link-asset:hover {
+  color: var(--clr-link);
+  text-decoration: none;
+  outline: 1.5px solid var(--clr-link);
+}
+.link-asset__icon {
+  font-size: var(--fs-lg);
+  margin-right: var(--size-3);
+}
+.link-asset__icon.fa-file-pdf {
+  color: var(--red-9);
+}
+.link-asset__icon.fa-file-word {
+  color: var(--blue-9);
+}
+.link-asset__name {
+  /*   font-size: var(--fs-lg); */
+  font-weight: bold;
+}
+.link-asset__label {
+  color: var(--stone-8);
+}
+
+/* Language toggle */
+#language-toggle i {
+  color: var(--orange-5);
+  margin-right: 6px;
+  font-size: var(--fs-lg);
+  vertical-align: middle;
+}
+
+#language-toggle {
+  position: absolute;
+  top: 28px;
+  right: 24px;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-7);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+#language-toggle:hover,
+#language-toggle:focus {
+  text-decoration: none;
+}
+
+.language-toggle-icon {
+  color: var(--orange-5);
+  margin-right: 6px;
+  font-size: var(--fs-lg);
+  vertical-align: middle;
+}
+
+/* Hide the language text on small screen */
+@media (max-width: 980px) {
+  .language-toggle-text {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+}
 /* UTILITY CLASSES */
 /*
 Items that can be added to the Utility Class style list
