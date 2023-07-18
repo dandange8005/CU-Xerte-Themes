@@ -1471,7 +1471,7 @@ section:nth-child(even)::before {
   content: "ℹ️";
 }
 
-/* Example block */
+/* Example block Component */
 .example {
   padding: 3em 1em;
   border: 1px solid var(--clr-border);
@@ -1708,7 +1708,7 @@ a.button--block, button.button--block {
   transition: all 0.5s ease;
 }
 
-/* Details Block */
+/* Details component */
 .details {
   display: block;
 }
@@ -1771,7 +1771,7 @@ a.button--block, button.button--block {
   margin-top: var(--flow-space, 1rem);
 }
 
-/* Dos and Donts List */
+/* Dos and Donts List component */
 .do-dont-list {
   margin: var(--size-8) 0;
   padding: var(--size-5);
@@ -1814,7 +1814,12 @@ a.button--block, button.button--block {
   position: absolute;
 }
 
-/* Bootstrap Navigators */
+/* Bootstrap Navigators overwrite
+- tabs
+- pills
+- carousel
+- accordion
+*/
 .panel:after {
   background-color: #f2f2f2;
 }
@@ -1927,7 +1932,7 @@ a.accordion-toggle.collapsed::after {
   margin-bottom: var(--size-3);
 }
 
-/* project information style */
+/* project information component */
 #project-info {
   display: flex;
   justify-content: space-around;
@@ -1941,6 +1946,7 @@ a.accordion-toggle.collapsed::after {
   content: none;
 }
 
+/* Link Asset Component */
 .link-asset {
   display: flex;
   background: var(--gray-1);
@@ -1972,7 +1978,7 @@ a.accordion-toggle.collapsed::after {
   color: var(--stone-8);
 }
 
-/* Language toggle */
+/* Language toggle component */
 #language-toggle i {
   color: var(--orange-5);
   margin-right: 6px;
