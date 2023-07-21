@@ -93,6 +93,10 @@ a[target='_blank']:focus::after,
 }
 
 /* action link */
+a.link-action {
+    display: block;
+}
+
 a.link-action::before {
     content: "\f0a9";
     font-family: "Font Awesome 5 Free";
@@ -107,7 +111,7 @@ a.link-action:focus::after {
     content: none;
 }
 
-
+// Old action link used in old projects
 .action-link::before {
     content: "\f0a9";
     font-family: "Font Awesome 5 Free";
@@ -321,6 +325,12 @@ table {
     background: var(--white);
     box-shadow: var(--shadow-2);
     font-size: var(--fs-sm);
+}
+
+table caption {
+    text-align: left;
+    color: var(--neutral-6);
+    padding-block: var(--size-1);
 }
 
 table,
