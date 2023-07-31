@@ -883,7 +883,7 @@ a[target=_blank]:focus::after,
 
 /* action link */
 a.link-action {
-  display: block;
+  display: inline-block;
 }
 
 a.link-action::before {
@@ -1350,8 +1350,7 @@ hr.section-break-m {
 }
 #feedback_button i {
   transform: rotate(90deg);
-  -webkit-margin-end: var(--size-2);
-          margin-inline-end: var(--size-2);
+  margin-inline-end: var(--size-2);
 }
 #feedback_button a {
   text-decoration: none;

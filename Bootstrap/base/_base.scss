@@ -94,7 +94,7 @@ a[target='_blank']:focus::after,
 
 /* action link */
 a.link-action {
-    display: block;
+    display: inline-block;
 }
 
 a.link-action::before {
