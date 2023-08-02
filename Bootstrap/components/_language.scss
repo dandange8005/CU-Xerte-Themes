@@ -3,7 +3,7 @@
 #language-toggle {
 
     i {
-        color: var(--orange-5);
+        // color: var(--orange-5);
         margin-right: 6px;
         font-size: var(--fs-lg);
         vertical-align: middle;
@@ -25,14 +25,15 @@
   #language-toggle:hover,
   #language-toggle:focus {
     text-decoration: none;
+    color: var(--gray-3);
   }
 
-  .language-toggle-icon {
-    color: var(--orange-5);
-    margin-right: 6px;
-    font-size: var(--fs-lg);
-    vertical-align: middle;
-  }
+  // .language-toggle-icon {
+  //   color: var(--orange-5);
+  //   margin-right: 6px;
+  //   font-size: var(--fs-lg);
+  //   vertical-align: middle;
+  // }
 
 /* Hide the language text on small screen */
   @media (max-width:980px) {
