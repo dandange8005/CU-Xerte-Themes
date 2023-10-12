@@ -1405,10 +1405,7 @@ hr.section-break-m {
 }
 .callout.danger {
   background-color: var(--red-0);
-  border: 1px solid var(--red-2);
-}
-.callout.danger::before {
-  content: "❌";
+  border: 1px solid var(--red-4);
 }
 .callout.info {
   background-color: var(--blue-0);

@@ -37,11 +37,11 @@
 
     &.danger {
         background-color: var(--red-0);
-        border: 1px solid var(--red-2);
+        border: 1px solid var(--red-4);
 
-        &::before {
-            content: '❌';
-        }
+        // &::before {
+        //     content: '❌';
+        // }
     }
 
     &.info {
