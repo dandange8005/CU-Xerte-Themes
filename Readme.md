@@ -1,8 +1,18 @@
-# About the project
+## About the project
 
 - it is still in development therefore new updates and tweaks are constantly added to the master stylesheet
 - I need to figure out a way that all projects use the template get the latest version of stylesheet
 - I don't want people who use the template need to go through the hassel of updating the stylesheet themselves whenever there is an update
+
+
+## Example Projects that are using the theme
+
+
+- [Getting started with Mentimeter](https://xerte.cardiff.ac.uk/play_18796#page1) #DigEd
+- 
+- [Emergency Medicine Academic Centre](https://xerte.cardiff.ac.uk/play_20643) #MEDIC
+
+
 
 ## How to use the template
 
