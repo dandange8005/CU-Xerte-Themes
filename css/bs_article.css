@@ -1075,8 +1075,6 @@ section li ul {
 
 figure img {
   width: 100%;
-  max-width: -moz-max-content;
-  max-width: max-content;
 }
 
 figcaption {
