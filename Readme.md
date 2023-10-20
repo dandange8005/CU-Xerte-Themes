@@ -5,12 +5,23 @@
 - I don't want people who use the template need to go through the hassel of updating the stylesheet themselves whenever there is an update
 
 
-## Example Projects that are using the theme
+## Projects that are using the theme
 
+### Bootstrap Template
 
-- [Getting started with Mentimeter](https://xerte.cardiff.ac.uk/play_18796#page1) #DigEd
-- 
+Below are the projects that currently using the Bootstrap template
+
+- [Getting started with Mentimeter](https://xerte.cardiff.ac.uk/play_18796#page1) #DigEd- 
 - [Emergency Medicine Academic Centre](https://xerte.cardiff.ac.uk/play_20643) #MEDIC
+- [Ultra Essentials](https://xerte.cardiff.ac.uk/play_18321#UltraEssentials)
+- [Digital Learning Environment](https://xerte.cardiff.ac.uk/play_18292#page1)
+- [Ultra Courses Setup Checklist](https://xerte.cardiff.ac.uk/play_18204#page1)
+- [Ultra Courses Help for Staff](https://xerte.cardiff.ac.uk/play_19885#page1)
+- [Turnitin Ultra Courses](https://xerte.cardiff.ac.uk/play_19039#page1)
+- [‘Preparing for Ultra Courses’ Guide](https://xerte.cardiff.ac.uk/play_19104#Aims_&_Use_of_Resource)
+- [Learning Central Guidance for Students](https://xerte.cardiff.ac.uk/play_18610#Home)
+
+### XOT Template
 
 
 
