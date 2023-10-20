@@ -5,24 +5,31 @@
 - I don't want people who use the template need to go through the hassel of updating the stylesheet themselves whenever there is an update
 
 
-## Projects that are using the theme
+## Projects that are adopting the theme
 
-### Bootstrap Template
+### Bootstrap Theme
 
 Below are the projects that currently using the Bootstrap template
 
-- [Getting started with Mentimeter](https://xerte.cardiff.ac.uk/play_18796#page1) #DigEd- 
+- [Getting started with Mentimeter](https://xerte.cardiff.ac.uk/play_18796#page1) #DigEd
+- [Ultra Essentials](https://xerte.cardiff.ac.uk/play_18321#UltraEssentials) #DigEd
+- [Digital Learning Environment](https://xerte.cardiff.ac.uk/play_18292#page1) #DigEd
+- [Ultra Courses Setup Checklist](https://xerte.cardiff.ac.uk/play_18204#page1) #DigEd
+- [Ultra Courses Help for Staff](https://xerte.cardiff.ac.uk/play_19885#page1) #DigEd
+- [Turnitin Ultra Courses](https://xerte.cardiff.ac.uk/play_19039#page1) #DigEd
+- [‘Preparing for Ultra Courses’ Guide](https://xerte.cardiff.ac.uk/play_19104#Aims_&_Use_of_Resource) #DigEd
+- [Learning Central Guidance for Students](https://xerte.cardiff.ac.uk/play_18610#Home) #DigEd
+- [Engagement in classrooms using Mentimeter](https://xerte.cardiff.ac.uk/play_18796) #DigEd
 - [Emergency Medicine Academic Centre](https://xerte.cardiff.ac.uk/play_20643) #MEDIC
-- [Ultra Essentials](https://xerte.cardiff.ac.uk/play_18321#UltraEssentials)
-- [Digital Learning Environment](https://xerte.cardiff.ac.uk/play_18292#page1)
-- [Ultra Courses Setup Checklist](https://xerte.cardiff.ac.uk/play_18204#page1)
-- [Ultra Courses Help for Staff](https://xerte.cardiff.ac.uk/play_19885#page1)
-- [Turnitin Ultra Courses](https://xerte.cardiff.ac.uk/play_19039#page1)
-- [‘Preparing for Ultra Courses’ Guide](https://xerte.cardiff.ac.uk/play_19104#Aims_&_Use_of_Resource)
-- [Learning Central Guidance for Students](https://xerte.cardiff.ac.uk/play_18610#Home)
+- [School of Physics and Astronomy UG Support Toolkit](https://xerte.cardiff.ac.uk/play_19724) #PSYSX
+- [Setting up Electronic Tests on Blackboard Ultra Courses](https://xerte.cardiff.ac.uk/play_20396) #COMSC
+- [School of Biosciences Student Support Toolkit](https://xerte.cardiff.ac.uk/play_18168#page1) #BIOSI
+- [Education Development Toolkit](https://xerte.cardiff.ac.uk/play_18569#page1) #LTA
 
-### XOT Template
+### XOT Theme
 
+- [Academic Integrity](https://xerte.cardiff.ac.uk/play_20576#page1) #DigEd
+- [COMMUNITY OF INQUIRY TOOLKIT](https://xerte.cardiff.ac.uk/play_18701#page1) #DigEd
 
 
 ## How to use the template
