@@ -1,15 +1,32 @@
+# CU-Xerte-Themes
+
+## Introduction
+
+- Why:
+  - Why create the theme
+  - The goal
+  - The objectives
+- Who:
+  - Who is this for
+- The approach
+- How
+  - how to use the themes
+  - how to report issues
+  - how to contribute
+
+
 ## About the project
 
-- it is still in development therefore new updates and tweaks are constantly added to the master stylesheet
+<!-- - it is still in development therefore new updates and tweaks are constantly added to the master stylesheet
 - I need to figure out a way that all projects use the template get the latest version of stylesheet
-- I don't want people who use the template need to go through the hassel of updating the stylesheet themselves whenever there is an update
+- I don't want people who use the template need to go through the hassel of updating the stylesheet themselves whenever there is an update -->
 
 
 ## Projects that are adopting the theme
 
 ### Bootstrap Theme
 
-Below are the projects that currently using the Bootstrap template
+Projects that using the Bootstrap theme
 
 - [Getting started with Mentimeter](https://xerte.cardiff.ac.uk/play_18796#page1) #DigEd
 - [Ultra Essentials](https://xerte.cardiff.ac.uk/play_18321#UltraEssentials) #DigEd
@@ -28,20 +45,22 @@ Below are the projects that currently using the Bootstrap template
 
 ### XOT Theme
 
+Projects that using the XOT theme
+
 - [Academic Integrity](https://xerte.cardiff.ac.uk/play_20576#page1) #DigEd
 - [COMMUNITY OF INQUIRY TOOLKIT](https://xerte.cardiff.ac.uk/play_18701#page1) #DigEd
 
 
-## How to use the template
+## Using the template
 
-1. Download the template from github
+<!-- 1. Download the template from github
 2. Upload the template to your Xerte project
 3. Add the following code to the head of the project
     ```html
     <link rel="stylesheet" href="https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css">
-    ```
+    ``` -->
 
-
+## Contribution
 
 ## Main styles direct urls
 github page link: 
