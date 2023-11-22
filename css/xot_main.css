@@ -832,9 +832,6 @@ Author: Nan Zhang
   --clr-btn-rollover: var(--clr-headershade);
   --clr-success: hsl(148, 100%, 25%);
   --clr-danger: hsl(4, 77%, 48%);
-  --clr-focus: #ffeb3b;
-  --clr-focus-text: #212b32;
-  --focus-width: 4px;
   /* Typography */
   --ff-body: var(--font-sans);
   --ff-headline: var(--font-sans);
@@ -1575,8 +1572,22 @@ figcaption {
   }
 }
 /* ==========================================================================
-  #TOOLS
+  # BASE / #FOCUSED
 ========================================================================== */
+:where(html) {
+  --clr-focus: #ffeb3b;
+  --clr-focus-text: #212b32;
+  --focus-width: 4px;
+}
+
+a:focus {
+  background-color: var(--clr-focus);
+  box-shadow: 0 -2px var(--clr-focus), 0 var(--focus-width) var(--clr-focus-text);
+  color: var(--clr-focus-text);
+  outline: var(--focus-width) solid transparent;
+  text-decoration: none;
+}
+
 #x_footerBlock button:focus {
   background-color: var(--clr-focus);
   box-shadow: 0 -2px var(--clr-focus), 0 var(--focus-width) var(--clr-focus-text);
