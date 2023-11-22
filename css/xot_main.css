@@ -1583,7 +1583,7 @@ figcaption {
 a:focus {
   background-color: var(--clr-focus);
   box-shadow: 0 -2px var(--clr-focus), 0 var(--focus-width) var(--clr-focus-text);
-  color: var(--clr-focus-text);
+  color: var(--clr-focus-text) !important;
   outline: var(--focus-width) solid transparent;
   text-decoration: none;
 }
