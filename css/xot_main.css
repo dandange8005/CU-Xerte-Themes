@@ -2213,6 +2213,10 @@ ul.category {
           hyphens: auto;
 }
 
+.mx-auto {
+  margin-inline: auto;
+}
+
 /* ----------------------
 	jQUERY Components
 -------------------------- */
