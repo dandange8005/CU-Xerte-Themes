@@ -6,7 +6,7 @@ The template is based on the [Bootstrap v2.3.2 framework](https://getbootstrap.c
 
 The template has got everything you need out of the box, but it is possible to customise the template to suit your needs. This guide will show you how to download the template, apply it to your Xerte project and customise it to suit your needs.
 
-## Typography
+## Typeface
 
 The template uses system fonts for the body text and headings. This means that the text will be displayed in the font that the user has set as their default font in their browser. This is usually a sans-serif font such as Arial or Helvetica. This is a good thing as it means that the text will be displayed in a font that the user is familiar with and is easy to read. And it also means that they don't have to download any additional fonts to view the resource. In a way to make the resource more accessible.
 
@@ -14,9 +14,7 @@ The template uses system fonts for the body text and headings. This means that t
 font-famly: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
 ```
 
-However, it doesn't mean you can't use other fonts in your resource to make it more exciting. You can use the `@font-face` rule to import fonts from external sources. For example, you can use the [Google Fonts](https://fonts.google.com/) service to import fonts into your resource. You can then use these fonts in your resource by setting the `font-family` property in your CSS.
-
-The template uses css [custom properties]([https:](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) to set the font family for the body text and headings. This means that you can easily change the font family for the whole resource by changing the custom property values in the `:root` selector.
+However, it doesn't mean you can't use other fonts in your resource to make it more exciting. For example, you can use the [Google Fonts](https://fonts.google.com/) service to import fonts into your resource. You can then use these fonts in your resource by setting the `font-family` property in your CSS.
 
 For example, if you wanted to use the [Inter](https://fonts.google.com/specimen/Inter) font in your resource, you can do so by following these steps:
 
@@ -30,7 +28,9 @@ For example, if you wanted to use the [Inter](https://fonts.google.com/specimen/
 
 ### Step 2: Set the font family
 
-1. Go to the **CSS** tab in the Xerte editor.
+The template uses css [custom properties]([https:](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) to set the font family for the body text and headings. This means that you can easily change the font family for the whole resource by changing the custom property values in the `:root` selector.
+
+1. Go to the **Styles** section in the Xerte editor.
 2. Change the value of the `--ff-body` and `--ff-heading` properties to the name of the font you want to use. For example,
 
     ```css
@@ -100,5 +100,9 @@ The template also has a number of additional customisable properties that you ca
 
 ## Open Props
 
-The template includes [Open-props]() https://openprops.org/) support. This allows you to customise the template using the Xerte editor. You can use the `open-props` attribute to set the value of the custom properties. For example, you can use the `open-props` attribute to set the value of the `--ff-body` custom property. This will allow you to change the font family for the content body using the Xerte editor.
+The template includes [Open-props](https://openprops.org/) that allows you to create custom components with consistent tokens and properties. These components can then be used in your resource to create custom interactions. 
+
+### Utility classes
+
+The template includes a number of utility classes that you can use to style your content. These classes are defined in the `css/utility.css` file. 
 

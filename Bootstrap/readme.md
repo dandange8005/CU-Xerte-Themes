@@ -1,6 +1,6 @@
-## Bootstrap SASS Structure
+## Bootstrap SCSS Structure
 
-This is a document of how this SASS project structured.
+This is a document of how this Bootstrap project is structured.
 
 
 abstract/ (things that are not compiled into css)
@@ -62,7 +62,6 @@ bs_main.scss
 
 
 ```
-Example
 
 sass/
 |
