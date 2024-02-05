@@ -50,7 +50,7 @@ h4 {
 // link
 a {
     color: var(--clr-link);
-    text-decoration: none;
+    // text-decoration: none;
     position: relative;
 }
 
@@ -59,14 +59,19 @@ section a:not(.accordion-toggle,.top-round,.carousel-control,.glossary), footer 
     text-decoration: none;
 }
 
-a:hover,
-a:focus {
+section a:hover:not(.accordion-toggle,.top-round,.carousel-control,.glossary), footer a:hover:not(.glossary) {
     text-decoration: underline;
-    text-decoration-thickness: max(0.08em, 1.5px);
-    text-underline-offset: 0.15em;
+    text-underline-position: under;
     color: var(--clr-link);
 }
 
+// a:hover,
+// a:focus {
+//     text-decoration: underline;
+//     text-decoration-thickness: max(0.08em, 1.5px);
+//     text-underline-offset: 0.15em;
+//     color: var(--clr-link);
+// }
 
 
 a[target='_blank']:hover::after,
