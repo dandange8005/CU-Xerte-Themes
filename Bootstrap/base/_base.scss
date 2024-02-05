@@ -54,6 +54,11 @@ a {
     position: relative;
 }
 
+// remove links underline due to Xerte update
+section a:not(.accordion-toggle,.top-round,.carousel-control,.glossary), footer a:not(.glossary) {
+    text-decoration: none;
+}
+
 a:hover,
 a:focus {
     text-decoration: underline;

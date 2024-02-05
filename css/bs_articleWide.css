@@ -937,6 +937,10 @@ a {
   position: relative;
 }
 
+section a:not(.accordion-toggle, .top-round, .carousel-control, .glossary), footer a:not(.glossary) {
+  text-decoration: none;
+}
+
 a:hover,
 a:focus {
   text-decoration: underline;
