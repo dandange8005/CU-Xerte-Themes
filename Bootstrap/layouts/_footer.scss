@@ -71,5 +71,10 @@
         transform: rotate(90deg);
         margin-inline-end: var(--size-2);
     }
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
 }
 
