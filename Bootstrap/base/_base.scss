@@ -54,12 +54,12 @@ a {
     position: relative;
 }
 
-// remove links underline due to Xerte update
+// update link style due to Xerte update
 section a:not(.accordion-toggle,.top-round,.carousel-control,.glossary), footer a:not(.glossary) {
     text-decoration: none;
 }
 
-section a:hover:not(.accordion-toggle,.top-round,.carousel-control,.glossary), footer a:hover:not(.glossary) {
+section a:hover:not(.accordion-toggle,.top-round,.carousel-control,.glossary), footer a:hover:not(.glossary, .feedback_button) {
     text-decoration: underline;
     text-underline-position: under;
     color: var(--clr-link);

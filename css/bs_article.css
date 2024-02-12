@@ -940,7 +940,7 @@ section a:not(.accordion-toggle, .top-round, .carousel-control, .glossary), foot
   text-decoration: none;
 }
 
-section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary), footer a:hover:not(.glossary) {
+section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary), footer a:hover:not(.glossary, .feedback_button) {
   text-decoration: underline;
   text-underline-position: under;
   color: var(--clr-link);
@@ -1414,18 +1414,20 @@ hr.section-break-m {
   background: var(--clr-accent);
   color: white;
   padding-inline: 16px;
-  padding-block: 6px;
+  padding-block: 4px;
+  padding-block-end: 8px;
   position: fixed;
   display: flex;
   align-items: center;
   right: 0;
   top: 62%;
-  z-index: 1;
+  z-index: 1000;
   transform: translateX(10px);
   border-radius: 4px;
   cursor: pointer;
   transition: transform 300ms var(--ease-in-out-1);
   box-shadow: -2px 9px 20px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 #feedback_button:hover {
   transform: translateX(2px);
@@ -1433,9 +1435,6 @@ hr.section-break-m {
 #feedback_button i {
   transform: rotate(90deg);
   margin-inline-end: var(--size-2);
-}
-#feedback_button a {
-  text-decoration: none;
 }
 
 /* ======================
