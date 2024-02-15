@@ -94,20 +94,6 @@ webfonts
 5. html encoder: http://htmlencode.net/
 6. svg encoder: https://yoksel.github.io/url-encoder/
 
-
-## Short tutorials
-
-### How to inserting code snippets in Xerte Bootstrap theme template 
-- Tutorial: https://clt.champlain.edu/kb/inserting-code-snippets/
-- go to https://prismjs.com/
-- select theme
-- download stylesheet
-- copy js library cdn: https://cdnjs.com/libraries/prism
--  Include prismjs stylesheet and js library into the project
-- use http://htmlencode.net/ to encode html to escape the <> characters
-- create a new text page and paste the code in the following structure
-
-
 ## Working with Icons
 
 Icon options
