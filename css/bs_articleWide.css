@@ -1554,6 +1554,9 @@ section:nth-child(even)::before {
   background-color: var(--red-0);
   border: 1px solid var(--red-4);
 }
+.callout.danger::before {
+  content: "⛔️";
+}
 .callout.info {
   background-color: var(--blue-0);
   border: 1px solid var(--blue-2);
