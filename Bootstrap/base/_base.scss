@@ -384,7 +384,7 @@ blockquote .quote::after {
 
 blockquote {
     display: grid;
-    gap: var(--size-3)
+    gap: var(--size-3);
     font-family: var(--ff-body);
     font-weight: 400;
     line-height: var(--font-lineheight-3);
@@ -464,16 +464,8 @@ cite {
 
 /* Section break */
 hr {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    background-color: var(--clr-border);
     border: 0;
-    border-top: 0.0625rem solid var(--clr-border);
-}
-
-hr.section-break-l {
-    margin: 48px 0;
-}
-
-hr.section-break-m {
-    margin: 32px 0;
+    height: var(--border-size-2);
+    margin-block: var(--size-fluid-5);
 }
