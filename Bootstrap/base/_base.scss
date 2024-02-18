@@ -383,25 +383,30 @@ blockquote .quote::after {
 }
 
 blockquote {
+    display: grid;
+    gap: var(--size-3)
     font-family: var(--ff-body);
     font-weight: 400;
     line-height: var(--font-lineheight-3);
     font-size: var(--fs-base);
-    color: var(--neutral-6);
     margin: var(--size-5) 0;
     background: none;
     border: none;
     margin-left: 0;
-    padding: var(--size-2) var(--size-5);
+    padding: var(--size-3) var(--size-5);
     border-left: 5px solid var(--neutral-6);
+    max-inline-size: 70ch;
 }
 
 
 blockquote p {
-    font-family: var(--ff-body);
     font-weight: 400;
     line-height: var(--font-lineheight-3);
     font-size: var(--fs-base);
+}
+
+cite {
+    font-style: italic;
 }
 
 .source {

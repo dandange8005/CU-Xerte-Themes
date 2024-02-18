@@ -1224,6 +1224,10 @@ blockquote p {
   font-size: var(--fs-base);
 }
 
+cite {
+  font-style: italic;
+}
+
 .source {
   font-size: var(--fs-sm);
   color: var(--neutral-4);
