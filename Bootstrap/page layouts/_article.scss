@@ -4,25 +4,34 @@
 
 /* A single page template with no table of content with container maximum width of 724px to improve readability*/
 
+// change the main background color
 body {
     --clr-main-bg: white;
 }
 
-/* remove toc */
+/* Remove the table of content */
 #contentTable {
     display: none;
 }
 
-/*remove left margin for full width*/
+// remove left margin for full width
 .row-fluid .span9 {
     margin-left: 0;
 }
 
-/*remove extra spacing*/
+// remove extra spacing from main navbar
 .navbar-fixed-top {
     margin-bottom: 0;
 }
 
+// center the page title
+#overview .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+// set the width of the container when the screen is larger than 1200px
 @media (min-width: 1200px) {
     .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
       width: 900px;
@@ -58,11 +67,9 @@ section::before {
         background-color: var(--white);
     } */
 
-  .footer {
-    margin-top: 0;
-}
 
-/* Section heading */
+
+/* Section headings */
 /* .page-header {
     border: none;
 }
@@ -93,4 +100,10 @@ section::before {
 /*remove scroll to the top button*/
 .btn-mini {
     display: none;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 0;
 }

@@ -1447,19 +1447,23 @@ body {
   --clr-main-bg: white;
 }
 
-/* remove toc */
+/* Remove the table of content */
 #contentTable {
   display: none;
 }
 
-/*remove left margin for full width*/
 .row-fluid .span9 {
   margin-left: 0;
 }
 
-/*remove extra spacing*/
 .navbar-fixed-top {
   margin-bottom: 0;
+}
+
+#overview .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 1200px) {
@@ -1494,11 +1498,7 @@ section::before {
     section:nth-child(even)::before {
         background-color: var(--white);
     } */
-.footer {
-  margin-top: 0;
-}
-
-/* Section heading */
+/* Section headings */
 /* .page-header {
     border: none;
 }
@@ -1527,6 +1527,11 @@ section::before {
 /*remove scroll to the top button*/
 .btn-mini {
   display: none;
+}
+
+/* Footer */
+.footer {
+  margin-top: 0;
 }
 
 /* Callout component */
