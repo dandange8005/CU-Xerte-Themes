@@ -2,6 +2,16 @@
 
 // Path: Bootstrap/utility/_index.scss
 
+/* ===================
+    UTILITY CLASSES 
+======================*/
 
 @forward 'background';
 @forward 'flex';
+@forward 'float';
+@forward 'grid';
+@forward 'ratio';
+@forward 'shadows';
+@forward 'spacing';
+@forward 'text';
+@forward 'utility';
