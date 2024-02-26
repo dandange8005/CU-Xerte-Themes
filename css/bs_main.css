@@ -1284,7 +1284,7 @@ hr {
 .jumbotron {
   background: var(--clr-jumbotron-bg) !important;
   background-image: var(--clr-jumbotron-bg-gradient) !important;
-  padding: var(--size-fluid-5) var(--size-7);
+  padding: var(--size-fluid-3) var(--size-7);
   background-size: cover !important;
 }
 
