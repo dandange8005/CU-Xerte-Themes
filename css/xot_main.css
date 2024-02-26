@@ -2044,7 +2044,9 @@ table.glossary tr td:first-child {
   color: var(--clr-link);
 }
 
-/* Interactivity > Categories Page */
+/* ----------------------
+	Interactivity - Categories
+-------------------------- */
 #categoryHolder h3 {
   font-size: var(--fs-lg);
 }
