@@ -2185,7 +2185,7 @@ Background Utilities
   margin-bottom: var(--flex-gap);
 }
 
-.flexItem h3 {
+.flexItem h3:is(:first-child) {
   margin-top: 0;
 }
 
