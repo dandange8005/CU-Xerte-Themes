@@ -155,6 +155,11 @@ a.action-link:focus::after {
     }
 }
 
+// remove margin-top from h2 after page-header
+.page-header + h2 {
+    margin-top: 0;
+}
+
 // spacing
 section {
     margin-bottom: var(--size-fluid-6);

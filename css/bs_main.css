@@ -1004,6 +1004,10 @@ a.action-link:focus::after {
   margin-bottom: 0 !important;
 }
 
+.page-header + h2 {
+  margin-top: 0;
+}
+
 section {
   margin-bottom: var(--size-fluid-6);
 }
@@ -2205,7 +2209,7 @@ Background Utilities
     margin-bottom: 0;
   }
 }
-/* Flex Utility */
+/* Flex Utility  */
 .flex-inline {
   display: inline-flex;
 }
