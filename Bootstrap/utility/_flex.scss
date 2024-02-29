@@ -1,40 +1,13 @@
 
-/* Flex Utility Classes   */
+/* Flexbox System   */
+
+
+/* Flexbox System 1  */
 
 // Flex container
 .flex {
     display: flex;
     gap: var(--flex-gap);
-}
-
-/* Flex Direction */
-.flex-row {
-    flex-direction: row;
-}
-
-.flex-row-reverse {
-    flex-direction: row-reverse;
-}
-
-.flex-col {
-    flex-direction: column;
-}
-
-.flex-col-reverse {
-    flex-direction: column-reverse;
-}
-
-/* Flex Wrap */
-.flex-wrap {
-    flex-wrap: wrap;
-}
-
-.flex-wrap-reverse {
-    flex-wrap: wrap-reverse;
-}
-
-.flex-no-wrap {
-    flex-wrap: nowrap;
 }
 
 // Flex items
@@ -83,7 +56,7 @@
     flex: 1 1 600px;
 }
 
-/* Another Flex System */
+/* Flexbox system 2 */
 
 .flexContainer {
     position: relative;
@@ -97,11 +70,12 @@
     padding: 0;
     margin-bottom: var(--flex-gap);
 }
+
 .flexItem h3:is(:first-child) {
     margin-top: 0;
 }
 .flexItem h3.topMargin {
-    margin-top: 34px;
+    margin-top: 2em;
 }
 
 .flexItem img {
@@ -142,4 +116,54 @@
         padding-right: var(--flex-gap);
         margin-bottom: 0;
     }
+}
+
+/* Flex Utility */
+
+// flex-inline to make the flex container inline
+.flex-inline {
+    display: inline-flex;
+}
+
+// flex centering in x axis
+.flex-center-x {
+    justify-content: center;
+}
+// flex centering in y axis
+.flex-center-y {
+    align-items: center;
+}
+// flex centering in both axis
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-col-reverse {
+    flex-direction: column-reverse;
+}
+
+/* Flex Wrap */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.flex-no-wrap {
+    flex-wrap: nowrap;
 }
