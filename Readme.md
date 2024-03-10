@@ -24,32 +24,7 @@
 
 ## Projects that are adopting the theme
 
-### Bootstrap Theme
-
-Projects that using the Bootstrap theme
-
-- [Getting started with Mentimeter](https://xerte.cardiff.ac.uk/play_18796#page1) #DigEd
-- [Ultra Essentials](https://xerte.cardiff.ac.uk/play_18321#UltraEssentials) #DigEd
-- [Digital Learning Environment](https://xerte.cardiff.ac.uk/play_18292#page1) #DigEd
-- [Ultra Courses Setup Checklist](https://xerte.cardiff.ac.uk/play_18204#page1) #DigEd
-- [Ultra Courses Help for Staff](https://xerte.cardiff.ac.uk/play_19885#page1) #DigEd
-- [Turnitin Ultra Courses](https://xerte.cardiff.ac.uk/play_19039#page1) #DigEd
-- [‘Preparing for Ultra Courses’ Guide](https://xerte.cardiff.ac.uk/play_19104#Aims_&_Use_of_Resource) #DigEd
-- [Learning Central Guidance for Students](https://xerte.cardiff.ac.uk/play_18610#Home) #DigEd
-- [Engagement in classrooms using Mentimeter](https://xerte.cardiff.ac.uk/play_18796) #DigEd
-- [Emergency Medicine Academic Centre](https://xerte.cardiff.ac.uk/play_20643) #MEDIC
-- [School of Physics and Astronomy UG Support Toolkit](https://xerte.cardiff.ac.uk/play_19724) #PSYSX
-- [Setting up Electronic Tests on Blackboard Ultra Courses](https://xerte.cardiff.ac.uk/play_20396) #COMSC
-- [School of Biosciences Student Support Toolkit](https://xerte.cardiff.ac.uk/play_18168#page1) #BIOSI
-- [Education Development Toolkit](https://xerte.cardiff.ac.uk/play_18569#page1) #LTA
-
-### XOT Theme
-
-Projects that using the XOT theme
-
-- [Academic Integrity](https://xerte.cardiff.ac.uk/play_20576#page1) #DigEd
-- [COMMUNITY OF INQUIRY TOOLKIT](https://xerte.cardiff.ac.uk/play_18701#page1) #DigEd
-
+[Project Showcase](https://nanzhang.notion.site/3251b7b7abab44fabb4e86a1f484faae?v=0dadb12f94af4a28b86090711b4a6e12)
 
 ## Using the template
 
