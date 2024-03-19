@@ -1023,16 +1023,16 @@ section h2,
 section h3,
 section h4 {
   color: var(--text-2);
-  margin-bottom: var(--size-4);
+  margin-bottom: var(--size-1);
 }
 section h2 {
-  margin-top: var(--size-8);
+  margin-top: var(--size-fluid-1);
 }
 section h3 {
-  margin-top: var(--size-7);
+  margin-top: var(--size-fluid-1);
 }
 section h4 {
-  margin-top: var(--size-6);
+  margin-top: var(--size-fluid-1);
 }
 section p:not(:last-child) {
   margin-bottom: var(--size-3);
@@ -2338,7 +2338,9 @@ Background Utilities
 /* ----------------- 
 Float Utilities
 ----------------- */
-/* Grid Utility Classes */
+/* ----------------- 
+Grid Utilities
+----------------- */
 .grid {
   display: grid;
   gap: var(--grid-gap);
