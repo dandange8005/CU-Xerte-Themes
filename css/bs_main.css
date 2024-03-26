@@ -2208,6 +2208,9 @@ Background Utilities
     padding-right: var(--flex-gap);
     margin-bottom: 0;
   }
+  .flexItem:last-child {
+    padding-right: 0;
+  }
 }
 /* Flex Utility  */
 .flex-inline {
