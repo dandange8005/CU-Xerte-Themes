@@ -122,6 +122,7 @@
 
     .flex-row-reverse .flexItem {
         padding-left: var(--flex-gap);
+        padding-right: 0;
     }
 
     .flex-row-reverse .flexItem:last-child {
