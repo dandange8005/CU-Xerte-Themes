@@ -119,6 +119,14 @@
     .flexItem:last-child {
         padding-right: 0;
     } 
+
+    .flex-row-reverse .flexItem {
+        padding-left: var(--flex-gap);
+    }
+
+    .flex-row-reverse .flexItem:last-child {
+        padding-left: 0;
+    }
 }
 
 /* Flex Utility  */
