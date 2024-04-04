@@ -1594,7 +1594,7 @@ section:nth-child(even)::before {
 .box {
   border-radius: var(--radius-2);
   border: 1px solid var(--clr-border);
-  padding: var(--size-fluid-1);
+  padding: var(--size-fluid-3);
   box-shadow: var(--shadow-1);
 }
 .box.box-icon {
@@ -2289,6 +2289,12 @@ Background Utilities
   }
   .flexItem:last-child {
     padding-right: 0;
+  }
+  .flex-row-reverse .flexItem {
+    padding-left: var(--flex-gap);
+  }
+  .flex-row-reverse .flexItem:last-child {
+    padding-left: 0;
   }
 }
 /* Flex Utility  */
