@@ -4,7 +4,7 @@
 .box {
     border-radius: var(--radius-2);
     border: 1px solid var(--clr-border);
-    padding: var(--size-fluid-1);
+    padding: var(--size-fluid-3);
     box-shadow: var(--shadow-1);
 
     &.box-icon {
@@ -35,3 +35,5 @@
     width: var(--size-4);
     height: var(--size-4);
 }
+
+
