@@ -1135,6 +1135,14 @@ section li ul {
   box-shadow: var(--shadow-3);
 }
 
+img.pull-right {
+  margin: 0 0 1em 1em;
+}
+
+img.pull-left {
+  margin: 0 1em 1em 0;
+}
+
 figure {
   max-width: -moz-max-content;
   max-width: max-content;

@@ -321,6 +321,14 @@ section {
     box-shadow: var(--shadow-3);
 }
 
+img.pull-right {
+    margin: 0 0 1em 1em;
+}
+
+img.pull-left {
+    margin: 0 1em 1em 0;
+}
+
 // Image with caption
 figure {
     max-width: max-content;
