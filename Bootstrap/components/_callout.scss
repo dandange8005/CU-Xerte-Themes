@@ -35,6 +35,15 @@
         }
     }
 
+    &.success {
+        background-color: var(--green-0);
+        border: 1px solid var(--green-2);
+
+        &::before {
+            content: '✅';
+        }
+    }
+
     &.danger {
         background-color: var(--red-0);
         border: 1px solid var(--red-4);

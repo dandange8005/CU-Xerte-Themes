@@ -1581,6 +1581,13 @@ section:nth-child(even)::before {
 .callout.warning::before {
   content: "⚠️";
 }
+.callout.success {
+  background-color: var(--green-0);
+  border: 1px solid var(--green-2);
+}
+.callout.success::before {
+  content: "✅";
+}
 .callout.danger {
   background-color: var(--red-0);
   border: 1px solid var(--red-4);
