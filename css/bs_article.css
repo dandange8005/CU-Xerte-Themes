@@ -2481,6 +2481,16 @@ Shadow Utilities
 Spacing Utilities
 ----------------- */
 /* ----------------- 
+Stretched Link Utilities
+----------------- */
+.stretched-link::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+}
+
+/* ----------------- 
 Text Utilities
  ----------------- */
 .text-center {
