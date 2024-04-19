@@ -2405,10 +2405,6 @@ Stretched Link Utilities
 /* ----------------- 
 Text Utilities
  ----------------- */
-.text-center {
-  text-align: center;
-}
-
 .text-accent {
   color: var(--clr-accent);
 }

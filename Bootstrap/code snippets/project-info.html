@@ -1,0 +1,17 @@
+<!-- Project information component --><!-- Feel free to include or remove from your project -->
+<div id="project-info">
+    <p class="info-item"><span class="fav2"><i aria-hidden="true" class="fa fa-calendar  " title="Calendar "></i><span style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">Calendar </span></span>&nbsp;Created:&nbsp;{globalVars.dateCreated}
+    </p>
+    <p class="info-item"><span class="fav2"><i aria-hidden="true" class="fa fa-rotate-right  " title="Rotate Right "></i><span style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">Rotate Right </span></span>&nbsp;Updated:&nbsp;{globalVars.lastUpdated}
+    </p>
+    <p class="info-item"><span class="fav2"><i aria-hidden="true" class="fa fa-eye  " title="Eye "></i><span style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">Eye </span></span>&nbsp;Views:&nbsp;{globalVars.numViews}
+    </p>
+  </div>
+  
+  <!--script to insert project information and language toggle to the top of the page-->
+  <script>
+    setTimeout(function(){
+      $("#project-info").prependTo("#page1section1");
+      $("#language-toggle").prependTo("#overview");
+    }, 200);
+  </script>
