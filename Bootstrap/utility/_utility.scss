@@ -1,6 +1,12 @@
 /* Other utilities */
 
 
+// flow spacing class to add margin between elements
+.flow>*:where(:not(:last-child)) {
+  margin-block-end: var(--flow-gap, 1rem)!important;
+}
+
+
 // Line Breaks for Long URLs
 .dont-break-out {
   overflow-wrap: break-word;

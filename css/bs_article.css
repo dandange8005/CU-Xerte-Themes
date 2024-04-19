@@ -1035,10 +1035,7 @@ section {
   margin-bottom: var(--size-fluid-6);
 }
 
-/* Spacing */
-section > *:where(:not(:last-child)),
-.flow > *:where(:not(:last-child)),
-.tab-pane > *:where(:not(:last-child)) {
+section > *:where(:not(:last-child)) {
   margin-bottom: var(--size-7);
 }
 
@@ -2003,6 +2000,10 @@ ul.nav-tabs, ul.nav-pills {
   padding-inline: var(--size-2);
 }
 
+.tab-pane > *:where(:not(:last-child)) {
+  margin-bottom: var(--size-7);
+}
+
 /* Pills */
 .nav-pills {
   margin-bottom: var(--size-3);
@@ -2601,6 +2602,10 @@ Text Utilities
 }
 
 /* Other utilities */
+.flow > *:where(:not(:last-child)) {
+  margin-block-end: var(--flow-gap, 1rem) !important;
+}
+
 .dont-break-out {
   overflow-wrap: break-word;
   word-wrap: break-word;

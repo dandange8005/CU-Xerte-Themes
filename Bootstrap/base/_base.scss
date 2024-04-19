@@ -165,14 +165,10 @@ section {
     margin-bottom: var(--size-fluid-6);
 }
 
-
-/* Spacing */
-section>*:where(:not(:last-child)),
-.flow>*:where(:not(:last-child)),
-.tab-pane>*:where(:not(:last-child)) {
+// Section items Spacing
+section>*:where(:not(:last-child)) {
     margin-bottom: var(--size-7);
 }
-
 
 section {
 
