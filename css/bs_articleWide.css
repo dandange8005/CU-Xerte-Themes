@@ -2692,7 +2692,8 @@ code[class*=language-], pre[class*=language-] {
     flex-direction: column;
   }
   #overview .container {
-    padding: 0 var(--size-4);
+    padding: var(--size-4);
+    padding-bottom: 0;
   }
   body {
     padding-block: 0;
