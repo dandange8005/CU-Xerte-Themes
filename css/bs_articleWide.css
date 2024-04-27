@@ -959,22 +959,32 @@ a {
   position: relative;
 }
 
-section a:not(.accordion-toggle, .top-round, .carousel-control, .glossary), footer a:not(.glossary) {
+section a:not(.accordion-toggle, .top-round, .carousel-control, .glossary),
+footer a:not(.glossary) {
   text-decoration: none;
 }
 
-section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary, .btn, .button), footer a:hover:not(.glossary) {
+section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary, .btn, .button),
+footer a:hover:not(.glossary) {
   text-decoration: underline;
   text-underline-position: under;
   color: var(--clr-link);
 }
 
-a[target=_blank]:hover::after,
-a[target=_blank]:focus::after,
-.link-action:hover::before,
-.link-action:focus::before,
-.action-link:hover::before,
-.action-link:focus::before {
+a.link-external {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-1);
+}
+
+a.link-external::after {
+  content: "\f35d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: var(--fs-xs);
+}
+
+a.link-external:hover::after {
   text-decoration: none;
   display: inline-block;
 }
@@ -1010,6 +1020,14 @@ a.link-action:focus::after {
 a.action-link:hover::after,
 a.action-link:focus::after {
   content: none;
+}
+
+.link-action:hover::before,
+.link-action:focus::before,
+.action-link:hover::before,
+.action-link:focus::before {
+  text-decoration: none;
+  display: inline-block;
 }
 
 .page-header {

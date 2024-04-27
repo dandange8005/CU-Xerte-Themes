@@ -47,7 +47,7 @@ h4 {
     line-height: var(--font-lineheight-3);
 }
 
-// link
+// links
 a {
     color: var(--clr-link);
     // text-decoration: none;
@@ -55,11 +55,13 @@ a {
 }
 
 // update link style due to Xerte update
-section a:not(.accordion-toggle,.top-round,.carousel-control,.glossary), footer a:not(.glossary) {
+section a:not(.accordion-toggle, .top-round, .carousel-control, .glossary),
+footer a:not(.glossary) {
     text-decoration: none;
 }
 
-section a:hover:not(.accordion-toggle,.top-round,.carousel-control,.glossary,.btn,.button), footer a:hover:not(.glossary) {
+section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary, .btn, .button),
+footer a:hover:not(.glossary) {
     text-decoration: underline;
     text-underline-position: under;
     color: var(--clr-link);
@@ -92,15 +94,27 @@ section a:hover:not(.accordion-toggle,.top-round,.carousel-control,.glossary,.bt
 
 // }
 
-a[target='_blank']:hover::after,
-a[target='_blank']:focus::after,
-.link-action:hover::before,
-.link-action:focus::before,
-.action-link:hover::before,
-.action-link:focus::before {
+// External link
+
+a.link-external {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-1);
+}
+
+a.link-external::after {
+    content: "\f35d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: var(--fs-xs);
+}
+
+a.link-external:hover::after {
     text-decoration: none;
     display: inline-block;
 }
+
+
 
 /* action link */
 a.link-action {
@@ -136,6 +150,14 @@ a.action-link:focus::after {
     content: none;
 }
 
+.link-action:hover::before,
+.link-action:focus::before,
+.action-link:hover::before,
+.action-link:focus::before {
+    text-decoration: none;
+    display: inline-block;
+}
+
 // Section specific styles
 .page-header {
     margin-top: 0;
@@ -156,7 +178,7 @@ a.action-link:focus::after {
 }
 
 // remove margin-top from h2 after page-header
-.page-header + h2 {
+.page-header+h2 {
     margin-top: 0;
 }
 
