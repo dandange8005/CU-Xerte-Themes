@@ -51,6 +51,7 @@ Assets
 Images
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU_logo.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/LearningTeachingWhite.png
 
 webfonts
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-Book.woff
