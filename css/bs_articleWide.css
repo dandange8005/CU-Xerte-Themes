@@ -970,7 +970,7 @@ section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary,
 }
 
 a.link-external {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   gap: var(--size-1);
 }
