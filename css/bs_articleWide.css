@@ -979,7 +979,10 @@ a.link-external::after {
   content: "\f35d";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: var(--fs-xs);
+  font-size: 10px;
+  margin-left: 4px;
+  transform: translateY(-3px);
+  display: inline-block;
 }
 
 a.link-external:hover::after {
