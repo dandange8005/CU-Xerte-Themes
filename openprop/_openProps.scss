@@ -1,4 +1,4 @@
-// https://unpkg.com/open-props@1.7.2/open-props.min.css
+// https://unpkg.com/open-props@1.7.4/open-props.min.css
 
 :where(html) {
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
@@ -59,6 +59,23 @@
   --size-13: 15rem;
   --size-14: 20rem;
   --size-15: 30rem;
+  --size-px-000: -8px;
+  --size-px-00: -4px;
+  --size-px-1: 4px;
+  --size-px-2: 8px;
+  --size-px-3: 16px;
+  --size-px-4: 20px;
+  --size-px-5: 24px;
+  --size-px-6: 28px;
+  --size-px-7: 32px;
+  --size-px-8: 48px;
+  --size-px-9: 64px;
+  --size-px-10: 80px;
+  --size-px-11: 120px;
+  --size-px-12: 160px;
+  --size-px-13: 240px;
+  --size-px-14: 320px;
+  --size-px-15: 480px;
   --size-fluid-1: clamp(.5rem, 1vw, 1rem);
   --size-fluid-2: clamp(1rem, 2vw, 1.5rem);
   --size-fluid-3: clamp(1.5rem, 3vw, 2rem);
@@ -506,6 +523,12 @@
   --radius-4: 2rem;
   --radius-5: 4rem;
   --radius-6: 8rem;
+  --radius-drawn-1: 255px 15px 225px 15px/15px 225px 15px 255px;
+  --radius-drawn-2: 125px 10px 20px 185px/25px 205px 205px 25px;
+  --radius-drawn-3: 15px 255px 15px 225px/225px 15px 255px 15px;
+  --radius-drawn-4: 15px 25px 155px 25px/225px 150px 25px 115px;
+  --radius-drawn-5: 250px 25px 15px 20px/15px 80px 105px 115px;
+  --radius-drawn-6: 28px 100px 20px 15px/150px 30px 205px 225px;
   --radius-round: 1e5px;
   --radius-blob-1: 30% 70% 70% 30%/53% 30% 70% 47%;
   --radius-blob-2: 53% 47% 34% 66%/63% 46% 54% 37%;
