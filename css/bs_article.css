@@ -1084,14 +1084,14 @@ section > *:where(:not(:last-child)) {
 section h2,
 section h3,
 section h4 {
-  color: var(--text-2);
+  color: var(--neutral-7);
   margin-bottom: var(--size-1);
 }
 section h2 {
-  margin-top: var(--size-fluid-1);
+  margin-top: var(--size-fluid-3);
 }
 section h3 {
-  margin-top: var(--size-fluid-1);
+  margin-top: var(--size-fluid-2);
 }
 section h4 {
   margin-top: var(--size-fluid-1);
