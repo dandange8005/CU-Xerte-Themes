@@ -38,7 +38,9 @@
 ## Contribution
 
 ## Main styles direct urls
-github page link: 
+
+github page link:
+
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/bs_article.min.css
@@ -46,14 +48,15 @@ github page link:
 - https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css
 - https://dandange8005.github.io/CU-Xerte-Themes/css/xot_main.min.css
 
-
 Assets
 Images
+
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU_logo.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/LearningTeachingWhite.png
 
 webfonts
+
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-Book.woff
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-BookIt.woff
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-Demi.woff
@@ -61,8 +64,8 @@ webfonts
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothic-MedIt-webfont.woff
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/webfonts/FranklinGothicURW-Lig.woff
 
-
 ## Tools for developers
+
 1. Open Props: https://open-props.style/
 2. Color picker: http://color.aurlien.net/
 3. Color Converter: https://htmlcolors.com/color-converter
@@ -73,6 +76,7 @@ webfonts
 ## Working with Icons
 
 Icon options
+
 - Google materials icons
 - Bootstrap icons
 - Font Awesome Icons
@@ -88,11 +92,14 @@ Using as background image in css
 2. download the icon and save to Assets/icons
 3. copy the svg code
 4. use [URL-encoder for SVG](https://yoksel.github.io/url-encoder/) to get the css code
-    ```css
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40' width='40'%3E%3Cpath d='M10.458 29.833 8.5 27.875l16.792-16.75H10V8.333h20v20h-2.792V13.042Z'/%3E%3C/svg%3E");
-    ```
+
+  ```css
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40' width='40'%3E%3Cpath d='M10.458 29.833 8.5 27.875l16.792-16.75H10V8.333h20v20h-2.792V13.042Z'/%3E%3C/svg%3E");
+  ```
+
 5. change the fill colour
 6. use the follow code snippet
+
     ```css
     .icon {
         position: relative;
@@ -110,4 +117,3 @@ Using as background image in css
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40' fill='darkgreen' width='40'%3E%3Cpath d='M10.458 29.833 8.5 27.875l16.792-16.75H10V8.333h20v20h-2.792V13.042Z'/%3E%3C/svg%3E");
     }
     ```
-
