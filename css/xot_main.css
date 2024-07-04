@@ -2563,6 +2563,16 @@ input[type=checkbox]:focus {
 }
 
 /* Button Components */
+:where {
+  --button-primary: var(--primary);
+  --button-secondary: var(--secondary);
+  --button-hover: var(--primary-500);
+  --button-focus: var(--primary-700);
+  --button-text: var(--white);
+  --button-text-hover: var(--white);
+  --button-text-focus: var(--white);
+}
+
 a.button {
   text-decoration: none;
 }
@@ -2586,8 +2596,8 @@ a.button, button.button {
   align-items: center;
   justify-content: center;
   align-self: start;
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: var(--button-primary);
+  color: var(--button-text);
   border-radius: var(--radius-2);
   box-shadow: var(--shadow-2);
   padding: 0.25em 0.75em;
@@ -2599,22 +2609,23 @@ a.button, button.button {
 }
 a.button:hover, a.button:active, button.button:hover, button.button:active {
   /*background-color: scale-color($btnColour, $lightness: +20%);*/
-  background-color: hsl(var(--clr-h), var(--clr-s), calc(var(--clr-l) * 1.2));
+  background-color: var(--button-hover);
+  color: var(--button-text-hover);
 }
 a.button:focus, button.button:focus {
   outline-style: solid;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px hsl(var(--clr-h), var(--clr-s), calc(var(--clr-l) * 1.4));
+  box-shadow: 0 0 0 4px var(--button-focus);
 }
 a.button--outline, button.button--outline {
   background-color: #ffffff;
-  color: var(--primary);
+  color: var(--button-primary);
   border: 2px solid currentColor;
 }
 a.button--outline:hover, button.button--outline:hover {
-  background-color: var(--primary);
+  background-color: var(--button-primary);
   color: #ffffff;
-  border-color: var(--primary);
+  border-color: var(--button-primary);
 }
 a.button--small, button.button--small {
   font-size: var(--fs-sm);

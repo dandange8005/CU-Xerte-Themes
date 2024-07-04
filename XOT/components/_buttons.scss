@@ -1,4 +1,14 @@
 /* Button Components */
+:where {
+    --button-primary: var(--primary);
+    --button-secondary: var(--secondary);
+    --button-hover: var(--primary-500);
+    --button-focus: var(--primary-700);
+    --button-text: var(--white);
+    --button-text-hover: var(--white);
+    --button-text-focus: var(--white);
+
+}
 
 // reset styles for a and button
 
@@ -26,8 +36,8 @@ a.button, button.button {
     justify-content: center;
     align-self: start; // optional in flex container
     // Visual
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--button-primary);
+    color: var(--button-text);
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-2);
     // size
@@ -42,34 +52,25 @@ a.button, button.button {
 
     &:hover, &:active {
         /*background-color: scale-color($btnColour, $lightness: +20%);*/
-        background-color: hsl(
-            var(--clr-h),
-            var(--clr-s),
-            calc(var(--clr-l) * 1.2)
-        );
-    
+        background-color: var(--button-hover);
+        color: var(--button-text-hover);    
     }
 
     &:focus {
         outline-style: solid;
         outline-color: transparent;
-        // box-shadow: 0 0 0 4px scale-color($btnColour, $lightness: +40%);
-        box-shadow: 0 0 0 4px hsl(
-            var(--clr-h),
-            var(--clr-s),
-            calc(var(--clr-l) * 1.4)
-        );
+        box-shadow: 0 0 0 4px var(--button-focus);
     }
 
     &--outline {
         background-color: #ffffff;
-        color: var(--primary);
+        color: var(--button-primary);
         border: 2px solid currentColor;
 
         &:hover {
-            background-color: var(--primary);
+            background-color: var(--button-primary);
             color: #ffffff;
-            border-color: var(--primary);
+            border-color: var(--button-primary);
         }
 
     }
