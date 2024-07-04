@@ -1,16 +1,6 @@
 /* ======================
     LAYOUT - BASE
-
-    - body
-    - headers
-    - spacing
-    - link
-    - list
-    - blockquote
-    - horizontal rule
-
 =======================*/
-
 
 /* ===============
     XERTE PAGE WIDTH
@@ -62,57 +52,9 @@ body {
     font-family: var(--ff-body);
     font-weight: 400;
     font-size: var(--fs-base) !important;
-    color: var(--clr-body-text);
+    color: var(--text);
     line-height: 1.625;
 }
-
-/* ===============
-    HEADING
-================== */
-
-h1,
-h2,
-h3:not(.ui-accordion-header),
-h4,
-h5,
-h6 {
-    font-family: var(--ff-headline);
-    font-weight: 700;
-    color: var(--clr-headline);
-    margin-bottom: var(--size-fluid-1);
-}
-
-h1 {
-    font-size: var(--fs-3xl);
-    line-height: var(--font-lineheight-0);
-}
-
-h2 {
-    font-size: var(--fs-2xl);
-    line-height: var(--font-lineheight-1);
-}
-
-h3:not(.ui-accordion-header) {
-    font-size: var(--fs-xl);
-    line-height: var(--font-lineheight-2);
-
-}
-
-h4 {
-    font-size: var(--fs-lg);
-    line-height: var(--font-lineheight-3);
-}
-
-#pageContents .page-title {
-    font-size: var(--fs-3xl);
-    color: var(--clr-accent);
-    font-weight: 900;
-    max-width: var(--size-header-3);
-    margin-block: var(--size-fluid-3);
-    // text-transform: uppercase;
-}
-
-
 
 
 /* ===============
@@ -126,230 +68,8 @@ h4 {
     margin-bottom: var(--size-fluid-2);
 }
 
-#x_mainHolder p + p {
-    margin-top: 1rem;
-}
-
-/* ===============
-    LINK
-================== */
-
-a {
-    color: var(--clr-link);
-    text-decoration: none;
-    position: relative;
-}
-
-a:hover,
-a:focus {
-    text-decoration: underline;
-    text-decoration-thickness: max(0.08em, 1.5px);
-    text-underline-offset: 0.15em;
-    color: var(--clr-link);
-}
-
-a:visited {
-    color: var(--clr-link-visited);
-}
-
-a[href^="mailto"]::before {
-    content: "\f0e0";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: var(--size-1);
-    font-size: var(--fs-xs);
-
-}
-
-a[target='_blank']:hover::after,
-a[target='_blank']:focus::after {
-    content: "\f35d";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-left: var(--size-1);
-    font-size: var(--fs-xs);
-}
-
-a[href^="mailto"]:hover::before,
-a[href^="mailto"]:focus::before,
-a[target='_blank']:hover::after,
-a[target='_blank']:focus::after,
-.action-link:hover::before,
-.action-link:focus::before {
-    text-decoration: none;
-    display: inline-block;
-}
-
-/* action link */
-.action-link::before {
-    content: "\f0a9";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: var(--size-2);
-    color: var(--success);
-    font-size: var(--fs-lg);
-}
-
-a.action-link:hover::after,
-a.action-link:focus::after {
-    content: none;
-}
-
-
-/* ===============
-    LISTS
-================== */
-
-ul,
-ol {
-    padding: 0;
-    padding-left: var(--size-5);
-    display: grid;
-    gap: var(--size-3);
-}
-
-ul#tabHolder,
-ul.tabList {
-    display: block;
-}
-
-li {
-    line-height: var(--font-lineheight-3);
-}
-
-ul li,
-ol li {
-    padding-left: var(--size-2);
-}
-
-li ul {
-    margin-top: var(--size-3);
-
-}
-
-// Utility classes for list
-
-.list-none {
-    list-style-type: none;
-    padding: 0;
-}
-
-// Icon list
-.list-icon {
-    margin-left: 0;
-    padding-left: var(--size-1);
-
-    li {
-        display: flex;
-    }
-
-    li span {
-        margin-right: var(--size-3);
-        color: var(--neutral-7);
-        font-size: var(--fs-lg);
-        margin-top: 3px;
-        line-height: 0;
-    }
-
-}
-
-// Counter list
-.list-counter {
-    counter-reset: orderedlist;
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: var(--size-1);
-    // display: grid;
-    // gap: 1em;
-
-    li {
-        position: relative;
-        padding-left: 2.5rem;
-    }
-
-    li::before {
-        counter-increment: orderedlist;
-        content: counter(orderedlist);
-        width: var(--size-5);
-        height: var(--size-5);
-        background: var(--gray-2);
-        color: var(--gray-7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-}
-
-/* ===============
-    BLOCKQUOTE
-================== */
-
-blockquote {
-    margin-left: 0;
-    padding: 0.5rem 1rem;
-    border-left: 5px solid var(--clr-primary);
-    font-family: var(--ff-serif);
-    font-size: var(--fs-lg);
-    line-height: 1.625;
-}
-
-/* ===============
-    TABLE
-================== */
-
-table {
-    background: var(--white);
-    box-shadow: var(--shadow-2);
-    font-size: var(--fs-sm);
-}
-
-table,
-table tr,
-table td {
-    border: none;
-}
-
-thead th {
-    background: var(--clr-headershade);
-    color: var(--light);
-    font-weight: bold;
-}
-
-table tr td:not(:first-of-type) {
-    border-left: 1px solid var(--clr-border);
-}
-
-thead th:not(:first-of-type) {
-    border-left: 1px solid var(--light);
-}
-
-table tr:nth-child(even) {
-    background: var(--light);
-}
-
-/* ==================
-    horizontal rule
-==================== */
-
-
-hr {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-block: var(--size-fluid-2);
-    border: 0;
-    border-top: 0.0625rem solid var(--clr-border);
-}
-
-.break-l {
-    margin-block: var(--size-fluid-4);
-}
-
-.break-m {
-    margin-block: var(--size-fluid-3);
+#pageContents>*:where(:first-child) {
+    margin-top: 0;
 }
 
 
@@ -364,17 +84,24 @@ hr {
 =======================*/
 
 // Image and Figures
+
+/* ==================
+    IMAGE
+=================== */
 img {
     height: auto;
 }
 
+/* ==================
+    FIGURE
+=================== */
 
-figure.image {
+figure img {
     margin: 0;
     max-width: max-content;
 }
 
-figcaption {
+figure figcaption {
     background: var(--gray-2);
     color: var(--text-3);
     font-size: var(--fs-sm);
@@ -404,6 +131,10 @@ figcaption {
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-3);
 }
+
+/* ==================
+    VIDEO
+=================== */
 
 /* Media - iframe Block */
 

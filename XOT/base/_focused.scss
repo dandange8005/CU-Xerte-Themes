@@ -1,10 +1,10 @@
 /* ==========================================================================
-  # BASE / #FOCUSED
+  # BASE / # FOCUSED
 ========================================================================== */
 
 :where(html) {
       // Focus colours
-      --clr-focus: #ffeb3b;
+      --clr-focus: var(--cu-gold);
       --clr-focus-text: #212b32;
       --focus-width: 4px;
 }

@@ -11,7 +11,7 @@
 
 
 input, textarea {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: var(--ff-body);
     outline: none;
     padding: .8rem;
     border: 1px solid #718096;
