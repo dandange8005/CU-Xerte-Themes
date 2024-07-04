@@ -828,6 +828,12 @@ Author: Nan Zhang
 }
 
 :where(html) {
+  /* Core colours */
+  --text: hsl(240, 33%, 6%);
+  --background: hsl(240, 9%, 98%);
+  --primary: hsl(240, 39%, 18%);
+  --secondary: hsl(50, 38%, 68%);
+  --accent: hsl(353, 65%, 52%);
   --clr-accent: hsl(217, 59%, 20%);
   --clr-h: 217;
   --clr-s: 59%;
@@ -858,23 +864,21 @@ Author: Nan Zhang
       var(--clr-s),
       calc(var(--clr-l) - var(--clr-l) * 0.8));
   --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
-  --clr-compliment: var(--cu-gold);
-  --clr-gradient: var(--gradient-23);
-  --clr-header-bg: var(--clr-accent);
+  --clr-header-bg: var(--primary);
   --clr-header-h1: var(--light);
   --clr-header-h2: var(--white);
   --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
   --clr-footer-bg: #495057;
-  --clr-body-bg: #EBE9E1;
-  --clr-body-text: #333333;
-  --clr-headline: #22211f;
+  --clr-body-bg: var(--background);
+  --clr-body-text: var(--text);
+  --clr-headline: var(--text);
   --clr-link: var(--cu-link);
   --clr-link-visited: #330072;
   --clr-border: hsl(216, 12%, 84%);
   --clr-headershade: #4E597E;
   --clr-panelborder: var(--gray-5);
   --clr-shaded: var(--light);
-  --clr-btn: var(--clr-accent);
+  --clr-btn: var(--primary);
   --clr-btn-rollover: var(--clr-headershade);
   --clr-success: hsl(148, 100%, 25%);
   --clr-danger: hsl(4, 77%, 48%);
@@ -891,7 +895,7 @@ Author: Nan Zhang
   --fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
   --fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
   --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
-  --text-dark: var(--black);
+  --text-dark: var(--text);
   --text-gray: var(--neutral-7);
   --text-light: var(--neutral-5);
   --gradient-text: var(--clr-gradient);
@@ -2373,4 +2377,111 @@ ul.category {
 
 .x_nav_page #pageContents.slide #btnHolder {
   border-color: var(--clr-panelborder);
+}
+
+/*Old custom Form Elements*/
+/*remove browser appearance*/
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type=text], textarea, input[type=checkbox], input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+input, textarea {
+  font-family: "Libre Franklin", sans-serif;
+  outline: none;
+  padding: 0.8rem;
+  border: 1px solid #718096;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #525252;
+  transition: background 0.25s, color 0.25s;
+  box-sizing: border-box;
+}
+
+input[type=text], textarea {
+  width: 100% !important;
+  max-width: 450px;
+  min-height: 3.1em; /*fix for Safari/ios date fields*/
+}
+
+textarea {
+  min-height: 150px;
+  max-width: 600px;
+}
+
+/*style placeholder text*/
+textarea::-moz-placeholder, input::-moz-placeholder {
+  color: #bbbbbb;
+}
+textarea::placeholder, input::placeholder {
+  color: #bbbbbb;
+}
+
+/*Checkbox*/
+input[type=checkbox], input[type=radio] {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+}
+
+input[type=checkbox]::after {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  font-size: 16px;
+  display: none;
+  color: #718096;
+}
+
+input[type=checkbox]:checked::after {
+  display: block;
+}
+
+.optionGroup {
+  display: flex;
+  align-items: center;
+}
+
+/* Radio option */
+input[type=radio] {
+  border-radius: 50%;
+  padding: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+input[type=radio]::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #718096;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+input[type=radio]:checked::after {
+  transform: scale(1);
+}
+
+/*focusing state*/
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not(.error):focus, textarea:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: inset 0 0 0 2px #4ab26b !important;
+  border: none;
+}
+
+input[type=checkbox]:focus {
+  border: 1px solid #718096;
 }/*# sourceMappingURL=xot_main.css.map */

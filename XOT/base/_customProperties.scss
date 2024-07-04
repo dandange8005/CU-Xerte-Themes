@@ -45,13 +45,11 @@ Author: Nan Zhang
     --cu-purple: #73479C;
     --cu-magenta: #D63694;
     --cu-bossanova: #3C2C59;
-
     //Gold colours
     --cu-gold: #BD9E5E;
     --cu-yuma: #C8BB8D;
     --cu-timberwolf: #D4D2CA;
     --cu-cararra: #EBE9E1;
-
     //Blue colours
     --cu-blue: #233E8B;
     --cu-PrussianBlue: #002554;
@@ -97,6 +95,13 @@ Author: Nan Zhang
 // XERTE Project Theme
 :where(html) {
 
+    /* Core colours */  
+    --text: hsl(240, 33%, 6%);
+    --background: hsl(240, 9%, 98%);
+    --primary: hsl(240, 39%, 18%);
+    --secondary: hsl(50, 38%, 68%);
+    --accent: hsl(353, 65%, 52%);
+
     
         // --clr-accent: var(--cu-BlueZodiac);
         --clr-accent: hsl(217, 59%, 20%);
@@ -138,14 +143,14 @@ Author: Nan Zhang
     
 
     // The compliment colour of the project
-    --clr-compliment: var(--cu-gold);
+    // --clr-compliment: var(--cu-gold);
 
     // The main gradient of the project
-    --clr-gradient: var(--gradient-23);
+    // --clr-gradient: var(--gradient-23);
 
 
     // XOT HEADER
-    --clr-header-bg: var(--clr-accent);
+    --clr-header-bg: var(--primary);
     --clr-header-h1: var(--light);
     --clr-header-h2: var(--white);
     --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
@@ -155,9 +160,9 @@ Author: Nan Zhang
     // --clr-footer-text: var(--cu-blue-dark);
 
     // Body
-    --clr-body-bg: #EBE9E1;
-    --clr-body-text: #333333;
-    --clr-headline: #22211f;
+    --clr-body-bg: var(--background);
+    --clr-body-text: var(--text);
+    --clr-headline: var(--text);
 
     // Link
     --clr-link: var(--cu-link);
@@ -171,7 +176,7 @@ Author: Nan Zhang
     --clr-shaded: var(--light);
 
     // button colours
-    --clr-btn: var(--clr-accent);
+    --clr-btn: var(--primary);
     --clr-btn-rollover: var(--clr-headershade);
 
     // Function colours
@@ -197,7 +202,7 @@ Author: Nan Zhang
     --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
 
     //font colours
-    --text-dark: var(--black);
+    --text-dark: var(--text);
     --text-gray: var(--neutral-7);
     --text-light: var(--neutral-5);
     --gradient-text: var(--clr-gradient);
