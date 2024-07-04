@@ -1098,7 +1098,7 @@ section h3 {
   margin-top: var(--size-fluid-2);
 }
 section h4 {
-  margin-top: var(--size-fluid-1);
+  margin-top: var(--size-fluid-2);
 }
 section p:not(:last-child) {
   margin-bottom: var(--size-3);
