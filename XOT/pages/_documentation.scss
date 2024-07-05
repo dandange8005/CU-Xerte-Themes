@@ -16,6 +16,14 @@
     display: inline-flex;
 }
 
+.optionGroup.horizontal:not(:first-child) {
+    margin-left: var(--size-3);
+}
+
 .optionTxt {
+    margin-left: var(--size-3);
+}
+
+.optionGroup.horizontal:not(:first-of-type) .optionTxt {
     margin-left: var(--size-3);
 }
