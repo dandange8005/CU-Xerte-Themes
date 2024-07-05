@@ -1771,6 +1771,10 @@ li ul {
   border-radius: 0;
 }
 
+.ui-button-icon-primary.ui-icon.fa.fa-x-close {
+  color: white;
+}
+
 /* Flexbox System   */
 /* Flexbox System 1  */
 .flex {
