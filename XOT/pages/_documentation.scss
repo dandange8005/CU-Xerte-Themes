@@ -12,14 +12,17 @@
     }
 }
 
+// change horizontal optionGroup to inline-flex
 .optionGroup.horizontal {
     display: inline-flex;
 }
 
+// fix margin between optionGroups
 .optionGroup.horizontal:not(:first-child) {
     margin-left: var(--size-3);
 }
 
+// fix margin between options
 .optionTxt {
     margin-left: var(--size-3);
 }
