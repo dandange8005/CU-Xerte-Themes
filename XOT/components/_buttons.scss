@@ -85,7 +85,7 @@ a.btn, a.btn:hover {
 }
 
 button.btn, button.btn:hover {
-   
+    
     @media screen and (-ms-high-contrast:active) {
         border: 2px solid currentColor;
     }
@@ -327,22 +327,19 @@ button.btn, button.btn:hover {
 }
 
 
-.btn-light {
+.btn-light, .btn-light:disabled {
     color: #212529;
-    background-color: #f8f9fa;
-    border-color: #f8f9fa;
+    background-color: #e8eaeb;
+    border-color: #e8eaeb;
 }
 
-.btn-light:hover {
+.btn-light:hover, .btn-light:focus {
     color: #212529;
     background-color: #e2e6ea;
     border-color: #dae0e5;
 }
 
 .btn-light:focus {
-    color: #212529;
-    background-color: #e2e6ea;
-    border-color: #dae0e5;
     box-shadow: 0 0 0 .2rem rgba(248, 249, 250, .5);
 }
 
@@ -352,11 +349,7 @@ button.btn, button.btn:hover {
     border-color: #d3d9df;
 }
 
-.btn-light:disabled {
-    color: #212529;
-    background-color: #f8f9fa;
-    border-color: #f8f9fa;
-}   
+ 
 
 .btn-dark {
     color: #fff;
