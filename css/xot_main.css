@@ -801,9 +801,6 @@ Author: Nan Zhang
   --cu-navy-1: #657986;
   --cu-navy-2: #4D5E69;
   --cu-navy-3: #2F444E;
-  --navy-1: #334c5c;
-  --navy-2: #657986;
-  --navy-3: #253741;
   --clr-success:hsl(148, 100%, 25%);
   --clr-danger: hsl(4, 77%, 48%);
   /* Neutral colour */
@@ -903,8 +900,8 @@ Author: Nan Zhang
   --clr-btn-rollover: var(--cu-navy-3);
   --button-primary: var(--primary);
   --button-secondary: var(--secondary);
-  --button-hover: var(--primary-500);
-  --button-focus: var(--primary-700);
+  --button-primary-hover: var(--primary-500);
+  --button-primary-focus: var(--primary-700);
   --button-text: var(--white);
   --button-text-hover: var(--white);
   --button-text-focus: var(--white);
@@ -2620,67 +2617,6 @@ input[type=checkbox]:focus {
 }
 
 /* Button Components */
-a.button {
-  text-decoration: none;
-}
-
-button.button {
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  padding: 0;
-  cursor: pointer;
-}
-@media screen and (-ms-high-contrast: active) {
-  button.button {
-    border: 2px solid currentColor;
-  }
-}
-
-a.button, button.button {
-  display: inline-flex;
-  gap: var(--size-2);
-  align-items: center;
-  justify-content: center;
-  align-self: start;
-  background-color: var(--button-primary);
-  color: var(--button-text);
-  border-radius: var(--radius-2);
-  box-shadow: var(--shadow-2);
-  padding: 0.25em 0.75em;
-  min-width: 10ch;
-  min-height: 44px;
-  text-align: center;
-  line-height: 1.2;
-  transition: 200ms all ease-in-out;
-}
-a.button:hover, a.button:active, button.button:hover, button.button:active {
-  /*background-color: scale-color($btnColour, $lightness: +20%);*/
-  background-color: var(--button-hover);
-  color: var(--button-text-hover);
-}
-a.button:focus, button.button:focus {
-  outline-style: solid;
-  outline-color: transparent;
-  box-shadow: 0 0 0 4px var(--button-focus);
-}
-a.button--outline, button.button--outline {
-  background-color: #ffffff;
-  color: var(--button-primary);
-  border: 2px solid currentColor;
-}
-a.button--outline:hover, button.button--outline:hover {
-  background-color: var(--button-primary);
-  color: #ffffff;
-  border-color: var(--button-primary);
-}
-a.button--small, button.button--small {
-  font-size: var(--fs-sm);
-}
-a.button--block, button.button--block {
-  width: 100%;
-}
-
 a.btn, a.btn:hover {
   text-decoration: none;
 }
@@ -2690,7 +2626,6 @@ button.btn, button.btn:hover {
   background-color: transparent;
   font-family: inherit;
   padding: 0;
-  cursor: pointer;
 }
 @media screen and (-ms-high-contrast: active) {
   button.btn, button.btn:hover {
@@ -2699,8 +2634,12 @@ button.btn, button.btn:hover {
 }
 
 .btn {
+  position: relative;
   display: inline-block;
-  font-weight: 600;
+  padding: 0.375em 0.75em;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -2708,87 +2647,34 @@ button.btn, button.btn:hover {
      -moz-user-select: none;
           user-select: none;
   border: 1px solid transparent;
-  padding: 0.375em 0.75em;
-  line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  color: var(--button-text);
+  background-color: var(--button-primary);
+  border-color: var(--button-primary);
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  color: var(--button-text-hover);
+  background-color: var(--button-primary-hover);
+  border-color: var(--button-primary-hover);
 }
 
 .btn-primary:focus {
-  color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  color: var(--button-text-focus);
+  background-color: var(--button-primary-focus);
+  border-color: var(--button-primary-focus);
+  box-shadow: 0 0 0 0.2rem var(--primary-200);
 }
 
 .btn-primary:active {
   color: #fff;
-  background-color: #0062cc;
-  border-color: #005cbf;
-}
-
-.btn-primary:disabled {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active {
-  color: #fff;
-  background-color: #0062cc;
-  border-color: #005cbf;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active {
-  color: #fff;
-  background-color: #005cbf;
-  border-color: #0056b7;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
-.btn-primary:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
-.btn-primary:disabled {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active {
-  color: #fff;
-  background-color: #0062cc;
-  border-color: #005cbf;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active {
-  color: #fff;
-  background-color: #005cbf;
-  border-color: #0056b7;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
-.btn-primary:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  background-color: var(--button-hover);
+  border-color: var(--button-hover);
 }
 
 .btn-secondary {
@@ -2822,50 +2708,15 @@ button.btn, button.btn:hover {
   border-color: #6c757d;
 }
 
-.btn-secondary:not(:disabled):not(.disabled).active {
-  color: #fff;
-  background-color: #545b62;
-  border-color: #4e555b;
+.btn-outline {
+  background-color: transparent;
+  color: var(--button-primary);
+  border: 2px solid currentColor;
 }
-
-.btn-secondary:not(:disabled):not(.disabled):active {
-  color: #fff;
-  background-color: #4e555b;
-  border-color: #484f54;
-}
-
-.btn-secondary:not(:disabled):not(.disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-
-.btn-secondary:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-
-.btn-secondary:disabled {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
-}
-
-.btn-secondary:not(:disabled):not(.disabled).active {
-  color: #fff;
-  background-color: #545b62;
-  border-color: #4e555b;
-}
-
-.btn-secondary:not(:disabled):not(.disabled):active {
-  color: #fff;
-  background-color: #4e555b;
-  border-color: #484f54;
-}
-
-.btn-secondary:not(:disabled):not(.disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-
-.btn-secondary:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+.btn-outline:hover {
+  background-color: var(--button-primary);
+  color: #ffffff;
+  border-color: var(--button-primary);
 }
 
 .btn-success {
@@ -2905,43 +2756,11 @@ button.btn, button.btn:hover {
   border-color: #1c7430;
 }
 
-.btn-success:not(:disabled):not(.disabled):active {
-  color: #fff;
-  background-color: #1c7430;
-  border-color: #186c2f;
-}
-
-.btn-success:not(:disabled):not(.disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
 .btn-success:not(:disabled):not(.disabled).active:focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
 }
 
-.btn-success:disabled {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.btn-success:not(:disabled):not(.disabled).active {
-  color: #fff;
-  background-color: #1e7e34;
-  border-color: #1c7430;
-}
-
-.btn-success:not(:disabled):not(.disabled):active {
-  color: #fff;
-  background-color: #1c7430;
-  border-color: #186c2f;
-}
-
 .btn-success:not(:disabled):not(.disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.btn-success:not(:disabled):not(.disabled).active:focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
 }
 
@@ -2982,24 +2801,8 @@ button.btn, button.btn:hover {
   border-color: #c69500;
 }
 
-.btn-warning:not(:disabled):not(.disabled):active {
-  color: #212529;
-  background-color: #c69500;
-  border-color: #b78600;
-}
-
 .btn-warning:not(:disabled):not(.disabled):active:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-}
-
-.btn-warning:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-}
-
-.btn-warning:disabled {
-  color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
 }
 
 .btn-light {

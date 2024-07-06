@@ -62,10 +62,6 @@ Author: Nan Zhang
     --cu-navy-2: #4D5E69;
     --cu-navy-3: #2F444E;
 
-    --navy-1: #334c5c;
-    --navy-2: #657986;
-    --navy-3: #253741;
-
     // Function colours
     --clr-success:hsl(148, 100%, 25%);
     --clr-danger: hsl(4, 77%, 48%);
@@ -236,8 +232,8 @@ Author: Nan Zhang
     // New Button colours
     --button-primary: var(--primary);
     --button-secondary: var(--secondary);
-    --button-hover: var(--primary-500);
-    --button-focus: var(--primary-700);
+    --button-primary-hover: var(--primary-500);
+    --button-primary-focus: var(--primary-700);
     --button-text: var(--white);
     --button-text-hover: var(--white);
     --button-text-focus: var(--white);
