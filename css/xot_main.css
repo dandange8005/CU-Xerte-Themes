@@ -804,6 +804,8 @@ Author: Nan Zhang
   --navy-1: #334c5c;
   --navy-2: #657986;
   --navy-3: #253741;
+  --clr-success:hsl(148, 100%, 25%);
+  --clr-danger: hsl(4, 77%, 48%);
   /* Neutral colour */
   --black: #22211f;
   --white: #ffffff;
@@ -1412,12 +1414,12 @@ figure figcaption {
   --focus-width: 4px;
 }
 
-a:focus {
+a:not(.button):focus {
   background-color: var(--clr-focus);
   box-shadow: 0 -2px var(--clr-focus), 0 var(--focus-width) var(--clr-focus-text);
   color: var(--clr-focus-text) !important;
   outline: var(--focus-width) solid transparent;
-  text-decoration: none;
+  outline-offset: var(--focus-width);
 }
 
 #x_footerBlock button:focus {
