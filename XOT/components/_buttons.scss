@@ -78,6 +78,8 @@ a.button, button.button {
 
 // bootstrap style buttons
 
+// reset styles for a and button
+
 a.btn, a.btn:hover {
     text-decoration: none;
 }
@@ -94,19 +96,23 @@ button.btn, button.btn:hover {
     }
 }
 
+// Button
+
 .btn {
     display: inline-block;
-    font-weight: 900;
+    font-weight: 600;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     user-select: none;
     border: 1px solid transparent;
-    padding: .375rem .75rem;
+    padding: .375em .75em;
     line-height: 1.5;
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
+// Button Primary
 
 .btn-primary {
     color: #fff;
@@ -191,6 +197,8 @@ button.btn, button.btn:hover {
     border-color: #6c757d;
 }
 
+// Button Secondary
+
 .btn-secondary:hover {
     color: #fff;
     background-color: #5a6268;
@@ -261,6 +269,19 @@ button.btn, button.btn:hover {
 .btn-secondary:not(:disabled):not(.disabled).active:focus {
     box-shadow: 0 0 0 .2rem rgba(108, 117, 125, .5);
 }
+
+// Button Outline
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--button-primary);
+    border: 2px solid currentColor;
+
+    &:hover {
+        background-color: var(--button-primary);
+        color: #ffffff;
+        border-color: var(--button-primary);
+    }
 
 .btn-success {
     color: #fff;
@@ -338,83 +359,6 @@ button.btn, button.btn:hover {
 
 .btn-success:not(:disabled):not(.disabled).active:focus {
     box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5);
-}
-
-.btn-info {
-    color: #fff;
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-}
-
-.btn-info:hover {
-    color: #fff;
-    background-color: #138496;
-    border-color: #117a8b;
-}
-
-.btn-info:focus {
-    color: #fff;
-    background-color: #138496;
-    border-color: #117a8b;
-    box-shadow: 0 0 0 .2rem rgba(23, 162, 184, .5);
-}
-
-.btn-info:active {
-    color: #fff;
-    background-color: #117a8b;
-    border-color: #10707f;
-}
-
-.btn-info:disabled {
-    color: #fff;
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-}
-
-.btn-info:not(:disabled):not(.disabled).active {
-    color: #fff;
-    background-color: #117a8b;
-    border-color: #10707f;
-}
-
-.btn-info:not(:disabled):not(.disabled):active {
-    color: #fff;
-    background-color: #10707f;
-    border-color: #0c6c75;
-}
-
-.btn-info:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 .2rem rgba(23, 162, 184, .5);
-}
-
-.btn-info:not(:disabled):not(.disabled).active:focus {
-    box-shadow: 0 0 0 .2rem rgba(23, 162, 184, .5);
-}
-
-.btn-info:disabled {
-    color: #fff;
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-}
-
-.btn-info:not(:disabled):not(.disabled).active {
-    color: #fff;
-    background-color: #117a8b;
-    border-color: #10707f;
-}
-
-.btn-info:not(:disabled):not(.disabled):active {
-    color: #fff;
-    background-color: #10707f;
-    border-color: #0c6c75;
-}
-
-.btn-info:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 .2rem rgba(23, 162, 184, .5);
-}
-
-.btn-info:not(:disabled):not(.disabled).active:focus {
-    box-shadow: 0 0 0 .2rem rgba(23, 162, 184, .5);
 }
 
 .btn-warning {
@@ -535,6 +479,9 @@ button.btn, button.btn:hover {
     background-color: #343a40;
     border-color: #343a40;
 }
+
+
+
 
 // Button Sizes
 
