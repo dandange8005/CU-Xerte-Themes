@@ -2621,12 +2621,6 @@ a.btn, a.btn:hover {
   text-decoration: none;
 }
 
-button.btn, button.btn:hover {
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  padding: 0;
-}
 @media screen and (-ms-high-contrast: active) {
   button.btn, button.btn:hover {
     border: 2px solid currentColor;

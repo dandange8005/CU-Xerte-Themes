@@ -85,11 +85,7 @@ a.btn, a.btn:hover {
 }
 
 button.btn, button.btn:hover {
-    border: none;
-    background-color: transparent;
-    font-family: inherit;
-    padding: 0;
-    
+   
     @media screen and (-ms-high-contrast:active) {
         border: 2px solid currentColor;
     }
