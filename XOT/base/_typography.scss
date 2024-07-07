@@ -35,6 +35,10 @@ h3:not(.ui-accordion-header) {
 
 }
 
+#pageContents h3 {
+    margin-top: var(--size-6);
+}
+
 h4 {
     font-size: var(--fs-lg);
     line-height: var(--font-lineheight-3);
