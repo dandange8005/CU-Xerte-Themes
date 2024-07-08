@@ -43,6 +43,11 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 	filter: none;
 }
 
+.panel {
+	padding: var(--size-3);
+    border-radius: var(--radius-2);
+}
+
 .fa-x-tick, .fa-x-tick:before {
 	color: var(--clr-success);
 }

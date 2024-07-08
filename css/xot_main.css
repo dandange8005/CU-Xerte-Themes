@@ -1021,6 +1021,11 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
   filter: none;
 }
 
+.panel {
+  padding: var(--size-3);
+  border-radius: var(--radius-2);
+}
+
 .fa-x-tick, .fa-x-tick:before {
   color: var(--clr-success);
 }
@@ -2499,111 +2504,61 @@ ul.category {
   border-color: var(--clr-panelborder);
 }
 
-/*Old custom Form Elements*/
-/*remove browser appearance*/
-@supports (-webkit-appearance: none) or (-moz-appearance: none) {
-  input[type=text], textarea, input[type=checkbox], input[type=radio] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-}
-input, textarea {
-  font-family: var(--ff-body);
-  outline: none;
-  padding: 0.8rem;
-  border: 1px solid #718096;
-  border-radius: 4px;
-  font-size: 0.9em;
-  color: #525252;
-  transition: background 0.25s, color 0.25s;
-  box-sizing: border-box;
-}
+/* ==========================================================================
+   COMPONENTS / Alerts
 
-input[type=text], textarea {
-  width: 100% !important;
-  max-width: 450px;
-  min-height: 3.1em; /*fix for Safari/ios date fields*/
+   Site-wide alert styles.
+   ========================================================================== */
+.alert {
+  padding: var(--size-3);
+  margin-bottom: var(--size-fluid-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-2);
+  background: var(--shade-gray);
 }
-
-textarea {
-  min-height: 150px;
-  max-width: 600px;
-}
-
-/*style placeholder text*/
-textarea::-moz-placeholder, input::-moz-placeholder {
-  color: #bbbbbb;
-}
-textarea::placeholder, input::placeholder {
-  color: #bbbbbb;
-}
-
-/*Checkbox*/
-input[type=checkbox], input[type=radio] {
-  display: block;
-  width: 16px;
-  height: 16px;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  margin: 0;
-}
-
-input[type=checkbox]::after {
-  content: "\f00c";
+.alert::before {
   font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-  font-size: 16px;
-  display: none;
-  color: #718096;
+  font-weight: 900;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+.alert > :first-child {
+  margin-top: 0;
+}
+.alert.alert-info::before {
+  content: "\f06a";
+  color: var(--blue-6);
+}
+.alert.alert-success::before {
+  content: "\f164";
+  color: var(--clr-success);
+}
+.alert.alert-warning::before {
+  content: "\f071";
+  color: var(--orange-6);
+}
+.alert.alert-danger::before {
+  content: "\f071";
+  color: var(--clr-danger);
 }
 
-input[type=checkbox]:checked::after {
-  display: block;
+/* =========================================
+  # COMPONENTS / # BOXES
+============================================ */
+.box {
+  background: var(--white);
+  padding: var(--size-5);
+  border-radius: var(--radius-2);
+  border: 1px solid var(--clr-border);
 }
 
-.optionGroup {
-  display: flex;
-  align-items: center;
+.box > *:where(:not(:last-child)) {
+  margin-bottom: var(--size-fluid-2);
 }
 
-/* Radio option */
-input[type=radio] {
-  border-radius: 50%;
-  padding: 3px;
-  width: 20px;
-  height: 20px;
-}
-
-input[type=radio]::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #718096;
-  border-radius: 50%;
-  transform: scale(0);
-}
-
-input[type=radio]:checked::after {
-  transform: scale(1);
-}
-
-/*focusing state*/
-input:not([type=checkbox]):not([type=radio]):not([type=submit]):not(.error):focus, textarea:focus {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-shadow: inset 0 0 0 2px #4ab26b !important;
-  border: none;
-}
-
-input[type=checkbox]:focus {
-  border: 1px solid #718096;
+.box > *:where(:first-child) {
+  margin-top: 0;
 }
 
 /* Button Components */
@@ -2886,20 +2841,114 @@ a.btn, a.btn:hover {
   border-bottom-left-radius: 0;
 }
 
-/* =========================================
-  # COMPONENTS / # BOXES
-============================================ */
-.box {
-  background: var(--white);
-  padding: var(--size-5);
-  border-radius: var(--radius-2);
-  border: 1px solid var(--clr-border);
+/* ==========================================================================
+   COMPONENTS / Cards
+
+   Site-wide Card styles.
+   ========================================================================== */
+/*Old custom Form Elements*/
+/*remove browser appearance*/
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type=text], textarea, input[type=checkbox], input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+input, textarea {
+  font-family: var(--ff-body);
+  outline: none;
+  padding: 0.8rem;
+  border: 1px solid #718096;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #525252;
+  transition: background 0.25s, color 0.25s;
+  box-sizing: border-box;
 }
 
-.box > *:where(:not(:last-child)) {
-  margin-bottom: var(--size-fluid-2);
+input[type=text], textarea {
+  width: 100% !important;
+  max-width: 450px;
+  min-height: 3.1em; /*fix for Safari/ios date fields*/
 }
 
-.box > *:where(:first-child) {
-  margin-top: 0;
+textarea {
+  min-height: 150px;
+  max-width: 600px;
+}
+
+/*style placeholder text*/
+textarea::-moz-placeholder, input::-moz-placeholder {
+  color: #bbbbbb;
+}
+textarea::placeholder, input::placeholder {
+  color: #bbbbbb;
+}
+
+/*Checkbox*/
+input[type=checkbox], input[type=radio] {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+}
+
+input[type=checkbox]::after {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  font-size: 16px;
+  display: none;
+  color: #718096;
+}
+
+input[type=checkbox]:checked::after {
+  display: block;
+}
+
+.optionGroup {
+  display: flex;
+  align-items: center;
+}
+
+/* Radio option */
+input[type=radio] {
+  border-radius: 50%;
+  padding: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+input[type=radio]::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #718096;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+input[type=radio]:checked::after {
+  transform: scale(1);
+}
+
+/*focusing state*/
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not(.error):focus, textarea:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: inset 0 0 0 2px #4ab26b !important;
+  border: none;
+}
+
+input[type=checkbox]:focus {
+  border: 1px solid #718096;
 }/*# sourceMappingURL=xot_main.css.map */
