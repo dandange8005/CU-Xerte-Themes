@@ -2512,10 +2512,13 @@ ul.category {
    ========================================================================== */
 .alert {
   padding: var(--size-3);
+  padding-left: var(--size-8);
   margin-bottom: var(--size-fluid-2);
   border: 1px solid transparent;
   border-radius: var(--radius-2);
-  background: var(--shade-gray);
+  background: #f3f3f3;
+  position: relative;
+  font-size: var(--fs-sm);
 }
 .alert::before {
   font-family: "Font Awesome 5 Free";
@@ -2523,6 +2526,7 @@ ul.category {
   position: absolute;
   left: 1rem;
   top: 1rem;
+  font-size: var(--fs-lg);
 }
 .alert > :first-child {
   margin-top: 0;
