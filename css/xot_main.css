@@ -2526,7 +2526,7 @@ ul.category {
   position: absolute;
   left: 1rem;
   top: 1rem;
-  font-size: var(--fs-lg);
+  font-size: 18px;
 }
 .alert > :first-child {
   margin-top: 0;
