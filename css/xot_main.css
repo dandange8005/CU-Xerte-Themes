@@ -2281,17 +2281,6 @@ ul.category {
   text-align: center;
 }
 
-.box {
-  background: var(--white);
-  padding: var(--size-5);
-  border-radius: var(--radius-2);
-  border: 1px solid var(--clr-border);
-}
-
-.box > *:where(:not(:last-child)) {
-  margin-bottom: var(--size-fluid-2);
-}
-
 .bg-success {
   background-color: var(--clr-success);
 }
@@ -2895,4 +2884,22 @@ a.btn, a.btn:hover {
 .btn-group > .btn:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+/* =========================================
+  # COMPONENTS / # BOXES
+============================================ */
+.box {
+  background: var(--white);
+  padding: var(--size-5);
+  border-radius: var(--radius-2);
+  border: 1px solid var(--clr-border);
+}
+
+.box > *:where(:not(:last-child)) {
+  margin-bottom: var(--size-fluid-2);
+}
+
+.box > *:where(:first-child) {
+  margin-top: 0;
 }/*# sourceMappingURL=xot_main.css.map */
