@@ -882,6 +882,7 @@ Author: Nan Zhang
   --accent-800: hsl(353, 65%, 20%);
   --accent-900: hsl(353, 65%, 10%);
   --accent-950: hsl(353, 68%, 5%);
+  --clr-accent: var(--primary);
   --clr-header-bg: var(--primary);
   --clr-header-h1: var(--light);
   --clr-header-h2: var(--white);

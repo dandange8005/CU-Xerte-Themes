@@ -156,6 +156,9 @@ Author: Nan Zhang
     --accent-900: hsl(353, 65%, 10%);
     --accent-950: hsl(353, 68%, 5%);
 
+    // for older project compatibility
+    --clr-accent: var(--primary);
+
     
         // --clr-accent: var(--cu-BlueZodiac);
         // --clr-accent: hsl(217, 59%, 20%);
