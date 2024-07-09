@@ -42,7 +42,8 @@
 .ui-state-active a:hover, .ui-state-active a:focus, .ui-state-default a:hover, .ui-state-default a:focus {
 	background-color: var(--clr-btn-rollover);
 	text-decoration: none;
-	color: var(--white);
+	color: var(--white)!important;
+	box-shadow: none;
 }
 
 //Tabs
@@ -101,16 +102,16 @@
 	left: 0.7em;
 }
 
-// // .ui-accordion .ui-accordion-header.ui-state-hover {
-// // 	.ui-icon {
-// // 		color: var(--white);
-// // 	}
-// // }
+.ui-accordion .ui-accordion-header.ui-state-hover {
+	.ui-icon {
+		color: var(--white);
+	}
+}
 
 // .ui-accordion .ui-accordion-header.ui-state-hover .ui-icon:before {
 	
 // 	color: var(--white);
-// 	background: white;
+// 	// background: white;
 // }
 
 .ui-accordion .ui-accordion-content {
@@ -120,6 +121,7 @@
 // .ui-accordion .ui-accordion-header-active a {
 //     // font-weight: bold;
 // }
+
 
 
 // Navigation page

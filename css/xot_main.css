@@ -2428,7 +2428,8 @@ ul.category {
 .ui-state-active a:hover, .ui-state-active a:focus, .ui-state-default a:hover, .ui-state-default a:focus {
   background-color: var(--clr-btn-rollover);
   text-decoration: none;
-  color: var(--white);
+  color: var(--white) !important;
+  box-shadow: none;
 }
 
 .ui-tabs {
@@ -2484,6 +2485,10 @@ ul.category {
 .ui-accordion .ui-accordion-header .ui-icon {
   color: var(--clr-btn);
   left: 0.7em;
+}
+
+.ui-accordion .ui-accordion-header.ui-state-hover .ui-icon {
+  color: var(--white);
 }
 
 .ui-accordion .ui-accordion-content {
