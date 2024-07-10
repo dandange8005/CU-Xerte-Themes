@@ -973,10 +973,6 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-:focus {
-  outline: none;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -1415,14 +1411,6 @@ figure figcaption {
   --clr-focus: #ffeb3b;
   --clr-focus-text: #212b32;
   --focus-width: 4px;
-}
-
-a:not(.button):focus {
-  background-color: var(--clr-focus);
-  box-shadow: 0 -2px var(--clr-focus), 0 var(--focus-width) var(--clr-focus-text);
-  color: var(--clr-focus-text) !important;
-  outline: var(--focus-width) solid transparent;
-  outline-offset: var(--focus-width);
 }
 
 #x_footerBlock button:focus {
