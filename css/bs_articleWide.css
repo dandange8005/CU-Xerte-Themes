@@ -1106,20 +1106,22 @@ section p:not(:last-child) {
 
 /* reset the base style for list */
 section ul,
-section ol {
+section ol, .footer ul,
+.footer ol {
   padding: 0;
   margin-left: var(--size-5);
   display: grid;
   gap: var(--size-2);
 }
-section li {
+section li, .footer li {
   line-height: var(--font-lineheight-3);
 }
 section ul li,
-section ol li {
+section ol li, .footer ul li,
+.footer ol li {
   padding-left: var(--size-2);
 }
-section li ul {
+section li ul, .footer li ul {
   margin-top: var(--size-3);
 }
 
@@ -1441,10 +1443,11 @@ hr {
     FOOTER
 =======================*/
 .footer {
-  padding-block: var(--size-fluid-5);
+  padding-block: var(--size-fluid-4);
   position: relative;
   background-color: transparent !important;
   border: 0;
+  color: var(--white);
 }
 
 .footer::before {

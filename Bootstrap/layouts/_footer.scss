@@ -3,12 +3,14 @@
 =======================*/
 
 .footer {
-    padding-block: var(--size-fluid-5);
+    padding-block: var(--size-fluid-4);
     position: relative;
     background-color: transparent!important;
     border: 0;
+    color: var(--white)
 }
 
+// footer background
 .footer::before {
     content: "";
     position: absolute;
@@ -41,6 +43,8 @@
     height: auto;
     margin: auto;
 }
+
+
 
 /* Vertical Feedback button for the project*/
 
