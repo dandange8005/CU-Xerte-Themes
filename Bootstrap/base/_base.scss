@@ -193,7 +193,7 @@ section>*:where(:not(:last-child)) {
     margin-bottom: var(--size-7);
 }
 
-section {
+section, .footer {
 
     h2,
     h3,
@@ -207,7 +207,7 @@ section {
     }
 
     h3 {
-        margin-top: var(--size-fluid-2);
+        margin-top: var(--size-fluid-3);
     }
 
     h4 {

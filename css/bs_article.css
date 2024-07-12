@@ -974,6 +974,7 @@ h2 {
 h3 {
   font-size: var(--fs-lg);
   line-height: var(--font-lineheight-2);
+  margin-bottom: var(--size-3);
 }
 
 h4 {
