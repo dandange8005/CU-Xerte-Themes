@@ -829,7 +829,7 @@ Author: Nan Zhang
 :where(html) {
   /* Core colours */
   --text: hsl(240, 33%, 6%);
-  --background: hsl(240, 9%, 98%);
+  --background: hsl(36, 33%, 97%);
   --primary: hsl(240, 39%, 18%);
   --secondary: hsl(50, 38%, 68%);
   --accent: hsl(353, 65%, 52%);
@@ -890,7 +890,7 @@ Author: Nan Zhang
   --clr-footer-bg: #495057;
   --clr-body-bg: var(--background);
   --clr-body-text: var(--text);
-  --clr-headline: var(--text);
+  --clr-headline: var(--primary);
   --clr-link: var(--cu-link);
   --clr-link-visited: #330072;
   --clr-border: hsl(216, 12%, 84%);
@@ -899,7 +899,7 @@ Author: Nan Zhang
   --clr-shaded: var(--light);
   --clr-btn: var(--cu-navy-2);
   --clr-btn-rollover: var(--cu-navy-3);
-  --button-primary: var(--primary);
+  --button-primary: var(--cu-blue);
   --button-secondary: var(--secondary);
   --button-primary-hover: var(--primary-500);
   --button-primary-focus: var(--primary-700);

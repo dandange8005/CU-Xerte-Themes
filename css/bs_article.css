@@ -974,7 +974,6 @@ h2 {
 h3 {
   font-size: var(--fs-lg);
   line-height: var(--font-lineheight-2);
-  margin-bottom: var(--size-3);
 }
 
 h4 {
@@ -1088,20 +1087,22 @@ section > *:where(:not(:last-child)) {
 
 section h2,
 section h3,
-section h4 {
+section h4, .footer h2,
+.footer h3,
+.footer h4 {
   color: var(--neutral-7);
   margin-bottom: var(--size-fluid-1);
 }
-section h2 {
+section h2, .footer h2 {
   margin-top: var(--size-fluid-3);
 }
-section h3 {
+section h3, .footer h3 {
+  margin-top: var(--size-fluid-3);
+}
+section h4, .footer h4 {
   margin-top: var(--size-fluid-2);
 }
-section h4 {
-  margin-top: var(--size-fluid-2);
-}
-section p:not(:last-child) {
+section p:not(:last-child), .footer p:not(:last-child) {
   margin-bottom: var(--size-3);
 }
 

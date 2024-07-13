@@ -97,7 +97,7 @@ Author: Nan Zhang
 
     /* Core colours */  
     --text: hsl(240, 33%, 6%);
-    --background: hsl(240, 9%, 98%);
+    --background: hsl(36, 33%, 97%);
     --primary: hsl(240, 39%, 18%);
     --secondary: hsl(50, 38%, 68%);
     --accent: hsl(353, 65%, 52%);
@@ -217,7 +217,7 @@ Author: Nan Zhang
     // Body
     --clr-body-bg: var(--background);
     --clr-body-text: var(--text);
-    --clr-headline: var(--text);
+    --clr-headline: var(--primary);
 
     // Link
     --clr-link: var(--cu-link);
@@ -233,7 +233,7 @@ Author: Nan Zhang
     --clr-btn-rollover: var(--cu-navy-3);
 
     // New Button colours
-    --button-primary: var(--primary);
+    --button-primary: var(--cu-blue);
     --button-secondary: var(--secondary);
     --button-primary-hover: var(--primary-500);
     --button-primary-focus: var(--primary-700);
