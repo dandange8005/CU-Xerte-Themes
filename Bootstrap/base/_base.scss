@@ -193,7 +193,7 @@ section>*:where(:not(:last-child)) {
     margin-bottom: var(--size-7);
 }
 
-section, .footer {
+section {
 
     h2,
     h3,
@@ -219,6 +219,9 @@ section, .footer {
     }
 }
 
+.footer h3 {
+    margin-bottom: var(--size-3);
+}
 
 // lists
 /* reset the base style for list */
