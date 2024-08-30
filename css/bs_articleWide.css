@@ -1381,7 +1381,7 @@ hr {
 /* JUMBOTRON */
 .jumbotron {
   background-color: #152C51;
-  background: var(--clr-jumbotron-bg-gradient, linear-gradient(45deg, #152C51, #1B3B6F)) !important;
+  background: var(--clr-jumbotron-bg-gradient) !important;
   padding: var(--size-fluid-3) var(--size-7);
 }
 
