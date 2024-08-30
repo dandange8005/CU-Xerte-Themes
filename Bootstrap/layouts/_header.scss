@@ -6,11 +6,11 @@
 
 .jumbotron {
     // fallback for old broswer
-    background-color: #152C51;
-    // background-image: var(--clr-jumbotron-bg-gradient)!important;
-    background: var(--clr-jumbotron-bg-gradient)!important;
+    background-color: var(--clr-jumbotron-bg)!important;
+    background-image: var(--clr-jumbotron-bg-gradient)!important;
+    // background: var(--clr-jumbotron-bg-gradient)!important;
     padding: var(--size-fluid-3) var(--size-7);
-    // background-size: cover!important;
+    background-size: cover!important;
 
 }
 

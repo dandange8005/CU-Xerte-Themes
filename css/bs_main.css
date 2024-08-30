@@ -1380,9 +1380,10 @@ hr {
 =======================*/
 /* JUMBOTRON */
 .jumbotron {
-  background-color: #152C51;
-  background: var(--clr-jumbotron-bg-gradient) !important;
+  background-color: var(--clr-jumbotron-bg) !important;
+  background-image: var(--clr-jumbotron-bg-gradient) !important;
   padding: var(--size-fluid-3) var(--size-7);
+  background-size: cover !important;
 }
 
 #overview.logoL .logoL {
