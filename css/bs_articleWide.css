@@ -1389,6 +1389,7 @@ hr {
 #overview.logoL .logoL {
   margin-top: 0;
   max-width: 90px;
+  width: 100%;
 }
 #overview.logoL .container {
   display: flex;
