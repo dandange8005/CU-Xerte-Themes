@@ -824,7 +824,6 @@
   --clr-s: 65%;
   --clr-l: 52%;
   --clr-accent: hsl(var(--clr-h), var(--clr-s),var(--clr-l));
-  /* Accent colour shades */
   --clr-accent-1: hsl(var(--clr-h),
       var(--clr-s),
       calc(var(--clr-l) + (100% - var(--clr-l)) * 0.9));
@@ -857,9 +856,6 @@
   --clr-jumbotron-bg-gradient: var(--gradient-23);
   --clr-footer-bg: var(--navy-3);
   --clr-main-bg: var(--light);
-  --text-1: var(--neutral-8);
-  --text-2: var(--neutral-7);
-  --text-3: var(--neutral-5);
   /* Gradients */
   --gradient-accent: linear-gradient(45deg,
       var(--clr-accent),
@@ -2603,15 +2599,15 @@ Text Utilities
 }
 
 .text-1 {
-  color: var(--text-1);
+  color: var(--natural-8);
 }
 
 .text-2 {
-  color: var(--text-2);
+  color: var(--natural-7);
 }
 
 .text-3 {
-  color: var(--text-3);
+  color: var(--natural-5);
 }
 
 .text-white {

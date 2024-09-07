@@ -77,15 +77,15 @@
     
 /* Bootstrap Project theme */
 
-// Main accent colour's hsl values
+// Accent colour
 --clr-h: 353;
 --clr-s: 65%;
 --clr-l: 52%;
 
-// --clr-accent: hsl(353, 65%, 52%);
+// Accent colour
 --clr-accent: hsl(var(--clr-h), var(--clr-s),var(--clr-l));
 
-/* Accent colour shades */
+// Accent colour shades
 --clr-accent-1: hsl(var(--clr-h),
     var(--clr-s),
     calc(var(--clr-l) + (100% - var(--clr-l)) * 0.9));
@@ -114,17 +114,21 @@
 // Compliment colour: hue + 180 
 --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
 
-
+// main text colour
 --clr-body: var(--black);
+// link colour
 --clr-link: var(--cu-sky);
+// border colour
 --clr-border: hsl(216, 12%, 84%);
+// header background colour
 --clr-jumbotron-bg: #152C51;
+// header background gradient
 --clr-jumbotron-bg-gradient: var(--gradient-23);
+// footer background colour
 --clr-footer-bg: var(--navy-3);
+// main background colour
 --clr-main-bg: var(--light);
---text-1: var(--neutral-8);
---text-2: var(--neutral-7);
---text-3: var(--neutral-5);
+
 
 /* Gradients */
 --gradient-accent: linear-gradient(45deg,
