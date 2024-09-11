@@ -2549,7 +2549,7 @@ a.ui-button:active,
   margin-bottom: var(--size-fluid-2);
 }
 
-.box > *:where(:first-child) {
+.box > *:where(:first-child), .box > h3 {
   margin-top: 0;
 }
 
