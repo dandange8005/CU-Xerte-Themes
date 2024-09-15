@@ -1439,9 +1439,7 @@ figure figcaption {
 /* ==========================================================================
   # BASE / # TYPOGRAPHY
 ========================================================================== */
-/* ==================
-    HEADINGS
-=================== */
+/* Headings */
 h1,
 h2,
 h3:not(.ui-accordion-header),
@@ -1479,6 +1477,7 @@ h5 {
   font-size: 1.25rem;
 }
 
+/* Page title */
 #pageContents .page-title {
   font-size: var(--fs-3xl);
   color: var(--primary);
@@ -1487,43 +1486,35 @@ h5 {
   margin-block: var(--size-fluid-3);
 }
 
-/* ==================
-    PARAGRAPHS
-=================== */
+/* Paragraphs */
 #x_mainHolder p + p {
   margin-top: 1rem;
 }
 
-/* ==================
-    LINKS
-=================== */
+/* Links */
 a {
   color: var(--clr-link);
   text-decoration: none;
   position: relative;
   transition: color 0.3s;
 }
-
-a:hover,
-a:focus {
+a:hover, a:focus {
   text-decoration: underline;
   text-decoration-thickness: max(0.08em, 1.5px);
   text-underline-offset: 0.15em;
   color: var(--clr-link);
 }
-
 a:visited {
   color: var(--clr-link-visited);
 }
 
 /* External link */
-a.link-external {
+.link-external {
   display: inline-block;
   align-items: center;
   gap: var(--size-1);
 }
-
-a.link-external::after {
+.link-external::after {
   content: "\f35d";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -1532,18 +1523,16 @@ a.link-external::after {
   transform: translateY(-3px);
   display: inline-block;
 }
-
-a.link-external:hover::after {
+.link-external:hover::after {
   text-decoration: none;
   display: inline-block;
 }
 
-/* action link */
-a.link-action {
+/* Action link */
+.link-action {
   display: inline-block;
 }
-
-a.link-action::before {
+.link-action::before {
   content: "\f0a9";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -1551,15 +1540,11 @@ a.link-action::before {
   color: var(--clr-success);
   font-size: var(--fs-lg);
 }
-
-a.link-action:hover::after,
-a.link-action:focus::after {
-  content: none;
+.link-action:hover::before, .link-action:focus::before {
+  text-decoration: none;
 }
 
-/* ==================
-    BLOCKQUOTE
-=================== */
+/* Blockquote */
 blockquote {
   margin-left: 0;
   padding: 0.5rem 1rem;
@@ -1569,18 +1554,14 @@ blockquote {
   line-height: 1.625;
 }
 
-/* ==================
-    CODE
-=================== */
+/* Code */
 code {
   background-color: var(--clr-code-bg);
   color: var(--clr-code-text);
   padding: 0.25rem;
 }
 
-/* ==================
-    PRE
-=================== */
+/* Pre */
 pre {
   background-color: var(--clr-code-bg);
   color: var(--clr-code-text);
@@ -1588,9 +1569,7 @@ pre {
   white-space: pre-wrap;
 }
 
-/* ==================
-    HR  
-=================== */
+/* Horizontal Rule */
 hr {
   margin-block: var(--size-fluid-2);
   border: none;
@@ -1603,42 +1582,32 @@ hr.break-m {
   margin-block: var(--size-fluid-3);
 }
 
-/* ==================
-    TABLE
-=================== */
+/* Table */
 table {
   background: var(--white);
   box-shadow: var(--shadow-2);
   font-size: var(--fs-sm);
 }
-
-table,
 table tr,
 table td {
   border: none;
 }
-
-thead th {
+table tr td:not(:first-of-type) {
+  border-left: 1px solid var(--clr-border);
+}
+table tr:nth-child(even) {
+  background: var(--light);
+}
+table thead th {
   background: var(--clr-headershade);
   color: var(--light);
   font-weight: bold;
 }
-
-table tr td:not(:first-of-type) {
-  border-left: 1px solid var(--clr-border);
-}
-
-thead th:not(:first-of-type) {
+table thead th:not(:first-of-type) {
   border-left: 1px solid var(--light);
 }
 
-table tr:nth-child(even) {
-  background: var(--light);
-}
-
-/* ==================
-    LIST
-=================== */
+/* Lists */
 ul,
 ol {
   padding: 0;
@@ -1646,25 +1615,22 @@ ol {
   display: grid;
   gap: var(--size-1);
 }
+ul li,
+ol li {
+  line-height: var(--font-lineheight-3);
+  padding-left: var(--size-2);
+}
 
 ul#tabHolder,
 ul.tabList {
   display: block;
 }
 
-li {
-  line-height: var(--font-lineheight-3);
-}
-
-ul li,
-ol li {
-  padding-left: var(--size-2);
-}
-
 li ul {
   margin-top: var(--size-1);
 }
 
+/* List utility classes */
 .list-none {
   list-style-type: none;
   padding: 0;
