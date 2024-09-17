@@ -1573,6 +1573,7 @@ a:visited {
 }
 .link-action:hover::before, .link-action:focus::before {
   text-decoration: none;
+  display: inline-block;
 }
 
 /* Blockquote */
