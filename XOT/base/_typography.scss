@@ -112,7 +112,7 @@ a {
     &:hover,
     &:focus {
         &::before {
-            text-decoration: none;
+            text-decoration: none!important;
         }
     }
 }

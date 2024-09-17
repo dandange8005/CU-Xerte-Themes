@@ -1335,16 +1335,6 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
   width: 90%;
 }
 
-h1,
-h2,
-h3 {
-  padding: 0;
-}
-
-p {
-  padding: 0;
-}
-
 body {
   font-family: var(--ff-body);
   font-weight: 400;
@@ -1375,13 +1365,6 @@ body {
     - embeded links
 
 =======================*/
-/* ==================
-    IMAGE
-=================== */
-img {
-  height: auto;
-}
-
 /* ==================
     FIGURE
 =================== */
@@ -1590,7 +1573,7 @@ a:visited {
   font-size: var(--fs-lg);
 }
 .link-action:hover::before, .link-action:focus::before {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* Blockquote */
