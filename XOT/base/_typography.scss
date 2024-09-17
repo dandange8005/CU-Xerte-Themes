@@ -64,8 +64,7 @@ a {
     &:hover,
     &:focus {
         text-decoration: underline;
-        text-decoration-thickness: max(0.08em, 1.5px);
-        text-underline-offset: 0.15em;
+        text-underline-position: under;
         color: var(--clr-link);
     }
 
@@ -112,7 +111,7 @@ a {
     &:hover,
     &:focus {
         &::before {
-            text-decoration: none!important;
+            text-decoration: none;
         }
     }
 }
