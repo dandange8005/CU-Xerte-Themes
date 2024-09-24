@@ -7,7 +7,7 @@
     position: relative;
     background-color: transparent!important;
     border: 0;
-    color: var(--white)
+    color: var(--cu-white)
 }
 
 // footer background
@@ -25,17 +25,17 @@
 .footer p {
     margin-bottom: 0;
     text-align: center;
-    color: var(--white);
+    color: var(--cu-white);
 }
 
 .footer a {
-    color: var(--white);
+    color: var(--cu-white);
     text-decoration: underline;
   }
   
   .footer a:hover, .footer a:focus {
     text-decoration: none;
-    color: var(--white);
+    color: var(--cu-white);
   }
 
 .footer-logo {

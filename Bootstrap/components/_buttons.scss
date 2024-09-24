@@ -27,7 +27,7 @@ a.button, button.button {
     align-self: start; // optional in flex container
     // Visual
     background-color: var(--clr-accent);
-    color: var(--white);
+    color: var(--cu-white);
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-2);
     // size
@@ -88,7 +88,7 @@ a.button, button.button {
 
 .btn-mini {
     font-size: var(--fs-sm);
-    color: var(--white);
+    color: var(--cu-white);
     background: hsl(
                 var(--clr-h),
                 var(--clr-s),
@@ -118,7 +118,7 @@ a.button, button.button {
                     var(--clr-s),
                     calc(var(--clr-l) * 1.2)
                 );
-    color: var(--white);
+    color: var(--cu-white);
     transform: scale(1);
 }
 

@@ -64,7 +64,7 @@ section::before {
         background-color: var(--light);
     }
     section:nth-child(even)::before {
-        background-color: var(--white);
+        background-color: var(--cu-white);
     } */
 
 
@@ -75,7 +75,7 @@ section::before {
 }
 
 .page-header h1{
-    color: var(--black);
+    color: var(--cu-black);
     font-weight: var(--font-weight-7);
     margin-top: 0;
 }

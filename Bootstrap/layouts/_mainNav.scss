@@ -13,7 +13,7 @@
 }
 
 .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a, .navbar-inverse .brand, .navbar-inverse .nav > li > a {
-	color: var(--white);
+	color: var(--cu-white);
 	text-shadow: none;
 	border-radius: 0;
 	transition: 0.25s ease-in-out;
@@ -24,6 +24,6 @@
     // color: var(--neutral-3);
     background-color: var(--neutral-5);
     color: var(--light);
-    // border-bottom: 2px solid var(--white);
+    // border-bottom: 2px solid var(--cu-white);
 	box-sizing: border-box;
 }
