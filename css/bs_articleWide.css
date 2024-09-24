@@ -827,6 +827,16 @@
   --cu-grey-8: #4c4c4c;
   --cu-grey-9: #333333;
   --light: hsl(210, 17%, 98%);
+  --neutral-0: hsl(0, 0%, 98%);
+  --neutral-1:hsl(0, 0%, 96%);
+  --neutral-2:hsl(0, 0%, 90%);
+  --neutral-3:hsl(0, 0%, 83%);
+  --neutral-4:hsl(0, 0%, 64%);
+  --neutral-5:hsl(0, 0%, 45%);
+  --neutral-6:hsl(0, 0%, 32%);
+  --neutral-7:hsl(0, 0%, 25%);
+  --neutral-8:hsl(0, 0%, 15%);
+  --neutral-9:hsl(0, 0%, 9%);
   --clr-success:hsl(148, 100%, 25%);
   --clr-danger: hsl(4, 77%, 48%);
   /* Bootstrap Project Tokens */
