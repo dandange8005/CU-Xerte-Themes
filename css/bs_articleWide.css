@@ -2283,10 +2283,6 @@ Background Utilities
   background-color: var(--clr-accent);
 }
 
-.bg-compliment {
-  background-color: var(--clr-compliment);
-}
-
 .bg-success {
   background-color: var(--clr-success);
 }
