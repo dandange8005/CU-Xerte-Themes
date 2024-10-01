@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+// text-wrap rules
+* {
+  text-wrap: pretty;
+}
+
 // Remove default margin and padding
 html, 
 body, 
@@ -73,6 +78,17 @@ h6 {
   overflow-wrap: break-word;
   hyphens: auto;
 }
+
+// Text wrap rules
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
 
 // Create a root stacking context
 #root, 

@@ -954,6 +954,10 @@ Author: Nan Zhang
   box-sizing: border-box;
 }
 
+* {
+  text-wrap: pretty;
+}
+
 html,
 body,
 h1,
@@ -1011,6 +1015,15 @@ h6 {
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
           hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
 #root,
