@@ -10,10 +10,8 @@ Author: Nan Zhang
 
 /* ============================
     OPEN-PROP CUSTOM PROPERTIES
-    Add in Openprops custom properties
 ==============================*/
 // @import "https://unpkg.com/open-props"; //open-props CDN link
-// @import "https://dandange8005.github.io/CU-Xerte-Themes/openprop/open-props.min.css";
 @import "../../openprop/openProps";
 
 
@@ -38,7 +36,11 @@ Author: Nan Zhang
 //Cardiff University Colours
 :where(html) {
     /* CU Core Colours */
-    --cu-red: #d4374a;
+
+    // Primary colours
+    --cu-red: hsl(3, 79%, 50%);
+
+    // Secondary colours
     --cu-cabaret: #d94c5d;
     --cu-yellow: #F8D349;
     --cu-green: #008458;
@@ -92,7 +94,7 @@ Author: Nan Zhang
     --shade-green: #F0F5EF;
 }   
 
-// XERTE Project Theme
+// XERTE Project Tokens
 :where(html) {
 
     /* Core colours */  
@@ -208,7 +210,7 @@ Author: Nan Zhang
     --clr-header-bg: var(--primary);
     --clr-header-h1: var(--light);
     --clr-header-h2: var(--white);
-    --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
+    --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/Logos/Cardiff-Logo-Red.png");
 
     // XOT Footer
     --clr-footer-bg: #495057;
@@ -220,12 +222,12 @@ Author: Nan Zhang
     --clr-headline: var(--primary);
 
     // Link
-    --clr-link: var(--cu-link);
+    --clr-link: #045BC6;
     --clr-link-visited: #330072;
 
     // jQuery UI
 
-    --clr-border: hsl(216, 12%, 84%);
+    --clr-border: #d1d5db;
     --clr-headershade: #4E597E;
     --clr-panelborder: var(--gray-5);
     --clr-shaded: var(--light);

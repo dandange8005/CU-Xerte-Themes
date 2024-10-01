@@ -50,10 +50,16 @@ github page link:
 
 Assets
 Images
-
-- https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU_logo.png
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.png
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/shadow.png
 - https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/LearningTeachingWhite.png
+
+Logos
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/Logos/Cardiff-Logo-Mono-Inversed.png
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/Logos/Cardiff-Logo-Mono.png
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/Logos/Cardiff-Logo-Red-Inversed.png
+- https://dandange8005.github.io/CU-Xerte-Themes/Assets/Logos/Cardiff-Logo-Red.png
 
 webfonts
 

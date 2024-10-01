@@ -4,7 +4,6 @@ Author: Nan Zhang
 */
 /* ============================
     OPEN-PROP CUSTOM PROPERTIES
-    Add in Openprops custom properties
 ==============================*/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 :where(html) {
@@ -795,7 +794,7 @@ Author: Nan Zhang
 =======================*/
 :where(html) {
   /* CU Core Colours */
-  --cu-red: #d4374a;
+  --cu-red: hsl(3, 79%, 50%);
   --cu-cabaret: #d94c5d;
   --cu-yellow: #F8D349;
   --cu-green: #008458;
@@ -901,14 +900,14 @@ Author: Nan Zhang
   --clr-header-bg: var(--primary);
   --clr-header-h1: var(--light);
   --clr-header-h2: var(--white);
-  --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/images/CU-logo.svg");
+  --main-logo: url("https://dandange8005.github.io/CU-Xerte-Themes/Assets/Logos/Cardiff-Logo-Red.png");
   --clr-footer-bg: #495057;
   --clr-body-bg: var(--background);
   --clr-body-text: var(--text);
   --clr-headline: var(--primary);
-  --clr-link: var(--cu-link);
+  --clr-link: #045BC6;
   --clr-link-visited: #330072;
-  --clr-border: hsl(216, 12%, 84%);
+  --clr-border: #d1d5db;
   --clr-headershade: #4E597E;
   --clr-panelborder: var(--gray-5);
   --clr-shaded: var(--light);
