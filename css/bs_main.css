@@ -890,7 +890,7 @@
   /* Typography */
   --ff-body: "Inter", sans-serif;
   --ff-heading: "Inter", sans-serif;
-  --ff-serif: var(--font-serif);
+  --ff-serif: "Georgia", serif;
   --ff-mono: var(--font-mono);
   --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.78rem);
   --fs-sm: clamp(0.83rem, 0.79rem + 0.20vw, 0.94rem);
