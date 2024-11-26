@@ -1,0 +1,57 @@
+/* ============================
+	OVERALL RESET
+
+    This is to reset some of the default styles from the browser to ensure consistancy
+============================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    text-wrap: pretty;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p {
+    overflow-wrap: break-word;
+}

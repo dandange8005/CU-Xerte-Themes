@@ -1,0 +1,64 @@
+/* ======================
+        HEADER
+=======================*/
+
+/* ==========JUMBOTRON==========
+    Reset for the Jumbotron area
+*/
+
+.jumbotron {
+    // fallback for old broswer
+    background-color: var(--clr-jumbotron-bg)!important;
+    background-image: var(--clr-jumbotron-bg-gradient)!important;
+    // background: var(--clr-jumbotron-bg-gradient)!important;
+    padding: var(--size-fluid-3) var(--size-7);
+    background-size: cover!important;
+
+}
+
+/* ========== Logo ========== 
+
+    Reset for the left handside logo
+
+*/
+
+#overview.logoL {
+
+    .logoL {
+        margin-top: 0;
+        max-width: 90px;
+        width: 100%;
+    }
+    
+    .container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* ========== Main Project Title ========== */
+.titles {
+    padding: 0;
+}
+
+
+#pageTitle {
+    font-family: var(--ff-heading);
+    color: var(--cu-white);
+    line-height: var(--font-lineheight-1);
+    letter-spacing: 1px;
+    margin-bottom: var(--size-fluid-1);
+    font-size: var(--font-size-fluid-3);
+    font-weight: var(--font-weight-9);
+}
+
+/* ==========  Project Subtitle ========== */
+#pageSubTitle {
+    font-weight: var(--font-weight-4);
+    color: var(--cu-white);
+    padding-top: var(--size-1);
+    font-size: var(--fs-lg);
+    line-height: var(--font-lineheight-2);
+    margin-bottom: 0;
+}
+
