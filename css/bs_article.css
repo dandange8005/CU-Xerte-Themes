@@ -963,7 +963,7 @@ p {
 }
 
 /* ======================
-    BASE CONTENT
+    BASE ELEMENTS
 =======================*/
 html {
   scroll-behavior: smooth;
@@ -1148,7 +1148,6 @@ section li ul, .footer li ul {
   border-radius: var(--radius-2);
 }
 
-/* Styles to the screenshots */
 .image-screenshots {
   border: 1px solid var(--clr-border);
   margin: 2rem auto;

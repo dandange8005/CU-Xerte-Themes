@@ -1,5 +1,5 @@
 /* ======================
-    BASE CONTENT
+    BASE ELEMENTS
 =======================*/
 // Smooth Scroll
 html {
@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-// heading
+// headings
 h1,
 h2,
 h3,
@@ -238,7 +238,8 @@ section, .footer {
 }
 
 
-// Images and figures
+// Utility classes for images
+
 .image-inline {
     display: inline-block;
 }
@@ -252,7 +253,8 @@ section, .footer {
     border-radius: var(--radius-2);
 }
 
-/* Styles to the screenshots */
+// screenshot classes
+
 .image-screenshots {
     border: 1px solid var(--clr-border);
     margin: 2rem auto;
