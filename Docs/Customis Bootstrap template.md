@@ -1,6 +1,6 @@
 # Customise Bootstrap Template
 
-The LTA (Learning and Teaching Academy) Bootstrap template is a customised version of the default Xerte Bootstrap template. It allows you create professional looking Xerte resources with a consistent look and feel.
+The LTA (Learning and Teaching Academy) Bootstrap theme is a customised version of the default Xerte Bootstrap template. It allows you create professional looking Xerte resources with a consistent look and feel.
 
 The template is based on the [Bootstrap v2.3.2 framework](https://getbootstrap.com/2.3.2/) and uses the Bootstrap CSS and JavaScript files to provide a responsive layout and a range of interactive components.
 

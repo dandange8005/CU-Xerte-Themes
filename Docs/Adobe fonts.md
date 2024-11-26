@@ -8,13 +8,15 @@ Adding Franklin Gothic font family from Adobe Fonts
 4. Click on the "Activate" button
 5. Click on the "Add to Web Project" button
 
-I have now added the Franklin Gothic font family to a project I called "Xerte default". The following code is what I need to add to the head of the HTML file to use the font family.
+I have now added the Franklin Gothic font family to a project I called "Xerte default". You will be given the following code to be added to your own Xerte project.
    
 ```html
 <style>
   @import url("https://use.typekit.net/wzt2zta.css");
 </style>
 ```
+
+
 
 Fonts Added:
 
