@@ -1,57 +1,33 @@
-// @use 'sass:color';
-// @use '../abstract/'as *;
 
-/* ============================
-    PROJECT INFO
-    Author: Nan Zhang
-==============================*/
-
-
-/* ============================
-    OPEN-PROP CUSTOM PROPERTIES
-==============================*/
+// Import OpenProps
 // @import "https://unpkg.com/open-props";
 @import "../../openprop/openProps";
 
 
-/* ============================
-    GOOGLE FONT IMPORT
-==============================*/
-
+// Importing 'Inter' Google Fonts to enhance typography and design consistency.
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap');
 
 
-/* ============================
-    Bootstrap icons
-==============================*/
-// @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+// Importing Bootstrap Icons to provide a wide range of icons for use in the project.
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-/* ============================
+/* -----------------------
     CUSTOM PROPERTIES
-==============================*/
+
+    This file contains custom CSS properties (variables) to enhance the styling capabilities of the project.
+-------------------------- */
 
 :root {
 
-// /* Sass generated colour map */
-// @each $name,
-// $value in $colours {
-//     --#{$name}:#{$value};
-//     --#{$name}-light:#{color.adjust($value, $lightness: 30%)};
-//     --#{$name}-dark:#{color.adjust($value, $lightness: -20%)};
-
-// }
-   
-
-/* CU Colours */
+/* Cardiff University Colours */
 
 // Primary colours
 --cu-red: hsl(3, 79%, 50%);
 
 // Secondary colours
---cu-blue: hsl(224, 61%, 34%);
---cu-blue-dark: hsl(222, 44%, 21%);
---cu-sky: hsl(206, 100%, 33%);
---cu-gold: hsl(41, 46%, 57%);
+
+--cu-sky: #005fa8;
+--cu-gold: #c4a45f;
 --cu-gold-light: hsl(46, 44%, 69%);
 --navy-1:hsl(204, 29%, 28%);
 --navy-2:hsl(204, 14%, 46%);
@@ -60,6 +36,8 @@
 --cu-green: #07873E;
 --cu-cadet: #5EB99B;
 --cu-stone: #C9C2BA;
+--cu-blue: #223e8c;
+--cu-dark-blue: #1e2c4d;
 --cu-light-blue: #1E90FF;
 --cu-royal-blue: #4A42FF;
 --cu-navy: #273573;
@@ -83,36 +61,17 @@
 --cu-grey-7: #666666;
 --cu-grey-8: #4c4c4c;
 --cu-grey-9: #333333;
-
-// --black: hsl(348, 7%, 13%);
-// --white: hsl(0, 0%, 100%);
---light: hsl(210, 17%, 98%);
-
---neutral-0: hsl(0, 0%, 98%);
---neutral-1:hsl(0, 0%, 96%);
---neutral-2:hsl(0, 0%, 90%);
---neutral-3:hsl(0, 0%, 83%);
---neutral-4:hsl(0, 0%, 64%);
---neutral-5:hsl(0, 0%, 45%);
---neutral-6:hsl(0, 0%, 32%);
---neutral-7:hsl(0, 0%, 25%);
---neutral-8:hsl(0, 0%, 15%);
---neutral-9:hsl(0, 0%, 9%);
-
-// Function colours
---clr-success:hsl(148, 100%, 25%);
---clr-danger: hsl(4, 77%, 48%);
-
-    
-/* Bootstrap Project Tokens */
+   
+/* Bootstrap Project Theme */
 
 // Accent colour
+--clr-accent: var(--cu-red);
+
+// Accent colour in hsl
 --clr-h: 3;
 --clr-s: 79%;
 --clr-l: 50%;
 
-// Accent colour
---clr-accent: var(--cu-red);
 
 // Accent colour shades
 --clr-accent-1: hsl(var(--clr-h),
@@ -140,8 +99,25 @@
     var(--clr-s),
     calc(var(--clr-l) - var(--clr-l) * 0.8));
 
-// // Compliment colour: hue + 180 
-// --clr-compliment: hsl(calc(var(--clr-h) + 180), var(--clr-s), var(--clr-l));
+// Other colours
+--black: var(--cu-black);
+--white: var(--cu-white);
+--light: #f9fafb;
+
+--neutral-0: hsl(0, 0%, 98%);
+--neutral-1:hsl(0, 0%, 96%);
+--neutral-2:hsl(0, 0%, 90%);
+--neutral-3:hsl(0, 0%, 83%);
+--neutral-4:hsl(0, 0%, 64%);
+--neutral-5:hsl(0, 0%, 45%);
+--neutral-6:hsl(0, 0%, 32%);
+--neutral-7:hsl(0, 0%, 25%);
+--neutral-8:hsl(0, 0%, 15%);
+--neutral-9:hsl(0, 0%, 9%);
+
+// Function colours
+--clr-success:hsl(148, 100%, 25%);
+--clr-danger: hsl(4, 77%, 48%);
 
 // main text colour
 --clr-body: var(--cu-black);
@@ -150,25 +126,13 @@
 // border colour
 --clr-border: #d1d5db;
 // header background colour
---clr-jumbotron-bg: var(--cu-blue-dark);
+--clr-jumbotron-bg: var(--cu-dark-blue);
 // header background gradient
 --clr-jumbotron-bg-gradient: var(--gradient-23);
 // footer background colour
---clr-footer-bg: var(--cu-grey-9);
+--clr-footer-bg: var(--black);
 // main background colour
 --clr-main-bg: var(--light);
-
-
-/* Gradients */
---gradient-accent: linear-gradient(45deg,
-    var(--clr-accent),
-    var(--clr-accent-6));
-
---gradient-neutral: linear-gradient(45deg,
-    var(--neutral-5),
-    var(--neutral-8));
-
---text-gradient: var(--gradient-23);
 
 /*Spacing*/
 --gap: var(--size-fluid-1);

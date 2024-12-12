@@ -1,12 +1,10 @@
 @charset "UTF-8";
-/* ============================
-    PROJECT INFO
-    Author: Nan Zhang
-==============================*/
-/* ============================
-    OPEN-PROP CUSTOM PROPERTIES
-==============================*/
+/* -----------------------
+    OPEN-PROPS
+    Open Props, a CSS token library, to supercharge the design system with reusable and consistent design tokens.
+-------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 :where(html) {
   --font-system-ui: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   --font-transitional: Charter, Bitstream Charter, Sitka Text, Cambria, serif;
@@ -783,22 +781,16 @@
     }
   }
 }
-/* ============================
-    GOOGLE FONT IMPORT
-==============================*/
-/* ============================
-    Bootstrap icons
-==============================*/
-/* ============================
+/* -----------------------
     CUSTOM PROPERTIES
-==============================*/
+
+    This file contains custom CSS properties (variables) to enhance the styling capabilities of the project.
+-------------------------- */
 :root {
-  /* CU Colours */
+  /* Cardiff University Colours */
   --cu-red: hsl(3, 79%, 50%);
-  --cu-blue: hsl(224, 61%, 34%);
-  --cu-blue-dark: hsl(222, 44%, 21%);
-  --cu-sky: hsl(206, 100%, 33%);
-  --cu-gold: hsl(41, 46%, 57%);
+  --cu-sky: #005fa8;
+  --cu-gold: #c4a45f;
   --cu-gold-light: hsl(46, 44%, 69%);
   --navy-1:hsl(204, 29%, 28%);
   --navy-2:hsl(204, 14%, 46%);
@@ -806,6 +798,8 @@
   --cu-green: #07873E;
   --cu-cadet: #5EB99B;
   --cu-stone: #C9C2BA;
+  --cu-blue: #223e8c;
+  --cu-dark-blue: #1e2c4d;
   --cu-light-blue: #1E90FF;
   --cu-royal-blue: #4A42FF;
   --cu-navy: #273573;
@@ -826,24 +820,11 @@
   --cu-grey-7: #666666;
   --cu-grey-8: #4c4c4c;
   --cu-grey-9: #333333;
-  --light: hsl(210, 17%, 98%);
-  --neutral-0: hsl(0, 0%, 98%);
-  --neutral-1:hsl(0, 0%, 96%);
-  --neutral-2:hsl(0, 0%, 90%);
-  --neutral-3:hsl(0, 0%, 83%);
-  --neutral-4:hsl(0, 0%, 64%);
-  --neutral-5:hsl(0, 0%, 45%);
-  --neutral-6:hsl(0, 0%, 32%);
-  --neutral-7:hsl(0, 0%, 25%);
-  --neutral-8:hsl(0, 0%, 15%);
-  --neutral-9:hsl(0, 0%, 9%);
-  --clr-success:hsl(148, 100%, 25%);
-  --clr-danger: hsl(4, 77%, 48%);
-  /* Bootstrap Project Tokens */
+  /* Bootstrap Project Theme */
+  --clr-accent: var(--cu-red);
   --clr-h: 3;
   --clr-s: 79%;
   --clr-l: 50%;
-  --clr-accent: var(--cu-red);
   --clr-accent-1: hsl(var(--clr-h),
       var(--clr-s),
       calc(var(--clr-l) + (100% - var(--clr-l)) * 0.9));
@@ -868,21 +849,28 @@
   --clr-accent-8: hsl(var(--clr-h),
       var(--clr-s),
       calc(var(--clr-l) - var(--clr-l) * 0.8));
+  --black: var(--cu-black);
+  --white: var(--cu-white);
+  --light: #f9fafb;
+  --neutral-0: hsl(0, 0%, 98%);
+  --neutral-1:hsl(0, 0%, 96%);
+  --neutral-2:hsl(0, 0%, 90%);
+  --neutral-3:hsl(0, 0%, 83%);
+  --neutral-4:hsl(0, 0%, 64%);
+  --neutral-5:hsl(0, 0%, 45%);
+  --neutral-6:hsl(0, 0%, 32%);
+  --neutral-7:hsl(0, 0%, 25%);
+  --neutral-8:hsl(0, 0%, 15%);
+  --neutral-9:hsl(0, 0%, 9%);
+  --clr-success:hsl(148, 100%, 25%);
+  --clr-danger: hsl(4, 77%, 48%);
   --clr-body: var(--cu-black);
   --clr-link: #045bc6;
   --clr-border: #d1d5db;
-  --clr-jumbotron-bg: var(--cu-blue-dark);
+  --clr-jumbotron-bg: var(--cu-dark-blue);
   --clr-jumbotron-bg-gradient: var(--gradient-23);
-  --clr-footer-bg: var(--cu-grey-9);
+  --clr-footer-bg: var(--black);
   --clr-main-bg: var(--light);
-  /* Gradients */
-  --gradient-accent: linear-gradient(45deg,
-      var(--clr-accent),
-      var(--clr-accent-6));
-  --gradient-neutral: linear-gradient(45deg,
-      var(--neutral-5),
-      var(--neutral-8));
-  --text-gradient: var(--gradient-23);
   /*Spacing*/
   --gap: var(--size-fluid-1);
   --flex-gap: var(--size-fluid-3);
@@ -904,15 +892,14 @@
 
 /* ----------------------
 	OVERALL RESET
+
+    Inspired by Josh Comeau's CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/
 -------------------------- */
+/* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
-  text-wrap: pretty;
 }
 
 html {
@@ -920,7 +907,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Reset margins */
+/* 2. Remove default margin */
 body,
 h1,
 h2,
@@ -938,6 +925,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 5. Improve media defaults */
 img,
 picture,
 video,
@@ -947,6 +935,7 @@ svg {
   max-width: 100%;
 }
 
+/* 6. Inherit fonts for form controls */
 input,
 button,
 textarea,
@@ -954,12 +943,25 @@ select {
   font: inherit;
 }
 
-p {
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-:focus {
-  outline: none;
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
 /* ======================
@@ -2252,8 +2254,8 @@ Background Utilities
   background-color: var(--cu-blue);
 }
 
-.bg-blue-dark {
-  background-color: var(--cu-blue-dark);
+.bg-dark-blue {
+  background-color: var(--cu-dark-blue);
 }
 
 .bg-sky {
@@ -2571,64 +2573,8 @@ Stretched Link Utilities
 /* ----------------- 
 Text Utilities
  ----------------- */
-.text-accent {
-  color: var(--clr-accent);
-}
-
-.text-cu-red {
-  color: var(--cu-red);
-}
-
-.text-cu-blue {
-  color: var(--cu-blue);
-}
-
-.text-cu-blue-dark {
-  color: var(--cu-blue-dark);
-}
-
-.text-cu-gold {
-  color: var(--cu-gold);
-}
-
-.text-navy-1 {
-  color: var(--navy-1);
-}
-
-.text-navy-2 {
-  color: var(--navy-2);
-}
-
-.text-navy-3 {
-  color: var(--navy-3);
-}
-
-.text-1 {
-  color: var(--natural-8);
-}
-
-.text-2 {
-  color: var(--natural-7);
-}
-
-.text-3 {
-  color: var(--natural-5);
-}
-
-.text-white {
-  color: var(--cu-white);
-}
-
-.text-success {
-  color: var(--clr-success);
-}
-
-.text-danger {
-  color: var(--clr-danger);
-}
-
 .text-gradient {
-  background: var(--text-gradient);
+  background: var(--gradient-23);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
