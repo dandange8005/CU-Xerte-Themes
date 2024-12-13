@@ -46,7 +46,7 @@ input[type="checkbox"],input[type="radio"] {
     height: 16px;
   position: relative;
   cursor: pointer;
-  display: flex;
+  display: flex!important;
   justify-content: center;
     align-items: center;
     padding: 10px;
