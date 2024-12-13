@@ -31,8 +31,8 @@ h3:not(.ui-accordion-header) {
     margin-top: var(--size-6);
 }
 
-// make sure the first h3 in .infoHolder container doesn't have a top margin
-.infoHolder > h3:first-child {
+// make sure the first h3 in #infoHolder container doesn't have a top margin
+#infoHolder > h3:first-child {
     margin-top: 0;
 }
 

@@ -1515,7 +1515,7 @@ h3:not(.ui-accordion-header) {
   margin-top: var(--size-6);
 }
 
-.infoHolder > h3:first-child {
+#infoHolder > h3:first-child {
   margin-top: 0;
 }
 
