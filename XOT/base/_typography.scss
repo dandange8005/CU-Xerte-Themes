@@ -25,11 +25,15 @@ h2 {
     line-height: var(--font-lineheight-1);
 }
 
-// h3 is being used as a subheading in the accordion component as well as a heading in the page contents, so we need to exclude the accordion header from the styles
-h3:not(.ui-accordion-header):not(:first-child){
+h3:not(.ui-accordion-header) {
     font-size: var(--fs-xl);
     line-height: var(--font-lineheight-2);
     margin-top: var(--size-6);
+}
+
+// make sure the first h3 in .infoHolder container doesn't have a top margin
+.infoHolder > h3:first-child {
+    margin-top: 0;
 }
 
 h4 {
