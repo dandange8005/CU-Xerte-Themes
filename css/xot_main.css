@@ -2876,12 +2876,6 @@ input, textarea {
   box-sizing: border-box;
 }
 
-input[type=text], textarea {
-  width: 100% !important;
-  max-width: 450px;
-  min-height: 3.1em; /*fix for Safari/ios date fields*/
-}
-
 textarea {
   min-height: 150px;
   max-width: 600px;
