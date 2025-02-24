@@ -22,11 +22,12 @@ input, textarea {
     box-sizing: border-box;
 }
 
-input[type=text], textarea {
-    width: 100%!important;
-    max-width: 450px;
-    min-height: calc(0.9em + (0.8em * 2) + 0.6em); /*fix for Safari/ios date fields*/
-}
+// Remove this to prevent the input text from being stretched
+// input[type=text], textarea {
+//     width: 100%!important;
+//     max-width: 450px;
+//     min-height: calc(0.9em + (0.8em * 2) + 0.6em); /*fix for Safari/ios date fields*/
+// }
 
 textarea {
   min-height: 150px;
