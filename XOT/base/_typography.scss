@@ -28,7 +28,7 @@ h2 {
 h3:not(.ui-accordion-header) {
     font-size: var(--fs-xl);
     line-height: var(--font-lineheight-2);
-    margin-top: var(--size-6);
+    // margin-top: var(--size-6); // This is causing the margin-top issue for a few page components
 }
 
 // make sure the first h3 in #infoHolder container doesn't have a top margin

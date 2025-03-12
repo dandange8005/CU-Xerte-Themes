@@ -792,7 +792,7 @@
 -------------------------- */
 :root {
   /* Cardiff University Colours */
-  --cu-red: hsl(3, 79%, 50%);
+  --cu-red: #e4251b;
   --cu-sky: #005fa8;
   --cu-gold: #c4a45f;
   --cu-gold-light: hsl(46, 44%, 69%);

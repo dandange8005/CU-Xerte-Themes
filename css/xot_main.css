@@ -1513,7 +1513,6 @@ h2 {
 h3:not(.ui-accordion-header) {
   font-size: var(--fs-xl);
   line-height: var(--font-lineheight-2);
-  margin-top: var(--size-6);
 }
 
 #infoHolder > h3:first-child, .panel h3:first-child {
