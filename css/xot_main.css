@@ -2907,6 +2907,7 @@ input[type=checkbox], input[type=radio] {
   align-items: center;
   padding: 10px;
   margin: 0;
+  flex-shrink: 0;
 }
 
 input[type=checkbox]::after {
