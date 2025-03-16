@@ -939,12 +939,9 @@ Author: Nan Zhang
   --fs-2xl: clamp(1.34rem, 1.10rem + 1.19vw, 1.94rem);
   --fs-3xl: clamp(1.50rem, 1.18rem + 1.62vw, 2.33rem);
   --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
-  --text-dark: var(--text);
-  --text-gray: var(--neutral-7);
-  --text-light: var(--neutral-5);
   --gradient-text: var(--clr-gradient);
   --flex-gap: var(--size-fluid-1);
-  --gap: var(--size-fluid-1);
+  --grid-gap: var(--size-fluid-1);
   --container-width: 47rem;
 }
 
@@ -1974,7 +1971,7 @@ li ul {
 /* Grid Utility Classes */
 .grid {
   display: grid;
-  gap: var(--gap);
+  gap: var(--grid-gap);
 }
 
 /* Grid Template Columns */
@@ -2321,20 +2318,16 @@ ul.category {
   background-color: var(--clr-danger);
 }
 
-.text-dark {
-  color: var(--text-dark);
-}
-
 .text-gray {
-  color: var(--text-gray);
+  color: #555555;
 }
 
 .text-light {
-  color: var(--text-light);
+  color: #8A8A8A;
 }
 
 .text-white {
-  color: var(--white);
+  color: #ffffff;
 }
 
 .text-success {

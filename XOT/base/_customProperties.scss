@@ -221,11 +221,13 @@ Author: Nan Zhang
     --clr-body-text: var(--text);
     --clr-headline: var(--primary);
 
-    // Link
+    // Link colours - do not change
     --clr-link: #045BC6;
     --clr-link-visited: #330072;
 
-    // jQuery UI
+    // jQuery UI - can use more unique names
+    // for example: --clr-jquery-ui-bg: var(--cu-blue);
+
 
     --clr-border: #d1d5db;
     --clr-headershade: #4E597E;
@@ -266,14 +268,12 @@ Author: Nan Zhang
     --fs-4xl: clamp(1.69rem, 1.26rem + 2.17vw, 2.80rem);
 
     //font colours
-    --text-dark: var(--text);
-    --text-gray: var(--neutral-7);
-    --text-light: var(--neutral-5);
+
     --gradient-text: var(--clr-gradient);
 
     // Spacing for flex and grid
     --flex-gap: var(--size-fluid-1);
-    --gap: var(--size-fluid-1);
+    --grid-gap: var(--size-fluid-1);
 
     // a readable content container
     --container-width: 47rem;
