@@ -245,6 +245,8 @@
     gap: var(--flex-gap, 1rem);
   }
   
+.flex-wrap { flex-wrap: wrap; }
+
   /* Responsive width classes */
   .w-10 { width: 10%; }
   .w-20 { width: 20%; }
