@@ -1507,12 +1507,6 @@ body {
   margin-bottom: 0;
 }
 
-#overview .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media (min-width: 1200px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
     width: 900px;
