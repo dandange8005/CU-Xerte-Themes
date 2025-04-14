@@ -1517,6 +1517,7 @@ section {
   background: none;
   margin: 0;
   padding-block: var(--size-fluid-5);
+  overflow: revert;
 }
 
 section::before {

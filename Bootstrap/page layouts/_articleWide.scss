@@ -31,6 +31,7 @@ section {
     background: none;
     margin: 0;
     padding-block: var(--size-fluid-5);
+    overflow: revert; // fix for the overflow issue after upgrading to Xerte 3.13
 }
 
 section::before {
