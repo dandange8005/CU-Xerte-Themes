@@ -1044,13 +1044,10 @@ h2.sectionTitle {
   font-weight: var(--font-weight-3);
   margin-bottom: var(--size-2);
   color: var(--clr-accent);
+  margin-top: var(--siz-3);
 }
 h2.sectionTitle p {
   margin-bottom: 0 !important;
-}
-
-h2.sectionTitle:nth-of-type(n+2) {
-  margin-top: var(--size-6);
 }
 
 h3.contentTitle {
