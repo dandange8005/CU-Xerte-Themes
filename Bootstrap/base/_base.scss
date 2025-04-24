@@ -103,7 +103,6 @@ section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary,
 h2.sectionTitle {
     font-size: var(--fs-3xl);
     font-weight: var(--font-weight-3);
-    margin-top: var(--size-6);
     margin-bottom: var(--size-2);
     color: var(--clr-accent);
 
@@ -113,16 +112,19 @@ h2.sectionTitle {
     }
 }
 
-// Content Title selector: h3.contentTitle
+// tyles for all but the first h2.sectionTitle
+h2.sectionTitle:nth-of-type(n+2) {
+    margin-top: var(--size-6);
+}
 
-// remove margin-top from h2 after page-header
-// .page-header+h2 {
-//     margin-top: 0;
-// }
+// Content Title selector: h3.contentTitle
+h3.contentTitle {
+    font-size: var(--fs-xl);
+}
 
 // Section spacing
 section {
-    margin-bottom: var(--size-fluid-6);
+    margin-bottom: var(--size-fluid-3);
 }
 
 // Section items Spacing
@@ -130,7 +132,7 @@ section>*:where(:not(:last-child)) {
     margin-bottom: var(--size-7);
 }
 
-// Section headings spacing
+// Section headings
 section {
 
     h3,

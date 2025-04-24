@@ -1038,7 +1038,6 @@ section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary,
 h2.sectionTitle {
   font-size: var(--fs-3xl);
   font-weight: var(--font-weight-3);
-  margin-top: var(--size-6);
   margin-bottom: var(--size-2);
   color: var(--clr-accent);
 }
@@ -1046,8 +1045,16 @@ h2.sectionTitle p {
   margin-bottom: 0 !important;
 }
 
+h2.sectionTitle:nth-of-type(n+2) {
+  margin-top: var(--size-6);
+}
+
+h3.contentTitle {
+  font-size: var(--fs-xl);
+}
+
 section {
-  margin-bottom: var(--size-fluid-6);
+  margin-bottom: var(--size-fluid-3);
 }
 
 section > *:where(:not(:last-child)) {
