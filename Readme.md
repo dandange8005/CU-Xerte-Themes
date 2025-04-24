@@ -2,18 +2,6 @@
 
 ## Introduction
 
-- Why:
-  - Why create the theme
-  - The goal
-  - The objectives
-- Who:
-  - Who is this for
-- The approach
-- How
-  - how to use the themes
-  - how to report issues
-  - how to contribute
-
 
 ## About the project
 
