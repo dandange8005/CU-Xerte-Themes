@@ -1035,19 +1035,15 @@ section a:hover:not(.accordion-toggle, .top-round, .carousel-control, .glossary,
   margin-top: 0;
 }
 
-.page-header h1 {
+h2.sectionTitle {
   font-size: var(--fs-3xl);
   font-weight: var(--font-weight-3);
   margin-top: var(--size-6);
   margin-bottom: var(--size-2);
   color: var(--clr-accent);
 }
-.page-header h1 p {
+h2.sectionTitle p {
   margin-bottom: 0 !important;
-}
-
-.page-header + h2 {
-  margin-top: 0;
 }
 
 section {
@@ -1058,14 +1054,10 @@ section > *:where(:not(:last-child)) {
   margin-bottom: var(--size-7);
 }
 
-section h2,
 section h3,
 section h4 {
   color: var(--neutral-7);
   margin-bottom: var(--size-fluid-1);
-}
-section h2 {
-  margin-top: var(--size-fluid-3);
 }
 section h3 {
   margin-top: var(--size-fluid-3);
