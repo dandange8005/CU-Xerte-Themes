@@ -109,6 +109,8 @@ a.button, button.button {
     transition: all .3s cubic-bezier(0.4, -1.5, 0.27, 1.55) !important;
     transform: scale(0.9);
     z-index: 2;
+    margin-right: 5px; // to fix overflow issue
+    margin-bottom: 5px; // to fix overflow issue
 }
 
 .btn-mini:hover,
