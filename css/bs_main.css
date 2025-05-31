@@ -1536,7 +1536,8 @@ hr {
 
 /* Example block Component */
 .example {
-  padding: 3em 1em;
+  padding: 2em 1em;
+  padding-top: 3em;
   border: 1px solid var(--clr-border);
   position: relative;
   background: var(--cu-white);
@@ -1544,7 +1545,7 @@ hr {
 .example::before {
   content: "example";
   position: absolute;
-  font-size: var(--font-size-0);
+  font-size: var(--fs-sm);
   color: var(--cu-white);
   letter-spacing: 1px;
   text-transform: uppercase;
