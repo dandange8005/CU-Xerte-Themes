@@ -1650,7 +1650,7 @@ section::before {
 .box {
   border-radius: var(--radius-2);
   border: 1px solid var(--clr-border);
-  padding: var(--size-fluid-3);
+  padding: var(--size-fluid-2);
   box-shadow: var(--shadow-1);
 }
 .box.box-icon {
