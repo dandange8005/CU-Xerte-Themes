@@ -39,7 +39,11 @@ ul.nav-tabs, ul.nav-pills {
 }
 
 .tab-pane {
-    padding-inline: var(--size-2);
+    padding: var(--size-4);
+}
+
+.tab-pane>*:first-child {
+    margin-top: 0;
 }
 
 .tab-pane>*:where(:not(:last-child)) {

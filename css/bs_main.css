@@ -1784,8 +1784,7 @@ a.button--block, button.button--block {
   height: 0;
   border-style: solid;
   border-color: transparent;
-  -webkit-clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
   border-width: 7px 0 7px 12.124px;
   border-left-color: inherit;
 }
@@ -1805,8 +1804,7 @@ a.button--block, button.button--block {
   height: 0;
   border-style: solid;
   border-color: transparent;
-  -webkit-clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
-          clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
   border-width: 12.124px 7px 0 7px;
   border-top-color: inherit;
 }
@@ -1900,7 +1898,7 @@ ul.nav-tabs, ul.nav-pills {
 }
 
 .tab-pane {
-  padding-inline: var(--size-2);
+  padding: var(--size-4);
 }
 
 .tab-pane > *:where(:not(:last-child)) {
