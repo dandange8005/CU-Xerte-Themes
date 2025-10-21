@@ -1894,7 +1894,7 @@ ul.nav-tabs {
   padding: var(--size-2) var(--size-4);
   color: var(--gray-7);
   font-weight: 500;
-  font-size: var(--font-size-1);
+  font-size: var(--fs-base);
   text-decoration: none;
   background: transparent;
   border: none;
@@ -1907,7 +1907,7 @@ ul.nav-tabs {
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus {
   color: var(--gray-9);
-  background-color: transparent;
+  background-color: var(--gray-1);
   border-bottom-color: var(--gray-5);
   text-decoration: none;
 }
@@ -1928,7 +1928,7 @@ ul.nav-tabs {
 .nav-tabs + .tab-content {
   background: #fff;
   padding: var(--size-4);
-  border: none;
+  border: 1px solid var(--clr-border);
 }
 
 .tab-pane {
