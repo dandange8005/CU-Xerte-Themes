@@ -1977,6 +1977,10 @@ ul.nav-tabs, ul.nav-pills {
   padding: var(--size-4);
 }
 
+.tab-pane > *:first-child {
+  margin-top: 0;
+}
+
 .tab-pane > *:where(:not(:last-child)) {
   margin-bottom: var(--size-7);
 }
