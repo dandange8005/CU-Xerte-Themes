@@ -1947,37 +1947,72 @@ a.button--block, button.button--block {
   background-color: #f2f2f2;
 }
 
-/* Tabs */
-ul.nav-tabs, ul.nav-pills {
-  display: block;
+/* Tabs - Modern tabbed navigation with underline active state */
+ul.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--size-2);
+  -moz-column-gap: 0;
+       column-gap: 0;
+  margin-bottom: 0;
+  padding-inline: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--gray-3);
+  background: transparent;
+}
+
+.nav-tabs > li {
   margin-bottom: 0;
 }
 
-.nav-tabs > li > a:hover, .nav-tabs > li > a:focus, a.accordion-toggle:hover, a.accordion-toggle:focus {
-  background-color: var(--gray-2);
+.nav-tabs > li > a {
+  display: block;
+  padding: var(--size-2) var(--size-4);
+  color: var(--gray-7);
+  font-weight: 500;
+  font-size: var(--font-size-1);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  margin-bottom: -1px;
+  transition: all 150ms ease-in-out;
+}
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  color: var(--gray-9);
+  background-color: transparent;
+  border-bottom-color: var(--gray-5);
   text-decoration: none;
 }
 
-.nav-tabs > li > a, a.accordion-toggle {
-  color: var(--clr-link);
-  font-weight: bold;
-}
-
-.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
-  color: var(--clr-accent);
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus {
+  color: var(--gray-9);
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid var(--clr-accent);
+  cursor: default;
+  outline: none;
+  box-shadow: none;
 }
 
 .nav-tabs + .tab-content {
   background: #fff;
-  border: 1px solid #ddd;
-  border-top: 0;
+  padding: var(--size-4);
+  border: none;
 }
 
 .tab-pane {
-  padding: var(--size-4);
+  padding-inline: 0;
+  font-size: var(--font-size-1);
 }
 
-.tab-pane > *:first-child {
+.tab-pane > :first-child {
   margin-top: 0;
 }
 
