@@ -2032,13 +2032,16 @@ ul.nav-tabs {
   border: 1px solid var(--clr-border);
 }
 
-.nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
   color: white;
   background-color: var(--clr-link);
   border-color: var(--clr-link);
 }
 
-.nav-pills > li:not(.active):hover > a, .nav-pills > li:not(.active):focus > a {
+.nav-pills > li:not(.active):hover > a,
+.nav-pills > li:not(.active):focus > a {
   background-color: var(--gray-2);
 }
 
@@ -2066,6 +2069,15 @@ ul.nav-tabs {
 }
 
 /* Accordions */
+a.accordion-toggle {
+  font-weight: bold;
+}
+
+a.accordion-toggle:hover,
+a.accordion-toggle:focus {
+  text-decoration: none;
+}
+
 .navigator.accordion {
   margin-block: var(--size-7);
 }
@@ -2079,7 +2091,7 @@ ul.nav-tabs {
 a.accordion-toggle::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f078";
+  content: "\f054";
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -2088,10 +2100,12 @@ a.accordion-toggle::after {
   right: 0.75rem;
   vertical-align: middle;
   position: absolute;
+  transition: transform 300ms ease-in-out;
+  transform: rotate(0deg) !important;
 }
 
-a.accordion-toggle.collapsed::after {
-  content: "\f054";
+a.accordion-toggle[aria-expanded=true]::after {
+  transform: rotate(90deg) !important;
 }
 
 .accordion-inner > *:where(:not(:last-child)) {
