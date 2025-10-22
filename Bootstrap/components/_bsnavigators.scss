@@ -183,7 +183,12 @@ a.accordion-toggle[aria-expanded="true"]::after {
     transform: rotate(90deg) !important; // Points down when expanded
 }
 
+// Remove top margin from first child in accordion
+.accordion-inner > :first-child {
+  margin-top: 0;
+}
+
 //add space to content elements within accordion
-.accordion-inner>*:where(:not(:last-child)) {
+.accordion-inner > *:where(:not(:last-child)) {
     margin-bottom: var(--size-3);
 }

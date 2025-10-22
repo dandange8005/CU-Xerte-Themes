@@ -2108,6 +2108,10 @@ a.accordion-toggle[aria-expanded=true]::after {
   transform: rotate(90deg) !important;
 }
 
+.accordion-inner > :first-child {
+  margin-top: 0;
+}
+
 .accordion-inner > *:where(:not(:last-child)) {
   margin-bottom: var(--size-3);
 }
