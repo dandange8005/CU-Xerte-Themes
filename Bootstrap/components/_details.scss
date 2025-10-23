@@ -71,7 +71,8 @@
         padding: 16px;
         padding-left: 20px;
 
-        &>*:where(:not(:first-child)) {
+        // Flow spacing - all children except first get top margin
+        & > * + * {
             margin-top: var(--flow-space, 1rem);
         }
 

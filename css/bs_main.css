@@ -1179,7 +1179,7 @@ figure {
 }
 
 figcaption {
-  background: var(--gray-1);
+  background: var(--gray-2);
   color: var(--cu-grey-8);
   font-size: var(--fs-sm);
   padding: var(--size-1);
@@ -1815,7 +1815,7 @@ a.button--block, button.button--block {
   padding: 16px;
   padding-left: 20px;
 }
-.details__text > *:where(:not(:first-child)) {
+.details__text > * + * {
   margin-top: var(--flow-space, 1rem);
 }
 
