@@ -1182,7 +1182,7 @@ figcaption {
   background: var(--gray-2);
   color: var(--cu-grey-8);
   font-size: var(--fs-sm);
-  padding: var(--size-1);
+  padding: var(--size-2);
   caption-side: bottom;
   margin-top: 0;
 }
