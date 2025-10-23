@@ -1181,9 +1181,10 @@ figure {
 figcaption {
   background: var(--cu-grey-2);
   color: var(--cu-grey-8);
-  font-size: 14px;
+  font-size: var(--fs-sm);
   padding: var(--size-1);
   caption-side: bottom;
+  margin-top: 0;
 }
 
 /* Table */
