@@ -1277,8 +1277,6 @@ cite {
   position: relative;
   overflow: hidden;
   padding-bottom: 56.32%;
-  box-shadow: var(--shadow-3);
-  margin-bottom: var(--border-size-3);
 }
 .iframe-container iframe {
   top: 0;
