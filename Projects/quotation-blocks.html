@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quotation Blocks</title>
+
+    <!-- Bootstrap 2.3.2 CSS -->
+    <link rel="stylesheet"
+        href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Cardiff University Theme CSS -->
+    <link rel="stylesheet" href="https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css">
+    <style>
+        :root {
+
+            /*Main brand color*/
+            --clr-accent: #006054;
+            --clr-h: 173;
+            --clr-s: 100%;
+            --clr-l: 19%;
+
+
+            --clr-jumbotron-bg-gradient: linear-gradient(to right, #006054, #004048);
+            --clr-ppie-blue: #004AAD;
+            --clr-ppie-green: #119763;
+            --clr-ppie-teal: #259191;
+
+            /* Manually define brand shade */
+            --clr-accent-50: #E6F2F0;
+            --clr-accent-100: #B3D9D4;
+            --clr-accent-200: #80C0B8;
+            --clr-accent-300: #4DA79C;
+            --clr-accent-400: #268375;
+            --clr-accent-500: #006054;
+            /* Primary */
+            --clr-accent-600: #004D44;
+            --clr-accent-700: #003A33;
+            --clr-accent-800: #002722;
+            --clr-accent-900: #001411;
+        }
+
+        /*Quotation Style*/
+        .quotation {
+            display: flex;
+            flex-direction: column;
+            /* max-width: 100%; */
+            background: var(--clr-accent);
+            color: white;
+            position: relative;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-2);
+        }
+
+        .quotation::before {
+            content: '\f10d';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            font-size: var(--fs-4xl);
+            line-height: 1;
+            color: var(--white);
+            opacity: .5;
+        }
+
+        .quotation-text {
+            margin-top: 1rem;
+            margin-left: var(--size-6);
+        }
+
+        .quotation-author {
+            display: flex;
+            font-size: var(--fs-sm);
+            justify-content: end;
+            align-items: center;
+            gap: 1rem;
+            max-width: 40ch;
+            align-self: self-end;
+        }
+
+        .quotation-author-image {
+            flex-shrink: 0;
+            width: var(--size-10);
+            height: var(--size-10);
+            border-radius: var(--radius-round);
+            object-fit: cover;
+            border: 3px solid var(--white);
+            box-shadow: var(--shadow-2);
+        }
+
+        .quotation-author-name {
+            padding: 0;
+            font-weight: 600;
+        }
+
+        blockquote p {
+            font-weight: 300;
+            font-size: var(--fs-sm);
+            line-height: 1.25;
+        }
+
+        .quotation--blue {
+            background-color: #005FA8;
+        }
+
+        .quotation--green {
+            background-color: var(--clr-ppie-green);
+        }
+
+        .quotation--teal {
+            background-color: var(--clr-ppie-teal);
+        }
+
+        .quotation--invert {
+            background-color: var(--white);
+            color: var(--clr-accent);
+        }
+
+        .quotation--invert::before {
+            color: var(--clr-accent);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h3>Overview - What does the PPIE Training Programme Cover?</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>The purpose of a University is the betterment of society through the creation and sharing of knowledge ...but a core question for us is who judges what our society or our public needs? That's where we really need to think about all the different voices that have to be heard in order to make sure what we are doing is the right thing for society.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Professor Kerry Hood" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Professor Kerry Hood</cite>
+                    <div class="quotation-author-title">Dean of Research and Innovation</div>
+                    <div class="quotation-author-org">College of Biomedical and Life Sciences</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>As Director of Research I have seen how PPI activity continues to become embedded in the role of an academic. Whether you are a clinical researcher, basic scientist or a medical educator, there will always be a place for PPIE activity in the work you do.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Professor Aled Clayton" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Professor Aled Clayton</cite>
+                    <div class="quotation-author-title">Director of Research</div>
+                    <div class="quotation-author-org">School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Module overview</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>For people who give their time to support PPI in research, it can be a very personal, meaningful, and important thing to use their voice to shape research about what is most important to them. We as researchers need to be aware of this and be sensitive to the impact that involvement may have on the individual.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Katy Hamana" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Katy Hamana</cite>
+                    <div class="quotation-author-title">Senior Lecturer in Physiotherapy</div>
+                    <div class="quotation-author-org">School of Healthcare Sciences</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Research Prioritisation</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Research is better if it's informed, it will help get the priorities right. There's a certain amount of funding, there's a lot of demand. So if you involve the public, then it's more likely that research spending can coincide with what the public priorities are. What are the greatest needs? And that may not always fall into place with researchers' greatest desires.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Bob McAlister" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Bob McAlister</cite>
+                    <div class="quotation-author-title">Public Contributor</div>
+                    <div class="quotation-author-org">Core Development Team for the PPIE Training Programme & Resource Hub</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation quotation--invert">
+            <div class="quotation-text">
+                <p>Public involvement in our priority setting exercise for the Wales COVID-19 Evidence Centre was critical - particularly the voice of underserved groups most impacted by the pandemic. They identified priorities that were not identified by policy makers or health and care leads, including questions around domestic violence, Welsh language learning, and the combined impact of the pandemic and the cost of living crisis.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Natalie Joseph-Williams" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Natalie Joseph-Williams</cite>
+                    <div class="quotation-author-title">Reader in Improving Patient Care</div>
+                    <div class="quotation-author-org">School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Planning the research</h3>
+        <blockquote class="quotation quotation--invert">
+            <div class="quotation-text">
+                <p>Don't leave patient involvement until your study is already designed, you will miss the chance to shape it with the voices that matter most.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Rubina Shah" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Rubina Shah</cite>
+                    <div class="quotation-author-title">Doctoral Research Fellow</div>
+                    <div class="quotation-author-org">Division of Infection & Immunity</div>
+                    <div class="quotation-author-org">School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Applying for funding</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Jan and Sue were key to my successful NIHR Doctoral Fellowship application and were invaluable throughout the research. They reviewed my application and co-wrote the plain English summary with me.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Tim Pickles" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Tim Pickles</cite>
+                    <div class="quotation-author-title">Centre for Trials Research</div>
+                    <div class="quotation-author-org">School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 3 - Analysis and interpretation</h3>
+        <blockquote class="quotation quotation--invert">
+            <div class="quotation-text">
+                <p>Public contributors, including the lead contributor, across the UK and Denmark informed the qualitative interviews with patients and clinicians, and contributed to the analysis, including the initial framework developed to support analysis of the interviews. They provided a steer as to the important findings within the analysis and the later interpretation stages.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Michelle Edwards" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Michelle Edwards</cite>
+                    <div class="quotation-author-title">Research Fellow</div>
+                    <div class="quotation-author-org">Division of Population Medicine</div>
+                    <div class="quotation-author-org">School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Sharing the findings</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>The Public Partnership Group group have had tangible impact throughout the research cycle, including refining research questions, study, protocols & leading on lay summarywriting</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Libby Humphris" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Libby Humphris</cite>
+                    <div class="quotation-author-title">Public Partner</div>
+                    <div class="quotation-author-org">Division of Population Medicine</div>
+                    <div class="quotation-author-org">School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Authorship acknowledges the intellectual contribution of patients and helps shift the traditional power dynamics in research, making it more inclusive...I also believe that published articles co-authored by patients may have a stronger influence on policies and healthcare practices, as they carry personal credibility and authenticity.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Rubina Shah" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Rubina Shah</cite>
+                    <div class="quotation-author-title">Doctoral Research Fellow</div>
+                    <div class="quotation-author-org">Division of Infection & Immunity, School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>Myself and one of the young committee members were invited to present at the Diabetes UK Annual Professional Conference in Glasgow earlier this year about the committee and what we plan to do, as well as what the benefit has been to research. We showcased a video featuring our committee members about why they got involved, what they want to achieve from this experience and what advice they would give to researchers/clinicians.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr James Pearson" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr James Pearson</cite>
+                    <div class="quotation-author-title">Research Fellow</div>
+                    <div class="quotation-author-org">Division of Infection & Immunity, School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Our Research Partner, Tony Cope, has helped raise awareness of the project, including co-presenting a public webinar during Mental Health Awareness Week—demonstrating meaningful, visible involvement.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Amy Lynham & Tony Cope" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Amy Lynham & Tony Cope</cite>
+                    <div class="quotation-author-title">Division of Psychological Medicine & Clinical Neurosciences,</div>
+                    <div class="quotation-author-org">School of Medicine and Public Partner</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Evaluation & reflection</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Meaningful PPIE takes time, flexibility, and ongoing dialogue. One key lesson we have learned is the importance of creating space for honest conversations, not just about what's working, but also about what could be improved.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Catrin Lewis" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Catrin Lewis</cite>
+                    <div class="quotation-author-title">Research Associate</div>
+                    <div class="quotation-author-org">National Centre for Mental Health Research, School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>We found planning and tracking PPIE in SERENITY allowed us to reflect on what we had done well, what we could improve and how we could implement this into future work packages. We could also demonstrate to the international research teams across SERENITY the benefit of PPIE to date. As the study progressed, demonstrating the previous impact of PPIE encouraged researchers across SERENITY to proactively seek out support for PPIE and it increased their desire to embed it in subsequent work packages.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Michelle Edwards" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Michelle Edwards</cite>
+                    <div class="quotation-author-title">Research Fellow</div>
+                    <div class="quotation-author-org">Division of Population Medicine, School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Coproduction</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>The thing I enjoy most about PPI is being that bridge between people with lived experiences out in the community in Wales and the people who are researching and want to make a difference, and bringing those two together</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Alice Butler" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Alice Butler</cite>
+                    <div class="quotation-author-title">Public Involvement Officer</div>
+                    <div class="quotation-author-org">Centre for Adult Social Care Research</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Proportionate PPI</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Involvement doesn't need to be highly formalised to be meaningful. I found that some of the most valuable insights came from informal conversations and co-reflection during pilot work. Being transparent about the limits of what you can offer, such as remuneration, also helps to build trust.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Hannah Trotman" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Hannah Trotman</cite>
+                    <div class="quotation-author-title">PhD Student</div>
+                    <div class="quotation-author-org">School of Healthcare Sciences</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 2 - Capturing and evaluating impact</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>We've learned the importance of providing clear feedback about what has changed as a result of public involvement. Acknowledging people's contributions builds trust and shows their input is valued.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Amy Lynham" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Amy Lynham</cite>
+                    <div class="quotation-author-title">National Centre for Mental Health</div>
+                    <div class="quotation-author-org">School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 3 - Overview</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>PPIE is also really important in the education space…doing PPIE work gives students those transferable skills - things like presenting, engaging, story-telling and communicating</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Emma Yhnell" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Emma Yhnell</cite>
+                    <div class="quotation-author-title">Reader & Associate Dean for EDI</div>
+                    <div class="quotation-author-org">CBLS</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 3 - Benefits of Patient and public involvement in education</h3>
+        <blockquote class="quotation quotation--green">
+            <div class="quotation-text">
+                <p>Having an informal conversation with the patients gave me an idea of how motivated they are and how they cope with their lives while dealing with their neurological conditions. This interaction leads us to know about their mental health, choices and preferences, emotional aspects, social participation in public, and how they perceive and respond to attitudes of people in society...this session also gave me an idea how neurological patients lead their life and how the process of treatment goes.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Student feedback" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Student feedback</cite>
+                    <div class="quotation-author-title">MSc Neurorehabilitation session that involved patient contributors</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Today, we had the opportunity to speak with [Patient 1] and [Patient 2], and their perspectives as patients truly changed many of our thoughts. They enlightened us, helped us understand their experiences, and gave us the confidence to ask deeper, more meaningful questions. Their presence transformed the usual learning process and made the day truly special.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Student feedback" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Student feedback</cite>
+                    <div class="quotation-author-title">Year 3 MBBCh lecture</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation quotation--green">
+            <div class="quotation-text">
+                <p>Speaking to [patient contributor] today simply opened a new perspective on viewing cerebral palsy. His motivation and self-awareness of his capacity and capabilities made me reflect on how society underestimates him and how we as a community of therapists should draw on this feedback.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Student feedback" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Student feedback</cite>
+                    <div class="quotation-author-title">MSc Neurorehabilitation session that involved patient contributors</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>These patient experiences sessions provide an unparalleled opportunity for students to gain insight into the psychosocial challenges that are faced by the patients they may serve in their MSc GGC Year 2 placement in a genetic counselling service, and in their future roles as genetic counsellors, in which they will be helping patients adapt to the psychosocial challenges presented by a genetic diagnosis in the family.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Professor Marion McAlister" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Professor Marion McAlister</cite>
+                    <div class="quotation-author-title">Deputy Programme Director, MSc Genetic & Genomic Counselling (GGC)</div>
+                    <div class="quotation-author-org">Centre for Medical Education, School of Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>What I get from PPIE? I love working as part of a team, and this is a very important team. It's a bit of camaraderie really...and I love the sense of wellbeing it creates for me, in helping give some view points of my experience and my condition.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dave Brown" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dave Brown</cite>
+                    <div class="quotation-author-title">Patient Contributor</div>
+                    <div class="quotation-author-org">Core Development Team for the PPIE Training Programme & Resource Hub</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 3 - wider education opportunities</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>The one thing about Cardiff University, the communication is very good, communication with members of the public feels very genuine, so you feel materially involved and this makes it easy. We get to comment in writing, in meetings, and even in front of your eyes in the meeting, you can see sections of the resource changing because of that input.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Bob McAlister" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Bob McAlister</cite>
+                    <div class="quotation-author-title">Public Contributor</div>
+                    <div class="quotation-author-org">Core Development Team for the PPIE Training Programme & Resource Hub</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 4 - Overview</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>We all go to events. There's the two tables, two smiling people, the boards behind them with posters, the free pens. But what are you actually getting out of the visitors? I think engagement is about getting to the other side of the table, exploring what the people milling around are about, getting into their priorities.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Bob McAlister" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Bob McAlister</cite>
+                    <div class="quotation-author-title">Public Contributor</div>
+                    <div class="quotation-author-org">Core Development Team for the PPIE Training Programme & Resource Hub</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 4 - Developing effective communication skills</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Make space for real conversations, not just structured feedback. Sometimes the most valuable insights come when people feel safe enough to go off-script. Don't rush to tick boxes; create room for people to talk honestly about their experiences, even if itfeels "off-topic" at first.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Sienna-Mae Yates" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Sienna-Mae Yates</cite>
+                    <div class="quotation-author-title">School of Medicine</div>
+                    <div class="quotation-author-org">Co-Lead Public Contributor</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>As I was mainly involved with making the video, this made me consider carefully how to explain to a lay audience what we as scientists do, and why and how we do it. This is very different to talking to other people within the research community.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Division of Infection and Immunity Researcher" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Division of Infection and Immunity Researcher</cite>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 4 - Public engagement across CBLS</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Make science fun and engaging and adapt content to different ages and backgrounds. Break down barriers and don't be afraid to meet people where they are, by 'taking science to the city'.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Professor Matthias Eberl" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Professor Matthias Eberl</cite>
+                    <div class="quotation-author-title">Division of Infection and Immunity</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <blockquote class="quotation quotation--green">
+            <div class="quotation-text">
+                <p>As a researcher sometimes it is hard to see the woods for the trees and understand how the incremental benefit we make in the lab and in clinical trials translates into real life benefit for people with type 1 diabetes. But running this event has really put it into perspective for me.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Researcher" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Researcher</cite>
+                    <div class="quotation-author-title">Division of Infection & Immunity</div>
+                    <div class="quotation-author-org">Cardiff Diabetes Research Group</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 4 - capturing and evaluating impact</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>Each visitor was encouraged to answer three questions at the shop entrance, and the same questions again at the pop-up shop exit. This allowed us to determine our visitors' pre-existing knowledge about antibiotics, antimicrobial resistance and how vaccines work - and whether they changed their answers based on their experience in the shop. Preliminary analysis shows that visitors improved their knowledge by 15-20% on average. A giant model of a bacterium at the exit invited visitors to leave post-it notes with comments and suggestions.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Prof Matthias Eberl" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Prof Matthias Eberl</cite>
+                    <div class="quotation-author-title">Division of Infection & Immunity</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 4 - Directory of PPIE activities</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>If you are relatively inexperienced with regard to PPIE, join an existing team and become involved in larger projects, to gain experience, skills and contacts – PPIE is all about communication, teamwork and passion.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Professor Matthias Eberl" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Professor Matthias Eberl</cite>
+                    <div class="quotation-author-title">Division of Infection & Immunity</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 5 - Overview</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>Build genuine relationships with your community partners. Establishing trust and mutual respect is fundamental to successful PPIE. When community members feel valued and heard, they are more likely to actively participate and contribute meaningful insights.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Nichola Gale" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Nichola Gale</cite>
+                    <div class="quotation-author-title">Physiotherapy Senior Lecturer</div>
+                    <div class="quotation-author-org">Healthcare Sciences</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 5 - Starting out....</h3>
+        <blockquote class="quotation quotation--blue">
+            <div class="quotation-text">
+                <p>I think the most important lesson I learnt from working with my PPI partners was the importance of taking time, before the study started, for us all to get to know each other. This was over the course of two online meetings to discuss their lived experience and their experience of public involvement. It also allowed us to discuss initial plans for the study, and discuss and agree the expectations of all parties from the outset.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Dr Leigh Sanyaolu" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Dr Leigh Sanyaolu</cite>
+                    <div class="quotation-author-title">Division of Population Medicine</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 6 - Overview</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Some contributors, especially those new to research or from marginalised backgrounds, might feel unsure about their role. Take time to explain things clearly, and remind people that their lived experience is expertise.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Sienna-Mae Yates" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Sienna-Mae Yates</cite>
+                    <div class="quotation-author-title">School of Medicine</div>
+                    <div class="quotation-author-org">Co-Lead Public Contributor</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 6 - Why EDi is important in PPIE</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Too many decisions have historically been made by people in positions of power, and not those who routinely experience the issues themselves. I'm really passionate about ensuring unheard voices are given the space and time to be listened to. Not only does including my voice increase the effectiveness of solutions...but you also open doors to a more fluid and trusting relationship.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Tammie Esslemont" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Tammie Esslemont</cite>
+                    <div class="quotation-author-title">Public Contributor</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 6 - Common barriers to EDi in PPIE</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Outreach, outreach, outreach!! There are no 'hard to reach communities' only 'hard yards not travelled'</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Tony Cope" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Tony Cope</cite>
+                    <div class="quotation-author-title">Public Partner</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 6 - Children & Young People</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>The wonderful sense of watching these young people grow in confidence. I'm continually wowed by the young people telling me how being part of this group has helped them. They talk about being able to  refer to their experiences of the YPAG in job interviews. I've been a reference for many of their PhD and job applications.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Emma Meilak" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Emma Meilak</cite>
+                    <div class="quotation-author-title">Public Involvement Officer</div>
+                    <div class="quotation-author-org">Wolfson Centre for Young People's Mental Health</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 6 - disabiliites and additional needs</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>Be sensitive to the fact that for people living with a health condition, research can bring hope, which may be their motivation for getting involved, so it's good to be aware of the emotional investment that people make in sharing their experiences/perspectives, as well as giving their time.</p>
+            </div>
+            <footer class="quotation-author">
+                <img alt="Katy Hamana" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Katy Hamana</cite>
+                    <div class="quotation-author-title">Senior Lecturer in Physiotherapy</div>
+                    <div class="quotation-author-org">School of Healthcare Sciences</div>
+                </div>
+            </footer>
+        </blockquote>
+
+        <h3>Module 7 - overview</h3>
+        <blockquote class="quotation">
+            <div class="quotation-text">
+                <p>One key thing is that PPIE is not just another thing on a check list of things that we have to do when we submit a grant, write a paper, or design something. When we incorporate those voices into what we do, it changes the nature of our partnerships, our purpose, and our sense of commitment.</p>
+            </div>
+            <footer class="quotation-author">
+                 <img alt="Kerry Hood" class="quotation-author-image" src="" />
+                <div class="quotation-author-details">
+                    <cite class="quotation-author-name">Professor Kerry Hood</cite>
+                    <div class="quotation-author-title">Dean of Research and Innovation</div>
+                    <div class="quotation-author-org">College of Biomedical and Life Sciences</div>
+                </div>
+            </footer>
+        </blockquote>
+
+    </div>
+</body>
+
+</html>
