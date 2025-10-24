@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPIE Development Process</title>
+    <link rel="stylesheet" href="https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {  
+            --clr-accent: #006054;
+            --clr-h: 173;
+            --clr-s: 100%;
+            --clr-l: 19%;
+            --clr-jumbotron-bg-gradient: linear-gradient(to right, #006054, #004048);
+            --clr-ppie-blue: #004AAD;
+            --clr-ppie-green:#119763;
+            --clr-ppie-teal: #259191;
+            --clr-accent-50: #E6F2F0;
+            --clr-accent-100: #B3D9D4;
+            --clr-accent-200: #80C0B8;
+            --clr-accent-300: #4DA79C;
+            --clr-accent-400: #268375;
+            --clr-accent-500: #006054;
+            --clr-accent-600: #004D44;
+            --clr-accent-700: #003A33;
+            --clr-accent-800: #002722;
+            --clr-accent-900: #001411;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            background: var(--clr-jumbotron-bg-gradient);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .bento-item {
+            background: white;
+            border-radius: 8px;
+            padding: 32px;
+            border: 1px solid #e5e5e5;
+        }
+
+        /* Grid positioning */
+        .bento-item:nth-child(1) {
+            grid-column: span 7;
+            grid-row: span 1;
+        }
+
+        .bento-item:nth-child(2) {
+            grid-column: span 5;
+            grid-row: span 1;
+        }
+
+        .bento-item:nth-child(3) {
+            grid-column: span 5;
+            grid-row: span 1;
+        }
+
+        .bento-item:nth-child(4) {
+            grid-column: span 7;
+            grid-row: span 1;
+        }
+
+        /* Content Styling */
+        .bento-item h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--clr-accent-700);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bento-item h2 i {
+            color: var(--clr-accent-500);
+            font-size: 1.1rem;
+        }
+
+        .bento-item p {
+            color: #444;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .bento-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bento-item ul li {
+            color: #444;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .bento-item ul li::before {
+            content: "•";
+            color: var(--clr-accent-500);
+            font-weight: bold;
+            position: absolute;
+            left: 8px;
+        }
+
+        .email-link {
+            display: inline-block;
+            color: var(--clr-accent-600);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .bento-item:nth-child(1),
+            .bento-item:nth-child(2),
+            .bento-item:nth-child(3),
+            .bento-item:nth-child(4) {
+                grid-column: span 12;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 24px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .bento-item {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>How was the PPIE Training Programme Developed?</h1>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Co-Production -->
+            <div class="bento-item">
+                <h2><i class="fa-solid fa-handshake-angle"></i> Co-Production</h2>
+                <p>
+                    We co-developed the training programme with researchers, educators, digital experts, professional service staff, patients, members of the public and external PPIE partners through a series of co-production workshops between January and September 2025. This was overseen by a core development group.
+                </p>
+                <p>
+                    We pilot tested the training programme with XX staff and XX postgraduate research students in September 2025 and used the feedback to refine the resource.
+                </p>
+                <p style="margin-bottom: 0;">
+                    Each module was co-led by an academic lead(s) and at least one public partner lead. Content contributors included public partners, staff, students, external PPIE partners (e.g. NIHR) and external experts working in patient or public involvement, engagement and communications.
+                </p>
+            </div>
+
+            <!-- Needs Assessment -->
+            <div class="bento-item">
+                <h2><i class="fa-solid fa-clipboard-list"></i> Needs Assessment</h2>
+                <p>Training needs covered by the training programme were identified via:</p>
+                <ul>
+                    <li>Consultation with Senior Leadership Teams in the School of Medicine (December 2023 - May 2024)</li>
+                    <li>Discussion with the School of Medicine PPIE Committee Members (July 2024)</li>
+                    <li>Results of PPIE Needs Assessment Survey (completed by 82 School of Medicine staff / postgraduate students in Winter 2024)</li>
+                    <li>Consulting with School of Medicine PPIE Network members (85 members in April 2025)</li>
+                    <li>Consulting with PPIE leads across the College of Biomedical Life Sciences</li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="bento-item">
+                <h2><i class="fa-solid fa-book"></i> Resources</h2>
+                <p>
+                    Existing resources for inclusion were identified via people involved in co-producing the training programme, our School of Medicine PPIE Network, searches of known PPIE organisations, targeted literature searches (e.g. resources for lab-based research), PPIE leads across the CBLS and the websites of key funders and regulators.
+                </p>
+                <p style="margin-bottom: 0;">
+                    If you feel that we are missing key resources or would like us to showcase your work, please email: 
+                    <a href="mailto:medicengagement@cardiff.ac.uk" class="email-link">medicengagement@cardiff.ac.uk</a>
+                </p>
+            </div>
+
+            <!-- Maintenance -->
+            <div class="bento-item">
+                <h2><i class="fa-solid fa-rotate"></i> Maintenance</h2>
+                <p>
+                    We will conduct a formal review of the resource annually. We have embedded a 'report an issue' function for users to report any issues encountered. Monthly, we conduct checks to ensure all links, accessibility features, and documents work.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

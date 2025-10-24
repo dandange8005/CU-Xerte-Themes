@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<!--
+    Xerte Feedback Component
+
+    Development Time Estimate for Junior Developer: 2-3 hours
+
+    Breakdown:
+    1. Basic HTML structure (20-30 min)
+       - Setting up the page layout
+       - Creating the button and popover elements
+       - Adding demo content
+
+    2. CSS styling (1-1.5 hours)
+       - Fixed positioning for feedback button
+       - Creating circular button with icon
+       - Styling the popover (positioning, shadow, border-radius)
+       - Hover and active states with transform effects
+       - Focus states for accessibility
+       - Responsive design for mobile
+
+    3. Popover API implementation (30-45 min)
+       - Understanding HTML Popover API (popovertarget attribute)
+       - Configuring popover behavior (auto dismiss)
+       - Testing interaction and backdrop behavior
+
+    4. Animations and transitions (20-30 min)
+       - Adding smooth transitions for button hover (lift effect)
+       - Popover open/close animations using @starting-style
+       - Testing animation timing
+
+    For experienced developer: 1-1.5 hours
+
+    Additional time factors:
+    - First time using Popover API: +1 hour for learning
+    - Not familiar with CSS transforms/transitions: +30 min
+    - Adding more complex form in popover: +1-2 hours
+    - Custom animations beyond basic fade: +30 min
+    - Cross-browser testing and fallbacks: +30-45 min
+
+    Technologies used:
+    - HTML Popover API (modern, no JavaScript required)
+    - CSS anchor positioning
+    - CSS transitions and @starting-style
+    - Font Awesome icons
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xerte Feedback Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .demo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 100px;
+        }
+
+        .demo-content h1 {
+            color: #006053;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content h2 {
+            color: #006053;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .demo-content ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .demo-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .feedback-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #006053;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 96, 83, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            anchor-name: --feedback-button;
+        }
+
+        .feedback-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 96, 83, 0.4);
+            background-color: #007d6e;
+        }
+
+        .feedback-button:active {
+            transform: translateY(-2px);
+        }
+
+        .feedback-button:focus-visible {
+            outline: 3px solid #006053;
+            outline-offset: 3px;
+        }
+
+        #feedback-popover {
+            position: fixed;
+            inset: unset;
+            bottom: 100px;
+            right: 2rem;
+            margin: 0;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            height: fit-content;
+            z-index: 1000;
+        }
+
+        #feedback-popover::backdrop {
+            background-color: transparent;
+        }
+
+        .popover-content h3 {
+            margin-bottom: 0.75rem;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .popover-content p {
+            margin-bottom: 1rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .popover-content a {
+            color: #006053;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .popover-content a:hover {
+            text-decoration: underline;
+        }
+
+        .popover-content a:focus-visible {
+            outline: 2px solid #006053;
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .close-popover {
+            background: transparent;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #666;
+            transition: background-color 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        .close-popover:hover {
+            background-color: #f5f5f5;
+        }
+
+        .close-popover:focus-visible {
+            outline: 2px solid #006053;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 480px) {
+            .feedback-button {
+                bottom: 1rem;
+                right: 1rem;
+                width: 56px;
+                height: 56px;
+            }
+
+            #feedback-popover {
+                bottom: 85px;
+                right: 1rem;
+                left: 1rem;
+                width: auto;
+            }
+        }
+
+        #feedback-popover:popover-open {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @starting-style {
+            #feedback-popover:popover-open {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        }
+
+        #feedback-popover {
+            transition: 
+                opacity 0.2s ease,
+                transform 0.2s ease,
+                overlay 0.2s ease allow-discrete,
+                display 0.2s ease allow-discrete;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-content">
+        <h1>PPIE Xerte Project Demo</h1>
+        <p>This is a demonstration of the feedback component. The feedback button is fixed to the bottom right corner of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <h2>How to use</h2>
+        <ul>
+            <li>Click the feedback button in the bottom right corner</li>
+            <li>A popover will appear with feedback information</li>
+            <li>Click outside the popover or press Escape to close it</li>
+            <li>The button has a lifting effect on hover</li>
+        </ul>
+        <p style="margin-top: 1.5rem;"><strong>Try it now:</strong> Hover over the teal button in the bottom right to see the lifting effect, then click it to see the feedback popover!</p>
+    </div>
+
+    <button popovertarget="feedback-popover" class="feedback-button" aria-label="Provide feedback">
+        <i class="fa-solid fa-headset"></i>
+    </button>
+
+    <div id="feedback-popover" popover="auto">
+        <div class="popover-content">
+            <h3>We value your feedback</h3>
+            <p>We value your feedback on the resource. If you have any feedback or find any broken links, please don't hesitate to get in touch:</p>
+            <p><a href="mailto:contact@cardiff.ac.uk">contact@cardiff.ac.uk</a></p>
+            <button popovertarget="feedback-popover" popovertargetaction="hide" class="close-popover">
+                Close
+            </button>
+        </div>
+    </div>
+</body>
+</html>

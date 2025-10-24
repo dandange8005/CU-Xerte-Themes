@@ -1,0 +1,583 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPIE Development Process</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .development-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header__title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0 0 16px 0;
+        }
+
+        .section-header__intro {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab:hover {
+            border-color: #00a896;
+            color: #00a896;
+        }
+
+        .tab.active {
+            background: #00a896;
+            border-color: #00a896;
+            color: white;
+        }
+
+        .tab i {
+            font-size: 16px;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Co-production Card */
+        .coproduction-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            margin-bottom: 24px;
+        }
+
+        .coproduction-timeline {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: linear-gradient(135deg, #e8f5f3 0%, #d4ebe8 100%);
+            border-radius: 8px;
+        }
+
+        .coproduction-timeline__icon {
+            width: 50px;
+            height: 50px;
+            background: #00a896;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .coproduction-timeline__icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .coproduction-timeline__text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .coproduction-timeline__text strong {
+            color: #00a896;
+        }
+
+        /* Stakeholder Grid */
+        .stakeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .stakeholder-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .stakeholder-item i {
+            color: #00a896;
+            font-size: 18px;
+        }
+
+        /* Timeline List */
+        .timeline-list {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: #00a896;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 12px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: #00a896;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #00a896;
+        }
+
+        .timeline-item__title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item__detail {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 24px;
+        }
+
+        .info-box__title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box__text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .info-box__text a {
+            color: #00a896;
+            text-decoration: none;
+        }
+
+        .info-box__text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Process Cards */
+        .process-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .process-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .process-card__icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00a896, #028a7a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .process-card__icon i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .process-card__title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .process-card__text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .section-header__title {
+                font-size: 24px;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .stakeholder-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="development-section">
+        <div class="section-header">
+            <h2 class="section-header__title">
+                How was the PPIE Training Programme Developed?
+            </h2>
+            <p class="section-header__intro">
+                The training programme was co-produced with a diverse group of stakeholders, including patients, members of the public, researchers and educators, over a 10-month period.
+            </p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab(0)">
+                <i class="fa-solid fa-handshake-angle"></i>
+                Co-Production
+            </div>
+            <div class="tab" onclick="switchTab(1)">
+                <i class="fa-solid fa-clipboard-list"></i>
+                Needs Assessment
+            </div>
+            <div class="tab" onclick="switchTab(2)">
+                <i class="fa-solid fa-book"></i>
+                Resources
+            </div>
+            <div class="tab" onclick="switchTab(3)">
+                <i class="fa-solid fa-rotate"></i>
+                Maintenance
+            </div>
+        </div>
+
+        <!-- Tab 1: Co-Production (Active) -->
+        <div class="tab-content active">
+            <div class="coproduction-card">
+                <div class="coproduction-timeline">
+                    <div class="coproduction-timeline__icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <p class="coproduction-timeline__text">
+                        Co-production workshops ran from <strong>January to September 2025</strong>, overseen by a core development group. We pilot tested with <strong>XX staff and XX postgraduate research students</strong> in September 2025.
+                    </p>
+                </div>
+
+                <h3 style="font-size: 18px; font-weight: 600; color: #2c3e50; margin: 0 0 16px 0;">
+                    Who Was Involved?
+                </h3>
+
+                <div class="stakeholder-grid">
+                    <div class="stakeholder-item">
+                        <i class="fa-solid fa-flask"></i>
+                        Researchers
+                    </div>
+                    <div class="stakeholder-item">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        Educators
+                    </div>
+                    <div class="stakeholder-item">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        Digital Experts
+                    </div>
+                    <div class="stakeholder-item">
+                        <i class="fa-solid fa-building"></i>
+                        Professional Service Staff
+                    </div>
+                    <div class="stakeholder-item">
+                        <i class="fa-solid fa-user-injured"></i>
+                        Patients
+                    </div>
+                    <div class="stakeholder-item">
+                        <i class="fa-solid fa-people-group"></i>
+                        Members of the Public
+                    </div>
+                    <div class="stakeholder-item">
+                        <i class="fa-solid fa-handshake"></i>
+                        External PPIE Partners
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 24px;">
+                    <p class="info-box__title">
+                        <i class="fa-solid fa-pen"></i>
+                        Module Leadership
+                    </p>
+                    <p class="info-box__text">
+                        Each module was co-led by academic lead(s) and at least one public partner lead. Content contributors included public partners, staff, students, external PPIE partners (e.g. NIHR) and external experts.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Needs Assessment -->
+        <div class="tab-content">
+            <div class="coproduction-card">
+                <h3 style="font-size: 18px; font-weight: 600; color: #2c3e50; margin: 0 0 20px 0;">
+                    Training Needs Were Identified Through:
+                </h3>
+
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div class="timeline-item__title">Senior Leadership Consultation</div>
+                        <div class="timeline-item__detail">School of Medicine (December 2023 - May 2024)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item__title">PPIE Committee Discussion</div>
+                        <div class="timeline-item__detail">School of Medicine (July 2024)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item__title">PPIE Needs Assessment Survey</div>
+                        <div class="timeline-item__detail">82 School of Medicine staff & postgraduate students (Winter 2024)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item__title">PPIE Network Consultation</div>
+                        <div class="timeline-item__detail">85 School of Medicine members (April 2025)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-item__title">CBLS-Wide Consultation</div>
+                        <div class="timeline-item__detail">PPIE leads across the College of Biomedical Life Sciences</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Resources -->
+        <div class="tab-content">
+            <div class="coproduction-card">
+                <h3 style="font-size: 18px; font-weight: 600; color: #2c3e50; margin: 0 0 20px 0;">
+                    How Were Resources Identified?
+                </h3>
+
+                <div class="process-cards">
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h4 class="process-card__title">Co-Production Team</h4>
+                        <p class="process-card__text">
+                            Resources from people involved in co-producing the training programme
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h4 class="process-card__title">PPIE Network</h4>
+                        <p class="process-card__text">
+                            Recommendations from our School of Medicine PPIE Network members
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h4 class="process-card__title">PPIE Organisations</h4>
+                        <p class="process-card__text">
+                            Searches of known PPIE organisations and their resources
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <h4 class="process-card__title">Literature Searches</h4>
+                        <p class="process-card__text">
+                            Targeted searches (e.g. resources for lab-based research)
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h4 class="process-card__title">Funders & Regulators</h4>
+                        <p class="process-card__text">
+                            Websites of key funders and regulators
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <h4 class="process-card__title">CBLS PPIE Leads</h4>
+                        <p class="process-card__text">
+                            Resources from PPIE leads across the College
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p class="info-box__title">
+                        <i class="fa-solid fa-envelope"></i>
+                        Missing a Resource?
+                    </p>
+                    <p class="info-box__text">
+                        If you feel that we are missing key resources or would like us to showcase your work, please email: <a href="mailto:medicengagement@cardiff.ac.uk">medicengagement@cardiff.ac.uk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Maintenance -->
+        <div class="tab-content">
+            <div class="coproduction-card">
+                <h3 style="font-size: 18px; font-weight: 600; color: #2c3e50; margin: 0 0 20px 0;">
+                    Keeping the Programme Up-to-Date
+                </h3>
+
+                <div class="process-cards">
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h4 class="process-card__title">Annual Review</h4>
+                        <p class="process-card__text">
+                            We conduct a formal review of the resource annually to ensure content remains current and relevant.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-flag"></i>
+                        </div>
+                        <h4 class="process-card__title">Report an Issue</h4>
+                        <p class="process-card__text">
+                            We've embedded a 'report an issue' function for users to report any problems encountered.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-card__icon">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h4 class="process-card__title">Monthly Checks</h4>
+                        <p class="process-card__text">
+                            We conduct monthly checks to ensure all links, accessibility features, and documents work properly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(index) {
+            // Remove active class from all tabs and content
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Add active class to selected tab and content
+            document.querySelectorAll('.tab')[index].classList.add('active');
+            document.querySelectorAll('.tab-content')[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>

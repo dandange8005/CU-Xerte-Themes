@@ -1,0 +1,89 @@
+<!--
+    PPIE Funder Organisation Selector App
+
+    Development Time Estimate for Junior Developer: 5-7 hours
+
+    This is a Xerte component that requires external CSS (styles-minimal.css)
+    and JavaScript (script-jquery.js) files.
+
+    Breakdown:
+    1. HTML structure (30-45 min)
+       - Creating selector section with dropdown
+       - Building filter tag buttons
+       - Setting up content display container
+       - Welcome message placeholder
+
+    2. CSS styling - styles-minimal.css (1.5-2 hours)
+       - Custom dropdown styling with SVG arrow
+       - Filter tag buttons (active/hover states)
+       - Funder details layout with flexbox
+       - Logo and badge styling
+       - Responsive design considerations
+       - Link styling and hover effects
+
+    3. JavaScript implementation - script-jquery.js (2.5-3.5 hours)
+       - Embedding JSON data structure (15 funders with full details)
+       - Dropdown population logic with filtering
+       - Filter tag click handlers
+       - Dynamic content rendering
+       - HTML sanitization for mixed content (text + links)
+       - Event listeners setup
+       - Welcome/empty state management
+
+    4. Data structuring (30-45 min)
+       - Creating JSON schema for funder data
+       - Adding logos, resources, requirements, panel info
+       - Implementing category system (UKRI, medical, other)
+       - Link handling (inline HTML vs separate links)
+
+    5. Testing and refinement (45 min - 1 hour)
+       - Testing all 15 organisations
+       - Verifying filter functionality
+       - Checking link targets
+       - Cross-browser testing
+       - Mobile responsive testing
+
+    For experienced developer: 3-4 hours
+
+    Additional time factors:
+    - First time using jQuery: +1-2 hours for learning
+    - Creating the funder data from scratch: +2-3 hours (research + data entry)
+    - Not familiar with Xerte components: +30 min - 1 hour
+    - Adding search functionality: +1-2 hours
+    - Converting to vanilla JavaScript: +1 hour
+    - Adding data validation: +30 min - 1 hour
+
+    Technologies used:
+    - jQuery 3.x for DOM manipulation
+    - Custom SVG dropdown arrow
+    - Flexbox layout for responsive design
+    - Embedded JSON data
+    - Dynamic HTML rendering
+-->
+
+<!-- Selector Section -->
+<div class="selector-section">
+    <label class="selector-label">
+        <i>📋</i> Select an Organisation
+    </label>
+    <select id="funderSelect">
+        <option value="">-- Choose an organisation --</option>
+    </select>
+
+    <div class="filter-tags">
+        <span class="filter-tag active" data-filter="all">All (15)</span>
+        <span class="filter-tag" data-filter="ukri">UKRI Councils (4)</span>
+        <span class="filter-tag" data-filter="medical">Medical Charities (9)</span>
+        <span class="filter-tag" data-filter="other">Other (2)</span>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="content-section">
+    <div id="detailsContainer">
+        <div class="welcome-message">
+            <h2>👋 Welcome!</h2>
+            <p>Please select an organisation from the dropdown above to view detailed information about their PPI requirements, resources, and funding panel structures.</p>
+        </div>
+    </div>
+</div>

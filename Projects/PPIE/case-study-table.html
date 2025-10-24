@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    PPIE Case Studies Table
+
+    Development Time Estimate for Junior Developer: 4-6 hours
+
+    Breakdown:
+    1. Basic HTML structure (30-45 min)
+       - Setting up the page layout
+       - Creating the filter section and table structure
+
+    2. DataTables integration (1-1.5 hours)
+       - Finding the right CDN links
+       - Reading documentation to understand initialization
+       - Getting basic table working with data
+       - Configuring options (pagination, search, sorting)
+
+    3. Custom styling (1.5-2 hours)
+       - Designing the page header, filter section, and table container
+       - Custom category badges with colors
+       - Form controls (select, button, search input)
+       - Getting spacing and layout right
+       - Responsive design considerations
+
+    4. Custom filter functionality (45 min - 1 hour)
+       - Implementing category dropdown filter
+       - Reset button functionality
+       - Testing filter interactions
+
+    5. Debugging and refinement (1-1.5 hours)
+       - Fixing layout issues (overflow, positioning)
+       - Browser testing
+       - Fine-tuning styles
+       - Removing unnecessary code
+
+    For experienced developer: 2-3 hours
+
+    Additional time factors:
+    - First time using DataTables: +2-3 hours for learning
+    - Not familiar with flexbox: +1 hour
+    - Perfecting design to match mockup: +1-2 hours
+    - Adding accessibility features: +1 hour
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Case Studies</title>
+    
+    <!-- DataTables Modern CSS -->
+    <link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0088cc;
+        }
+
+        .page-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: 300;
+            color: #2c3e50;
+        }
+
+        .page-header .lead {
+            color: #6c757d;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .filter-section {
+            background: white;
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .filter-section label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .filter-section select {
+            height: 38px;
+            font-size: 14px;
+        }
+
+        .filter-section .btn {
+            height: 38px;
+            padding: 8px 20px;
+            font-size: 14px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .filter-section .btn:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        .filter-section .btn:active {
+            background-color: #dee2e6;
+        }
+
+        .table-container {
+            background: white;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        /* Table styling improvements */
+        #caseStudiesTable thead th:first-child {
+            width: 60%;
+        }
+
+        #caseStudiesTable thead th:last-child {
+            width: 40%;
+        }
+
+        #caseStudiesTable tbody td {
+            vertical-align: middle;
+        }
+
+        .category-badge {
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-weight: 600;
+            display: inline-block;
+            letter-spacing: 0.3px;
+            border: none;
+        }
+
+        .category-research {
+            background-color: #cfe2ff;
+            color: #084298;
+        }
+
+        .category-education {
+            background-color: #d1e7dd;
+            color: #0a3622;
+        }
+
+        .category-engagement {
+            background-color: #fff3cd;
+            color: #664d03;
+        }
+
+        .category-inclusivity {
+            background-color: #f8d7da;
+            color: #842029;
+        }
+
+        .case-study-link {
+            color: #0088cc;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.15s ease;
+        }
+
+        .case-study-link:hover {
+            color: #005580;
+            text-decoration: none;
+        }
+
+        /* DataTables custom styling */
+        .dataTables_filter input {
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 6px 12px;
+            margin-left: 8px;
+        }
+
+        .dataTables_filter input:focus {
+            border-color: #0088cc;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.1);
+        }
+
+        .dataTables_length select {
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin: 0 8px;
+        }
+
+        /* Container layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+        }
+
+        .filter-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .filter-col-auto {
+            flex: 0 0 auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .filter-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .filter-col,
+            .filter-col-auto {
+                width: 100%;
+            }
+
+            .filter-section .btn {
+                width: 100%;
+            }
+
+            .dataTables_filter {
+                float: none;
+                text-align: left;
+                margin-top: 10px;
+            }
+
+            .dataTables_filter input {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Learning Case Studies</h1>
+            <p class="lead">Browse and search our collection of PPIE case studies</p>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-row">
+                <div class="filter-col">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    <select id="categoryFilter" style="width: 100%;">
+                        <option value="">All Categories</option>
+                        <option value="PPI in Research">PPI in Research</option>
+                        <option value="PPI in Education">PPI in Education</option>
+                        <option value="Patient and Public Engagement">Patient and Public Engagement</option>
+                        <option value="Improving inclusivity and diversity in PPIE">Improving inclusivity and diversity in PPIE</option>
+                    </select>
+                </div>
+                <div class="filter-col-auto">
+                    <button id="resetFilters" class="btn">
+                        Reset Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="caseStudiesTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Case Study Title</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- DataTables Modern JS -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    
+    <script>
+        // Dummy case study data
+        var caseStudies = [
+            {
+                title: "Involving Patients in Clinical Trial Design",
+                category: "PPI in Research",
+                url: "https://drive.google.com/file/d/example1"
+            },
+            {
+                title: "Co-creating Educational Materials with Service Users",
+                category: "PPI in Education",
+                url: "https://drive.google.com/file/d/example2"
+            },
+            {
+                title: "Community Engagement in Health Policy Development",
+                category: "Patient and Public Engagement",
+                url: "https://drive.google.com/file/d/example3"
+            },
+            {
+                title: "Engaging Diverse Communities in Research",
+                category: "Improving inclusivity and diversity in PPIE",
+                url: "https://drive.google.com/file/d/example4"
+            },
+            {
+                title: "Patient Participation in Research Ethics Committees",
+                category: "PPI in Research",
+                url: "https://drive.google.com/file/d/example5"
+            },
+            {
+                title: "Teaching Medical Students Through Patient Stories",
+                category: "PPI in Education",
+                url: "https://drive.google.com/file/d/example6"
+            },
+            {
+                title: "Public Consultation on Healthcare Service Design",
+                category: "Patient and Public Engagement",
+                url: "https://drive.google.com/file/d/example7"
+            },
+            {
+                title: "Reaching Underrepresented Groups in Health Research",
+                category: "Improving inclusivity and diversity in PPIE",
+                url: "https://drive.google.com/file/d/example8"
+            },
+            {
+                title: "Patient Advisory Groups in Grant Applications",
+                category: "PPI in Research",
+                url: "https://drive.google.com/file/d/example9"
+            },
+            {
+                title: "Service User Involvement in Curriculum Development",
+                category: "PPI in Education",
+                url: "https://drive.google.com/file/d/example10"
+            },
+            {
+                title: "Digital Engagement Strategies for Health Campaigns",
+                category: "Patient and Public Engagement",
+                url: "https://drive.google.com/file/d/example11"
+            },
+            {
+                title: "Language Accessibility in Health Research",
+                category: "Improving inclusivity and diversity in PPIE",
+                url: "https://drive.google.com/file/d/example12"
+            },
+            {
+                title: "Collaborative Data Analysis with Patients",
+                category: "PPI in Research",
+                url: "https://drive.google.com/file/d/example13"
+            },
+            {
+                title: "Patient Educators in Medical Training Programmes",
+                category: "PPI in Education",
+                url: "https://drive.google.com/file/d/example14"
+            },
+            {
+                title: "Youth Engagement in Healthcare Decision Making",
+                category: "Patient and Public Engagement",
+                url: "https://drive.google.com/file/d/example15"
+            },
+            {
+                title: "Cultural Sensitivity in PPIE Practice",
+                category: "Improving inclusivity and diversity in PPIE",
+                url: "https://drive.google.com/file/d/example16"
+            }
+        ];
+        
+        // Function to get category badge class
+        function getCategoryClass(category) {
+            var categoryMap = {
+                "PPI in Research": "category-research",
+                "PPI in Education": "category-education",
+                "Patient and Public Engagement": "category-engagement",
+                "Improving inclusivity and diversity in PPIE": "category-inclusivity"
+            };
+            return categoryMap[category] || "";
+        }
+        
+        // Initialize DataTable
+        var table;
+        
+        $(document).ready(function() {
+            // Prepare data for DataTables
+            var tableData = [];
+            for (var i = 0; i < caseStudies.length; i++) {
+                var study = caseStudies[i];
+                tableData.push([
+                    '<a href="' + study.url + '" class="case-study-link" target="_blank" rel="noopener noreferrer">' + study.title + '</a>',
+                    '<span class="category-badge ' + getCategoryClass(study.category) + '">' + study.category + '</span>'
+                ]);
+            }
+            
+            // Initialize DataTable
+            table = $('#caseStudiesTable').DataTable({
+                data: tableData,
+                pageLength: -1,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                language: {
+                    search: "Search case studies:",
+                    lengthMenu: "Show _MENU_ case studies per page",
+                    info: "Showing _START_ to _END_ of _TOTAL_ case studies",
+                    infoEmpty: "No case studies found",
+                    infoFiltered: "(filtered from _MAX_ total case studies)",
+                    zeroRecords: "No matching case studies found"
+                },
+                order: [[0, 'asc']], // Sort by title by default
+                columnDefs: [
+                    { orderable: true, targets: 0 },
+                    { orderable: true, targets: 1 }
+                ]
+            });
+            
+            // Category filter
+            $('#categoryFilter').on('change', function() {
+                var selectedCategory = $(this).val();
+                table.column(1).search(selectedCategory).draw();
+            });
+            
+            // Reset filters
+            $('#resetFilters').on('click', function() {
+                $('#categoryFilter').val('');
+                table.search('').columns().search('').draw();
+            });
+        });
+    </script>
+</body>
+</html>
