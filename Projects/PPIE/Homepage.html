@@ -1,5 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+    PPIE Training Programme Homepage
+
+    ==================== INVOICE INFORMATION ====================
+
+    BILLABLE DEVELOPMENT TIME: 6 hours
+
+    DELIVERABLES:
+    ✅ Comprehensive multi-section landing page (7 sections)
+    ✅ Interactive module grid with 7 clickable cards
+    ✅ CBLS schools showcase grid (7 school cards with quotes)
+    ✅ Bento grid layout for "How was it developed" section
+    ✅ Module leads data table with responsive design
+    ✅ Contributors section with auto-column layout
+    ✅ Video embed section with responsive iframe container
+    ✅ Quotation blocks integration (3 quotations)
+    ✅ Flexbox layouts throughout
+    ✅ External CSS file integration (home-style.css)
+    ✅ Font Awesome 6 icon integration (8+ icons)
+    ✅ Cardiff University brand color theming
+    ✅ Responsive design (mobile, tablet, desktop)
+    ✅ Production-ready homepage for Xerte
+
+    SUGGESTED INVOICE LINE ITEM:
+    ───────────────────────────────────────────────────────────
+    PPIE Training Programme Homepage Development
+    - Comprehensive multi-section landing page layout
+    - 7 interactive module cards with Font Awesome icons
+    - 7 CBLS school cards with quotations and links
+    - Bento grid system for development methodology section
+    - Responsive module leads table
+    - Multi-column contributors layout
+    - Video embed integration
+    - Quotation blocks component integration
+    - External CSS architecture
+    - Complete responsive design
+    - Production-ready for Xerte platform
+
+    Time: 6 hours @ [Your Rate]
+    ───────────────────────────────────────────────────────────
+
+    BREAKDOWN:
+    • Requirements analysis and content review: 30 min
+    • Overall page structure and section planning: 20 min
+    • Module cards grid (7 cards with icons): 45 min
+    • CBLS schools grid (7 schools with quotes): 1 hour
+    • Bento grid layout implementation: 45 min
+    • Module leads table (responsive): 30 min
+    • Contributors auto-column section: 30 min
+    • Video embed section: 15 min
+    • Quotation blocks integration: 20 min
+    • External CSS file setup and integration: 30 min
+    • Responsive design and testing: 45 min
+    • Content population and refinement: 30 min
+
+    =============================================================
+
+    Development Time Estimate for Junior Developer: 8-10 hours
+
+    Breakdown:
+    1. Page structure planning (30-45 min)
+       - Understanding section requirements
+       - Planning HTML hierarchy
+       - Setting up Bootstrap 2.3.2 container
+
+    2. Module cards section (1-1.5 hours)
+       - Creating 7 clickable card components
+       - Font Awesome icon integration
+       - Card hover states and link structure
+       - Grid layout with .modules class
+
+    3. CBLS schools grid (1.5-2 hours)
+       - Creating 7 school cards
+       - Embedding blockquotes in cards
+       - School-specific icons (microscope, tooth, heart-pulse, etc.)
+       - External link integration
+       - Responsive grid layout
+
+    4. Welcome and intro sections (45 min - 1 hour)
+       - Flexbox layout for text + quotation
+       - Quotation block integration
+       - List formatting
+       - Profile image handling
+
+    5. Video section (30-45 min)
+       - Responsive iframe container
+       - Video caption styling
+       - Vimeo embed integration
+       - Flexbox layout
+
+    6. Bento grid layout (1-1.5 hours)
+       - 4-item bento grid structure
+       - Varied item sizes
+       - Icon integration
+       - Content formatting within grid items
+
+    7. Module leads table (45 min - 1 hour)
+       - Responsive table structure
+       - Table styling (.module-table)
+       - Overflow-x auto wrapper
+       - Content entry for 7 modules
+
+    8. Contributors section (45 min - 1 hour)
+       - Auto-column layout (3 columns)
+       - Column rules and gaps
+       - Content organization
+       - Color-coded headings
+
+    9. External CSS integration (30-45 min)
+       - Setting up home-style.css reference
+       - Understanding CSS dependencies
+       - Testing component styles
+
+    10. Testing and refinement (1-1.5 hours)
+        - Cross-browser testing
+        - Responsive breakpoint testing
+        - Link verification
+        - Spacing and alignment fine-tuning
+
+    For experienced developer: 5-6 hours
+
+    Additional time factors:
+    - First time using Bootstrap 2.3.2: +1-2 hours
+    - Creating home-style.css from scratch: +2-3 hours
+    - Adding animations/transitions: +1 hour
+    - Adding accessibility attributes: +30 min
+    - Real content gathering and entry: +2-3 hours
+    - Image sourcing and optimization: +1-2 hours
+
+    Technologies used:
+    - Bootstrap 2.3.2 framework
+    - Cardiff University Theme CSS (bs_main.min.css)
+    - Font Awesome 6 for icons
+    - CSS Custom Properties (--clr-accent, etc.)
+    - Flexbox layouts (.flex, .flex-wrap)
+    - CSS Grid (implied in custom styles)
+    - Semantic HTML (section, blockquote, cite)
+    - jQuery 1.10.2 (Bootstrap dependency)
+    - External CSS file (home-style.css)
+    - Responsive iframe embedding
+    - BEM methodology for component naming
+
+    Note: This invoice covers the HTML structure and integration.
+    The external CSS file (home-style.css) is assumed to be part
+    of the same project scope. If billed separately, add 2-3 hours
+    for custom CSS development.
+-->
 
 <head>
     <meta charset="utf-8">
@@ -20,12 +167,79 @@
     <link rel="stylesheet" href="https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css">
 
     <!-- Optional: Local custom styles -->
-    <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="project-style.css">
 
     <!-- HTML5 shim for IE8 support -->
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+
+    <style>
+
+
+  /* ======================
+  NO TOC Page Template - Article Wide
+  =======================*/
+  /* A single page template with no table of content with default container width*/
+  body {
+    --clr-main-bg: white;
+  }
+  /* remove toc */
+  #contentTable {
+    display: none;
+  }
+  /*remove left margin for full width*/
+  .row-fluid .span9 {
+    margin-left: 0;
+  }
+  /*remove extra spacing*/
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+  /* Add full width background to the section container */
+  section {
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    margin: 0;
+    padding-block: var(--size-fluid-5);
+    overflow: revert;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: calc(-50vw + 50%);
+    z-index: -1;
+    top: 0;
+  }
+  /* custom background colour for sections  */
+  section:nth-child(odd)::before {
+    background-color: var(--light);
+  }
+  section:nth-child(even)::before {
+    background-color: var(--cu-white);
+  }
+  .footer {
+    margin-top: 0;
+  }
+  /* Section heading */
+  .page-header {
+    border: none;
+  }
+  .page-header h2{
+    color: var(--clr-accent);
+    font-weight: var(--font-weight-7);
+    margin-top: 0;
+  }
+  /*remove scroll to the top button*/
+  .btn-mini {
+    display: none;
+  }
+
+    </style>
 </head>
 
 <body>

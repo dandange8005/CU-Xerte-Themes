@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    PPIE Case Studies Table
+
+    Data is loaded from case-studies-data.js (generated from CSV)
+    To update: Edit case-studies.csv and run convert-csv-to-js.py
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Case Studies</title>
+
+    <!-- Bootstrap 2.3.2 CSS -->
+    <link rel="stylesheet"
+        href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Cardiff University Theme CSS -->
+    <link rel="stylesheet" href="https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css">
+
+    <!-- Optional: Local custom styles -->
+    <link rel="stylesheet" href="../project-style.css">
+
+    <!-- DataTables Modern CSS -->
+    <link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet">
+
+    <style>
+        /*
+         * Cardiff University PPIE Case Studies Table
+         * Integrated with project-style.css theme and Open Props
+         *
+         * Color Palette:
+         * - Main Accent (Teal): #006054 (var(--clr-accent))
+         * - Category Badges: Open Props colors (--blue-1, --green-1, etc.)
+         * - Table Hover: Subtle gray (var(--gray-1))
+         *
+         * Reuses components: bento-item shadows, module-table header styling
+         * Design tokens: Open Props for spacing, colors, shadows
+         */
+
+        body {
+            padding: 20px;
+            background-color: var(--light, #f8f9fa);
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--clr-accent);
+        }
+
+        .page-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: var(--font-weight-7);
+            color: var(--clr-accent-700);
+        }
+
+        .page-header .lead {
+            color: #6c757d;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Filter Section - matching bento-item style */
+        .filter-section {
+            background: white;
+            padding: 25px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .filter-section label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            color: var(--clr-accent-700);
+            font-size: 14px;
+        }
+
+        .filter-section select {
+            height: 38px;
+            font-size: 14px;
+            border-color: var(--clr-border, #ced4da);
+        }
+
+        .filter-section select:focus {
+            border-color: var(--clr-accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 96, 84, 0.1);
+        }
+
+        /* Reset Filters Button */
+        .filter-section .btn {
+            height: 38px;
+            padding: 8px 20px;
+            font-size: 14px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .filter-section .btn:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        .filter-section .btn:active {
+            background-color: #dee2e6;
+        }
+
+        /* Table Container - matching bento-item style */
+        .table-container {
+            background: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Table styling improvements */
+        #caseStudiesTable thead th:nth-child(1) {
+            width: 50%;
+        }
+
+        #caseStudiesTable thead th:nth-child(2) {
+            width: 25%;
+        }
+
+        #caseStudiesTable thead th:nth-child(3) {
+            width: 25%;
+        }
+
+        #caseStudiesTable tbody td {
+            vertical-align: middle;
+        }
+
+        .authors-list {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* Category Badges - using PPIE color palette */
+        .category-badge {
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-weight: 600;
+            display: inline-block;
+            letter-spacing: 0.3px;
+            border: none;
+            margin: 2px;
+        }
+
+        /* Category Badges - using Open Props color palette */
+        .category-research {
+            background-color: var(--blue-1);
+            color: var(--blue-9);
+        }
+
+        .category-education {
+            background-color: var(--green-1);
+            color: var(--green-9);
+        }
+
+        .category-engagement {
+            background-color: var(--yellow-1);
+            color: var(--yellow-9);
+        }
+
+        .category-inclusivity {
+            background-color: var(--pink-1);
+            color: var(--pink-9);
+        }
+
+        /* Additional category styles using Open Props colors */
+        .category-coproduction {
+            background-color: var(--purple-1);
+            color: var(--purple-9);
+        }
+
+        .category-governance {
+            background-color: var(--cyan-1);
+            color: var(--cyan-9);
+        }
+
+        /* Case Study Links - using default link color */
+        .case-study-link {
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.15s ease;
+        }
+
+        .case-study-link:hover {
+            text-decoration: none;
+        }
+
+        /* DataTables custom styling - matching theme */
+        .dataTables_filter input {
+            border: 1px solid var(--clr-border, #ced4da);
+            border-radius: 4px;
+            padding: 6px 12px;
+            margin-left: 8px;
+        }
+
+        .dataTables_filter input:focus {
+            border-color: var(--clr-accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 96, 84, 0.1);
+        }
+
+        .dataTables_length select {
+            border: 1px solid var(--clr-border, #ced4da);
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin: 0 8px;
+        }
+
+        /* DataTables Table Header - matching module-table style */
+        #caseStudiesTable thead th {
+            background: var(--clr-accent-500);
+            color: white;
+            font-weight: 600;
+            border-bottom: 2px solid var(--clr-accent-600);
+        }
+
+        #caseStudiesTable thead th:hover {
+            background: var(--clr-accent-600);
+        }
+
+        /* Table row hover effect - subtle gray */
+        #caseStudiesTable tbody tr:hover {
+            background: var(--gray-1);
+        }
+
+        /* DataTables pagination buttons */
+        .dataTables_paginate .paginate_button {
+            border: 1px solid var(--clr-accent-200);
+            background: white;
+            color: var(--clr-accent) !important;
+        }
+
+        .dataTables_paginate .paginate_button:hover {
+            background: var(--clr-accent-50);
+            border-color: var(--clr-accent-300);
+            color: var(--clr-accent-700) !important;
+        }
+
+        .dataTables_paginate .paginate_button.current {
+            background: var(--clr-accent);
+            border-color: var(--clr-accent);
+            color: white !important;
+        }
+
+        .dataTables_paginate .paginate_button.current:hover {
+            background: var(--clr-accent-600);
+            border-color: var(--clr-accent-600);
+        }
+
+        /* Container layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+        }
+
+        .filter-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .filter-col-auto {
+            flex: 0 0 auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .filter-row {
+                flex-wrap: wrap;
+            }
+
+            .filter-col {
+                flex: 0 0 calc(50% - 10px);
+            }
+
+            .filter-col-auto {
+                flex: 0 0 100%;
+                margin-top: 10px;
+            }
+
+            .filter-section .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .filter-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .filter-col,
+            .filter-col-auto {
+                width: 100%;
+                flex: 1;
+            }
+
+            .filter-section .btn {
+                width: 100%;
+            }
+
+            .dataTables_filter {
+                float: none;
+                text-align: left;
+                margin-top: 10px;
+            }
+
+            .dataTables_filter input {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 5px;
+            }
+
+            .category-badge {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+
+            .authors-list {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Learning Case Studies</h1>
+            <p class="lead">Browse and search our collection of PPIE case studies</p>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-row">
+                <div class="filter-col">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    <select id="categoryFilter" style="width: 100%;">
+                        <option value="">All Categories</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="filter-col">
+                    <label for="schoolFilter">Filter by School:</label>
+                    <select id="schoolFilter" style="width: 100%;">
+                        <option value="">All Schools</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="filter-col">
+                    <label for="moduleFilter">Filter by Module:</label>
+                    <select id="moduleFilter" style="width: 100%;">
+                        <option value="">All Modules</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="filter-col-auto">
+                    <button id="resetFilters" class="btn btn-toolbar">
+                        Reset Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="caseStudiesTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Case Study Title</th>
+                        <th>Authors</th>
+                        <th>Categories</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated from JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- DataTables Modern JS -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+    <!-- Case studies data -->
+    <script src="case-studies-data.js"></script>
+
+    <script>
+        // Category color mapping
+        function getCategoryClass(category) {
+            var categoryMap = {
+                "PPI in Research": "category-research",
+                "PPI Education and Training": "category-education",
+                "Public Engagement": "category-engagement",
+                "EDI in PPIE": "category-inclusivity",
+                "Coproduction": "category-coproduction",
+                "PPI Impact": "category-research",
+                "Engagement": "category-engagement",
+                "PPIE Governance": "category-governance"
+            };
+            return categoryMap[category] || "category-research";
+        }
+
+        // Render category badges
+        function renderCategories(categories) {
+            var badges = [];
+            for (var i = 0; i < categories.length; i++) {
+                badges.push('<span class="category-badge ' + getCategoryClass(categories[i]) + '">' + categories[i] + '</span>');
+            }
+            return badges.join(' ');
+        }
+
+        // Render authors
+        function renderAuthors(authors) {
+            return '<span class="authors-list">' + authors.join(', ') + '</span>';
+        }
+
+        // Global variables
+        var table;
+        var allCategories = new Set();
+        var allSchools = new Set();
+        var allModules = new Set();
+
+        $(document).ready(function() {
+            // Prepare data for DataTables
+            var tableData = [];
+
+            for (var i = 0; i < caseStudies.length; i++) {
+                var study = caseStudies[i];
+
+                // Collect unique values for filters
+                for (var j = 0; j < study.categories.length; j++) {
+                    allCategories.add(study.categories[j]);
+                }
+                if (study.school) allSchools.add(study.school);
+
+                // Parse modules - split by comma and add each individual module
+                if (study.modules) {
+                    var moduleNumbers = study.modules.split(',');
+                    for (var k = 0; k < moduleNumbers.length; k++) {
+                        var moduleNum = moduleNumbers[k].trim();
+                        if (moduleNum) allModules.add(moduleNum);
+                    }
+                }
+
+                // Create table row with visible and hidden columns
+                tableData.push([
+                    // Column 0: Title (visible, with link)
+                    '<a href="' + study.url + '" class="case-study-link" target="_blank" rel="noopener noreferrer">' +
+                    study.title + '</a>',
+
+                    // Column 1: Authors (visible)
+                    study.authors.length > 0 ? renderAuthors(study.authors) : '',
+
+                    // Column 2: Categories (visible, badges)
+                    renderCategories(study.categories),
+
+                    // Column 3: Keywords (hidden but searchable)
+                    study.keywords.join(' '),
+
+                    // Column 4: School (hidden but searchable)
+                    study.school,
+
+                    // Column 5: Division (hidden but searchable)
+                    study.division,
+
+                    // Column 6: Centre (hidden but searchable)
+                    study.centre,
+
+                    // Column 7: Modules (hidden but searchable)
+                    study.modules,
+
+                    // Column 8: Plain text categories for filtering
+                    study.categories.join(' ')
+                ]);
+            }
+
+            // Populate filter dropdowns
+            populateFilters();
+
+            // Initialize DataTable
+            table = $('#caseStudiesTable').DataTable({
+                data: tableData,
+                pageLength: -1,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                responsive: {
+                    details: {
+                        type: 'column',
+                        target: 'tr'
+                    }
+                },
+                language: {
+                    search: "Search case studies:",
+                    lengthMenu: "Show _MENU_ case studies per page",
+                    info: "Showing _START_ to _END_ of _TOTAL_ case studies",
+                    infoEmpty: "No case studies found",
+                    infoFiltered: "(filtered from _MAX_ total case studies)",
+                    zeroRecords: "No matching case studies found"
+                },
+                order: [[0, 'asc']], // Sort by title by default
+                columnDefs: [
+                    { targets: 0, orderable: true, className: 'all' },  // Title - always visible
+                    { targets: 1, orderable: true, className: 'min-tablet-l' },  // Authors - hide on mobile
+                    { targets: 2, orderable: true, className: 'all' },  // Categories - always visible
+                    { targets: [3, 4, 5, 6, 7, 8], visible: false, searchable: true }  // Hidden searchable columns
+                ]
+            });
+
+            // Setup filters
+            setupFilters();
+        });
+
+        // Populate filter dropdowns
+        function populateFilters() {
+            // Populate categories
+            var categorySelect = $('#categoryFilter');
+            var sortedCategories = Array.from(allCategories).sort();
+            for (var i = 0; i < sortedCategories.length; i++) {
+                categorySelect.append('<option value="' + sortedCategories[i] + '">' + sortedCategories[i] + '</option>');
+            }
+
+            // Populate schools
+            var schoolSelect = $('#schoolFilter');
+            var sortedSchools = Array.from(allSchools).sort();
+            for (var i = 0; i < sortedSchools.length; i++) {
+                if (sortedSchools[i]) {
+                    schoolSelect.append('<option value="' + sortedSchools[i] + '">' + sortedSchools[i] + '</option>');
+                }
+            }
+
+            // Populate modules - sort numerically by first number
+            var moduleSelect = $('#moduleFilter');
+            var sortedModules = Array.from(allModules).sort(function(a, b) {
+                var numA = parseInt(a);
+                var numB = parseInt(b);
+                return numA - numB;
+            });
+            for (var i = 0; i < sortedModules.length; i++) {
+                if (sortedModules[i]) {
+                    moduleSelect.append('<option value="' + sortedModules[i] + '">' + sortedModules[i] + '</option>');
+                }
+            }
+        }
+
+        // Setup filter functionality
+        function setupFilters() {
+            // Category filter
+            $('#categoryFilter').on('change', function() {
+                var selectedCategory = $(this).val();
+                table.column(8).search(selectedCategory).draw();  // Search in hidden categories column
+            });
+
+            // School filter
+            $('#schoolFilter').on('change', function() {
+                var selectedSchool = $(this).val();
+                table.column(4).search(selectedSchool).draw();  // Search in hidden school column
+            });
+
+            // Module filter - search for module number within the modules field
+            $('#moduleFilter').on('change', function() {
+                var selectedModule = $(this).val();
+                if (selectedModule) {
+                    // Use regex to match the module number
+                    // Matches "2" in "2", "2, 4", "2+H12" but not in "12"
+                    var pattern = '(^|,\\s*)' + selectedModule.replace('+', '\\+') + '($|[,\\s+])';
+                    table.column(7).search(pattern, true, false).draw();
+                } else {
+                    table.column(7).search('').draw();
+                }
+            });
+
+            // Reset filters
+            $('#resetFilters').on('click', function() {
+                $('#categoryFilter').val('');
+                $('#schoolFilter').val('');
+                $('#moduleFilter').val('');
+                table.search('').columns().search('').draw();
+            });
+        }
+    </script>
+</body>
+</html>
