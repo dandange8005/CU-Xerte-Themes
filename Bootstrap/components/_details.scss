@@ -72,10 +72,21 @@
         padding-left: 20px;
 
         // Flow spacing - all children except first get top margin
-        & > * + * {
-            margin-top: var(--flow-space, 1rem);
+        & > *:first-child {
+            margin-top: 0;
         }
 
     }
 
+}
+
+/* Figure + Details pattern (for accessible infographics) */
+// Remove bottom margin from figure when followed by details element
+figure:has(+ .details) {
+    margin-bottom: 0;
+}
+
+// Add small top margin to details when following figure
+figure + .details {
+    margin-top: var(--size-2);
 }

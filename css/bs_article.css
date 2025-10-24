@@ -1929,8 +1929,17 @@ a.button--block, button.button--block {
   padding: 16px;
   padding-left: 20px;
 }
-.details__text > * + * {
-  margin-top: var(--flow-space, 1rem);
+.details__text > *:first-child {
+  margin-top: 0;
+}
+
+/* Figure + Details pattern (for accessible infographics) */
+figure:has(+ .details) {
+  margin-bottom: 0;
+}
+
+figure + .details {
+  margin-top: var(--size-2);
 }
 
 /* Dos and Donts List component */
