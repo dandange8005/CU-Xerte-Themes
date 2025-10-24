@@ -1236,6 +1236,11 @@ thead th {
   background: var(--navy-2);
   color: var(--light);
   font-weight: bold;
+  padding: var(--size-3);
+}
+
+table td {
+  padding: var(--size-3);
 }
 
 table tr td:not(:first-of-type) {

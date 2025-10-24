@@ -98,132 +98,203 @@
     gap: var(--gap);
     margin: var(--size-8) auto;
   }
-  /* Card styling */
-  .card {
+
+  /* Module cards - specific styling for homepage modules */
+  .modules .card {
     display: flex;
     align-items: center;
-    background-color: white;
-    padding: var(--size-2);
-    border-radius: var(--radius-2);
-    transition: all 0.3s ease;
-    position: relative;
+    padding-inline: var(--size-3);
   }
-  .card:hover {
-    border: 1px solid var(--clr-accent-300);
-  }
-  .card--clickable {
-    cursor: pointer;
-  }
-  /* Clickable link overlay */
-  .card__link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    text-decoration: none;
-  }
-  /* Icon circle */
-  .card__icon {
+
+  .modules .card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     width: 70px;
     height: 70px;
     background-color: var(--clr-accent-50);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 0;
   }
-  .card__icon i {
+
+  .modules .card__icon i {
     font-size: 32px;
     color: var(--clr-accent);
-  }
-  /* Card content */
-  .card__content {
-    flex: 1;
-    position: relative;
-    z-index: 0;
-  }
-  .card__heading {
-    font-size: var(--fs-base);
-    font-weight: 500;
-    margin: 0;
   }
 
   /* ======================
   Schools We Work With Section
   =======================*/
 
+/* Schools Grid Layout */
 .schools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 24px;
     margin: var(--size-7) auto;
-  }
-  .school-card {
-    background: white;
-    border-left: 4px solid var(--clr-accent-300);
-    border-radius: 5px;
-    padding: var(--size-3);
-    box-shadow: var(--shadow-3);
-    transition: all 0.3s ease;
-  }
-  .school-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  }
-  .school-card__header {
+}
+
+/* Align card content to top */
+.schools-grid .card {
+    align-items: flex-start;
+}
+
+/* Remove margin from card heading */
+.schools-grid .card__heading {
+    margin: 0;
+}
+
+/* Card Icon Styling for Schools - override module card icon styles */
+.card__header-with-icon {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-bottom: 16px;
-  }
-  .school-card__icon {
+}
+
+.schools-grid .card__icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #00a896 0%, #028c7a 100%);
+    background: linear-gradient(135deg, var(--clr-accent-400) 0%, var(--clr-accent-500) 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-  }
-  .school-card__icon i {
+}
+
+.schools-grid .card__icon i {
     font-size: 24px;
     color: white;
-  }
-  .school-card__title {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--clr-accent-300);
-    margin: 0;
-  }
-  .school-card__quote {
+}
+
+/* Card Quote Styling */
+.card__quote {
     font-size: var(--fs-sm);
     color: #555;
     font-style: italic;
     margin: 0 0 16px 0;
     padding-left: 16px;
     border-left: 3px solid #e0e0e0;
+}
+
+/* Fix link positioning in schools cards */
+.schools-grid .card__link {
+    position: relative;
+    z-index: 1;
+}
+
+.schools-grid .card__link::before {
+    content: none;
+}
+
+/* benefits section styles */
+
+.benefits-section {
+  background: var(--cu-white);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
-  .school-card__link {
-    display: inline-flex;
+
+  .benefits-section h3 {
+    color: var(--clr-accent);
+    font-weight: var(--font-weight-7);
+    margin-top: 0;
+  }
+
+  /* How was the PPIE Programme Developed? */
+
+/* Bento Grid Layout */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+  .bento-item {
+    background: white;
+    border-radius: 5px;
+    padding: 16px;
+    /* border: 1px solid var(--clr-border); */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  /* Grid positioning */
+  .bento-item:nth-child(1) {
+    grid-column: span 7;
+    grid-row: span 1;
+  }
+  .bento-item:nth-child(2) {
+    grid-column: span 5;
+    grid-row: span 1;
+  }
+  .bento-item:nth-child(3) {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  .bento-item:nth-child(4) {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  /* Content Styling */
+  .bento-item h3 {
+    margin-top:0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--clr-accent-700);
+    margin-bottom: 16px;
+    display: flex;
     align-items: center;
-    gap: 8px;
-    color: #00a896;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    transition: gap 0.3s ease;
+    gap: 10px;
   }
-  .school-card__link:hover {
-    gap: 12px;
+  .bento-item h3 i {
+    color: var(--clr-accent-500);
+    font-size: 1.1rem;
   }
-  .school-card__link i {
-    font-size: 14px;
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .bento-item:nth-child(1),
+    .bento-item:nth-child(2),
+    .bento-item:nth-child(3),
+    .bento-item:nth-child(4) {
+      grid-column: span 12;
+    }
+  }
+  @media (max-width: 768px) {
+    .bento-item {
+      padding: 24px;
+    }
+  }
+
+
+  /* Table Styling - Custom overrides for module table */
+  .module-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Override base table header with accent color */
+  .module-table thead th {
+    background: var(--clr-accent-500);
+  }
+
+  .module-table td {
+    vertical-align: top;
+  }
+
+  /* Custom striping with accent colors */
+  .module-table tr:nth-child(even) {
+    background: var(--clr-accent-50);
+  }
+
+  /* Add hover effect */
+  .module-table tbody tr:hover {
+    background: var(--clr-accent-100);
+  }
+
+  /* Module name emphasis */
+  .module-table .module-name {
+    font-weight: 600;
+    color: var(--clr-accent-700);
   }
 
 
@@ -377,70 +448,89 @@ Other pages styles
         }
         
         
- /*Quotation Style*/
-        .quotation {
-  max-width: 100%;
-  border: none;
-  background: var(--clr-accent);
-  color: white;
-  position: relative;
-          border: 1px solid var(--clr-border);
-  }
-  .quotation::before {
-    content: '\f10d';
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    top: 4px;
-    left: 10px;
-    font-size: var(--fs-4xl);
-    line-height: 1;
-    color: var(--white);
-  }
-  .quotation-text {
-    margin-top: 1rem;
-    margin-left: 2rem;
-  }
-  .quotation-author {
-    display: flex;
-    justify-content: end;
-    gap: 1rem;
-  }
-  .quotation-author-image {
-    flex-shrink: 0;
-    width: var(--size-10);
-    height: var(--size-10);
-    border-radius: var(--radius-round);
-    object-fit: cover;
-    border: 3px solid var(--white);
-    box-shadow: var(--shadow-2);
-  }
-  .quotation-author-name {
-    padding: 0;
-    font-weight: 600;
-  }
-  blockquote p {
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.25;
-  }
-  .quotation--blue {
-    background-color: #005FA8;
-  }
-.quotation--green {
-  background-color: var(--clr-ppie-green);
-}
-.quotation--teal {
-  background-color: var(--clr-ppie-teal);
-}
 
-  .quotation--invert {
-    background-color: var(--white);
-    color: var(--clr-accent);
-  }
-  .quotation--invert::before {
-    color:  var(--clr-accent);
-  }
+        /*Quotation Style*/
+        .quotation {
+            display: flex;
+            flex-direction: column;
+            /* max-width: 100%; */
+            background: var(--clr-accent);
+            color: white;
+            position: relative;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-2);
+            margin-top: 0;
+        }
+
+        .quotation::before {
+            content: '\f10d';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            font-size: var(--fs-4xl);
+            line-height: 1;
+            color: var(--white);
+            opacity: .5;
+        }
+
+        .quotation-text {
+            margin-top: 1rem;
+            margin-left: var(--size-7);
+        }
+
+        .quotation-author {
+            display: flex;
+            font-size: var(--fs-sm);
+            justify-content: end;
+            align-items: center;
+            gap: 1rem;
+            max-width: 40ch;
+            align-self: self-end;
+        }
+
+        .quotation-author-image {
+            flex-shrink: 0;
+            width: var(--size-10);
+            height: var(--size-10);
+            border-radius: var(--radius-round);
+            object-fit: cover;
+            border: 3px solid var(--white);
+            box-shadow: var(--shadow-2);
+        }
+
+        .quotation-author-name {
+            padding: 0;
+            font-weight: 600;
+        }
+
+        blockquote p {
+            font-weight: 300;
+            font-size: var(--fs-sm);
+            line-height: 1.25;
+        }
+
+        .quotation--blue {
+            background-color: #005FA8;
+        }
+
+        .quotation--green {
+            background-color: var(--clr-ppie-green);
+        }
+
+        .quotation--teal {
+            background-color: var(--clr-ppie-teal);
+        }
+
+        .quotation--invert {
+            background-color: var(--white);
+            color: var(--clr-accent);
+        }
+
+        .quotation--invert::before {
+            color: var(--clr-accent);
+        }
 
 /*Testimonial cards*/
   .testimonial-grid {
