@@ -23,6 +23,8 @@
   --clr-accent-700: #003A33;
   --clr-accent-800: #002722;
   --clr-accent-900: #001411;
+
+  --clr-footer-bg: var(--clr-accent-900);
 }
 
 
@@ -614,3 +616,6 @@ figure + details {
   .video-caption>* {
     margin:0!important;
   }
+
+
+  /* Footer */
