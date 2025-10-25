@@ -903,6 +903,9 @@
   --clr-jumbotron-bg: var(--cu-dark-blue);
   --clr-jumbotron-bg-gradient: var(--gradient-23);
   --clr-footer-bg: var(--black);
+  --clr-footer-text: var(--cu-white);
+  --clr-footer-link: var(--cu-white);
+  --clr-footer-link-hover: var(--cu-white);
   --clr-main-bg: var(--light);
   /*Spacing*/
   --gap: var(--size-fluid-1);
@@ -1444,7 +1447,7 @@ hr {
   position: relative;
   background-color: transparent !important;
   border: 0;
-  color: var(--cu-white);
+  color: var(--clr-footer-text);
 }
 
 .footer::before {
@@ -1461,17 +1464,17 @@ hr {
 .footer p {
   margin-bottom: 0;
   text-align: center;
-  color: var(--cu-white);
+  color: var(--clr-footer-text);
 }
 
 .footer a {
-  color: var(--cu-white);
+  color: var(--clr-footer-link);
   text-decoration: underline;
 }
 
 .footer a:hover, .footer a:focus {
   text-decoration: none;
-  color: var(--cu-white);
+  color: var(--clr-footer-link-hover);
 }
 
 .footer-logo {

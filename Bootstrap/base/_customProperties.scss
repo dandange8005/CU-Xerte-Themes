@@ -127,10 +127,13 @@
 --clr-border: #d1d5db;
 // header background colour
 --clr-jumbotron-bg: var(--cu-dark-blue);
-// header background gradient
+// header background
 --clr-jumbotron-bg-gradient: var(--gradient-23);
-// footer background colour
+// footer colour
 --clr-footer-bg: var(--black);
+--clr-footer-text: var(--cu-white);
+--clr-footer-link: var(--cu-white);
+--clr-footer-link-hover: var(--cu-white);
 // main background colour
 --clr-main-bg: var(--light);
 
