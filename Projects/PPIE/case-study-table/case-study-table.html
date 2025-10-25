@@ -26,9 +26,9 @@
     <!-- Optional: Local custom styles -->
     <link rel="stylesheet" href="../project-style.css">
 
-    <!-- DataTables Modern CSS -->
-    <link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet">
+    <!-- DataTables Modern CSS (v2.x) -->
+    <link href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/3.0.7/css/responsive.dataTables.min.css" rel="stylesheet">
 
     <style>
         /*
@@ -83,6 +83,11 @@
             margin-bottom: 8px;
             color: var(--clr-accent-700);
             font-size: 14px;
+        }
+
+        .filter-section label i {
+            margin-right: 6px;
+            color: var(--clr-accent);
         }
 
         .filter-section select {
@@ -358,21 +363,21 @@
         <div class="filter-section">
             <div class="filter-row">
                 <div class="filter-col">
-                    <label for="categoryFilter">Filter by Category:</label>
+                    <label for="categoryFilter"><i class="fa-solid fa-tags"></i> Filter by Category:</label>
                     <select id="categoryFilter" style="width: 100%;">
                         <option value="">All Categories</option>
                         <!-- Options will be populated dynamically -->
                     </select>
                 </div>
                 <div class="filter-col">
-                    <label for="schoolFilter">Filter by School:</label>
+                    <label for="schoolFilter"><i class="fa-solid fa-building-columns"></i> Filter by School:</label>
                     <select id="schoolFilter" style="width: 100%;">
                         <option value="">All Schools</option>
                         <!-- Options will be populated dynamically -->
                     </select>
                 </div>
                 <div class="filter-col">
-                    <label for="moduleFilter">Filter by Module:</label>
+                    <label for="moduleFilter"><i class="fa-solid fa-book"></i> Filter by Module:</label>
                     <select id="moduleFilter" style="width: 100%;">
                         <option value="">All Modules</option>
                         <!-- Options will be populated dynamically -->
@@ -380,7 +385,7 @@
                 </div>
                 <div class="filter-col-auto">
                     <button id="resetFilters" class="btn btn-toolbar">
-                        Reset Filters
+                        <i class="fa-solid fa-rotate-left"></i> Reset Filters
                     </button>
                 </div>
             </div>
@@ -405,9 +410,10 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- DataTables Modern JS -->
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <!-- DataTables Modern JS (v2.x - includes both DataTables core and jQuery integration) -->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+    <!-- Responsive extension - only core file needed for default DataTables styling -->
+    <script src="https://cdn.datatables.net/responsive/3.0.7/js/dataTables.responsive.min.js"></script>
 
     <!-- Case studies data -->
     <script src="case-studies-data.js"></script>
@@ -506,16 +512,14 @@
             populateFilters();
 
             // Initialize DataTable
+            console.log('Initializing DataTable with', tableData.length, 'rows');
+
             table = $('#caseStudiesTable').DataTable({
                 data: tableData,
-                pageLength: -1,
+                deferRender: false,  // Maintain v1.x behavior for DOM consistency
+                pageLength: 10,  // Show 10 by default instead of -1 (all)
                 lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-                responsive: {
-                    details: {
-                        type: 'column',
-                        target: 'tr'
-                    }
-                },
+                responsive: true,  // Simplified responsive configuration
                 language: {
                     search: "Search case studies:",
                     lengthMenu: "Show _MENU_ case studies per page",
@@ -532,6 +536,8 @@
                     { targets: [3, 4, 5, 6, 7, 8], visible: false, searchable: true }  // Hidden searchable columns
                 ]
             });
+
+            console.log('DataTable initialized successfully');
 
             // Setup filters
             setupFilters();

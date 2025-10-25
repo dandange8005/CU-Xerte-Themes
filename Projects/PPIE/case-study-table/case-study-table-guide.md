@@ -1,5 +1,28 @@
 # PPIE Case Studies Table - Development Guide & Invoice Information
 
+## Summary
+
+This document covers the development of a searchable, filterable DataTables implementation for 42 PPIE (Patient and Public Involvement and Engagement) case studies from Cardiff University's School of Medicine.
+
+**Key Features:**
+- ✅ Responsive table with 3 visible columns (Title, Authors, Categories)
+- ✅ Advanced filtering system (Category, School, Module)
+- ✅ Global search across all fields including hidden metadata
+- ✅ Multi-category color-coded badges (8 categories)
+- ✅ Python CSV-to-JavaScript conversion script
+- ✅ Mobile-responsive design with collapsible columns
+- ✅ Smart module filtering (finds "2" in "2, 4" combinations)
+
+**Tech Stack:**
+- DataTables 2.3.4 (upgraded from 1.13.7)
+- jQuery 3.7.1
+- Responsive Extension 3.0.7
+- Python 3 for data conversion
+
+**Recommended Billable Time:** 3.5-4 hours
+
+---
+
 ## Billable Development Time
 
 ### Recommended Billable Time: **3.5 hours**
