@@ -33,22 +33,23 @@
     <style>
         /*
          * Cardiff University PPIE Case Studies Table
-         * Integrated with project-style.css theme and Open Props
-         *
-         * Color Palette:
-         * - Main Accent (Teal): #006054 (var(--clr-accent))
-         * - Category Badges: Open Props colors (--blue-1, --green-1, etc.)
-         * - Table Hover: Subtle gray (var(--gray-1))
-         *
-         * Reuses components: bento-item shadows, module-table header styling
-         * Design tokens: Open Props for spacing, colors, shadows
+         * Simplified - DataTables CSS handles most styling
+         * Custom: Page header, filters, category badges, theme colors
          */
 
+        /* === Page Layout === */
         body {
             padding: 20px;
             background-color: var(--light, #f8f9fa);
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* === Page Header === */
         .page-header {
             margin-bottom: 30px;
             padding-bottom: 20px;
@@ -68,13 +69,28 @@
             margin: 0;
         }
 
-        /* Filter Section - matching bento-item style */
+        /* === Filter Section === */
         .filter-section {
             background: white;
             padding: 25px;
             border-radius: 5px;
             margin-bottom: 20px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+        }
+
+        .filter-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .filter-col-auto {
+            flex: 0 0 auto;
         }
 
         .filter-section label {
@@ -93,7 +109,8 @@
         .filter-section select {
             height: 38px;
             font-size: 14px;
-            border-color: var(--clr-border, #ced4da);
+            border: 1px solid var(--clr-border, #ced4da);
+            border-radius: 4px;
         }
 
         .filter-section select:focus {
@@ -102,7 +119,6 @@
             box-shadow: 0 0 0 3px rgba(0, 96, 84, 0.1);
         }
 
-        /* Reset Filters Button */
         .filter-section .btn {
             height: 38px;
             padding: 8px 20px;
@@ -120,11 +136,7 @@
             border-color: #adb5bd;
         }
 
-        .filter-section .btn:active {
-            background-color: #dee2e6;
-        }
-
-        /* Table Container - matching bento-item style */
+        /* === Table Container === */
         .table-container {
             background: white;
             padding: 25px;
@@ -132,29 +144,13 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
-        /* Table styling improvements */
-        #caseStudiesTable thead th:nth-child(1) {
-            width: 50%;
-        }
-
-        #caseStudiesTable thead th:nth-child(2) {
-            width: 25%;
-        }
-
-        #caseStudiesTable thead th:nth-child(3) {
-            width: 25%;
-        }
-
-        #caseStudiesTable tbody td {
-            vertical-align: middle;
-        }
-
+        /* === Custom Content Styling === */
         .authors-list {
             font-size: 14px;
             color: #6c757d;
         }
 
-        /* Category Badges - using PPIE color palette */
+        /* Category Badges */
         .category-badge {
             font-size: 12px;
             padding: 6px 14px;
@@ -163,11 +159,9 @@
             font-weight: 600;
             display: inline-block;
             letter-spacing: 0.3px;
-            border: none;
             margin: 2px;
         }
 
-        /* Category Badges - using Open Props color palette */
         .category-research {
             background-color: var(--blue-1);
             color: var(--blue-9);
@@ -188,10 +182,9 @@
             color: var(--pink-9);
         }
 
-        /* Additional category styles using Open Props colors */
         .category-coproduction {
-            background-color: var(--purple-1);
-            color: var(--purple-9);
+            background-color: var(--brown-1);
+            color: var(--brown-9);
         }
 
         .category-governance {
@@ -199,102 +192,33 @@
             color: var(--cyan-9);
         }
 
-        /* Case Study Links - using default link color */
-        .case-study-link {
-            text-decoration: none;
-            font-weight: 400;
-            transition: color 0.15s ease;
+        /* === DataTables Theme Overrides === */
+        /* Table header - Cardiff brand colors */
+        #caseStudiesTable thead th {
+            background: var(--clr-accent-500) !important;
+            color: white !important;
+            font-weight: 600;
         }
 
-        .case-study-link:hover {
-            text-decoration: none;
+        #caseStudiesTable thead th:hover {
+            background: var(--clr-accent-600) !important;
         }
 
-        /* DataTables custom styling - matching theme */
-        .dataTables_filter input {
+        /* Search/filter inputs - Cardiff brand focus */
+        .dt-search input,
+        .dt-length select {
             border: 1px solid var(--clr-border, #ced4da);
             border-radius: 4px;
-            padding: 6px 12px;
-            margin-left: 8px;
         }
 
-        .dataTables_filter input:focus {
+        .dt-search input:focus,
+        .dt-length select:focus {
             border-color: var(--clr-accent);
             outline: none;
             box-shadow: 0 0 0 3px rgba(0, 96, 84, 0.1);
         }
 
-        .dataTables_length select {
-            border: 1px solid var(--clr-border, #ced4da);
-            border-radius: 4px;
-            padding: 4px 8px;
-            margin: 0 8px;
-        }
-
-        /* DataTables Table Header - matching module-table style */
-        #caseStudiesTable thead th {
-            background: var(--clr-accent-500);
-            color: white;
-            font-weight: 600;
-            border-bottom: 2px solid var(--clr-accent-600);
-        }
-
-        #caseStudiesTable thead th:hover {
-            background: var(--clr-accent-600);
-        }
-
-        /* Table row hover effect - subtle gray */
-        #caseStudiesTable tbody tr:hover {
-            background: var(--gray-1);
-        }
-
-        /* DataTables pagination buttons */
-        .dataTables_paginate .paginate_button {
-            border: 1px solid var(--clr-accent-200);
-            background: white;
-            color: var(--clr-accent) !important;
-        }
-
-        .dataTables_paginate .paginate_button:hover {
-            background: var(--clr-accent-50);
-            border-color: var(--clr-accent-300);
-            color: var(--clr-accent-700) !important;
-        }
-
-        .dataTables_paginate .paginate_button.current {
-            background: var(--clr-accent);
-            border-color: var(--clr-accent);
-            color: white !important;
-        }
-
-        .dataTables_paginate .paginate_button.current:hover {
-            background: var(--clr-accent-600);
-            border-color: var(--clr-accent-600);
-        }
-
-        /* Container layout */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .filter-row {
-            display: flex;
-            gap: 20px;
-            align-items: flex-end;
-        }
-
-        .filter-col {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .filter-col-auto {
-            flex: 0 0 auto;
-        }
-
-        /* Responsive adjustments */
+        /* === Responsive Design === */
         @media (max-width: 992px) {
             .filter-row {
                 flex-wrap: wrap;
@@ -324,22 +248,6 @@
             .filter-col-auto {
                 width: 100%;
                 flex: 1;
-            }
-
-            .filter-section .btn {
-                width: 100%;
-            }
-
-            .dataTables_filter {
-                float: none;
-                text-align: left;
-                margin-top: 10px;
-            }
-
-            .dataTables_filter input {
-                width: 100%;
-                margin-left: 0;
-                margin-top: 5px;
             }
 
             .category-badge {
