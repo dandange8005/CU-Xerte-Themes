@@ -1279,7 +1279,6 @@ blockquote {
   font-weight: 400;
   line-height: var(--font-lineheight-3);
   font-size: var(--fs-base);
-  margin: 0;
   background: none;
   border: none;
   padding: var(--size-3) var(--size-5);
