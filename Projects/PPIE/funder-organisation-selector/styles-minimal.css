@@ -160,3 +160,26 @@
 .info-section a:hover {
     text-decoration: underline;
 }
+
+.quote-section {
+    margin: 20px 0;
+    padding: 15px 0;
+}
+
+.quote-section blockquote {
+    margin: 10px 0 0 0;
+    padding: 15px 20px;
+    background: white;
+    border-left: 4px solid var(--clr-accent);
+    font-style: italic;
+    color: #555;
+}
+
+.quote-section blockquote p {
+    margin: 0 0 12px 0;
+    font-size: var(--fs-sm);
+}
+
+.quote-section blockquote p:last-child {
+    margin-bottom: 0;
+}
