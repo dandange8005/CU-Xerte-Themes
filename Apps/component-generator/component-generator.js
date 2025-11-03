@@ -44,12 +44,36 @@ const componentConfigs = {
         title: 'Best Practices',
         items: ['Do this thing', 'Do that thing', "Don't do this", "Don't do that"],
         types: ['do', 'do', 'dont', 'dont']
+    },
+    flexSystem1: {
+        numItems: 2,
+        direction: 'row',
+        wrap: 'wrap',
+        alignItems: 'stretch',
+        justifyContent: 'flex-start',
+        gap: true,
+        items: [
+            { flexClass: 'flex-300', content: '<h3>Item 1</h3>\n<p>This item has a flex-basis of 300px and will grow/shrink as needed.</p>' },
+            { flexClass: 'flex-300', content: '<h3>Item 2</h3>\n<p>This item has a flex-basis of 300px and will grow/shrink as needed.</p>' }
+        ]
+    },
+    flexSystem2: {
+        numColumns: 2,
+        direction: 'row',
+        wrap: 'wrap',
+        alignItems: 'stretch',
+        justifyContent: 'flex-start',
+        gap: true,
+        columns: [
+            { width: 'c50', content: '<h3>Column 1</h3>\n<p>Content for first column goes here.</p>' },
+            { width: 'c50', content: '<h3>Column 2</h3>\n<p>Content for second column goes here.</p>' }
+        ]
     }
 };
 
 // Current component state
 let currentComponent = 'box';
-let currentConfig = { ...componentConfigs[currentComponent] };
+let currentConfig = JSON.parse(JSON.stringify(componentConfigs[currentComponent]));
 
 // Common Font Awesome icons organized by category
 const iconCategories = {
@@ -295,8 +319,174 @@ function updateControls() {
                 </div>
             `;
             break;
+
+        case 'flexSystem1':
+            controlsHTML = `
+                <div class="form-group">
+                    <label for="flexNumItems">Number of Items</label>
+                    <select id="flexNumItems" onchange="updateFlexSystem1Items(this.value)">
+                        <option value="1" ${config.numItems === 1 ? 'selected' : ''}>1 Item</option>
+                        <option value="2" ${config.numItems === 2 ? 'selected' : ''}>2 Items</option>
+                        <option value="3" ${config.numItems === 3 ? 'selected' : ''}>3 Items</option>
+                        <option value="4" ${config.numItems === 4 ? 'selected' : ''}>4 Items</option>
+                        <option value="5" ${config.numItems === 5 ? 'selected' : ''}>5 Items</option>
+                        <option value="6" ${config.numItems === 6 ? 'selected' : ''}>6 Items</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexDirection">Direction</label>
+                    <select id="flexDirection" onchange="updateConfig('direction', this.value)">
+                        <option value="row" ${config.direction === 'row' ? 'selected' : ''}>Row</option>
+                        <option value="row-reverse" ${config.direction === 'row-reverse' ? 'selected' : ''}>Row Reverse</option>
+                        <option value="column" ${config.direction === 'column' ? 'selected' : ''}>Column</option>
+                        <option value="column-reverse" ${config.direction === 'column-reverse' ? 'selected' : ''}>Column Reverse</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexWrap">Wrap</label>
+                    <select id="flexWrap" onchange="updateConfig('wrap', this.value)">
+                        <option value="wrap" ${config.wrap === 'wrap' ? 'selected' : ''}>Wrap</option>
+                        <option value="nowrap" ${config.wrap === 'nowrap' ? 'selected' : ''}>No Wrap</option>
+                        <option value="wrap-reverse" ${config.wrap === 'wrap-reverse' ? 'selected' : ''}>Wrap Reverse</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexAlignItems">Align Items (Vertical)</label>
+                    <select id="flexAlignItems" onchange="updateConfig('alignItems', this.value)">
+                        <option value="stretch" ${config.alignItems === 'stretch' ? 'selected' : ''}>Stretch</option>
+                        <option value="flex-start" ${config.alignItems === 'flex-start' ? 'selected' : ''}>Start</option>
+                        <option value="flex-end" ${config.alignItems === 'flex-end' ? 'selected' : ''}>End</option>
+                        <option value="center" ${config.alignItems === 'center' ? 'selected' : ''}>Center</option>
+                        <option value="baseline" ${config.alignItems === 'baseline' ? 'selected' : ''}>Baseline</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexJustifyContent">Justify Content (Horizontal)</label>
+                    <select id="flexJustifyContent" onchange="updateConfig('justifyContent', this.value)">
+                        <option value="flex-start" ${config.justifyContent === 'flex-start' ? 'selected' : ''}>Start</option>
+                        <option value="flex-end" ${config.justifyContent === 'flex-end' ? 'selected' : ''}>End</option>
+                        <option value="center" ${config.justifyContent === 'center' ? 'selected' : ''}>Center</option>
+                        <option value="space-between" ${config.justifyContent === 'space-between' ? 'selected' : ''}>Space Between</option>
+                        <option value="space-around" ${config.justifyContent === 'space-around' ? 'selected' : ''}>Space Around</option>
+                        <option value="space-evenly" ${config.justifyContent === 'space-evenly' ? 'selected' : ''}>Space Evenly</option>
+                    </select>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Include Gap Spacing</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="flexGap" ${config.gap ? 'checked' : ''} onchange="updateConfig('gap', this.checked)">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div id="flexItemSettings">
+                    ${config.items.map((item, i) => `
+                        <div class="form-group" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                            <label for="flexItemClass${i}">Item ${i + 1} Flex Class</label>
+                            <select id="flexItemClass${i}" onchange="updateFlexSystem1ItemClass(${i}, this.value)">
+                                <option value="flex-1" ${item.flexClass === 'flex-1' ? 'selected' : ''}>flex-1 (grow/shrink, no basis)</option>
+                                <option value="flex-initial" ${item.flexClass === 'flex-initial' ? 'selected' : ''}>flex-initial (shrink only)</option>
+                                <option value="flex-auto" ${item.flexClass === 'flex-auto' ? 'selected' : ''}>flex-auto (grow/shrink with basis)</option>
+                                <option value="flex-none" ${item.flexClass === 'flex-none' ? 'selected' : ''}>flex-none (fixed size)</option>
+                                <option value="flex-100" ${item.flexClass === 'flex-100' ? 'selected' : ''}>flex-100 (100px basis)</option>
+                                <option value="flex-200" ${item.flexClass === 'flex-200' ? 'selected' : ''}>flex-200 (200px basis)</option>
+                                <option value="flex-300" ${item.flexClass === 'flex-300' ? 'selected' : ''}>flex-300 (300px basis)</option>
+                                <option value="flex-400" ${item.flexClass === 'flex-400' ? 'selected' : ''}>flex-400 (400px basis)</option>
+                                <option value="flex-500" ${item.flexClass === 'flex-500' ? 'selected' : ''}>flex-500 (500px basis)</option>
+                                <option value="flex-600" ${item.flexClass === 'flex-600' ? 'selected' : ''}>flex-600 (600px basis)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="flexItemContent${i}">Item ${i + 1} Content</label>
+                            <textarea id="flexItemContent${i}" onchange="updateFlexSystem1ItemContent(${i}, this.value)">${item.content}</textarea>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            break;
+
+        case 'flexSystem2':
+            controlsHTML = `
+                <div class="form-group">
+                    <label for="flexNumColumns">Number of Columns</label>
+                    <select id="flexNumColumns" onchange="updateFlexSystem2Columns(this.value)">
+                        <option value="1" ${config.numColumns === 1 ? 'selected' : ''}>1 Column</option>
+                        <option value="2" ${config.numColumns === 2 ? 'selected' : ''}>2 Columns</option>
+                        <option value="3" ${config.numColumns === 3 ? 'selected' : ''}>3 Columns</option>
+                        <option value="4" ${config.numColumns === 4 ? 'selected' : ''}>4 Columns</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexDirection">Direction</label>
+                    <select id="flexDirection" onchange="updateConfig('direction', this.value)">
+                        <option value="row" ${config.direction === 'row' ? 'selected' : ''}>Row</option>
+                        <option value="row-reverse" ${config.direction === 'row-reverse' ? 'selected' : ''}>Row Reverse</option>
+                        <option value="column" ${config.direction === 'column' ? 'selected' : ''}>Column</option>
+                        <option value="column-reverse" ${config.direction === 'column-reverse' ? 'selected' : ''}>Column Reverse</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexWrap">Wrap</label>
+                    <select id="flexWrap" onchange="updateConfig('wrap', this.value)">
+                        <option value="wrap" ${config.wrap === 'wrap' ? 'selected' : ''}>Wrap</option>
+                        <option value="nowrap" ${config.wrap === 'nowrap' ? 'selected' : ''}>No Wrap</option>
+                        <option value="wrap-reverse" ${config.wrap === 'wrap-reverse' ? 'selected' : ''}>Wrap Reverse</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexAlignItems">Align Items (Vertical)</label>
+                    <select id="flexAlignItems" onchange="updateConfig('alignItems', this.value)">
+                        <option value="stretch" ${config.alignItems === 'stretch' ? 'selected' : ''}>Stretch</option>
+                        <option value="flex-start" ${config.alignItems === 'flex-start' ? 'selected' : ''}>Start</option>
+                        <option value="flex-end" ${config.alignItems === 'flex-end' ? 'selected' : ''}>End</option>
+                        <option value="center" ${config.alignItems === 'center' ? 'selected' : ''}>Center</option>
+                        <option value="baseline" ${config.alignItems === 'baseline' ? 'selected' : ''}>Baseline</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flexJustifyContent">Justify Content (Horizontal)</label>
+                    <select id="flexJustifyContent" onchange="updateConfig('justifyContent', this.value)">
+                        <option value="flex-start" ${config.justifyContent === 'flex-start' ? 'selected' : ''}>Start</option>
+                        <option value="flex-end" ${config.justifyContent === 'flex-end' ? 'selected' : ''}>End</option>
+                        <option value="center" ${config.justifyContent === 'center' ? 'selected' : ''}>Center</option>
+                        <option value="space-between" ${config.justifyContent === 'space-between' ? 'selected' : ''}>Space Between</option>
+                        <option value="space-around" ${config.justifyContent === 'space-around' ? 'selected' : ''}>Space Around</option>
+                        <option value="space-evenly" ${config.justifyContent === 'space-evenly' ? 'selected' : ''}>Space Evenly</option>
+                    </select>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Include Gap Spacing</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="flexGap" ${config.gap ? 'checked' : ''} onchange="updateConfig('gap', this.checked)">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div id="flexColumnSettings">
+                    ${config.columns.map((col, i) => `
+                        <div class="form-group" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                            <label for="flexColWidth${i}">Column ${i + 1} Width</label>
+                            <select id="flexColWidth${i}" onchange="updateFlexSystem2ColumnWidth(${i}, this.value)">
+                                <option value="c10" ${col.width === 'c10' ? 'selected' : ''}>10%</option>
+                                <option value="c20" ${col.width === 'c20' ? 'selected' : ''}>20%</option>
+                                <option value="c25" ${col.width === 'c25' ? 'selected' : ''}>25%</option>
+                                <option value="c30" ${col.width === 'c30' ? 'selected' : ''}>30%</option>
+                                <option value="c33" ${col.width === 'c33' ? 'selected' : ''}>33.33%</option>
+                                <option value="c40" ${col.width === 'c40' ? 'selected' : ''}>40%</option>
+                                <option value="c50" ${col.width === 'c50' ? 'selected' : ''}>50%</option>
+                                <option value="c60" ${col.width === 'c60' ? 'selected' : ''}>60%</option>
+                                <option value="c70" ${col.width === 'c70' ? 'selected' : ''}>70%</option>
+                                <option value="c80" ${col.width === 'c80' ? 'selected' : ''}>80%</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="flexColContent${i}">Column ${i + 1} Content</label>
+                            <textarea id="flexColContent${i}" onchange="updateFlexSystem2ColumnContent(${i}, this.value)">${col.content}</textarea>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            break;
     }
-    
+
     controlsContainer.innerHTML = controlsHTML;
 }
 
@@ -325,7 +515,7 @@ function updateDosdontsItems(text) {
     const lines = text.split('\n').filter(line => line.trim());
     const items = [];
     const types = [];
-    
+
     lines.forEach(line => {
         if (line.startsWith('DO:')) {
             items.push(line.substring(3).trim());
@@ -335,12 +525,95 @@ function updateDosdontsItems(text) {
             types.push('dont');
         }
     });
-    
+
     currentConfig.items = items;
     currentConfig.types = types;
-    
+
     updatePreview();
     updateCode();
+}
+
+// Special handlers for Flex System 1 (flex-basis)
+function updateFlexSystem1Items(numItems) {
+    const num = parseInt(numItems);
+    currentConfig.numItems = num;
+
+    // Adjust items array based on number
+    while (currentConfig.items.length < num) {
+        const index = currentConfig.items.length + 1;
+        currentConfig.items.push({
+            flexClass: 'flex-300',
+            content: `<h3>Item ${index}</h3>\n<p>This item has a flex-basis of 300px and will grow/shrink as needed.</p>`
+        });
+    }
+
+    while (currentConfig.items.length > num) {
+        currentConfig.items.pop();
+    }
+
+    updateControls();
+    updatePreview();
+    updateCode();
+}
+
+// Update flex system 1 item class
+function updateFlexSystem1ItemClass(index, flexClass) {
+    if (currentConfig.items[index]) {
+        currentConfig.items[index].flexClass = flexClass;
+        updatePreview();
+        updateCode();
+    }
+}
+
+// Update flex system 1 item content
+function updateFlexSystem1ItemContent(index, content) {
+    if (currentConfig.items[index]) {
+        currentConfig.items[index].content = content;
+        updatePreview();
+        updateCode();
+    }
+}
+
+// Special handlers for Flex System 2 (percentage-based)
+function updateFlexSystem2Columns(numColumns) {
+    const num = parseInt(numColumns);
+    currentConfig.numColumns = num;
+
+    // Adjust columns array based on number
+    while (currentConfig.columns.length < num) {
+        const index = currentConfig.columns.length + 1;
+        const defaultWidth = num === 2 ? 'c50' : num === 3 ? 'c33' : 'c25';
+        currentConfig.columns.push({
+            width: defaultWidth,
+            content: `<h3>Column ${index}</h3>\n<p>Content for column ${index} goes here.</p>`
+        });
+    }
+
+    while (currentConfig.columns.length > num) {
+        currentConfig.columns.pop();
+    }
+
+    updateControls();
+    updatePreview();
+    updateCode();
+}
+
+// Update flex system 2 column width
+function updateFlexSystem2ColumnWidth(index, width) {
+    if (currentConfig.columns[index]) {
+        currentConfig.columns[index].width = width;
+        updatePreview();
+        updateCode();
+    }
+}
+
+// Update flex system 2 column content
+function updateFlexSystem2ColumnContent(index, content) {
+    if (currentConfig.columns[index]) {
+        currentConfig.columns[index].content = content;
+        updatePreview();
+        updateCode();
+    }
 }
 
 // Update the preview
@@ -450,8 +723,78 @@ function updatePreview() {
                 </div>
             `;
             break;
+
+        case 'flexSystem1':
+            const flex1Classes = ['flex'];
+            if (currentConfig.direction !== 'row') {
+                flex1Classes.push(`flex-${currentConfig.direction}`);
+            }
+            // Add wrap class
+            if (currentConfig.wrap === 'wrap') {
+                flex1Classes.push('flex-wrap');
+            } else if (currentConfig.wrap === 'nowrap') {
+                flex1Classes.push('flex-no-wrap');
+            } else if (currentConfig.wrap === 'wrap-reverse') {
+                flex1Classes.push('flex-wrap-reverse');
+            }
+            if (currentConfig.alignItems !== 'stretch') {
+                if (currentConfig.alignItems === 'center') {
+                    flex1Classes.push('flex-center-y');
+                }
+            }
+            if (currentConfig.justifyContent !== 'flex-start') {
+                if (currentConfig.justifyContent === 'center') {
+                    flex1Classes.push('flex-center-x');
+                }
+            }
+
+            html = `
+                <div class="${flex1Classes.join(' ')}" style="align-items: ${currentConfig.alignItems}; justify-content: ${currentConfig.justifyContent};">
+                    ${currentConfig.items.map(item => `
+                        <div class="${item.flexClass}">
+                            ${item.content}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            break;
+
+        case 'flexSystem2':
+            const flex2Classes = ['flexContainer'];
+            if (currentConfig.direction !== 'row') {
+                flex2Classes.push(`flex-${currentConfig.direction}`);
+            }
+            // Add wrap class
+            if (currentConfig.wrap === 'wrap') {
+                flex2Classes.push('flex-wrap');
+            } else if (currentConfig.wrap === 'nowrap') {
+                flex2Classes.push('flex-no-wrap');
+            } else if (currentConfig.wrap === 'wrap-reverse') {
+                flex2Classes.push('flex-wrap-reverse');
+            }
+            if (currentConfig.alignItems !== 'stretch') {
+                if (currentConfig.alignItems === 'center') {
+                    flex2Classes.push('flex-center-y');
+                }
+            }
+            if (currentConfig.justifyContent !== 'flex-start') {
+                if (currentConfig.justifyContent === 'center') {
+                    flex2Classes.push('flex-center-x');
+                }
+            }
+
+            html = `
+                <div class="${flex2Classes.join(' ')}" style="align-items: ${currentConfig.alignItems}; justify-content: ${currentConfig.justifyContent};">
+                    ${currentConfig.columns.map(col => `
+                        <div class="flexItem ${col.width}">
+                            ${col.content}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            break;
     }
-    
+
     previewContainer.innerHTML = html;
 }
 
@@ -546,10 +889,90 @@ ${currentConfig.items.map((item, i) => `    <li class="dosdonts__item dosdonts__
   </ul>
 </div>`;
             break;
+
+        case 'flexSystem1':
+            const flex1CodeClasses = ['flex'];
+            if (currentConfig.direction !== 'row') {
+                flex1CodeClasses.push(`flex-${currentConfig.direction}`);
+            }
+            // Add wrap class
+            if (currentConfig.wrap === 'wrap') {
+                flex1CodeClasses.push('flex-wrap');
+            } else if (currentConfig.wrap === 'nowrap') {
+                flex1CodeClasses.push('flex-no-wrap');
+            } else if (currentConfig.wrap === 'wrap-reverse') {
+                flex1CodeClasses.push('flex-wrap-reverse');
+            }
+            if (currentConfig.alignItems !== 'stretch') {
+                if (currentConfig.alignItems === 'center') {
+                    flex1CodeClasses.push('flex-center-y');
+                }
+            }
+            if (currentConfig.justifyContent !== 'flex-start') {
+                if (currentConfig.justifyContent === 'center') {
+                    flex1CodeClasses.push('flex-center-x');
+                }
+            }
+
+            const style1Attr = [];
+            if (currentConfig.alignItems !== 'stretch' && currentConfig.alignItems !== 'center') {
+                style1Attr.push(`align-items: ${currentConfig.alignItems}`);
+            }
+            if (currentConfig.justifyContent !== 'flex-start' && currentConfig.justifyContent !== 'center') {
+                style1Attr.push(`justify-content: ${currentConfig.justifyContent}`);
+            }
+            const style1String = style1Attr.length > 0 ? ` style="${style1Attr.join('; ')}"` : '';
+
+            html = `<div class="${flex1CodeClasses.join(' ')}"${style1String}>
+${currentConfig.items.map(item => `  <div class="${item.flexClass}">
+    ${escapeHtml(item.content).replace(/\n/g, '\n    ')}
+  </div>`).join('\n')}
+</div>`;
+            break;
+
+        case 'flexSystem2':
+            const flex2CodeClasses = ['flexContainer'];
+            if (currentConfig.direction !== 'row') {
+                flex2CodeClasses.push(`flex-${currentConfig.direction}`);
+            }
+            // Add wrap class
+            if (currentConfig.wrap === 'wrap') {
+                flex2CodeClasses.push('flex-wrap');
+            } else if (currentConfig.wrap === 'nowrap') {
+                flex2CodeClasses.push('flex-no-wrap');
+            } else if (currentConfig.wrap === 'wrap-reverse') {
+                flex2CodeClasses.push('flex-wrap-reverse');
+            }
+            if (currentConfig.alignItems !== 'stretch') {
+                if (currentConfig.alignItems === 'center') {
+                    flex2CodeClasses.push('flex-center-y');
+                }
+            }
+            if (currentConfig.justifyContent !== 'flex-start') {
+                if (currentConfig.justifyContent === 'center') {
+                    flex2CodeClasses.push('flex-center-x');
+                }
+            }
+
+            const style2Attr = [];
+            if (currentConfig.alignItems !== 'stretch' && currentConfig.alignItems !== 'center') {
+                style2Attr.push(`align-items: ${currentConfig.alignItems}`);
+            }
+            if (currentConfig.justifyContent !== 'flex-start' && currentConfig.justifyContent !== 'center') {
+                style2Attr.push(`justify-content: ${currentConfig.justifyContent}`);
+            }
+            const style2String = style2Attr.length > 0 ? ` style="${style2Attr.join('; ')}"` : '';
+
+            html = `<div class="${flex2CodeClasses.join(' ')}"${style2String}>
+${currentConfig.columns.map(col => `  <div class="flexItem ${col.width}">
+    ${escapeHtml(col.content).replace(/\n/g, '\n    ')}
+  </div>`).join('\n')}
+</div>`;
+            break;
     }
-    
+
     codeContainer.textContent = html;
-    
+
     // Re-run Prism syntax highlighting
     if (window.Prism) {
         Prism.highlightElement(codeContainer);
@@ -650,12 +1073,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const componentSelector = document.getElementById('componentType');
     componentSelector.addEventListener('change', function() {
         currentComponent = this.value;
-        currentConfig = { ...componentConfigs[currentComponent] };
+        currentConfig = JSON.parse(JSON.stringify(componentConfigs[currentComponent]));
         updateControls();
         updatePreview();
         updateCode();
     });
-    
+
     init();
 });
 
