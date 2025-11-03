@@ -169,6 +169,9 @@
     <!-- Optional: Local custom styles -->
     <link rel="stylesheet" href="project-style.css">
 
+    <!-- Carousel styles -->
+    <link rel="stylesheet" href="carousel-style.css">
+
     <!-- HTML5 shim for IE8 support -->
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -492,7 +495,13 @@
                 heart of their academic activities.
             </p>
 
-            <div class="schools-grid"><!-- School of Biosciences -->
+            <!-- Carousel wrapper with navigation -->
+            <div class="carousel-wrapper">
+                <button class="carousel-nav carousel-nav--prev" aria-label="Previous schools">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="schools-grid" id="schoolsCarousel"><!-- School of Biosciences -->
                 <div class="card card--clickable">
                     <div class="card__content">
                         <div class="card__header-with-icon">
@@ -600,6 +609,12 @@
                     </div>
                 </div>
             </div>
+
+            <button class="carousel-nav carousel-nav--next" aria-label="Next schools">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+        <!-- End carousel wrapper -->
 
         </section>
 
@@ -946,6 +961,8 @@
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <!-- Custom scripts -->
     <script src="script-jquery.js"></script>
+    <!-- Carousel navigation -->
+    <script src="carousel-nav.js"></script>
 </body>
 
 </html>
