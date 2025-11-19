@@ -77,6 +77,63 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
+        /* Submission Call-to-Action Section */
+        .submission-section {
+            background: linear-gradient(135deg, var(--clr-accent-50) 0%, var(--clr-accent-100) 100%);
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--clr-accent);
+        }
+
+        .submission-section h3 {
+            color: var(--clr-accent-700);
+            margin: 0 0 15px 0;
+        }
+
+        .submission-section p {
+            color: #495057;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 12px 0;
+        }
+
+        .submission-section p:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            display: inline-block;
+            background-color: var(--clr-accent);
+            color: white;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 96, 84, 0.2);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--clr-accent-600);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 96, 84, 0.3);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(0, 96, 84, 0.2);
+        }
+
+        .btn-submit i {
+            margin-right: 8px;
+        }
+
         .filter-section label {
             font-weight: 600;
             display: block;
@@ -325,6 +382,24 @@
                 width: 100%;
             }
 
+            .submission-section {
+                padding: 20px;
+            }
+
+            .submission-section h2 {
+                font-size: 20px;
+            }
+
+            .submission-section p {
+                font-size: 14px;
+            }
+
+            .btn-submit {
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px;
+            }
+
             .dataTables_filter {
                 float: none;
                 text-align: left;
@@ -353,6 +428,18 @@
         <div class="page-header">
             <h1>Learning Case Studies</h1>
             <p class="lead">Browse and search our collection of PPIE case studies</p>
+        </div>
+
+        <!-- Submission Call-to-Action Section -->
+        <div class="submission-section">
+            <h3>Share Your PPIE Learning</h3>
+            <p>Have you undertaken PPIE activities? We'd love to hear about your experiences! Your case study will help foster empowerment, support professional development, and drive continual improvements in PPIE activities across our community.</p>
+            <p>All submissions become part of our searchable PPIE Training Programme and Resource Hub, helping to build our growing Community of Practice.</p>
+            <a data-featherlight="iframe" href="https://forms.office.com/pages/responsepage.aspx?id=MEu3vWiVVki9vwZ1l3j8vJUvdZIo0a9Oq2tqq2bTLjZUQ0xWT1VNWUpBMUoxUTkwUU9JTTVVUzFWSC4u&route=shorturl" role="button"
+               class="btn-submit"
+               rel="noopener noreferrer">
+                <i class="fa-solid fa-paper-plane"></i> Submit Your Case Study
+            </a>
         </div>
 
         <div class="filter-section">
@@ -385,6 +472,8 @@
                 </div>
             </div>
         </div>
+
+
 
         <div class="table-container">
             <table id="caseStudiesTable" class="display" style="width:100%">
