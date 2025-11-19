@@ -6,6 +6,12 @@ html {
     scroll-behavior: smooth;
 }
 
+// Fix for featherlight lightbox conflict with smooth scroll
+// Disable smooth scroll when lightbox is active to prevent scroll-to-top issue
+html.with-featherlight {
+    scroll-behavior: auto;
+}
+
 // body
 body {
     font-family: var(--ff-body);
