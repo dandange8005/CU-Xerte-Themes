@@ -1005,6 +1005,11 @@ html {
 
 html.with-featherlight {
   scroll-behavior: auto;
+  overflow: visible !important;
+}
+
+html.with-featherlight body {
+  overflow: hidden;
 }
 
 body {
