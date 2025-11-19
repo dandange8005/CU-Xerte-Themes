@@ -2,22 +2,22 @@
     BASE ELEMENTS
 =======================*/
 // Smooth Scroll
-html {
-    scroll-behavior: smooth;
-}
+// html {
+//     scroll-behavior: smooth;
+// }
 
 
 // Fix for featherlight lightbox conflict with smooth scroll
 // Prevent scroll-to-top when lightbox opens by overriding featherlight's overflow hidden
-html.with-featherlight {
-    scroll-behavior: auto;
-    overflow: visible !important;
-}
+// html.with-featherlight {
+//     scroll-behavior: auto;
+//     overflow: visible !important;
+// }
 
-// Apply overflow hidden to body instead to prevent background scroll
-html.with-featherlight body {
-    overflow: hidden;
-}
+// // Apply overflow hidden to body instead to prevent background scroll
+// html.with-featherlight body {
+//     overflow: hidden;
+// }
 
 // body
 body {

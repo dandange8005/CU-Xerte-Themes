@@ -1003,19 +1003,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ======================
     BASE ELEMENTS
 =======================*/
-html {
-  scroll-behavior: smooth;
-}
-
-html.with-featherlight {
-  scroll-behavior: auto;
-  overflow: visible !important;
-}
-
-html.with-featherlight body {
-  overflow: hidden;
-}
-
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-base);
