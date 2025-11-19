@@ -2,22 +2,21 @@
     BASE ELEMENTS
 =======================*/
 // Smooth Scroll
-// html {
-//     scroll-behavior: smooth;
-// }
+html {
+    scroll-behavior: smooth;
+}
 
+// Fix for featherlight lightbox scroll-to-top issue
+// The problem: featherlight applies overflow:hidden to html, which can cause scroll reset
+// Solution: Force html to maintain scrolling capability and control overflow on body
+html.with-featherlight {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}
 
-// Fix for featherlight lightbox conflict with smooth scroll
-// Prevent scroll-to-top when lightbox opens by overriding featherlight's overflow hidden
-// html.with-featherlight {
-//     scroll-behavior: auto;
-//     overflow: visible !important;
-// }
-
-// // Apply overflow hidden to body instead to prevent background scroll
-// html.with-featherlight body {
-//     overflow: hidden;
-// }
+html.with-featherlight body {
+    overflow: hidden !important;
+}
 
 // body
 body {
