@@ -1004,8 +1004,7 @@ html {
 }
 
 html.with-featherlight {
-  overflow-y: scroll !important;
-  overflow-x: hidden !important;
+  overflow: visible !important;
 }
 
 html.with-featherlight body {

@@ -7,11 +7,10 @@ html {
 }
 
 // Fix for featherlight lightbox scroll-to-top issue
-// The problem: featherlight applies overflow:hidden to html, which can cause scroll reset
-// Solution: Force html to maintain scrolling capability and control overflow on body
+// The problem: featherlight applies overflow:hidden to html, which causes scroll reset
+// Solution: Don't apply any overflow changes to html, only to body
 html.with-featherlight {
-    overflow-y: scroll !important;
-    overflow-x: hidden !important;
+    overflow: visible !important;
 }
 
 html.with-featherlight body {
