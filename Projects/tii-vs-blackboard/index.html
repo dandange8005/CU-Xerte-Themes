@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Turnitin Assignment vs Blackboard Assignment Comparison
+
+    A comprehensive comparison guide for Cardiff University staff to help choose
+    between Turnitin Assignment and Blackboard Assignment with Turnitin integration.
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Turnitin Assignment vs Blackboard Assignment - Cardiff University</title>
+
+    <!-- Bootstrap 2.3.2 CSS -->
+    <link rel="stylesheet"
+        href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Cardiff University Theme CSS -->
+    <link rel="stylesheet" href="https://dandange8005.github.io/CU-Xerte-Themes/css/bs_main.min.css">
+
+    <!-- Optional: Local custom styles -->
+    <link rel="stylesheet" href="project-style.css">
+
+    <!-- HTML5 shim for IE8 support -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <style>
+        /* ======================
+  NO TOC Page Template - Article Wide
+  =======================*/
+        /* A single page template with no table of content with default container width*/
+        body {
+            --clr-main-bg: white;
+        }
+
+        /* remove toc */
+        #contentTable {
+            display: none;
+        }
+
+        /*remove left margin for full width*/
+        .row-fluid .span9 {
+            margin-left: 0;
+        }
+
+        /*remove extra spacing*/
+        .navbar-fixed-top {
+            margin-bottom: 0;
+        }
+
+        /* Add full width background to the section container */
+        section {
+            position: relative;
+            box-shadow: none;
+            border-radius: 0;
+            background: none;
+            margin: 0;
+            padding-block: var(--size-fluid-5);
+            overflow: revert;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            width: 100vw;
+            height: 100%;
+            left: calc(-50vw + 50%);
+            z-index: -1;
+            top: 0;
+        }
+
+        /* custom background colour for sections  */
+        section:nth-child(odd)::before {
+            background-color: var(--light);
+        }
+
+        section:nth-child(even)::before {
+            background-color: var(--cu-white);
+        }
+
+        .footer {
+            margin-top: 0;
+        }
+
+        /* Section heading */
+        .page-header {
+            border: none;
+        }
+
+        .page-header h2 {
+            color: var(--clr-accent);
+            font-weight: var(--font-weight-7);
+            margin-top: 0;
+        }
+
+        /*remove scroll to the top button*/
+        .btn-mini {
+            display: none;
+        }
+
+        /* ==========================================
+           COMPARISON TABLE STYLES - APPROACH 6
+           Hybrid: Summary Cards + Detailed Accordion
+           ========================================== */
+
+        /* Summary comparison cards - simplified layout */
+        .comparison-card {
+            padding: var(--size-5) 0;
+            margin-bottom: var(--size-4);
+            border-bottom: 1px solid var(--gray-2);
+        }
+
+        .comparison-card:last-of-type {
+            border-bottom: none;
+        }
+
+        .comparison-card__title {
+            font-size: var(--font-size-3);
+            font-weight: var(--font-weight-6);
+            margin: 0 0 var(--size-4) 0;
+            color: var(--gray-9);
+            display: flex;
+            align-items: center;
+            gap: var(--size-3);
+        }
+
+        .comparison-card__title i {
+            color: var(--clr-accent);
+            font-size: var(--font-size-4);
+        }
+
+        .comparison-card__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--size-5);
+        }
+
+        .comparison-card__side {
+            padding: var(--size-4);
+            background: var(--gray-0);
+            border-radius: var(--radius-2);
+        }
+
+        .comparison-card__side h4 {
+            margin: 0 0 var(--size-3) 0;
+            font-size: var(--font-size-2);
+            color: var(--gray-7);
+            font-weight: var(--font-weight-6);
+        }
+
+        .comparison-card__status {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--size-3);
+        }
+
+        .comparison-card__status-icon {
+            font-size: var(--font-size-4);
+            flex-shrink: 0;
+        }
+
+        .comparison-card__status-text {
+            flex: 1;
+        }
+
+        .comparison-card__status-text strong {
+            display: block;
+            margin-bottom: var(--size-2);
+            color: var(--gray-9);
+        }
+
+        .comparison-card__status-text p {
+            margin: 0;
+            color: var(--gray-7);
+        }
+
+        .comparison-card__note {
+            margin-top: var(--size-4);
+            padding: var(--size-3);
+            background: var(--gray-1);
+            font-size: var(--font-size-1);
+            color: var(--gray-8);
+        }
+
+        /* Accordion styles for detailed comparison */
+        .accordion {
+            margin-top: var(--size-5);
+        }
+
+        .accordion-item {
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-2);
+            margin-bottom: var(--size-3);
+            background: white;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: var(--gray-1);
+            padding: var(--size-4);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: var(--gray-2);
+        }
+
+        .accordion-header h3 {
+            margin: 0;
+            font-size: var(--font-size-3);
+            color: var(--clr-accent);
+            display: flex;
+            align-items: center;
+            gap: var(--size-3);
+        }
+
+        .accordion-toggle {
+            font-size: var(--font-size-4);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 5000px;
+            transition: max-height 0.5s ease;
+        }
+
+        .accordion-body {
+            padding: var(--size-4);
+        }
+
+        /* Feature items within accordion - reuse comparison-card classes */
+        .feature-item {
+            margin-bottom: var(--size-5);
+            padding-bottom: var(--size-5);
+            border-bottom: 1px solid var(--gray-2);
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .feature-item__name {
+            font-weight: var(--font-weight-6);
+            font-size: var(--font-size-2);
+            margin-bottom: var(--size-4);
+            color: var(--gray-9);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .comparison-card__content,
+            .feature-comparison__grid {
+                grid-template-columns: 1fr;
+                gap: var(--size-3);
+            }
+        }
+
+        /* Category count badge */
+        .category-badge {
+            display: inline-block;
+            background: var(--gray-3);
+            color: var(--gray-8);
+            padding: 2px 8px;
+            border-radius: var(--radius-round);
+            font-size: var(--font-size-0);
+            font-weight: var(--font-weight-6);
+            margin-left: var(--size-2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Welcome Section -->
+        <section>
+            <h2>Turnitin Assignment vs Blackboard Assignment: A Comparison Guide</h2>
+
+            <div class="flex flex-wrap">
+                <div class="flex-400">
+                    <p>This guide helps Cardiff University staff understand the key differences between Turnitin
+                        Assignment and Blackboard Assignment (with Turnitin integration) to make informed decisions
+                        about which tool best suits their assessment needs.
+                    </p>
+                    <p><strong>Key considerations when choosing between the two tools:</strong></p>
+                    <ul>
+                        <li>Group work and peer evaluation requirements</li>
+                        <li>Multiple file submission needs</li>
+                        <li>Anonymous and delegated marking workflows</li>
+                        <li>Student submission flexibility and resubmission policies</li>
+                        <li>Feedback release and grading distribution</li>
+                        <li>Integration with other Blackboard tools</li>
+                    </ul>
+                </div>
+                <div class="flex-300">
+                    <div class="callout callout--info">
+                        <h3>Quick Decision Guide</h3>
+                        <p><strong>Choose Turnitin Assignment if you need:</strong></p>
+                        <ul>
+                            <li>Simple single-file submissions</li>
+                            <li>Staff upload on behalf of students</li>
+                            <li>Integrated feedback export to PDF</li>
+                        </ul>
+                        <p><strong>Choose Blackboard Assignment if you need:</strong></p>
+                        <ul>
+                            <li>Group assignments with shared marking</li>
+                            <li>Multiple file submissions</li>
+                            <li>Delegated or parallel marking</li>
+                            <li>Individual student adjustments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             COMPARISON TABLE SECTION - APPROACH 6
+
+             UI/UX Approach: Hybrid - Summary Cards + Detailed Accordion
+
+             WHY THIS APPROACH:
+             - Reduces cognitive load by showing key differences first
+             - Progressive disclosure: users can dive deeper into categories they care about
+             - Mobile-friendly: accordion works well on small screens
+             - Maintains full data accessibility while preventing information overload
+
+             STRUCTURE:
+             1. TIER 1 - Quick Reference Cards (Top 8 most critical differences)
+                - Visual side-by-side comparison
+                - Clear status indicators (✅ ❌ ⚠️)
+                - Quick scanning for decision-making
+
+             2. TIER 2 - Detailed Accordion (All features organized by category)
+                - Grouped by functional category
+                - Expand/collapse for focused reading
+                - Complete feature details for deep research
+             ========================================== -->
+        <section>
+            <h2>Feature Comparison</h2>
+            <p class="lead">Use the quick reference cards below to see the most important differences, then explore detailed comparisons by category.</p>
+
+            <!-- ==========================================
+                 TIER 1: QUICK REFERENCE CARDS
+                 Top 8 most important features that influence decision-making
+                 ========================================== -->
+            <h3>Quick Reference: Most Important Differences</h3>
+
+            <!-- Card 1: Group Submission -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-users"></i>
+                    Group Submission
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">❌</span>
+                            <div class="comparison-card__status-text">
+                                <strong>No</strong>
+                                <p>Requires separate assignments for each group; each student must upload individually</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>Single assignment for multiple groups; any group member can upload for the team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> BB Assignment is significantly better for group work management
+                </div>
+            </div>
+
+            <!-- Card 2: Compatible with Buddycheck -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-user-check"></i>
+                    Compatible with Buddycheck
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">⚠️</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Limited</strong>
+                                <p>Buddycheck works but requires manual mark input for each group member which is repetitive and time-consuming; marks and feedback are not automatically shared</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>Buddycheck available through Course Tools; marks are automatically shared with all group members when marked, enabling efficient peer evaluation workflow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> BB Assignment provides automatic mark sharing for efficient Buddycheck workflow, while Turnitin requires manual mark distribution. Turnitin is not recommended for group assessment.
+                </div>
+            </div>
+
+            <!-- Card 3: Multiple File Submission -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-file-upload"></i>
+                    Multiple File Submission
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">❌</span>
+                            <div class="comparison-card__status-text">
+                                <strong>No</strong>
+                                <p>Students can only submit one file</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>Students can submit multiple files</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> Significant advantage for BB Assignment when students need to submit portfolios or multiple documents
+                </div>
+            </div>
+
+            <!-- Card 4: Delegated Marking -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Delegated Marking
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">❌</span>
+                            <div class="comparison-card__status-text">
+                                <strong>No</strong>
+                                <p>Requires Multiple Markers feature to be turned on</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>Native support with Standard Delegated Marking and Parallel Marking options; built-in reconciliation workflow, automatic assignment distribution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> BB Assignment has native delegated marking with formal reconciliation, while Turnitin requires complex workaround setup
+                </div>
+            </div>
+
+            <!-- Card 5: Reasonable Adjustments -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-user-clock"></i>
+                    Reasonable Adjustments
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">❌</span>
+                            <div class="comparison-card__status-text">
+                                <strong>No</strong>
+                                <p>Cannot set different due dates for individual students with extensions. Extensions need to be facilitated through separate portals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>Through Gradebook, you can set exemptions for students with different due dates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> BB Assignment offers more flexibility for accommodating students with reasonable adjustments
+                </div>
+            </div>
+
+            <!-- Card 6: Staff Upload on Behalf -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-hand-holding-hand"></i>
+                    Staff Upload on Behalf of Student
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>Staff can submit on behalf of students</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">❌</span>
+                            <div class="comparison-card__status-text">
+                                <strong>No</strong>
+                                <p>No capability to submit on behalf of students</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> Turnitin has advantage for handling late or technical submission issues by submitting on behalf of students
+                </div>
+            </div>
+
+            <!-- Card 7: Download Feedback with Assessment -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-download"></i>
+                    Download Assessment and Feedback in One Document
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>All feedback (except voice comments) can be exported to annotated PDF. This can include the similarity report if required.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">❌</span>
+                            <div class="comparison-card__status-text">
+                                <strong>No</strong>
+                                <p>Original files can be bulk exported but annotations cannot</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> Turnitin provides better feedback export capabilities
+                </div>
+            </div>
+
+            <!-- Card 8: Multiple Submissions within 24-Hour Late Period -->
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">
+                    <i class="fa-solid fa-clock"></i>
+                    Multiple Submissions within 24-Hour Late Period
+                </h3>
+                <div class="comparison-card__content">
+                    <div class="comparison-card__side">
+                        <h4>Turnitin Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">❌</span>
+                            <div class="comparison-card__status-text">
+                                <strong>No</strong>
+                                <p>After the due date has passed if students have not already submitted they can only submit once after which the assessment is locked. Staff must manually delete submissions to allow resubmission. Schools need to monitor and respond quickly to such requests.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card__side">
+                        <h4>Blackboard Assignment</h4>
+                        <div class="comparison-card__status">
+                            <span class="comparison-card__status-icon">✅</span>
+                            <div class="comparison-card__status-text">
+                                <strong>Yes</strong>
+                                <p>No restrictions on resubmissions after due date. Students can continue to submit multiple times within 24-hour late period as long as the link is available.</p>
+                                <p><strong>Important:</strong> Students who already submitted on time could resubmit after the due date and inadvertently be allocated the 40% grade cap.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card__note">
+                    <strong>Recommendation:</strong> Turnitin provides better protection against accidental late penalties for students who submitted on time, but requires manual intervention for legitimate late resubmissions. BB Assignment offers more flexibility but requires clear student communication about late penalty risks.
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 TIER 2: DETAILED ACCORDION
+                 All features organized by functional category
+                 Users can expand categories they need to explore in depth
+                 ========================================== -->
+            <h3 style="margin-top: var(--size-7);">Detailed Comparison by Category</h3>
+            <p>Expand each section to see all features within that category.</p>
+
+            <div class="accordion">
+
+                <!-- Category 1: Group Work and Peer Evaluation -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>
+                            <i class="fa-solid fa-users"></i>
+                            Group Work and Peer Evaluation
+                            <span class="category-badge">3 features</span>
+                                            
+                        </h3>
+                        <i class="fa-solid fa-chevron-down accordion-toggle"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+
+                            <!-- Feature: Compatible with Buddycheck -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Compatible with Buddycheck</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">⚠️</span>
+                                            <div class="comparison-card__status-text">
+                                                <strong>Limited</strong>
+                                                <p>Buddycheck works but when it comes to group assignment, Tii requires manual mark input for each group member which is "repetitive and time-consuming"; marks and feedback are not automatically shared among group members.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <div class="comparison-card__status-text">
+                                                <strong>Yes</strong>
+                                                <p>Buddycheck available through Course Tools; Ultra Assignments recommended as marks are automatically shared with all group members when marked, enabling efficient peer evaluation workflow</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both support Buddycheck, but BB Assignment provides automatic mark sharing for efficient Buddycheck workflow, while Turnitin requires manual mark distribution. Generally Turnitin is not recommended for group assessment.
+                                </div>
+                            </div>
+
+                            <!-- Feature: Group Submission -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Group Submission</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <div class="comparison-card__status-text">
+                                                <strong>No</strong>
+                                                <p>Requires separate assignments for each group; each student must upload individually</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <div class="comparison-card__status-text">
+                                                <strong>Yes</strong>
+                                                <p>Single assignment for multiple groups; any group member can upload for the team</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment is significantly better for group work management
+                                </div>
+                            </div>
+
+                            <!-- Feature: Anonymous Delegated Marking -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Anonymous Delegated Marking</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">⚠️</span>
+                                            <div class="comparison-card__status-text">
+                                                <strong>Possible</strong>
+                                                <p>Can combine anonymous marking with group-based delegated marking, but markers see each other's feedback; requires complex setup and coordination</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <div class="comparison-card__status-text">
+                                                <strong>Yes</strong>
+                                                <p>support for anonymous marking with both delegated and parallel marking</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both can handle this, though BB Assignment's delegated marking is more robust overall
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Adjustments and Accommodations -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>
+                            <i class="fa-solid fa-universal-access"></i>
+                            Adjustments and Accommodations
+                            <span class="category-badge">1 feature</span>
+                                            
+                        </h3>
+                        <i class="fa-solid fa-chevron-down accordion-toggle"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+
+                            <!-- Feature: Reasonable Adjustments -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Reasonable Adjustments - Hard Coded?</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - Cannot set different due dates for individual students with extensions. Extensions need to be facilitated through separate portals.</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Through Gradebook, you can set exemptions for students with different due dates</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment offers more flexibility for accommodating students with reasonable adjustments
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Submission & Files -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>
+                            <i class="fa-solid fa-file-upload"></i>
+                            Submission & Files
+                            <span class="category-badge">10 features</span>
+                                            
+                        </h3>
+                        <i class="fa-solid fa-chevron-down accordion-toggle"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+
+                            <!-- Feature: Multiple File Submission -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Multiple File Submission</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - Students can only submit one file</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Students can submit multiple files</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Significant advantage for BB Assignment when students need to submit portfolios or multiple documents
+                                </div>
+                            </div>
+
+                            <!-- Feature: Maximum File Size -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Maximum File Size</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">⚠️</span>
+                                            <p>100MB - Hard limit</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p>No file size limit (though not suitable for video files)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> For similarity reports in BB Assignment, files should not exceed 100MB. Reference: <a href="https://desystemshelp.leeds.ac.uk/minerva-staff/assess-and-evaluate/blackboard-assignment/blackboard-assignment-or-turnitin/">Leeds University Staff Guide</a>
+                                </div>
+                            </div>
+
+                            <!-- Feature: Single Submissions -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Single Submissions</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - you can specify the assignment only allows for a single upload attempt by using the 'Students cannot resubmit' option</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - you can specify the assignment only allows for a single upload attempt by keeping the 'Attempts allowed' setting to the default of '1' in the assessment settings</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Generally, not recommended these settings are used as they can cause additional administrative overheads by students submitting incorrect files or wanting to revise their submissions before the due date. This requires staff to manually delete the previous attempt in a timely manner.
+                                </div>
+                            </div>
+
+                            <!-- Feature: Multiple Submissions (Until due date) -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Multiple Submissions (Until Due Date)</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - allows student unlimited attempts until due date. This can be specified by using the 'Students can resubmit until due date' option. However, originality reports are only generated 3 times within a 24 hour period of resubmitting multiple attempts.</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - by changing the 'Attempts allowed' setting from the default of '1' to however many attempts you would like students to have, or the 'unlimited' option</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> This is the preferred setting to reduce admin overhead. However it is worth noting that unlike Turnitin, there does not seem to be the same limit for 3 originality reports in 24 hours, however it <a href="https://guides.turnitin.com/hc/en-us/articles/24000189439245-Blackboard-Ultra-Assignment-FAQ-for-instructors">can take up to 24 hours for an originality report to generate</a> when enabling originality report in BB assignments.
+                                </div>
+                            </div>
+
+                            <!-- Feature: Overwrites Previous Student Submissions -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Overwrites Previous Student Submissions</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - When multiple attempts are allowed, only the last attempt is preserved</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - Allows students to submit and retain multiple drafts</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Different approaches - Turnitin replaces, BB Assignment preserves all attempts.
+                                </div>
+                            </div>
+
+                            <!-- Feature: Multiple Submissions within 24-Hour Late Period -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Multiple Submissions within 24-Hour Late Period</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - After the due date has passed if students have not already submitted they can only submit once after which the assessment is locked. In the event the student need to resubmit either due to an incorrect or updated file within the 24 hour period a member of staff must carefully delete the original submission allowing the student to submit once again. Schools need to monitor and respond quickly to such requests, otherwise Extenuating Circumstances or appeals may arise if requests not handled within 24 hours.</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - There are no restrictions on resubmissions after due date. Students can continue to submit multiple times within 24-hour late period as long as the link is available. However, this flexibility means students who already submitted on time could resubmit after the due date and inadvertently be allocated the 40% grade cap if the wrong submission was marked. <strong>Important: Advise students that any submission made after the due date may result in the 40% late penalty being applied even if they submitted before the due date.</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Turnitin provides better protection against accidental late penalties for students who submitted on time, but requires manual intervention for legitimate late resubmissions. BB Assignment offers more flexibility but requires clear student communication about late penalty risks.
+                                </div>
+                            </div>
+
+                            <!-- Feature: Collates Each Student's Submissions -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Collates Each of a Student's Submissions</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - Only preserves final submission</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Retains all submission attempts</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment provides better submission history tracking
+                                </div>
+                            </div>
+
+                            <!-- Feature: Late Submissions Clearly Labelled -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Late Submissions Clearly Labelled</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both systems can handle this
+                                </div>
+                            </div>
+
+                            <!-- Feature: Download Assessment and Feedback Separately -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Download Assessment and Feedback Separately</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Can download original submission separately</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Can download original files separately</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both support separate downloads
+                                </div>
+                            </div>
+
+                            <!-- Feature: Download Assessment and Feedback in One Document -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Download Assessment and Feedback in One Document</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - All feedback (except voice comments) can be exported to annotated PDF. This can include the similarity report if required.</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - Original files can be bulk exported but annotations cannot</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Turnitin provides better feedback export capabilities
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Marking Workflows -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            Marking Workflows
+                            <span class="category-badge">5 features</span>
+                                            
+                        </h3>
+                        <i class="fa-solid fa-chevron-down accordion-toggle"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+
+                            <!-- Feature: Anonymous Marking -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Anonymous Marking</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Complete anonymity until feedback release; can reveal individual student names during marking; anonymity cannot be restored once removed</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Complete anonymity until all marks are posted; cannot reveal individual names during marking process. <strong>Caution:</strong> Bug identified in Jan 2025 that can compromise anonymity when clicking 'information' button during marking</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both support anonymous marking but BB Assignment has workflow restrictions and current anonymity bug. Turnitin allows more flexible individual name revelation during marking process. Important to note that Anonymity is not total where cover sheets include student ID numbers etc.
+                                </div>
+                            </div>
+
+                            <!-- Feature: Delegated Marking -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Delegated Marking</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - requires Multiple Markers feature turn on</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Native support with Standard Delegated Marking and Parallel Marking options; built-in reconciliation workflow, automatic assignment distribution. <br><br><strong>⚠️ Limitations:</strong><br>• <strong>Single mark:</strong> Unlike "Parallel Marking" where two markers mark the same student's work, in Delegate Marking, only one marker is responsible for grading each student's submission. If two markers accidentally mark the same paper, the second mark will overwrite the first one.<br>• Currently, Delegate Grading cannot be used for group assessments or in conjunction with Parallel Grading.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment has native delegated marking with formal reconciliation, while Turnitin requires complex workaround setup
+                                </div>
+                            </div>
+
+                            <!-- Feature: Offline Submissions -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Offline Submissions</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> – Primarily used for online submission</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> – offers native offline submission</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment provides native function to accommodate offline submission
+                                </div>
+                            </div>
+
+                            <!-- Feature: Staff Upload on Behalf of Student -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Staff Upload on Behalf of Student</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Staff can submit on behalf of students</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - No capability to submit on behalf of students</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Turnitin has advantage for handling late or technical submission issues by submitting on behalf of students.
+                                </div>
+                            </div>
+
+                            <!-- Feature: Blind Double Marking (Parallel Marking) -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Blind Double Marking (Parallel Marking)</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">❌</span>
+                                            <p><strong>No</strong> - Requires workaround with separate assignments and manual reconciliation</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">⚠️</span>
+                                            <p><strong>Limited</strong> - Parallel marking is available but with limitations:<br>
+                                            • Parallel marking cannot be used with group assessments.<br>
+                                            • Parallel marking is not compatible with delegated marking. They cannot be used together<br>
+                                            • Annotations added by a marker to student files are not visible to students or reconcilers.<br>
+                                            • Turnitin similarity reports are not available for parallel grading.<br>
+                                            • You cannot directly assign specific markers to specific students. The system randomly assigns students to markers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment has built-in support, though with some limitations when Turnitin integration is used
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5: Feedback and Grade Release -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>
+                            <i class="fa-solid fa-comment-dots"></i>
+                            Feedback and Grade Release
+                            <span class="category-badge">7 features</span>
+                                            
+                        </h3>
+                        <i class="fa-solid fa-chevron-down accordion-toggle"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+
+                            <!-- Feature: Originality Report -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Originality Report</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - When Turnitin integration is enabled, but not available for group assignments, peer review, or parallel marking</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both provide originality reports, but BB Assignment has some limitations in specific scenarios
+                                </div>
+                            </div>
+
+                            <!-- Feature: Adaptive Release -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Adaptive Release</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">⚠️</span>
+                                            <p><strong>Limited</strong> - If assignment is hidden using Release Conditions, Gradebook column and mark will still be visible after Feedback Release Date</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Better integration with Blackboard's release conditions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment provides more seamless adaptive release functionality
+                                </div>
+                            </div>
+
+                            <!-- Feature: Single Feedback Date -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Single Feedback Date</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Has feedback release date functionality</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Supports posting all marks together</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both can handle unified feedback release
+                                </div>
+                            </div>
+
+                            <!-- Feature: Multiple Feedback Dates -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Multiple Feedback Dates</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">⚠️</span>
+                                            <p><strong>Limited</strong> - Cannot set different feedback dates for individual students</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Can post marks individually if not anonymous</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> BB Assignment offers more flexibility for multiple feedback release
+                                </div>
+                            </div>
+
+                            <!-- Feature: Automatic Mark and Feedback Release -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Automatic Mark and Feedback Release</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Can set automatic feedback release date</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Can configure automatic posting</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both support automated release functionality
+                                </div>
+                            </div>
+
+                            <!-- Feature: Manual Mark and Feedback Release -->
+                            <div class="feature-item">
+                                <div class="feature-item__name">Manual Mark and Feedback Release</div>
+                                <div class="comparison-card__content">
+                                    <div class="comparison-card__side">
+                                        <h4>Turnitin Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Manual control over feedback release</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-card__side">
+                                        <h4>Blackboard Assignment</h4>
+                                        <div class="comparison-card__status">
+                                            <span class="comparison-card__status-icon">✅</span>
+                                            <p><strong>Yes</strong> - Manual posting control available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-card__note">
+                    <strong>Note:</strong> Both provide manual override capabilities
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Resources Section -->
+        <section>
+            <h2>Additional Resources</h2>
+
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <h3><i class="fa-solid fa-book"></i> Documentation</h3>
+                    <ul>
+                        <li><a href="https://desystemshelp.leeds.ac.uk/minerva-staff/assess-and-evaluate/blackboard-assignment/blackboard-assignment-or-turnitin/">Leeds
+                                University Staff Guide</a></li>
+                        <li><a
+                                href="https://guides.turnitin.com/hc/en-us/articles/24000189439245-Blackboard-Ultra-Assignment-FAQ-for-instructors">Turnitin
+                                Blackboard Ultra FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="bento-item">
+                    <h3><i class="fa-solid fa-question-circle"></i> Support</h3>
+                    <p>For further assistance with choosing between Turnitin Assignment and Blackboard Assignment,
+                        please contact your local learning technology support team.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+    <!-- jQuery (required for Bootstrap 2.3.2) -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap 2.3.2 JS -->
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- ==========================================
+         ACCORDION FUNCTIONALITY
+         Handles expand/collapse behavior for detailed comparison sections
+         ========================================== -->
+    <script>
+        // Toggle accordion content visibility
+        function toggleAccordion(header) {
+            // Get the content div (next sibling of header)
+            const content = header.nextElementSibling;
+            // Get the toggle icon
+            const toggleIcon = header.querySelector('.accordion-toggle');
+
+            // Toggle active class on content
+            content.classList.toggle('active');
+            // Toggle active class on icon for rotation
+            toggleIcon.classList.toggle('active');
+
+            // Optional: Close other accordions (uncomment if you want only one open at a time)
+            /*
+            const allAccordionContents = document.querySelectorAll('.accordion-content');
+            const allToggleIcons = document.querySelectorAll('.accordion-toggle');
+
+            allAccordionContents.forEach((item) => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                }
+            });
+
+            allToggleIcons.forEach((icon) => {
+                if (icon !== toggleIcon) {
+                    icon.classList.remove('active');
+                }
+            });
+            */
+        }
+
+        // Optional: Add keyboard accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                // Make headers focusable
+                header.setAttribute('tabindex', '0');
+
+                // Add keyboard support (Enter or Space to toggle)
+                header.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleAccordion(this);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
