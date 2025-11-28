@@ -99,7 +99,7 @@
             display: none;
         }
 
-        /* DataTable customization for clean, minimal design */
+        /* DataTable customization */
         .dataTables_wrapper {
             padding: var(--size-4) 0;
         }
@@ -108,25 +108,27 @@
             margin-bottom: var(--size-4);
         }
 
-        .dataTables_filter input {
-            padding: var(--size-2) var(--size-3);
+        /* Common input/control styles */
+        .dataTables_filter input,
+        .dataTables_length select {
             border: 1px solid var(--gray-3);
             border-radius: var(--radius-2);
+        }
+
+        .dataTables_filter input {
+            padding: var(--size-2) var(--size-3);
             margin-left: var(--size-2);
-            font-size: var(--font-size-1);
         }
 
         .dataTables_length select {
             padding: var(--size-2);
-            border: 1px solid var(--gray-3);
-            border-radius: var(--radius-2);
             margin: 0 var(--size-2);
         }
 
+        /* Table styles */
         #comparisonTable {
             width: 100% !important;
             border-collapse: collapse;
-            font-size: var(--font-size-1);
         }
 
         #comparisonTable thead {
@@ -136,8 +138,8 @@
         #comparisonTable thead th {
             padding: var(--size-3);
             font-weight: var(--font-weight-6);
-            color: var(--gray-9);
-            border-bottom: 2px solid var(--clr-accent);
+            color: white;
+            border-bottom: 2px solid var(--gray-2);
             text-align: left;
         }
 
@@ -157,42 +159,48 @@
             margin-right: var(--size-2);
         }
 
-        /* Category badges with color coding */
+        /* Category badges */
         .category-badge {
             display: inline-block;
-            padding: 4px 10px;
+            padding: var(--size-1) var(--size-3);
             border-radius: var(--radius-2);
             font-size: var(--font-size-0);
             font-weight: var(--font-weight-6);
             white-space: nowrap;
         }
 
-        .category-badge--group {
-            background: #e3f2fd;
-            color: #1565c0;
+        /* Category color variants - used by both badges and filter buttons */
+        .category-badge--group,
+        .filter-btn--group {
+            background: var(--blue-1);
+            color: var(--blue-9);
         }
 
-        .category-badge--accommodations {
-            background: #f3e5f5;
-            color: #6a1b9a;
+        .category-badge--accommodations,
+        .filter-btn--accommodations {
+            background: var(--violet-1);
+            color: var(--violet-9);
         }
 
-        .category-badge--submissions {
-            background: #e8f5e9;
-            color: #2e7d32;
+        .category-badge--submissions,
+        .filter-btn--submissions {
+            background: var(--green-1);
+            color: var(--green-9);
         }
 
-        .category-badge--marking {
-            background: #fff3e0;
-            color: #e65100;
+        .category-badge--marking,
+        .filter-btn--marking {
+            background: var(--orange-1);
+            color: var(--orange-9);
         }
 
-        .category-badge--feedback {
-            background: #fce4ec;
-            color: #c2185b;
+        .category-badge--feedback,
+        .filter-btn--feedback {
+            background: var(--pink-1);
+            color: var(--pink-9);
         }
 
-        /* Category filter buttons */
+        /* Category filters */
         .category-filters {
             margin-bottom: var(--size-4);
             display: flex;
@@ -206,12 +214,16 @@
             margin-right: var(--size-2);
         }
 
-        .filter-btn {
+        /* Common button styles */
+        .filter-btn,
+        .dataTables_paginate .paginate_button {
             padding: var(--size-2) var(--size-3);
-            border: 2px solid transparent;
             border-radius: var(--radius-2);
             cursor: pointer;
-            font-size: var(--font-size-1);
+        }
+
+        .filter-btn {
+            border: 2px solid transparent;
             font-weight: var(--font-weight-5);
             transition: all 0.2s ease;
         }
@@ -230,55 +242,15 @@
             color: var(--gray-9);
         }
 
-        .filter-btn--all.active {
-            background: var(--gray-9);
-            color: white;
-        }
-
-        .filter-btn--group {
-            background: #e3f2fd;
-            color: #1565c0;
-        }
-
-        .filter-btn--accommodations {
-            background: #f3e5f5;
-            color: #6a1b9a;
-        }
-
-        .filter-btn--submissions {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .filter-btn--marking {
-            background: #fff3e0;
-            color: #e65100;
-        }
-
-        .filter-btn--feedback {
-            background: #fce4ec;
-            color: #c2185b;
-        }
-
-        /* Responsive table wrapper */
-        .table-responsive {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* DataTables info and pagination styling */
+        /* Pagination */
         .dataTables_info,
         .dataTables_paginate {
             margin-top: var(--size-4);
-            font-size: var(--font-size-1);
         }
 
         .dataTables_paginate .paginate_button {
-            padding: var(--size-2) var(--size-3);
             margin: 0 2px;
             border: 1px solid var(--gray-3);
-            border-radius: var(--radius-2);
-            cursor: pointer;
         }
 
         .dataTables_paginate .paginate_button.current {
@@ -289,6 +261,12 @@
 
         .dataTables_paginate .paginate_button:hover:not(.current) {
             background: var(--gray-1);
+        }
+
+        /* Responsive table wrapper */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
     </style>
 </head>
@@ -316,13 +294,12 @@
                 </div>
                 <div class="flex-300">
                     <div class="callout callout--info">
-                        <h3>Quick Tips</h3>
+                        <p><strong>Quick Tips</strong></p>
                         <ul>
                             <li>Use the search box to find specific features</li>
                             <li>Click column headers to sort</li>
                             <li>Look for ✅ (Yes), ❌ (No), or ⚠️ (Limited) icons</li>
                         </ul>
-                        <p style="margin-top: var(--size-3);"><a href="index.html">View Card Comparison →</a></p>
                     </div>
                 </div>
             </div>
