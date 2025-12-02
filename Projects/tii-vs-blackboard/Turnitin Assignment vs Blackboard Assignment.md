@@ -59,5 +59,5 @@ This document provides a comprehensive comparison of features between Turnitin A
 | **Download Assessment and Feedback Separately** | ✅ Yes - Can download original submission separately | ✅ Yes - Can download original files separately | Both support separate downloads |
 | **Single Feedback Date** | ✅ Yes - Has feedback release date functionality | ✅ Yes - Supports posting all marks together | Both can handle unified feedback release |
 | **Multiple Feedback Dates** | ⚠️ Limited - Cannot set different feedback dates for individual students | ✅ Yes - Can post marks individually if not anonymous | BB Assignment offers more flexibility for multiple feedback release |
-| **Automatic Mark and Feedback Release** | ✅ Yes - Can set automatic feedback release date | ✅ Yes - Can configure automatic posting | Both support automated release functionality |
+| **Automatic Mark and Feedback Release** | ✅ Yes - Can set automatic feedback release date | ❌ No - marks need to be posted manually for release on a specific date' | Blackboard assignment marks are either released individually as soon as they are marked or all together with manual posting |
 | **Manual Mark and Feedback Release** | ✅ Yes - Manual control over feedback release | ✅ Yes - Manual posting control available | Both provide manual override capabilities |
