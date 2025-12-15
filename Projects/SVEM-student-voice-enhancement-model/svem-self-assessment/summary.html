@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVEM Self-Assessment - Summary Report</title>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- XOT Main Theme -->
+    <link rel="stylesheet" href="../../../css/xot_main.css">
+
+    <!-- Custom Project Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+        /* Summary Page Specific Styles */
+        .summary-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .report-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .report-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #2c3e50;
+        }
+
+        .report-meta {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #5f6c7b;
+        }
+
+        .report-meta strong {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .chart-container h2 {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        /* Theme Section */
+        .theme-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .theme-section h2 {
+            font-size: 1.5rem;
+            margin: 0 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #dae1e7;
+            color: #003366;
+        }
+
+        /* Section Block */
+        .section-block {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .section-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .section-score {
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        .section-score.high { color: #27ae60; background: #d4edda; }
+        .section-score.medium { color: #f39c12; background: #fff3cd; }
+        .section-score.low { color: #c0392b; background: #f8d7da; }
+        .section-score.none { color: #6c757d; background: #e9ecef; }
+
+        .section-content {
+            padding: 1.5rem;
+        }
+
+        .evidence-display {
+            margin-bottom: 1rem;
+        }
+
+        .evidence-display strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .evidence-display p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #2c3e50;
+            white-space: pre-wrap;
+            margin: 0;
+        }
+
+        .evidence-display p.empty {
+            color: #adb5bd;
+            font-style: italic;
+        }
+
+        /* Action Buttons */
+        .report-actions {
+            margin-top: 3rem;
+            text-align: center;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .report-actions p {
+            margin-bottom: 1.5rem;
+            color: #5f6c7b;
+        }
+
+        .report-actions button {
+            margin: 0.5rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .summary-page {
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .btn, .btn-primary, .btn-secondary, .page-navigation, .report-actions {
+                display: none !important;
+            }
+
+            .report-header {
+                box-shadow: none;
+                border: none;
+                border-bottom: 3px solid #000;
+                page-break-after: avoid;
+            }
+
+            .chart-container {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            .theme-section, .section-block {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+
+            .section-block {
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* Completion Summary */
+        .completion-summary {
+            background: #e6f0fa;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .completion-summary h3 {
+            margin: 0 0 1rem 0;
+            color: #003366;
+        }
+
+        .completion-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #5f6c7b;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary-page">
+
+        <!-- Report Header -->
+        <div class="report-header">
+            <div>
+                <h1>Student Voice Enhancement Model</h1>
+                <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: #5f6c7b;">Self-Assessment Report</p>
+            </div>
+            <div class="report-meta">
+                <strong>Date:</strong>
+                <span id="report-date"></span>
+                <strong style="margin-top: 0.5rem;">Status:</strong>
+                <span id="report-status">Draft</span>
+            </div>
+        </div>
+
+        <!-- Completion Summary -->
+        <div class="completion-summary">
+            <h3>Assessment Completion Summary</h3>
+            <div class="completion-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="completed-count">0</div>
+                    <div class="stat-label">Sections Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Total Sections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="completion-percent">0%</div>
+                    <div class="stat-label">Overall Progress</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="average-score">0.0</div>
+                    <div class="stat-label">Average Score</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Visualization -->
+        <div class="chart-container">
+            <h2>Maturity Level Overview</h2>
+            <canvas id="maturityChart"></canvas>
+        </div>
+
+        <!-- Report Body -->
+        <div id="report-body">
+            <!-- Content will be generated here by JavaScript -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="report-actions">
+            <p>Review your assessment above. Print or download your data for records.</p>
+            <button class="btn-secondary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <button class="btn-secondary" onclick="downloadJSON()">📥 Download Data (JSON)</button>
+            <button class="btn-primary" onclick="window.location.href='themes-overview.html'">✏️ Continue Editing</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="page-navigation">
+            <button class="btn-secondary" onclick="window.location.href='themes-overview.html'">← Back to Themes</button>
+        </div>
+
+    </div>
+
+    <script>
+        // Section definitions matching your project structure
+        const sections = [
+            { id: 'roles', title: 'Roles and Structures', theme: 'Theme 1: Structures Supporting Student Voice' },
+            { id: 'training', title: 'SV Training, Development, and Dissemination', theme: 'Theme 1: Structures Supporting Student Voice' },
+            { id: 'reps-ssps', title: 'Student Reps and Student-Staff Panels', theme: 'Theme 2: Student Reps & SSPs' },
+            { id: 'mme', title: 'Mid-Module Enhancement (MME)', theme: 'Theme 3: Formal Mechanisms' },
+            { id: 'me', title: 'End of Module Enhancement (ME)', theme: 'Theme 3: Formal Mechanisms' },
+            { id: 'nss', title: 'National Student Survey (NSS)', theme: 'Theme 3: Formal Mechanisms' },
+            { id: 'pg', title: 'PG Surveys (CUPTS & PRES)', theme: 'Theme 3: Formal Mechanisms' }
+        ];
+
+        let myChart = null;
+
+        // Initialize on page load
+        window.onload = function() {
+            // Set date
+            const today = new Date();
+            document.getElementById('report-date').innerText = today.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            generateReport();
+        };
+
+        function generateReport() {
+            const reportBody = document.getElementById('report-body');
+
+            // Collect all data
+            const allData = {};
+            let completedCount = 0;
+            let totalScore = 0;
+            let scoredCount = 0;
+
+            sections.forEach(sec => {
+                const saved = JSON.parse(localStorage.getItem(`sv_${sec.id}`)) || { score: 0, note: "" };
+                allData[sec.id] = { ...sec, ...saved };
+
+                if (saved.score > 0) {
+                    completedCount++;
+                    totalScore += saved.score;
+                    scoredCount++;
+                }
+            });
+
+            // Update completion stats
+            document.getElementById('completed-count').innerText = completedCount;
+            const completionPercent = Math.round((completedCount / sections.length) * 100);
+            document.getElementById('completion-percent').innerText = completionPercent + '%';
+
+            const avgScore = scoredCount > 0 ? (totalScore / scoredCount).toFixed(1) : '0.0';
+            document.getElementById('average-score').innerText = avgScore;
+
+            // Update status
+            if (completedCount === sections.length) {
+                document.getElementById('report-status').innerText = 'Complete';
+            } else if (completedCount > 0) {
+                document.getElementById('report-status').innerText = 'In Progress';
+            }
+
+            // Generate chart
+            generateChart(allData);
+
+            // Generate report sections
+            let html = '';
+            let currentTheme = '';
+
+            sections.forEach(sec => {
+                const data = allData[sec.id];
+
+                // Add theme header if new theme
+                if (data.theme !== currentTheme) {
+                    if (currentTheme !== '') {
+                        html += '</div>'; // Close previous theme section
+                    }
+                    html += `<div class="theme-section"><h2>${data.theme}</h2>`;
+                    currentTheme = data.theme;
+                }
+
+                // Determine score class
+                let scoreClass = 'none';
+                if (data.score >= 4) scoreClass = 'high';
+                else if (data.score >= 3) scoreClass = 'medium';
+                else if (data.score > 0) scoreClass = 'low';
+
+                // Build section block
+                html += `
+                    <div class="section-block">
+                        <div class="section-header">
+                            <h3>${data.title}</h3>
+                            <span class="section-score ${scoreClass}">
+                                ${data.score > 0 ? 'Level ' + data.score : 'Not Assessed'}
+                            </span>
+                        </div>
+                        <div class="section-content">
+                            <div class="evidence-display">
+                                <strong>Evidence & Contextual Notes</strong>
+                                <p class="${data.note ? '' : 'empty'}">
+                                    ${data.note || 'No evidence provided'}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Close final theme section
+            if (currentTheme !== '') {
+                html += '</div>';
+            }
+
+            reportBody.innerHTML = html;
+        }
+
+        function generateChart(data) {
+            const labels = [];
+            const dataPoints = [];
+
+            sections.forEach(sec => {
+                const sectionData = data[sec.id];
+
+                // Create short labels for chart
+                let shortLabel = sec.title;
+                if (shortLabel.length > 25) {
+                    shortLabel = sec.id.toUpperCase();
+                }
+
+                labels.push(shortLabel);
+                dataPoints.push(sectionData.score || 0);
+            });
+
+            const ctx = document.getElementById('maturityChart');
+
+            // Destroy existing chart if it exists
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            myChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Current Maturity Level',
+                        data: dataPoints,
+                        backgroundColor: 'rgba(0, 51, 102, 0.2)',
+                        borderColor: 'rgba(0, 51, 102, 1)',
+                        pointBackgroundColor: 'rgba(0, 51, 102, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(0, 51, 102, 1)',
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true,
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 5,
+                            ticks: {
+                                stepSize: 1,
+                                backdropColor: 'transparent',
+                                color: '#666',
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 11
+                                },
+                                color: '#2c3e50'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 13
+                                },
+                                color: '#2c3e50'
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            padding: 12,
+                            titleFont: {
+                                size: 13
+                            },
+                            bodyFont: {
+                                size: 12
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 0 // Disable animation for printing
+                    }
+                }
+            });
+        }
+
+        function downloadJSON() {
+            const exportData = {};
+            const metadata = {
+                exportDate: new Date().toISOString(),
+                version: '1.0',
+                assessmentType: 'SVEM Self-Assessment'
+            };
+
+            sections.forEach(sec => {
+                const saved = localStorage.getItem(`sv_${sec.id}`);
+                if (saved) {
+                    exportData[sec.id] = JSON.parse(saved);
+                }
+            });
+
+            const fullExport = {
+                metadata: metadata,
+                data: exportData
+            };
+
+            const dataStr = JSON.stringify(fullExport, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `svem_assessment_${new Date().toISOString().slice(0, 10)}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
