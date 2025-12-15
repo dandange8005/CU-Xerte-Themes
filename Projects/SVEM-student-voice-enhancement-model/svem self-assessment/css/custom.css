@@ -1,0 +1,698 @@
+/* ========================================
+   SVEM Self-Assessment Custom Styles
+   ========================================
+
+   Custom styles for the SVEM Self-assessment project
+   Built on top of xot_main.css theme
+   ======================================== */
+
+/* ========================================
+   CSS Custom Properties
+   ======================================== */
+:root {
+    /* Project-specific color variables can be added here */
+    /* Example: --svem-primary: #d4374a; */
+}
+
+/* ========================================
+   Layout Styles
+   ======================================== */
+
+/* Main container */
+.svem-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ========================================
+   Component Styles
+   ======================================== */
+
+/* Navigation between pages */
+.svem-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.svem-navigation button {
+    padding: 0.75rem 1.5rem;
+}
+
+/* ========================================
+   Page-Specific Styles
+   ======================================== */
+
+/* Title Page */
+.title-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
+
+.title-page__icon {
+    margin-bottom: 2rem;
+}
+
+.title-page__icon .icon {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.title-page__main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    max-width: 800px;
+}
+
+.title-page__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: #6c757d;
+    margin: 0 0 3rem 0;
+    max-width: 600px;
+}
+
+.title-page__enter-btn {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+}
+
+.title-page__enter-btn:hover {
+    background-color: #1a252f;
+    transform: translateY(-2px);
+}
+
+.title-page__enter-btn:active {
+    transform: translateY(0);
+}
+
+.title-page__footer {
+    margin-top: auto;
+    padding-top: 3rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.title-page__footer p {
+    margin: 0;
+}
+
+/* Instructions Page */
+.instructions-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f7f6;
+}
+
+.instructions-container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.instructions-page__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: #003366;
+    margin: 0 0 2rem 0;
+    line-height: 1.2;
+}
+
+.instructions-page__description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #5f6c7b;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+}
+
+.instructions-page__info-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+}
+
+.info-card__value {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.info-card__label {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.instructions-page__cta-btn {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.instructions-page__cta-btn:hover {
+    background-color: #002244;
+    transform: translateY(-2px);
+}
+
+.instructions-page__cta-btn:active {
+    transform: translateY(0);
+}
+
+/* Themes Overview Page */
+.themes-overview {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background-color: #f4f7f6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.themes-overview__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #dae1e7;
+}
+
+.themes-overview__description {
+    font-size: 1rem;
+    color: #5f6c7b;
+    margin-bottom: 2rem;
+}
+
+/* Theme Cards */
+.theme-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.3s ease;
+    border-left: 5px solid transparent;
+}
+
+.theme-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-card.completed {
+    border-left-color: #27ae60;
+}
+
+.theme-card.in-progress {
+    border-left-color: #f39c12;
+}
+
+.theme-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.theme-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    flex: 1;
+}
+
+.theme-card__description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 1rem 0;
+}
+
+/* Theme Status Badge */
+.theme-status {
+    flex-shrink: 0;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.status-not-started {
+    background: #e0e0e0;
+    color: #666;
+}
+
+.status-badge.status-in-progress {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #f39c12;
+}
+
+.status-badge.status-complete {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #27ae60;
+}
+
+/* Theme Progress */
+.theme-progress {
+    margin-top: 0.75rem;
+}
+
+.theme-progress__bar {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.theme-progress__fill {
+    height: 100%;
+    background: #27ae60;
+    transition: width 0.5s ease;
+    border-radius: 3px;
+}
+
+.theme-card.in-progress .theme-progress__fill {
+    background: #f39c12;
+}
+
+.theme-progress__text {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Actions */
+.themes-overview__actions {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #002244;
+}
+
+/* Individual Theme Pages */
+/* Theme Page Container - Single Column Layout */
+.theme-page-container {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Content */
+.main-content {
+    padding: 2rem 3rem;
+    max-width: 900px;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.main-content header {
+    margin-bottom: 2rem;
+}
+
+.theme-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #595959;
+    letter-spacing: 1px;
+}
+
+.main-content h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.theme-description {
+    color: #595959;
+    margin-top: 0.5rem;
+}
+
+/* Section Header with Toggle Button */
+.section-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0 0.75rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 0.4rem;
+}
+
+.section-header-wrapper h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: 1px solid #e5e5e5;
+    color: #595959;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toggle-btn:hover {
+    border-color: #595959;
+    color: #1a1a1a;
+}
+
+.toggle-icon {
+    font-size: 1.1em;
+    line-height: 1;
+    font-weight: 300;
+}
+
+/* Accordion System */
+.level-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 2rem;
+}
+
+details {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+details:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+details[open] {
+    border-color: #595959;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+summary {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Level Indicator Bar */
+summary::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+}
+
+/* Specific Level Colors (Grayscale) */
+details.l1 summary::before {
+    background-color: #d6d6d6;
+}
+
+details.l2 summary::before {
+    background-color: #a3a3a3;
+}
+
+details.l3 summary::before {
+    background-color: #737373;
+}
+
+details.l4 summary::before {
+    background-color: #404040;
+}
+
+details.l5 summary::before {
+    background-color: #000000;
+}
+
+/* Level Header */
+.level-header {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.8rem;
+}
+
+.level-number {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #595959;
+    margin-bottom: 2px;
+}
+
+.level-title {
+    font-size: 0.95rem;
+    color: #1a1a1a;
+}
+
+/* Content Body */
+.content-body {
+    padding: 0.8rem 1rem 1rem 1.8rem;
+    color: #595959;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.content-body ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.content-body li {
+    margin-bottom: 0.3rem;
+}
+
+/* Expand/Collapse Icon */
+summary::after {
+    content: '+';
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-left: auto;
+    color: #595959;
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+/* Page Navigation */
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Scoring Interface */
+.score-badge {
+    background: #eee;
+    color: #555;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.score-badge.active {
+    background: #003366;
+    color: #fff;
+}
+
+.scoring-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.score-btn {
+    padding: 6px 12px;
+    border: 1px solid #003366;
+    background: #fff;
+    color: #003366;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    flex-grow: 1;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.score-btn:hover {
+    background: #e6f0fa;
+}
+
+.score-btn.active {
+    background: #003366;
+    color: #fff;
+}
+
+/* Evidence Box */
+.evidence-box {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.evidence-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.evidence-input:focus {
+    outline: none;
+    border-color: #003366;
+}
+
+/* Selected Level Highlighting */
+details.selected-level {
+    border: 2px solid #003366;
+    background-color: #e6f0fa;
+}
+
+/* Toast Notification */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 100;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
+/* Summary Page */
+.summary-page {
+    /* Add specific styles as needed */
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+/* Add project-specific utility classes as needed */

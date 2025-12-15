@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVEM Self-Assessment - Themes Overview</title>
+
+    <!-- XOT Main Theme -->
+    <link rel="stylesheet" href="../../../css/xot_main.css">
+
+    <!-- Custom Project Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <main class="themes-overview">
+        <div class="container">
+            <h2 class="themes-overview__title">Select a Theme to Assess</h2>
+            <p class="themes-overview__description">
+                You can complete these in any order. Evidence is saved automatically.
+            </p>
+
+            <div class="theme-card" id="card-theme1" onclick="window.location.href='theme-1.html'">
+                <div class="theme-card__header">
+                    <h3 class="theme-card__title">Theme 1: Structures Supporting Student Voice</h3>
+                    <span class="theme-status" id="status-theme1">
+                        <span class="status-badge">Not Started</span>
+                    </span>
+                </div>
+                <p class="theme-card__description">Roles, Committees, Training & Development</p>
+                <div class="theme-progress" id="progress-theme1">
+                    <div class="theme-progress__bar">
+                        <div class="theme-progress__fill" style="width: 0%"></div>
+                    </div>
+                    <span class="theme-progress__text">0 of 2 sections completed</span>
+                </div>
+            </div>
+
+            <div class="theme-card" id="card-theme2" onclick="window.location.href='theme-2.html'">
+                <div class="theme-card__header">
+                    <h3 class="theme-card__title">Theme 2: Student Reps & SSPs</h3>
+                    <span class="theme-status" id="status-theme2">
+                        <span class="status-badge">Not Started</span>
+                    </span>
+                </div>
+                <p class="theme-card__description">Recruitment, Panels, Feedback Loops</p>
+                <div class="theme-progress" id="progress-theme2">
+                    <div class="theme-progress__bar">
+                        <div class="theme-progress__fill" style="width: 0%"></div>
+                    </div>
+                    <span class="theme-progress__text">0 of 1 section completed</span>
+                </div>
+            </div>
+
+            <div class="theme-card" id="card-theme3" onclick="window.location.href='theme-3.html'">
+                <div class="theme-card__header">
+                    <h3 class="theme-card__title">Theme 3: Formal Mechanisms</h3>
+                    <span class="theme-status" id="status-theme3">
+                        <span class="status-badge">Not Started</span>
+                    </span>
+                </div>
+                <p class="theme-card__description">Mid-Module, End of Module, NSS, PG Surveys</p>
+                <div class="theme-progress" id="progress-theme3">
+                    <div class="theme-progress__bar">
+                        <div class="theme-progress__fill" style="width: 0%"></div>
+                    </div>
+                    <span class="theme-progress__text">0 of 4 sections completed</span>
+                </div>
+            </div>
+
+            <div class="themes-overview__actions">
+                <button class="btn-primary" onclick="window.location.href='summary.html'">Review & Submit Report</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Theme section mappings
+        const themeData = {
+            theme1: {
+                sections: ['roles', 'training'],
+                total: 2
+            },
+            theme2: {
+                sections: ['reps-ssps'],
+                total: 1
+            },
+            theme3: {
+                sections: ['mme', 'me', 'nss', 'pg'],
+                total: 4
+            }
+        };
+
+        // Update theme completion status on page load
+        window.onload = function() {
+            updateAllThemeStatus();
+        };
+
+        function updateAllThemeStatus() {
+            Object.keys(themeData).forEach(themeKey => {
+                updateThemeStatus(themeKey);
+            });
+        }
+
+        function updateThemeStatus(themeKey) {
+            const theme = themeData[themeKey];
+            let completedCount = 0;
+
+            // Check each section for scores
+            theme.sections.forEach(sectionId => {
+                const saved = JSON.parse(localStorage.getItem(`sv_${sectionId}`));
+                if (saved && saved.score > 0) {
+                    completedCount++;
+                }
+            });
+
+            // Calculate percentage
+            const percentage = Math.round((completedCount / theme.total) * 100);
+
+            // Update card visual
+            const card = document.getElementById(`card-${themeKey}`);
+            const statusBadge = document.querySelector(`#status-${themeKey} .status-badge`);
+            const progressFill = document.querySelector(`#progress-${themeKey} .theme-progress__fill`);
+            const progressText = document.querySelector(`#progress-${themeKey} .theme-progress__text`);
+
+            // Update progress bar
+            if (progressFill) {
+                progressFill.style.width = `${percentage}%`;
+            }
+
+            // Update progress text
+            if (progressText) {
+                progressText.textContent = `${completedCount} of ${theme.total} section${theme.total > 1 ? 's' : ''} completed`;
+            }
+
+            // Update status badge and card styling
+            if (completedCount === 0) {
+                statusBadge.textContent = 'Not Started';
+                statusBadge.className = 'status-badge status-not-started';
+                card.classList.remove('completed', 'in-progress');
+            } else if (completedCount === theme.total) {
+                statusBadge.textContent = '✓ Complete';
+                statusBadge.className = 'status-badge status-complete';
+                card.classList.add('completed');
+                card.classList.remove('in-progress');
+            } else {
+                statusBadge.textContent = 'In Progress';
+                statusBadge.className = 'status-badge status-in-progress';
+                card.classList.add('in-progress');
+                card.classList.remove('completed');
+            }
+        }
+    </script>
+</body>
+</html>

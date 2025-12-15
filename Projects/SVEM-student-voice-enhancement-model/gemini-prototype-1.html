@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Voice Enhancement Model - Theme 1</title>
+    <style>
+        /* --- DESIGN TOKENS (GRAYSCALE) --- */
+        :root {
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #595959;
+            --border-light: #e5e5e5;
+            
+            /* Hierarchy Grays */
+            --lvl-1: #d6d6d6; /* Lightest */
+            --lvl-2: #a3a3a3;
+            --lvl-3: #737373;
+            --lvl-4: #404040;
+            --lvl-5: #000000; /* Darkest */
+        }
+
+        /* --- RESET & TYPOGRAPHY --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.5; /* Reduced line-height */
+            font-size: 15px; /* Slightly smaller base font */
+        }
+
+        /* --- LAYOUT --- */
+        .app-container {
+            display: grid;
+            grid-template-columns: 240px 1fr; /* Narrower sidebar */
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR NAV --- */
+        .sidebar {
+            background: #fff;
+            border-right: 1px solid var(--border-light);
+            padding: 1.5rem; /* Reduced padding */
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem; /* Reduced margin */
+            padding-bottom: 0.75rem; /* Reduced padding */
+            border-bottom: 2px solid var(--text-primary);
+        }
+
+        .nav-link {
+            display: block;
+            text-decoration: none;
+            color: var(--text-secondary);
+            padding: 0.35rem 0; /* Reduced padding */
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: var(--text-primary); }
+        .nav-link.active { font-weight: 700; color: var(--text-primary); }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            padding: 2rem 3rem; /* Compact padding */
+            max-width: 900px;
+        }
+
+        header { margin-bottom: 2rem; /* Reduced margin */ }
+        
+        h1 { font-size: 1.8rem; font-weight: 300; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+        
+        /* Updated Section Header Styling */
+        .section-header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.5rem 0 0.75rem 0; /* Reduced margins */
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.4rem;
+        }
+
+        h2 { 
+            font-size: 1.3rem; /* Smaller H2 */
+            font-weight: 600; 
+            margin: 0; 
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            padding: 0.2rem 0.6rem; /* Compact button */
+            font-size: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex; /* Use flex for icon alignment */
+            align-items: center;
+            gap: 6px; /* Space between text and icon */
+        }
+
+        .toggle-btn:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        .toggle-icon {
+            font-size: 1.1em;
+            line-height: 1;
+            font-weight: 300;
+        }
+
+        .theme-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; }
+
+        /* --- ACCORDION SYSTEM --- */
+        .level-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px; /* Reduced gap */
+            margin-bottom: 2rem;
+        }
+
+        details {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        details:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        details[open] {
+            border-color: var(--text-secondary);
+        }
+
+        /* Added border to summary when details is open */
+        details[open] summary {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        summary {
+            padding: 0.8rem 1rem; /* Compact padding */
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            position: relative;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        /* The Level Indicator Bar */
+        summary::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px; /* Thinner bar */
+        }
+
+        /* Specific Level Styling */
+        details.l1 summary::before { background-color: var(--lvl-1); }
+        details.l2 summary::before { background-color: var(--lvl-2); }
+        details.l3 summary::before { background-color: var(--lvl-3); }
+        details.l4 summary::before { background-color: var(--lvl-4); }
+        details.l5 summary::before { background-color: var(--lvl-5); }
+
+        /* Text coloring to match level intensity */
+        details.l1 .level-name { color: #888; }
+        details.l5 .level-name { color: #000; }
+
+        .level-header {
+            display: flex;
+            flex-direction: column;
+            margin-left: 0.8rem;
+        }
+
+        .level-number {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+
+        .level-title {
+            font-size: 0.95rem;
+        }
+
+        .content-body {
+            /* Increased top padding slightly to account for the new border */
+            padding: 0.8rem 1rem 1rem 1.8rem; 
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .content-body ul {
+            padding-left: 1rem;
+        }
+
+        .content-body li {
+            margin-bottom: 0.3rem; /* Reduced margin */
+        }
+
+        /* Icon for expand/collapse */
+        summary::after {
+            content: '+';
+            font-weight: 300;
+            font-size: 1.2rem;
+            margin-left: auto;
+            color: var(--text-secondary);
+        }
+
+        details[open] summary::after { content: '-'; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .app-container { grid-template-columns: 1fr; }
+            .sidebar { 
+                height: auto; 
+                position: relative; 
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-light);
+            }
+            .main-content { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="brand">Student Voice<br>Framework</div>
+        
+        <div style="margin-bottom: 1rem;">
+            <small style="color:#999; font-size: 0.65rem; text-transform: uppercase;">Introduction</small>
+            <a href="#" class="nav-link">Model Overview</a>
+        </div>
+
+        <div>
+            <small style="color:#999; font-size: 0.65rem; text-transform: uppercase;">Theme 1</small>
+            <a href="#roles" class="nav-link active">Roles & Structures</a>
+            <a href="#training" class="nav-link">Training & Development</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <span class="theme-label">Theme 1</span>
+            <h1>Structures Supporting Student Voice Activity</h1>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+                Establishing clear roles, committees, and timelines to embed student voice into the school's culture.
+            </p>
+        </header>
+
+        <!-- SUBSECTION 1: Roles and Structures -->
+        <section id="roles">
+            <div class="section-header-wrapper">
+                <h2>Roles and Structures</h2>
+                <button class="toggle-btn" onclick="toggleSection('roles', this)">
+                    Expand All <span class="toggle-icon">+</span>
+                </button>
+            </div>
+            
+            <div class="level-group">
+                
+                <!-- Level 1 -->
+                <details class="l1">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 1</span>
+                            <span class="level-title">Moving towards Baseline</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>There are currently no clear Student Voice structures in place and/or no defined Student Voice roles within the School.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Level 2 -->
+                <details class="l2">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 2</span>
+                            <span class="level-title">Baseline Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>Student Voice roles are assigned within Schools. (At a minimum, these include a Student Rep Coordinator, Survey Contact and an Academic Student Voice Lead).</li>
+                            <li>There is student representation on all appropriate School committees (ESEC, BoS etc.) and at College Forums.</li>
+                            <li>Student Voice staff are aware of the Student Voice Framework (SVF).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Level 3 -->
+                <details class="l3">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 3</span>
+                            <span class="level-title">Emerging Good Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>Student Voice role descriptions are understood and staff support in Student Voice practices within Schools.</li>
+                            <li>Student Voice is discussed in ESEC / BoS / other appropriate School committees.</li>
+                            <li>The SVF principles are acknowledged when creating Student Voice plans for the year.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Level 4 -->
+                <details class="l4">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 4</span>
+                            <span class="level-title">Established Strong Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>The School utilises the SVF principles if considering/creating additional Student Voice roles.</li>
+                            <li>There are regular meetings between Student Voice staff within the School.</li>
+                            <li>The School has identified and shared good Student Voice practice between School staff.</li>
+                            <li>Student Voice is a rolling agenda item at ESEC, BoS and other appropriate committees.</li>
+                            <li>The School has a clear Student Voice timeline for the academic year and this is communicated to staff and students.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Level 5 -->
+                <details class="l5" open>
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 5</span>
+                            <span class="level-title">Exceptional Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>The School has identified areas for long-term enhancement, and a Student Voice strategy is in development.</li>
+                            <li>Student Voice staff are involved in evaluating School level Student Voice mechanisms and lead/support the implementation of learnings into action plans.</li>
+                            <li>Students are invited to actively contribute to all School Student Voice activity.</li>
+                            <li>All School staff are encouraged to engage in Student Voice discussions (Away Days, Teaching Plenaries etc.).</li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <!-- SUBSECTION 2: SV Training -->
+        <section id="training">
+            <div class="section-header-wrapper">
+                <h2>SV Training, Development, and Dissemination</h2>
+                <button class="toggle-btn" onclick="toggleSection('training', this)">
+                    Expand All <span class="toggle-icon">+</span>
+                </button>
+            </div>
+            
+            <div class="level-group">
+
+                <details class="l1">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 1</span>
+                            <span class="level-title">Moving towards Baseline</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>The School provides no opportunity for staff to engage with Student Voice and engagement CPD.</li>
+                            <li>Central Student Voice and engagement updates and opportunities are not circulated by email recipients.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="l2">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 2</span>
+                            <span class="level-title">Baseline Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>Key/appropriate Student Voice contacts within the School are members of the Student Voice and Experience Network (SVEN) Teams channel.</li>
+                            <li>Student Voice staff disseminate Central Student Voice and Engagement updates and CPD opportunities to appropriate staff.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="l3">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 3</span>
+                            <span class="level-title">Emerging Good Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>Student Voice staff within the School occasionally engage with SVEN and SVEN meetings.</li>
+                            <li>School encourages and creates opportunities for Student Voice staff to engage with Student Voice and Engagement CPD.</li>
+                            <li>All School staff are aware of SVEN.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="l4">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 4</span>
+                            <span class="level-title">Established Strong Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School Student Voice staff regularly contribute to SVEN via Teams and meetings.</li>
+                            <li>School Student Voice staff engage in ongoing Student Voice and Engagement CPD opportunities.</li>
+                            <li>School provides opportunities for, and encourages, all staff to engage with Student Voice and Engagement CPD.</li>
+                            <li>Student Voice staff identify Student Voice collaboration opportunities with other Schools.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="l5">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 5</span>
+                            <span class="level-title">Exceptional Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School Student Voice staff deliver Student Voice and Engagement CPD to other staff, both within their School and across the College.</li>
+                            <li>School Student Voice staff present in SVEN meetings, sharing School best practice and Student Voice partnership opportunities.</li>
+                            <li>School Student Voice staff engage in Student Voice collaboration and partnership opportunities with other Schools.</li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    function toggleSection(sectionId, btn) {
+        const section = document.getElementById(sectionId);
+        const details = section.querySelectorAll('details');
+        
+        // Check if any details are currently closed
+        const isAnyClosed = Array.from(details).some(d => !d.open);
+        
+        details.forEach(d => {
+            if (isAnyClosed) {
+                // If any are closed, open all
+                d.setAttribute('open', '');
+            } else {
+                // If all are open, close all
+                d.removeAttribute('open');
+            }
+        });
+
+        // Update button text and icon
+        if (isAnyClosed) {
+            btn.innerHTML = 'Collapse All <span class="toggle-icon">−</span>';
+        } else {
+            btn.innerHTML = 'Expand All <span class="toggle-icon">+</span>';
+        }
+    }
+</script>
+
+</body>
+</html>

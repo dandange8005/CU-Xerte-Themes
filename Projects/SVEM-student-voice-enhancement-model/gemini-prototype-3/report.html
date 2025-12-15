@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 2rem; background: #fff; color: #000; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
+        .report-section { margin-bottom: 2rem; page-break-inside: avoid; }
+        .section-title { font-size: 1.2rem; font-weight: bold; display: flex; justify-content: space-between; background: #f0f0f0; padding: 10px; }
+        .level-score { font-weight: bold; }
+        .notes { background: #fff; border: 1px solid #ccc; padding: 10px; margin-top: 5px; white-space: pre-wrap; }
+        .controls { margin-top: 3rem; text-align: center; padding: 2rem; background: #f9f9f9; border-top: 1px solid #ddd; }
+        .btn { padding: 10px 20px; background: #003366; color: #fff; border: none; cursor: pointer; margin: 0 10px; }
+        .btn:hover { background: #002244; }
+        @media print { .controls { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Voice Enhancement Plan</h1>
+        <p><strong>Generated:</strong> <span id="date"></span></p>
+
+        <div id="report-content">Loading...</div>
+
+        <div class="controls">
+            <button class="btn" onclick="window.print()">Print / Save PDF</button>
+            <button class="btn" onclick="downloadJSON()">Download JSON Data</button>
+        </div>
+    </div>
+
+    <script>
+        const sections = [
+            { id: 'roles', title: 'Roles & Structures' },
+            { id: 'training', title: 'Training & Development' },
+            { id: 'reps', title: 'Student Reps' },
+            { id: 'mme', title: 'Mid-Module Enhancement' },
+            { id: 'me', title: 'End of Module Enhancement' }
+            /* Add 'nss' and 'pg' here if added to Theme 3 */
+        ];
+
+        window.onload = function() {
+            document.getElementById('date').innerText = new Date().toLocaleDateString();
+            
+            let html = "";
+            sections.forEach(sec => {
+                const data = JSON.parse(localStorage.getItem('sv_' + sec.id)) || { score: 'Not Scored', note: 'No evidence provided.' };
+                // Color coding
+                let color = '#333';
+                if(data.score >= 4) color = 'green';
+                else if(data.score < 2 && data.score > 0) color = 'red';
+
+                html += `
+                    <div class="report-section">
+                        <div class="section-title">
+                            <span>${sec.title}</span>
+                            <span class="level-score" style="color:${color}">Level ${data.score}</span>
+                        </div>
+                        <div class="notes"><strong>Evidence:</strong><br>${data.note}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('report-content').innerHTML = html;
+        };
+
+        function downloadJSON() {
+            let exportData = {};
+            sections.forEach(sec => {
+                exportData[sec.id] = JSON.parse(localStorage.getItem('sv_' + sec.id));
+            });
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+            const a = document.createElement('a');
+            a.href = dataStr;
+            a.download = "student_voice_data.json";
+            a.click();
+        }
+    </script>
+</body>
+</html>
