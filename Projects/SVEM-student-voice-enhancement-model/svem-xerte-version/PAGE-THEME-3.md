@@ -1,0 +1,627 @@
+# Theme 3 Page - Xerte XOT Implementation
+
+## Page Settings
+
+- **Page Type:** Plain Text or Bootstrap
+- **Page Name:** Theme 3: Formal Mechanisms
+- **Page Order:** 5 (after Theme 2)
+
+---
+
+## Issues Found in Current File
+
+Your current `page-06-theme-3.html` has these issues:
+
+1. ❌ **Navigation** - Lines 547-548 use `window.location.href` (won't work in Xerte)
+2. ❌ **Missing initialization script** - No script to load saved data
+3. ❌ **Missing button type attributes** - Accessibility issue
+
+---
+
+## SECTION 1: HTML Content (CORRECTED VERSION)
+
+Copy this corrected HTML into your Xerte page's main content editor:
+
+```html
+<div class="theme-page-container">
+    <main class="main-content">
+        <header>
+            <span class="theme-label">Theme 3</span>
+            <h2>Supporting Formal Student Voice Mechanisms</h2>
+            <p class="theme-description">
+                Engaging with formal feedback processes including mid-module reviews, end of module surveys, NSS, and postgraduate surveys.
+            </p>
+        </header>
+
+        <!-- SUBSECTION 1: Mid-Module Enhancement -->
+        <section id="mme">
+            <div class="section-header-wrapper">
+                <h3>Mid-Module Enhancement</h3>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span id="badge-mme" class="score-badge">Not Scored</span>
+                    <button class="toggle-btn" onclick="toggleSection('mme', this)" type="button">
+                        Expand All <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="level-group">
+                <!-- Level 1 -->
+                <details class="l1">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 1</span>
+                            <span class="level-title">Moving towards Baseline</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>The School does not have an agreed process for mid-module feedback collection.</li>
+                            <li>Student feedback is not considered when introducing changes/enhancements to modules.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('mme', 1, this)" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('mme', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Level 2 -->
+                <details class="l2">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 2</span>
+                            <span class="level-title">Baseline Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School specifies method options for mid-module feedback collection.</li>
+                            <li>School has an agreed MME timeline, which is communicated to appropriate staff.</li>
+                            <li>School encourages Module Leaders to gather mid-module feedback.</li>
+                            <li>Some Module Teams engage with MME process.</li>
+                            <li>Some Module Leaders share feedback with students, making changes where appropriate.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('mme', 2, this)" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('mme', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Level 3 -->
+                <details class="l3">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 3</span>
+                            <span class="level-title">Emerging Good Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>Most Module Teams engage in MME process, and promote its purpose to students.</li>
+                            <li>School communicates MME process to all staff for awareness.</li>
+                            <li>School promotes MME to students.</li>
+                            <li>School develops guidance on MME journey, including: method, promotion, collection, review, and communicating with students to Close the Feedback Loop.</li>
+                            <li>Changes are actively implemented wherever appropriate.</li>
+                            <li>Most Module Leaders share feedback and changes made with students.</li>
+                            <li>Students are informed when feedback can't be actioned.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('mme', 3, this)" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('mme', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Level 4 -->
+                <details class="l4">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 4</span>
+                            <span class="level-title">Established Strong Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School communicates MME journey guidance to staff, including: method, promotion, collection, review, and communicating with students to Close the Feedback Loop.</li>
+                            <li>All Module Teams engage in MME process, as per School guidance, and showcase feedback-driven changes to students, to highlight the benefits of MME.</li>
+                            <li>MME process and results are actively discussed at School level.</li>
+                            <li>Module Leaders explain to students what changes can and cannot be made, and escalate any non-module specific feedback to appropriate colleagues.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('mme', 4, this)" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('mme', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Level 5 -->
+                <details class="l5">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 5</span>
+                            <span class="level-title">Exceptional Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School MME journey guidance is consistently implemented by all Module Leaders.</li>
+                            <li>MME is supported by senior leadership within the School as an effective key Student Voice mechanism.</li>
+                            <li>Module Leaders share relevant changes made as a result of feedback with other Module Teams to support best practice sharing.</li>
+                            <li>Significant feedback themes are compiled and communicated to School Student Voice staff for further consideration.</li>
+                            <li>School keeps a record of key changes to use as a resource which supports sharing of best practice.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('mme', 5, this)" type="button">Set as Level 5</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Evidence Box -->
+            <div class="evidence-box">
+                <label for="evidence-mme" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <textarea id="evidence-mme" class="evidence-input"
+                    placeholder="Describe your current practice and why you selected this level..."
+                    onchange="saveNote('mme', this.value)"></textarea>
+            </div>
+        </section>
+
+        <!-- SUBSECTION 2: End of Module Enhancement -->
+        <section id="me">
+            <div class="section-header-wrapper">
+                <h3>End of Module Enhancement</h3>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span id="badge-me" class="score-badge">Not Scored</span>
+                    <button class="toggle-btn" onclick="toggleSection('me', this)" type="button">
+                        Expand All <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="level-group">
+                <details class="l1">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 1</span>
+                            <span class="level-title">Moving towards Baseline</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School relies on automatic Blue Portal email reminders to promote ME to students.</li>
+                            <li>Student feedback is not considered when introducing changes/enhancements to modules.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('me', 1, this)" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('me', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l2">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 2</span>
+                            <span class="level-title">Baseline Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School has an agreed ME timeline, which is communicated to Module Leaders and Survey Contacts.</li>
+                            <li>School develops guidance on ME journey, including: method, promotion, collection, review, and communicating with students to Close the Feedback Loop.</li>
+                            <li>School encourages Module Leaders to promote ME.</li>
+                            <li>Module Leaders acknowledge ME feedback by providing a response via Blue.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('me', 2, this)" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('me', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l3">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 3</span>
+                            <span class="level-title">Emerging Good Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School develops promotional plan with the aim of increasing ME response rates.</li>
+                            <li>School and Module Leaders proactively promote ME and its purpose to students.</li>
+                            <li>Module Leaders make feedback-driven changes where appropriate.</li>
+                            <li>Module Leaders address key themes in their response, and include changes being considered and why some feedback may be unactionable.</li>
+                            <li>Module Leaders respond via Blue within the 2 week response period.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('me', 3, this)" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('me', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l4">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 4</span>
+                            <span class="level-title">Established Strong Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>All Module Teams engage in ME process, as per School promotional plan, and showcase feedback-driven changes to students, to highlight the benefits of ME.</li>
+                            <li>School creates guidance on what good Module Leader feedback looks like.</li>
+                            <li>Student feedback and subsequent changes made are communicated to students beyond the Blue portal.</li>
+                            <li>ME process and results are actively discussed at School level.</li>
+                            <li>Module Leaders explain to students what changes can and cannot be made, and escalate any non-module specific feedback to appropriate colleagues.</li>
+                            <li>ME feedback and actions are raised during module introductions at the beginning of the next cycle.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('me', 4, this)" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('me', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l5">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 5</span>
+                            <span class="level-title">Exceptional Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>ME is added as an agenda item in SSPs, and Student Reps are encouraged to promote ME as a key Student Voice mechanism.</li>
+                            <li>ME is supported by senior leadership within the School as an effective key Student Voice mechanism.</li>
+                            <li>Students are regularly consulted on proposed module changes, resulting in the co-creation of enhancements.</li>
+                            <li>Significant feedback themes are compiled and communicated to School Student Voice staff for further consideration.</li>
+                            <li>School keeps a record of key changes to use as a resource which supports sharing of best practice.</li>
+                            <li>School conducts annual review of ME promotional plan.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('me', 5, this)" type="button">Set as Level 5</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Evidence Box -->
+            <div class="evidence-box">
+                <label for="evidence-me" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <textarea id="evidence-me" class="evidence-input"
+                    placeholder="Describe your current practice and why you selected this level..."
+                    onchange="saveNote('me', this.value)"></textarea>
+            </div>
+        </section>
+
+        <!-- SUBSECTION 3: National Student Survey (NSS) -->
+        <section id="nss">
+            <div class="section-header-wrapper">
+                <h3>National Student Survey (NSS)</h3>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span id="badge-nss" class="score-badge">Not Scored</span>
+                    <button class="toggle-btn" onclick="toggleSection('nss', this)" type="button">
+                        Expand All <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="level-group">
+                <details class="l1">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 1</span>
+                            <span class="level-title">Moving towards Baseline</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School relies on IPSOS MORI for NSS communications and promotion, and are unaware of guidance and Cardiff University timelines.</li>
+                            <li>School are unaware of promotional support offered by the Learning & Teaching Academy.</li>
+                            <li>School is informed of NSS results through Cardiff University communications.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('nss', 1, this)" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('nss', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l2">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 2</span>
+                            <span class="level-title">Baseline Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>Key School staff are aware of NSS dates, guidelines, and who to contact for support.</li>
+                            <li>Key School staff contact students to encourage participation throughout the agreed NSS window.</li>
+                            <li>Schools are informed of NSS results through Cardiff University communications and prepare appropriate action plans - Medr, Review and Enhancement (RE) etc.</li>
+                            <li>NSS results and enhancements are shared at SSPs.</li>
+                            <li>Schools encourage appropriate staff to participate in central training session on NSS.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('nss', 2, this)" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('nss', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l3">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 3</span>
+                            <span class="level-title">Emerging Good Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School develops promotional plan with the aim of increasing NSS response rates.</li>
+                            <li>School promotional plan is strategically timed around opening/closing dates and pre-promotion.</li>
+                            <li>School Student Voice staff communicate NSS guidelines and timeline with appropriate staff.</li>
+                            <li>Key staff utilise Business Intelligence (BI) to review School and subject level feedback (qualitative and quantitative), and this contributes to action plans.</li>
+                            <li>Feedback-driven changes are shared with whole cohorts, including during welcome week.</li>
+                            <li>NSS/ Review and Enhancement (RE) plans are added as an agenda item in SSPs.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('nss', 3, this)" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('nss', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l4">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 4</span>
+                            <span class="level-title">Established Strong Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School communicates NSS guidelines, timeline and promotional plan with all appropriate staff.</li>
+                            <li>Key staff engage in NSS promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of NSS participation.</li>
+                            <li>School considers including wider student groups to promote NSS, including Student Champions, Academic Societies and Student Reps.</li>
+                            <li>School designates time and space for students to voluntarily complete the NSS.</li>
+                            <li>NSS School and subject results are collated into themes and shared with appropriate staff for further consideration.</li>
+                            <li>School regularly inform students of ongoing feedback-driven NSS enhancements throughout the year, including during welcome week.</li>
+                            <li>Student Reps are consulted on NSS/ Review and Enhancement (RE) plans.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('nss', 4, this)" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('nss', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l5">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 5</span>
+                            <span class="level-title">Exceptional Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>All appropriate School staff engage in NSS promotion as per School promotion plan.</li>
+                            <li>School considers incentives to support NSS completion.</li>
+                            <li>NSS is discussed with whole student cohorts throughout the academic year.</li>
+                            <li>Staff regularly work in partnership with students to co-create changes and enhancements as a result of NSS feedback.</li>
+                            <li>School keeps a record of key changes to use as a resource which supports sharing of best practice.</li>
+                            <li>School conducts annual review of NSS promotional plan.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('nss', 5, this)" type="button">Set as Level 5</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Evidence Box -->
+            <div class="evidence-box">
+                <label for="evidence-nss" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <textarea id="evidence-nss" class="evidence-input"
+                    placeholder="Describe your current practice and why you selected this level..."
+                    onchange="saveNote('nss', this.value)"></textarea>
+            </div>
+        </section>
+
+        <!-- SUBSECTION 4: PG Surveys -->
+        <section id="pg">
+            <div class="section-header-wrapper">
+                <h3>Cardiff University Postgraduate Taught Survey (CUPTS) & Postgraduate Research Experience Survey (PRES)</h3>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span id="badge-pg" class="score-badge">Not Scored</span>
+                    <button class="toggle-btn" onclick="toggleSection('pg', this)" type="button">
+                        Expand All <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="level-group">
+                <details class="l1">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 1</span>
+                            <span class="level-title">Moving towards Baseline</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School relies on central communications for PG surveys and are unaware of guidance and timelines.</li>
+                            <li>Student feedback is not considered when introducing changes/enhancements to the PG environment.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('pg', 1, this)" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('pg', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l2">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 2</span>
+                            <span class="level-title">Baseline Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School Student Voice staff communicate PG survey timelines and guidance to appropriate School staff.</li>
+                            <li>School promotes PG surveys to students, highlighting any incentives available.</li>
+                            <li>CUPTS - School reviews feedback and provides response to students.</li>
+                            <li>PRES - Quantitative results are shared with students without any further analysis and actions are not communicated.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('pg', 2, this)" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('pg', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l3">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 3</span>
+                            <span class="level-title">Emerging Good Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>School develops PG survey promotional plan with the aim of increasing response rates.</li>
+                            <li>School and PG staff proactively promote surveys and their purpose to students.</li>
+                            <li>CUPTS - PGT Lead, DLT, and HoS review and respond to feedback according to timeline; highlighting key themes, indicating changes being considered, and why some feedback may be unactionable.</li>
+                            <li>PRES - Where appropriate, School and PGR staff consider introducing changes and enhancements as a result of PRES feedback.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('pg', 3, this)" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('pg', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l4">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 4</span>
+                            <span class="level-title">Established Strong Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>PG staff engage in PG survey promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of survey participation.</li>
+                            <li>PG staff explain to students what changes can and cannot be made, and escalate any School-wide feedback to relevant colleagues.</li>
+                            <li>PG survey process and feedback is actively discussed at School level; including collaboration between Student Voice staff and appropriate colleagues.</li>
+                            <li>Where appropriate, PG staff consult with students on proposed changes.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('pg', 4, this)" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('pg', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="l5">
+                    <summary>
+                        <div class="level-header">
+                            <span class="level-number">Level 5</span>
+                            <span class="level-title">Exceptional Practice</span>
+                        </div>
+                    </summary>
+                    <div class="content-body">
+                        <ul>
+                            <li>PG staff regularly inform students of ongoing feedback-driven enhancements throughout the year, including during welcome week.</li>
+                            <li>PG surveys are added as agenda items in SSPs, and Student Reps are encouraged to promote the surveys as key Student Voice mechanisms.</li>
+                            <li>Staff regularly work in partnership with students to co-create changes and enhancements to the PG environment.</li>
+                            <li>School keeps a record of key changes to use as a resource which supports sharing of best practice.</li>
+                            <li>School conducts annual review of PG survey promotional plan.</li>
+                        </ul>
+                        <div class="scoring-actions">
+                            <button class="score-btn" onclick="saveScore('pg', 5, this)" type="button">Set as Level 5</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Evidence Box -->
+            <div class="evidence-box">
+                <label for="evidence-pg" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <textarea id="evidence-pg" class="evidence-input"
+                    placeholder="Describe your current practice and why you selected this level..."
+                    onchange="saveNote('pg', this.value)"></textarea>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="page-navigation">
+            <button class="btn-secondary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage - 1, true)" type="button">← Previous: Theme 2</button>
+            <button class="btn-primary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true)" type="button">Next: Summary →</button>
+        </div>
+
+    </main>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast">Changes Saved</div>
+```
+
+---
+
+## SECTION 2: JavaScript (Optional Properties → Script)
+
+```javascript
+// Initialize Theme 3 page
+// Assumes scoring-xerte.js is loaded globally
+
+// Load saved data for all 4 sections in this theme
+if (typeof initSVEMPage === 'function') {
+    initSVEMPage(['mme', 'me', 'nss', 'pg']);
+} else {
+    console.error('initSVEMPage function not found - ensure scoring-xerte.js is loaded');
+}
+```
+
+---
+
+## Key Changes Made
+
+### ✅ Fixed Navigation (lines 547-548)
+**Before:**
+```javascript
+onclick="window.location.href='theme-2.html'"
+onclick="window.location.href='summary.html'"
+```
+
+**After:**
+```javascript
+onclick="x_navigateToPage(x_currentPageXML, x_currentPage - 1, true)"
+onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true)"
+```
+
+### ✅ Added Initialization Script
+Now includes script to load all 4 subsections: `['mme', 'me', 'nss', 'pg']`
+
+### ✅ Added Button Type Attributes
+All buttons now have `type="button"` for accessibility
+
+---
+
+## Implementation Checklist
+
+- [ ] Replace your current page-06-theme-3.html content with the corrected HTML above
+- [ ] Add the JavaScript to Optional Properties → Script
+- [ ] Test navigation to previous/next pages
+- [ ] Test all scoring buttons (40 buttons total!)
+- [ ] Test all 4 evidence textareas
+- [ ] Verify data persists after page reload
+
+---
+
+**Created:** 2024-12-16
+**Status:** Ready for implementation

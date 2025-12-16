@@ -1,0 +1,64 @@
+    <div class="summary-page">
+
+        <!-- Report Header -->
+        <div class="report-header">
+            <div>
+                <h1>Student Voice Enhancement Model</h1>
+                <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: #5f6c7b;">Self-Assessment Report</p>
+            </div>
+            <div class="report-meta">
+                <strong>Date:</strong>
+                <span id="report-date"></span>
+                <strong style="margin-top: 0.5rem;">Status:</strong>
+                <span id="report-status">Draft</span>
+            </div>
+        </div>
+
+        <!-- Completion Summary -->
+        <div class="completion-summary">
+            <h3>Assessment Completion Summary</h3>
+            <div class="completion-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="completed-count">0</div>
+                    <div class="stat-label">Sections Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Total Sections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="completion-percent">0%</div>
+                    <div class="stat-label">Overall Progress</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="average-score">0.0</div>
+                    <div class="stat-label">Average Score</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Visualization -->
+        <div class="chart-container">
+            <h2>Maturity Level Overview</h2>
+            <canvas id="maturityChart"></canvas>
+        </div>
+
+        <!-- Report Body -->
+        <div id="report-body">
+            <!-- Content will be generated here by JavaScript -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="report-actions">
+            <p>Review your assessment above. Print or download your data for records.</p>
+            <button class="btn-secondary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <button class="btn-secondary" onclick="downloadJSON()">📥 Download Data (JSON)</button>
+            <button class="btn-primary" onclick="window.location.href='themes-overview.html'">✏️ Continue Editing</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="page-navigation">
+            <button class="btn-secondary" onclick="window.location.href='themes-overview.html'">← Back to Themes</button>
+        </div>
+
+    </div>

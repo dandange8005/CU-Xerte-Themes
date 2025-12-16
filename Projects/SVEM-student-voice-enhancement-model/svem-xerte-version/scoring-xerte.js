@@ -1,0 +1,212 @@
+// SVEM Self-Assessment Scoring JavaScript - XERTE COMPATIBLE VERSION
+// Shared functions for all theme pages in Xerte Online Toolkits
+
+// Initialize when page content is loaded in Xerte
+function initSVEMPage(sectionIds) {
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllSections(sectionIds);
+        });
+    } else {
+        loadAllSections(sectionIds);
+    }
+}
+
+// Load all sections for a page
+function loadAllSections(sectionIds) {
+    if (Array.isArray(sectionIds)) {
+        sectionIds.forEach(sectionId => loadSavedData(sectionId));
+    }
+}
+
+// Save score function
+function saveScore(sectionId, score, btn) {
+    const currentData = JSON.parse(localStorage.getItem(`sv_${sectionId}`)) || { note: "" };
+    currentData.score = score;
+    localStorage.setItem(`sv_${sectionId}`, JSON.stringify(currentData));
+    updateSectionUI(sectionId, score, btn);
+    showToast();
+}
+
+// Save note function
+function saveNote(sectionId, note) {
+    const currentData = JSON.parse(localStorage.getItem(`sv_${sectionId}`)) || { score: 0 };
+    currentData.note = note;
+    localStorage.setItem(`sv_${sectionId}`, JSON.stringify(currentData));
+    showToast();
+}
+
+// Update section UI after scoring
+function updateSectionUI(sectionId, score, clickedBtn) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const baseLevel = Math.floor(score);
+
+    // Clear ALL active states first
+    section.querySelectorAll('.score-btn').forEach(b => b.classList.remove('active'));
+
+    // Only activate the clicked button
+    if (clickedBtn) {
+        clickedBtn.classList.add('active');
+    }
+
+    // Highlight the selected level accordion
+    section.querySelectorAll('details').forEach(d => {
+        d.classList.remove('selected-level');
+        const levelMatch = d.className.match(/l(\d)/);
+        if (levelMatch) {
+            const levelNum = parseInt(levelMatch[1]);
+            if (levelNum === baseLevel) {
+                d.classList.add('selected-level');
+                d.setAttribute('open', '');
+            }
+        }
+    });
+
+    // Update badge
+    const badge = document.getElementById(`badge-${sectionId}`);
+    if (badge) {
+        badge.innerText = `Level ${score}`;
+        badge.classList.add('active');
+    }
+}
+
+// Load saved data
+function loadSavedData(sectionId) {
+    const saved = JSON.parse(localStorage.getItem(`sv_${sectionId}`));
+    if (!saved) return;
+
+    // Load score
+    if (saved.score > 0) {
+        // Find the button that matches this score
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+
+        const matchingBtn = Array.from(section.querySelectorAll('.score-btn')).find(btn => {
+            const text = btn.textContent;
+            // First try exact match with parentheses for transitional scores (e.g., "(4.5)")
+            if (text.includes(`(${saved.score})`)) return true;
+            // For whole number scores, match "Set as Level X" (not "Transitioning to Level X")
+            if (text.includes(`Set as Level ${saved.score}`)) return true;
+            return false;
+        });
+        updateSectionUI(sectionId, saved.score, matchingBtn);
+    }
+
+    // Load note
+    if (saved.note) {
+        const textarea = document.getElementById(`evidence-${sectionId}`);
+        if (textarea) textarea.value = saved.note;
+    }
+}
+
+// Show toast notification
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    if (toast) {
+        if (message) {
+            toast.textContent = message;
+        }
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+}
+
+// Toggle section function
+function toggleSection(sectionId, btn) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const details = section.querySelectorAll('details');
+
+    // Check if any details are currently closed
+    const isAnyClosed = Array.from(details).some(d => !d.open);
+
+    details.forEach(d => {
+        if (isAnyClosed) {
+            d.setAttribute('open', '');
+        } else {
+            d.removeAttribute('open');
+        }
+    });
+
+    // Update button text and icon
+    if (isAnyClosed) {
+        btn.innerHTML = 'Collapse All <span class="toggle-icon">−</span>';
+    } else {
+        btn.innerHTML = 'Expand All <span class="toggle-icon">+</span>';
+    }
+}
+
+// Calculate progress for themes overview
+function calculateThemeProgress(sectionIds) {
+    let completed = 0;
+    sectionIds.forEach(sectionId => {
+        const saved = JSON.parse(localStorage.getItem(`sv_${sectionId}`));
+        if (saved && saved.score > 0) {
+            completed++;
+        }
+    });
+    return {
+        completed: completed,
+        total: sectionIds.length,
+        percentage: Math.round((completed / sectionIds.length) * 100)
+    };
+}
+
+// Update theme card progress (for themes overview page)
+function updateThemeCard(themeId, sectionIds) {
+    const progress = calculateThemeProgress(sectionIds);
+    const card = document.querySelector(`[data-theme-id="${themeId}"]`);
+
+    if (!card) return;
+
+    // Update progress bar
+    const progressFill = card.querySelector('.theme-progress__fill');
+    if (progressFill) {
+        progressFill.style.width = `${progress.percentage}%`;
+    }
+
+    // Update progress text
+    const progressText = card.querySelector('.theme-progress__text');
+    if (progressText) {
+        progressText.textContent = `${progress.completed} of ${progress.total} sections completed`;
+    }
+
+    // Update status badge
+    const statusBadge = card.querySelector('.status-badge');
+    if (statusBadge) {
+        statusBadge.classList.remove('status-not-started', 'status-in-progress', 'status-complete');
+
+        if (progress.completed === 0) {
+            statusBadge.classList.add('status-not-started');
+            statusBadge.textContent = 'Not Started';
+            card.classList.remove('in-progress', 'completed');
+        } else if (progress.completed === progress.total) {
+            statusBadge.classList.add('status-complete');
+            statusBadge.textContent = 'Complete';
+            card.classList.remove('in-progress');
+            card.classList.add('completed');
+        } else {
+            statusBadge.classList.add('status-in-progress');
+            statusBadge.textContent = 'In Progress';
+            card.classList.remove('completed');
+            card.classList.add('in-progress');
+        }
+    }
+}
+
+// Initialize themes overview page
+function initThemesOverview() {
+    const themesConfig = [
+        { themeId: 'theme-1', sectionIds: ['roles', 'training'] },
+        { themeId: 'theme-2', sectionIds: ['reps-ssps'] },
+        { themeId: 'theme-3', sectionIds: ['mme', 'me', 'nss', 'pg'] }
+    ];
+
+    themesConfig.forEach(theme => {
+        updateThemeCard(theme.themeId, theme.sectionIds);
+    });
+}

@@ -1,0 +1,89 @@
+<!-- SVEM Themes Overview Page - Xerte Compatible -->
+<!-- This is the content-only version for Xerte XOT -->
+
+<div class="themes-overview">
+    <div class="container">
+        <h1 class="themes-overview__title">Assessment Themes</h1>
+        <p class="themes-overview__description">Select a theme to begin or continue your assessment. Your progress is automatically saved.</p>
+
+        <!-- Theme 1 Card -->
+        <div class="theme-card" data-theme-id="theme-1" onclick="parent.x_navigateToPage(parent.x_currentPageXML, parent.x_currentPage + 1, true)">
+            <div class="theme-card__header">
+                <h2 class="theme-card__title">Theme 1: Structures Supporting Student Voice Activity</h2>
+                <div class="theme-status">
+                    <span class="status-badge status-not-started">Not Started</span>
+                </div>
+            </div>
+            <p class="theme-card__description">
+                Establishing clear roles, committees, and timelines to embed student voice into the school's culture.
+            </p>
+            <div class="theme-progress">
+                <div class="theme-progress__bar">
+                    <div class="theme-progress__fill" style="width: 0%"></div>
+                </div>
+                <span class="theme-progress__text">0 of 2 sections completed</span>
+            </div>
+        </div>
+
+        <!-- Theme 2 Card -->
+        <div class="theme-card" data-theme-id="theme-2" onclick="parent.x_navigateToPage(parent.x_currentPageXML, parent.x_currentPage + 4, true)">
+            <div class="theme-card__header">
+                <h2 class="theme-card__title">Theme 2: Student Reps and Student-Staff Panels</h2>
+                <div class="theme-status">
+                    <span class="status-badge status-not-started">Not Started</span>
+                </div>
+            </div>
+            <p class="theme-card__description">
+                Supporting and empowering student representatives and enhancing Student-Staff Panel effectiveness.
+            </p>
+            <div class="theme-progress">
+                <div class="theme-progress__bar">
+                    <div class="theme-progress__fill" style="width: 0%"></div>
+                </div>
+                <span class="theme-progress__text">0 of 1 sections completed</span>
+            </div>
+        </div>
+
+        <!-- Theme 3 Card -->
+        <div class="theme-card" data-theme-id="theme-3" onclick="parent.x_navigateToPage(parent.x_currentPageXML, parent.x_currentPage + 5, true)">
+            <div class="theme-card__header">
+                <h2 class="theme-card__title">Theme 3: Formal Mechanisms for Student Voice</h2>
+                <div class="theme-status">
+                    <span class="status-badge status-not-started">Not Started</span>
+                </div>
+            </div>
+            <p class="theme-card__description">
+                Optimizing formal feedback mechanisms including module evaluations and institutional surveys.
+            </p>
+            <div class="theme-progress">
+                <div class="theme-progress__bar">
+                    <div class="theme-progress__fill" style="width: 0%"></div>
+                </div>
+                <span class="theme-progress__text">0 of 4 sections completed</span>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="themes-overview__actions">
+            <button type="button" class="btn-primary" onclick="parent.x_navigateToPage(parent.x_currentPageXML, parent.x_currentPage + 6, true)">
+                Review & Submit Report
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast">Changes Saved</div>
+
+<!-- Initialize themes overview on page load -->
+<script>
+    // Initialize when DOM is ready
+    (function() {
+        // Use a small delay to ensure Xerte has loaded the page
+        setTimeout(function() {
+            if (typeof initThemesOverview === 'function') {
+                initThemesOverview();
+            }
+        }, 100);
+    })();
+</script>
