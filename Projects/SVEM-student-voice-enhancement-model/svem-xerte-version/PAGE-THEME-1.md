@@ -29,7 +29,7 @@ Copy and paste this into your Xerte page's main content area:
                 <h3>Roles and Structures</h3>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <span id="badge-roles" class="score-badge">Not Scored</span>
-                    <button class="toggle-btn" onclick="toggleSection('roles', this)" type="button">
+                    <button class="toggle-btn" onclick="toggleSection('roles', this); return false;" type="button">
                         Expand All <span class="toggle-icon">+</span>
                     </button>
                 </div>
@@ -40,18 +40,16 @@ Copy and paste this into your Xerte page's main content area:
                 <!-- Level 1 -->
                 <details class="l1">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 1</span>
-                            <span class="level-title">Moving towards Baseline</span>
-                        </div>
+                        <span class="level-number">LEVEL 1</span>
+                        <span style="margin-left: 1rem;">Moving towards Baseline</span>
                     </summary>
                     <div class="content-body">
                         <ul>
                             <li>There are currently no clear Student Voice structures in place and/or no defined Student Voice roles within the School.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('roles', 1, this)" type="button">Set as Level 1</button>
-                            <button class="score-btn" onclick="saveScore('roles', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                            <button class="score-btn" onclick="saveScore('roles', 1, this); return false;" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('roles', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)</button>
                         </div>
                     </div>
                 </details>
@@ -59,10 +57,8 @@ Copy and paste this into your Xerte page's main content area:
                 <!-- Level 2 -->
                 <details class="l2">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 2</span>
-                            <span class="level-title">Baseline Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 2</span>
+                        <span style="margin-left: 1rem;">Baseline Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -71,8 +67,8 @@ Copy and paste this into your Xerte page's main content area:
                             <li>Student Voice staff are aware of the Student Voice Framework (SVF).</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('roles', 2, this)" type="button">Set as Level 2</button>
-                            <button class="score-btn" onclick="saveScore('roles', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                            <button class="score-btn" onclick="saveScore('roles', 2, this); return false;" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('roles', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)</button>
                         </div>
                     </div>
                 </details>
@@ -80,10 +76,8 @@ Copy and paste this into your Xerte page's main content area:
                 <!-- Level 3 -->
                 <details class="l3">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 3</span>
-                            <span class="level-title">Emerging Good Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 3</span>
+                        <span style="margin-left: 1rem;">Emerging Good Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -92,8 +86,8 @@ Copy and paste this into your Xerte page's main content area:
                             <li>The SVF principles are acknowledged when creating Student Voice plans for the year.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('roles', 3, this)" type="button">Set as Level 3</button>
-                            <button class="score-btn" onclick="saveScore('roles', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                            <button class="score-btn" onclick="saveScore('roles', 3, this); return false;" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('roles', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)</button>
                         </div>
                     </div>
                 </details>
@@ -101,10 +95,8 @@ Copy and paste this into your Xerte page's main content area:
                 <!-- Level 4 -->
                 <details class="l4">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 4</span>
-                            <span class="level-title">Established Strong Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 4</span>
+                        <span style="margin-left: 1rem;">Established Strong Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -115,8 +107,8 @@ Copy and paste this into your Xerte page's main content area:
                             <li>The School has a clear Student Voice timeline for the academic year and this is communicated to staff and students.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('roles', 4, this)" type="button">Set as Level 4</button>
-                            <button class="score-btn" onclick="saveScore('roles', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                            <button class="score-btn" onclick="saveScore('roles', 4, this); return false;" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('roles', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)</button>
                         </div>
                     </div>
                 </details>
@@ -124,10 +116,8 @@ Copy and paste this into your Xerte page's main content area:
                 <!-- Level 5 -->
                 <details class="l5">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 5</span>
-                            <span class="level-title">Exceptional Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 5</span>
+                        <span style="margin-left: 1rem;">Exceptional Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -137,7 +127,7 @@ Copy and paste this into your Xerte page's main content area:
                             <li>All School staff are encouraged to engage in Student Voice discussions (Away Days, Teaching Plenaries etc.).</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('roles', 5, this)" type="button">Set as Level 5</button>
+                            <button class="score-btn" onclick="saveScore('roles', 5, this); return false;" type="button">Set as Level 5</button>
                         </div>
                     </div>
                 </details>
@@ -146,7 +136,7 @@ Copy and paste this into your Xerte page's main content area:
 
             <!-- Evidence Box -->
             <div class="evidence-box">
-                <label for="evidence-roles" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <label for="evidence-roles" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
                 <textarea id="evidence-roles" class="evidence-input"
                     placeholder="Describe your current practice and why you selected this level..."
                     onchange="saveNote('roles', this.value)"></textarea>
@@ -159,7 +149,7 @@ Copy and paste this into your Xerte page's main content area:
                 <h3>SV Training, Development, and Dissemination</h3>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <span id="badge-training" class="score-badge">Not Scored</span>
-                    <button class="toggle-btn" onclick="toggleSection('training', this)" type="button">
+                    <button class="toggle-btn" onclick="toggleSection('training', this); return false;" type="button">
                         Expand All <span class="toggle-icon">+</span>
                     </button>
                 </div>
@@ -169,10 +159,8 @@ Copy and paste this into your Xerte page's main content area:
 
                 <details class="l1">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 1</span>
-                            <span class="level-title">Moving towards Baseline</span>
-                        </div>
+                        <span class="level-number">LEVEL 1</span>
+                        <span style="margin-left: 1rem;">Moving towards Baseline</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -180,18 +168,16 @@ Copy and paste this into your Xerte page's main content area:
                             <li>Central Student Voice and engagement updates and opportunities are not circulated by email recipients.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('training', 1, this)" type="button">Set as Level 1</button>
-                            <button class="score-btn" onclick="saveScore('training', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                            <button class="score-btn" onclick="saveScore('training', 1, this); return false;" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('training', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l2">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 2</span>
-                            <span class="level-title">Baseline Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 2</span>
+                        <span style="margin-left: 1rem;">Baseline Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -199,18 +185,16 @@ Copy and paste this into your Xerte page's main content area:
                             <li>Student Voice staff disseminate Central Student Voice and Engagement updates and CPD opportunities to appropriate staff.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('training', 2, this)" type="button">Set as Level 2</button>
-                            <button class="score-btn" onclick="saveScore('training', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                            <button class="score-btn" onclick="saveScore('training', 2, this); return false;" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('training', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l3">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 3</span>
-                            <span class="level-title">Emerging Good Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 3</span>
+                        <span style="margin-left: 1rem;">Emerging Good Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -219,18 +203,16 @@ Copy and paste this into your Xerte page's main content area:
                             <li>All School staff are aware of SVEN.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('training', 3, this)" type="button">Set as Level 3</button>
-                            <button class="score-btn" onclick="saveScore('training', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                            <button class="score-btn" onclick="saveScore('training', 3, this); return false;" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('training', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l4">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 4</span>
-                            <span class="level-title">Established Strong Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 4</span>
+                        <span style="margin-left: 1rem;">Established Strong Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -240,18 +222,16 @@ Copy and paste this into your Xerte page's main content area:
                             <li>Student Voice staff identify Student Voice collaboration opportunities with other Schools.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('training', 4, this)" type="button">Set as Level 4</button>
-                            <button class="score-btn" onclick="saveScore('training', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                            <button class="score-btn" onclick="saveScore('training', 4, this); return false;" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('training', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l5">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 5</span>
-                            <span class="level-title">Exceptional Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 5</span>
+                        <span style="margin-left: 1rem;">Exceptional Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -260,7 +240,7 @@ Copy and paste this into your Xerte page's main content area:
                             <li>School Student Voice staff engage in Student Voice collaboration and partnership opportunities with other Schools.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('training', 5, this)" type="button">Set as Level 5</button>
+                            <button class="score-btn" onclick="saveScore('training', 5, this); return false;" type="button">Set as Level 5</button>
                         </div>
                     </div>
                 </details>
@@ -269,7 +249,7 @@ Copy and paste this into your Xerte page's main content area:
 
             <!-- Evidence Box -->
             <div class="evidence-box">
-                <label for="evidence-training" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <label for="evidence-training" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
                 <textarea id="evidence-training" class="evidence-input"
                     placeholder="Describe your current practice and why you selected this level..."
                     onchange="saveNote('training', this.value)"></textarea>
@@ -278,8 +258,8 @@ Copy and paste this into your Xerte page's main content area:
 
         <!-- Navigation -->
         <div class="page-navigation">
-            <button class="btn-secondary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage - 1, true)" type="button">← Back to Themes</button>
-            <button class="btn-primary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true)" type="button">Next: Theme 2 →</button>
+            <button class="btn-secondary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage - 1, true); return false;" type="button">← Back to Themes</button>
+            <button class="btn-primary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true); return false;" type="button">Next: Theme 2 →</button>
         </div>
 
     </main>

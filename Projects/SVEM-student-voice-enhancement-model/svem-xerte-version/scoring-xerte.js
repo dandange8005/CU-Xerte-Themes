@@ -210,3 +210,174 @@ function initThemesOverview() {
         updateThemeCard(theme.themeId, theme.sectionIds);
     });
 }
+
+// ========================================
+// Data Management Functions
+// ========================================
+
+// Open reset confirmation modal
+function resetData() {
+    const modal = document.getElementById('reset-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
+
+// Close reset confirmation modal
+function closeResetModal() {
+    const modal = document.getElementById('reset-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Confirm and execute data reset
+function confirmReset() {
+    // Clear all localStorage data with sv_ prefix
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith('sv_')) {
+            keysToRemove.push(key);
+        }
+    }
+
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+
+    // Close modal
+    closeResetModal();
+
+    // Show confirmation toast
+    showToast('All data has been reset');
+
+    // Refresh themes overview if on that page
+    if (typeof initThemesOverview === 'function') {
+        setTimeout(() => {
+            initThemesOverview();
+        }, 100);
+    }
+
+    // Reload page to reflect changes
+    setTimeout(() => {
+        location.reload();
+    }, 1500);
+}
+
+// Import data from JSON file
+function importData(input) {
+    const file = input.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const rawData = JSON.parse(e.target.result);
+
+            // Validate that it's an object
+            if (typeof rawData !== 'object' || rawData === null) {
+                throw new Error('Invalid data format');
+            }
+
+            let dataToImport = {};
+
+            // Check if this is the summary page export format (with metadata and assessmentData)
+            if (rawData.metadata && rawData.assessmentData) {
+                console.log('Detected summary page export format');
+                // Extract data from assessmentData and convert to localStorage format
+                Object.keys(rawData.assessmentData).forEach(key => {
+                    const item = rawData.assessmentData[key];
+                    dataToImport[key] = {
+                        score: item.score || 0,
+                        note: item.evidence || '' // Map 'evidence' to 'note'
+                    };
+                });
+            }
+            // Check if this is the simple export format (direct key-value pairs)
+            else {
+                console.log('Detected simple export format');
+                dataToImport = rawData;
+            }
+
+            // Import data to localStorage
+            let importCount = 0;
+            Object.keys(dataToImport).forEach(key => {
+                // Skip metadata or other non-section keys
+                if (key === 'metadata' || key === 'assessmentData') {
+                    return;
+                }
+
+                // Add sv_ prefix if not present
+                const storageKey = key.startsWith('sv_') ? key : `sv_${key}`;
+
+                // Ensure the data has the correct structure
+                let dataValue = dataToImport[key];
+
+                // If it's already a string, parse it
+                if (typeof dataValue === 'string') {
+                    try {
+                        dataValue = JSON.parse(dataValue);
+                    } catch (e) {
+                        console.warn(`Could not parse value for ${key}:`, dataValue);
+                    }
+                }
+
+                // Ensure we have score and note fields
+                const importValue = {
+                    score: dataValue.score || 0,
+                    note: dataValue.note || dataValue.evidence || ''
+                };
+
+                localStorage.setItem(storageKey, JSON.stringify(importValue));
+                importCount++;
+            });
+
+            showToast(`Data imported successfully! (${importCount} sections)`);
+
+            // Refresh the page after a short delay
+            setTimeout(() => {
+                location.reload();
+            }, 1500);
+
+        } catch (err) {
+            showToast('Error: Invalid JSON file');
+            console.error('Import error:', err);
+            console.error('File content:', e.target.result);
+        }
+    };
+
+    reader.readAsText(file);
+
+    // Reset file input
+    input.value = '';
+}
+
+// Export data to JSON file
+function downloadJSON() {
+    const exportData = {};
+
+    // Collect all sv_ prefixed data
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith('sv_')) {
+            const cleanKey = key.replace('sv_', '');
+            const value = localStorage.getItem(key);
+            try {
+                exportData[cleanKey] = JSON.parse(value);
+            } catch (e) {
+                exportData[cleanKey] = value;
+            }
+        }
+    }
+
+    // Create download
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+    const a = document.createElement('a');
+    a.href = dataStr;
+    const date = new Date().toISOString().slice(0, 10);
+    a.download = `svem_assessment_data_${date}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    showToast('Data exported successfully!');
+}

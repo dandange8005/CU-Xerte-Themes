@@ -62,7 +62,7 @@ This applies styles to all pages automatically.
     <h1 class="title-page__main-title">Student Voice Enhancement Model</h1>
     <p class="title-page__subtitle">Self-Assessment Tool</p>
 
-    <button type="button" class="title-page__enter-btn" onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true)">
+    <button type="button" class="title-page__enter-btn" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;">
         ENTER RESOURCE
     </button>
 
@@ -115,7 +115,7 @@ This applies styles to all pages automatically.
             </div>
         </div>
 
-        <button type="button" class="instructions-page__cta-btn" onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true)">
+        <button type="button" class="instructions-page__cta-btn" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;">
             Begin Assessment
         </button>
     </div>
@@ -226,15 +226,35 @@ if (typeof initThemesOverview === 'function') {
 window.location.href='theme-2.html'
 ```
 
-**✅ New (works in Xerte):**
+**✅ New Method 1: Sequential Navigation (Recommended)**
+```javascript
+x_navigateToPage(false, {type:'linkID', ID:'[next]'})
+```
+
+Available link IDs:
+- `[next]` - Navigate to next page
+- `[previous]` - Navigate to previous page
+- `[first]` - Navigate to first page
+- `[last]` - Navigate to last page
+
+**Benefits:**
+- More maintainable (no need to calculate page offsets)
+- Flexible (adding/removing pages won't break navigation)
+- Semantic and clear
+
+**✅ New Method 2: Relative Page Navigation**
 ```javascript
 x_navigateToPage(x_currentPageXML, x_currentPage + 1, true)
 ```
 
 **Parameters:**
 - `x_currentPageXML` - Current page XML (always use this variable)
-- `x_currentPage + 1` - Target page (relative navigation)
+- `x_currentPage + N` - Target page (relative navigation with offset)
 - `true` - History flag (enables back button)
+
+**When to use each method:**
+- Use **Method 1** for sequential navigation (Next, Previous, First, Last buttons)
+- Use **Method 2** when jumping to specific pages (e.g., clicking theme cards from overview)
 
 ### Script Execution
 
@@ -253,6 +273,160 @@ if (typeof initSVEMPage === 'function') {
     initSVEMPage(['roles', 'training']);
 }
 ```
+
+---
+
+## Navigation Patterns & Examples
+
+### Adding Previous/Next Buttons to Pages
+
+Add navigation buttons at the bottom of assessment pages:
+
+```html
+<div class="navigation-buttons" style="margin-top: 2rem; display: flex; justify-content: space-between;">
+    <button type="button" class="btn-secondary" onclick="x_navigateToPage(false, {type:'linkID', ID:'[previous]'}); return false;">
+        ← Previous
+    </button>
+    <button type="button" class="btn-primary" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;">
+        Next →
+    </button>
+</div>
+```
+
+### Return to Overview Button
+
+Add a button to return to the themes overview page:
+
+```html
+<button type="button" class="btn-secondary" onclick="x_navigateToPage(false, {type:'linkID', ID:'[first]'}); return false;">
+    ← Back to Overview
+</button>
+```
+
+### Jump to Summary/Last Page
+
+Add a button to skip to the summary:
+
+```html
+<button type="button" class="btn-primary" onclick="x_navigateToPage(false, {type:'linkID', ID:'[last]'}); return false;">
+    View Summary →
+</button>
+```
+
+### Complete Navigation Footer Example
+
+```html
+<footer class="page-navigation">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 2rem 0;">
+        <button type="button" class="btn-secondary" onclick="x_navigateToPage(false, {type:'linkID', ID:'[previous]'}); return false;">
+            ← Previous
+        </button>
+
+        <a href="#" onclick="x_navigateToPage(false, {type:'linkID', ID:'[first]'}); return false;" style="text-decoration: underline;">
+            Return to Overview
+        </a>
+
+        <button type="button" class="btn-primary" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;">
+            Next →
+        </button>
+    </div>
+</footer>
+```
+
+---
+
+## Data Management Features
+
+### Reset Data Modal
+
+The Instructions page includes a data management feature that allows users to reset all assessment data with a confirmation dialog.
+
+#### What's Included:
+
+1. **Reset Button** - Red "🗑️ Reset All Data" button on the Instructions page
+2. **Confirmation Modal** - Prevents accidental data loss with a warning dialog
+3. **Import Data** - Allows users to import previously exported JSON data
+4. **Export Data** - Users can download their assessment data as JSON
+
+#### Implementation:
+
+**HTML Structure** (in `page-02-instructions.html`):
+```html
+<!-- Data Management Buttons -->
+<div style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
+    <input type="file" id="importFile" style="display:none"
+           onchange="importData(this); return false;" accept=".json">
+    <button class="btn-secondary"
+            onclick="document.getElementById('importFile').click(); return false;">
+        📂 Import Data
+    </button>
+    <button class="btn-secondary btn-danger"
+            onclick="resetData(); return false;">
+        🗑️ Reset All Data
+    </button>
+</div>
+
+<!-- Reset Confirmation Modal -->
+<div id="reset-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+        <h3 style="color:#c0392b;">Reset All Data?</h3>
+        <p>This will permanently delete all your scores and notes. This cannot be undone.</p>
+        <div class="modal-actions">
+            <button class="btn-secondary" onclick="closeResetModal(); return false;">
+                Cancel
+            </button>
+            <button class="btn" style="background:#c0392b;" onclick="confirmReset(); return false;">
+                Yes, Delete Everything
+            </button>
+        </div>
+    </div>
+</div>
+```
+
+**CSS** (added to `custom.css`):
+- `.modal-overlay` - Full-screen overlay with semi-transparent background
+- `.modal-box` - Centered modal dialog with slide-in animation
+- `.btn-danger` - Red warning button styling
+
+**JavaScript Functions** (in `scoring-xerte.js`):
+- `resetData()` - Opens the confirmation modal
+- `closeResetModal()` - Closes the modal without action
+- `confirmReset()` - Clears all localStorage data with `sv_` prefix and reloads page
+- `importData(input)` - Imports JSON data from file upload
+- `downloadJSON()` - Exports all assessment data to JSON file
+
+#### User Flow:
+
+1. User clicks "🗑️ Reset All Data" button
+2. Modal appears with warning message
+3. User can:
+   - Click "Cancel" to close modal (no action taken)
+   - Click "Yes, Delete Everything" to confirm reset
+4. On confirmation:
+   - All assessment data is cleared from localStorage
+   - Toast notification shows "All data has been reset"
+   - Page reloads to show clean state
+
+#### Data Import/Export:
+
+**Export Data:**
+- Users can click "📥 Download Data (JSON)" on the summary page
+- Creates a JSON file named `svem_assessment_data_YYYY-MM-DD.json`
+- Contains all scores, notes, and evidence
+
+**Import Data:**
+- Users click "📂 Import Data" button
+- Select a previously exported JSON file
+- Data is loaded into localStorage
+- Page reloads to show imported data
+
+#### Safety Features:
+
+- **Confirmation dialog** prevents accidental deletion
+- **Clear warning** message explains consequences
+- **Visual distinction** (red button) signals destructive action
+- **Toast feedback** confirms action completion
+- **Data preservation** through export before reset
 
 ---
 
@@ -277,6 +451,20 @@ Open browser console (F12) and verify no errors.
 - Return to overview page
 - Verify progress bars update
 - Check status badges change
+
+### 5. Test Data Management
+- Click "Reset All Data" button
+- Verify modal appears with warning
+- Click "Cancel" - modal should close without action
+- Click "Reset All Data" again
+- Click "Yes, Delete Everything"
+- Verify toast notification shows "All data has been reset"
+- Check that all scores and notes are cleared
+- Test Import Data:
+  - Export data first (if available on summary page)
+  - Clear some data
+  - Import the exported file
+  - Verify data is restored
 
 ---
 

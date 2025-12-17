@@ -2,41 +2,69 @@
 <!-- This is the content-only version for Xerte XOT -->
 
 <div class="instructions-page">
-    <div class="instructions-container">
-        <h1 class="instructions-page__title">Welcome to the SVEM Self-Assessment</h1>
-
-        <p class="instructions-page__description">
-            This self-assessment tool will help you evaluate your institution's Student Voice practices
-            across multiple themes and identify areas for development.
-        </p>
-
-        <!-- Info Cards -->
-        <div class="instructions-page__info-cards">
-            <div class="info-card">
-                <div class="info-card__icon">⏱️</div>
-                <div class="info-card__value">45 mins</div>
-                <div class="info-card__label">Estimated Time</div>
-            </div>
-
-            <div class="info-card">
-                <div class="info-card__icon">💾</div>
-                <div class="info-card__value">Auto-Save</div>
-                <div class="info-card__label">Progress Saved</div>
-            </div>
-
-            <div class="info-card">
-                <div class="info-card__icon">📋</div>
-                <div class="info-card__value">3 Themes</div>
-                <div class="info-card__label">To Complete</div>
-            </div>
+  <div class="instructions-container">
+    <h1 class="instructions-page__title">Welcome to the SVEM Self-Assessment
+    </h1>
+    <p class="instructions-page__description">This self-assessment tool will help you evaluate your institution&#39;s Student Voice practices across multiple themes and identify areas for development.
+    </p>
+    <div class="instructions-page__info-cards">
+      <div class="info-card">
+        <div class="info-card__icon">⏱️
         </div>
-
-        <!-- CTA Button -->
-        <button type="button" class="instructions-page__cta-btn" onclick="parent.x_navigateToPage(parent.x_currentPageXML, parent.x_currentPage + 1, true)">
-            Begin Assessment
-        </button>
+        <div class="info-card__value">45 mins
+        </div>
+        <div class="info-card__label">Estimated Time
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon">💾
+        </div>
+        <div class="info-card__value">Auto-Save
+        </div>
+        <div class="info-card__label">Progress Saved
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon">📋
+        </div>
+        <div class="info-card__value">3 Themes
+        </div>
+        <div class="info-card__label">To Complete
+        </div>
+      </div>
     </div>
+    <button class="instructions-page__cta-btn" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;" type="button">Begin Assessment
+    </button>
+
+    <!-- Data Management Options -->
+    <div style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+      <input type="file" id="importFile" style="display:none" onchange="importData(this); return false;" accept=".json">
+      <button class="btn-secondary" onclick="document.getElementById('importFile').click(); return false;" type="button">
+        📂 Import Data
+      </button>
+      <button class="btn-secondary btn-danger" onclick="resetData(); return false;" type="button">
+        🗑️ Reset All Data
+      </button>
+    </div>
+  </div>
 </div>
 
 <!-- Toast Notification -->
 <div id="toast">Changes Saved</div>
+
+<!-- Reset Data Confirmation Modal -->
+<div id="reset-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-box">
+    <h3 style="color:#c0392b; margin-bottom:1rem;">Reset All Data?</h3>
+    <p style="margin-bottom:1.5rem; color:#555;">
+      This will permanently delete all your scores and notes. This cannot be undone.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeResetModal(); return false;" type="button">Cancel</button>
+      <button class="btn" style="background:#c0392b; border:none; color:white;" onclick="confirmReset(); return false;" type="button">
+        Yes, Delete Everything
+      </button>
+    </div>
+  </div>
+</div>
+

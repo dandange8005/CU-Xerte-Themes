@@ -39,7 +39,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <h3>Mid-Module Enhancement</h3>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <span id="badge-mme" class="score-badge">Not Scored</span>
-                    <button class="toggle-btn" onclick="toggleSection('mme', this)" type="button">
+                    <button class="toggle-btn" onclick="toggleSection('mme', this); return false;" type="button">
                         Expand All <span class="toggle-icon">+</span>
                     </button>
                 </div>
@@ -49,10 +49,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <!-- Level 1 -->
                 <details class="l1">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 1</span>
-                            <span class="level-title">Moving towards Baseline</span>
-                        </div>
+                        <span class="level-number">LEVEL 1</span>
+                        <span style="margin-left: 1rem;">Moving towards Baseline</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -60,8 +58,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Student feedback is not considered when introducing changes/enhancements to modules.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('mme', 1, this)" type="button">Set as Level 1</button>
-                            <button class="score-btn" onclick="saveScore('mme', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                            <button class="score-btn" onclick="saveScore('mme', 1, this); return false;" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('mme', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)</button>
                         </div>
                     </div>
                 </details>
@@ -69,10 +67,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <!-- Level 2 -->
                 <details class="l2">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 2</span>
-                            <span class="level-title">Baseline Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 2</span>
+                        <span style="margin-left: 1rem;">Baseline Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -83,8 +79,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Some Module Leaders share feedback with students, making changes where appropriate.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('mme', 2, this)" type="button">Set as Level 2</button>
-                            <button class="score-btn" onclick="saveScore('mme', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                            <button class="score-btn" onclick="saveScore('mme', 2, this); return false;" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('mme', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)</button>
                         </div>
                     </div>
                 </details>
@@ -92,10 +88,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <!-- Level 3 -->
                 <details class="l3">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 3</span>
-                            <span class="level-title">Emerging Good Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 3</span>
+                        <span style="margin-left: 1rem;">Emerging Good Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -108,8 +102,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Students are informed when feedback can't be actioned.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('mme', 3, this)" type="button">Set as Level 3</button>
-                            <button class="score-btn" onclick="saveScore('mme', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                            <button class="score-btn" onclick="saveScore('mme', 3, this); return false;" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('mme', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)</button>
                         </div>
                     </div>
                 </details>
@@ -117,10 +111,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <!-- Level 4 -->
                 <details class="l4">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 4</span>
-                            <span class="level-title">Established Strong Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 4</span>
+                        <span style="margin-left: 1rem;">Established Strong Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -130,8 +122,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Module Leaders explain to students what changes can and cannot be made, and escalate any non-module specific feedback to appropriate colleagues.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('mme', 4, this)" type="button">Set as Level 4</button>
-                            <button class="score-btn" onclick="saveScore('mme', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                            <button class="score-btn" onclick="saveScore('mme', 4, this); return false;" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('mme', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)</button>
                         </div>
                     </div>
                 </details>
@@ -139,10 +131,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <!-- Level 5 -->
                 <details class="l5">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 5</span>
-                            <span class="level-title">Exceptional Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 5</span>
+                        <span style="margin-left: 1rem;">Exceptional Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -153,7 +143,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>School keeps a record of key changes to use as a resource which supports sharing of best practice.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('mme', 5, this)" type="button">Set as Level 5</button>
+                            <button class="score-btn" onclick="saveScore('mme', 5, this); return false;" type="button">Set as Level 5</button>
                         </div>
                     </div>
                 </details>
@@ -161,7 +151,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
 
             <!-- Evidence Box -->
             <div class="evidence-box">
-                <label for="evidence-mme" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <label for="evidence-mme" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
                 <textarea id="evidence-mme" class="evidence-input"
                     placeholder="Describe your current practice and why you selected this level..."
                     onchange="saveNote('mme', this.value)"></textarea>
@@ -174,7 +164,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <h3>End of Module Enhancement</h3>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <span id="badge-me" class="score-badge">Not Scored</span>
-                    <button class="toggle-btn" onclick="toggleSection('me', this)" type="button">
+                    <button class="toggle-btn" onclick="toggleSection('me', this); return false;" type="button">
                         Expand All <span class="toggle-icon">+</span>
                     </button>
                 </div>
@@ -183,10 +173,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
             <div class="level-group">
                 <details class="l1">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 1</span>
-                            <span class="level-title">Moving towards Baseline</span>
-                        </div>
+                        <span class="level-number">LEVEL 1</span>
+                        <span style="margin-left: 1rem;">Moving towards Baseline</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -194,18 +182,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Student feedback is not considered when introducing changes/enhancements to modules.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('me', 1, this)" type="button">Set as Level 1</button>
-                            <button class="score-btn" onclick="saveScore('me', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                            <button class="score-btn" onclick="saveScore('me', 1, this); return false;" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('me', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l2">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 2</span>
-                            <span class="level-title">Baseline Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 2</span>
+                        <span style="margin-left: 1rem;">Baseline Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -215,18 +201,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Module Leaders acknowledge ME feedback by providing a response via Blue.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('me', 2, this)" type="button">Set as Level 2</button>
-                            <button class="score-btn" onclick="saveScore('me', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                            <button class="score-btn" onclick="saveScore('me', 2, this); return false;" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('me', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l3">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 3</span>
-                            <span class="level-title">Emerging Good Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 3</span>
+                        <span style="margin-left: 1rem;">Emerging Good Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -237,18 +221,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Module Leaders respond via Blue within the 2 week response period.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('me', 3, this)" type="button">Set as Level 3</button>
-                            <button class="score-btn" onclick="saveScore('me', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                            <button class="score-btn" onclick="saveScore('me', 3, this); return false;" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('me', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l4">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 4</span>
-                            <span class="level-title">Established Strong Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 4</span>
+                        <span style="margin-left: 1rem;">Established Strong Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -260,18 +242,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>ME feedback and actions are raised during module introductions at the beginning of the next cycle.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('me', 4, this)" type="button">Set as Level 4</button>
-                            <button class="score-btn" onclick="saveScore('me', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                            <button class="score-btn" onclick="saveScore('me', 4, this); return false;" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('me', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l5">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 5</span>
-                            <span class="level-title">Exceptional Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 5</span>
+                        <span style="margin-left: 1rem;">Exceptional Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -283,7 +263,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>School conducts annual review of ME promotional plan.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('me', 5, this)" type="button">Set as Level 5</button>
+                            <button class="score-btn" onclick="saveScore('me', 5, this); return false;" type="button">Set as Level 5</button>
                         </div>
                     </div>
                 </details>
@@ -291,7 +271,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
 
             <!-- Evidence Box -->
             <div class="evidence-box">
-                <label for="evidence-me" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <label for="evidence-me" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
                 <textarea id="evidence-me" class="evidence-input"
                     placeholder="Describe your current practice and why you selected this level..."
                     onchange="saveNote('me', this.value)"></textarea>
@@ -304,7 +284,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <h3>National Student Survey (NSS)</h3>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <span id="badge-nss" class="score-badge">Not Scored</span>
-                    <button class="toggle-btn" onclick="toggleSection('nss', this)" type="button">
+                    <button class="toggle-btn" onclick="toggleSection('nss', this); return false;" type="button">
                         Expand All <span class="toggle-icon">+</span>
                     </button>
                 </div>
@@ -313,10 +293,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
             <div class="level-group">
                 <details class="l1">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 1</span>
-                            <span class="level-title">Moving towards Baseline</span>
-                        </div>
+                        <span class="level-number">LEVEL 1</span>
+                        <span style="margin-left: 1rem;">Moving towards Baseline</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -325,18 +303,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>School is informed of NSS results through Cardiff University communications.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('nss', 1, this)" type="button">Set as Level 1</button>
-                            <button class="score-btn" onclick="saveScore('nss', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                            <button class="score-btn" onclick="saveScore('nss', 1, this); return false;" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('nss', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l2">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 2</span>
-                            <span class="level-title">Baseline Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 2</span>
+                        <span style="margin-left: 1rem;">Baseline Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -347,18 +323,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Schools encourage appropriate staff to participate in central training session on NSS.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('nss', 2, this)" type="button">Set as Level 2</button>
-                            <button class="score-btn" onclick="saveScore('nss', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                            <button class="score-btn" onclick="saveScore('nss', 2, this); return false;" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('nss', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l3">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 3</span>
-                            <span class="level-title">Emerging Good Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 3</span>
+                        <span style="margin-left: 1rem;">Emerging Good Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -370,18 +344,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>NSS/ Review and Enhancement (RE) plans are added as an agenda item in SSPs.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('nss', 3, this)" type="button">Set as Level 3</button>
-                            <button class="score-btn" onclick="saveScore('nss', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                            <button class="score-btn" onclick="saveScore('nss', 3, this); return false;" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('nss', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l4">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 4</span>
-                            <span class="level-title">Established Strong Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 4</span>
+                        <span style="margin-left: 1rem;">Established Strong Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -394,18 +366,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Student Reps are consulted on NSS/ Review and Enhancement (RE) plans.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('nss', 4, this)" type="button">Set as Level 4</button>
-                            <button class="score-btn" onclick="saveScore('nss', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                            <button class="score-btn" onclick="saveScore('nss', 4, this); return false;" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('nss', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l5">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 5</span>
-                            <span class="level-title">Exceptional Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 5</span>
+                        <span style="margin-left: 1rem;">Exceptional Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -417,7 +387,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>School conducts annual review of NSS promotional plan.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('nss', 5, this)" type="button">Set as Level 5</button>
+                            <button class="score-btn" onclick="saveScore('nss', 5, this); return false;" type="button">Set as Level 5</button>
                         </div>
                     </div>
                 </details>
@@ -425,7 +395,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
 
             <!-- Evidence Box -->
             <div class="evidence-box">
-                <label for="evidence-nss" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <label for="evidence-nss" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
                 <textarea id="evidence-nss" class="evidence-input"
                     placeholder="Describe your current practice and why you selected this level..."
                     onchange="saveNote('nss', this.value)"></textarea>
@@ -438,7 +408,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                 <h3>Cardiff University Postgraduate Taught Survey (CUPTS) & Postgraduate Research Experience Survey (PRES)</h3>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <span id="badge-pg" class="score-badge">Not Scored</span>
-                    <button class="toggle-btn" onclick="toggleSection('pg', this)" type="button">
+                    <button class="toggle-btn" onclick="toggleSection('pg', this); return false;" type="button">
                         Expand All <span class="toggle-icon">+</span>
                     </button>
                 </div>
@@ -447,10 +417,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
             <div class="level-group">
                 <details class="l1">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 1</span>
-                            <span class="level-title">Moving towards Baseline</span>
-                        </div>
+                        <span class="level-number">LEVEL 1</span>
+                        <span style="margin-left: 1rem;">Moving towards Baseline</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -458,18 +426,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Student feedback is not considered when introducing changes/enhancements to the PG environment.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('pg', 1, this)" type="button">Set as Level 1</button>
-                            <button class="score-btn" onclick="saveScore('pg', 1.5, this)" type="button">Transitioning to Level 2 (1.5)</button>
+                            <button class="score-btn" onclick="saveScore('pg', 1, this); return false;" type="button">Set as Level 1</button>
+                            <button class="score-btn" onclick="saveScore('pg', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l2">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 2</span>
-                            <span class="level-title">Baseline Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 2</span>
+                        <span style="margin-left: 1rem;">Baseline Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -479,18 +445,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>PRES - Quantitative results are shared with students without any further analysis and actions are not communicated.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('pg', 2, this)" type="button">Set as Level 2</button>
-                            <button class="score-btn" onclick="saveScore('pg', 2.5, this)" type="button">Transitioning to Level 3 (2.5)</button>
+                            <button class="score-btn" onclick="saveScore('pg', 2, this); return false;" type="button">Set as Level 2</button>
+                            <button class="score-btn" onclick="saveScore('pg', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l3">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 3</span>
-                            <span class="level-title">Emerging Good Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 3</span>
+                        <span style="margin-left: 1rem;">Emerging Good Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -500,18 +464,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>PRES - Where appropriate, School and PGR staff consider introducing changes and enhancements as a result of PRES feedback.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('pg', 3, this)" type="button">Set as Level 3</button>
-                            <button class="score-btn" onclick="saveScore('pg', 3.5, this)" type="button">Transitioning to Level 4 (3.5)</button>
+                            <button class="score-btn" onclick="saveScore('pg', 3, this); return false;" type="button">Set as Level 3</button>
+                            <button class="score-btn" onclick="saveScore('pg', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l4">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 4</span>
-                            <span class="level-title">Established Strong Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 4</span>
+                        <span style="margin-left: 1rem;">Established Strong Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -521,18 +483,16 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>Where appropriate, PG staff consult with students on proposed changes.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('pg', 4, this)" type="button">Set as Level 4</button>
-                            <button class="score-btn" onclick="saveScore('pg', 4.5, this)" type="button">Transitioning to Level 5 (4.5)</button>
+                            <button class="score-btn" onclick="saveScore('pg', 4, this); return false;" type="button">Set as Level 4</button>
+                            <button class="score-btn" onclick="saveScore('pg', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)</button>
                         </div>
                     </div>
                 </details>
 
                 <details class="l5">
                     <summary>
-                        <div class="level-header">
-                            <span class="level-number">Level 5</span>
-                            <span class="level-title">Exceptional Practice</span>
-                        </div>
+                        <span class="level-number">LEVEL 5</span>
+                        <span style="margin-left: 1rem;">Exceptional Practice</span>
                     </summary>
                     <div class="content-body">
                         <ul>
@@ -543,7 +503,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
                             <li>School conducts annual review of PG survey promotional plan.</li>
                         </ul>
                         <div class="scoring-actions">
-                            <button class="score-btn" onclick="saveScore('pg', 5, this)" type="button">Set as Level 5</button>
+                            <button class="score-btn" onclick="saveScore('pg', 5, this); return false;" type="button">Set as Level 5</button>
                         </div>
                     </div>
                 </details>
@@ -551,7 +511,7 @@ Copy this corrected HTML into your Xerte page's main content editor:
 
             <!-- Evidence Box -->
             <div class="evidence-box">
-                <label for="evidence-pg" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence & Contextual Notes</label>
+                <label for="evidence-pg" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
                 <textarea id="evidence-pg" class="evidence-input"
                     placeholder="Describe your current practice and why you selected this level..."
                     onchange="saveNote('pg', this.value)"></textarea>
@@ -560,8 +520,8 @@ Copy this corrected HTML into your Xerte page's main content editor:
 
         <!-- Navigation -->
         <div class="page-navigation">
-            <button class="btn-secondary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage - 1, true)" type="button">← Previous: Theme 2</button>
-            <button class="btn-primary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true)" type="button">Next: Summary →</button>
+            <button class="btn-secondary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage - 1, true); return false;" type="button">← Previous: Theme 2</button>
+            <button class="btn-primary" onclick="x_navigateToPage(x_currentPageXML, x_currentPage + 1, true); return false;" type="button">Next: Summary →</button>
         </div>
 
     </main>
