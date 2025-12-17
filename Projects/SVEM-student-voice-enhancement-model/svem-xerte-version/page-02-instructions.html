@@ -33,16 +33,16 @@
         </div>
       </div>
     </div>
-    <button class="instructions-page__cta-btn" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;" type="button">Begin Assessment
+    <button class="btn btn-primary btn-lg" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;" type="button">Begin Assessment
     </button>
 
     <!-- Data Management Options -->
     <div style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
       <input type="file" id="importFile" style="display:none" onchange="importData(this); return false;" accept=".json">
-      <button class="btn-secondary" onclick="document.getElementById('importFile').click(); return false;" type="button">
+      <button class="btn btn-light" onclick="document.getElementById('importFile').click(); return false;" type="button">
         📂 Import Data
       </button>
-      <button class="btn-secondary btn-danger" onclick="resetData(); return false;" type="button">
+      <button class="btn btn-danger" onclick="resetData(); return false;" type="button">
         🗑️ Reset All Data
       </button>
     </div>
@@ -60,8 +60,8 @@
       This will permanently delete all your scores and notes. This cannot be undone.
     </p>
     <div class="modal-actions">
-      <button class="btn-secondary" onclick="closeResetModal(); return false;" type="button">Cancel</button>
-      <button class="btn" style="background:#c0392b; border:none; color:white;" onclick="confirmReset(); return false;" type="button">
+      <button class="btn btn-light" onclick="closeResetModal(); return false;" type="button">Cancel</button>
+      <button class="btn btn-danger" onclick="confirmReset(); return false;" type="button">
         Yes, Delete Everything
       </button>
     </div>

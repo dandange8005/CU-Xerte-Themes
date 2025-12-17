@@ -82,28 +82,7 @@
     max-width: 600px;
 }
 
-.title-page__enter-btn {
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-transform: uppercase;
-}
-
-.title-page__enter-btn:hover {
-    background-color: #1a252f;
-    transform: translateY(-2px);
-}
-
-.title-page__enter-btn:active {
-    transform: translateY(0);
-}
+/* Removed .title-page__enter-btn - using .btn .btn-primary .btn-lg from xot_main.css */
 
 .title-page__footer {
     margin-top: auto;
@@ -187,33 +166,9 @@
     color: #888;
 }
 
-.instructions-page__cta-btn {
-    background-color: #003366;
-    color: white;
-    border: none;
-    padding: 1rem 3rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.instructions-page__cta-btn:hover {
-    background-color: #002244;
-    transform: translateY(-2px);
-}
-
-.instructions-page__cta-btn:active {
-    transform: translateY(0);
-}
+/* Removed .instructions-page__cta-btn - using .btn .btn-primary .btn-lg from xot_main.css */
 
 /* Themes Overview Page */
-.themes-overview {
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    background-color: #f4f7f6;
-}
 
 .container {
     max-width: 900px;
@@ -350,21 +305,7 @@
     text-align: center;
 }
 
-.btn-primary {
-    background-color: #003366;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.btn-primary:hover {
-    background-color: #002244;
-}
+/* Removed .btn-primary - using .btn .btn-primary from xot_main.css */
 
 /* Individual Theme Pages */
 /* Theme Page Container - Single Column Layout */
@@ -752,10 +693,13 @@ details.selected-level {
 }
 
 /* Button Styles */
-.btn-secondary {
+/* Removed .btn-secondary - using .btn .btn-light from xot_main.css */
+
+/* Custom danger button for destructive actions */
+.btn-danger {
     background: #fff;
-    color: #5f6c7b;
-    border: 1px solid #dae1e7;
+    color: #c0392b;
+    border: 1px solid #e74c3c;
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
@@ -764,36 +708,13 @@ details.selected-level {
     transition: all 0.2s ease;
 }
 
-.btn-secondary:hover {
-    border-color: #003366;
-    color: #003366;
-}
-
-.btn-secondary.btn-danger {
-    color: #c0392b;
-    border-color: #e74c3c;
-}
-
-.btn-secondary.btn-danger:hover {
+.btn-danger:hover {
     background: #fee;
     border-color: #c0392b;
+    color: #c0392b;
 }
 
-.btn {
-    padding: 0.8rem 1.5rem;
-    background: #003366;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 0.2s ease;
-}
-
-.btn:hover {
-    background: #002244;
-}
+/* Removed .btn-primary and .btn - using xot_main.css equivalents */
 
 /* ========================================
    Utility Classes
