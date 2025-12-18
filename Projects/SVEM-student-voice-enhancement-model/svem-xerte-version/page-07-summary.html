@@ -13,30 +13,35 @@
   <div class="completion-summary">
     <h3>Assessment Completion Summary
     </h3>
-    <div class="completion-stats">
-      <div class="stat-item">
-        <div class="stat-value" id="completed-count">0
+    <div class="summary-container">
+      <div class="completion-stats">
+        <div class="stat-item">
+          <div class="stat-value" id="completed-count">0
+          </div>
+          <div class="stat-label">Sections Completed
+          </div>
         </div>
-        <div class="stat-label">Sections Completed
+        <div class="stat-item">
+          <div class="stat-value">7
+          </div>
+          <div class="stat-label">Total Sections
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="completion-percent">0%
+          </div>
+          <div class="stat-label">Overall Progress
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="average-score">0.0
+          </div>
+          <div class="stat-label">Average Score
+          </div>
         </div>
       </div>
-      <div class="stat-item">
-        <div class="stat-value">7
-        </div>
-        <div class="stat-label">Total Sections
-        </div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" id="completion-percent">0%
-        </div>
-        <div class="stat-label">Overall Progress
-        </div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" id="average-score">0.0
-        </div>
-        <div class="stat-label">Average Score
-        </div>
+      <div class="chart-container">
+        <canvas id="spiderChart"></canvas>
       </div>
     </div>
   </div>
@@ -104,10 +109,32 @@
     color: #2c3e50;
 }
 
+.summary-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
 .completion-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    min-height: 300px;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    max-height: 350px;
 }
 
 .stat-item {
@@ -246,6 +273,15 @@
         box-shadow: none;
         page-break-inside: avoid;
     }
+
+    .summary-container {
+        page-break-inside: avoid;
+    }
+
+    .chart-container {
+        background: white;
+        border: 1px solid #e0e0e0;
+    }
 }
 
 /* Responsive */
@@ -259,8 +295,17 @@
         text-align: left;
     }
 
+    .summary-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .completion-stats {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-container {
+        min-height: 250px;
     }
 
     .report-actions button {
@@ -271,9 +316,14 @@
 }
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
 <script>
     // Summary Page JavaScript
 // Generates report from localStorage data
+
+// Global variable to store chart instance
+let spiderChartInstance = null;
 
 // Section configuration
 const SECTIONS = {
@@ -316,6 +366,124 @@ function getMaturityLevelName(score) {
         return `Transitioning (${levels[level]} → ${levels[level + 1]})`;
     }
     return levels[level];
+}
+
+// Generate spider chart
+function generateSpiderChart() {
+    const ctx = document.getElementById('spiderChart');
+    if (!ctx) return;
+
+    // Collect all section data
+    const labels = [];
+    const scores = [];
+    const allSections = [];
+
+    // Flatten all sections
+    Object.keys(SECTIONS).forEach(themeName => {
+        const theme = SECTIONS[themeName];
+        theme.sections.forEach(section => {
+            allSections.push(section);
+        });
+    });
+
+    // Get scores for each section with shortened labels for better chart readability
+    const sectionData = []; // Store section info for tooltips
+    allSections.forEach(section => {
+        // Use shortened labels to prevent overlap in the chart
+        let shortLabel = section.name;
+        if (section.id === 'roles') shortLabel = 'Roles';
+        if (section.id === 'training') shortLabel = 'Training';
+        if (section.id === 'reps-ssps') shortLabel = 'Reps/SSPs';
+        if (section.id === 'mme') shortLabel = 'MME';
+        if (section.id === 'me') shortLabel = 'ME';
+        if (section.id === 'nss') shortLabel = 'NSS';
+        if (section.id === 'pg') shortLabel = 'PG Surveys';
+
+        labels.push(shortLabel);
+        const savedData = JSON.parse(localStorage.getItem(`sv_${section.id}`));
+        scores.push(savedData && savedData.score ? savedData.score : 0);
+        sectionData.push({ name: section.name, shortLabel: shortLabel });
+    });
+
+    // Destroy existing chart if it exists
+    if (spiderChartInstance) {
+        spiderChartInstance.destroy();
+    }
+
+    // Create new chart
+    spiderChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Current Assessment',
+                data: scores,
+                fill: true,
+                backgroundColor: 'rgba(0, 51, 102, 0.2)',
+                borderColor: 'rgb(0, 51, 102)',
+                pointBackgroundColor: 'rgb(0, 51, 102)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(0, 51, 102)',
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                r: {
+                    angleLines: {
+                        display: true,
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    ticks: {
+                        stepSize: 1,
+                        backdropColor: 'transparent',
+                        font: {
+                            size: 11
+                        }
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 11,
+                            weight: '500'
+                        },
+                        color: '#2c3e50'
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(context) {
+                            const index = context[0].dataIndex;
+                            return sectionData[index].name;
+                        },
+                        label: function(context) {
+                            const score = context.parsed.r;
+                            if (score === 0) return 'Not Scored';
+                            const levelName = getMaturityLevelName(score);
+                            return `Level ${score} - ${levelName}`;
+                        }
+                    }
+                }
+            },
+            animation: {
+                duration: 0 // Disable animation for better printing/PDF generation
+            }
+        }
+    });
 }
 
 // Generate report
@@ -464,42 +632,57 @@ function showToast(message) {
 
 // Generate report on page load AND when page becomes visible
 (function() {
-    // Run on initial load
-    generateReport();
+    // Wait for Chart.js to load
+    function initializeReports() {
+        if (typeof Chart === 'undefined') {
+            setTimeout(initializeReports, 100);
+            return;
+        }
 
-    // Also run when page becomes visible (handles Xerte navigation)
-    // Check periodically if this page is visible
-    const summaryPageElement = document.querySelector('.summary-page');
-    if (summaryPageElement) {
-        let lastVisibleState = false;
+        // Run on initial load
+        generateReport();
+        generateSpiderChart();
 
-        const checkVisibility = setInterval(function() {
-            // Check if the summary page is visible
-            const isVisible = summaryPageElement.offsetParent !== null;
+        // Also run when page becomes visible (handles Xerte navigation)
+        // Check periodically if this page is visible
+        const summaryPageElement = document.querySelector('.summary-page');
+        if (summaryPageElement) {
+            let lastVisibleState = false;
 
-            // Only regenerate if visibility changed from hidden to visible
-            if (isVisible && !lastVisibleState) {
+            const checkVisibility = setInterval(function() {
+                // Check if the summary page is visible
+                const isVisible = summaryPageElement.offsetParent !== null;
+
+                // Only regenerate if visibility changed from hidden to visible
+                if (isVisible && !lastVisibleState) {
+                    generateReport();
+                    generateSpiderChart();
+                }
+
+                lastVisibleState = isVisible;
+            }, 500); // Check every 500ms
+
+            // Store interval ID so we can clear it if needed
+            window._summaryPageInterval = checkVisibility;
+        }
+
+        // Alternative: Listen for focus/visibility events
+        window.addEventListener('focus', function() {
+            if (summaryPageElement && summaryPageElement.offsetParent !== null) {
                 generateReport();
+                generateSpiderChart();
             }
+        });
 
-            lastVisibleState = isVisible;
-        }, 500); // Check every 500ms
-
-        // Store interval ID so we can clear it if needed
-        window._summaryPageInterval = checkVisibility;
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && summaryPageElement && summaryPageElement.offsetParent !== null) {
+                generateReport();
+                generateSpiderChart();
+            }
+        });
     }
 
-    // Alternative: Listen for focus/visibility events
-    window.addEventListener('focus', function() {
-        if (summaryPageElement && summaryPageElement.offsetParent !== null) {
-            generateReport();
-        }
-    });
-
-    document.addEventListener('visibilitychange', function() {
-        if (!document.hidden && summaryPageElement && summaryPageElement.offsetParent !== null) {
-            generateReport();
-        }
-    });
+    // Start initialization
+    initializeReports();
 })();
 </script>
