@@ -2,6 +2,114 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2024-12-18
+
+### Added - Summary Page Spider Chart & Enhanced Navigation
+
+#### Spider Chart Implementation
+**Added interactive radar/spider chart to summary page** (`page-07-summary.html`):
+- ✅ Chart.js v4.4.0 integration via CDN
+- ✅ 7-point radar chart showing all assessment sections
+- ✅ Shortened labels for better readability (Roles, Training, Reps/SSPs, MME, ME, NSS, PG Surveys)
+- ✅ Enhanced tooltips showing full section names and maturity levels
+- ✅ Cardiff University brand colors (rgb(0, 51, 102))
+- ✅ 0-5 scale with proper grid lines
+- ✅ Auto-regenerates when page becomes visible
+- ✅ Print-friendly (animation disabled)
+
+**CSS Updates**:
+- ✅ Two-column balanced layout (stats on left, chart on right)
+- ✅ Responsive design (stacks on mobile < 768px)
+- ✅ Chart container styling with background and rounded corners
+- ✅ Print styles for clean PDF output
+
+**JavaScript Updates**:
+- ✅ `generateSpiderChart()` function with section data mapping
+- ✅ Chart instance management (destroy/recreate on updates)
+- ✅ Visibility detection for auto-refresh
+- ✅ Chart.js initialization with proper error handling
+
+#### Enhanced Navigation System
+**Added smart navigation functions** (`scoring-xerte.js`):
+- ✅ `saveAndContinue()` - Saves all evidence notes and navigates to themes overview
+- ✅ `backToMenu()` - Quick navigation back to themes overview
+- ✅ Toast notification on save ("Progress saved!")
+- ✅ 500ms delay for smooth transition
+- ✅ Auto-updates progress bars on overview page
+
+**Updated all theme pages** with new navigation:
+- ✅ `page-04-theme-1.html` - 2 sections (Roles, Training)
+- ✅ `page-05-theme-2.html` - 1 section (Reps/SSPs)
+- ✅ `page-06-theme-3.html` - 4 sections (MME, ME, NSS, PG Surveys)
+
+**Navigation button styles**:
+- Primary: "Save & Continue →" (`btn btn-primary`)
+- Secondary: "← Back to Menu" (`btn btn-light` with custom styles)
+- Flexbox layout with space-between alignment
+
+#### Enhanced Evidence Collection
+**Added comprehensive guidance to all evidence boxes**:
+
+**New structure for each evidence section**:
+1. **Heading**: "Evidence & Contextual Notes"
+2. **Importance statement**: "This context is essential for generating meaningful recommendations"
+3. **Section-specific prompt**: Names the specific section being assessed
+4. **Four-point checklist**:
+   - ✓ What practices/structures are currently in place?
+   - ✓ Why does this represent the level you selected?
+   - ✓ What evidence supports this assessment?
+   - ✓ If you selected an "in-between" level (e.g., 2.5), what are you doing from each level?
+5. **Reminder**: "Be as specific as possible - this context helps us generate tailored recommendations for your school."
+6. **Section-specific placeholder examples**
+
+**Updated sections**:
+- Theme 1 (page-04-theme-1.html):
+  - Roles and Structures
+  - SV Training, Development, and Dissemination
+- Theme 2 (page-05-theme-2.html):
+  - Student Reps and Student-Staff Panels
+- Theme 3 (page-06-theme-3.html):
+  - Mid-Module Enhancement (MME)
+  - End of Module Enhancement (ME)
+  - National Student Survey (NSS)
+  - Postgraduate Surveys (CUPTS & PRES)
+
+### Files Modified
+- `scoring-xerte.js` - Added navigation functions (lines 385-416)
+- `page-04-theme-1.html` - Navigation buttons + enhanced evidence boxes
+- `page-05-theme-2.html` - Navigation buttons + enhanced evidence boxes
+- `page-06-theme-3.html` - Navigation buttons + enhanced evidence boxes
+- `page-07-summary.html` - Spider chart + two-column layout
+- `README.md` - Updated documentation with v1.3 features
+
+### Files Created
+- `page-07-summary-backup.html` - Backup with experimental chart fixes
+
+### Documentation Updates
+**README.md v1.3**:
+- ✅ Updated Key Features list
+- ✅ Added navigation functions to Core Functions table
+- ✅ Updated Navigation Patterns section
+- ✅ Updated Evidence Box example with new structure
+- ✅ Added v1.3 to Version History
+- ✅ Changed project status to "Complete - All themes implemented with enhanced features"
+
+### Benefits
+- **Improved UX**: Clear "Save & Continue" workflow reduces confusion
+- **Better Data Quality**: Enhanced evidence prompts guide users to provide meaningful context
+- **Visual Overview**: Spider chart provides instant visual assessment of progress
+- **Responsive Design**: Works seamlessly on desktop and mobile
+- **Print Ready**: Chart and layout optimize for PDF generation
+- **Consistency**: All theme pages follow the same pattern
+
+### Technical Notes
+- Chart.js loaded via CDN: `https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js`
+- Navigation uses linkID pattern: `{type:'linkID', ID:'PG1765898999143'}`
+- Evidence guidance uses inline styles for compatibility
+- Chart uses `suggestedMin/suggestedMax` (may show negative values when all scores are 0 - see backup file for fixes)
+
+---
+
 ## [Unreleased] - 2024-12-17
 
 ### Changed - Button Simplification (Complete)
@@ -117,4 +225,4 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-**Last Updated:** 2024-12-17
+**Last Updated:** 2024-12-18
