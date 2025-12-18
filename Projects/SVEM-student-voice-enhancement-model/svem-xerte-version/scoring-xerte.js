@@ -381,3 +381,37 @@ function downloadJSON() {
 
     showToast('Data exported successfully!');
 }
+
+// ========================================
+// Navigation Functions
+// ========================================
+
+// Save and continue to themes overview
+function saveAndContinue() {
+    // Save all textareas on the current page
+    const textareas = document.querySelectorAll('.evidence-input');
+    textareas.forEach(textarea => {
+        const sectionId = textarea.id.replace('evidence-', '');
+        if (textarea.value && sectionId) {
+            saveNote(sectionId, textarea.value);
+        }
+    });
+
+    // Show confirmation
+    showToast('Progress saved!');
+
+    // Navigate back to themes overview (page 3)
+    setTimeout(() => {
+        if (typeof x_navigateToPage === 'function') {
+            x_navigateToPage(false, {type:'linkID', ID:'PG1765898999143'});
+        }
+    }, 500);
+}
+
+// Navigate back to themes overview (without save confirmation)
+function backToMenu() {
+    if (typeof x_navigateToPage === 'function') {
+        x_navigateToPage(false, {type:'linkID', ID:'PG1765898999143'});
+    }
+}
+

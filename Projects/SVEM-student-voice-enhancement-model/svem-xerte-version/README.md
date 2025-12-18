@@ -27,6 +27,8 @@ This is a Xerte Online Toolkits (XOT) compatible version of the SVEM Self-Assess
 - **7 Interactive Pages** - Title, Instructions, Overview, 3 Themes, Summary
 - **Auto-Save Functionality** - Progress saved to browser localStorage
 - **Progress Tracking** - Visual progress indicators on overview page
+- **Smart Navigation** - "Save & Continue" and "Back to Menu" buttons on theme pages
+- **Enhanced Evidence Collection** - Detailed guidance for contextual notes with section-specific prompts
 - **Export/Import** - Download and restore assessment data
 - **Responsive Design** - Works on desktop and mobile devices
 
@@ -218,6 +220,8 @@ For each page:
 | `toggleSection(sectionId, btn)` | Expand/collapse accordions |
 | `showToast(message)` | Show save confirmation |
 | `initThemesOverview()` | Update progress on overview page |
+| `saveAndContinue()` | Save all notes and navigate to themes overview |
+| `backToMenu()` | Navigate back to themes overview |
 | `generateReport()` | Generate summary report |
 | `resetData()` | Clear all assessment data |
 | `importData(input)` | Import JSON data file |
@@ -332,8 +336,20 @@ Theme pages include:
 
     <!-- Evidence Box -->
     <div class="evidence-box">
-        <label>Evidence &amp; Contextual Notes</label>
-        <textarea onblur="saveNote('section-id', this.value)"></textarea>
+        <label for="evidence-section-id" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
+        <p style="font-size:0.85rem; color:#666; margin-bottom:0.75rem; line-height:1.5;">
+            <strong>This context is essential for generating meaningful recommendations.</strong><br>
+            Please explain why you selected this level for <strong>[Section Name]</strong>.
+        </p>
+        <p style="font-size:0.85rem; color:#555; margin-bottom:0.75rem; line-height:1.6;">
+            Your response should include:<br>
+            ✓ What practices/structures are currently in place?<br>
+            ✓ Why does this represent the level you selected?<br>
+            ✓ What evidence supports this assessment?<br>
+            ✓ If you selected an "in-between" level (e.g., 2.5), what are you doing from each level?<br>
+            <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
+        </p>
+        <textarea class="evidence-input" id="evidence-section-id" onchange="saveNote('section-id', this.value)" placeholder="Example: [Provide section-specific example...]"></textarea>
     </div>
 </section>
 ```
@@ -853,6 +869,14 @@ For issues specific to:
 - Added comprehensive CSS classes reference
 - Improved navigation patterns documentation
 
+**v1.3** (2024-12-18)
+- Added "Save & Continue" and "Back to Menu" navigation buttons
+- Implemented `saveAndContinue()` function for seamless navigation
+- Enhanced Evidence & Contextual Notes sections with detailed guidance
+- Added section-specific instructions for all evidence boxes
+- Improved placeholder text with relevant examples
+- Updated all theme pages (Theme 1, 2, and 3) with new features
+
 ---
 
 ## License
@@ -864,5 +888,5 @@ This project is developed for Cardiff University's Student Voice Enhancement Mod
 ---
 
 **Last Updated:** 2024-12-18
-**Status:** In Progress - Theme 3 pending
+**Status:** Complete - All themes implemented with enhanced features
 **Maintainer:** Cardiff University Student Voice Team

@@ -111,7 +111,21 @@
         </details>
       </div>
       <!-- Evidence Box -->
-      <div class="evidence-box"><label for="evidence-roles" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label><textarea class="evidence-input" id="evidence-roles" onchange="saveNote('roles', this.value)" placeholder="Describe your current practice and why you selected this level..."></textarea>
+      <div class="evidence-box">
+        <label for="evidence-roles" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
+        <p style="font-size:0.85rem; color:#666; margin-bottom:0.75rem; line-height:1.5;">
+          <strong>This context is essential for generating meaningful recommendations.</strong><br>
+          Please explain why you selected this level for <strong>Roles and Structures</strong>.
+        </p>
+        <p style="font-size:0.85rem; color:#555; margin-bottom:0.75rem; line-height:1.6;">
+          Your response should include:<br>
+          ✓ What practices/structures are currently in place?<br>
+          ✓ Why does this represent the level you selected?<br>
+          ✓ What evidence supports this assessment?<br>
+          ✓ If you selected an "in-between" level (e.g., 2.5), what are you doing from each level?<br>
+          <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
+        </p>
+        <textarea class="evidence-input" id="evidence-roles" onchange="saveNote('roles', this.value)" placeholder="Example: We have a designated Student Rep Coordinator and Survey Contact. Student representatives attend our monthly ESEC meetings..."></textarea>
       </div>
     </section>
     <!-- SUBSECTION 2: SV Training -->
@@ -209,14 +223,30 @@
         </details>
       </div>
       <!-- Evidence Box -->
-      <div class="evidence-box"><label for="evidence-training" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label><textarea class="evidence-input" id="evidence-training" onchange="saveNote('training', this.value)" placeholder="Describe your current practice and why you selected this level..."></textarea>
+      <div class="evidence-box">
+        <label for="evidence-training" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
+        <p style="font-size:0.85rem; color:#666; margin-bottom:0.75rem; line-height:1.5;">
+          <strong>This context is essential for generating meaningful recommendations.</strong><br>
+          Please explain why you selected this level for <strong>SV Training, Development, and Dissemination</strong>.
+        </p>
+        <p style="font-size:0.85rem; color:#555; margin-bottom:0.75rem; line-height:1.6;">
+          Your response should include:<br>
+          ✓ What practices/structures are currently in place?<br>
+          ✓ Why does this represent the level you selected?<br>
+          ✓ What evidence supports this assessment?<br>
+          ✓ If you selected an "in-between" level (e.g., 2.5), what are you doing from each level?<br>
+          <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
+        </p>
+        <textarea class="evidence-input" id="evidence-training" onchange="saveNote('training', this.value)" placeholder="Example: Our Student Voice staff attend SVEN meetings and have completed CPD on student engagement. We share updates via newsletters..."></textarea>
       </div>
     </section>
     <!-- Navigation -->
-    <div class="page-navigation">
-      <!--<button class="btn btn-light" onclick="x_navigateToPage(false, {type:'linkID', ID:'[previous]'}); return false;">&larr; Back to Themes
-      </button>-->
-      <button class="btn btn-primary" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;">Save & Continue
+    <div class="page-navigation" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; gap: 1rem;">
+      <button class="btn btn-light" onclick="backToMenu(); return false;">
+        ← Back to Themes
+      </button>
+      <button class="btn btn-primary" onclick="saveAndContinue(); return false;">
+        Save &amp; Continue →
       </button>
     </div>
   </main>
