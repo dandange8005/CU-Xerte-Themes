@@ -377,6 +377,17 @@ const SECTIONS = {
     }
 };
 
+// Short labels for spider chart (prevents label overlap)
+const SECTION_SHORT_LABELS = {
+    'roles': 'Roles',
+    'training': 'Training',
+    'reps-ssps': 'Reps/SSPs',
+    'mme': 'MME',
+    'me': 'ME',
+    'nss': 'NSS',
+    'pg': 'PG Surveys'
+};
+
 // Get maturity level name
 function getMaturityLevelName(score) {
     if (!score) return 'Not Scored';
@@ -419,14 +430,7 @@ function generateSpiderChart() {
     const sectionData = []; // Store section info for tooltips
     allSections.forEach(section => {
         // Use shortened labels to prevent overlap in the chart
-        let shortLabel = section.name;
-        if (section.id === 'roles') shortLabel = 'Roles';
-        if (section.id === 'training') shortLabel = 'Training';
-        if (section.id === 'reps-ssps') shortLabel = 'Reps/SSPs';
-        if (section.id === 'mme') shortLabel = 'MME';
-        if (section.id === 'me') shortLabel = 'ME';
-        if (section.id === 'nss') shortLabel = 'NSS';
-        if (section.id === 'pg') shortLabel = 'PG Surveys';
+        const shortLabel = SECTION_SHORT_LABELS[section.id] || section.name;
 
         labels.push(shortLabel);
         const savedData = getSectionData(section.id);
@@ -515,103 +519,98 @@ function generateSpiderChart() {
     });
 }
 
+// Create section report HTML
+function createSectionReportHTML(section, savedData) {
+    const hasScore = savedData && savedData.score;
+    const levelName = hasScore ? getMaturityLevelName(savedData.score) : 'Not Scored';
+    const scoreClass = hasScore ? `level-${Math.floor(savedData.score)}` : 'not-scored';
+    const scoreLabel = hasScore ? `Level ${savedData.score}` : 'Not Scored';
+
+    const evidenceHTML = hasScore
+        ? (savedData.note?.trim()
+            ? `<strong>Evidence:</strong><p>${savedData.note}</p>`
+            : `<em style="color: #999;">No evidence provided</em>`)
+        : '';
+
+    return `
+        <div class="section-report">
+            <div class="section-report__header">
+                <h4 class="section-report__name">${section.name}</h4>
+                <div class="section-report__score">
+                    <span class="score-indicator ${scoreClass}">${scoreLabel}</span>
+                    ${hasScore ? `<span class="maturity-level">${levelName}</span>` : ''}
+                </div>
+            </div>
+            ${evidenceHTML ? `<div class="section-report__evidence">${evidenceHTML}</div>` : ''}
+        </div>
+    `;
+}
+
+// Update statistics display
+function updateStatistics(stats) {
+    document.getElementById('completed-count').textContent = stats.completed;
+    const completionPercent = Math.round((stats.completed / stats.total) * 100);
+    document.getElementById('completion-percent').textContent = `${completionPercent}%`;
+
+    const averageScore = stats.scored > 0
+        ? (stats.totalScore / stats.scored).toFixed(1)
+        : '0.0';
+    document.getElementById('average-score').textContent = averageScore;
+
+    updateStatusBadge(stats.completed, stats.total);
+}
+
+// Update status badge
+function updateStatusBadge(completed, total) {
+    const statusEl = document.getElementById('report-status');
+    const statusConfig = {
+        complete: { text: 'Complete', color: '#27ae60' },
+        inProgress: { text: 'In Progress', color: '#f39c12' },
+        notStarted: { text: 'Not Started', color: '#999' }
+    };
+
+    const status = completed === total ? 'complete'
+        : completed > 0 ? 'inProgress'
+        : 'notStarted';
+
+    statusEl.textContent = statusConfig[status].text;
+    statusEl.style.color = statusConfig[status].color;
+    statusEl.style.fontWeight = completed > 0 ? '600' : 'normal';
+}
+
 // Generate report
 function generateReport() {
-    // Set report date
     const reportDate = new Date().toLocaleDateString('en-GB', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+        year: 'numeric', month: 'long', day: 'numeric'
     });
     document.getElementById('report-date').textContent = reportDate;
 
-    // Calculate statistics
-    let completedCount = 0;
-    let totalSections = 0;
-    let totalScore = 0;
-    let scoredCount = 0;
+    let stats = { completed: 0, total: 0, totalScore: 0, scored: 0 };
 
-    const reportBody = document.getElementById('report-body');
-    let reportHTML = '';
-
-    // Generate report for each theme
-    Object.keys(SECTIONS).forEach(themeName => {
-        const theme = SECTIONS[themeName];
-        reportHTML += `<div class="theme-report">`;
-        reportHTML += `<h3 class="theme-report__title">${themeName}</h3>`;
-
-        theme.sections.forEach(section => {
-            totalSections++;
+    const reportHTML = Object.entries(SECTIONS).map(([themeName, theme]) => {
+        const sectionsHTML = theme.sections.map(section => {
+            stats.total++;
             const savedData = getSectionData(section.id);
 
-            reportHTML += `<div class="section-report">`;
-
-            // Header with section name and score
-            reportHTML += `<div class="section-report__header">`;
-            reportHTML += `<h4 class="section-report__name">${section.name}</h4>`;
-
-            if (savedData && savedData.score) {
-                completedCount++;
-                totalScore += savedData.score;
-                scoredCount++;
-
-                const levelName = getMaturityLevelName(savedData.score);
-                reportHTML += `<div class="section-report__score">`;
-                reportHTML += `<span class="score-indicator level-${Math.floor(savedData.score)}">Level ${savedData.score}</span>`;
-                reportHTML += `<span class="maturity-level">${levelName}</span>`;
-                reportHTML += `</div>`;
-            } else {
-                reportHTML += `<div class="section-report__score">`;
-                reportHTML += `<span class="score-indicator not-scored">Not Scored</span>`;
-                reportHTML += `</div>`;
+            if (savedData.score) {
+                stats.completed++;
+                stats.totalScore += savedData.score;
+                stats.scored++;
             }
 
-            reportHTML += `</div>`; // Close section-report__header
+            return createSectionReportHTML(section, savedData);
+        }).join('');
 
-            // Evidence section
-            if (savedData && savedData.score) {
-                if (savedData.note && savedData.note.trim()) {
-                    reportHTML += `<div class="section-report__evidence">`;
-                    reportHTML += `<strong>Evidence:</strong>`;
-                    reportHTML += `<p>${savedData.note}</p>`;
-                    reportHTML += `</div>`;
-                } else {
-                    reportHTML += `<div class="section-report__evidence">`;
-                    reportHTML += `<em style="color: #999;">No evidence provided</em>`;
-                    reportHTML += `</div>`;
-                }
-            }
+        return `
+            <div class="theme-report">
+                <h3 class="theme-report__title">${themeName}</h3>
+                ${sectionsHTML}
+            </div>
+        `;
+    }).join('');
 
-            reportHTML += `</div>`; // Close section-report
-        });
-
-        reportHTML += `</div>`; // Close theme-report
-    });
-
-    reportBody.innerHTML = reportHTML;
-
-    // Update statistics
-    document.getElementById('completed-count').textContent = completedCount;
-    const completionPercent = Math.round((completedCount / totalSections) * 100);
-    document.getElementById('completion-percent').textContent = completionPercent + '%';
-
-    const averageScore = scoredCount > 0 ? (totalScore / scoredCount).toFixed(1) : '0.0';
-    document.getElementById('average-score').textContent = averageScore;
-
-    // Update status
-    const statusEl = document.getElementById('report-status');
-    if (completedCount === totalSections) {
-        statusEl.textContent = 'Complete';
-        statusEl.style.color = '#27ae60';
-        statusEl.style.fontWeight = '600';
-    } else if (completedCount > 0) {
-        statusEl.textContent = 'In Progress';
-        statusEl.style.color = '#f39c12';
-        statusEl.style.fontWeight = '600';
-    } else {
-        statusEl.textContent = 'Not Started';
-        statusEl.style.color = '#999';
-    }
+    document.getElementById('report-body').innerHTML = reportHTML;
+    updateStatistics(stats);
 }
 
 // Download data as JSON
@@ -667,6 +666,21 @@ function showToast(message) {
     }
 }
 
+// Create visibility watcher for element
+function createVisibilityWatcher(element, callback) {
+    let lastVisibleState = false;
+
+    const checkVisibility = () => {
+        const isVisible = element.offsetParent !== null;
+        if (isVisible && !lastVisibleState) {
+            callback();
+        }
+        lastVisibleState = isVisible;
+    };
+
+    return setInterval(checkVisibility, CONFIG.VISIBILITY_CHECK_INTERVAL);
+}
+
 // Generate report on page load AND when page becomes visible
 (function() {
     // Wait for Chart.js to load
@@ -681,26 +695,13 @@ function showToast(message) {
         generateSpiderChart();
 
         // Also run when page becomes visible (handles Xerte navigation)
-        // Check periodically if this page is visible
         const summaryPageElement = document.querySelector('.summary-page');
         if (summaryPageElement) {
-            let lastVisibleState = false;
-
-            const checkVisibility = setInterval(function() {
-                // Check if the summary page is visible
-                const isVisible = summaryPageElement.offsetParent !== null;
-
-                // Only regenerate if visibility changed from hidden to visible
-                if (isVisible && !lastVisibleState) {
-                    generateReport();
-                    generateSpiderChart();
-                }
-
-                lastVisibleState = isVisible;
-            }, CONFIG.VISIBILITY_CHECK_INTERVAL);
-
-            // Store interval ID so we can clear it if needed
-            window._summaryPageInterval = checkVisibility;
+            const intervalId = createVisibilityWatcher(summaryPageElement, () => {
+                generateReport();
+                generateSpiderChart();
+            });
+            window._summaryPageInterval = intervalId;
         }
 
         // Alternative: Listen for focus/visibility events
