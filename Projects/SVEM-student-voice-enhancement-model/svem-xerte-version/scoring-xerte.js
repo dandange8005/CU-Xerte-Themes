@@ -1,6 +1,56 @@
 // SVEM Self-Assessment Scoring JavaScript - XERTE COMPATIBLE VERSION
 // Shared functions for all theme pages in Xerte Online Toolkits
 
+// Configuration Constants
+const CONFIG = {
+    STORAGE_PREFIX: 'sv_',
+    THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
+    TOAST_DURATION: 2000,
+    NAVIGATION_DELAY: 500,
+    RELOAD_DELAY: 1500,
+    VISIBILITY_CHECK_INTERVAL: 500,
+    CHART_INIT_RETRY: 100
+};
+
+// ========================================
+// LocalStorage Utility Functions
+// ========================================
+
+// Get section data from localStorage with error handling
+function getSectionData(sectionId) {
+    try {
+        const data = localStorage.getItem(`${CONFIG.STORAGE_PREFIX}${sectionId}`);
+        return data ? JSON.parse(data) : { score: 0, note: '' };
+    } catch (e) {
+        console.error(`Error reading section ${sectionId}:`, e);
+        return { score: 0, note: '' };
+    }
+}
+
+// Save section data to localStorage with error handling
+function setSectionData(sectionId, data) {
+    try {
+        localStorage.setItem(
+            `${CONFIG.STORAGE_PREFIX}${sectionId}`,
+            JSON.stringify(data)
+        );
+        return true;
+    } catch (e) {
+        console.error(`Error saving section ${sectionId}:`, e);
+        return false;
+    }
+}
+
+// Get all localStorage keys with sv_ prefix
+function getAllSectionKeys() {
+    return Object.keys(localStorage)
+        .filter(key => key.startsWith(CONFIG.STORAGE_PREFIX));
+}
+
+// ========================================
+// Page Initialization
+// ========================================
+
 // Initialize when page content is loaded in Xerte
 function initSVEMPage(sectionIds) {
     // Wait for DOM to be ready
@@ -22,19 +72,21 @@ function loadAllSections(sectionIds) {
 
 // Save score function
 function saveScore(sectionId, score, btn) {
-    const currentData = JSON.parse(localStorage.getItem(`sv_${sectionId}`)) || { note: "" };
-    currentData.score = score;
-    localStorage.setItem(`sv_${sectionId}`, JSON.stringify(currentData));
-    updateSectionUI(sectionId, score, btn);
-    showToast();
+    const data = getSectionData(sectionId);
+    data.score = score;
+    if (setSectionData(sectionId, data)) {
+        updateSectionUI(sectionId, score, btn);
+        showToast();
+    }
 }
 
 // Save note function
 function saveNote(sectionId, note) {
-    const currentData = JSON.parse(localStorage.getItem(`sv_${sectionId}`)) || { score: 0 };
-    currentData.note = note;
-    localStorage.setItem(`sv_${sectionId}`, JSON.stringify(currentData));
-    showToast();
+    const data = getSectionData(sectionId);
+    data.note = note;
+    if (setSectionData(sectionId, data)) {
+        showToast();
+    }
 }
 
 // Update section UI after scoring
@@ -73,29 +125,28 @@ function updateSectionUI(sectionId, score, clickedBtn) {
     }
 }
 
+// Helper function to find score button
+function findScoreButton(section, score) {
+    return Array.from(section.querySelectorAll('.score-btn')).find(btn => {
+        const text = btn.textContent;
+        return text.includes(`(${score})`) || text.includes(`Set as Level ${score}`);
+    });
+}
+
 // Load saved data
 function loadSavedData(sectionId) {
-    const saved = JSON.parse(localStorage.getItem(`sv_${sectionId}`));
-    if (!saved) return;
+    const saved = getSectionData(sectionId);
+    const section = document.getElementById(sectionId);
 
-    // Load score
+    if (!section) return;
+
+    // Load score if present
     if (saved.score > 0) {
-        // Find the button that matches this score
-        const section = document.getElementById(sectionId);
-        if (!section) return;
-
-        const matchingBtn = Array.from(section.querySelectorAll('.score-btn')).find(btn => {
-            const text = btn.textContent;
-            // First try exact match with parentheses for transitional scores (e.g., "(4.5)")
-            if (text.includes(`(${saved.score})`)) return true;
-            // For whole number scores, match "Set as Level X" (not "Transitioning to Level X")
-            if (text.includes(`Set as Level ${saved.score}`)) return true;
-            return false;
-        });
+        const matchingBtn = findScoreButton(section, saved.score);
         updateSectionUI(sectionId, saved.score, matchingBtn);
     }
 
-    // Load note
+    // Load note if present
     if (saved.note) {
         const textarea = document.getElementById(`evidence-${sectionId}`);
         if (textarea) textarea.value = saved.note;
@@ -110,7 +161,7 @@ function showToast(message) {
             toast.textContent = message;
         }
         toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
+        setTimeout(() => toast.classList.remove('show'), CONFIG.TOAST_DURATION);
     }
 }
 
@@ -144,8 +195,8 @@ function toggleSection(sectionId, btn) {
 function calculateThemeProgress(sectionIds) {
     let completed = 0;
     sectionIds.forEach(sectionId => {
-        const saved = JSON.parse(localStorage.getItem(`sv_${sectionId}`));
-        if (saved && saved.score > 0) {
+        const saved = getSectionData(sectionId);
+        if (saved.score > 0) {
             completed++;
         }
     });
@@ -233,34 +284,81 @@ function closeResetModal() {
 
 // Confirm and execute data reset
 function confirmReset() {
-    // Clear all localStorage data with sv_ prefix
-    const keysToRemove = [];
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && key.startsWith('sv_')) {
-            keysToRemove.push(key);
-        }
-    }
+    // Clear all sv_ keys
+    getAllSectionKeys().forEach(key => localStorage.removeItem(key));
 
-    keysToRemove.forEach(key => localStorage.removeItem(key));
-
-    // Close modal
     closeResetModal();
-
-    // Show confirmation toast
     showToast('All data has been reset');
 
-    // Refresh themes overview if on that page
+    // Refresh UI
     if (typeof initThemesOverview === 'function') {
-        setTimeout(() => {
-            initThemesOverview();
-        }, 100);
+        setTimeout(initThemesOverview, CONFIG.CHART_INIT_RETRY);
     }
 
-    // Reload page to reflect changes
-    setTimeout(() => {
-        location.reload();
-    }, 1500);
+    setTimeout(() => location.reload(), CONFIG.RELOAD_DELAY);
+}
+
+// Normalize import data from different export formats
+function normalizeImportData(rawData) {
+    // Handle summary page export format
+    if (rawData.metadata && rawData.assessmentData) {
+        return Object.entries(rawData.assessmentData).reduce((acc, [key, item]) => {
+            acc[key] = {
+                score: item.score || 0,
+                note: item.evidence || ''
+            };
+            return acc;
+        }, {});
+    }
+
+    // Handle simple export format
+    return rawData;
+}
+
+// Import sections into localStorage
+function importSections(dataToImport) {
+    let importCount = 0;
+
+    Object.entries(dataToImport).forEach(([key, value]) => {
+        if (key === 'metadata' || key === 'assessmentData') return;
+
+        const sectionId = key.replace(/^sv_/, '');
+        let data = typeof value === 'string' ? JSON.parse(value) : value;
+
+        const importValue = {
+            score: data.score || 0,
+            note: data.note || data.evidence || ''
+        };
+
+        if (setSectionData(sectionId, importValue)) {
+            importCount++;
+        }
+    });
+
+    return importCount;
+}
+
+// Process import data
+function processImportData(fileContent, input) {
+    try {
+        const rawData = JSON.parse(fileContent);
+
+        if (typeof rawData !== 'object' || rawData === null) {
+            throw new Error('Invalid data format');
+        }
+
+        const dataToImport = normalizeImportData(rawData);
+        const importCount = importSections(dataToImport);
+
+        showToast(`Data imported successfully! (${importCount} sections)`);
+        setTimeout(() => location.reload(), CONFIG.RELOAD_DELAY);
+
+    } catch (err) {
+        showToast('Error: Invalid JSON file');
+        console.error('Import error:', err, '\nFile content:', fileContent);
+    } finally {
+        input.value = '';
+    }
 }
 
 // Import data from JSON file
@@ -269,86 +367,9 @@ function importData(input) {
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = function(e) {
-        try {
-            const rawData = JSON.parse(e.target.result);
-
-            // Validate that it's an object
-            if (typeof rawData !== 'object' || rawData === null) {
-                throw new Error('Invalid data format');
-            }
-
-            let dataToImport = {};
-
-            // Check if this is the summary page export format (with metadata and assessmentData)
-            if (rawData.metadata && rawData.assessmentData) {
-                console.log('Detected summary page export format');
-                // Extract data from assessmentData and convert to localStorage format
-                Object.keys(rawData.assessmentData).forEach(key => {
-                    const item = rawData.assessmentData[key];
-                    dataToImport[key] = {
-                        score: item.score || 0,
-                        note: item.evidence || '' // Map 'evidence' to 'note'
-                    };
-                });
-            }
-            // Check if this is the simple export format (direct key-value pairs)
-            else {
-                console.log('Detected simple export format');
-                dataToImport = rawData;
-            }
-
-            // Import data to localStorage
-            let importCount = 0;
-            Object.keys(dataToImport).forEach(key => {
-                // Skip metadata or other non-section keys
-                if (key === 'metadata' || key === 'assessmentData') {
-                    return;
-                }
-
-                // Add sv_ prefix if not present
-                const storageKey = key.startsWith('sv_') ? key : `sv_${key}`;
-
-                // Ensure the data has the correct structure
-                let dataValue = dataToImport[key];
-
-                // If it's already a string, parse it
-                if (typeof dataValue === 'string') {
-                    try {
-                        dataValue = JSON.parse(dataValue);
-                    } catch (e) {
-                        console.warn(`Could not parse value for ${key}:`, dataValue);
-                    }
-                }
-
-                // Ensure we have score and note fields
-                const importValue = {
-                    score: dataValue.score || 0,
-                    note: dataValue.note || dataValue.evidence || ''
-                };
-
-                localStorage.setItem(storageKey, JSON.stringify(importValue));
-                importCount++;
-            });
-
-            showToast(`Data imported successfully! (${importCount} sections)`);
-
-            // Refresh the page after a short delay
-            setTimeout(() => {
-                location.reload();
-            }, 1500);
-
-        } catch (err) {
-            showToast('Error: Invalid JSON file');
-            console.error('Import error:', err);
-            console.error('File content:', e.target.result);
-        }
-    };
-
+    reader.onload = (e) => processImportData(e.target.result, input);
+    reader.onerror = () => showToast('Error: Could not read file');
     reader.readAsText(file);
-
-    // Reset file input
-    input.value = '';
 }
 
 // Export data to JSON file
@@ -356,18 +377,15 @@ function downloadJSON() {
     const exportData = {};
 
     // Collect all sv_ prefixed data
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && key.startsWith('sv_')) {
-            const cleanKey = key.replace('sv_', '');
-            const value = localStorage.getItem(key);
-            try {
-                exportData[cleanKey] = JSON.parse(value);
-            } catch (e) {
-                exportData[cleanKey] = value;
-            }
+    getAllSectionKeys().forEach(key => {
+        const cleanKey = key.replace(CONFIG.STORAGE_PREFIX, '');
+        const value = localStorage.getItem(key);
+        try {
+            exportData[cleanKey] = JSON.parse(value);
+        } catch (e) {
+            exportData[cleanKey] = value;
         }
-    }
+    });
 
     // Create download
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
@@ -386,6 +404,20 @@ function downloadJSON() {
 // Navigation Functions
 // ========================================
 
+// Navigate to themes overview page
+function navigateToThemesOverview(delay = 0) {
+    const navigate = () => {
+        if (typeof x_navigateToPage === 'function') {
+            x_navigateToPage(false, {
+                type: 'linkID',
+                ID: CONFIG.THEMES_OVERVIEW_PAGE_ID
+            });
+        }
+    };
+
+    delay > 0 ? setTimeout(navigate, delay) : navigate();
+}
+
 // Save and continue to themes overview
 function saveAndContinue() {
     // Save all textareas on the current page
@@ -397,21 +429,12 @@ function saveAndContinue() {
         }
     });
 
-    // Show confirmation
     showToast('Progress saved!');
-
-    // Navigate back to themes overview (page 3)
-    setTimeout(() => {
-        if (typeof x_navigateToPage === 'function') {
-            x_navigateToPage(false, {type:'linkID', ID:'PG1765898999143'});
-        }
-    }, 500);
+    navigateToThemesOverview(CONFIG.NAVIGATION_DELAY);
 }
 
 // Navigate back to themes overview (without save confirmation)
 function backToMenu() {
-    if (typeof x_navigateToPage === 'function') {
-        x_navigateToPage(false, {type:'linkID', ID:'PG1765898999143'});
-    }
+    navigateToThemesOverview();
 }
 

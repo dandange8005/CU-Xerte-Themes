@@ -329,6 +329,28 @@
     // Summary Page JavaScript
 // Generates report from localStorage data
 
+// Configuration Constants (shared with scoring-xerte.js)
+const CONFIG = {
+    STORAGE_PREFIX: 'sv_',
+    THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
+    TOAST_DURATION: 2000,
+    NAVIGATION_DELAY: 500,
+    RELOAD_DELAY: 1500,
+    VISIBILITY_CHECK_INTERVAL: 500,
+    CHART_INIT_RETRY: 100
+};
+
+// LocalStorage Utility Functions (shared with scoring-xerte.js)
+function getSectionData(sectionId) {
+    try {
+        const data = localStorage.getItem(`${CONFIG.STORAGE_PREFIX}${sectionId}`);
+        return data ? JSON.parse(data) : { score: 0, note: '' };
+    } catch (e) {
+        console.error(`Error reading section ${sectionId}:`, e);
+        return { score: 0, note: '' };
+    }
+}
+
 // Global variable to store chart instance
 let spiderChartInstance = null;
 
@@ -407,8 +429,8 @@ function generateSpiderChart() {
         if (section.id === 'pg') shortLabel = 'PG Surveys';
 
         labels.push(shortLabel);
-        const savedData = JSON.parse(localStorage.getItem(`sv_${section.id}`));
-        scores.push(savedData && savedData.score ? savedData.score : 0);
+        const savedData = getSectionData(section.id);
+        scores.push(savedData.score || 0);
         sectionData.push({ name: section.name, shortLabel: shortLabel });
     });
 
@@ -520,7 +542,7 @@ function generateReport() {
 
         theme.sections.forEach(section => {
             totalSections++;
-            const savedData = JSON.parse(localStorage.getItem(`sv_${section.id}`));
+            const savedData = getSectionData(section.id);
 
             reportHTML += `<div class="section-report">`;
 
@@ -607,8 +629,8 @@ function downloadJSON() {
     Object.keys(SECTIONS).forEach(themeName => {
         const theme = SECTIONS[themeName];
         theme.sections.forEach(section => {
-            const savedData = JSON.parse(localStorage.getItem(`sv_${section.id}`));
-            if (savedData) {
+            const savedData = getSectionData(section.id);
+            if (savedData.score > 0 || savedData.note) {
                 allData.assessmentData[section.id] = {
                     sectionName: section.name,
                     score: savedData.score || null,
@@ -641,7 +663,7 @@ function showToast(message) {
     if (toast) {
         toast.textContent = message || 'Report Generated';
         toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
+        setTimeout(() => toast.classList.remove('show'), CONFIG.TOAST_DURATION);
     }
 }
 
@@ -650,7 +672,7 @@ function showToast(message) {
     // Wait for Chart.js to load
     function initializeReports() {
         if (typeof Chart === 'undefined') {
-            setTimeout(initializeReports, 100);
+            setTimeout(initializeReports, CONFIG.CHART_INIT_RETRY);
             return;
         }
 
@@ -675,7 +697,7 @@ function showToast(message) {
                 }
 
                 lastVisibleState = isVisible;
-            }, 500); // Check every 500ms
+            }, CONFIG.VISIBILITY_CHECK_INTERVAL);
 
             // Store interval ID so we can clear it if needed
             window._summaryPageInterval = checkVisibility;
