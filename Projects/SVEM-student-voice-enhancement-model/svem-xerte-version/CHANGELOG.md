@@ -214,6 +214,81 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+### Added - HTML Report Download Feature
+
+**Replaced problematic print function with simple HTML download** (`page-07-summary.html`):
+
+#### Implementation
+**New Function:**
+- ✅ `downloadReportHTML()` - Creates standalone HTML file with embedded styles
+  - Captures complete report content and CSS
+  - Adds standalone styling for better readability
+  - Hides buttons and navigation in downloaded version
+  - Downloads as `SVEM-Report-YYYY-MM-DD.html`
+
+**Button Changes:**
+- ❌ **Removed:** "🖨️ Print / Save as PDF" button (had iframe issues in Xerte)
+- ✅ **Added:** "📄 Download Report (HTML)" button (simple, reliable)
+- ✅ Updated instruction text: "Download the report or data for your records"
+
+#### Standalone Report Styling
+The downloaded HTML includes additional styles for better presentation:
+
+**Layout & Typography:**
+- Clean system font stack for cross-platform compatibility
+- Improved line-height (1.6) for readability
+- White card on light gray background with shadow
+- Centered layout (max-width: 1000px)
+- Better heading and paragraph spacing
+
+**Hidden Elements:**
+- Report action buttons (`display: none !important`)
+- Page navigation buttons (`display: none !important`)
+- Only the content is visible in downloaded file
+
+**Text Formatting:**
+- Evidence notes preserve line breaks (`white-space: pre-wrap`)
+- Proper word wrapping for long text
+- Enhanced margin and spacing for all text elements
+
+**Print Support:**
+- Clean print styles included
+- White background for printing
+- Theme sections avoid page breaks
+- Professional document appearance
+
+#### Benefits
+- ✅ **No iframe issues** - Works reliably in Xerte environment
+- ✅ **Standalone file** - Opens in any browser without dependencies
+- ✅ **Print-friendly** - Users can print from browser (Ctrl+P / Cmd+P)
+- ✅ **Save as PDF** - Users can save as PDF via browser's print dialog
+- ✅ **Shareable** - Easy to email or share the HTML file
+- ✅ **Clean presentation** - No buttons or navigation clutter
+- ✅ **Professional appearance** - Formatted like a proper document
+- ✅ **Simple implementation** - Only ~80 lines of clear, maintainable code
+- ✅ **Cross-platform** - Works offline, no external dependencies
+
+#### User Workflow
+1. Complete assessment in Xerte
+2. Navigate to Summary page
+3. Click "📄 Download Report (HTML)"
+4. File downloads: `SVEM-Report-2024-12-19.html`
+5. Open file in any browser to view
+6. Print or save as PDF using browser's print function (Ctrl+P / Cmd+P)
+7. Share or archive the file
+
+#### Technical Implementation
+- Uses Blob API for file creation
+- String concatenation for Xerte compatibility (instead of template literals)
+- Inline CSS embedding for standalone functionality
+- `var` declarations for broader JavaScript compatibility
+- Proper cleanup with `URL.revokeObjectURL()`
+
+### Files Modified
+- `page-07-summary.html` - Added downloadReportHTML() function, updated button, enhanced standalone styles
+
+---
+
 ## [1.3.0] - 2024-12-18
 
 ### Added - Summary Page Spider Chart & Enhanced Navigation
