@@ -6,10 +6,9 @@ Author: Nan Zhang
     OPEN-PROP CUSTOM PROPERTIES
 ==============================*/
 /* -----------------------
-    OPEN-PROPS
-    Open Props, a CSS token library, to supercharge the design system with reusable and consistent design tokens.
+    OPEN-PROPS - A CSS token library, to supercharge the design system with reusable and consistent design tokens.
     link: https://unpkg.com/open-props
-    version: 1.7.16
+    version: 1.7.17
 -------------------------- */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 :where(html) {
