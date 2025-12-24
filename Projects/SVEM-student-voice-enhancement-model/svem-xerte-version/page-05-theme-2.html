@@ -11,14 +11,14 @@
       <div class="section-header-wrapper">
         <h3>Student Reps and Student-Staff Panels
         </h3>
-        <div style="display: flex; align-items: center; gap: 1rem;"><span class="score-badge" id="badge-reps-ssps">Not Scored</span>
+        <div class="section-badge-wrapper"><span class="score-badge" id="badge-reps-ssps">Not Scored</span>
           <button class="toggle-btn" onclick="toggleSection('reps-ssps', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
           </button>
         </div>
       </div>
       <div class="level-group"><!-- Level 1 -->
         <details class="l1">
-          <summary> <span class="level-number">LEVEL 1</span> <span style="margin-left: 1rem;">Moving towards Baseline</span> 
+          <summary> <span class="level-number">LEVEL 1</span> <span class="level-title-text">Moving towards Baseline</span> 
           </summary>
           <div class="content-body">
             <ul>
@@ -34,7 +34,7 @@
         </details>
         <!-- Level 2 -->
         <details class="l2">
-          <summary> <span class="level-number">LEVEL 2</span> <span style="margin-left: 1rem;">Baseline Practice</span> 
+          <summary> <span class="level-number">LEVEL 2</span> <span class="level-title-text">Baseline Practice</span> 
           </summary>
           <div class="content-body">
             <ul>
@@ -56,7 +56,7 @@
         </details>
         <!-- Level 3 -->
         <details class="l3">
-          <summary> <span class="level-number">LEVEL 3</span> <span style="margin-left: 1rem;">Emerging Good Practice</span> 
+          <summary> <span class="level-number">LEVEL 3</span> <span class="level-title-text">Emerging Good Practice</span> 
           </summary>
           <div class="content-body">
             <ul>
@@ -80,7 +80,7 @@
         </details>
         <!-- Level 4 -->
         <details class="l4">
-          <summary> <span class="level-number">LEVEL 4</span> <span style="margin-left: 1rem;">Established Strong Practice</span> 
+          <summary> <span class="level-number">LEVEL 4</span> <span class="level-title-text">Established Strong Practice</span> 
           </summary>
           <div class="content-body">
             <ul>
@@ -104,7 +104,7 @@
         </details>
         <!-- Level 5 -->
         <details class="l5">
-          <summary> <span class="level-number">LEVEL 5</span> <span style="margin-left: 1rem;">Exceptional Practice</span> 
+          <summary> <span class="level-number">LEVEL 5</span> <span class="level-title-text">Exceptional Practice</span> 
           </summary>
           <div class="content-body">
             <ul>
@@ -124,12 +124,12 @@
       </div>
       <!-- Evidence Box -->
       <div class="evidence-box">
-        <label for="evidence-reps-ssps" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.5rem;">Evidence &amp; Contextual Notes</label>
-        <p style="font-size:0.85rem; color:#666; margin-bottom:0.75rem; line-height:1.5;">
+        <label for="evidence-reps-ssps" class="evidence-box__label">Evidence &amp; Contextual Notes</label>
+        <p class="evidence-box__intro">
           <strong>This context is essential for generating meaningful recommendations.</strong><br>
           Please explain why you selected this level for <strong>Student Reps and Student-Staff Panels</strong>.
         </p>
-        <p style="font-size:0.85rem; color:#555; margin-bottom:0.75rem; line-height:1.6;">
+        <p class="evidence-box__checklist">
           Your response should include:<br>
           ✓ What practices/structures are currently in place?<br>
           ✓ Why does this represent the level you selected?<br>
@@ -141,7 +141,7 @@
       </div>
     </section>
     <!-- Navigation -->
-    <div class="page-navigation" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; gap: 1rem;">
+    <div class="page-navigation">
       <button class="btn btn-light" onclick="backToMenu(); return false;">
         ← Back to Themes
       </button>

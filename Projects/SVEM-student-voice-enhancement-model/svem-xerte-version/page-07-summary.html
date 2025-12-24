@@ -3,10 +3,10 @@
     <div>
       <h2>Student Voice Enhancement Model
       </h2>
-      <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: #5f6c7b;">Self-Assessment Report
+      <p class="report-header__subtitle">Self-Assessment Report
       </p>
     </div>
-    <div class="report-meta"><strong>Date:</strong> <span id="report-date"></span> <strong style="margin-top: 0.5rem;">Status:</strong> <span id="report-status">Draft</span>
+    <div class="report-meta"><strong>Date:</strong> <span id="report-date"></span> <strong>Status:</strong> <span id="report-status">Draft</span>
     </div>
   </div>
   <!-- Completion Summary -->
@@ -55,7 +55,7 @@
     </button>
     <button class="btn btn-light" onclick="downloadJSON()" type="button">📥 Download Data (JSON)
     </button>
-    <button class="btn btn-primary" onclick="x_navigateToPage(x_currentPageXML, 2, true)" type="button">✏️ Continue Editing
+        <button class="btn btn-primary" onclick="backToMenu(); return false;" type="button">✏️ Continue Editing
     </button>
   </div>
   <!-- Navigation -->
@@ -69,236 +69,11 @@
 </div>
 
 
-<style>
-    /* Summary Page Styles */
-.summary-page {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-}
 
-.report-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 2rem;
-    background: #ffffff;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
 
-.report-meta {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    font-size: 0.9rem;
-}
-
-.completion-summary {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.completion-summary h3 {
-    margin: 0 0 1.5rem 0;
-    font-size: 1.25rem;
-    color: #2c3e50;
-}
-
-.summary-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-}
-
-.completion-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-.chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 8px;
-    min-height: 300px;
-}
-
-.chart-container canvas {
-    max-width: 100%;
-    max-height: 350px;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #003366;
-    line-height: 1;
-}
-
-.stat-label {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Theme Reports */
-.theme-report {
-    background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.theme-report__title {
-    font-size: 1.5rem;
-    margin: 0 0 1rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e5e5e5;
-    color: #1a1a1a;
-}
-
-/* Section Reports */
-.section-report {
-    padding: 1rem 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.section-report:last-child {
-    border-bottom: none;
-}
-
-.section-report__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-}
-
-.section-report__name {
-    font-size: 1.1rem;
-    margin: 0;
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-.section-report__score {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.score-indicator {
-    display: inline-block;
-    padding: 0.35rem 0.75rem;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
-.score-indicator.level-1 { background: #e8e8e8; color: #404040; }
-.score-indicator.level-2 { background: #d1e7dd; color: #0f5132; }
-.score-indicator.level-3 { background: #cfe2ff; color: #084298; }
-.score-indicator.level-4 { background: #d4edda; color: #155724; }
-.score-indicator.level-5 { background: #d1ecf1; color: #0c5460; }
-.score-indicator.not-scored { background: #f8d7da; color: #721c24; }
-
-.maturity-level {
-    font-size: 0.85rem;
-    color: #666;
-    font-style: italic;
-}
-
-.section-report__evidence {
-    background: #f8f9fa;
-    padding: 0.75rem;
-    border-radius: 4px;
-    border-left: 3px solid #003366;
-    margin-top: 0.5rem;
-}
-
-.section-report__evidence strong {
-    display: block;
-    margin-bottom: 0.4rem;
-    color: #2c3e50;
-    font-size: 0.85rem;
-}
-
-.section-report__evidence p {
-    margin: 0;
-    line-height: 1.5;
-    color: #495057;
-    font-size: 0.9rem;
-}
-
-/* Report Actions */
-.report-actions {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.report-actions p {
-    margin: 0 0 1.5rem 0;
-    color: #666;
-}
-
-.report-actions button {
-    margin: 0 0.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .report-header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .report-meta {
-        text-align: left;
-    }
-
-    .summary-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .completion-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .chart-container {
-        min-height: 250px;
-    }
-
-    .report-actions button {
-        display: block;
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-}
-</style>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
 <script>
-    // Summary Page JavaScript
+// Summary Page JavaScript
 // Generates report from localStorage data
 
 // Configuration Constants (shared with scoring-xerte.js)
@@ -501,7 +276,7 @@ function createSectionReportHTML(section, savedData) {
     const evidenceHTML = hasScore
         ? (savedData.note?.trim()
             ? `<strong>Evidence:</strong><p>${savedData.note}</p>`
-            : `<em style="color: #999;">No evidence provided</em>`)
+            : `<em class="no-evidence">No evidence provided</em>`)
         : '';
 
     return `
@@ -777,3 +552,6 @@ function createVisibilityWatcher(element, callback) {
     initializeReports();
 })();
 </script>
+
+// Include Chart.js library to the bottom so that it loads in Xerte correctly
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>

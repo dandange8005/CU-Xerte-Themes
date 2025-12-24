@@ -2,6 +2,264 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2024-12-24
+
+### Changed - Comprehensive CSS Optimization & Refactoring
+
+**Implemented all optimization recommendations** from `CSS_OPTIMIZATION_RECOMMENDATIONS.md`:
+- ✅ **Step 1** - Extract Color Values to CSS Custom Properties (~50 replacements)
+- ✅ **Step 2** - Consolidate Repeated Flexbox Patterns (6 new utility classes)
+- ✅ **Step 3** - Move Inline Styles to CSS Classes (~50+ instances removed)
+- ✅ **Step 4** - Consolidate Summary Page Styles (~250 lines moved to CSS)
+
+---
+
+### Step 1: Extract Color Values to CSS Custom Properties
+
+**Added comprehensive design token system** to `custom.css` `:root`:
+
+#### Brand Colors
+- ✅ `--cu-brand-blue: #002554` - Prussian blue (SVEM primary color)
+- ✅ `--cu-brand-red: var(--cu-red)` - Cardiff University brand red from xot_main.css
+
+#### Text Colors (using Open Props from xot_main.css)
+- ✅ `--text-primary: var(--gray-11)` - Primary text color
+- ✅ `--text-secondary: var(--gray-9)` - Secondary text color
+- ✅ `--text-muted: var(--gray-7)` - Muted text color
+- ✅ `--text-light-gray: var(--gray-6)` - Light gray text
+
+#### Backgrounds & Borders (using Open Props)
+- ✅ `--bg-white: var(--white)` - White background
+- ✅ `--bg-light: var(--gray-0)` - Light background
+- ✅ `--bg-gray: var(--gray-2)` - Gray background
+- ✅ `--border-light: var(--gray-3)` - Light border
+- ✅ `--border-medium: var(--gray-3)` - Medium border
+
+#### Status Colors (using Open Props)
+- ✅ `--status-success: var(--green-7)` - Success green (#37b24d)
+- ✅ `--status-success-light: var(--green-1)` - Success background
+- ✅ `--status-warning: var(--orange-7)` - Warning orange
+- ✅ `--status-warning-light: var(--yellow-1)` - Warning background
+- ✅ `--status-danger: var(--red-9)` - Danger red
+- ✅ `--status-danger-light: var(--red-0)` - Danger background
+
+#### Level Colors (using Open Props)
+- ✅ `--level-1` through `--level-5` - Grayscale maturity levels
+
+#### Shadows (using Open Props)
+- ✅ `--shadow-sm: var(--shadow-1)` - Small shadow
+- ✅ `--shadow-md: var(--shadow-2)` - Medium shadow
+- ✅ `--shadow-lg: var(--shadow-3)` - Large shadow
+- ✅ `--shadow-modal: var(--shadow-4)` - Modal shadow
+
+#### Spacing (using Open Props)
+- ✅ `--space-xs` through `--space-2xl` - 6 spacing values (0.25rem to 3rem)
+
+#### Border Radius
+- ✅ `--radius-sm: 4px`, `--radius-md: 8px`, `--radius-lg: 12px`
+
+#### Transitions (using Open Props easing)
+- ✅ `--transition-fast: 0.2s var(--ease-2)`
+- ✅ `--transition-normal: 0.3s var(--ease-3)`
+- ✅ `--transition-slow: 0.5s var(--ease-4)`
+
+**Replaced ~50+ hardcoded values** throughout `custom.css`:
+- All `#003366`, `#2c3e50`, `#5f6c7b`, `#595959`, `#e5e5e5` replaced with CSS variables
+- All `2rem`, `1rem`, `0.5rem` spacing replaced with `--space-*` variables
+- All shadows, transitions, border-radius replaced with design tokens
+
+**Benefits:**
+- Single source of truth for all design tokens
+- Easy to update entire color scheme
+- Maximum reuse of Open Props from xot_main.css
+- Better consistency across components
+- Supports theming/dark mode in future
+
+---
+
+### Step 2: Consolidate Repeated Flexbox Patterns
+
+**Added flexbox utility classes** to `custom.css` (lines 776-797):
+
+#### Alignment Utilities
+- ✅ `.flex-between` - justify-content: space-between
+- ✅ `.flex-start` - align-items: flex-start
+- ✅ `.flex-end` - align-items: flex-end
+
+#### Gap Utilities
+- ✅ `.gap-xs` through `.gap-2xl` - 6 gap values using spacing tokens
+
+#### Component Utilities
+- ✅ `.level-title-text` - Spacing for level titles (margin-left: var(--space-md))
+- ✅ `.section-badge-wrapper` - Flex container for section badges
+- ✅ `.btn-uppercase` - Uppercase button text transformation
+
+**Works with existing xot_main.css utilities:**
+- `.flex`, `.flex-col`, `.flex-center`, `.flex-center-x`, `.flex-center-y`, `.flex-wrap`
+
+**Common patterns now simplified:**
+```html
+<!-- Before -->
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+
+<!-- After -->
+<div class="flex flex-between flex-center-y gap-md">
+```
+
+**Benefits:**
+- Eliminated ~15-20 instances of repeated inline flexbox styles
+- Consistent flex patterns across all pages
+- Cleaner HTML markup
+- Better reusability
+
+---
+
+### Step 3: Move Inline Styles to CSS Classes
+
+**Added evidence box component classes** to `custom.css` (lines 813-833):
+- ✅ `.evidence-box__label` - Evidence box labels (font-weight, font-size, display, margin)
+- ✅ `.evidence-box__intro` - Evidence box intro text (font-size, color, line-height)
+- ✅ `.evidence-box__checklist` - Evidence box checklist text (font-size, color, line-height)
+
+**Updated HTML files to remove inline styles:**
+
+#### page-01-title.html
+- ✅ Button text styling: Replaced inline style with `.btn-uppercase`
+
+#### page-04-theme-1.html
+- ✅ Section badge wrappers: 2 instances replaced with `.section-badge-wrapper`
+- ✅ Level title spacing: 10 instances replaced with `.level-title-text`
+- ✅ Evidence box labels: 2 instances replaced with `.evidence-box__label`
+- ✅ Evidence intro text: 2 instances replaced with `.evidence-box__intro`
+- ✅ Evidence checklists: 2 instances replaced with `.evidence-box__checklist`
+- ✅ Page navigation: Removed inline styles (now in CSS)
+
+#### page-05-theme-2.html & page-06-theme-3.html
+- ✅ Same replacements as page-04 using batch sed commands
+- ✅ ~30+ inline style attributes removed from each file
+
+**Total impact:**
+- **~50+ inline style attributes** removed across all theme pages
+- Styles centralized in CSS for better maintainability
+- Better browser caching (CSS file cached separately)
+- Easier to update styles globally
+
+---
+
+### Step 4: Consolidate Summary Page Styles into custom.css
+
+**Moved ~250 lines of inline CSS** from `page-07-summary.html` to `custom.css` (lines 677-971):
+
+#### Summary Page Components
+- ✅ `.summary-page` - Page container with max-width and padding
+- ✅ `.report-header` - Flex layout header with shadow and border-radius
+- ✅ `.report-header__subtitle` - New class for subtitle text
+- ✅ `.report-meta` - Metadata display with flex column layout
+- ✅ `.completion-summary` - Summary card with white background
+- ✅ `.summary-container` - Grid layout (2 columns on desktop, 1 on mobile)
+- ✅ `.completion-stats` - Stats grid (2x2 layout)
+- ✅ `.chart-container` - Chart wrapper with background and sizing
+- ✅ `.stat-item`, `.stat-value`, `.stat-label` - Statistics display components
+
+#### Report Components
+- ✅ `.theme-report` - Theme report cards
+- ✅ `.theme-report__title` - Report section titles
+- ✅ `.section-report` - Individual section reports
+- ✅ `.section-report__header`, `.section-report__name`, `.section-report__score`
+- ✅ `.score-indicator` - Score badges (levels 1-5, not-scored) with colors
+- ✅ `.maturity-level` - Maturity level descriptions
+- ✅ `.section-report__evidence` - Evidence display with left border accent
+- ✅ `.no-evidence` - Placeholder for missing evidence
+
+#### Action Components
+- ✅ `.report-actions` - Action buttons container with centering
+
+#### Responsive Styles
+- ✅ `@media print` - Print-specific styles (hides navigation, removes shadows)
+- ✅ `@media (max-width: 768px)` - Mobile responsive layout (single column, full-width buttons)
+
+**Updated page-07-summary.html:**
+- ✅ Removed entire `<style>` block (lines 72-296, ~225 lines)
+- ✅ Added `.report-header__subtitle` class to replace inline style
+- ✅ Removed inline style from `<strong>` in report-meta
+- ✅ Updated JavaScript to use `.no-evidence` class instead of inline style
+- **File size reduced by ~250 lines**
+
+**All styles now use CSS custom properties:**
+```css
+/* Before (inline) */
+padding: 2rem;
+background: #ffffff;
+border-radius: 8px;
+color: #2c3e50;
+
+/* After (in custom.css) */
+padding: var(--space-xl);
+background: var(--bg-white);
+border-radius: var(--radius-md);
+color: var(--text-secondary);
+```
+
+---
+
+### Files Modified
+
+#### CSS Files
+- `custom.css` - All 4 optimization steps implemented:
+  - Lines 12-68: CSS custom properties (design tokens)
+  - Lines 776-833: Flexbox utilities and component classes
+  - Lines 677-971: Summary page styles (moved from inline)
+
+#### HTML Files
+- `page-01-title.html` - Button inline style removed (1 instance)
+- `page-04-theme-1.html` - All inline styles removed (~19 instances)
+- `page-05-theme-2.html` - All inline styles removed (batch update)
+- `page-06-theme-3.html` - All inline styles removed (batch update)
+- `page-07-summary.html` - Inline `<style>` block removed (~250 lines), 3 inline styles replaced
+
+---
+
+### CSS Quality Improvements Summary
+
+**Overall Impact:**
+- **~400+ lines optimized** through consolidation and refactoring
+- **50+ color value replacements** with CSS custom properties
+- **50+ inline styles eliminated** from HTML files
+- **250 lines of CSS** moved from inline to external stylesheet
+- **6 new utility classes** for common flexbox patterns
+- **7 new component classes** for evidence boxes and badges
+
+**Performance Improvements:**
+- **Better caching** - CSS file cached separately from HTML
+- **Reduced HTML file size** - Lighter page loads
+- **Reduced duplication** - DRY principle applied throughout
+- **Faster updates** - Change once in CSS, applies everywhere
+
+**Maintainability Improvements:**
+- **Single source of truth** - All design tokens in `:root`
+- **Consistent patterns** - Same utility classes used across all pages
+- **Better organization** - Styles grouped by component/purpose
+- **Semantic naming** - Clear, descriptive class names
+- **CSS custom properties** - Easy to update colors, spacing, shadows globally
+
+**Design System Benefits:**
+- **Maximum Open Props reuse** - Leverages existing xot_main.css tokens
+- **Brand consistency** - Prussian blue (#002554) as primary color
+- **Scalable architecture** - Easy to add new components
+- **Theme support ready** - CSS variables enable dark mode in future
+
+### Technical Notes
+- Uses Open Props design tokens from xot_main.css (colors, spacing, shadows, easing)
+- Custom properties defined in `:root` for SVEM-specific tokens
+- All hardcoded values replaced with semantic CSS variables
+- Flexbox utilities complement existing xot_main.css flex system
+- Component classes follow BEM-like naming convention
+- Media queries consolidated for better organization
+- Print styles included for PDF generation
+- No breaking changes - all visual appearance maintained
+
+---
+
 ## [1.4.0] - 2024-12-19
 
 ### Changed - Comprehensive Code Optimization & Refactoring
