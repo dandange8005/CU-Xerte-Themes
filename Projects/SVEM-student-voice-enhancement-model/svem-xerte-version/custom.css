@@ -30,7 +30,7 @@
     /* === Status Colors (using Open Props) === */
     --status-success: var(--green-7);
     --status-success-light: var(--green-1);
-    --status-warning: var(--orange-7);
+    --status-warning: var(--orange-5);
     --status-warning-light: var(--yellow-1);
     --status-danger: var(--red-9);
     --status-danger-light: var(--red-0);
@@ -635,24 +635,14 @@ details[open] summary::after {
 .evidence-input {
     width: 100%;
     min-height: 100px;
-    padding: 10px;
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-sm);
-    font-family: inherit;
-    font-size: 0.9rem;
     resize: vertical;
     line-height: 1.5;
-}
-
-.evidence-input:focus {
-    outline: none;
-    border-color: var(--cu-brand-blue);
 }
 
 /* Selected Level Highlighting */
 details.selected-level {
     border: 2px solid var(--cu-brand-blue);
-    background-color: var(--blue-1);
+    background-color: var(--blue-0);
 }
 
 /* Toast Notification */

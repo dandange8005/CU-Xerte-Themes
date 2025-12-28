@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.2] - 2025-12-25
+
+### Fixed - Downloaded Report Content (Chart + Evidence)
+
+- ✅ Evidence notes keep user-entered line breaks by escaping text and converting `\n` to `<br>` in `createSectionReportHTML()`, preventing HTML injection and preserving formatting in the standalone download.
+- ✅ Spider chart now appears in downloaded HTML by capturing the canvas as a PNG (`toDataURL`) and replacing the canvas with an `<img>` in the cloned DOM before export (no Chart.js dependency needed to view the file).
+
+**Technical notes:**
+- Evidence: `escapeHTML(savedData.note).replace(/\n/g, '<br>')` before rendering evidence paragraphs.
+- Chart: Get canvas → `toDataURL('image/png')` → clone summary page → replace canvas with `<img>` → embed in exported HTML.
+
+**Files Modified:**
+- `page-07-summary.html` - Updated `downloadReportHTML()` (chart embedding) and evidence rendering (escape + line breaks).
+
 ## [1.5.0] - 2024-12-24
 
 ### Changed - Comprehensive CSS Optimization & Refactoring

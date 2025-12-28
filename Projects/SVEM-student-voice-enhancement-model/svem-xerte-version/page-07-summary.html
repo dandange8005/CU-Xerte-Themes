@@ -135,6 +135,16 @@ const SECTION_SHORT_LABELS = {
     'pg': 'PG Surveys'
 };
 
+// Escape HTML to prevent injection when rendering evidence text
+function escapeHTML(str) {
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 // Get maturity level name
 function getMaturityLevelName(score) {
     if (!score) return 'Not Scored';
@@ -275,7 +285,7 @@ function createSectionReportHTML(section, savedData) {
 
     const evidenceHTML = hasScore
         ? (savedData.note?.trim()
-            ? `<strong>Evidence:</strong><p>${savedData.note}</p>`
+            ? `<strong>Evidence:</strong><p>${escapeHTML(savedData.note).replace(/\n/g, '<br>')}</p>`
             : `<em class="no-evidence">No evidence provided</em>`)
         : '';
 
@@ -362,8 +372,28 @@ function generateReport() {
 
 // Download report as HTML file
 function downloadReportHTML() {
-    // Get the report content and styles
-    var reportContent = document.querySelector('.summary-page').outerHTML;
+    // Capture the chart as an image first
+    const canvas = document.getElementById('spiderChart');
+    const chartImage = canvas ? canvas.toDataURL('image/png') : null;
+    
+    // Clone the summary page to modify it
+    const summaryClone = document.querySelector('.summary-page').cloneNode(true);
+    
+    // Replace canvas with image in the clone
+    if (chartImage) {
+        const canvasInClone = summaryClone.querySelector('#spiderChart');
+        if (canvasInClone) {
+            const img = document.createElement('img');
+            img.src = chartImage;
+            img.alt = 'Assessment Spider Chart';
+            img.style.maxWidth = '100%';
+            img.style.height = 'auto';
+            canvasInClone.parentNode.replaceChild(img, canvasInClone);
+        }
+    }
+    
+    // Get the modified report content and styles
+    var reportContent = summaryClone.outerHTML;
     var styles = document.querySelector('style').textContent;
     var reportDate = new Date().toLocaleDateString('en-GB');
     var fileName = 'SVEM-Report-' + new Date().toISOString().split('T')[0] + '.html';
