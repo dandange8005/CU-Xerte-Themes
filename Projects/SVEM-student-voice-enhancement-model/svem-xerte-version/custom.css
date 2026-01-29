@@ -99,54 +99,7 @@
    Page-Specific Styles
    ======================================== */
 
-/* Title Page */
-.title-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: var(--space-xl);
-}
 
-.title-page__icon {
-    margin-bottom: var(--space-xl);
-}
-
-.title-page__icon .icon {
-    font-size: 4rem;
-    line-height: 1;
-}
-
-.title-page__main-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 0 0 var(--space-md) 0;
-    color: var(--text-secondary);
-    max-width: 800px;
-}
-
-.title-page__subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    font-weight: 400;
-    color: var(--text-muted);
-    margin: 0 0 var(--space-2xl) 0;
-    max-width: 600px;
-}
-
-/* Removed .title-page__enter-btn - using .btn .btn-primary .btn-lg from xot_main.css */
-
-.title-page__footer {
-    margin-top: auto;
-    padding-top: var(--space-2xl);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.title-page__footer p {
-    margin: 0;
-}
 
 /* Instructions Page */
 .instructions-page {
@@ -1117,4 +1070,139 @@ details.selected-level {
     color: var(--text-muted);
     margin-bottom: 0.75rem;
     line-height: 1.6;
+}
+
+/* ========================================
+   Title Page - Redesigned
+   ======================================== */
+
+:root {
+    --cu-gold: #c9a227;
+}
+
+.title-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: var(--space-2xl);
+    padding: var(--space-2xl);
+    min-height: 80vh;
+}
+
+.title-page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.title-page__logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.title-page__university {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--cu-brand-red);
+    margin: var(--space-sm) 0 0 0;
+}
+
+.title-page__heading {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--cu-brand-blue);
+}
+
+.title-page__heading span {
+    display: block;
+    color: var(--);
+}
+
+.title-page__description {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.title-page__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--cu-brand-blue);
+    color: var(--bg-white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-top: var(--space-sm);
+}
+
+.title-page__btn:hover {
+    background: #001a3d;
+    box-shadow: var(--shadow-md);
+}
+
+.title-page__btn::after {
+    content: '→';
+    font-size: 1.2em;
+}
+
+.title-page__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-page__card {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    transform: rotate(2deg);
+    filter: drop-shadow(0 16px 32px rgba(0, 37, 84, 0.12));
+}
+
+.title-page__footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: var(--space-lg);
+    color: var(--text-light-gray);
+    font-size: 0.8rem;
+}
+
+.title-page__footer p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .title-page {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        padding: var(--space-xl) var(--space-lg);
+    }
+
+    .title-page__content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .title-page__description {
+        max-width: 100%;
+    }
+
+    .title-page__card {
+        max-width: 320px;
+        transform: rotate(0deg);
+    }
 }
