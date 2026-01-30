@@ -254,7 +254,7 @@ function initThemesOverview() {
     const themesConfig = [
         { themeId: 'theme-1', sectionIds: ['roles', 'training'] },
         { themeId: 'theme-2', sectionIds: ['reps-ssps'] },
-        { themeId: 'theme-3', sectionIds: ['mme', 'me', 'nss', 'pg'] }
+        { themeId: 'theme-3', sectionIds: ['mme', 'me', 'nss', 'cupts', 'pres'] }
     ];
 
     themesConfig.forEach(theme => {

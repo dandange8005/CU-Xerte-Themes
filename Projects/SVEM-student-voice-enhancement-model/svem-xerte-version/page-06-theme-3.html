@@ -377,100 +377,98 @@
         <textarea class="evidence-input" id="evidence-nss" onchange="saveNote('nss', this.value)" placeholder="Example: We promote NSS participation through multiple channels. Results are discussed at ESEC and shared with students via newsletters..."></textarea>
       </div>
     </section>
-    <!-- SUBSECTION 4: PG Surveys -->
-    <section id="pg">
+    <!-- SUBSECTION 4: CUPTS -->
+    <section id="cupts">
       <div class="section-header-wrapper">
-        <h3>Cardiff University Postgraduate Taught Survey (CUPTS) &amp; Postgraduate Research Experience Survey (PRES)
+        <h3>Cardiff University Postgraduate Taught Survey (CUPTS)
         </h3>
-        <div class="section-badge-wrapper"><span class="score-badge" id="badge-pg">Not Scored</span>
-          <button class="toggle-btn" onclick="toggleSection('pg', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
+        <div class="section-badge-wrapper"><span class="score-badge" id="badge-cupts">Not Scored</span>
+          <button class="toggle-btn" onclick="toggleSection('cupts', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
           </button>
         </div>
       </div>
       <div class="level-group">
         <details class="l1">
-          <summary> <span class="level-number">LEVEL 1</span> <span class="level-title-text">Moving towards Baseline</span> 
+          <summary> <span class="level-number">LEVEL 1</span> <span class="level-title-text">Moving towards Baseline</span>
           </summary>
           <div class="content-body">
             <ul>
-              <li>School relies on central communications for PG surveys and are unaware of guidance and timelines.</li>
-              <li>Student feedback is not considered when introducing changes/enhancements to the PG environment.</li>
+              <li>School relies on central communications for CUPTS and are unaware of guidance and timelines.</li>
+              <li>Student feedback is not considered when introducing changes/enhancements to the PGT environment.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('pg', 1, this); return false;" type="button">Set as Level 1
+              <button class="score-btn" onclick="saveScore('cupts', 1, this); return false;" type="button">Set as Level 1
               </button>
-              <button class="score-btn" onclick="saveScore('pg', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)
+              <button class="score-btn" onclick="saveScore('cupts', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)
               </button>
             </div>
           </div>
         </details>
         <details class="l2">
-          <summary> <span class="level-number">LEVEL 2</span> <span class="level-title-text">Baseline Practice</span> 
+          <summary> <span class="level-number">LEVEL 2</span> <span class="level-title-text">Baseline Practice</span>
           </summary>
           <div class="content-body">
             <ul>
-              <li>School Student Voice staff communicate PG survey timelines and guidance to appropriate School staff.</li>
-              <li>School promotes PG surveys to students, highlighting any incentives available.</li>
-              <li>CUPTS - School reviews feedback and provides response to students.</li>
-              <li>PRES - Quantitative results are shared with students without any further analysis and actions are not communicated.</li>
+              <li>School Student Voice staff communicate CUPTS timelines and guidance to appropriate School staff.</li>
+              <li>School promotes CUPTS to students, highlighting any incentives available.</li>
+              <li>School reviews feedback and provides response to students.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('pg', 2, this); return false;" type="button">Set as Level 2
+              <button class="score-btn" onclick="saveScore('cupts', 2, this); return false;" type="button">Set as Level 2
               </button>
-              <button class="score-btn" onclick="saveScore('pg', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)
+              <button class="score-btn" onclick="saveScore('cupts', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)
               </button>
             </div>
           </div>
         </details>
         <details class="l3">
-          <summary> <span class="level-number">LEVEL 3</span> <span class="level-title-text">Emerging Good Practice</span> 
+          <summary> <span class="level-number">LEVEL 3</span> <span class="level-title-text">Emerging Good Practice</span>
           </summary>
           <div class="content-body">
             <ul>
-              <li>School develops PG survey promotional plan with the aim of increasing response rates.</li>
-              <li>School and PG staff proactively promote surveys and their purpose to students.</li>
-              <li>CUPTS - PGT Lead, DLT, and HoS review and respond to feedback according to timeline; highlighting key themes, indicating changes being considered, and why some feedback may be unactionable.</li>
-              <li>PRES - Where appropriate, School and PGR staff consider introducing changes and enhancements as a result of PRES feedback.</li>
+              <li>School develops CUPTS promotional plan with the aim of increasing response rates.</li>
+              <li>School and PGT staff proactively promote CUPTS and its purpose to students.</li>
+              <li>PGT Lead, DLT, and HoS review and respond to feedback according to timeline; highlighting key themes, indicating changes being considered, and why some feedback may be unactionable.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('pg', 3, this); return false;" type="button">Set as Level 3
+              <button class="score-btn" onclick="saveScore('cupts', 3, this); return false;" type="button">Set as Level 3
               </button>
-              <button class="score-btn" onclick="saveScore('pg', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)
+              <button class="score-btn" onclick="saveScore('cupts', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)
               </button>
             </div>
           </div>
         </details>
         <details class="l4">
-          <summary> <span class="level-number">LEVEL 4</span> <span class="level-title-text">Established Strong Practice</span> 
+          <summary> <span class="level-number">LEVEL 4</span> <span class="level-title-text">Established Strong Practice</span>
           </summary>
           <div class="content-body">
             <ul>
-              <li>PG staff engage in PG survey promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of survey participation.</li>
-              <li>PG staff explain to students what changes can and cannot be made, and escalate any School-wide feedback to relevant colleagues.</li>
-              <li>PG survey process and feedback is actively discussed at School level; including collaboration between Student Voice staff and appropriate colleagues.</li>
-              <li>Where appropriate, PG staff consult with students on proposed changes.</li>
+              <li>PGT staff engage in CUPTS promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of survey participation.</li>
+              <li>PGT staff explain to students what changes can and cannot be made, and escalate any School-wide feedback to relevant colleagues.</li>
+              <li>CUPTS process and feedback is actively discussed at School level; including collaboration between Student Voice staff and appropriate colleagues.</li>
+              <li>Where appropriate, PGT staff consult with students on proposed changes.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('pg', 4, this); return false;" type="button">Set as Level 4
+              <button class="score-btn" onclick="saveScore('cupts', 4, this); return false;" type="button">Set as Level 4
               </button>
-              <button class="score-btn" onclick="saveScore('pg', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)
+              <button class="score-btn" onclick="saveScore('cupts', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)
               </button>
             </div>
           </div>
         </details>
         <details class="l5">
-          <summary> <span class="level-number">LEVEL 5</span> <span class="level-title-text">Exceptional Practice</span> 
+          <summary> <span class="level-number">LEVEL 5</span> <span class="level-title-text">Exceptional Practice</span>
           </summary>
           <div class="content-body">
             <ul>
-              <li>PG staff regularly inform students of ongoing feedback-driven enhancements throughout the year, including during welcome week.</li>
-              <li>PG surveys are added as agenda items in SSPs, and Student Reps are encouraged to promote the surveys as key Student Voice mechanisms.</li>
-              <li>Staff regularly work in partnership with students to co-create changes and enhancements to the PG environment.</li>
+              <li>PGT staff regularly inform students of ongoing feedback-driven enhancements throughout the year, including during welcome week.</li>
+              <li>CUPTS is added as an agenda item in SSPs, and Student Reps are encouraged to promote the survey as a key Student Voice mechanism.</li>
+              <li>Staff regularly work in partnership with students to co-create changes and enhancements to the PGT environment.</li>
               <li>School keeps a record of key changes to use as a resource which supports sharing of best practice.</li>
-              <li>School conducts annual review of PG survey promotional plan.</li>
+              <li>School conducts annual review of CUPTS promotional plan.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('pg', 5, this); return false;" type="button">Set as Level 5
+              <button class="score-btn" onclick="saveScore('cupts', 5, this); return false;" type="button">Set as Level 5
               </button>
             </div>
           </div>
@@ -478,10 +476,10 @@
       </div>
       <!-- Evidence Box -->
       <div class="evidence-box">
-        <label for="evidence-pg" class="evidence-box__label">Evidence &amp; Contextual Notes</label>
+        <label for="evidence-cupts" class="evidence-box__label">Evidence &amp; Contextual Notes</label>
         <p class="evidence-box__intro">
           <strong>This context is essential for generating meaningful recommendations.</strong><br>
-          Please explain why you selected this level for <strong>Postgraduate Surveys (CUPTS &amp; PRES)</strong>.
+          Please explain why you selected this level for <strong>CUPTS</strong>.
         </p>
         <p class="evidence-box__checklist">
           Your response should include:<br>
@@ -491,7 +489,122 @@
           ✓ If you selected an "in-between" level (e.g., 2.5), what are you doing from each level?<br>
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
-        <textarea class="evidence-input" id="evidence-pg" onchange="saveNote('pg', this.value)" placeholder="Example: We promote CUPTS and PRES to all PGT students. Results are reviewed at programme committees and shared with PG representatives..."></textarea>
+        <textarea class="evidence-input" id="evidence-cupts" onchange="saveNote('cupts', this.value)" placeholder="Example: We promote CUPTS to all PGT students. Results are reviewed at programme committees and shared with PGT representatives..."></textarea>
+      </div>
+    </section>
+    <!-- SUBSECTION 5: PRES -->
+    <section id="pres">
+      <div class="section-header-wrapper">
+        <h3>Postgraduate Research Experience Survey (PRES)
+        </h3>
+        <div class="section-badge-wrapper"><span class="score-badge" id="badge-pres">Not Scored</span>
+          <button class="toggle-btn" onclick="toggleSection('pres', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
+          </button>
+        </div>
+      </div>
+      <div class="level-group">
+        <details class="l1">
+          <summary> <span class="level-number">LEVEL 1</span> <span class="level-title-text">Moving towards Baseline</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>School relies on central communications for PRES and are unaware of guidance and timelines.</li>
+              <li>Student feedback is not considered when introducing changes/enhancements to the PGR environment.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('pres', 1, this); return false;" type="button">Set as Level 1
+              </button>
+              <button class="score-btn" onclick="saveScore('pres', 1.5, this); return false;" type="button">Transitioning to Level 2 (1.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <details class="l2">
+          <summary> <span class="level-number">LEVEL 2</span> <span class="level-title-text">Baseline Practice</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>School Student Voice staff communicate PRES timelines and guidance to appropriate School staff.</li>
+              <li>School promotes PRES to students, highlighting any incentives available.</li>
+              <li>Quantitative results are shared with students without any further analysis and actions are not communicated.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('pres', 2, this); return false;" type="button">Set as Level 2
+              </button>
+              <button class="score-btn" onclick="saveScore('pres', 2.5, this); return false;" type="button">Transitioning to Level 3 (2.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <details class="l3">
+          <summary> <span class="level-number">LEVEL 3</span> <span class="level-title-text">Emerging Good Practice</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>School develops PRES promotional plan with the aim of increasing response rates.</li>
+              <li>School and PGR staff proactively promote PRES and its purpose to students.</li>
+              <li>Where appropriate, School and PGR staff consider introducing changes and enhancements as a result of PRES feedback.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('pres', 3, this); return false;" type="button">Set as Level 3
+              </button>
+              <button class="score-btn" onclick="saveScore('pres', 3.5, this); return false;" type="button">Transitioning to Level 4 (3.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <details class="l4">
+          <summary> <span class="level-number">LEVEL 4</span> <span class="level-title-text">Established Strong Practice</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>PGR staff engage in PRES promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of survey participation.</li>
+              <li>PGR staff explain to students what changes can and cannot be made, and escalate any School-wide feedback to relevant colleagues.</li>
+              <li>PRES process and feedback is actively discussed at School level; including collaboration between Student Voice staff and appropriate colleagues.</li>
+              <li>Where appropriate, PGR staff consult with students on proposed changes.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('pres', 4, this); return false;" type="button">Set as Level 4
+              </button>
+              <button class="score-btn" onclick="saveScore('pres', 4.5, this); return false;" type="button">Transitioning to Level 5 (4.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <details class="l5">
+          <summary> <span class="level-number">LEVEL 5</span> <span class="level-title-text">Exceptional Practice</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>PGR staff regularly inform students of ongoing feedback-driven enhancements throughout the year, including during welcome week.</li>
+              <li>PRES is added as an agenda item in SSPs, and Student Reps are encouraged to promote the survey as a key Student Voice mechanism.</li>
+              <li>Staff regularly work in partnership with students to co-create changes and enhancements to the PGR environment.</li>
+              <li>School keeps a record of key changes to use as a resource which supports sharing of best practice.</li>
+              <li>School conducts annual review of PRES promotional plan.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('pres', 5, this); return false;" type="button">Set as Level 5
+              </button>
+            </div>
+          </div>
+        </details>
+      </div>
+      <!-- Evidence Box -->
+      <div class="evidence-box">
+        <label for="evidence-pres" class="evidence-box__label">Evidence &amp; Contextual Notes</label>
+        <p class="evidence-box__intro">
+          <strong>This context is essential for generating meaningful recommendations.</strong><br>
+          Please explain why you selected this level for <strong>PRES</strong>.
+        </p>
+        <p class="evidence-box__checklist">
+          Your response should include:<br>
+          ✓ What practices/structures are currently in place?<br>
+          ✓ Why does this represent the level you selected?<br>
+          ✓ What evidence supports this assessment?<br>
+          ✓ If you selected an "in-between" level (e.g., 2.5), what are you doing from each level?<br>
+          <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
+        </p>
+        <textarea class="evidence-input" id="evidence-pres" onchange="saveNote('pres', this.value)" placeholder="Example: We promote PRES to all PGR students. Results are reviewed at research committees and shared with PGR representatives..."></textarea>
       </div>
     </section>
     <!-- Navigation -->
@@ -516,9 +629,9 @@
     // Initialize Theme 3 page
 // Assumes scoring-xerte.js is loaded globally
 
-// Load saved data for all 4 sections in this theme
+// Load saved data for all 5 sections in this theme
 if (typeof initSVEMPage === 'function') {
-    initSVEMPage(['mme', 'me', 'nss', 'pg']);
+    initSVEMPage(['mme', 'me', 'nss', 'cupts', 'pres']);
 } else {
     console.error('initSVEMPage function not found - ensure scoring-xerte.js is loaded');
 }
