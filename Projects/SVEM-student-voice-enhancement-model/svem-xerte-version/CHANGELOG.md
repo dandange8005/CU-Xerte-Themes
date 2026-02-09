@@ -2,6 +2,68 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2026-02-09
+
+### Added - Introduction Page Content & Scoring Explanation
+
+#### Introduction Page Rewrite (page-02-instructions.html)
+- ✅ Replaced minimal welcome page with full introduction content
+- ✅ Added overview text explaining the Enhancement Model and its alignment to Wellbeing of Future Generations Act, QAA Principle 2, and Medr's Draft Learner Engagement Code
+- ✅ Added four info cards in a 2x2 grid layout:
+  - **What's the purpose?** (`fa-bullseye`) - How the model helps Schools improve student feedback
+  - **How does it benefit you?** (`fa-chart-line`) - Self-appraisement and tailored enhancement plans
+  - **Who can use the model?** (`fa-users`) - Roles list (Rep Coordinator, Survey Contact, etc.)
+  - **Support and contact details** (`fa-headset`) - SVP Team contact (LTAcademy@cardiff.ac.uk)
+- ✅ Font Awesome 6 icons added to each card
+- ✅ CSS: `.intro-section`, `.intro-sections-grid`, `.intro-card`, `.intro-card__icon`, `.intro-card__heading` with responsive grid (2-col desktop, 1-col mobile)
+
+#### Scoring Explanation Section (pages 04, 05, 06)
+- ✅ Added collapsible Scoring Explanation panel to all three theme pages
+- ✅ Explains the five-level scale (Foundational Practice through Exceptional Practice)
+- ✅ Explains .5 scores for in-between levels with examples (1.5, 2.5, 3.5, 4.5)
+- ✅ Styled as an info callout with blue left border, distinct from level accordions
+- ✅ Level scale list items colour-coded to match their respective level colours
+- ✅ CSS: `.scoring-explanation` with overrides for `details`, `summary::before`, `.toggle-hint`, `.level-scale-list`, `.score-examples-list`
+
+#### Level Label Updates (page-04-theme-1.html)
+- ✅ Training section Level 1: "Moving towards Baseline" → "Foundational Practice"
+- ✅ Training section Level 2: "Baseline Practice" → "Developing Practice"
+
+### Changed - CSS Cleanup & Reorganisation
+
+#### Removed Unused CSS (~18 classes)
+- ✅ `.svem-container`, `.svem-navigation` - unused layout/navigation components
+- ✅ `.instructions-page__description`, `.instructions-page__info-cards` - replaced by `.intro-section`/`.intro-sections-grid`
+- ✅ `.info-card`, `.info-card:hover`, `.info-card__icon`, `.info-card__value`, `.info-card__label` - old card design replaced by `.intro-card`
+- ✅ `.level-header`, `.level-title` - never used in HTML (`.level-title-text` is used)
+- ✅ `.flex-between`, `.flex-start`, `.flex-end` - unused utility classes
+- ✅ `.gap-xs` through `.gap-2xl` - unused gap utilities
+- ✅ `.btn-uppercase` - unused utility class
+- ✅ Merged duplicate `:root` blocks (`--cu-gold` moved into main `:root`)
+- ✅ Removed stale "Removed X" comments
+
+#### CSS File Reorganisation
+- ✅ Restructured entire `custom.css` with numbered page-ordered sections:
+  1. CSS Custom Properties
+  2. Page 01 - Title / Landing Page
+  3. Page 02 - Introduction & Instructions
+  4. Page 03 - Themes Overview
+  5. Pages 04-06 - Individual Theme Pages
+  6. Page 07 - Summary & Report
+  7. Shared Components (toast, modal, danger button)
+- ✅ Added page order index in file header comment
+- ✅ Sub-sections within theme pages marked with `/* --- Label --- */` comments
+- ✅ Responsive and print media queries co-located with their page section
+
+### Files Modified
+- `page-02-instructions.html` - Full rewrite with introduction content and info cards
+- `page-04-theme-1.html` - Scoring explanation + level label fixes
+- `page-05-theme-2.html` - Scoring explanation
+- `page-06-theme-3.html` - Scoring explanation
+- `custom.css` - New intro card styles, scoring explanation styles, unused class removal, full reorganisation
+
+---
+
 ## [1.5.2] - 2025-12-25
 
 ### Fixed - Downloaded Report Content (Chart + Evidence)
@@ -784,4 +846,4 @@ The downloaded HTML includes additional styles for better presentation:
 
 ---
 
-**Last Updated:** 2024-12-18
+**Last Updated:** 2026-02-09
