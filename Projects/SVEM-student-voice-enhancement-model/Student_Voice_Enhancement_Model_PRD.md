@@ -2,7 +2,7 @@
 ## Student Voice Enhancement Model - Digital Platform
 
 **Version:** 1.0  
-**Date:** 12 December 2024  
+**Date:** 12 December 2025  
 **Project Owner:** Nan (Student Voice & Partnership Team)  
 **Technical Lead:** Clover (Learning & Teaching Academy)  
 **Target Launch:** End of February 2025
