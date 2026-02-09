@@ -4,15 +4,27 @@
 
    Custom styles for the SVEM Self-assessment project
    Built on top of xot_main.css theme
+
+   Page Order:
+   1. page-01-title.html        - Title / Landing Page
+   2. page-02-instructions.html  - Introduction & Instructions
+   3. page-03-themes-overview.html - Themes Overview (hub)
+   4. page-04-theme-1.html       - Theme 1: Structures & Governance
+   5. page-05-theme-2.html       - Theme 2: Student Reps & SSPs
+   6. page-06-theme-3.html       - Theme 3: Student Voice Surveys
+   7. page-07-summary.html       - Summary & Report
    ======================================== */
 
+
 /* ========================================
-   CSS Custom Properties
+   1. CSS Custom Properties
    ======================================== */
+
 :root {
     /* === SVEM Brand Colors === */
-    --cu-brand-blue: #002554;  /* Prussian blue - SVEM primary color */
-    --cu-brand-red: var(--cu-red);  /* Cardiff University brand red: hsl(3, 79%, 50%) */
+    --cu-brand-blue: #002554;
+    --cu-brand-red: var(--cu-red);
+    --cu-gold: #c9a227;
 
     /* === Text Colors (using Open Props from xot_main.css) === */
     --text-primary: var(--gray-11);
@@ -56,7 +68,7 @@
     --space-xl: var(--size-7);
     --space-2xl: var(--size-8);
 
-    /* === Border Radius (custom) === */
+    /* === Border Radius === */
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
@@ -67,39 +79,121 @@
     --transition-slow: 0.5s var(--ease-4);
 }
 
+
 /* ========================================
-   Layout Styles
+  Title / Landing Page
    ======================================== */
 
-/* Main container */
-.svem-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--space-xl);
+.title-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: var(--space-2xl);
+    padding: var(--space-2xl);
+    min-height: 80vh;
 }
 
-/* ========================================
-   Component Styles
-   ======================================== */
-
-/* Navigation between pages */
-.svem-navigation {
+.title-page__content {
     display: flex;
-    justify-content: space-between;
-    margin-top: var(--space-2xl);
-    padding-top: var(--space-xl);
-    border-top: 1px solid var(--border-medium);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-md);
 }
 
-.svem-navigation button {
-    padding: 0.75rem var(--space-lg);
+.title-page__logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
+
+.title-page__university {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    margin: var(--space-sm) 0 0 0;
+}
+
+.title-page__heading {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--cu-brand-blue);
+}
+
+.title-page__heading span {
+    display: block;
+    color: var(--cu-gold);
+}
+
+.title-page__description {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.title-page__btn::after {
+    content: '\2192';
+    font-size: 1.2em;
+    margin-left: var(--space-sm);
+}
+
+.title-page__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-page__card {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    transform: rotate(2deg);
+    filter: drop-shadow(0 16px 32px rgba(0, 37, 84, 0.12));
+}
+
+.title-page__footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: var(--space-lg);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.title-page__footer p {
+    margin: 0;
+}
+
+/* Title Page - Responsive */
+@media (max-width: 900px) {
+    .title-page {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        padding: var(--space-xl) var(--space-lg);
+    }
+
+    .title-page__content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .title-page__description {
+        max-width: 100%;
+    }
+
+    .title-page__card {
+        max-width: 320px;
+        transform: rotate(0deg);
+    }
+}
+
 
 /* ========================================
-   Page-Specific Styles
+ Introduction & Instructions
    ======================================== */
 
-/* Instructions Page */
 .instructions-page {
     display: flex;
     flex-direction: column;
@@ -107,11 +201,6 @@
     justify-content: center;
     text-align: center;
     padding: var(--space-xl);
-}
-
-.instructions-container {
-    max-width: 1000px;
-    width: 100%;
 }
 
 .instructions-page__title {
@@ -122,57 +211,7 @@
     line-height: 1.2;
 }
 
-.instructions-page__description {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: var(--text-muted);
-    max-width: 800px;
-    margin: 0 auto var(--space-2xl) auto;
-    line-height: 1.6;
-}
-
-.instructions-page__info-cards {
-    display: flex;
-    gap: var(--space-xl);
-    justify-content: center;
-    margin-bottom: var(--space-2xl);
-    flex-wrap: wrap;
-}
-
-.info-card {
-    background: var(--bg-white);
-    padding: var(--space-xl) var(--space-lg);
-    border-radius: var(--radius-md);
-    width: 200px;
-    box-shadow: var(--shadow-md);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.info-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.info-card__icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
-    line-height: 1;
-}
-
-.info-card__value {
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-xs);
-}
-
-.info-card__label {
-    font-size: 0.9rem;
-    color: var(--text-light-gray);
-}
-
-/* Removed .instructions-page__cta-btn - using .btn .btn-primary .btn-lg from xot_main.css */
-
-/* Introduction Section */
+/* Introduction Text */
 .intro-section {
     text-align: left;
     max-width: 800px;
@@ -250,13 +289,17 @@
     text-decoration: underline;
 }
 
+/* Instructions Page - Responsive */
 @media (max-width: 768px) {
     .intro-sections-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* Themes Overview Page */
+
+/* ========================================
+ Page 03 - Themes Overview
+   ======================================== */
 
 .container {
     max-width: 900px;
@@ -356,7 +399,7 @@
     border: 1px solid var(--status-success);
 }
 
-/* Theme Progress */
+/* Theme Progress Bar */
 .theme-progress {
     margin-top: 0.75rem;
 }
@@ -387,23 +430,23 @@
     font-weight: 500;
 }
 
-/* Actions */
 .themes-overview__actions {
     margin-top: var(--space-2xl);
     text-align: center;
 }
 
-/* Removed .btn-primary - using .btn .btn-primary from xot_main.css */
 
-/* Individual Theme Pages */
-/* Theme Page Container - Single Column Layout */
+/* ========================================
+   5.  Individual Theme Pages
+   ======================================== */
+
+/* --- Layout --- */
+
 .theme-page-container {
-
     display: flex;
     justify-content: center;
 }
 
-/* Main Content */
 .main-content {
     padding: var(--space-xl) var(--space-2xl);
     max-width: 900px;
@@ -434,7 +477,8 @@
     margin-top: var(--space-sm);
 }
 
-/* Scoring Explanation Section */
+/* --- Scoring Explanation (collapsible info panel) --- */
+
 .scoring-explanation {
     margin-bottom: var(--space-lg);
 }
@@ -528,7 +572,8 @@
     color: var(--text-muted);
 }
 
-/* Section Header with Toggle Button */
+/* --- Section Headers --- */
+
 .section-header-wrapper {
     display: flex;
     justify-content: space-between;
@@ -544,6 +589,20 @@
     margin: 0;
     color: var(--text-primary);
 }
+
+.section-badge-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.section-description {
+    color: var(--text-muted);
+    margin-block: var(--space-md);
+    font-size: var(--fs-sm);
+}
+
+/* --- Toggle Button (Expand/Collapse All) --- */
 
 .toggle-btn {
     background: transparent;
@@ -571,13 +630,8 @@
     font-weight: 300;
 }
 
-.section-description {
-    color: var(--text-muted);
-    margin-block: var(--space-md);
-  font-size: var(--fs-sm);
-}
+/* --- Level Accordion System --- */
 
-/* Accordion System */
 .level-group {
     display: flex;
     flex-direction: column;
@@ -619,7 +673,7 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-/* Level Indicator Bar */
+/* Level Indicator Bar (left edge color) */
 summary::before {
     content: '';
     position: absolute;
@@ -629,32 +683,23 @@ summary::before {
     width: 5px;
 }
 
-/* Specific Level Colors (Grayscale) */
-details.l1 summary::before {
-    background-color: var(--level-1);
+details.l1 summary::before { background-color: var(--level-1); }
+details.l2 summary::before { background-color: var(--level-2); }
+details.l3 summary::before { background-color: var(--level-3); }
+details.l4 summary::before { background-color: var(--level-4); }
+details.l5 summary::before { background-color: var(--level-5); }
+
+/* Expand/Collapse Icon */
+summary::after {
+    content: '+';
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-left: auto;
+    color: var(--text-muted);
 }
 
-details.l2 summary::before {
-    background-color: var(--level-2);
-}
-
-details.l3 summary::before {
-    background-color: var(--level-3);
-}
-
-details.l4 summary::before {
-    background-color: var(--level-4);
-}
-
-details.l5 summary::before {
-    background-color: var(--level-5);
-}
-
-/* Level Header */
-.level-header {
-    display: flex;
-    flex-direction: column;
-    margin-left: 0.8rem;
+details[open] summary::after {
+    content: '\2212';
 }
 
 .level-number {
@@ -665,12 +710,11 @@ details.l5 summary::before {
     margin-bottom: 2px;
 }
 
-.level-title {
-    font-size: 0.95rem;
-    color: var(--text-primary);
+.level-title-text {
+    margin-left: var(--space-md);
 }
 
-/* Content Body */
+/* Content Body (inside accordions) */
 .content-body {
     padding: 0.8rem var(--space-md) var(--space-md) 1.8rem;
     color: var(--text-muted);
@@ -687,36 +731,14 @@ details.l5 summary::before {
     margin-bottom: 0.3rem;
 }
 
-/* Expand/Collapse Icon */
-summary::after {
-    content: '+';
-    font-weight: 300;
-    font-size: 1.2rem;
-    margin-left: auto;
-    color: var(--text-muted);
+/* Selected Level Highlighting (set via JS) */
+details.selected-level {
+    border: 2px solid var(--cu-brand-blue);
+    background-color: var(--blue-1);
 }
 
-details[open] summary::after {
-    content: '−';
-}
+/* --- Scoring Interface --- */
 
-/* Page Navigation */
-.page-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: var(--space-2xl);
-    padding-top: var(--space-xl);
-    border-top: 1px solid var(--border-light);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-content {
-        padding: var(--space-lg) var(--space-md);
-    }
-}
-
-/* Scoring Interface */
 .score-badge {
     background: var(--bg-gray);
     color: var(--text-muted);
@@ -760,11 +782,33 @@ details[open] summary::after {
     color: var(--bg-white);
 }
 
-/* Evidence Box */
+/* --- Evidence Box --- */
+
 .evidence-box {
     margin-top: var(--space-lg);
     padding-top: var(--space-lg);
     border-top: 1px solid var(--border-light);
+}
+
+.evidence-box__label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.evidence-box__intro {
+    font-size: 0.85rem;
+    color: var(--text-light-gray);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.evidence-box__checklist {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
 }
 
 .evidence-input {
@@ -784,41 +828,30 @@ details[open] summary::after {
     border-color: var(--cu-brand-blue);
 }
 
-/* Selected Level Highlighting */
-details.selected-level {
-    border: 2px solid var(--cu-brand-blue);
-    background-color: var(--blue-1);
+/* --- Page Navigation (prev/next buttons) --- */
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border-light);
 }
 
-/* Toast Notification */
-#toast {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--gray-8);
-    color: var(--bg-white);
-    padding: 10px 20px;
-    border-radius: var(--radius-sm);
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-    pointer-events: none;
-    z-index: 100;
+/* Theme Pages - Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        padding: var(--space-lg) var(--space-md);
+    }
 }
 
-#toast.show {
-    opacity: 1;
-}
 
 /* ========================================
-   Summary Page Styles
+   6. Summary & Report
    ======================================== */
 
-.summary-page {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: var(--space-xl);
-}
 
+/* Report Header */
 .report-header {
     display: flex;
     justify-content: space-between;
@@ -855,6 +888,7 @@ details.selected-level {
     margin-top: 0;
 }
 
+/* Completion Summary & Chart */
 .completion-summary {
     background: var(--bg-white);
     padding: var(--space-xl);
@@ -914,7 +948,7 @@ details.selected-level {
     color: var(--text-light-gray);
 }
 
-/* Theme Reports */
+/* Theme Reports (generated dynamically via JS) */
 .theme-report {
     background: var(--bg-white);
     padding: var(--space-lg);
@@ -931,7 +965,7 @@ details.selected-level {
     color: var(--text-primary);
 }
 
-/* Section Reports */
+/* Section Reports (generated dynamically via JS) */
 .section-report {
     padding: var(--space-md) 0;
     border-bottom: 1px solid #f0f0f0;
@@ -961,6 +995,7 @@ details.selected-level {
     gap: 0.75rem;
 }
 
+/* Score Indicators (color-coded by level) */
 .score-indicator {
     display: inline-block;
     padding: 0.35rem 0.75rem;
@@ -969,35 +1004,12 @@ details.selected-level {
     font-size: 0.9rem;
 }
 
-.score-indicator.level-1 {
-    background: #e8e8e8;
-    color: #404040;
-}
-
-.score-indicator.level-2 {
-    background: #d1e7dd;
-    color: #0f5132;
-}
-
-.score-indicator.level-3 {
-    background: #cfe2ff;
-    color: #084298;
-}
-
-.score-indicator.level-4 {
-    background: var(--status-success-light);
-    color: var(--green-12);
-}
-
-.score-indicator.level-5 {
-    background: #d1ecf1;
-    color: #0c5460;
-}
-
-.score-indicator.not-scored {
-    background: #f8d7da;
-    color: #721c24;
-}
+.score-indicator.level-1 { background: #e8e8e8; color: #404040; }
+.score-indicator.level-2 { background: #d1e7dd; color: #0f5132; }
+.score-indicator.level-3 { background: #cfe2ff; color: #084298; }
+.score-indicator.level-4 { background: var(--status-success-light); color: var(--green-12); }
+.score-indicator.level-5 { background: #d1ecf1; color: #0c5460; }
+.score-indicator.not-scored { background: #f8d7da; color: #721c24; }
 
 .maturity-level {
     font-size: 0.85rem;
@@ -1005,6 +1017,7 @@ details.selected-level {
     font-style: italic;
 }
 
+/* Evidence Display */
 .section-report__evidence {
     background: var(--bg-light);
     padding: 0.75rem;
@@ -1050,7 +1063,7 @@ details.selected-level {
     margin: 0 var(--space-sm);
 }
 
-/* Print Styles */
+/* Summary Page - Print Styles */
 @media print {
     .summary-page {
         background: white;
@@ -1078,7 +1091,7 @@ details.selected-level {
     }
 }
 
-/* Responsive - Summary Page */
+/* Summary Page - Responsive */
 @media (max-width: 768px) {
     .report-header {
         flex-direction: column;
@@ -1109,9 +1122,29 @@ details.selected-level {
     }
 }
 
+
 /* ========================================
-   Modal & Dialog Styles
+   7. Shared Components
    ======================================== */
+
+/* Toast Notification */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gray-8);
+    color: var(--bg-white);
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+    z-index: 100;
+}
+
+#toast.show {
+    opacity: 1;
+}
 
 /* Modal Overlay */
 .modal-overlay {
@@ -1175,10 +1208,7 @@ details.selected-level {
     flex-wrap: wrap;
 }
 
-/* Button Styles */
-/* Removed .btn-secondary - using .btn .btn-light from xot_main.css */
-
-/* Custom danger button for destructive actions */
+/* Danger Button (destructive actions) */
 .btn-danger {
     background: var(--bg-white);
     color: var(--status-danger);
@@ -1195,185 +1225,4 @@ details.selected-level {
     background: var(--status-danger-light);
     border-color: var(--status-danger);
     color: var(--status-danger);
-}
-
-/* Removed .btn-primary and .btn - using xot_main.css equivalents */
-
-/* ========================================
-   Utility Classes
-   ======================================== */
-
-/* Flexbox Utilities - Supplement xot_main.css */
-/* Note: Use .flex, .flex-col, .flex-center, .flex-center-x, .flex-center-y, .flex-wrap from xot_main.css */
-
-.flex-between {
-    justify-content: space-between;
-}
-
-.flex-start {
-    align-items: flex-start;
-}
-
-.flex-end {
-    align-items: flex-end;
-}
-
-/* Gap Utilities */
-.gap-xs { gap: var(--space-xs); }
-.gap-sm { gap: var(--space-sm); }
-.gap-md { gap: var(--space-md); }
-.gap-lg { gap: var(--space-lg); }
-.gap-xl { gap: var(--space-xl); }
-.gap-2xl { gap: var(--space-2xl); }
-
-/* Common Component Utilities */
-.level-title-text {
-    margin-left: var(--space-md);
-}
-
-.section-badge-wrapper {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-}
-
-.btn-uppercase {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-/* Evidence Box Component Styles */
-.evidence-box__label {
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: var(--space-sm);
-}
-
-.evidence-box__intro {
-    font-size: 0.85rem;
-    color: var(--text-light-gray);
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-}
-
-.evidence-box__checklist {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-}
-
-
-/* ========================================
-   Title Page
-   ======================================== */
-
-:root {
-    --cu-gold: #c9a227;
-}
-
-.title-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
-    gap: var(--space-2xl);
-    padding: var(--space-2xl);
-    min-height: 80vh;
-}
-
-.title-page__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: var(--space-md);
-}
-
-.title-page__logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-}
-
-.title-page__university {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-secondary);
-    margin: var(--space-sm) 0 0 0;
-}
-
-.title-page__heading {
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0;
-    color: var(--cu-brand-blue);
-}
-
-.title-page__heading span {
-    display: block;
-    color: var(--cu-gold);
-}
-
-.title-page__description {
-    color: var(--text-muted);
-    line-height: 1.7;
-}
-
-.title-page__btn::after {
-    content: '→';
-    font-size: 1.2em;
-    margin-left: var(--space-sm);
-}
-
-.title-page__visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.title-page__card {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    transform: rotate(2deg);
-    filter: drop-shadow(0 16px 32px rgba(0, 37, 84, 0.12));
-}
-
-.title-page__footer {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding-top: var(--space-lg);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.title-page__footer p {
-    margin: 0;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .title-page {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
-        padding: var(--space-xl) var(--space-lg);
-    }
-
-    .title-page__content {
-        align-items: center;
-        text-align: center;
-    }
-
-    .title-page__description {
-        max-width: 100%;
-    }
-
-    .title-page__card {
-        max-width: 320px;
-        transform: rotate(0deg);
-    }
 }
