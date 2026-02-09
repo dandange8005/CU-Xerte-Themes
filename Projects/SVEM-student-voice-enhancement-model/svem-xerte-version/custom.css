@@ -172,6 +172,90 @@
 
 /* Removed .instructions-page__cta-btn - using .btn .btn-primary .btn-lg from xot_main.css */
 
+/* Introduction Section */
+.intro-section {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto var(--space-xl) auto;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.intro-section p {
+    margin: 0 0 0.75rem 0;
+}
+
+/* Introduction Cards Grid */
+.intro-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+    text-align: left;
+}
+
+.intro-card {
+    background: var(--bg-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border-top: 3px solid var(--cu-brand-blue);
+}
+
+.intro-card__icon {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--cu-brand-blue);
+    margin-bottom: var(--space-sm);
+}
+
+.intro-card__heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cu-brand-blue);
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.intro-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 0.6rem 0;
+}
+
+.intro-card p:last-child {
+    margin-bottom: 0;
+}
+
+.intro-card ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.intro-card li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+}
+
+.intro-card a {
+    color: var(--cu-brand-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.intro-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .intro-sections-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Themes Overview Page */
 
 .container {
@@ -348,6 +432,100 @@
 .theme-description {
     color: var(--text-muted);
     margin-top: var(--space-sm);
+}
+
+/* Scoring Explanation Section */
+.scoring-explanation {
+    margin-bottom: var(--space-lg);
+}
+
+.scoring-explanation > details {
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--cu-brand-blue);
+    border-radius: var(--radius-sm);
+}
+
+.scoring-explanation > details:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.scoring-explanation > details[open] {
+    border-color: var(--border-light);
+    border-left-color: var(--cu-brand-blue);
+}
+
+.scoring-explanation > details summary {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: var(--cu-brand-blue);
+}
+
+.scoring-explanation > details summary::before {
+    display: none;
+}
+
+.scoring-explanation > details summary::after {
+    color: var(--cu-brand-blue);
+}
+
+.scoring-explanation .toggle-hint {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: var(--space-xs);
+}
+
+.scoring-explanation .content-body {
+    padding: 0.5rem 1rem 1rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.scoring-explanation .content-body p {
+    margin: 0 0 0.6rem 0;
+    line-height: 1.6;
+}
+
+.scoring-explanation .content-body ul {
+    padding-left: 1.2rem;
+    margin: 0 0 0.75rem 0;
+}
+
+.scoring-explanation .content-body li {
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+}
+
+.scoring-explanation .level-scale-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.scoring-explanation .level-scale-list li {
+    padding: 0.3rem 0;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--border-light);
+}
+
+.scoring-explanation .level-scale-list li:nth-child(1) { border-left-color: var(--level-1); }
+.scoring-explanation .level-scale-list li:nth-child(2) { border-left-color: var(--level-2); }
+.scoring-explanation .level-scale-list li:nth-child(3) { border-left-color: var(--level-3); }
+.scoring-explanation .level-scale-list li:nth-child(4) { border-left-color: var(--level-4); }
+.scoring-explanation .level-scale-list li:nth-child(5) { border-left-color: var(--level-5); }
+
+.scoring-explanation .score-examples-list {
+    list-style: none;
+    padding-left: 0;
+    background: var(--bg-white);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.8rem;
+}
+
+.scoring-explanation .score-examples-list li {
+    padding: 0.25rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 /* Section Header with Toggle Button */
@@ -1088,7 +1266,7 @@ details.selected-level {
 
 
 /* ========================================
-   Title Page - Redesigned
+   Title Page
    ======================================== */
 
 :root {
@@ -1123,7 +1301,7 @@ details.selected-level {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--cu-brand-red);
+    color: var(--text-secondary);
     margin: var(--space-sm) 0 0 0;
 }
 
@@ -1137,7 +1315,7 @@ details.selected-level {
 
 .title-page__heading span {
     display: block;
-    color: var(--);
+    color: var(--cu-gold);
 }
 
 .title-page__description {
@@ -1145,32 +1323,10 @@ details.selected-level {
     line-height: 1.7;
 }
 
-.title-page__btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    background: var(--cu-brand-blue);
-    color: var(--bg-white);
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    margin-top: var(--space-sm);
-}
-
-.title-page__btn:hover {
-    background: #001a3d;
-    box-shadow: var(--shadow-md);
-}
-
 .title-page__btn::after {
     content: '→';
     font-size: 1.2em;
+    margin-left: var(--space-sm);
 }
 
 .title-page__visual {
@@ -1191,8 +1347,8 @@ details.selected-level {
     grid-column: 1 / -1;
     text-align: center;
     padding-top: var(--space-lg);
-    color: var(--text-light-gray);
-    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 .title-page__footer p {

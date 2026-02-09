@@ -1,70 +1,94 @@
-<!-- SVEM Instructions Page - Xerte Compatible -->
-<!-- This is the content-only version for Xerte XOT -->
+<!-- SVEM Introduction Page -->
 
 <div class="instructions-page">
   <div class="instructions-container">
-    <h1 class="instructions-page__title">Welcome to the SVEM Self-Assessment
+    <h1 class="instructions-page__title">Student Voice Enhancement Model
     </h1>
-    <p class="instructions-page__description">This self-assessment tool will help you evaluate your institution&#39;s Student Voice practices across multiple themes and identify areas for development.
-    </p>
-    <div class="instructions-page__info-cards">
-      <div class="info-card">
-        <div class="info-card__icon">⏱️
-        </div>
-        <div class="info-card__value">45 mins
-        </div>
-        <div class="info-card__label">Estimated Time
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card__icon">💾
-        </div>
-        <div class="info-card__value">Auto-Save
-        </div>
-        <div class="info-card__label">Progress Saved
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card__icon">📋
-        </div>
-        <div class="info-card__value">3 Themes
-        </div>
-        <div class="info-card__label">To Complete
-        </div>
-      </div>
+
+    <!-- Introduction -->
+    <section class="intro-section">
+      <p>Cardiff University's Student Voice Enhancement Model is an interactive, digital tool. Created to assist Schools in continuous and flexible enhancement of their Student Voice delivery. The model showcases progressive levels of practice across formal Student Voice channels, including Student Staff Panels, internal and external surveys, like NSS, and embedding student voice in governance. It also provides specific key actions and tips to bring Schools up to the next level as they work towards enhancing their student voice practice.
+      </p>
+      <p>The model aligns to the Wellbeing of Future Generations Act, QAA's Principle 2 and Medr's Draft Learner Engagement Code.
+      </p>
+    </section>
+
+    <!-- Info Sections -->
+    <div class="intro-sections-grid">
+
+      <!-- What's the purpose? -->
+      <section class="intro-card">
+        <i class="intro-card__icon fa-solid fa-bullseye"></i>
+        <h2 class="intro-card__heading">What's the purpose?</h2>
+        <p>The Enhancement Model is designed to help Schools improve how student feedback is gathered, acted upon, and, most importantly, communicated back to students. By strengthening student voice structures at School level and focusing on the channels students engage with before completing the NSS, CUPTS, or PRES, the model helps build consistent and effective foundations. Once these foundations are embedded, improvements in NSS, CUPTS, and PRES student voice outcomes should follow naturally over time.
+        </p>
+      </section>
+
+      <!-- How does it benefit you? -->
+      <section class="intro-card">
+        <i class="intro-card__icon fa-solid fa-chart-line"></i>
+        <h2 class="intro-card__heading">How does it benefit you?</h2>
+        <p>Allowing for critical self-appraisement, the digital model will help you identify your enhancement areas. While the system does not generate an action plan automatically, the Student Voice and Partnership Team can create a tailored enhancement actions plan for you if you share your self-reflection scores. This will offer easy to embed enhancement activities for you and relevant staff members. Enabling your School to further improve holistically, with your overall delivery or to focus on one specific area, be it Student Staff Panels or End of Module Enhancement, depending on your need.
+        </p>
+        <p>The Enhancement Model has been designed in line with Cardiff University's quality assurance and enhancement processes with actions generated in the enhancement plan recommended for inclusion in Review and Enhancement, Area 1 plans.
+        </p>
+      </section>
+
+      <!-- Who Can Use the Model? -->
+      <section class="intro-card">
+        <i class="intro-card__icon fa-solid fa-users"></i>
+        <h2 class="intro-card__heading">Who can use the model?</h2>
+        <p>The model can be used by anyone who works within or supports Student Voice activity, including:
+        </p>
+        <ul>
+          <li>Student Representative Co-ordinator</li>
+          <li>Survey Contact</li>
+          <li>Academic Lead for Student Voice</li>
+          <li>Director for Learning and Teaching</li>
+          <li>Director for Postgraduate Taught Studies</li>
+        </ul>
+      </section>
+
+      <!-- Support and Contact Details -->
+      <section class="intro-card">
+        <i class="intro-card__icon fa-solid fa-headset"></i>
+        <h2 class="intro-card__heading">Support and contact details</h2>
+        <p>The Student Voice and Partnership Team can provide bespoke sessions to help colleagues navigate and make the most of the Enhancement Model. If you would like to arrange a session or have any questions, please contact:
+        </p>
+        <p><a href="mailto:LTAcademy@cardiff.ac.uk">LTAcademy@cardiff.ac.uk</a>
+        </p>
+      </section>
+
     </div>
-    <button class="btn btn-primary btn-lg" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;" type="button">Begin Assessment
-    </button>
+
+    <!-- CTA -->
+    <button class="btn btn-primary btn-lg" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;" type="button">Begin Reflection</button>
 
     <!-- Data Management Options -->
     <div style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-      <input type="file" id="importFile" style="display:none" onchange="importData(this); return false;" accept=".json">
-      <button class="btn btn-light" onclick="document.getElementById('importFile').click(); return false;" type="button">
-        📂 Import Data
+      <input accept=".json" id="importFile" onchange="importData(this); return false;" style="display:none" type="file" />
+      <button class="btn btn-light" onclick="document.getElementById('importFile').click(); return false;" type="button">Import Data
       </button>
-      <button class="btn btn-danger" onclick="resetData(); return false;" type="button">
-        🗑️ Reset All Data
+      <button class="btn btn-danger" onclick="resetData(); return false;" type="button">Reset All Data
       </button>
     </div>
   </div>
 </div>
-
 <!-- Toast Notification -->
-<div id="toast">Changes Saved</div>
-
+<div id="toast">Changes Saved
+</div>
 <!-- Reset Data Confirmation Modal -->
-<div id="reset-modal" class="modal-overlay" style="display: none;">
+<div class="modal-overlay" id="reset-modal" style="display: none;">
   <div class="modal-box">
-    <h3 style="color:#c0392b; margin-bottom:1rem;">Reset All Data?</h3>
-    <p style="margin-bottom:1.5rem; color:#555;">
-      This will permanently delete all your scores and notes. This cannot be undone.
+    <h3 style="color:#c0392b; margin-bottom:1rem;">Reset All Data?
+    </h3>
+    <p style="margin-bottom:1.5rem; color:#555;">This will permanently delete all your scores and notes. This cannot be undone.
     </p>
     <div class="modal-actions">
-      <button class="btn btn-light" onclick="closeResetModal(); return false;" type="button">Cancel</button>
-      <button class="btn btn-danger" onclick="confirmReset(); return false;" type="button">
-        Yes, Delete Everything
+      <button class="btn btn-light" onclick="closeResetModal(); return false;" type="button">Cancel
+      </button>
+      <button class="btn btn-danger" onclick="confirmReset(); return false;" type="button">Yes, Delete Everything
       </button>
     </div>
   </div>
 </div>
-
