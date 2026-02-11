@@ -1041,8 +1041,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 h1,
@@ -1065,8 +1064,7 @@ ol[role=list] {
 }
 
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1118,6 +1116,8 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
 /* RESET PANEL STYLE */
 #x_mainHolder:not(.x_flashCards_page) .panel:not(.ui-draggable) {
   border: 1px solid var(--clr-panelborder);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
   -ms-filter: none;
   filter: none;
@@ -1317,6 +1317,7 @@ a.x_glossary:link, a.x_glossary:visited, a.x_glossary:hover, a.x_glossary:active
   background-position: center;
   background-repeat: no-repeat;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -1411,7 +1412,6 @@ body {
 =================== */
 figure img {
   margin: 0;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
@@ -1936,7 +1936,6 @@ li ul {
 }
 .flexItem img {
   width: 100%;
-  max-width: -moz-max-content;
   max-width: max-content;
   display: block;
   margin: 0 auto;
@@ -2426,8 +2425,7 @@ ul.category {
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
-  -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 .mx-auto {
@@ -2610,9 +2608,7 @@ a.btn, a.btn:hover {
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2901,9 +2897,6 @@ textarea {
 }
 
 /*style placeholder text*/
-textarea::-moz-placeholder, input::-moz-placeholder {
-  color: #bbbbbb;
-}
 textarea::placeholder, input::placeholder {
   color: #bbbbbb;
 }

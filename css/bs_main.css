@@ -1214,7 +1214,6 @@ img.pull-left {
 }
 
 figure {
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
@@ -1765,8 +1764,7 @@ a.button--block, button.button--block {
 .card__image img {
   transition: all 0.5s ease;
   aspect-ratio: var(--ratio-widescreen);
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
 }
 .card--clickable {
@@ -1927,8 +1925,7 @@ ul.nav-tabs {
   display: flex;
   flex-wrap: wrap;
   row-gap: var(--size-2);
-  -moz-column-gap: 0;
-       column-gap: 0;
+  column-gap: 0;
   margin-bottom: 0;
   padding-inline: 0;
   list-style: none;
@@ -2372,7 +2369,6 @@ Background Utilities
 
 .flexItem img {
   width: 100%;
-  max-width: -moz-max-content;
   max-width: max-content;
   display: block;
   margin: 0 auto;
@@ -2621,8 +2617,7 @@ Text Utilities
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
-  -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 .content-wrapper {
