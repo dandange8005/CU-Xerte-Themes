@@ -1812,8 +1812,7 @@ li ul {
 }
 
 .ui-dialog .ui-dialog-titlebar-close {
-  border: none;
-  background: transparent;
+  background: transparent !important;
   right: 0;
 }
 
