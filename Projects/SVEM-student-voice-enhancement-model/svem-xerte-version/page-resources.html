@@ -1,0 +1,137 @@
+<!-- Additional Resources Page -->
+<div class="theme-page-container">
+  <main class="main-content">
+
+    <header>
+      <span class="theme-label">Reference</span>
+      <h1>Additional Resources</h1>
+      <p class="theme-description">
+        A collection of supporting documents, guides, and materials to help you develop and enhance Student Voice practice across your School.
+      </p>
+    </header>
+
+    <!-- Resources Table -->
+    <section class="resources-section">
+      <div class="section-header-wrapper">
+        <h2>Resource Library</h2>
+      </div>
+
+      <div class="resources-filter" id="resources-filter"></div>
+
+      <table class="resources-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Resource</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="resource-category">Case Studies</span></td>
+            <td>
+              <a class="resource-link" href="#" target="_blank">Case studies - school collaboration on events</a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="resource-category">Surveys</span></td>
+            <td>
+              <a class="resource-link" href="#" target="_blank">Designing a survey - brief introduction</a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="resource-category">Student Representatives</span></td>
+            <td>
+              <a class="resource-link" href="#" target="_blank">Empowering Your Student Academic Reps</a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="resource-category">Enhancement</span></td>
+            <td>
+              <a class="resource-link" href="#" target="_blank">Mid-Module Enhancement Guidance and Advice</a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="resource-category">Training</span></td>
+            <td>
+              <a class="resource-link" href="#" target="_blank">Student Voice Induction Slides</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="resources-note">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        Documents open in a new tab. Contact <a href="mailto:LTAcademy@cardiff.ac.uk">LTAcademy@cardiff.ac.uk</a> if you have difficulty accessing any resource.
+      </p>
+    </section>
+
+    <!-- Navigation -->
+    <div class="page-navigation">
+      <button class="btn btn-light" onclick="x_navigateToPage(false,{type:'linkID',ID:'[prev]'}); return false;" type="button">&larr; Previous</button>
+    </div>
+
+  </main>
+</div>
+
+<script>
+$(function () {
+    var sortState = {};
+    var activeFilter = 'all';
+
+    // --- Build filter buttons from unique categories ---
+    var categories = [];
+    $('.resources-table tbody tr').each(function () {
+        var cat = $(this).find('td:first .resource-category').text().trim();
+        if (cat && categories.indexOf(cat) === -1) {
+            categories.push(cat);
+        }
+    });
+
+    var $filter = $('#resources-filter');
+    $filter.append('<button class="resource-filter-btn active" data-filter="all">All</button>');
+    $.each(categories, function (i, cat) {
+        $filter.append('<button class="resource-filter-btn" data-filter="' + cat + '">' + cat + '</button>');
+    });
+
+    // --- Filter logic ---
+    function applyFilter(filter) {
+        activeFilter = filter;
+        $('.resources-table tbody tr').each(function () {
+            var cat = $(this).find('td:first .resource-category').text().trim();
+            $(this).toggle(filter === 'all' || cat === filter);
+        });
+    }
+
+    $filter.on('click', '.resource-filter-btn', function () {
+        $('.resource-filter-btn').removeClass('active');
+        $(this).addClass('active');
+        applyFilter($(this).data('filter'));
+    });
+
+    // --- Sort logic ---
+    $('.resources-table thead th').each(function (colIndex) {
+        $(this).addClass('resources-th--sortable');
+
+        $(this).on('click', function () {
+            var isAsc = sortState[colIndex] !== 'asc';
+            sortState = {};
+            sortState[colIndex] = isAsc ? 'asc' : 'desc';
+
+            $('.resources-table thead th').removeClass('sort-asc sort-desc');
+            $(this).addClass(isAsc ? 'sort-asc' : 'sort-desc');
+
+            var $tbody = $('.resources-table tbody');
+            var $rows = $tbody.find('tr').toArray();
+
+            $rows.sort(function (a, b) {
+                var aVal = $(a).find('td').eq(colIndex).text().trim().toLowerCase();
+                var bVal = $(b).find('td').eq(colIndex).text().trim().toLowerCase();
+                return isAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+            });
+
+            $tbody.append($rows);
+            applyFilter(activeFilter); // re-apply active filter after sort
+        });
+    });
+});
+</script>

@@ -13,6 +13,8 @@
    5. page-05-theme-2.html       - Theme 2: Student Reps & SSPs
    6. page-06-theme-3.html       - Theme 3: Student Voice Surveys
    7. page-07-summary.html       - Summary & Report
+   8. page-08-next-steps.html    - Next Steps & Enhancement Plan
+   9. page-09-resources.html     - Additional Resources
    ======================================== */
 
 
@@ -1225,4 +1227,171 @@ details.selected-level {
     background: var(--status-danger-light);
     border-color: var(--status-danger);
     color: var(--status-danger);
+}
+
+
+/* ========================================
+   8. Next Steps & Enhancement Plan Page
+   ======================================== */
+
+/* CTA action cards — extend .intro-card with a coloured top border */
+.next-steps-card {
+    border-top: 4px solid transparent;
+}
+
+.next-steps-card--blue {
+    border-top-color: var(--cu-brand-blue);
+}
+
+.next-steps-card--gold {
+    border-top-color: var(--cu-gold);
+}
+
+.next-steps-card .btn {
+    margin-top: var(--space-sm);
+}
+
+
+/* ========================================
+   9. Additional Resources Page
+   ======================================== */
+
+.resources-section {
+    margin-bottom: var(--space-2xl);
+}
+
+/* Table overrides for resources layout */
+.resources-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.resources-table thead th {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.resources-table thead th:first-child {
+    width: 200px;
+}
+
+.resources-table td {
+    padding: var(--space-sm) var(--space-md);
+    vertical-align: middle;
+    border-left: none;
+}
+
+.resources-table tr td:not(:first-of-type) {
+    border-left: 1px solid var(--border-light);
+}
+
+/* Category pill */
+.resource-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cu-brand-blue);
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* Resource link */
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--cu-brand-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.resource-link:hover {
+    color: var(--cu-brand-red);
+    text-decoration: underline;
+}
+
+/* Filter buttons */
+.resources-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+.resource-filter-btn {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.resource-filter-btn:hover {
+    border-color: var(--cu-brand-blue);
+    color: var(--cu-brand-blue);
+}
+
+.resource-filter-btn.active {
+    background: var(--cu-brand-blue);
+    border-color: var(--cu-brand-blue);
+    color: var(--bg-white);
+}
+
+/* Sortable column headers */
+.resources-th--sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.resources-th--sortable::after {
+    content: ' \21C5'; /* ⇅ */
+    opacity: 0.35;
+    font-size: 0.8em;
+}
+
+.resources-th--sortable.sort-asc::after {
+    content: ' \2191'; /* ↑ */
+    opacity: 1;
+}
+
+.resources-th--sortable.sort-desc::after {
+    content: ' \2193'; /* ↓ */
+    opacity: 1;
+}
+
+/* Info note below table */
+.resources-note {
+    margin-top: var(--space-md);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+}
+
+.resources-note i {
+    margin-top: 2px;
+    flex-shrink: 0;
+    color: var(--cu-brand-blue);
+    opacity: 0.7;
+}
+
+.resources-note a {
+    color: var(--cu-brand-blue);
+    font-weight: 600;
 }

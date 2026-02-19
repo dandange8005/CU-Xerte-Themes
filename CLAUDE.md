@@ -100,6 +100,36 @@ Franklin Gothic font family in multiple weights:
 - Google Material Icons integration
 - Custom SVG icons in `Assets/icons/`
 
+## Xerte XOT Page Authoring
+
+### HTML Page Structure
+- Each Xerte page is an HTML fragment (no `<html>`, `<head>`, or `<body>` tags)
+- Pages are injected into the Xerte player DOM; all pages remain in the DOM simultaneously (show/hide navigation)
+- JavaScript functions and global variables defined on any page are accessible from all other pages
+
+### Navigation
+Use `x_navigateToPage()` for all in-project navigation:
+```js
+// Navigate to next page
+x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;
+
+// Navigate to previous page — use '[previous]' not '[prev]'
+x_navigateToPage(false, {type:'linkID', ID:'[previous]'}); return false;
+
+// Navigate to a specific page by ID
+x_navigateToPage(false, {type:'linkID', ID:'PG1234567890'}); return false;
+```
+
+### JavaScript Across Pages
+- Since all pages stay in the DOM, `localStorage` is shared across pages — safe to read/write from any page
+- Global functions defined in one page's `<script>` block are callable from other pages
+- DOM-dependent functions (e.g. those that query a specific page's elements) will only work reliably when called from the page that owns those elements
+
+### Libraries Available in XOT
+- **jQuery** — always available globally
+- **Font Awesome** — available for icons (use `<i class="fa-solid fa-*">` syntax)
+- Load additional libraries via CDN `<script>` tags at the bottom of the page (e.g. Chart.js)
+
 ## Usage Notes
 
 ### Theme Customization
