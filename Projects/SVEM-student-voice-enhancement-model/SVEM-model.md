@@ -16,161 +16,256 @@ A framework for enhancing student voice and engagement
 ### Theme 3: Supporting Formal Student Voice Mechanisms
 ---
 
-## 1. Structures Supporting Student Voice Activity
+## Theme 1. Structures Supporting Student Voice Activity
 
-### Roles and Structures
+### Area 1: Student Voice Roles, Structures and Training
 - **Level 1** (Moving towards Baseline):
   - There are currently no clear Student Voice structures in place and/or no defined Student Voice roles within the School.
+  - The School provides no opportunity for staff to engage with Student Voice and Partnership Continuing Professional Development (CPD).
+  - Central Student Voice and Partnership updates and opportunities are not circulated by email recipients.
+  - No explicit process for coordinating or overseeing how the School closes the feedback loop across Student Voice mechanisms.
 - **Level 2:** Baseline Practice:
-  - Student Voice roles are assigned within Schools. (At a minimum, these include a Student Rep Coordinator, Survey Contact and an Academic Student Voice Lead).
-  - There is student representation on all appropriate School committees Education Student Experience Committee (ESEC), Board of Studies (BoS) etc. and at College Forums.
+  - Student Voice roles are assigned within Schools. At a minimum, these include a Student Rep Coordinator (SRC), Student Survey Contact (SSC) and a Student Experience Lead (SEL).
   - Student Voice staff are aware of the Student Voice Framework (SVF).
-- **Level 3:** Emerging Good Practice:
-  - Student Voice role descriptions are understood (Student Rep Coordinator, Survey Contact and Academic Lead) and staff support in Student Voice practices within Schools.
-  - Student Voice is discussed in Education Student Experience Committee (ESEC) / Board of Studies (BoS) /other appropriate School committees.
-  - The Student Voice Framework (SVF) principles are acknowledged when creating Student Voice plans for the year.
-- **Level 4:** Established Strong Practice:
-  - The School utilises the Student Voice Framework (SVF) principles if considering/creating additional Student Voice roles.
-  - There are regular meetings between Student Voice staff within the School.
-  - The School has identified and shared good Student Voice practice between School staff.
-  - Student Voice is a rolling agenda item at Education Student Experience Committee (ESEC), Board of Studies (BoS) and other appropriate committees.
-  - The School has a clear Student Voice timeline for the academic year and this is communicated to staff and students.
-- **Level 5:** Exceptional Practice:
-  - The School has identified areas for long-term enhancement, and a Student Voice strategy is in development.
-  - Student Voice staff are involved in evaluating School level Student Voice mechanisms and lead/support the implementation of learnings into action plans.
-  - Students are invited to actively contribute to all School Student Voice activity.
-  - All School staff are encouraged to engage in Student Voice discussions (Away Days, Teaching Plenaries etc.).
-
-### SV Training, Development, and Dissemination
-- **Level 1** (Moving towards Baseline):
-  - The School provides no opportunity for staff to engage with Student Voice and engagement CPD.
-  - Central Student Voice and engagement updates and opportunities are not circulated by email recipients.
-- **Level 2:** Baseline Practice:
   - Key/appropriate Student Voice contacts within the School are members of the Student Voice and Experience Network (SVEN) Teams channel.
-  - Student Voice staff disseminate Central Student Voice and Engagement updates and CPD opportunities to appropriate staff.
+  - Student Voice staff disseminate Central Student Voice and Partnership updates and CPD opportunities to appropriate staff.
+  - School begins developing a basic process for closing the feedback loop, with Student Voice roles starting to clarify responsibilities for coordinating and sharing feedback.
 - **Level 3:** Emerging Good Practice:
-  - Student Voice staff within the School occasionally engage with Student Voice and Experience Network (SVEN) and SVEN meetings.
-  - School encourages and creates opportunities for Student Voice staff to engage with Student Voice and Engagement CPD.
+  - Student Voice role descriptions are understood (SRC, SSC and SEL) and staff support Student Voice practices within Schools.
+  - School recognises the need for continuity in Student Voice roles and lack of handovers affect practice.
+  - Basic handover steps for Student Voice roles are introduced but not yet consistent.
+  - SVF principles are acknowledged when creating Student Voice plans for the year.
+  - Student Voice roles (SRC, SSC, and SEL) meet regularly.
+  - School has an emerging, structured process for closing the feedback loop that applies consistently across mechanisms. Clear responsibilities are assigned to Student Voice roles to support the process, with updates shared with the Student Communications Team.
+  - Clear Student Voice timeline for the academic year is communicated to staff, including expectations for feedback responses and examples of changes made where possible.
+  - Student Voice staff within the School occasionally engage with the SVEN network and meetings.
+  - School encourages and creates opportunities for Student Voice staff to engage with Student Voice and Partnership CPD.
   - All School staff are aware of SVEN.
+  - School uses the Enhancement Model to pinpoint priority areas within student voice.
 - **Level 4:** Established Strong Practice:
-  - School Student Voice staff regularly contribute to the Student Voice and Experience Network (SVEN) via Teams and SVEN meetings.
-  - School Student Voice staff engage in ongoing Student Voice and Engagement CPD opportunities.
-  - School provides opportunities for, and encourages, all staff to engage with Student Voice and Engagement CPD.
+  - The School utilises the SVF principles if considering/creating additional Student Voice roles.
+  - There are regular meetings between Student Voice staff and colleagues who administer/support student voice activity within the School.
+  - The School has identified and shared good Student Voice practice between School staff.
+  - A clear handover process is in place for Student Voice roles, ensuring continuity when staff transition roles.
+  - Student Voice staff are involved in evaluating School level Student Voice mechanisms and lead/support the implementation of learning into action plans.
+  - The School uses the Enhancement Model to identify Student Voice priority areas, which directly inform RE actions.
+  - Student Voice staff keep School staff updated on changes made in response to student feedback, enabling Programme Leads/Year Leads, teaching teams etc. to cascade updates to students.
+  - A school-wide strategy for closing the feedback loop and keeping students informed is embedded across all Student Voice mechanisms. Student Voice roles coordinate consistent, accessible, and timely communication of feedback outcomes/updates to students.
+  - Student Voice roles begin working together to coordinate feedback from all mechanisms and support a unified approach to sharing key changes to students.
+  - School introduce feedback loop campaigns that clearly evidence outcomes and updates e.g. Your Voice in Action.
+  - The School has a clear Student Voice timeline for the academic year and this is communicated to staff and students.
+  - School Student Voice staff regularly contribute to SVEN via Teams and SVEN meetings.
+  - School Student Voice staff engage in ongoing Student Voice and Partnership CPD opportunities.
+  - School provides opportunities for, and encourages all staff to engage with Student Voice and Partnership CPD.
   - Student Voice staff identify Student Voice collaboration opportunities with other Schools.
 - **Level 5:** Exceptional Practice:
-  - School Student Voice staff deliver Student Voice and Engagement CPD to other staff, both within their School and across the College.
-  - School Student Voice staff present in the Student Voice and Experience Network (SVEN) meetings, sharing School best practice and Student Voice partnership opportunities.
+  - The School has identified long-term enhancement priorities and is developing a Student Voice strategy aligned with the Enhancement Model to inform RE actions.
+  - Student Voice staff and student representatives are involved in evaluating School level Student Voice mechanisms and lead/support the implementation of learning into action plans, ensuring they meet the needs of a diversifying student population.
+  - Students are invited to actively contribute to all School Student Voice activity.
+  - All School staff are encouraged to engage in Student Voice discussions (Away Days, Teaching Plenaries etc.).
+  - School maintains robust handover materials that support continuity in Student Voice roles.
+  - Outgoing staff in Student Voice roles document successes, challenges and priorities.
+  - Student Voice roles lead a fully embedded, School-wide strategy for closing the feedback loop and keeping students in the loop, co-creating campaigns with students (e.g. Your Voice in Action during Welcome weeks), ensuring dissemination of outcomes/updates are communicated via multiple channels.
+  - Student Voice roles work collectively to coordinate key changes from all mechanisms into one unified communication to students (e.g. Welcome back/Welcome too communication) and staff.
+  - School Student Voice staff deliver Student Voice and Partnership CPD to other staff, both within their School and across the College.
+  - School Student Voice staff present in the SVEN meetings, sharing School best practice and Student Voice and Partnership opportunities.
   - School Student Voice staff engage in Student Voice collaboration and partnership opportunities with other Schools.
----
 
-## 2. Student Reps and Student-Staff Panels (SSPs)
+### Area 2: Students in Governance
 - **Level 1** (Moving towards Baseline):
-  - The School does not yet have a formal Student-Staff Panel (SSP) system or a process for recruitment of Student Reps.
+  - There are no student representatives on educational governance committees — Board of Study (BoS) and Education Student Experience Committee (ESEC).
+  - Student voice data is not considered when writing Review & Enhancement (RE) action plans.
+  - RE action plans are not communicated to students through any mechanism.
+  - Students are not informed about how governance decisions relate to their experience.
+  - No training or support is provided for student participation in governance.
+- **Level 2:** Baseline Practice:
+  - Student representatives attend governance committees (BoS, ESEC, College forums etc.) but engage minimally.
+  - Student voice is occasionally discussed, but is not yet a standing agenda item at educational governance committees.
+  - Schools rarely meet with student reps before meetings to provide briefing, context or expectations.
+  - Minimal support or training for Representatives on educational governance committees; expectations remain unclear.
+  - RE action plans are written in response to National Student Survey (NSS), Cardiff University Postgraduate Taught Survey (CUPTS) and Postgraduate Taught Research Experience Survey (PRES) data only.
+  - RE action plan is shared with Student Reps infrequently (e.g. once per academic year or during the first Student Staff Panel (SSP)).
+  - No structured process is in place for responding to or communicating student impact ('closing the loop') for RE actions.
+- **Level 3:** Emerging Good Practice:
+  - School meets with Student Reps before educational governance committees to define the purpose, structure and goals of the meetings.
+  - Student representatives contribute occasionally in educational governance committees, but may lack confidence or support.
+  - Student Voice becomes a regular agenda item on at least some educational governance committees.
+  - Schools begin to identify barriers to representative engagement (e.g. timing, accessibility etc.) for educational governance committees.
+  - Some informal recognition for participation is provided (e.g. thank-you email).
+  - RE document is written in response to a broader range of student voice data e.g. Mid Module Enhancement (MME), End of Module Enhancement (EME), NSS, CUPTS, PRES etc., though this is still mostly survey-driven.
+  - RE action plans are shared with students at multiple points, not just once per year. E.g., it is discussed with Student Reps throughout the academic year, but Reps are not actively involved in providing feedback.
+  - Schools briefly evidence in the RE plans where there has been student involvement.
+  - Some communication about enhancement of RE actions occurs with Reps, but the feedback loop is inconsistently closed.
+- **Level 4:** Established Strong Practice:
+  - Student representatives are active contributors at educational governance committees and receive structured support.
+  - Student voice becomes a standing agenda item at BoS, ESEC and other relevant committees.
+  - School meets with Student Reps before educational governance committee meetings to define purpose, structure and goals of the meetings, governance literacy and committee roles.
+  - School runs routine pre and post meeting sessions to explain papers, answer questions and debrief.
+  - School signposts to additional training which will support Student Reps in their role e.g. Meeting etiquette, public speaking, confidence building etc.
+  - Chair formally introduces and welcomes Student Representative(s) at the start of the educational governance committee.
+  - Schools work with student representatives to identify and remove barriers to engagement (meeting logistics, hybrid access etc.).
+  - Student reps on educational governance committees receive consistent recognition or reward (certificates etc.).
+  - RE actions are informed by multiple student inputs, not just survey-driven data e.g. SSP, focus groups, etc.
+  - RE actions are starting to be co-created with students ahead of the next lifecycle.
+  - RE action plan is shared throughout the year with Student Reps and they provide their personal feedback as to whether actions are having the desired impact, or not.
+  - Schools regularly communicate updates on RE actions and progress through student-facing channels to both Student Reps and whole cohort, ensuring updates are shared with the Student Communications Team.
+  - Schools explicitly evidence continuous student involvement in impact of actions outlined in RE action plan.
+- **Level 5:** Exceptional Practice:
+  - Schools run structured, scheduled pre and post-governance meetings with student reps, including briefing agenda co-design and debriefing based on SSP themes/relevant Academic Society Committee manifesto aims.
+  - Student Reps actively and confidently participate in educational governance meetings, shaping decisions and influencing outcomes.
+  - Student reps are formally recognised for their contribution in governance meetings through meaningful rewards e.g. Higher Education Achievement Rewards (HEAR) entries etc.
+  - Students participating in educational governance receive robust training (interpreting papers, understanding governance roles, data literacy etc.).
+  - Student Reps actively gather cohort feedback on RE actions to temperature check if actions are having the desired effect, or not. If actions are not having the impact, working with Student Reps to co-create solutions.
+  - Student Voice and RE actions are part of a transparent enhancement cycle communicated across multiple channels.
+  - Schools gather feedback from Student Reps on whether actions improved their experience.
+  - Feedback loop campaigns are co-created with students for actions outlined in RE action plan to inform and provide updates to staff and students e.g. Your Voice In Action.
+  - RE actions are being co-created with students and schools are linking up with academic society committee members to incorporate relevant actions/aims.
+  - Student-written reflections of impact, or co-authored sections, are included in RE evidence.
+  - Practices are evaluated annually with students, using participation data and Equality, Diversity and Inclusion (EDI) metrics to ensure inclusivity.
+
+## Theme 2. Student Reps and Student-Staff Panels (SSPs)
+
+### Student Reps and Student-Staff Panels (SSPs)
+- **Level 1** (Moving towards Baseline):
+  - The School does not yet have a formal SSP system or a process for recruitment of Student Reps.
+  - Actions are not recorded or returned to students.
 - **Level 2:** Baseline Practice:
   - The School promotes the Rep System and facilitates the recruitment of Reps.
-  - School achieves minimum of one Student Rep per cohort.
+  - School achieves minimum of one Student Rep per cohort and little consideration has been given to the dimensions of diversity of students.
   - School provides Reps with the opportunity to become a Chair and Vice Chair.
-  - School utilises templates on Student Voice and Experience Network (SVEN) to update Rep lists, deliver the Rep workshop(s), and upload SSP Actions and Key Decisions/minutes and summary sheets.
-  - Actions and Key Decisions (AKDs) / minutes and summary sheet are uploaded onto SVEN no later than the end of term.
-  - The School organise for AKDs to be shared with Student Reps within ten working days of the SSP.
+  - School utilises templates on SVEN to update Rep lists, deliver the Rep workshop(s), and upload SSP Actions and Key Decisions (AKDs)/minutes and summary sheets.
+  - AKDs / minutes and summary sheet are uploaded onto SVEN no later than the end of term.
+  - The School organise for AKDs to be shared with Student Reps within five working days after the SSP. E.g. Uploaded onto Learning Central.
+  - AKDs should include a table of agreed actions, and a note of any progress made since the meeting in addressing those actions.
   - The feedback loop is closed with Student Reps at the following SSP.
+  - SRC keeps record of any changes made to demonstrate the impact of student feedback.
+  - Ensure SSP progress report on actions are reported on in BoS and ESEC.
 - **Level 3:** Emerging Good Practice:
   - The School encourages Student Reps to participate in Student Union Rep training.
-  - There is a minimum of two Student Reps per cohort.
+  - There is a minimum of two Student Reps per cohort and considerations have been given to the dimensions of the diversity of students, including the incorporation of bilingual provision for Welsh speakers.
   - An SSP Chair and Vice Chair have been elected and the School support them in their roles.
   - School Student Voice staff and Student Reps are aware of each other's roles.
   - SSP membership is formalised as per Student Union guidance and attendance is consistent.
-  - The School supports Student Reps to communicate Actions and Key Decisions (AKDs) to whole cohorts.
-  - School consistently closes the feedback loop with Student Reps and begins to establish processes for closing the feedback loop with whole cohorts.
-  - Where appropriate, the School updates changing Student Rep details on the Student Voice and Experience Network (SVEN).
+  - Where appropriate, staff close the feedback loop during the SSP by providing immediate responses when relevant staff are present.
+  - School consistently closes the feedback loop with Student Reps and begins to establish processes for supporting Student Reps to communicate AKDs to the whole cohort. E.g. Shoutout slides to be displayed before/after/during lecturers giving an overview of key points, changes/responses.
+  - SRC keeps a record of any changes made to demonstrate the impact of student feedback and where more complex changes may occur, action plans are created to help SSP to keep track of agreed outcomes.
+  - Where appropriate, the School updates changing Student Rep details on SVEN.
   - The School offers Student Reps the opportunity to continue in their role for the following academic year.
 - **Level 4:** Established Strong Practice:
   - The School proactively promotes Student Reps as a Student Voice mechanism to student cohorts.
-  - Schools are working towards achieving Student Union ratio of 1:40 (Reps:students) for larger cohorts.
+  - Schools are working towards achieving Student Union ratio of 1:40 (Reps: students) for larger cohorts.
   - Returning Student Reps support in the facilitation of the School Student Rep workshop.
   - Rep names/photos are displayed in appropriate student areas (on campus and/or online).
   - Key School staff are equipped to signpost students to their appropriate Student Reps.
   - School facilitates ongoing and open communication with Student Reps in between formal meetings.
-  - School have an established process for Closing the Feedback Loop with whole cohorts, including sharing feedback with Student Voice Communication Officers.
-  - School informs Student Reps about ongoing Student Voice opportunities e.g. ESLAs, surveys, Speak Week.
+  - School have an established process for closing the feedback loop and keeping students in the loop with whole cohorts, including sharing feedback with the Student Communication Team.
+  - SRC evaluates the impact of actions implemented by asking Student Reps during the meetings.
+  - School informs Student Reps about ongoing Student Voice opportunities e.g. Enriching Student Life Awards (ESLAs), surveys, Speak Week.
   - Before the end of the current Academic Year, Schools promote Student Rep opportunities for the upcoming year.
+  - The school works with relevant staff to ensure the student representative system is as representative as possible of the diverse student cohort including bilingually for Welsh speakers.
 - **Level 5:** Exceptional Practice:
-  - School achieve Student Union ratio of 1:40 (Rep:students).
-  - School are providing opportunities for Student Voice staff, Reps and students to network and share changes/enhancements made as a result of Student Voice feedback.
+  - School achieve Student Union ratio of 1:40 (Rep: students).
+  - Schools create opportunities for Student Voice staff, Reps, and students to network and share improvements resulting from Student Voice feedback, offering varied engagement routes to reach diverse student groups. Processes are reviewed to identify any voices not yet represented.
+  - Feedback loop campaigns are co-created with students to inform and provide updates of changes to staff and students e.g. Your Voice in Action.
+  - Schools showcase enhancements and measure impact collaboratively, including bilingual examples of impact (if relevant).
+  - SRC works in collaboration with SEL, Programme Leads, Year Leads, Teaching Teams etc., to cascade feedback changes/updates to students and staff.
+  - SRC evaluates the impact of actions taken by asking Student Reps to gather cohort feedback and present this during the meeting.
   - School staff and Reps collaborate on Student Voice/Engagement projects and enhancements beyond the SSP mechanism.
-  - School promotes further opportunities to Reps – i.e. conferences/events.
+  - School consider(s) the opportunity of holding a Welsh speaking activity in parallel to SSP.
+  - School promotes further opportunities to Reps — i.e. conferences/events.
   - School provides meaningful and consistent reward and recognition initiatives for Student Reps.
-  - Facilitate further student representation that occurs outside of meetings such as one-to-one sessions discussion boards or online approaches. This could also include 'Town Hall Meetings' and the College Forum.
+  - Facilitate further student representation that occurs outside of meetings such as one-to-one sessions, discussion boards or online approaches. This could also include 'Town Hall Meetings' and the College Forum, to provide feedback on matters such as estates etc.
 
-## 3. Supporting Formal Student Voice Mechanisms
-### Mid-Module Enhancement
+## Theme 3. Supporting Formal Student Voice Mechanisms
+
+### Area 1: Mid-Module Enhancement (MME)
 - **Level 1** (Moving towards Baseline):
-  - The School does not have an agreed process for mid-module feedback collection.
+  - The School does not have an agreed process for MME collection.
   - Student feedback is not considered when introducing changes/enhancements to modules.
 - **Level 2:** Baseline Practice:
   - School specifies method options for mid-module feedback collection.
   - School has an agreed MME timeline, which is communicated to appropriate staff.
   - School encourages Module Leaders to gather mid-module feedback.
   - Some Module Teams engage with MME process.
-  - Some Module Leaders share feedback with students, making changes where appropriate.
+  - Some Module Leaders share feedback with students, making changes where appropriate. E.g. Share a summary of outcomes and response on Learning Central.
 - **Level 3:** Emerging Good Practice:
   - Most Module Teams engage in MME process, and promote its purpose to students.
   - School communicates MME process to all staff for awareness.
   - School promotes MME to students.
-  - School develops guidance on MME journey, including: method, promotion, collection, review, and communicating with students to Close the Feedback Loop.
+  - School develops guidance on MME journey: including method, promotion, collection, review, and communication to students to close and keep students in the loop (e.g. Shoutout slides for lecturers to display before/during/after breaks giving overview of key points, changes and responses).
+  - Some considerations are given to the diversity of the student population to inform planning, promotion and comms, including the incorporation of bilingual provision for Welsh speakers.
   - Changes are actively implemented wherever appropriate.
   - Most Module Leaders share feedback and changes made with students.
-  - Students are informed when feedback can't be actioned.
+  - Students are informed when feedback cannot be actioned.
+  - Feedback driven changes are communicated to SSC so outcomes can be reported to BoS and ESEC.
+  - SSC keeps a record of any changes made to demonstrate the impact of student feedback.
 - **Level 4:** Established Strong Practice:
-  - School communicates MME journey guidance to staff, including: method, promotion, collection, review, and communicating with students to Close the Feedback Loop.
+  - School communicates MME journey guidance to staff, including: method, promotion, collection, review, and communicating with students and staff to close the feedback loop and keep students in the loop.
+  - SSC keeps a record of any changes made to demonstrate the impact of student feedback and where more complex changes may occur, action plans are created to feed into module changes over the summer.
+  - School recognises student demographics to shape design of MME for underrepresented groups, including the incorporation of bilingual provision for Welsh speakers.
   - All Module Teams engage in MME process, as per School guidance, and showcase feedback-driven changes to students, to highlight the benefits of MME.
   - MME process and results are actively discussed at School level.
   - Module Leaders explain to students what changes can and cannot be made, and escalate any non-module specific feedback to appropriate colleagues.
+  - School conducts annual review of MME promotional plan.
 - **Level 5:** Exceptional Practice:
   - School MME journey guidance is consistently implemented by all Module Leaders.
   - MME is supported by senior leadership within the School as an effective key Student Voice mechanism.
   - Module Leaders share relevant changes made as a result of feedback with other Module Teams to support best practice sharing.
-  - Significant feedback themes are compiled and communicated to School Student Voice staff for further consideration.
-  - School keeps a record of key changes to use as a resource which supports sharing of best practice.
-### End of Module Enhancement
+  - SSC works in collaboration with SEL, Programme Leads, Year Leads, Teaching Teams etc., to cascade feedback changes/updates to students and staff.
+  - SSC works in collaboration with SEL and the Student Communication Team to cascade feedback changes/updates to students.
+  - Significant feedback themes are compiled and communicated to School Student Voice staff (e.g. SSC) for further consideration and these are explored further with students through rep structures, focus groups, or targeted intervention.
+  - School conducts annual review of MME promotional plan in partnership with students to evaluate the impact of the campaign and to continue the loop of engagement.
+
+
+### Area 2: End of Module Enhancement (EME)
 - **Level 1** (Moving towards Baseline):
-  - School relies on automatic Blue Portal email reminders to promote ME to students.
+  - School relies on automatic Blue Portal email reminders to promote EME to students.
   - Student feedback is not considered when introducing changes/enhancements to modules.
 - **Level 2:** Baseline Practice:
-  - School has an agreed ME timeline, which is communicated to Module Leaders and Survey Contacts.
-  - School develops guidance on ME journey, including: method, promotion, collection, review, and communicating with students to Close the Feedback Loop.
-  - School encourages Module Leaders to promote ME.
-  - Module Leaders acknowledge ME feedback by providing a response via Blue.
+  - School has agreed a timeline in partnership with SSC, which is communicated to Module Leaders.
+  - School develops guidance on EME journey, including: method, promotion, collection, review, and communication with students to close the feedback loop.
+  - The School consider the diversity of our student population to inform planning, promotion and communications, including the incorporation of bilingual provision for Welsh speakers.
+  - School encourages Module Leaders to promote EME.
+  - Module Leaders acknowledge EME feedback by providing a response via Blue.
 - **Level 3:** Emerging Good Practice:
-  - School develops promotional plan with the aim of increasing ME response rates.
-  - School and Module Leaders proactively promote ME and its purpose to students.
+  - Feedback driven changes are communicated to SSC so outcomes can be reported to BoS and ESEC.
+  - School develops promotional plan with the aim of increasing EME response rates with consideration of diversifying student population, including the incorporation of bilingual provision for Welsh speakers.
+  - School and Module Leaders proactively promote EME and its purpose to students.
   - Module Leaders make feedback-driven changes where appropriate.
   - Module Leaders address key themes in their response, and include changes being considered and why some feedback may be unactionable.
   - Module Leaders respond via Blue within the 2 week response period.
+  - SSC keeps a record of any changes made to demonstrate the impact of student feedback.
 - **Level 4:** Established Strong Practice:
-  - All Module Teams engage in ME process, as per School promotional plan, and showcase feedback-driven changes to students, to highlight the benefits of ME.
+  - All Module Teams engage in EME process, as per School promotional plan, and showcase feedback-driven changes to students, to highlight the benefits of EME.
+  - School and Module Leaders proactively promote EME and its purpose to students, drawing on examples of previous feedback-driven changes.
   - School creates guidance on what good Module Leader feedback looks like.
-  - Student feedback and subsequent changes made are communicated to students beyond the Blue portal.
-  - ME process and results are actively discussed at School level.
+  - Student feedback and subsequent changes made are communicated to students beyond the Blue portal. E.g. Sharing a summary of outcomes and response on Learning Central and/or physical/online display board with key messages from feedback and actions taken.
+  - SSC keeps a record of any changes made to demonstrate the impact of student feedback, adding to MME feedback so changes can feed into modules over the summer.
+  - EME process and results are actively discussed at School level.
   - Module Leaders explain to students what changes can and cannot be made, and escalate any non-module specific feedback to appropriate colleagues.
-  - ME feedback and actions are raised during module introductions at the beginning of the next cycle.
+  - EME feedback and actions are raised during module introductions/handbooks at the beginning of the next cycle.
+  - School conducts annual review of EME promotional plan.
 - **Level 5:** Exceptional Practice:
-  - ME is added as an agenda item in SSPs, and Student Reps are encouraged to promote ME as a key Student Voice mechanism.
-  - ME is supported by senior leadership within the School as an effective key Student Voice mechanism.
+  - EME is added as an agenda item in SSPs, and Student Reps are encouraged to promote EME as a key Student Voice mechanism.
+  - EME is supported by senior leadership within the School as an effective key Student Voice mechanism.
   - Students are regularly consulted on proposed module changes, resulting in the co-creation of enhancements.
-  - Significant feedback themes are compiled and communicated to School Student Voice staff for further consideration.
-  - School keeps a record of key changes to use as a resource which supports sharing of best practice.
-  - School conducts annual review of ME promotional plan.
-### National Student Survey (NSS)
+  - Significant feedback themes are compiled and communicated to School Student Voice staff (e.g. SSC) for further consideration and these are explored further with students through rep structures, focus groups, or targeted intervention.
+  - SSC works in collaboration with SEL, Programme Leads, Year Leads, Teaching Teams etc., to cascade feedback changes/updates to students and staff.
+  - SSC works in collaboration with SEL and the Student Communication Team to cascade feedback changes/updates to students.
+  - School conducts annual review of EME promotional plan in partnership with students to evaluate the impact of the campaign and to continue the loop of engagement.
+  - EME feedback changes are included in module handbooks and introductions for new cohorts.
+  - Module Leaders ask students to provide feedback in EME on MME implemented actions to evaluate the impact.
+
+### Area 3: National Student Survey (NSS)
 - **Level 1** (Moving towards Baseline):
-  - School relies on IPSOS MORI for NSS communications and promotion, and are unaware of guidance and Cardiff University timelines.
+  - School relies on Ipsos for NSS communications and promotion, and are unaware of guidance and Cardiff University timelines.
   - School are unaware of promotional support offered by the Learning & Teaching Academy.
   - School is informed of NSS results through Cardiff University communications.
 - **Level 2:** Baseline Practice:
   - Key School staff are aware of NSS dates, guidelines, and who to contact for support.
   - Key School staff contact students to encourage participation throughout the agreed NSS window.
-  - Schools are informed of NSS results through Cardiff University communications and prepare appropriate action plans - Medr, Review and Enhancement (RE) etc.
-  - NSS results and enhancements are shared at SSPs.
+  - Schools are informed of NSS results through Cardiff University communications and prepare appropriate action plans — Medr, RE etc.
+  - NSS results and enhancements are shared at SSP.
   - Schools encourage appropriate staff to participate in central training session on NSS.
 - **Level 3:** Emerging Good Practice:
   - School develops promotional plan with the aim of increasing NSS response rates.
@@ -178,46 +273,80 @@ A framework for enhancing student voice and engagement
   - School Student Voice staff communicate NSS guidelines and timeline with appropriate staff.
   - Key staff utilise Business Intelligence (BI) to review School and subject level feedback (qualitative and quantitative), and this contributes to action plans.
   - Feedback-driven changes are shared with whole cohorts, including during welcome week.
-  - NSS/ Review and Enhancement (RE) plans are added as an agenda item in SSPs.
+  - NSS/RE plans are added as an agenda item in SSPs.
 - **Level 4:** Established Strong Practice:
   - School communicates NSS guidelines, timeline and promotional plan with all appropriate staff.
   - Key staff engage in NSS promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of NSS participation.
-  - School considers including wider student groups to promote NSS, including Student Champions, Academic Societies and Student Reps.
-  - School designates time and space for students to voluntarily complete the NSS.
+  - School considers including wider student groups to promote NSS, including Student Experience Partners, Academic Societies and Student Reps.
+  - Schools work in partnership to promote NSS e.g. signposting to NSS stalls in the building.
+  - School designates time and space for students to voluntarily complete the NSS (e.g. post-graduation plans).
   - NSS School and subject results are collated into themes and shared with appropriate staff for further consideration.
   - School regularly inform students of ongoing feedback-driven NSS enhancements throughout the year, including during welcome week.
-  - Student Reps are consulted on NSS/ Review and Enhancement (RE) plans.
+  - Student Reps are consulted on NSS/RE plans.
 - **Level 5:** Exceptional Practice:
   - All appropriate School staff engage in NSS promotion as per School promotion plan.
   - School considers incentives to support NSS completion.
+  - Schools sharing the building work together to develop a coordinated NSS stall schedule, where possible, ensuring it is circulated to all colleagues involved in delivery or promotion.
   - NSS is discussed with whole student cohorts throughout the academic year.
-  - Staff regularly work in partnership with students to co-create changes and enhancements as a result of NSS feedback.
-  - School keeps a record of key changes to use as a resource which supports sharing of best practice.
-  - School conducts annual review of NSS promotional plan.
-### Cardiff University Postgraduate Taught Survey (CUPTS) & Postgraduate Research Experience Survey (PRES)
+  - Staff regularly work in partnership with students to co-create changes and enhancements as a result of NSS feedback e.g. Your Voice in Action.
+  - School keeps a record of key changes/updates to use as a resource which supports sharing of best practice and closing the feedback loop/keeping students in the loop.
+  - School conducts annual review of NSS promotional plan to evaluate the impact of the campaign and to continue the loop of engagement.
+
+### Area 4: Cardiff University Postgraduate Taught Survey (CUPTS)
 - **Level 1** (Moving towards Baseline):
-  - School relies on central communications for PG surveys and are unaware of guidance and timelines.
-  - Student feedback is not considered when introducing changes/enhancements to the PG environment.
+  - School relies on central communications for CUPTS surveys and are unaware of guidance and timelines.
+  - Student feedback is not considered when introducing changes/enhancements to the PGT environment.
 - **Level 2:** Baseline Practice:
-  - School Student Voice staff communicate PG survey timelines and guidance to appropriate School staff.
-  - School promotes PG surveys to students, highlighting any incentives available.
-  - CUPTS - School reviews feedback and provides response to students.
-  - PRES - Quantitative results are shared with students without any further analysis and actions are not communicated.
+  - School Student Voice staff communicate CUPTS survey timelines and guidance to appropriate School staff.
+  - School promotes the CUPTS surveys to PGT students, highlighting any incentives available.
+  - School reviews CUPTS feedback and provides response to students.
 - **Level 3:** Emerging Good Practice:
-  - School develops PG survey promotional plan with the aim of increasing response rates.
-  - School and PG staff proactively promote surveys and their purpose to students.
-  - CUPTS - PGT Lead, DLT, and HoS review and respond to feedback according to timeline; highlighting key themes, indicating changes being considered, and why some feedback may be unactionable.
-  - PRES - Where appropriate, School and PGR staff consider introducing changes and enhancements as a result of PRES feedback.
+  - School develops a PGT surveys promotional plan with the aim of increasing response rates.
+  - School and PGT staff proactively promote CUPTS surveys and their purpose to students.
+  - Programme Lead PGT, Deputy Head: Education and Student Experience and Head of School review and respond to feedback according to timeline; highlighting key themes, indicating changes being considered, and why some feedback may be unactionable.
 - **Level 4:** Established Strong Practice:
-  - PG staff engage in PG survey promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of survey participation.
-  - PG staff explain to students what changes can and cannot be made, and escalate any School-wide feedback to relevant colleagues.
-  - PG survey process and feedback is actively discussed at School level; including collaboration between Student Voice staff and appropriate colleagues.
-  - Where appropriate, PG staff consult with students on proposed changes.
+  - PGT staff engage in CUPTS promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of survey participation.
+  - PGT staff explain to students what changes can and cannot be made, and escalate any School-wide feedback to relevant colleagues.
+  - PGT survey process and feedback is actively discussed at School level; including collaboration between Student Voice staff and appropriate colleagues.
+  - School considers including wider student groups to promote CUPTS, including Student Experience Partners, Academic Societies and Student Reps.
+  - Schools work in partnership to promote CUPTS e.g. signposting to CUPTS stalls in the building.
+  - Where appropriate, PGT staff consult with students on proposed changes.
+  - School conducts annual review of PGT survey promotional plan.
 - **Level 5:** Exceptional Practice:
-  - PG staff regularly inform students of ongoing feedback-driven enhancements throughout the year, including during welcome week.
-  - PG surveys are added as agenda items in SSPs, and Student Reps are encouraged to promote the surveys as key Student Voice mechanisms.
-  - Staff regularly work in partnership with students to co-create changes and enhancements to the PG environment.
-  - School keeps a record of key changes to use as a resource which supports sharing of best practice.
-  - School conducts annual review of PG survey promotional plan.
+  - PGT staff regularly inform students of ongoing feedback-driven enhancements throughout the year, including during welcome week.
+  - PGT surveys are added as agenda items in SSPs, and Student Reps are encouraged to promote the surveys as key Student Voice mechanisms.
+  - Staff regularly work in partnership with students to co-create changes and enhancements to the PGT environment.
+  - School keeps a record of key changes/updates to use as a resource which supports sharing of best practice and closing the feedback loop.
+  - Schools sharing the building work together to develop a coordinated CUPTS stall schedule, where possible, ensuring it is circulated to all colleagues involved in delivery or promotion.
+  - School conducts annual review of PGT survey promotional plan in partnership with students to evaluate the impact of the campaign and to continue the loop of engagement.
+
+### Area 5: Postgraduate Research Experience Survey (PRES)
+- **Level 1** (Moving towards Baseline):
+  - School relies on central University communications for the PRES survey and are unaware of guidance and timelines.
+  - Student feedback is not considered when introducing changes/enhancements to the PGR environment.
+- **Level 2:** Baseline Practice:
+  - School Student Voice staff communicate PGR survey timelines and guidance to appropriate School staff.
+  - School promotes PRES surveys to PGR students, highlighting any incentives available.
+  - Quantitative results are shared with students without any further analysis and actions are not communicated.
+- **Level 3:** Emerging Good Practice:
+  - School develops PRES promotional plan with the aim of increasing response rates.
+  - School and PGR staff proactively promote surveys and their purpose to students.
+  - Where appropriate, School and Postgraduate Research (PGR) staff consider introducing changes and enhancements as a result of PRES feedback.
+- **Level 4:** Established Strong Practice:
+  - PGR staff engage in PGR survey promotion as per School promotional plan, showcasing feedback-driven changes to highlight the benefits of survey participation.
+  - PGR staff explain to students what changes can and cannot be made, and escalate any School-wide feedback to relevant colleagues.
+  - PGR survey process and feedback is actively discussed at School level; including collaboration between Student Voice staff and appropriate colleagues.
+  - School considers including wider student groups to promote PRES, including Student Experience Partners, Academic Societies and Student Reps.
+  - Schools work in partnership to promote PRES e.g. signposting to PRES stalls in the building.
+  - Where appropriate, PGR staff consult with students on proposed changes.
+  - School conducts annual review of PGR survey promotional plan.
+- **Level 5:** Exceptional Practice:
+  - PGR staff regularly inform students of ongoing feedback-driven enhancements throughout the year, including during welcome week.
+  - PGR surveys are added as agenda items in SSPs, and Student Reps are encouraged to promote the surveys as key Student Voice mechanisms.
+  - Staff regularly work in partnership with students to co-create changes and enhancements to the PGR environment.
+  - School keeps a record of key changes/updates to use as a resource which supports sharing of best practice and closing the feedback loop.
+  - Schools sharing the building work together to develop a coordinated PRES stall schedule, where possible, ensuring it is circulated to all colleagues involved in delivery or promotion.
+  - School conducts annual review of PGR survey promotional plan in partnership with students to evaluate the impact of the campaign and to continue the loop of engagement.
 ---
 © 2024 Student Voice Enhancement Model | Cardiff University
+Last updated: 24 February 2026
