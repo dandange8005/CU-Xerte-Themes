@@ -3,8 +3,8 @@ A framework for enhancing student voice and engagement
 ---
 
 ## Level Definitions
-- **Level 1:** Moving towards Baseline
-- **Level 2:** Baseline Practice
+- **Level 1:** Foundational Practice
+- **Level 2:** Developing Practice
 - **Level 3:** Emerging Good Practice
 - **Level 4:** Established Strong Practice
 - **Level 5:** Exceptional Practice

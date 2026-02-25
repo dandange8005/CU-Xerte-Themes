@@ -1,0 +1,1023 @@
+<style>
+/* ============================================================
+   Summary Page V2 — Dashboard-Inspired Design
+   sv2- prefix to avoid conflicts with existing custom.css
+   ============================================================ */
+
+/* --- Root Layout --- */
+.sv2-page {
+    padding: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Header --- */
+.sv2-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.sv2-header h2 {
+    margin: 0;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    color: var(--cu-brand-blue);
+}
+
+.sv2-header p {
+    margin: 4px 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.sv2-header-meta {
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.sv2-status-chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: var(--bg-gray);
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+}
+
+.sv2-status-chip.complete  { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+.sv2-status-chip.in-progress { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+
+/* --- Stats Row --- */
+.sv2-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.sv2-stat-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+}
+
+.sv2-stat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.sv2-stat-value {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin: 3px 0 2px;
+}
+
+.sv2-stat-value--sm {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin: 3px 0 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+}
+
+.sv2-stat-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    min-height: 1em;
+}
+
+.sv2-stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.sv2-stat-icon--blue   { background: #eff6ff; color: #3b82f6; }
+.sv2-stat-icon--green  { background: #f0fdf4; color: #22c55e; }
+.sv2-stat-icon--amber  { background: #fffbeb; color: #f59e0b; }
+.sv2-stat-icon--red    { background: #fef2f2; color: var(--cu-brand-red, #d3374a); }
+
+/* --- Two-Column Layout (chart + level defs) --- */
+.sv2-two-col {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    align-items: start;
+}
+
+/* --- Panel (white card) --- */
+.sv2-panel {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-lg);
+}
+
+.sv2-panel h3 {
+    margin: 0 0 var(--space-md) 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* --- Chart Container --- */
+.sv2-chart-wrap {
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sv2-chart-wrap canvas {
+    max-width: 100%;
+    max-height: 280px;
+}
+
+.sv2-chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-sm);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.sv2-chart-legend span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sv2-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* --- Level Definitions List --- */
+.sv2-level-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sv2-level-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 8px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+    cursor: default;
+}
+
+.sv2-level-item:hover { background: var(--bg-light); }
+
+.sv2-level-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.sv2-level-item--5 .sv2-level-num { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+.sv2-level-item--4 .sv2-level-num { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.sv2-level-item--3 .sv2-level-num { background: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
+.sv2-level-item--2 .sv2-level-num { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.sv2-level-item--1 .sv2-level-num { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+.sv2-level-desc strong {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.sv2-level-desc span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* --- Level Badge (pill) --- */
+.sv2-level-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sv2-lb-0 { background: var(--bg-gray); color: var(--text-muted); border: 1px solid var(--border-light); }
+.sv2-lb-1 { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+.sv2-lb-2 { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.sv2-lb-3 { background: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
+.sv2-lb-4 { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.sv2-lb-5 { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+
+/* --- Section Header (above theme cards) --- */
+.sv2-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 var(--space-md) 0;
+}
+
+.sv2-section-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* --- Theme Cards (generated by JS) --- */
+.sv2-theme-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-md);
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.sv2-theme-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: #d1d5db;
+}
+
+.sv2-theme-stripe { height: 4px; }
+.sv2-theme-stripe--1 { background: linear-gradient(to right, #fb923c, #ef4444); }
+.sv2-theme-stripe--2 { background: linear-gradient(to right, #4ade80, #16a34a); }
+.sv2-theme-stripe--3 { background: linear-gradient(to right, #60a5fa, #6366f1); }
+
+.sv2-theme-body { padding: var(--space-lg); }
+
+.sv2-theme-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+    gap: var(--space-md);
+}
+
+.sv2-theme-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sv2-theme-header p {
+    margin: 3px 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* --- Section Row within theme card --- */
+.sv2-section-row {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.sv2-section-row:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.sv2-section-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: var(--space-sm);
+}
+
+.sv2-section-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    flex: 1;
+}
+
+.sv2-progress-bar {
+    width: 100%;
+    height: 5px;
+    background: var(--bg-gray);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 3px;
+}
+
+.sv2-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.sv2-fill--0 { background: var(--border-medium); }
+.sv2-fill--1 { background: #ef4444; }
+.sv2-fill--2 { background: #f97316; }
+.sv2-fill--3 { background: #eab308; }
+.sv2-fill--4 { background: #22c55e; }
+.sv2-fill--5 { background: #3b82f6; }
+
+.sv2-maturity-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.sv2-section-evidence {
+    background: var(--bg-light);
+    border-left: 3px solid var(--cu-brand-blue, #002554);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 7px 10px;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.sv2-section-evidence strong {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 3px;
+    font-size: 0.78rem;
+    font-style: normal;
+}
+
+.sv2-no-evidence {
+    font-style: italic;
+    color: var(--text-light-gray);
+}
+
+/* --- Actions Panel --- */
+.sv2-actions-panel {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-xl);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.sv2-actions-panel p {
+    color: var(--text-muted);
+    margin: 0 0 var(--space-lg) 0;
+    font-size: 0.9rem;
+}
+
+.sv2-actions-panel .btn { margin: 0 var(--space-sm); }
+
+/* --- Responsive --- */
+@media (max-width: 860px) {
+    .sv2-stats-row { grid-template-columns: repeat(2, 1fr); }
+    .sv2-two-col   { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+    .sv2-page      { padding: var(--space-md); }
+    .sv2-header    { flex-direction: column; gap: var(--space-md); }
+    .sv2-header-meta { align-items: flex-start; text-align: left; }
+    .sv2-stats-row { grid-template-columns: 1fr 1fr; }
+    .sv2-stat-value { font-size: 1.3rem; }
+    .sv2-actions-panel .btn { display: block; width: 100%; margin: var(--space-sm) 0; }
+}
+
+/* --- Print --- */
+@media print {
+    .sv2-actions-panel, .page-navigation { display: none; }
+    .sv2-theme-card { page-break-inside: avoid; }
+    .sv2-two-col { page-break-inside: avoid; }
+}
+</style>
+
+<!-- Keep .summary-page class so downloadReportHTML() selector still works -->
+<div class="summary-page sv2-page">
+
+  <!-- ── Header ─────────────────────────────────── -->
+  <div class="sv2-header">
+    <div>
+      <h2>Self-Assessment Report</h2>
+      <p>Student Voice Enhancement Model &mdash; Cardiff University</p>
+    </div>
+    <div class="sv2-header-meta">
+      <span>Date: <strong id="report-date"></strong></span>
+      <span class="sv2-status-chip" id="report-status">Not Started</span>
+    </div>
+  </div>
+
+  <!-- ── KPI Stats Row ──────────────────────────── -->
+  <div class="sv2-stats-row">
+    <div class="sv2-stat-card">
+      <div>
+        <div class="sv2-stat-label">Completed</div>
+        <div class="sv2-stat-value">
+          <span id="completed-count">0</span><span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/8</span>
+        </div>
+        <div class="sv2-stat-sub">sections</div>
+      </div>
+      <div class="sv2-stat-icon sv2-stat-icon--blue">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+    </div>
+    <div class="sv2-stat-card">
+      <div>
+        <div class="sv2-stat-label">Progress</div>
+        <div class="sv2-stat-value" id="completion-percent">0%</div>
+        <div class="sv2-stat-sub">overall</div>
+      </div>
+      <div class="sv2-stat-icon sv2-stat-icon--green">
+        <i class="fa-solid fa-chart-pie"></i>
+      </div>
+    </div>
+    <div class="sv2-stat-card">
+      <div>
+        <div class="sv2-stat-label">Average Level</div>
+        <div class="sv2-stat-value" id="average-score">—</div>
+        <div class="sv2-stat-sub" id="average-level-name">&nbsp;</div>
+      </div>
+      <div class="sv2-stat-icon sv2-stat-icon--amber">
+        <i class="fa-solid fa-gauge-high"></i>
+      </div>
+    </div>
+    <div class="sv2-stat-card">
+      <div style="min-width:0;flex:1;">
+        <div class="sv2-stat-label">Highest Area</div>
+        <div class="sv2-stat-value--sm" id="highest-area">—</div>
+        <div class="sv2-stat-sub" id="highest-area-badge">&nbsp;</div>
+      </div>
+      <div class="sv2-stat-icon sv2-stat-icon--red">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Chart + Level Definitions ─────────────── -->
+  <div class="sv2-two-col">
+    <div class="sv2-panel">
+      <h3>Assessment Visualization</h3>
+      <div class="sv2-chart-wrap">
+        <canvas id="spiderChart"></canvas>
+      </div>
+      <div class="sv2-chart-legend">
+        <span><span class="sv2-legend-dot" style="background:rgba(211,55,74,0.8)"></span> Current level</span>
+        <span><span class="sv2-legend-dot" style="background:#d1d5db"></span> Scale (1–5)</span>
+      </div>
+    </div>
+    <div class="sv2-panel">
+      <h3>Level Definitions</h3>
+      <div class="sv2-level-list">
+        <div class="sv2-level-item sv2-level-item--5">
+          <span class="sv2-level-num">5</span>
+          <div class="sv2-level-desc">
+            <strong>Exceptional Practice</strong>
+            <span>Leading the sector</span>
+          </div>
+        </div>
+        <div class="sv2-level-item sv2-level-item--4">
+          <span class="sv2-level-num">4</span>
+          <div class="sv2-level-desc">
+            <strong>Established Strong Practice</strong>
+            <span>Consistent and effective</span>
+          </div>
+        </div>
+        <div class="sv2-level-item sv2-level-item--3">
+          <span class="sv2-level-num">3</span>
+          <div class="sv2-level-desc">
+            <strong>Emerging Good Practice</strong>
+            <span>Developing consistency</span>
+          </div>
+        </div>
+        <div class="sv2-level-item sv2-level-item--2">
+          <span class="sv2-level-num">2</span>
+          <div class="sv2-level-desc">
+            <strong>Baseline Practice</strong>
+            <span>Minimum standards met</span>
+          </div>
+        </div>
+        <div class="sv2-level-item sv2-level-item--1">
+          <span class="sv2-level-num">1</span>
+          <div class="sv2-level-desc">
+            <strong>Moving towards Baseline</strong>
+            <span>Action required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Theme Breakdown (generated by JS) ─────── -->
+  <div class="sv2-section-header">
+    <h3>Assessment Breakdown by Theme</h3>
+  </div>
+  <div id="report-body"></div>
+
+  <!-- ── Actions ───────────────────────────────── -->
+  <div class="sv2-actions-panel">
+    <p>Review your assessment above. Download the report for your records, then continue to find out about your Enhancement Plan.</p>
+    <button class="btn btn-light" onclick="downloadReportHTML()" type="button">
+      <i class="fa-solid fa-file-arrow-down"></i> Download Report (HTML)
+    </button>
+    <button class="btn btn-primary" onclick="backToMenu(); return false;" type="button">
+      <i class="fa-solid fa-pen-to-square"></i> Continue Editing
+    </button>
+  </div>
+
+  <!-- ── Navigation ────────────────────────────── -->
+  <div class="page-navigation">
+    <button class="btn btn-light" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1765898999143'}); return false;" type="button">
+      &larr; Back to Themes
+    </button>
+    <button class="btn btn-primary" onclick="x_navigateToPage(false,{type:'linkID',ID:'[next]'}); return false;" type="button">
+      Next Steps &rarr;
+    </button>
+  </div>
+
+</div>
+
+<!-- Toast Notification -->
+<div id="toast">Report Generated</div>
+
+
+<script>
+// ============================================================
+//  Summary Page V2 — JavaScript
+//  Reads from localStorage, generates themed report cards,
+//  and renders the Chart.js radar chart.
+// ============================================================
+
+// Config (mirrors scoring-xerte.js — redeclared here for page isolation)
+const CONFIG_V2 = {
+    STORAGE_PREFIX: 'sv_',
+    THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
+    TOAST_DURATION: 2000,
+    VISIBILITY_CHECK_INTERVAL: 500,
+    CHART_INIT_RETRY: 100
+};
+
+// LocalStorage helper
+function getSectionDataV2(sectionId) {
+    try {
+        const data = localStorage.getItem(`${CONFIG_V2.STORAGE_PREFIX}${sectionId}`);
+        return data ? JSON.parse(data) : { score: 0, note: '' };
+    } catch (e) {
+        return { score: 0, note: '' };
+    }
+}
+
+// Chart instance
+let spiderChartInstanceV2 = null;
+
+// Section / theme configuration
+const SECTIONS_V2 = {
+    'Theme 1: Structures Supporting Student Voice': {
+        stripe: 1,
+        subtitle: 'Roles, Training &amp; Governance',
+        sections: [
+            { id: 'roles',    name: 'Roles and Structures' },
+            { id: 'training', name: 'SV Training, Development, and Dissemination' }
+        ]
+    },
+    'Theme 2: Student Reps and SSPs': {
+        stripe: 2,
+        subtitle: 'Student Representatives &amp; Student-Staff Panels',
+        sections: [
+            { id: 'reps-ssps', name: 'Student Reps and Student-Staff Panels' }
+        ]
+    },
+    'Theme 3: Formal Mechanisms': {
+        stripe: 3,
+        subtitle: 'MME, EME, NSS, CUPTS, PRES',
+        sections: [
+            { id: 'mme',   name: 'Mid-Module Enhancement' },
+            { id: 'me',    name: 'End of Module Enhancement' },
+            { id: 'nss',   name: 'National Student Survey (NSS)' },
+            { id: 'cupts', name: 'Postgraduate Taught Survey (CUPTS)' },
+            { id: 'pres',  name: 'Postgraduate Research Experience Survey (PRES)' }
+        ]
+    }
+};
+
+// Short labels for chart axes
+const SHORT_LABELS_V2 = {
+    'roles': 'Roles', 'training': 'Training', 'reps-ssps': 'Reps/SSPs',
+    'mme': 'MME', 'me': 'ME', 'nss': 'NSS', 'cupts': 'CUPTS', 'pres': 'PRES'
+};
+
+// Short display names for the stat card
+const SHORT_DISPLAY_V2 = {
+    'roles': 'Roles & Structures', 'training': 'SV Training',
+    'reps-ssps': 'Reps & SSPs', 'mme': 'Mid-Module', 'me': 'End of Module',
+    'nss': 'NSS', 'cupts': 'CUPTS', 'pres': 'PRES'
+};
+
+// Escape user-supplied content before inserting into the DOM
+function escapeHTMLV2(str) {
+    return str
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Return the maturity level name for a numeric score
+function getMaturityNameV2(score) {
+    if (!score) return 'Not Scored';
+    const level = Math.floor(score);
+    const names = {
+        1: 'Moving towards Baseline',
+        2: 'Baseline Practice',
+        3: 'Emerging Good Practice',
+        4: 'Established Strong Practice',
+        5: 'Exceptional Practice'
+    };
+    if (score % 1 !== 0) {
+        return `Transitioning: ${names[level]} → ${names[level + 1]}`;
+    }
+    return names[level] || '';
+}
+
+// Build a coloured level-badge pill
+function levelBadgeHTML(score) {
+    if (!score) return '<span class="sv2-level-badge sv2-lb-0">Not Scored</span>';
+    const l = Math.floor(score);
+    return `<span class="sv2-level-badge sv2-lb-${l}">Level ${score}</span>`;
+}
+
+// Progress-bar width (score out of 5 → %)
+function progressWidth(score) {
+    return score ? Math.round((score / 5) * 100) : 0;
+}
+
+// ── Radar chart ──────────────────────────────────────────────
+function generateSpiderChartV2() {
+    const ctx = document.getElementById('spiderChart');
+    if (!ctx) return;
+
+    const labels = [], scores = [], sectionMeta = [];
+
+    Object.values(SECTIONS_V2).forEach(theme => {
+        theme.sections.forEach(s => {
+            labels.push(SHORT_LABELS_V2[s.id] || s.name);
+            const saved = getSectionDataV2(s.id);
+            scores.push(saved.score || 0);
+            sectionMeta.push({ name: s.name });
+        });
+    });
+
+    if (spiderChartInstanceV2) spiderChartInstanceV2.destroy();
+
+    spiderChartInstanceV2 = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels,
+            datasets: [{
+                label: 'Current Assessment',
+                data: scores,
+                fill: true,
+                backgroundColor: 'rgba(211, 55, 74, 0.15)',
+                borderColor: '#d3374a',
+                pointBackgroundColor: '#d3374a',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#d3374a',
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                r: {
+                    angleLines: { display: true, color: 'rgba(0,0,0,0.08)' },
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    ticks: { stepSize: 1, backdropColor: 'transparent', font: { size: 10 } },
+                    pointLabels: { font: { size: 11, weight: '500' }, color: '#374151' },
+                    grid: { color: 'rgba(0,0,0,0.08)' }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        title: (ctx) => sectionMeta[ctx[0].dataIndex].name,
+                        label: (ctx) => {
+                            const s = ctx.parsed.r;
+                            return s === 0 ? 'Not Scored' : `Level ${s} — ${getMaturityNameV2(s)}`;
+                        }
+                    }
+                }
+            },
+            animation: { duration: 0 }
+        }
+    });
+}
+
+// ── Section row (within a theme card) ───────────────────────
+function sectionRowHTML(section, savedData) {
+    const hasScore = !!(savedData && savedData.score);
+    const level    = hasScore ? Math.floor(savedData.score) : 0;
+    const width    = progressWidth(hasScore ? savedData.score : 0);
+    const badge    = levelBadgeHTML(hasScore ? savedData.score : 0);
+    const maturity = hasScore ? getMaturityNameV2(savedData.score) : '';
+
+    let evidenceHTML = '';
+    if (hasScore) {
+        const note = savedData.note && savedData.note.trim();
+        evidenceHTML = note
+            ? `<div class="sv2-section-evidence"><strong>Evidence:</strong>${escapeHTMLV2(note).replace(/\n/g, '<br>')}</div>`
+            : `<div class="sv2-section-evidence"><em class="sv2-no-evidence">No evidence provided</em></div>`;
+    }
+
+    return `
+        <div class="sv2-section-row">
+            <div class="sv2-section-meta">
+                <span class="sv2-section-name">${section.name}</span>
+                ${badge}
+            </div>
+            <div class="sv2-progress-bar">
+                <div class="sv2-progress-fill sv2-fill--${level}" style="width:${width}%"></div>
+            </div>
+            ${maturity ? `<div class="sv2-maturity-label">${maturity}</div>` : ''}
+            ${evidenceHTML}
+        </div>`;
+}
+
+// ── Update KPI stat cards ────────────────────────────────────
+function updateStatsV2(stats) {
+    // Completed count
+    document.getElementById('completed-count').textContent = stats.completed;
+
+    // Overall progress %
+    const pct = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
+    document.getElementById('completion-percent').textContent = `${pct}%`;
+
+    // Average level
+    const avgEl   = document.getElementById('average-score');
+    const avgName = document.getElementById('average-level-name');
+    if (stats.scored > 0) {
+        const avg = parseFloat((stats.totalScore / stats.scored).toFixed(1));
+        avgEl.textContent  = avg;
+        if (avgName) avgName.textContent = getMaturityNameV2(avg);
+    } else {
+        avgEl.textContent  = '—';
+        if (avgName) avgName.innerHTML = '&nbsp;';
+    }
+
+    // Highest area
+    const highestEl    = document.getElementById('highest-area');
+    const highestBadge = document.getElementById('highest-area-badge');
+    if (highestEl) {
+        highestEl.textContent = stats.highestScore > 0
+            ? (SHORT_DISPLAY_V2[stats.highestSectionId] || stats.highestSection)
+            : '—';
+    }
+    if (highestBadge) {
+        highestBadge.innerHTML = stats.highestScore > 0
+            ? levelBadgeHTML(stats.highestScore)
+            : '&nbsp;';
+    }
+
+    // Status chip
+    const chip = document.getElementById('report-status');
+    if (chip) {
+        if (stats.completed === stats.total && stats.total > 0) {
+            chip.textContent = 'Complete';
+            chip.className   = 'sv2-status-chip complete';
+        } else if (stats.completed > 0) {
+            chip.textContent = 'In Progress';
+            chip.className   = 'sv2-status-chip in-progress';
+        } else {
+            chip.textContent = 'Not Started';
+            chip.className   = 'sv2-status-chip';
+        }
+    }
+}
+
+// ── Build the full report ────────────────────────────────────
+function generateReportV2() {
+    // Set report date
+    document.getElementById('report-date').textContent =
+        new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    const stats = {
+        completed: 0, total: 0, totalScore: 0, scored: 0,
+        highestScore: 0, highestSection: '—', highestSectionId: null
+    };
+
+    const reportHTML = Object.entries(SECTIONS_V2).map(([themeName, theme]) => {
+        let themeScoredCount = 0;
+        let themeScoreSum    = 0;
+
+        const sectionsHTML = theme.sections.map(section => {
+            stats.total++;
+            const saved = getSectionDataV2(section.id);
+
+            if (saved.score) {
+                stats.completed++;
+                stats.totalScore += saved.score;
+                stats.scored++;
+                themeScoredCount++;
+                themeScoreSum += saved.score;
+
+                if (saved.score > stats.highestScore) {
+                    stats.highestScore     = saved.score;
+                    stats.highestSection   = section.name;
+                    stats.highestSectionId = section.id;
+                }
+            }
+
+            return sectionRowHTML(section, saved);
+        }).join('');
+
+        // Theme-level average badge
+        const themeAvg = themeScoredCount > 0
+            ? parseFloat((themeScoreSum / themeScoredCount).toFixed(1))
+            : null;
+        const themeBadge = themeAvg !== null
+            ? levelBadgeHTML(themeAvg)
+            : '<span class="sv2-level-badge sv2-lb-0">Not Started</span>';
+
+        return `
+            <div class="sv2-theme-card">
+                <div class="sv2-theme-stripe sv2-theme-stripe--${theme.stripe}"></div>
+                <div class="sv2-theme-body">
+                    <div class="sv2-theme-header">
+                        <div>
+                            <h3>${themeName}</h3>
+                            <p>${theme.subtitle}</p>
+                        </div>
+                        ${themeBadge}
+                    </div>
+                    ${sectionsHTML}
+                </div>
+            </div>`;
+    }).join('');
+
+    document.getElementById('report-body').innerHTML = reportHTML;
+    updateStatsV2(stats);
+}
+
+// ── Download as standalone HTML ──────────────────────────────
+function downloadReportHTML() {
+    const canvas     = document.getElementById('spiderChart');
+    const chartImage = canvas ? canvas.toDataURL('image/png') : null;
+
+    const clone = document.querySelector('.summary-page').cloneNode(true);
+
+    if (chartImage) {
+        const canvasInClone = clone.querySelector('#spiderChart');
+        if (canvasInClone) {
+            const img = document.createElement('img');
+            img.src = chartImage;
+            img.alt = 'Assessment Radar Chart';
+            img.style.cssText = 'max-width:100%;height:auto;';
+            canvasInClone.parentNode.replaceChild(img, canvasInClone);
+        }
+    }
+
+    const styleEl  = document.querySelector('style');
+    const styles   = styleEl ? styleEl.textContent : '';
+    const reportDate = new Date().toLocaleDateString('en-GB');
+    const fileName   = 'SVEM-Report-' + new Date().toISOString().split('T')[0] + '.html';
+
+    const standaloneStyles = `
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background:#f5f5f5; margin:0; padding:20px; }
+.sv2-page { background:#fff; max-width:900px; margin:0 auto; padding:2rem; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+.sv2-actions-panel, .page-navigation { display:none !important; }
+/* Minimal variable fallbacks for standalone */
+:root { --cu-brand-blue:#002554; --bg-white:#fff; --bg-light:#f9fafb; --bg-gray:#f3f4f6;
+        --text-primary:#1f2937; --text-secondary:#374151; --text-muted:#6b7280; --text-light-gray:#9ca3af;
+        --border-light:#e5e7eb; --shadow-sm:0 1px 2px rgba(0,0,0,0.05); --radius-sm:4px; --radius-md:8px;
+        --space-sm:0.5rem; --space-md:0.75rem; --space-lg:1.25rem; --space-xl:2rem; }
+@media print { body { background:#fff; padding:0; } .sv2-page { box-shadow:none; } .sv2-theme-card { page-break-inside:avoid; } }`;
+
+    const fullHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVEM Self-Assessment Report — ${reportDate}</title>
+<style>${styles}${standaloneStyles}</style>
+</head>
+<body>
+${clone.outerHTML}
+</body>
+</html>`;
+
+    const blob = new Blob([fullHTML], { type: 'text/html' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = fileName;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showToastV2('Report downloaded successfully');
+}
+
+// ── Toast ────────────────────────────────────────────────────
+function showToastV2(message) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.textContent = message || 'Done';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), CONFIG_V2.TOAST_DURATION);
+}
+
+// ── Initialise on load and on Xerte navigation ───────────────
+(function () {
+    function init() {
+        if (typeof Chart === 'undefined') {
+            setTimeout(init, CONFIG_V2.CHART_INIT_RETRY);
+            return;
+        }
+        generateReportV2();
+        generateSpiderChartV2();
+    }
+
+    init();
+
+    // Re-run when this Xerte page becomes visible again
+    const pageEl = document.querySelector('.sv2-page');
+    if (pageEl) {
+        let wasVisible = false;
+        const interval = setInterval(() => {
+            const isVisible = pageEl.offsetParent !== null;
+            if (isVisible && !wasVisible) {
+                generateReportV2();
+                generateSpiderChartV2();
+            }
+            wasVisible = isVisible;
+        }, CONFIG_V2.VISIBILITY_CHECK_INTERVAL);
+        window._summaryV2Interval = interval;
+    }
+
+    window.addEventListener('focus', () => {
+        if (pageEl && pageEl.offsetParent !== null) {
+            generateReportV2();
+            generateSpiderChartV2();
+        }
+    });
+
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && pageEl && pageEl.offsetParent !== null) {
+            generateReportV2();
+            generateSpiderChartV2();
+        }
+    });
+})();
+</script>
+
+<!-- Chart.js — loaded at bottom so Xerte initialises it correctly -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>

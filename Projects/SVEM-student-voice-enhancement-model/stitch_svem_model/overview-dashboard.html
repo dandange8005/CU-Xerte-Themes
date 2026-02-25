@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SVEM Overview Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary-red: #d3374a;
+            --secondary-red: #b91c2e;
+            --neutral-grey: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        .nav-item.active {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border-right: 4px solid var(--primary-red);
+        }
+        .radar-chart-placeholder {
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(243,244,246,1) 100%);
+        }
+        .level-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        .level-1 { background-color: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+        .level-2 { background-color: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+        .level-3 { background-color: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
+        .level-4 { background-color: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+        .level-5 { background-color: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }.radar-poly {
+            clip-path: polygon(50% 10%, 90% 90%, 10% 90%);
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+<aside class="w-64 bg-white border-r border-gray-200 flex-shrink-0 flex flex-col h-full overflow-y-auto">
+<div class="p-6 border-b border-gray-100">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[var(--primary-red)]">school</span>
+<span class="font-bold text-lg text-gray-900 tracking-tight">SVEM</span>
+</div>
+<p class="text-xs text-gray-500">Student Voice Enhancement Model</p>
+</div>
+<nav class="flex-1 py-4 space-y-1">
+<div class="px-4 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Dashboard</div>
+<a class="nav-item active flex items-center px-6 py-3 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">dashboard</span>
+                Overview
+            </a>
+<div class="px-4 mt-6 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Theme 1: Structures</div>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">account_tree</span>
+                Roles &amp; Structures
+            </a>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">gavel</span>
+                Governance
+            </a>
+<div class="px-4 mt-6 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Theme 2: Representation</div>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">groups</span>
+                Reps &amp; SSPs
+            </a>
+<div class="px-4 mt-6 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Theme 3: Mechanisms</div>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">rate_review</span>
+                Mid-Module (MME)
+            </a>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">fact_check</span>
+                End of Module (EME)
+            </a>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">poll</span>
+                NSS
+            </a>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">school</span>
+                CUPTS
+            </a>
+<a class="nav-item flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-xl">science</span>
+                PRES
+            </a>
+</nav>
+<div class="p-4 border-t border-gray-100">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-[var(--primary-red)] font-bold text-xs">A</div>
+<div>
+<p class="text-sm font-medium text-gray-900">Admin User</p>
+<p class="text-xs text-gray-500">School of History</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-gray-50 p-8">
+<header class="mb-8 flex justify-between items-end">
+<div>
+<h1 class="text-3xl font-bold text-gray-900">School Overview Dashboard</h1>
+<p class="text-gray-500 mt-2 max-w-2xl">Track and assess your school's progress across the Student Voice Enhancement Model framework. Identify areas for development and celebrate established practices.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 shadow-sm">
+<span class="material-symbols-outlined text-lg">download</span>
+                    Export Report
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-[var(--primary-red)] text-white rounded-lg text-sm font-medium hover:bg-red-700 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+                    Update Assessment
+                </button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Overall Maturity</p>
+<p class="text-2xl font-bold text-gray-900 mt-1">Level 3.4</p>
+<p class="text-xs text-green-600 flex items-center mt-1">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> +0.4 vs last year
+                    </p>
+</div>
+<div class="h-12 w-12 bg-red-50 rounded-full flex items-center justify-center text-[var(--primary-red)]">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Highest Area</p>
+<p class="text-lg font-bold text-gray-900 mt-1 truncate">Student Reps &amp; SSPs</p>
+<span class="level-badge level-4 mt-1 inline-block">Level 4</span>
+</div>
+<div class="h-12 w-12 bg-green-50 rounded-full flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">military_tech</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Priority Focus</p>
+<p class="text-lg font-bold text-gray-900 mt-1 truncate">Students in Governance</p>
+<span class="level-badge level-2 mt-1 inline-block">Level 2</span>
+</div>
+<div class="h-12 w-12 bg-orange-50 rounded-full flex items-center justify-center text-orange-600">
+<span class="material-symbols-outlined">priority_high</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Pending Actions</p>
+<p class="text-2xl font-bold text-gray-900 mt-1">12</p>
+<p class="text-xs text-gray-500 mt-1">3 overdue</p>
+</div>
+<div class="h-12 w-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">checklist</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<div class="xl:col-span-2 space-y-8">
+<div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-lg font-bold text-gray-900">Current Progress Visualization</h2>
+<div class="flex gap-2">
+<span class="text-xs px-2 py-1 rounded bg-gray-100 text-gray-600">Year 2024/25</span>
+</div>
+</div>
+<div class="relative w-full aspect-[16/7] flex items-center justify-center radar-chart-placeholder rounded-lg overflow-hidden">
+<div class="absolute w-[60%] h-[80%] border border-gray-200 rounded-full opacity-30"></div>
+<div class="absolute w-[45%] h-[60%] border border-gray-200 rounded-full opacity-30"></div>
+<div class="absolute w-[30%] h-[40%] border border-gray-200 rounded-full opacity-30"></div>
+<div class="absolute w-[15%] h-[20%] border border-gray-200 rounded-full opacity-30"></div>
+<div class="absolute w-[1px] h-[80%] bg-gray-200 top-[10%] left-1/2 -translate-x-1/2"></div>
+<div class="absolute w-[80%] h-[1px] bg-gray-200 top-1/2 left-[10%] -translate-y-1/2"></div>
+<div class="absolute w-[1px] h-[80%] bg-gray-200 top-[10%] left-1/2 -translate-x-1/2 rotate-45 transform origin-center"></div>
+<div class="absolute w-[1px] h-[80%] bg-gray-200 top-[10%] left-1/2 -translate-x-1/2 -rotate-45 transform origin-center"></div>
+<div class="absolute top-[5%] left-1/2 -translate-x-1/2 text-xs font-bold text-gray-600 bg-white px-2 py-0.5 rounded shadow-sm">Governance</div>
+<div class="absolute bottom-[5%] left-1/2 -translate-x-1/2 text-xs font-bold text-gray-600 bg-white px-2 py-0.5 rounded shadow-sm">MME / EME</div>
+<div class="absolute left-[5%] top-1/2 -translate-y-1/2 text-xs font-bold text-gray-600 bg-white px-2 py-0.5 rounded shadow-sm">Structures</div>
+<div class="absolute right-[5%] top-1/2 -translate-y-1/2 text-xs font-bold text-gray-600 bg-white px-2 py-0.5 rounded shadow-sm">Reps &amp; SSPs</div>
+<div class="absolute top-[20%] left-[20%] text-xs font-bold text-gray-600 bg-white px-2 py-0.5 rounded shadow-sm">NSS</div>
+<div class="absolute top-[20%] right-[20%] text-xs font-bold text-gray-600 bg-white px-2 py-0.5 rounded shadow-sm">CUPTS</div>
+<svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 10;">
+<polygon fill="rgba(211, 55, 74, 0.2)" points="50% 25%, 70% 30%, 85% 50%, 75% 75%, 50% 85%, 25% 75%, 15% 50%, 30% 30%" stroke="rgba(211, 55, 74, 0.8)" stroke-width="2"></polygon>
+<circle cx="50%" cy="25%" fill="#b91c2e" r="4"></circle> 
+<circle cx="70%" cy="30%" fill="#b91c2e" r="4"></circle>
+<circle cx="85%" cy="50%" fill="#b91c2e" r="4"></circle> 
+<circle cx="75%" cy="75%" fill="#b91c2e" r="4"></circle>
+<circle cx="50%" cy="85%" fill="#b91c2e" r="4"></circle> 
+<circle cx="25%" cy="75%" fill="#b91c2e" r="4"></circle>
+<circle cx="15%" cy="50%" fill="#b91c2e" r="4"></circle> 
+<circle cx="30%" cy="30%" fill="#b91c2e" r="4"></circle>
+</svg>
+</div>
+<div class="mt-4 flex justify-center gap-6 text-xs text-gray-500">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[var(--primary-red)] opacity-80"></span> Current Level
+                         </div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-gray-300"></span> Benchmark (Level 3)
+                         </div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="group block bg-white rounded-xl border border-gray-200 hover:border-[var(--primary-red)] shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden" href="#">
+<div class="h-2 bg-gradient-to-r from-orange-400 to-red-400"></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-bold text-gray-900 group-hover:text-[var(--primary-red)] transition-colors">Theme 1: Structures</h3>
+<p class="text-sm text-gray-500 mt-1">Roles, Training &amp; Governance</p>
+</div>
+<span class="level-badge level-3">Level 3</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between text-xs items-center">
+<span class="text-gray-600">Roles &amp; Structures</span>
+<span class="font-semibold text-gray-900">Level 3</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-yellow-500 h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+<div class="flex justify-between text-xs items-center pt-1">
+<span class="text-gray-600">Governance</span>
+<span class="font-semibold text-gray-900">Level 2</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-orange-500 h-1.5 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</a>
+<a class="group block bg-white rounded-xl border border-gray-200 hover:border-[var(--primary-red)] shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden" href="#">
+<div class="h-2 bg-gradient-to-r from-green-400 to-emerald-600"></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-bold text-gray-900 group-hover:text-[var(--primary-red)] transition-colors">Theme 2: Representation</h3>
+<p class="text-sm text-gray-500 mt-1">Student Reps &amp; SSPs</p>
+</div>
+<span class="level-badge level-4">Level 4</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between text-xs items-center">
+<span class="text-gray-600">Reps &amp; SSPs</span>
+<span class="font-semibold text-gray-900">Level 4</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-emerald-500 h-1.5 rounded-full" style="width: 80%"></div>
+</div>
+<p class="text-xs text-gray-500 italic pt-2">"Established Strong Practice"</p>
+</div>
+</div>
+</a>
+<a class="group block md:col-span-2 bg-white rounded-xl border border-gray-200 hover:border-[var(--primary-red)] shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden" href="#">
+<div class="h-2 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-bold text-gray-900 group-hover:text-[var(--primary-red)] transition-colors">Theme 3: Formal Mechanisms</h3>
+<p class="text-sm text-gray-500 mt-1">MME, EME, NSS, CUPTS, PRES</p>
+</div>
+<span class="level-badge level-3">Level 3 (Avg)</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+<div class="space-y-1">
+<div class="flex justify-between text-xs items-center">
+<span class="text-gray-600">Mid-Module (MME)</span>
+<span class="font-semibold text-gray-900">Level 4</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-blue-500 h-1.5 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs items-center">
+<span class="text-gray-600">End of Module (EME)</span>
+<span class="font-semibold text-gray-900">Level 3</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-blue-400 h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs items-center">
+<span class="text-gray-600">NSS</span>
+<span class="font-semibold text-gray-900">Level 3</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-blue-400 h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs items-center">
+<span class="text-gray-600">CUPTS / PRES</span>
+<span class="font-semibold text-gray-900">Level 2</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-blue-300 h-1.5 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+<h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400">info</span>
+                        Level Definitions
+                    </h3>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-default">
+<span class="w-6 h-6 rounded flex items-center justify-center text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100">5</span>
+<div class="text-xs">
+<span class="font-semibold text-gray-900 block">Exceptional Practice</span>
+<span class="text-gray-500">Leading the sector</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-default">
+<span class="w-6 h-6 rounded flex items-center justify-center text-xs font-bold bg-green-50 text-green-700 border border-green-100">4</span>
+<div class="text-xs">
+<span class="font-semibold text-gray-900 block">Established Strong Practice</span>
+<span class="text-gray-500">Consistent and effective</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-default">
+<span class="w-6 h-6 rounded flex items-center justify-center text-xs font-bold bg-yellow-50 text-yellow-700 border border-yellow-100">3</span>
+<div class="text-xs">
+<span class="font-semibold text-gray-900 block">Emerging Good Practice</span>
+<span class="text-gray-500">Developing consistency</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-default">
+<span class="w-6 h-6 rounded flex items-center justify-center text-xs font-bold bg-orange-50 text-orange-700 border border-orange-100">2</span>
+<div class="text-xs">
+<span class="font-semibold text-gray-900 block">Baseline Practice</span>
+<span class="text-gray-500">Minimum standards met</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-default">
+<span class="w-6 h-6 rounded flex items-center justify-center text-xs font-bold bg-red-50 text-red-700 border border-red-100">1</span>
+<div class="text-xs">
+<span class="font-semibold text-gray-900 block">Moving towards Baseline</span>
+<span class="text-gray-500">Action required</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+<h3 class="font-bold text-gray-900 mb-4">Suggested Actions</h3>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<div class="flex-shrink-0 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-red-500 block"></span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-900">Appoint Student Reps</p>
+<p class="text-xs text-gray-500 mt-1">Theme 2: Reps &amp; SSPs. Deadline: Oct 15</p>
+</div>
+</li>
+<li class="flex gap-3">
+<div class="flex-shrink-0 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-orange-500 block"></span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-900">Review MME Feedback</p>
+<p class="text-xs text-gray-500 mt-1">Theme 3: MME. Due for Module CS101.</p>
+</div>
+</li>
+<li class="flex gap-3">
+<div class="flex-shrink-0 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-gray-300 block"></span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-900">Annual SVEN Meeting</p>
+<p class="text-xs text-gray-500 mt-1">Theme 1: Structure. Nov 20.</p>
+</div>
+</li>
+</ul>
+<button class="w-full mt-6 py-2 px-4 border border-gray-300 rounded-lg text-sm text-gray-600 font-medium hover:bg-gray-50 transition-colors">
+                        View Action Plan
+                    </button>
+</div>
+<div class="bg-gray-900 rounded-xl shadow-sm p-6 text-white relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-bold mb-2">Need Guidance?</h3>
+<p class="text-xs text-gray-300 mb-4">The Student Voice team is here to help you move to the next level.</p>
+<a class="inline-flex items-center text-xs font-bold text-[var(--primary-red)] bg-white px-3 py-2 rounded hover:bg-gray-100 transition-colors" href="#">
+                            Contact Support
+                        </a>
+</div>
+<div class="absolute -bottom-6 -right-6 text-gray-800 opacity-20">
+<span class="material-symbols-outlined text-[120px]">support_agent</span>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-12 border-t border-gray-200 pt-6 flex justify-between items-center text-xs text-gray-500">
+<p>© 2024 Student Voice Enhancement Model | Cardiff University</p>
+<p>Last updated: 24 February 2026</p>
+</footer>
+</main>
+
+</body></html>
