@@ -19,12 +19,12 @@ A framework for enhancing student voice and engagement
 ## Theme 1. Structures Supporting Student Voice Activity
 
 ### Area 1: Student Voice Roles, Structures and Training
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - There are currently no clear Student Voice structures in place and/or no defined Student Voice roles within the School.
   - The School provides no opportunity for staff to engage with Student Voice and Partnership Continuing Professional Development (CPD).
   - Central Student Voice and Partnership updates and opportunities are not circulated by email recipients.
   - No explicit process for coordinating or overseeing how the School closes the feedback loop across Student Voice mechanisms.
-- **Level 2:** Baseline Practice:
+- **Level 2:** Developing Practice:
   - Student Voice roles are assigned within Schools. At a minimum, these include a Student Rep Coordinator (SRC), Student Survey Contact (SSC) and a Student Experience Lead (SEL).
   - Student Voice staff are aware of the Student Voice Framework (SVF).
   - Key/appropriate Student Voice contacts within the School are members of the Student Voice and Experience Network (SVEN) Teams channel.
@@ -72,13 +72,13 @@ A framework for enhancing student voice and engagement
   - School Student Voice staff engage in Student Voice collaboration and partnership opportunities with other Schools.
 
 ### Area 2: Students in Governance
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - There are no student representatives on educational governance committees — Board of Study (BoS) and Education Student Experience Committee (ESEC).
   - Student voice data is not considered when writing Review & Enhancement (RE) action plans.
   - RE action plans are not communicated to students through any mechanism.
   - Students are not informed about how governance decisions relate to their experience.
   - No training or support is provided for student participation in governance.
-- **Level 2:** Baseline Practice:
+- **Level 2:** Developing Practice:
   - Student representatives attend governance committees (BoS, ESEC, College forums etc.) but engage minimally.
   - Student voice is occasionally discussed, but is not yet a standing agenda item at educational governance committees.
   - Schools rarely meet with student reps before meetings to provide briefing, context or expectations.
@@ -126,10 +126,10 @@ A framework for enhancing student voice and engagement
 ## Theme 2. Student Reps and Student-Staff Panels (SSPs)
 
 ### Student Reps and Student-Staff Panels (SSPs)
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - The School does not yet have a formal SSP system or a process for recruitment of Student Reps.
   - Actions are not recorded or returned to students.
-- **Level 2:** Baseline Practice:
+- **Level 2:** Developing Practice:
   - The School promotes the Rep System and facilitates the recruitment of Reps.
   - School achieves minimum of one Student Rep per cohort and little consideration has been given to the dimensions of diversity of students.
   - School provides Reps with the opportunity to become a Chair and Vice Chair.
@@ -179,10 +179,10 @@ A framework for enhancing student voice and engagement
 ## Theme 3. Supporting Formal Student Voice Mechanisms
 
 ### Area 1: Mid-Module Enhancement (MME)
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - The School does not have an agreed process for MME collection.
   - Student feedback is not considered when introducing changes/enhancements to modules.
-- **Level 2:** Baseline Practice:
+- **Level 2** Developing Practice:
   - School specifies method options for mid-module feedback collection.
   - School has an agreed MME timeline, which is communicated to appropriate staff.
   - School encourages Module Leaders to gather mid-module feedback.
@@ -218,10 +218,10 @@ A framework for enhancing student voice and engagement
 
 
 ### Area 2: End of Module Enhancement (EME)
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - School relies on automatic Blue Portal email reminders to promote EME to students.
   - Student feedback is not considered when introducing changes/enhancements to modules.
-- **Level 2:** Baseline Practice:
+- **Level 2:** Developing Practice:
   - School has agreed a timeline in partnership with SSC, which is communicated to Module Leaders.
   - School develops guidance on EME journey, including: method, promotion, collection, review, and communication with students to close the feedback loop.
   - The School consider the diversity of our student population to inform planning, promotion and communications, including the incorporation of bilingual provision for Welsh speakers.
@@ -257,11 +257,11 @@ A framework for enhancing student voice and engagement
   - Module Leaders ask students to provide feedback in EME on MME implemented actions to evaluate the impact.
 
 ### Area 3: National Student Survey (NSS)
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - School relies on Ipsos for NSS communications and promotion, and are unaware of guidance and Cardiff University timelines.
   - School are unaware of promotional support offered by the Learning & Teaching Academy.
   - School is informed of NSS results through Cardiff University communications.
-- **Level 2:** Baseline Practice:
+- **Level 2:** Developing Practice:
   - Key School staff are aware of NSS dates, guidelines, and who to contact for support.
   - Key School staff contact students to encourage participation throughout the agreed NSS window.
   - Schools are informed of NSS results through Cardiff University communications and prepare appropriate action plans — Medr, RE etc.
@@ -293,10 +293,10 @@ A framework for enhancing student voice and engagement
   - School conducts annual review of NSS promotional plan to evaluate the impact of the campaign and to continue the loop of engagement.
 
 ### Area 4: Cardiff University Postgraduate Taught Survey (CUPTS)
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - School relies on central communications for CUPTS surveys and are unaware of guidance and timelines.
   - Student feedback is not considered when introducing changes/enhancements to the PGT environment.
-- **Level 2:** Baseline Practice:
+- **Level 2:** Developing Practice:
   - School Student Voice staff communicate CUPTS survey timelines and guidance to appropriate School staff.
   - School promotes the CUPTS surveys to PGT students, highlighting any incentives available.
   - School reviews CUPTS feedback and provides response to students.
@@ -321,10 +321,10 @@ A framework for enhancing student voice and engagement
   - School conducts annual review of PGT survey promotional plan in partnership with students to evaluate the impact of the campaign and to continue the loop of engagement.
 
 ### Area 5: Postgraduate Research Experience Survey (PRES)
-- **Level 1** (Moving towards Baseline):
+- **Level 1** Foundational Practice:
   - School relies on central University communications for the PRES survey and are unaware of guidance and timelines.
   - Student feedback is not considered when introducing changes/enhancements to the PGR environment.
-- **Level 2:** Baseline Practice:
+- **Level 2:** Developing Practice:
   - School Student Voice staff communicate PGR survey timelines and guidance to appropriate School staff.
   - School promotes PRES surveys to PGR students, highlighting any incentives available.
   - Quantitative results are shared with students without any further analysis and actions are not communicated.
