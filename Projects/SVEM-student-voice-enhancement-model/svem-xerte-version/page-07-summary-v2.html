@@ -430,6 +430,42 @@
     .sv2-actions-panel .btn { display: block; width: 100%; margin: var(--space-sm) 0; }
 }
 
+
+
+/* Resources Teaser (embedded on summary page) */
+.resources-teaser {
+    margin-bottom: var(--space-xl);
+}
+
+.resources-teaser__card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--cu-brand-blue);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+}
+
+.resources-teaser__desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.resources-teaser__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-md) 0;
+}
+
+.resources-teaser__list li {
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.resources-teaser__list li:last-child {
+    border-bottom: none;
+}
+
 /* --- Print --- */
 @media print {
     .sv2-actions-panel, .page-navigation { display: none; }
@@ -569,6 +605,23 @@
       <i class="fa-solid fa-pen-to-square"></i> Continue Editing
     </button>
   </div>
+
+  <!-- ── Resources Teaser ───────────────────────────── -->
+  <section>
+    <div class="section-header-wrapper">
+      <h2><i class="fa-solid fa-book-open"></i> Helpful Resources</h2>
+    </div>
+    <div class="intro-card next-steps-card next-steps-card--blue">
+      <p>Supporting documents and guides to help you develop Student Voice practice in your School.</p>
+      <p><a class="resource-link" href="#" target="_blank"><i class="fa-solid fa-file-lines"></i> Case studies — school collaboration on events</a></p>
+      <p><a class="resource-link" href="#" target="_blank"><i class="fa-solid fa-file-lines"></i> Empowering Your Student Academic Reps</a></p>
+      <p><a class="resource-link" href="#" target="_blank"><i class="fa-solid fa-file-lines"></i> Mid-Module Enhancement Guidance and Advice</a></p>
+      <p><a class="resource-link" href="#" target="_blank"><i class="fa-solid fa-file-lines"></i> Student Voice Induction Slides</a></p>
+      <a class="btn btn-light btn-sm" href="#" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1770647401918'}); return false;">
+        View all resources <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
 
   <!-- ── Navigation ────────────────────────────── -->
   <div class="page-navigation">
