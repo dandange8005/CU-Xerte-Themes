@@ -6,15 +6,16 @@
    Built on top of xot_main.css theme
 
    Page Order:
-   1. page-01-title.html        - Title / Landing Page
-   2. page-02-instructions.html  - Introduction & Instructions
-   3. page-03-themes-overview.html - Themes Overview (hub)
-   4. page-04-theme-1.html       - Theme 1: Structures & Governance
-   5. page-05-theme-2.html       - Theme 2: Student Reps & SSPs
-   6. page-06-theme-3.html       - Theme 3: Student Voice Surveys
-   7. page-07-summary.html       - Summary & Report
-   8. page-08-next-steps.html    - Next Steps & Enhancement Plan
-   9. page-09-resources.html     - Additional Resources
+   CSS Sections:
+   1. CSS Custom Properties
+   2. Title / Landing Page
+   3. Introduction & Instructions
+   4. Themes Overview
+   5. Page Layout              ← shared by all content pages
+   6. Individual Theme Pages
+   7. Summary & Report
+   8. Shared Components
+   9. Additional Resources
    ======================================== */
 
 
@@ -39,7 +40,6 @@
     --bg-light: var(--gray-0);
     --bg-gray: var(--gray-2);
     --border-light: var(--gray-3);
-    --border-medium: var(--gray-3);
 
     /* === Status Colors (using Open Props) === */
     --status-success: var(--green-7);
@@ -196,22 +196,6 @@
  Introduction & Instructions
    ======================================== */
 
-.instructions-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: var(--space-xl);
-}
-
-.instructions-page__title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 400;
-    color: var(--cu-brand-blue);
-    margin: 0 0 var(--space-xl) 0;
-    line-height: 1.2;
-}
 
 /* Introduction Text */
 .intro-section {
@@ -303,20 +287,6 @@
  Page 03 - Themes Overview
    ======================================== */
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.themes-overview__title {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin: 0 0 var(--space-md) 0;
-    padding-bottom: var(--space-sm);
-    border-bottom: 2px solid var(--border-light);
-}
-
 .themes-overview__description {
     font-size: 1rem;
     color: var(--text-muted);
@@ -385,7 +355,7 @@
 }
 
 .status-badge.status-not-started {
-    background: var(--border-medium);
+    background: var(--border-light);
     color: var(--text-light-gray);
 }
 
@@ -409,7 +379,7 @@
 .theme-progress__bar {
     width: 100%;
     height: 6px;
-    background: var(--border-medium);
+    background: var(--border-light);
     border-radius: 3px;
     overflow: hidden;
     margin-bottom: var(--space-sm);
@@ -439,10 +409,8 @@
 
 
 /* ========================================
-   5.  Individual Theme Pages
+   5. Page Layout
    ======================================== */
-
-/* --- Layout --- */
 
 .theme-page-container {
     display: flex;
@@ -451,8 +419,8 @@
 
 .main-content {
     padding: var(--space-xl) var(--space-2xl);
-    max-width: 900px;
-    width: 100%;
+    /* max-width: 900px; */
+    /* width: 100%; */
 }
 
 .main-content header {
@@ -467,7 +435,7 @@
 }
 
 .main-content h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 300;
     letter-spacing: -0.5px;
     margin-bottom: var(--space-sm);
@@ -478,6 +446,17 @@
     color: var(--text-muted);
     margin-top: var(--space-sm);
 }
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: var(--space-lg) var(--space-md);
+    }
+}
+
+
+/* ========================================
+   6. Individual Theme Pages
+   ======================================== */
 
 /* --- Scoring Explanation (collapsible info panel) --- */
 
@@ -840,16 +819,8 @@ details.selected-level {
     border-top: 1px solid var(--border-light);
 }
 
-/* Theme Pages - Responsive */
-@media (max-width: 768px) {
-    .main-content {
-        padding: var(--space-lg) var(--space-md);
-    }
-}
-
-
 /* ========================================
-   6. Summary & Report
+   7. Summary & Report
    ======================================== */
 
 
@@ -865,7 +836,7 @@ details.selected-level {
     box-shadow: var(--shadow-sm);
 }
 
-.report-header h2 {
+.report-header h1 {
     margin: 0;
 }
 
@@ -1067,11 +1038,7 @@ details.selected-level {
 
 /* Summary Page - Print Styles */
 @media print {
-    .summary-page {
-        background: white;
-    }
-
-    .page-navigation,
+.page-navigation,
     .report-actions {
         display: none;
     }
@@ -1089,7 +1056,7 @@ details.selected-level {
 
     .chart-container {
         background: white;
-        border: 1px solid var(--border-medium);
+        border: 1px solid var(--border-light);
     }
 }
 
@@ -1126,7 +1093,7 @@ details.selected-level {
 
 
 /* ========================================
-   7. Shared Components
+   8. Shared Components
    ======================================== */
 
 /* Toast Notification */
@@ -1227,28 +1194,6 @@ details.selected-level {
     background: var(--status-danger-light);
     border-color: var(--status-danger);
     color: var(--status-danger);
-}
-
-
-/* ========================================
-   8. Next Steps & Enhancement Plan Page
-   ======================================== */
-
-/* CTA action cards — extend .intro-card with a coloured top border */
-.next-steps-card {
-    border-top: 4px solid transparent;
-}
-
-.next-steps-card--blue {
-    border-top-color: var(--cu-brand-blue);
-}
-
-.next-steps-card--gold {
-    border-top-color: var(--cu-gold);
-}
-
-.next-steps-card .btn {
-    margin-top: var(--space-sm);
 }
 
 

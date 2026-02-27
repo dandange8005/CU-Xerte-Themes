@@ -150,3 +150,12 @@ x_navigateToPage(false, {type:'linkID', ID:'PG1234567890'}); return false;
 ### GitHub Pages Deployment
 The themes are deployed to GitHub Pages with direct CSS links:
 - `https://dandange8005.github.io/CU-Xerte-Themes/css/[theme-name].min.css`
+
+## Design Consistency (XOT Project Pages)
+
+When creating new pages or content elements for Xerte projects (e.g. SVEM), **consistency is the priority**:
+
+- **Reuse existing classes first** — before writing any new CSS, check the project's `custom.css` for classes that already achieve the same visual result.
+- **Avoid creating new classes** for one-off elements. If a small structural tweak is needed, compose existing classes (e.g. `.intro-card.next-steps-card.next-steps-card--blue`) rather than introducing a new selector.
+- **Match the heading hierarchy and layout patterns** already used on other pages in the same project. For example, use `.section-header-wrapper > h2` for section titles if that pattern is already established.
+- **New CSS is justified** only when a genuinely new component is needed that has no existing analogue — and even then, keep selectors minimal and document which page(s) use them.

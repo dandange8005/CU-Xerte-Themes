@@ -1,9 +1,11 @@
 <!-- SVEM Introduction Page -->
 
-<div class="instructions-page">
-  <div class="instructions-container">
-    <h1 class="instructions-page__title">Student Voice Enhancement Model
-    </h1>
+<div class="theme-page-container">
+  <main class="main-content">
+    <header class="text-center">
+      <span class="theme-label">Introduction</span>
+      <h1>Student Voice Enhancement Model</h1>
+    </header>
 
     <!-- Introduction -->
     <section class="intro-section">
@@ -62,17 +64,28 @@
     </div>
 
     <!-- CTA -->
-    <button class="btn btn-primary btn-lg" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;" type="button">Begin Reflection</button>
+    <div style="text-align: center; margin-bottom: var(--space-xl);">
+      <button class="btn btn-primary btn-lg" onclick="x_navigateToPage(false, {type:'linkID', ID:'[next]'}); return false;" type="button">Begin Reflection</button>
+    </div>
 
     <!-- Data Management Options -->
-    <div style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-      <input accept=".json" id="importFile" onchange="importData(this); return false;" style="display:none" type="file" />
-      <button class="btn btn-light" onclick="document.getElementById('importFile').click(); return false;" type="button">Import Data
-      </button>
-      <button class="btn btn-danger" onclick="resetData(); return false;" type="button">Reset All Data
-      </button>
-    </div>
-  </div>
+    <section class="intro-card">
+      <i class="intro-card__icon fa-solid fa-database"></i>
+      <h2 class="intro-card__heading">Data Management</h2>
+      <p>Your progress is saved automatically in this browser. Use these options only if you need to transfer your data to another device or start your assessment over.</p>
+      <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; margin-top: var(--space-md);">
+        <div style="flex: 1; min-width: 200px;">
+          <input accept=".json" id="importFile" onchange="importData(this); return false;" style="display:none" type="file" />
+          <button class="btn btn-secondary" onclick="document.getElementById('importFile').click(); return false;" type="button">Import Data</button>
+          <p>Restores a previously exported (.json) data file. Use this if you are continuing your assessment on a different device or browser.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <button class="btn btn-warning" onclick="resetData(); return false;" type="button">Reset All Data</button>
+          <p>Deletes all saved scores and notes, returning the tool to its initial state. <strong>This cannot be undone.</strong></p>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
 <!-- Toast Notification -->
 <div id="toast">Changes Saved

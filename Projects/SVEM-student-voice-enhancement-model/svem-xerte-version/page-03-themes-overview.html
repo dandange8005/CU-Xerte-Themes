@@ -1,9 +1,10 @@
-<div class="themes-overview">
-  <div class="container">
-    <h1 class="themes-overview__title">Reflection&nbsp;Themes
-    </h1>
-    <p class="themes-overview__description">Select a theme to begin or continue your assessment.
-    </p>
+<div class="theme-page-container">
+  <main class="main-content">
+    <header>
+      <span class="theme-label">Overview</span>
+      <h1>Reflection&nbsp;Themes</h1>
+      <p class="themes-overview__description">Select a theme to begin or continue your assessment.</p>
+    </header>
     <!-- Theme 1 Card -->
     <div class="theme-card" data-theme-id="theme-1" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1765751366809'}); return false;" style="cursor: pointer;">
       <div class="theme-card__header">
@@ -63,7 +64,7 @@
       <button class="btn btn-primary btn-lg" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1765751762045'}); return false;" type="button">Review &amp; Submit Report
       </button>
     </div>
-  </div>
+  </main>
 </div>
 <div id="toast">Changes Saved
 </div>
@@ -84,7 +85,7 @@
 
     // Also run when page becomes visible (handles Xerte navigation)
     // Check periodically if this page is visible
-    const themesOverviewElement = document.querySelector('.themes-overview');
+    const themesOverviewElement = document.querySelector('.themes-overview__actions');
     if (themesOverviewElement) {
         const checkVisibility = setInterval(function() {
             // Check if the themes overview is visible
