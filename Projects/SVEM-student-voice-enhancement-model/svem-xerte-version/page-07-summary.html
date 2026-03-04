@@ -51,7 +51,7 @@
   <div class="report-actions">
     <p>Review your assessment above. Download the report for your records, then continue to the next page to find out about your Enhancement Plan.
     </p>
-    <button class="btn btn-light" onclick="downloadReportHTML()" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Report (HTML)
+    <button class="btn btn-light" onclick="downloadReportHTML(this); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Report (HTML)
     </button>
     <button class="btn btn-primary" onclick="backToMenu(); return false;" type="button"><i class="fa-solid fa-pen-to-square"></i> Continue Editing
     </button>
@@ -120,8 +120,8 @@ let spiderChartInstance = null;
 const SECTIONS = {
     'Theme 1: Structures Supporting Student Voice': {
         sections: [
-            { id: 'roles', name: 'Roles and Structures' },
-            { id: 'training', name: 'SV Training, Development, and Dissemination' }
+            { id: 'roles', name: 'Student Voice Roles, Structures and Training' },
+            { id: 'training', name: 'Students in Governance' }
         ]
     },
     'Theme 2: Student Reps and SSPs': {
@@ -143,7 +143,7 @@ const SECTIONS = {
 // Short labels for spider chart (prevents label overlap)
 const SECTION_SHORT_LABELS = {
     'roles': 'Roles',
-    'training': 'Training',
+    'training': 'Governance',
     'reps-ssps': 'Reps/SSPs',
     'mme': 'MME',
     'me': 'ME',
@@ -388,13 +388,17 @@ function generateReport() {
 }
 
 // Download report as HTML file
-function downloadReportHTML() {
+function downloadReportHTML(btn) {
+    // Find the main content area relative to the clicked button
+    // Note: page-07 uses <main class="main-content"> not .summary-page
+    const summaryPage = btn.closest('main');
+
     // Capture the chart as an image first
-    const canvas = document.getElementById('spiderChart');
+    const canvas = summaryPage.querySelector('#spiderChart');
     const chartImage = canvas ? canvas.toDataURL('image/png') : null;
-    
+
     // Clone the summary page to modify it
-    const summaryClone = document.querySelector('.summary-page').cloneNode(true);
+    const summaryClone = summaryPage.cloneNode(true);
     
     // Replace canvas with image in the clone
     if (chartImage) {
@@ -411,7 +415,7 @@ function downloadReportHTML() {
     
     // Get the modified report content and styles
     var reportContent = summaryClone.outerHTML;
-    var styles = document.querySelector('style').textContent;
+    var styles = document.querySelector('style')?.textContent ?? '';
     var reportDate = new Date().toLocaleDateString('en-GB');
     var fileName = 'SVEM-Report-' + new Date().toISOString().split('T')[0] + '.html';
 
@@ -426,7 +430,7 @@ function downloadReportHTML() {
         '    margin: 0;\n' +
         '    padding: 20px;\n' +
         '}\n' +
-        '.summary-page {\n' +
+        'main {\n' +
         '    background: white;\n' +
         '    max-width: 1000px;\n' +
         '    margin: 0 auto;\n' +
@@ -455,7 +459,7 @@ function downloadReportHTML() {
         '/* Print styles */\n' +
         '@media print {\n' +
         '    body { background: white; padding: 0; }\n' +
-        '    .summary-page { box-shadow: none; }\n' +
+        '    main { box-shadow: none; }\n' +
         '    .report-actions, .page-navigation { display: none !important; }\n' +
         '    .theme-report { page-break-inside: avoid; }\n' +
         '}\n';

@@ -372,34 +372,6 @@ function importData(input) {
     reader.readAsText(file);
 }
 
-// Export data to JSON file
-function downloadJSON() {
-    const exportData = {};
-
-    // Collect all sv_ prefixed data
-    getAllSectionKeys().forEach(key => {
-        const cleanKey = key.replace(CONFIG.STORAGE_PREFIX, '');
-        const value = localStorage.getItem(key);
-        try {
-            exportData[cleanKey] = JSON.parse(value);
-        } catch (e) {
-            exportData[cleanKey] = value;
-        }
-    });
-
-    // Create download
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
-    const a = document.createElement('a');
-    a.href = dataStr;
-    const date = new Date().toISOString().slice(0, 10);
-    a.download = `svem_assessment_data_${date}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    showToast('Data exported successfully!');
-}
-
 // ========================================
 // Navigation Functions
 // ========================================
