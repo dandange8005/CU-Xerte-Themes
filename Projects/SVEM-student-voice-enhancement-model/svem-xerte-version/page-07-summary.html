@@ -1,61 +1,242 @@
+<-- Summary Page for SVEM Self-Assessment Tool -->
+<style>
+/* sv2- dashboard components: header + stats row */
+
+.sv2-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.sv2-header h2 {
+    margin: 0;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    color: var(--cu-brand-blue);
+}
+
+.sv2-header p {
+    margin: 4px 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.sv2-header-meta {
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.sv2-status-chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: var(--bg-gray);
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+}
+
+.sv2-status-chip.complete    { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+.sv2-status-chip.in-progress { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+
+.sv2-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.sv2-stat-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+}
+
+.sv2-stat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.sv2-stat-value {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin: 3px 0 2px;
+}
+
+.sv2-stat-value--sm {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin: 3px 0 2px;
+}
+
+.sv2-stat-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    min-height: 1em;
+}
+
+.sv2-stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.sv2-stat-icon--blue  { background: #eff6ff; color: #3b82f6; }
+.sv2-stat-icon--green { background: #f0fdf4; color: #22c55e; }
+.sv2-stat-icon--amber { background: #fffbeb; color: #f59e0b; }
+.sv2-stat-icon--red   { background: #fef2f2; color: var(--cu-brand-red, #d3374a); }
+
+.sv2-level-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sv2-lb-0 { background: var(--bg-gray);  color: var(--text-muted);  border: 1px solid var(--border-light); }
+.sv2-lb-1 { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+.sv2-lb-2 { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.sv2-lb-3 { background: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
+.sv2-lb-4 { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.sv2-lb-5 { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+
+@media (max-width: 860px) {
+    .sv2-stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+    .sv2-header { flex-direction: column; gap: var(--space-md); }
+    .sv2-header-meta { align-items: flex-start; text-align: left; }
+    .sv2-stats-row { grid-template-columns: 1fr 1fr; }
+    .sv2-stat-value { font-size: 1.3rem; }
+}
+
+</style>
+
+<!-- Summary Page Content -->
+
 <div class="theme-page-container">
-  <main class="main-content"><!-- Report Header -->
-  <div class="report-header">
+  <main class="main-content">
+  <!-- Report Header -->
+  <div class="sv2-header">
     <div>
-      <span class="theme-label">Summary</span>
-      <h1>Student Voice Enhancement Model</h1>
-      <p class="report-header__subtitle">Self-Assessment Report</p>
+      <h2>Self-Assessment Report</h2>
+      <p>Student Voice Enhancement Model &mdash; Cardiff University</p>
     </div>
-    <div class="report-meta"><strong>Date:</strong> <span id="report-date"></span> <strong>Status:</strong> <span id="report-status">Draft</span>
+    <div class="sv2-header-meta">
+      <span>Date: <strong id="report-date"></strong></span>
+      <span class="sv2-status-chip" id="report-status">Not Started</span>
     </div>
   </div>
-  <!-- Completion Summary -->
-  <div class="completion-summary">
-    <h3>Assessment Completion Summary
-    </h3>
-    <div class="summary-container">
-      <div class="completion-stats">
-        <div class="stat-item">
-          <div class="stat-value" id="completed-count">0
-          </div>
-          <div class="stat-label">Sections Completed
-          </div>
+  <!-- Stats Row -->
+  <div class="sv2-stats-row">
+    <div class="sv2-stat-card">
+      <div>
+        <div class="sv2-stat-label">Completed</div>
+        <div class="sv2-stat-value">
+          <span id="completed-count">0</span><span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/8</span>
         </div>
-        <div class="stat-item">
-          <div class="stat-value">8
-          </div>
-          <div class="stat-label">Total Sections
-          </div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="completion-percent">0%
-          </div>
-          <div class="stat-label">Overall Progress
-          </div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="average-score">0.0
-          </div>
-          <div class="stat-label">Average Score
-          </div>
-        </div>
+        <div class="sv2-stat-sub">sections</div>
       </div>
-      <div class="chart-container">
-        <canvas id="spiderChart"></canvas>
+      <div class="sv2-stat-icon sv2-stat-icon--blue">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+    </div>
+    <div class="sv2-stat-card">
+      <div>
+        <div class="sv2-stat-label">Progress</div>
+        <div class="sv2-stat-value" id="completion-percent">0%</div>
+        <div class="sv2-stat-sub">overall</div>
+      </div>
+      <div class="sv2-stat-icon sv2-stat-icon--green">
+        <i class="fa-solid fa-chart-pie"></i>
+      </div>
+    </div>
+    <div class="sv2-stat-card">
+      <div>
+        <div class="sv2-stat-label">Average Level</div>
+        <div class="sv2-stat-value" id="average-score">—</div>
+        <div class="sv2-stat-sub" id="average-level-name">&nbsp;</div>
+      </div>
+      <div class="sv2-stat-icon sv2-stat-icon--amber">
+        <i class="fa-solid fa-gauge-high"></i>
+      </div>
+    </div>
+    <div class="sv2-stat-card">
+      <div style="min-width:0;flex:1;">
+        <div class="sv2-stat-label">Highest Area</div>
+        <div class="sv2-stat-value--sm" id="highest-area">—</div>
+        <div class="sv2-stat-sub" id="highest-area-badge">&nbsp;</div>
+      </div>
+      <div class="sv2-stat-icon sv2-stat-icon--red">
+        <i class="fa-solid fa-trophy"></i>
       </div>
     </div>
   </div>
   <!-- Report Body -->
   <div id="report-body"><!-- Content will be generated by JavaScript --></div>
-  <!-- Action Buttons -->
-  <div class="report-actions">
-    <p>Review your assessment above. Download the report for your records, then continue to the next page to find out about your Enhancement Plan.
-    </p>
-    <button class="btn btn-light" onclick="downloadReportHTML(this); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Report (HTML)
-    </button>
-    <button class="btn btn-primary" onclick="backToMenu(); return false;" type="button"><i class="fa-solid fa-pen-to-square"></i> Continue Editing
-    </button>
-  </div>
+  <!-- Actions for You -->
+  <section>
+    <div class="section-header-wrapper">
+      <h2>Actions for You</h2>
+    </div>
+    <div class="intro-sections-grid">
+
+      <section class="intro-card">
+        <i class="intro-card__icon fa-solid fa-file-arrow-down"></i>
+        <h3 class="intro-card__heading">Download your report</h3>
+        <p>Save a copy of your self-reflection for your own records. You can print this or share it with colleagues.</p>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-sm); margin-top: var(--space-sm);">
+          <button class="btn btn-light btn-sm" onclick="downloadReportHTML(this); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Report (HTML)</button>
+          <button class="btn btn-light btn-sm" onclick="backToMenu(); return false;" type="button"><i class="fa-solid fa-pen-to-square"></i> Continue Editing</button>
+        </div>
+      </section>
+
+      <section class="intro-card" style="border-top-color: var(--cu-gold);">
+        <i class="intro-card__icon fa-solid fa-paper-plane"></i>
+        <h3 class="intro-card__heading">Share your data with us</h3>
+        <p>To receive a tailored Enhancement Plan, send your assessment data to the Student Voice and Partnership Team:</p>
+        <ol style="margin: var(--space-sm) 0 var(--space-sm) 1.25rem; font-size: 0.9rem; line-height: 1.7;">
+          <li><strong>Download</strong> your assessment data file using the button below.</li>
+          <li><strong>Attach</strong> the downloaded file to an email.</li>
+          <li><strong>Send</strong> it to <a href="mailto:LTAcademy@cardiff.ac.uk">LTAcademy@cardiff.ac.uk</a> — the team will return a tailored plan within <strong>2 weeks</strong>.</li>
+        </ol>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-sm);">
+          <button class="btn btn-light btn-sm" onclick="downloadJSON(); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Assessment Data</button>
+        </div>
+      </section>
+
+    </div>
+  </section>
   <!-- Resources Teaser -->
   <section>
     <div class="section-header-wrapper">
@@ -86,7 +267,7 @@
 
 
 
-
+<-- script for generating report from localStorage data and handling actions on the summary page -->
 <script>
 // Summary Page JavaScript
 // Generates report from localStorage data
@@ -113,8 +294,12 @@ function getSectionData(sectionId) {
     }
 }
 
-// Global variable to store chart instance
-let spiderChartInstance = null;
+// Short display names for the Highest Area stat card
+const SECTION_SHORT_DISPLAY = {
+    'roles': 'Roles & Structures', 'training': 'Governance',
+    'reps-ssps': 'Reps & SSPs', 'mme': 'Mid-Module', 'me': 'End of Module',
+    'nss': 'NSS', 'cupts': 'CUPTS', 'pres': 'PRES'
+};
 
 // Section configuration
 const SECTIONS = {
@@ -140,17 +325,6 @@ const SECTIONS = {
     }
 };
 
-// Short labels for spider chart (prevents label overlap)
-const SECTION_SHORT_LABELS = {
-    'roles': 'Roles',
-    'training': 'Governance',
-    'reps-ssps': 'Reps/SSPs',
-    'mme': 'MME',
-    'me': 'ME',
-    'nss': 'NSS',
-    'cupts': 'CUPTS',
-    'pres': 'PRES'
-};
 
 // Escape HTML to prevent injection when rendering evidence text
 function escapeHTML(str) {
@@ -182,134 +356,26 @@ function getMaturityLevelName(score) {
     return levels[level];
 }
 
-// Generate spider chart
-function generateSpiderChart() {
-    const ctx = document.getElementById('spiderChart');
-    if (!ctx) return;
-
-    // Collect all section data
-    const labels = [];
-    const scores = [];
-    const allSections = [];
-
-    // Flatten all sections
-    Object.keys(SECTIONS).forEach(themeName => {
-        const theme = SECTIONS[themeName];
-        theme.sections.forEach(section => {
-            allSections.push(section);
-        });
-    });
-
-    // Get scores for each section with shortened labels for better chart readability
-    const sectionData = []; // Store section info for tooltips
-    allSections.forEach(section => {
-        // Use shortened labels to prevent overlap in the chart
-        const shortLabel = SECTION_SHORT_LABELS[section.id] || section.name;
-
-        labels.push(shortLabel);
-        const savedData = getSectionData(section.id);
-        scores.push(savedData.score || 0);
-        sectionData.push({ name: section.name, shortLabel: shortLabel });
-    });
-
-    // Destroy existing chart if it exists
-    if (spiderChartInstance) {
-        spiderChartInstance.destroy();
-    }
-
-    // Create new chart
-    spiderChartInstance = new Chart(ctx, {
-        type: 'radar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Current Assessment',
-                data: scores,
-                fill: true,
-                backgroundColor: 'rgba(0, 51, 102, 0.2)',
-                borderColor: 'rgb(0, 51, 102)',
-                pointBackgroundColor: 'rgb(0, 51, 102)',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgb(0, 51, 102)',
-                pointRadius: 4,
-                pointHoverRadius: 6,
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            scales: {
-                r: {
-                    angleLines: {
-                        display: true,
-                        color: 'rgba(0, 0, 0, 0.1)'
-                    },
-                    suggestedMin: 0,
-                    suggestedMax: 5,
-                    ticks: {
-                        stepSize: 1,
-                        backdropColor: 'transparent',
-                        font: {
-                            size: 11
-                        }
-                    },
-                    pointLabels: {
-                        font: {
-                            size: 11,
-                            weight: '500'
-                        },
-                        color: '#2c3e50'
-                    },
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.1)'
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    callbacks: {
-                        title: function(context) {
-                            const index = context[0].dataIndex;
-                            return sectionData[index].name;
-                        },
-                        label: function(context) {
-                            const score = context.parsed.r;
-                            if (score === 0) return 'Not Scored';
-                            const levelName = getMaturityLevelName(score);
-                            return `Level ${score} - ${levelName}`;
-                        }
-                    }
-                }
-            },
-            animation: {
-                duration: 0 // Disable animation for better printing/PDF generation
-            }
-        }
-    });
-}
-
 // Create section report HTML
 function createSectionReportHTML(section, savedData) {
     const hasScore = savedData && savedData.score;
     const levelName = hasScore ? getMaturityLevelName(savedData.score) : 'Not Scored';
-    const scoreClass = hasScore ? `level-${Math.floor(savedData.score)}` : 'not-scored';
-    const scoreLabel = hasScore ? `Level ${savedData.score}` : 'Not Scored';
 
     const evidenceHTML = savedData.note?.trim()
         ? `<strong>Evidence:</strong><p>${escapeHTML(savedData.note).replace(/\n/g, '<br>')}</p>`
         : (hasScore ? `<em class="no-evidence">No evidence provided</em>` : '');
+
+    const levelNum = hasScore ? Math.floor(savedData.score) : 0;
+    const badge = hasScore
+        ? `<span class="sv2-level-badge sv2-lb-${levelNum}">Level ${savedData.score}</span>`
+        : `<span class="sv2-level-badge sv2-lb-0">Not Scored</span>`;
 
     return `
         <div class="section-report">
             <div class="section-report__header">
                 <h4 class="section-report__name">${section.name}</h4>
                 <div class="section-report__score">
-                    <span class="score-indicator ${scoreClass}">${scoreLabel}</span>
+                    ${badge}
                     ${hasScore ? `<span class="maturity-level">${levelName}</span>` : ''}
                 </div>
             </div>
@@ -320,34 +386,56 @@ function createSectionReportHTML(section, savedData) {
 
 // Update statistics display
 function updateStatistics(stats) {
+    // Completed count
     document.getElementById('completed-count').textContent = stats.completed;
-    const completionPercent = Math.round((stats.completed / stats.total) * 100);
+
+    // Overall progress %
+    const completionPercent = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
     document.getElementById('completion-percent').textContent = `${completionPercent}%`;
 
-    const averageScore = stats.scored > 0
-        ? (stats.totalScore / stats.scored).toFixed(1)
-        : '0.0';
-    document.getElementById('average-score').textContent = averageScore;
+    // Average level
+    const avgEl = document.getElementById('average-score');
+    const avgNameEl = document.getElementById('average-level-name');
+    if (stats.scored > 0) {
+        const avg = parseFloat((stats.totalScore / stats.scored).toFixed(1));
+        avgEl.textContent = avg;
+        if (avgNameEl) avgNameEl.textContent = getMaturityLevelName(avg);
+    } else {
+        avgEl.textContent = '—';
+        if (avgNameEl) avgNameEl.innerHTML = '&nbsp;';
+    }
 
-    updateStatusBadge(stats.completed, stats.total);
-}
+    // Highest area
+    const highestEl = document.getElementById('highest-area');
+    const highestBadgeEl = document.getElementById('highest-area-badge');
+    if (highestEl) {
+        highestEl.textContent = stats.highestScore > 0
+            ? (SECTION_SHORT_DISPLAY[stats.highestSectionId] || stats.highestSection)
+            : '—';
+    }
+    if (highestBadgeEl) {
+        if (stats.highestScore > 0) {
+            const l = Math.floor(stats.highestScore);
+            highestBadgeEl.innerHTML = `<span class="sv2-level-badge sv2-lb-${l}">Level ${stats.highestScore}</span>`;
+        } else {
+            highestBadgeEl.innerHTML = '&nbsp;';
+        }
+    }
 
-// Update status badge
-function updateStatusBadge(completed, total) {
+    // Status chip
     const statusEl = document.getElementById('report-status');
-    const statusConfig = {
-        complete: { text: 'Complete', color: '#27ae60' },
-        inProgress: { text: 'In Progress', color: '#f39c12' },
-        notStarted: { text: 'Not Started', color: '#999' }
-    };
-
-    const status = completed === total ? 'complete'
-        : completed > 0 ? 'inProgress'
-        : 'notStarted';
-
-    statusEl.textContent = statusConfig[status].text;
-    statusEl.style.color = statusConfig[status].color;
-    statusEl.style.fontWeight = completed > 0 ? '600' : 'normal';
+    if (statusEl) {
+        if (stats.completed === stats.total && stats.total > 0) {
+            statusEl.textContent = 'Complete';
+            statusEl.className = 'sv2-status-chip complete';
+        } else if (stats.completed > 0) {
+            statusEl.textContent = 'In Progress';
+            statusEl.className = 'sv2-status-chip in-progress';
+        } else {
+            statusEl.textContent = 'Not Started';
+            statusEl.className = 'sv2-status-chip';
+        }
+    }
 }
 
 // Generate report
@@ -357,7 +445,10 @@ function generateReport() {
     });
     document.getElementById('report-date').textContent = reportDate;
 
-    let stats = { completed: 0, total: 0, totalScore: 0, scored: 0 };
+    let stats = {
+        completed: 0, total: 0, totalScore: 0, scored: 0,
+        highestScore: 0, highestSection: '—', highestSectionId: null
+    };
 
     const reportHTML = Object.entries(SECTIONS).map(([themeName, theme]) => {
         const sectionsHTML = theme.sections.map(section => {
@@ -368,6 +459,11 @@ function generateReport() {
                 stats.completed++;
                 stats.totalScore += savedData.score;
                 stats.scored++;
+                if (savedData.score > stats.highestScore) {
+                    stats.highestScore     = savedData.score;
+                    stats.highestSection   = section.name;
+                    stats.highestSectionId = section.id;
+                }
             }
 
             return createSectionReportHTML(section, savedData);
@@ -387,80 +483,140 @@ function generateReport() {
 
 // Download report as HTML file
 function downloadReportHTML(btn) {
-    // Find the main content area relative to the clicked button
-    // Note: page-07 uses <main class="main-content"> not .summary-page
     const summaryPage = btn.closest('main');
-
-    // Capture the chart as an image first
-    const canvas = summaryPage.querySelector('#spiderChart');
-    const chartImage = canvas ? canvas.toDataURL('image/png') : null;
-
-    // Clone the summary page to modify it
     const summaryClone = summaryPage.cloneNode(true);
-    
-    // Replace canvas with image in the clone
-    if (chartImage) {
-        const canvasInClone = summaryClone.querySelector('#spiderChart');
-        if (canvasInClone) {
-            const img = document.createElement('img');
-            img.src = chartImage;
-            img.alt = 'Assessment Spider Chart';
-            img.style.maxWidth = '100%';
-            img.style.height = 'auto';
-            canvasInClone.parentNode.replaceChild(img, canvasInClone);
-        }
-    }
-    
-    // Get the modified report content and styles
+
+    // Remove resources section and navigation from the downloaded report
+    const toRemove = summaryClone.querySelectorAll('section, .report-actions, .page-navigation');
+    toRemove.forEach(el => el.remove());
+
     var reportContent = summaryClone.outerHTML;
     var styles = document.querySelector('style')?.textContent ?? '';
     var reportDate = new Date().toLocaleDateString('en-GB');
     var fileName = 'SVEM-Report-' + new Date().toISOString().split('T')[0] + '.html';
 
     // Additional styles for standalone report
-    var standaloneStyles = '\n' +
-        '/* Standalone Report Styles */\n' +
-        'body {\n' +
-        '    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;\n' +
-        '    line-height: 1.6;\n' +
-        '    color: #333;\n' +
-        '    background: #f5f5f5;\n' +
-        '    margin: 0;\n' +
-        '    padding: 20px;\n' +
-        '}\n' +
-        'main {\n' +
-        '    background: white;\n' +
-        '    max-width: 1000px;\n' +
-        '    margin: 0 auto;\n' +
-        '    padding: 2rem;\n' +
-        '    box-shadow: 0 0 10px rgba(0,0,0,0.1);\n' +
-        '}\n' +
-        '/* Hide buttons and navigation in standalone report */\n' +
-        '.report-actions,\n' +
-        '.page-navigation {\n' +
-        '    display: none !important;\n' +
-        '}\n' +
-        '/* Improve text readability */\n' +
-        'h2, h3, h4 {\n' +
-        '    line-height: 1.3;\n' +
-        '    margin-top: 1.5rem;\n' +
-        '    margin-bottom: 0.75rem;\n' +
-        '}\n' +
-        'p {\n' +
-        '    margin: 0.5rem 0;\n' +
-        '    line-height: 1.6;\n' +
-        '}\n' +
-        '.section-report__evidence p {\n' +
-        '    white-space: pre-wrap;\n' +
-        '    word-wrap: break-word;\n' +
-        '}\n' +
-        '/* Print styles */\n' +
-        '@media print {\n' +
-        '    body { background: white; padding: 0; }\n' +
-        '    main { box-shadow: none; }\n' +
-        '    .report-actions, .page-navigation { display: none !important; }\n' +
-        '    .theme-report { page-break-inside: avoid; }\n' +
-        '}\n';
+    var standaloneStyles = `
+/* ── Variable fallbacks ── */
+:root {
+    --cu-brand-blue: #002554;
+    --bg-white: #fff; --bg-light: #f9fafb; --bg-gray: #f3f4f6;
+    --text-primary: #1f2937; --text-secondary: #374151; --text-muted: #6b7280; --text-light-gray: #9ca3af;
+    --border-light: #e5e7eb; --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --radius-sm: 4px; --radius-md: 8px;
+    --space-xs: 0.25rem; --space-sm: 0.5rem; --space-md: 0.75rem; --space-lg: 1.25rem; --space-xl: 2rem;
+}
+
+/* ── Base ── */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f0f2f5; margin: 0; padding: 32px 16px; color: #1f2937; font-size: 15px; line-height: 1.6;
+}
+main {
+    background: white; max-width: 860px; margin: 0 auto;
+    padding: 2.5rem 3rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 12px;
+}
+
+/* ── Report header (sv2- classes already in page style, but add fallback h2) ── */
+.sv2-header { margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 2px solid #e5e7eb; }
+.sv2-header h2 { font-size: 1.75rem; color: #002554; margin: 0; }
+.sv2-header p  { margin: 4px 0 0; color: #6b7280; font-size: 0.9rem; }
+
+/* ── Theme report cards ── */
+.theme-report {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    page-break-inside: avoid;
+}
+
+.theme-report__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    background: #002554;
+    margin: 0;
+    padding: 0.65rem 1.25rem;
+    letter-spacing: 0.01em;
+}
+
+/* ── Section rows ── */
+.section-report {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.section-report:last-child { border-bottom: none; }
+
+.section-report__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-report__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+    flex: 1;
+}
+
+.section-report__score {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.maturity-level {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* ── Evidence block ── */
+.section-report__evidence {
+    background: #f9fafb;
+    border-left: 3px solid #002554;
+    border-radius: 0 6px 6px 0;
+    padding: 0.6rem 0.9rem;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.section-report__evidence strong {
+    display: block;
+    font-size: 0.78rem;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.section-report__evidence p {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.no-evidence { font-style: italic; color: #9ca3af; }
+
+/* ── Stats row (override for print sizing) ── */
+.sv2-stats-row { grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem; }
+.sv2-stat-card { padding: 0.75rem 1rem; }
+.sv2-stat-value { font-size: 1.4rem; }
+
+/* ── Print ── */
+@media print {
+    body { background: white; padding: 0; }
+    main { box-shadow: none; border-radius: 0; padding: 1rem; }
+    .theme-report { page-break-inside: avoid; }
+    .sv2-stats-row { grid-template-columns: repeat(4, 1fr); }
+}`;
 
     // Create standalone HTML document
     var fullHTML = '<!DOCTYPE html>\n' +
@@ -560,47 +716,32 @@ function createVisibilityWatcher(element, callback) {
 
 // Generate report on page load AND when page becomes visible
 (function() {
-    // Wait for Chart.js to load
     function initializeReports() {
-        if (typeof Chart === 'undefined') {
-            setTimeout(initializeReports, CONFIG.CHART_INIT_RETRY);
-            return;
-        }
-
-        // Run on initial load
         generateReport();
-        generateSpiderChart();
 
         // Also run when page becomes visible (handles Xerte navigation)
         const summaryPageElement = document.querySelector('.theme-page-container');
         if (summaryPageElement) {
             const intervalId = createVisibilityWatcher(summaryPageElement, () => {
                 generateReport();
-                generateSpiderChart();
             });
             window._summaryPageInterval = intervalId;
         }
 
-        // Alternative: Listen for focus/visibility events
         window.addEventListener('focus', function() {
             if (summaryPageElement && summaryPageElement.offsetParent !== null) {
                 generateReport();
-                generateSpiderChart();
             }
         });
 
         document.addEventListener('visibilitychange', function() {
             if (!document.hidden && summaryPageElement && summaryPageElement.offsetParent !== null) {
                 generateReport();
-                generateSpiderChart();
             }
         });
     }
 
-    // Start initialization
     initializeReports();
 })();
 </script>
 
-// Include Chart.js library to the bottom so that it loads in Xerte correctly
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
