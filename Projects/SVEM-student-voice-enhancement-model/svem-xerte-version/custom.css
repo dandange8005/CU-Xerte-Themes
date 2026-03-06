@@ -1014,7 +1014,11 @@ details.selected-level {
 }
 
 .no-evidence {
-    color: #999;
+    color: var(--status-danger);
+}
+
+.section-report__evidence:has(.no-evidence) {
+    border-left-color: var(--status-danger);
 }
 
 /* Report Actions */

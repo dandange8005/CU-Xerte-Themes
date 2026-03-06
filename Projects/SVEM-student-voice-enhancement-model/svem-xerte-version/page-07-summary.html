@@ -300,11 +300,9 @@ function createSectionReportHTML(section, savedData) {
     const scoreClass = hasScore ? `level-${Math.floor(savedData.score)}` : 'not-scored';
     const scoreLabel = hasScore ? `Level ${savedData.score}` : 'Not Scored';
 
-    const evidenceHTML = hasScore
-        ? (savedData.note?.trim()
-            ? `<strong>Evidence:</strong><p>${escapeHTML(savedData.note).replace(/\n/g, '<br>')}</p>`
-            : `<em class="no-evidence">No evidence provided</em>`)
-        : '';
+    const evidenceHTML = savedData.note?.trim()
+        ? `<strong>Evidence:</strong><p>${escapeHTML(savedData.note).replace(/\n/g, '<br>')}</p>`
+        : (hasScore ? `<em class="no-evidence">No evidence provided</em>` : '');
 
     return `
         <div class="section-report">
@@ -574,7 +572,7 @@ function createVisibilityWatcher(element, callback) {
         generateSpiderChart();
 
         // Also run when page becomes visible (handles Xerte navigation)
-        const summaryPageElement = document.querySelector('.summary-page');
+        const summaryPageElement = document.querySelector('.theme-page-container');
         if (summaryPageElement) {
             const intervalId = createVisibilityWatcher(summaryPageElement, () => {
                 generateReport();

@@ -73,38 +73,27 @@
 <!-- Initialize themes overview - runs on page load AND when page becomes visible -->
 <script>
 (function() {
-    // Function to refresh themes overview
-    function refreshThemesOverview() {
-        if (typeof initThemesOverview === 'function') {
-            initThemesOverview();
-        }
-    }
-
     // Run on initial load
-    refreshThemesOverview();
+    initThemesOverview();
 
-    // Also run when page becomes visible (handles Xerte navigation)
-    // Check periodically if this page is visible
+    // Re-run only when page transitions from hidden to visible (handles Xerte navigation)
     const themesOverviewElement = document.querySelector('.themes-overview__actions');
     if (themesOverviewElement) {
-        const checkVisibility = setInterval(function() {
-            // Check if the themes overview is visible
-            const isVisible = themesOverviewElement.offsetParent !== null;
-
-            if (isVisible) {
-                refreshThemesOverview();
+        var lastVisible = false;
+        window._themesOverviewInterval = setInterval(function() {
+            var isVisible = themesOverviewElement.offsetParent !== null;
+            if (isVisible && !lastVisible) {
+                initThemesOverview();
             }
-        }, 500); // Check every 500ms
-
-        // Store interval ID so we can clear it if needed
-        window._themesOverviewInterval = checkVisibility;
+            lastVisible = isVisible;
+        }, 500);
     }
 
     // Alternative: Listen for focus/visibility events
-    window.addEventListener('focus', refreshThemesOverview);
+    window.addEventListener('focus', initThemesOverview);
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
-            refreshThemesOverview();
+            initThemesOverview();
         }
     });
 })();

@@ -53,18 +53,6 @@ function getAllSectionKeys() {
 
 // Initialize when page content is loaded in Xerte
 function initSVEMPage(sectionIds) {
-    // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            loadAllSections(sectionIds);
-        });
-    } else {
-        loadAllSections(sectionIds);
-    }
-}
-
-// Load all sections for a page
-function loadAllSections(sectionIds) {
     if (Array.isArray(sectionIds)) {
         sectionIds.forEach(sectionId => loadSavedData(sectionId));
     }
@@ -290,10 +278,7 @@ function confirmReset() {
     closeResetModal();
     showToast('All data has been reset');
 
-    // Refresh UI
-    if (typeof initThemesOverview === 'function') {
-        setTimeout(initThemesOverview, CONFIG.CHART_INIT_RETRY);
-    }
+    setTimeout(initThemesOverview, CONFIG.CHART_INIT_RETRY);
 
     setTimeout(() => location.reload(), CONFIG.RELOAD_DELAY);
 }
@@ -320,8 +305,6 @@ function importSections(dataToImport) {
     let importCount = 0;
 
     Object.entries(dataToImport).forEach(([key, value]) => {
-        if (key === 'metadata' || key === 'assessmentData') return;
-
         const sectionId = key.replace(/^sv_/, '');
         let data = typeof value === 'string' ? JSON.parse(value) : value;
 
@@ -387,7 +370,7 @@ function navigateToThemesOverview(delay = 0) {
         }
     };
 
-    delay > 0 ? setTimeout(navigate, delay) : navigate();
+    setTimeout(navigate, delay);
 }
 
 // Save and continue to themes overview
@@ -409,4 +392,14 @@ function saveAndContinue() {
 function backToMenu() {
     navigateToThemesOverview();
 }
+
+// ========================================
+// Accordion: one level open at a time
+// ========================================
+$(document).on('click', '.level-group details summary', function() {
+    var $details = $(this).closest('details');
+    if (!$details.prop('open')) {
+        $details.siblings('details').removeAttr('open');
+    }
+});
 
