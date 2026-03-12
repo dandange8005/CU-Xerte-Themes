@@ -70,6 +70,15 @@
 </div>
 
 
+<script>
+// Dark mode init
+$(function () {
+  if (localStorage.getItem('svem-dark-mode') === 'dark') {
+    $('body').addClass('dark-mode');
+  }
+});
+</script>
+
 <!-- Initialize themes overview - runs on page load AND when page becomes visible -->
 <script>
 (function() {
