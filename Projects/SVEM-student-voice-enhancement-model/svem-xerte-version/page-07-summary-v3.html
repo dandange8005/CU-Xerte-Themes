@@ -486,6 +486,42 @@
     .sv2-theme-card { page-break-inside: avoid; }
     .sv2-two-col { page-break-inside: avoid; }
 }
+
+/* ============================================================
+   Dark Mode Overrides — sv2-* components
+   Fixes hardcoded light-mode hex values not covered by the
+   body.dark-mode token block in custom.css
+   ============================================================ */
+
+/* Status chips */
+body.dark-mode .sv2-status-chip.complete    { background: #1a2e1a; color: #86efac; border-color: #2a4a2a; }
+body.dark-mode .sv2-status-chip.in-progress { background: #2e2a14; color: #fcd34d; border-color: #4a3e1a; }
+
+/* Stat icon circles */
+body.dark-mode .sv2-stat-icon--blue  { background: #1a2040; color: #93b4fd; }
+body.dark-mode .sv2-stat-icon--green { background: #1a2e1a; color: #86efac; }
+body.dark-mode .sv2-stat-icon--amber { background: #2e2a14; color: #fcd34d; }
+body.dark-mode .sv2-stat-icon--red   { background: #2e1a1a; color: #fca5a5; }
+
+/* Level definition badges (left of each level-item row) */
+body.dark-mode .sv2-level-item--5 .sv2-level-num { background: #1a2040; color: #93b4fd; border-color: #2a3a6a; }
+body.dark-mode .sv2-level-item--4 .sv2-level-num { background: #1a2e1a; color: #86efac; border-color: #2a4a2a; }
+body.dark-mode .sv2-level-item--3 .sv2-level-num { background: #2e2a14; color: #fcd34d; border-color: #4a3e1a; }
+body.dark-mode .sv2-level-item--2 .sv2-level-num { background: #2e2018; color: #fdba74; border-color: #4a3020; }
+body.dark-mode .sv2-level-item--1 .sv2-level-num { background: #2e1a1a; color: #fca5a5; border-color: #4a2a2a; }
+
+/* Level badge pills (leaderboard badges in theme cards and stat card) */
+body.dark-mode .sv2-lb-1 { background: #2e1a1a; color: #fca5a5; border-color: #4a2a2a; }
+body.dark-mode .sv2-lb-2 { background: #2e2018; color: #fdba74; border-color: #4a3020; }
+body.dark-mode .sv2-lb-3 { background: #2e2a14; color: #fcd34d; border-color: #4a3e1a; }
+body.dark-mode .sv2-lb-4 { background: #1a2e1a; color: #86efac; border-color: #2a4a2a; }
+body.dark-mode .sv2-lb-5 { background: #1a2040; color: #93b4fd; border-color: #2a3a6a; }
+
+/* Theme card hover border — light value #d1d5db is illegible on dark bg */
+body.dark-mode .sv2-theme-card:hover { border-color: #4a4a4a; }
+
+/* Chart legend dash — rgba(0,0,0,0.25) is invisible on dark backgrounds */
+body.dark-mode .sv2-legend-dash { border-top-color: rgba(255,255,255,0.35); }
 </style>
 
 <!-- Keep .summary-page class so downloadReportHTML() selector still works -->
