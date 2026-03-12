@@ -69,3 +69,12 @@
     </div>
   </main>
 </div>
+
+<script>
+// Dark mode init
+$(function () {
+  if (localStorage.getItem('svem-dark-mode') === 'dark') {
+    $('body').addClass('dark-mode');
+  }
+});
+</script>
