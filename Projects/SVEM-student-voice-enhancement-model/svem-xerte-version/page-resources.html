@@ -14,7 +14,12 @@
     <section class="resources-section">
       <div class="section-header-wrapper">
         <h2>Resource Library</h2>
-        <p style="margin: var(--space-xs) 0 0; font-size: 0.9rem; color: var(--text-muted);">Filter by category using the buttons below, or click a column heading to sort.</p>
+        <p style="margin: var(--space-xs) 0 0; font-size: 0.9rem; color: var(--text-muted);">Search by keyword or filter by category using the buttons below.</p>
+      </div>
+
+      <div class="resources-search-wrapper">
+        <i class="fa-solid fa-magnifying-glass resources-search-icon" aria-hidden="true"></i>
+        <input type="search" id="resources-search" class="resources-search" placeholder="Search resources…" aria-label="Search resources">
       </div>
 
       <div class="resources-filter" id="resources-filter"></div>
@@ -54,7 +59,7 @@
           <tr>
             <td><span class="resource-category">1. Student Voice Roles, Structures and Training</span></td>
             <td>
-              <a class="resource-link" href="https://cf.sharepoint.com/:p:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/1.%20Student%20Voice%20Roles,%20Structures%20and%20Training/Student%20Voice%20Induction%20Slides.pptx?d=w1b4725eff87b4122954da8120566bad7&amp;csf=1&amp;web=1&amp;e=hDkOy1" target="_blank" rel="noopener noreferrer">Tips for getting students to notice your messages</a>
+              <a class="resource-link" href="https://cf.sharepoint.com/:b:/t/SVENTEST/IQABQdKHrjeaSZWUKeoSd8-jARfWoazqYbEqlSwmtTHwjWQ?e=qWpUuy" target="_blank" rel="noopener noreferrer">Tips for getting students to notice your messages</a>
             </td>
           </tr>
           <tr>
@@ -96,7 +101,7 @@
           <tr>
             <td><span class="resource-category">1. Student Voice Roles, Structures and Training</span></td>
             <td>
-              <a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/1.%20Student%20Voice%20Roles,%20Structures%20and%20Training/Focus%20Group%20Consent%20Form%20Non-Confidential%20Data.pdf?csf=1&amp;web=1&amp;e=Cv8JyL" target="_blank" rel="noopener noreferrer">Focus Group Consent Form Non-Confidential</a>
+              <a class="resource-link" href="https://cf.sharepoint.com/:w:/t/SVENTEST/IQAVXfTAwhkwSbo53MHDJkyvAby37qMIRBMQ97IH2FAZyzg?e=Y0Jnv8" target="_blank" rel="noopener noreferrer">Focus Group Consent Form Non-Confidential</a>
             </td>
           </tr>
           <tr>
@@ -126,7 +131,7 @@
           <tr>
             <td><span class="resource-category">2. Students in Educational Governance</span></td>
             <td>
-              <a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/2.%20Students%20in%20Governance/Review%20and%20Enhancement%20Template%20(Student%20Version).pdf?csf=1&amp;web=1&amp;e=AlddHT" target="_blank" rel="noopener noreferrer">Review and Enhancement Template (Student Version)</a>
+              <a class="resource-link" href="https://cf.sharepoint.com/:w:/t/SVENTEST/IQBMw_gfYGaMRqKo3C3dwEBtAclXhn8I8mRQNvgK6uzEJrk?e=U5Fb9H" target="_blank" rel="noopener noreferrer">Review and Enhancement Template (Student Version)</a>
             </td>
           </tr>
           <tr>
@@ -168,7 +173,7 @@
           <tr>
             <td><span class="resource-category">3. Student Representatives and Student Staff Panels</span></td>
             <td>
-              <a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/3.%20Student%20Representatives%20and%20Student%20Staff%20Panels/ENCAP%20Student%20Awards%202025.pdf?csf=1&amp;web=1&amp;e=OTF3ZA" target="_blank" rel="noopener noreferrer">ENCAP Student Awars</a>
+              <a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/3.%20Student%20Representatives%20and%20Student%20Staff%20Panels/ENCAP%20Student%20Awards%202025.pdf?csf=1&web=1&e=OTF3ZA" target="_blank" rel="noopener noreferrer">ENCAP Student Awards</a>
             </td>
           </tr>
           <tr>
@@ -240,7 +245,7 @@
           <tr>
             <td><span class="resource-category">6. NSS</span></td>
             <td>
-              <a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/6.%20National%20Student%20Survey/NSS%20Strategy%20and%20Promotion%20Plan%20with%20incentives%20CARBS%20Case%20Study.pdf?csf=1&web=1&e=x4mgaJ" target="_blank" rel="noopener noreferrer">NSS Strategy and Promotion Plan</a>
+              <a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/3.%20Student%20Representatives%20and%20Student%20Staff%20Panels/ENCAP%20Student%20Awards%202025.pdf?csf=1&web=1&e=OTF3ZA" target="_blank" rel="noopener noreferrer">NSS Strategy and Promotion Plan</a>
             </td>
           </tr>
           <tr>
@@ -365,12 +370,16 @@ $(function () {
         $filter.append('<button class="resource-filter-btn" data-filter="' + cat + '">' + cat + '</button>');
     });
 
-    // --- Filter logic ---
+    // --- Filter + search logic ---
     function applyFilter(filter) {
         activeFilter = filter;
+        var searchTerm = $('#resources-search').val().trim().toLowerCase();
         $('.resources-table tbody tr').each(function () {
             var cat = $(this).find('td:first .resource-category').text().trim();
-            $(this).toggle(filter === 'all' || cat === filter);
+            var resourceText = $(this).find('td:last').text().trim().toLowerCase();
+            var matchesFilter = (filter === 'all' || cat === filter);
+            var matchesSearch = (searchTerm === '' || resourceText.indexOf(searchTerm) !== -1 || cat.toLowerCase().indexOf(searchTerm) !== -1);
+            $(this).toggle(matchesFilter && matchesSearch);
         });
     }
 
@@ -378,6 +387,10 @@ $(function () {
         $('.resource-filter-btn').removeClass('active');
         $(this).addClass('active');
         applyFilter($(this).data('filter'));
+    });
+
+    $('#resources-search').on('input', function () {
+        applyFilter(activeFilter);
     });
 
     // --- Sort logic ---
