@@ -77,6 +77,13 @@ function saveNote(sectionId, note) {
     }
 }
 
+// Save "I'm unsure" flag
+function saveUnsure(sectionId, isUnsure) {
+    const data = getSectionData(sectionId);
+    data.unsure = isUnsure;
+    setSectionData(sectionId, data);
+}
+
 // Update section UI after scoring
 function updateSectionUI(sectionId, score, clickedBtn) {
     const section = document.getElementById(sectionId);
@@ -138,6 +145,12 @@ function loadSavedData(sectionId) {
     if (saved.note) {
         const textarea = document.getElementById(`evidence-${sectionId}`);
         if (textarea) textarea.value = saved.note;
+    }
+
+    // Load unsure checkbox state if present
+    const unsureCheckbox = document.getElementById(`unsure-${sectionId}`);
+    if (unsureCheckbox && saved.unsure) {
+        unsureCheckbox.checked = true;
     }
 }
 
@@ -310,7 +323,8 @@ function importSections(dataToImport) {
 
         const importValue = {
             score: data.score || 0,
-            note: data.note || data.evidence || ''
+            note: data.note || data.evidence || '',
+            unsure: data.unsure || false
         };
 
         if (setSectionData(sectionId, importValue)) {

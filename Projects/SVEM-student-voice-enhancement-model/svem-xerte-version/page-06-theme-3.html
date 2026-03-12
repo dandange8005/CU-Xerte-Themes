@@ -194,6 +194,9 @@
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
         <textarea class="evidence-input" id="evidence-mme" onchange="saveNote('mme', this.value)" placeholder="Example: Most module teams conduct MME surveys mid-semester. We share results with students and implement changes where possible..."></textarea>
+        <div class="evidence-unsure">
+          <label><input type="checkbox" id="unsure-mme" onchange="saveUnsure('mme', this.checked)" /> I'm not confident in my self-reflection for this area</label>
+        </div>
       </div>
     </section>
     <!-- SUBSECTION 2: End of Module Enhancement -->
@@ -329,6 +332,9 @@
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
         <textarea class="evidence-input" id="evidence-me" onchange="saveNote('me', this.value)" placeholder="Example: We review all ME survey data at programme level. Module leaders discuss results in team meetings and implement action plans..."></textarea>
+        <div class="evidence-unsure">
+          <label><input type="checkbox" id="unsure-me" onchange="saveUnsure('me', this.checked)" /> I'm not confident in my self-reflection for this area</label>
+        </div>
       </div>
     </section>
     <!-- SUBSECTION 3: National Student Survey (NSS) -->
@@ -461,6 +467,9 @@
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
         <textarea class="evidence-input" id="evidence-nss" onchange="saveNote('nss', this.value)" placeholder="Example: We promote NSS participation through multiple channels. Results are discussed at ESEC and shared with students via newsletters..."></textarea>
+        <div class="evidence-unsure">
+          <label><input type="checkbox" id="unsure-nss" onchange="saveUnsure('nss', this.checked)" /> I'm not confident in my self-reflection for this area</label>
+        </div>
       </div>
     </section>
     <!-- SUBSECTION 4: CUPTS -->
@@ -585,6 +594,9 @@
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
         <textarea class="evidence-input" id="evidence-cupts" onchange="saveNote('cupts', this.value)" placeholder="Example: We promote CUPTS to all PGT students. Results are reviewed at programme committees and shared with PGT representatives..."></textarea>
+        <div class="evidence-unsure">
+          <label><input type="checkbox" id="unsure-cupts" onchange="saveUnsure('cupts', this.checked)" /> I'm not confident in my self-reflection for this area</label>
+        </div>
       </div>
     </section>
     <!-- SUBSECTION 5: PRES -->
@@ -709,6 +721,9 @@
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
         <textarea class="evidence-input" id="evidence-pres" onchange="saveNote('pres', this.value)" placeholder="Example: We promote PRES to all PGR students. Results are reviewed at research committees and shared with PGR representatives..."></textarea>
+        <div class="evidence-unsure">
+          <label><input type="checkbox" id="unsure-pres" onchange="saveUnsure('pres', this.checked)" /> I'm not confident in my self-reflection for this area</label>
+        </div>
       </div>
     </section>
     <!-- Navigation -->

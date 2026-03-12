@@ -44,8 +44,8 @@
     /* === Status Colors (using Open Props) === */
     --status-success: var(--green-7);
     --status-success-light: var(--green-1);
-    --status-warning: var(--orange-7);
-    --status-warning-light: var(--yellow-1);
+    --status-warning: var(--orange-5);
+    --status-warning-light: #fff9dd;
     --status-danger: var(--red-9);
     --status-danger-light: var(--red-0);
 
@@ -807,6 +807,27 @@ details.selected-level {
 .evidence-input:focus {
     outline: none;
     border-color: var(--cu-brand-blue);
+}
+
+.evidence-unsure {
+    margin-top: var(--space-sm);
+}
+
+.evidence-unsure label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.evidence-unsure input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    margin: 0;
 }
 
 /* --- Page Navigation (prev/next buttons) --- */

@@ -197,6 +197,9 @@
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
         <textarea class="evidence-input" id="evidence-roles" onchange="saveNote('roles', this.value)" placeholder="Example: We have a designated SRC, SSC and SEL in place. Student Voice roles meet monthly and we use the Enhancement Model to identify priorities. We are working towards a more consistent handover process..."></textarea>
+        <div class="evidence-unsure">
+          <label><input type="checkbox" id="unsure-roles" onchange="saveUnsure('roles', this.checked)" /> I'm not confident in my self-reflection for this area</label>
+        </div>
       </div>
     </section>
 
@@ -359,6 +362,9 @@
           <em>Be as specific as possible - this context helps us generate tailored recommendations for your school.</em>
         </p>
         <textarea class="evidence-input" id="evidence-training" onchange="saveNote('training', this.value)" placeholder="Example: Student Reps attend our BoS and ESEC meetings. We hold a pre-meeting briefing session and the Chair formally introduces Reps at the start. Our RE action plans draw on SSP and survey data, and we share updates with Reps throughout the year..."></textarea>
+        <div class="evidence-unsure">
+          <label><input type="checkbox" id="unsure-training" onchange="saveUnsure('training', this.checked)" /> I'm not confident in my self-reflection for this area</label>
+        </div>
       </div>
     </section>
     <!-- Navigation -->

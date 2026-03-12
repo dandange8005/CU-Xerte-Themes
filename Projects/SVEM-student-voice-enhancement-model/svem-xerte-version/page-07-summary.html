@@ -1,376 +1,489 @@
 <-- Summary Page for SVEM Self-Assessment Tool -->
-<style>
-/* sv2- dashboard components: header + stats row */
+    <style>
+        /* sv2- dashboard components: header + stats row */
 
-.sv2-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-xl);
-    padding-bottom: var(--space-lg);
-    border-bottom: 2px solid var(--border-light);
-}
+        .sv2-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-lg);
+            border-bottom: 2px solid var(--border-light);
+        }
 
-.sv2-header h2 {
-    margin: 0;
-    font-size: clamp(1.4rem, 3vw, 1.9rem);
-    color: var(--cu-brand-blue);
-}
+        .sv2-header h2 {
+            margin: 0;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            color: var(--cu-brand-blue);
+        }
 
-.sv2-header p {
-    margin: 4px 0 0;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
+        .sv2-header p {
+            margin: 4px 0 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
 
-.sv2-header-meta {
-    text-align: right;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
-    flex-shrink: 0;
-}
+        .sv2-header-meta {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            flex-shrink: 0;
+        }
 
-.sv2-status-chip {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    background: var(--bg-gray);
-    color: var(--text-muted);
-    border: 1px solid var(--border-light);
-}
+        .sv2-status-chip {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            background: var(--bg-gray);
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+        }
 
-.sv2-status-chip.complete    { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
-.sv2-status-chip.in-progress { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+        .sv2-status-chip.complete {
+            background: #d1fae5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
 
-.sv2-stats-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-md);
-    margin-bottom: var(--space-xl);
-}
+        .sv2-status-chip.in-progress {
+            background: #fef3c7;
+            color: #92400e;
+            border-color: #fde68a;
+        }
 
-.sv2-stat-card {
-    background: var(--bg-white);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-sm);
-    padding: var(--space-md) var(--space-lg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
-}
+        .sv2-stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
 
-.sv2-stat-label {
-    font-size: 0.68rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-}
+        .sv2-stat-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-sm);
+        }
 
-.sv2-stat-value {
-    font-size: 1.65rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.1;
-    margin: 3px 0 2px;
-}
+        .sv2-stat-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
 
-.sv2-stat-value--sm {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.3;
-    margin: 3px 0 2px;
-}
+        .sv2-stat-value {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+            margin: 3px 0 2px;
+        }
 
-.sv2-stat-sub {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    min-height: 1em;
-}
+        .sv2-stat-value--sm {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin: 3px 0 2px;
+        }
 
-.sv2-stat-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-}
+        .sv2-stat-sub {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            min-height: 1em;
+        }
 
-.sv2-stat-icon--blue  { background: #eff6ff; color: #3b82f6; }
-.sv2-stat-icon--green { background: #f0fdf4; color: #22c55e; }
-.sv2-stat-icon--amber { background: #fffbeb; color: #f59e0b; }
-.sv2-stat-icon--red   { background: #fef2f2; color: var(--cu-brand-red, #d3374a); }
+        .sv2-stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
 
-.sv2-level-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 3px 8px;
-    border-radius: 9999px;
-    font-weight: 600;
-    white-space: nowrap;
-}
+        .sv2-stat-icon--blue {
+            background: #eff6ff;
+            color: #3b82f6;
+        }
 
-.sv2-lb-0 { background: var(--bg-gray);  color: var(--text-muted);  border: 1px solid var(--border-light); }
-.sv2-lb-1 { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
-.sv2-lb-2 { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
-.sv2-lb-3 { background: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
-.sv2-lb-4 { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-.sv2-lb-5 { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+        .sv2-stat-icon--green {
+            background: #f0fdf4;
+            color: #22c55e;
+        }
 
-@media (max-width: 860px) {
-    .sv2-stats-row { grid-template-columns: repeat(2, 1fr); }
-}
+        .sv2-stat-icon--amber {
+            background: #fffbeb;
+            color: #f59e0b;
+        }
 
-@media (max-width: 560px) {
-    .sv2-header { flex-direction: column; gap: var(--space-md); }
-    .sv2-header-meta { align-items: flex-start; text-align: left; }
-    .sv2-stats-row { grid-template-columns: 1fr 1fr; }
-    .sv2-stat-value { font-size: 1.3rem; }
-}
+        .sv2-stat-icon--red {
+            background: #fef2f2;
+            color: var(--cu-brand-red, #d3374a);
+        }
 
-</style>
+        .sv2-level-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 9999px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
 
-<!-- Summary Page Content -->
+        .sv2-lb-0 {
+            background: var(--bg-gray);
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+        }
 
-<div class="theme-page-container">
-  <main class="main-content">
-  <!-- Report Header -->
-  <div class="sv2-header">
-    <div>
-      <h2>Self-Assessment Report</h2>
-      <p>Student Voice Enhancement Model &mdash; Cardiff University</p>
+        .sv2-lb-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .sv2-lb-2 {
+            background: #fff7ed;
+            color: #9a3412;
+            border: 1px solid #fed7aa;
+        }
+
+        .sv2-lb-3 {
+            background: #fefce8;
+            color: #854d0e;
+            border: 1px solid #fef08a;
+        }
+
+        .sv2-lb-4 {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .sv2-lb-5 {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+
+        .sv2-unsure-flag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #92400e;
+            background: #fef3c7;
+            border: 1px solid #fde68a;
+            border-radius: 9999px;
+            padding: 2px 8px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 860px) {
+            .sv2-stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .sv2-header {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .sv2-header-meta {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .sv2-stats-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .sv2-stat-value {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+
+    <!-- Summary Page Content -->
+
+    <div class="theme-page-container">
+        <main class="main-content">
+            <!-- Report Header -->
+            <div class="sv2-header">
+                <div>
+                    <h2>Self-Assessment Report</h2>
+                    <p>Student Voice Enhancement Model &mdash; Cardiff University</p>
+                </div>
+                <div class="sv2-header-meta">
+                    <span>Date: <strong id="report-date"></strong></span>
+                    <span class="sv2-status-chip" id="report-status">Not Started</span>
+                </div>
+            </div>
+            <!-- Stats Row -->
+            <div class="sv2-stats-row">
+                <div class="sv2-stat-card">
+                    <div>
+                        <div class="sv2-stat-label">Completed</div>
+                        <div class="sv2-stat-value">
+                            <span id="completed-count">0</span><span
+                                style="font-size:1rem;font-weight:400;color:var(--text-muted)">/8</span>
+                        </div>
+                        <div class="sv2-stat-sub">sections</div>
+                    </div>
+                    <div class="sv2-stat-icon sv2-stat-icon--blue">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                </div>
+                <div class="sv2-stat-card">
+                    <div>
+                        <div class="sv2-stat-label">Progress</div>
+                        <div class="sv2-stat-value" id="completion-percent">0%</div>
+                        <div class="sv2-stat-sub">overall</div>
+                    </div>
+                    <div class="sv2-stat-icon sv2-stat-icon--green">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                </div>
+                <div class="sv2-stat-card">
+                    <div>
+                        <div class="sv2-stat-label">Average Level</div>
+                        <div class="sv2-stat-value" id="average-score">—</div>
+                        <div class="sv2-stat-sub" id="average-level-name">&nbsp;</div>
+                    </div>
+                    <div class="sv2-stat-icon sv2-stat-icon--amber">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                </div>
+                <div class="sv2-stat-card">
+                    <div style="min-width:0;flex:1;">
+                        <div class="sv2-stat-label">Highest Area</div>
+                        <div class="sv2-stat-value--sm" id="highest-area">—</div>
+                        <div class="sv2-stat-sub" id="highest-area-badge">&nbsp;</div>
+                    </div>
+                    <div class="sv2-stat-icon sv2-stat-icon--red">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Report Body -->
+            <div id="report-body"><!-- Content will be generated by JavaScript --></div>
+            <!-- Actions for You -->
+            <section>
+                <div class="section-header-wrapper">
+                    <h2>Actions for You</h2>
+                </div>
+                <div class="intro-sections-grid">
+
+                    <section class="intro-card">
+                        <i class="intro-card__icon fa-solid fa-file-arrow-down"></i>
+                        <h3 class="intro-card__heading">Download your report</h3>
+                        <p>Save a copy of your self-reflection for your own records. You can print this or share it with
+                            colleagues.</p>
+                        <div
+                            style="display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-sm); margin-top: var(--space-sm);">
+                            <button class="btn btn-light btn-sm" onclick="downloadReportHTML(this); return false;"
+                                type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Report
+                                (HTML)</button>
+                            <button class="btn btn-light btn-sm" onclick="backToMenu(); return false;" type="button"><i
+                                    class="fa-solid fa-pen-to-square"></i> Continue Editing</button>
+                        </div>
+                    </section>
+
+                    <section class="intro-card" style="border-top-color: var(--cu-gold);">
+                        <i class="intro-card__icon fa-solid fa-paper-plane"></i>
+                        <h3 class="intro-card__heading">Share your data with us</h3>
+                        <p>To receive a tailored Enhancement Plan, send your assessment data to the Student Voice and
+                            Partnership Team:</p>
+                        <ol
+                            style="margin: var(--space-sm) 0 var(--space-sm) 1.25rem; font-size: 0.9rem; line-height: 1.7;">
+                            <li><strong>Download</strong> your assessment data file using the button below.</li>
+                            <li><strong>Attach</strong> the downloaded file to an email.</li>
+                            <li><strong>Send</strong> it to <a
+                                    href="mailto:LTAcademy@cardiff.ac.uk">LTAcademy@cardiff.ac.uk</a> — the team will
+                                return a tailored plan within <strong>2 weeks</strong>.</li>
+                        </ol>
+                        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-sm);">
+                            <button class="btn btn-light btn-sm" onclick="downloadJSON(); return false;"
+                                type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Assessment
+                                Data</button>
+                        </div>
+                    </section>
+
+                </div>
+            </section>
+            <!-- Resources Teaser -->
+            <section>
+                <div class="section-header-wrapper">
+                    <h2><i class="fa-solid fa-book-open"></i> Helpful Resources</h2>
+                </div>
+                <div class="intro-card next-steps-card next-steps-card--blue">
+                    <p>Supporting documents and guides to help you develop Student Voice practice in your School.</p>
+                    <p><a class="resource-link"
+                            href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/1.%20Student%20Voice%20Roles,%20Structures%20and%20Training/Case%20study%20-%20school%20collaboration%20on%20events.pdf?csf=1&amp;web=1&amp;e=jhta18"
+                            target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Case
+                            studies — school collaboration on events</a></p>
+                    <p><a class="resource-link"
+                            href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/3.%20Student%20Representatives%20and%20Student%20Staff%20Panels/Empowering%20Your%20Student%20Academic%20Reps.pdf?csf=1&amp;web=1&amp;e=7qLFTr"
+                            target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Empowering
+                            Your Student Academic Reps</a></p>
+                    <p><a class="resource-link"
+                            href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/4.%20Mid%20Module%20Enhancement/Mid-Module%20Enhancement%20Guidance%20and%20Advice.pdf?csf=1&amp;web=1&amp;e=O1j1KZ"
+                            target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Mid-Module
+                            Enhancement Guidance and Advice</a></p>
+                    <p><a class="resource-link"
+                            href="https://cf.sharepoint.com/:p:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/1.%20Student%20Voice%20Roles,%20Structures%20and%20Training/Student%20Voice%20Induction%20Slides.pptx?d=w1b4725eff87b4122954da8120566bad7&amp;csf=1&amp;web=1&amp;e=hDkOy1"
+                            target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Student
+                            Voice Induction Slides</a></p>
+                    <button class="btn btn-light btn-sm" href="#"
+                        onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1770647401918'}); return false;">View all
+                        resources <i class="fa-solid fa-arrow-right"></i> </button>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="page-navigation">
+                <button class="btn btn-light"
+                    onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1765898999143'}); return false;"
+                    type="button">&larr; Back to Themes
+                </button>
+            </div>
+        </main>
     </div>
-    <div class="sv2-header-meta">
-      <span>Date: <strong id="report-date"></strong></span>
-      <span class="sv2-status-chip" id="report-status">Not Started</span>
+    <!-- Toast Notification -->
+    <div id="toast">Report Generated
     </div>
-  </div>
-  <!-- Stats Row -->
-  <div class="sv2-stats-row">
-    <div class="sv2-stat-card">
-      <div>
-        <div class="sv2-stat-label">Completed</div>
-        <div class="sv2-stat-value">
-          <span id="completed-count">0</span><span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/8</span>
-        </div>
-        <div class="sv2-stat-sub">sections</div>
-      </div>
-      <div class="sv2-stat-icon sv2-stat-icon--blue">
-        <i class="fa-solid fa-list-check"></i>
-      </div>
-    </div>
-    <div class="sv2-stat-card">
-      <div>
-        <div class="sv2-stat-label">Progress</div>
-        <div class="sv2-stat-value" id="completion-percent">0%</div>
-        <div class="sv2-stat-sub">overall</div>
-      </div>
-      <div class="sv2-stat-icon sv2-stat-icon--green">
-        <i class="fa-solid fa-chart-pie"></i>
-      </div>
-    </div>
-    <div class="sv2-stat-card">
-      <div>
-        <div class="sv2-stat-label">Average Level</div>
-        <div class="sv2-stat-value" id="average-score">—</div>
-        <div class="sv2-stat-sub" id="average-level-name">&nbsp;</div>
-      </div>
-      <div class="sv2-stat-icon sv2-stat-icon--amber">
-        <i class="fa-solid fa-gauge-high"></i>
-      </div>
-    </div>
-    <div class="sv2-stat-card">
-      <div style="min-width:0;flex:1;">
-        <div class="sv2-stat-label">Highest Area</div>
-        <div class="sv2-stat-value--sm" id="highest-area">—</div>
-        <div class="sv2-stat-sub" id="highest-area-badge">&nbsp;</div>
-      </div>
-      <div class="sv2-stat-icon sv2-stat-icon--red">
-        <i class="fa-solid fa-trophy"></i>
-      </div>
-    </div>
-  </div>
-  <!-- Report Body -->
-  <div id="report-body"><!-- Content will be generated by JavaScript --></div>
-  <!-- Actions for You -->
-  <section>
-    <div class="section-header-wrapper">
-      <h2>Actions for You</h2>
-    </div>
-    <div class="intro-sections-grid">
-
-      <section class="intro-card">
-        <i class="intro-card__icon fa-solid fa-file-arrow-down"></i>
-        <h3 class="intro-card__heading">Download your report</h3>
-        <p>Save a copy of your self-reflection for your own records. You can print this or share it with colleagues.</p>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-sm); margin-top: var(--space-sm);">
-          <button class="btn btn-light btn-sm" onclick="downloadReportHTML(this); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Report (HTML)</button>
-          <button class="btn btn-light btn-sm" onclick="backToMenu(); return false;" type="button"><i class="fa-solid fa-pen-to-square"></i> Continue Editing</button>
-        </div>
-      </section>
-
-      <section class="intro-card" style="border-top-color: var(--cu-gold);">
-        <i class="intro-card__icon fa-solid fa-paper-plane"></i>
-        <h3 class="intro-card__heading">Share your data with us</h3>
-        <p>To receive a tailored Enhancement Plan, send your assessment data to the Student Voice and Partnership Team:</p>
-        <ol style="margin: var(--space-sm) 0 var(--space-sm) 1.25rem; font-size: 0.9rem; line-height: 1.7;">
-          <li><strong>Download</strong> your assessment data file using the button below.</li>
-          <li><strong>Attach</strong> the downloaded file to an email.</li>
-          <li><strong>Send</strong> it to <a href="mailto:LTAcademy@cardiff.ac.uk">LTAcademy@cardiff.ac.uk</a> — the team will return a tailored plan within <strong>2 weeks</strong>.</li>
-        </ol>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-sm);">
-          <button class="btn btn-light btn-sm" onclick="downloadJSON(); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Assessment Data</button>
-        </div>
-      </section>
-
-    </div>
-  </section>
-  <!-- Resources Teaser -->
-  <section>
-    <div class="section-header-wrapper">
-      <h2><i class="fa-solid fa-book-open"></i> Helpful Resources</h2>
-    </div>
-    <div class="intro-card next-steps-card next-steps-card--blue">
-      <p>Supporting documents and guides to help you develop Student Voice practice in your School.</p>
-      <p><a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/1.%20Student%20Voice%20Roles,%20Structures%20and%20Training/Case%20study%20-%20school%20collaboration%20on%20events.pdf?csf=1&amp;web=1&amp;e=jhta18" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Case studies — school collaboration on events</a></p>
-      <p><a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/3.%20Student%20Representatives%20and%20Student%20Staff%20Panels/Empowering%20Your%20Student%20Academic%20Reps.pdf?csf=1&amp;web=1&amp;e=7qLFTr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Empowering Your Student Academic Reps</a></p>
-      <p><a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/4.%20Mid%20Module%20Enhancement/Mid-Module%20Enhancement%20Guidance%20and%20Advice.pdf?csf=1&amp;web=1&amp;e=O1j1KZ" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Mid-Module Enhancement Guidance and Advice</a></p>
-      <p><a class="resource-link" href="https://cf.sharepoint.com/:p:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(English)/1.%20Student%20Voice%20Roles,%20Structures%20and%20Training/Student%20Voice%20Induction%20Slides.pptx?d=w1b4725eff87b4122954da8120566bad7&amp;csf=1&amp;web=1&amp;e=hDkOy1" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-lines"></i> Student Voice Induction Slides</a></p>
-       <button class="btn btn-light btn-sm" href="#" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1770647401918'}); return false;">View all resources <i class="fa-solid fa-arrow-right"></i> </button>
-    </div>
-  </section>
-
-  <!-- Navigation -->
-  <div class="page-navigation">
-    <button class="btn btn-light" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1765898999143'}); return false;" type="button">&larr; Back to Themes
-    </button>
-    <button class="btn btn-primary" onclick="x_navigateToPage(false,{type:'linkID',ID:'[next]'}); return false;" type="button">Next Steps &rarr;
-    </button>
-  </main>
-</div>
-<!-- Toast Notification -->
-<div id="toast">Report Generated
-</div>
 
 
 
 
-<-- script for generating report from localStorage data and handling actions on the summary page -->
-<script>
-// Summary Page JavaScript
-// Generates report from localStorage data
+    <-- script for generating report from localStorage data and handling actions on the summary page -->
+        <script>
+            // Summary Page JavaScript
+            // Generates report from localStorage data
 
-// Configuration Constants (shared with scoring-xerte.js)
-const CONFIG = {
-    STORAGE_PREFIX: 'sv_',
-    THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
-    TOAST_DURATION: 2000,
-    NAVIGATION_DELAY: 500,
-    RELOAD_DELAY: 1500,
-    VISIBILITY_CHECK_INTERVAL: 500,
-    CHART_INIT_RETRY: 100
-};
+            // Configuration Constants (shared with scoring-xerte.js)
+            const CONFIG = {
+                STORAGE_PREFIX: 'sv_',
+                THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
+                TOAST_DURATION: 2000,
+                NAVIGATION_DELAY: 500,
+                RELOAD_DELAY: 1500,
+                VISIBILITY_CHECK_INTERVAL: 500,
+                CHART_INIT_RETRY: 100
+            };
 
-// LocalStorage Utility Functions (shared with scoring-xerte.js)
-function getSectionData(sectionId) {
-    try {
-        const data = localStorage.getItem(`${CONFIG.STORAGE_PREFIX}${sectionId}`);
-        return data ? JSON.parse(data) : { score: 0, note: '' };
-    } catch (e) {
-        console.error(`Error reading section ${sectionId}:`, e);
-        return { score: 0, note: '' };
-    }
-}
+            // LocalStorage Utility Functions (shared with scoring-xerte.js)
+            function getSectionData(sectionId) {
+                try {
+                    const data = localStorage.getItem(`${CONFIG.STORAGE_PREFIX}${sectionId}`);
+                    return data ? JSON.parse(data) : { score: 0, note: '' };
+                } catch (e) {
+                    console.error(`Error reading section ${sectionId}:`, e);
+                    return { score: 0, note: '' };
+                }
+            }
 
-// Short display names for the Highest Area stat card
-const SECTION_SHORT_DISPLAY = {
-    'roles': 'Roles & Structures', 'training': 'Governance',
-    'reps-ssps': 'Reps & SSPs', 'mme': 'Mid-Module', 'me': 'End of Module',
-    'nss': 'NSS', 'cupts': 'CUPTS', 'pres': 'PRES'
-};
+            // Short display names for the Highest Area stat card
+            const SECTION_SHORT_DISPLAY = {
+                'roles': 'Roles & Structures', 'training': 'Governance',
+                'reps-ssps': 'Reps & SSPs', 'mme': 'Mid-Module', 'me': 'End of Module',
+                'nss': 'NSS', 'cupts': 'CUPTS', 'pres': 'PRES'
+            };
 
-// Section configuration
-const SECTIONS = {
-    'Theme 1: Structures Supporting Student Voice': {
-        sections: [
-            { id: 'roles', name: 'Student Voice Roles, Structures and Training' },
-            { id: 'training', name: 'Students in Governance' }
-        ]
-    },
-    'Theme 2: Student Reps and SSPs': {
-        sections: [
-            { id: 'reps-ssps', name: 'Student Reps and Student-Staff Panels' }
-        ]
-    },
-    'Theme 3: Formal Mechanisms': {
-        sections: [
-            { id: 'mme', name: 'Mid-Module Enhancement' },
-            { id: 'me', name: 'End of Module Enhancement' },
-            { id: 'nss', name: 'National Student Survey (NSS)' },
-            { id: 'cupts', name: 'Postgraduate Taught Survey (CUPTS)' },
-            { id: 'pres', name: 'Postgraduate Research Experience Survey (PRES)' }
-        ]
-    }
-};
+            // Section configuration
+            const SECTIONS = {
+                'Theme 1: Structures Supporting Student Voice': {
+                    sections: [
+                        { id: 'roles', name: 'Student Voice Roles, Structures and Training' },
+                        { id: 'training', name: 'Students in Governance' }
+                    ]
+                },
+                'Theme 2: Student Reps and SSPs': {
+                    sections: [
+                        { id: 'reps-ssps', name: 'Student Reps and Student-Staff Panels' }
+                    ]
+                },
+                'Theme 3: Formal Mechanisms': {
+                    sections: [
+                        { id: 'mme', name: 'Mid-Module Enhancement' },
+                        { id: 'me', name: 'End of Module Enhancement' },
+                        { id: 'nss', name: 'National Student Survey (NSS)' },
+                        { id: 'cupts', name: 'Postgraduate Taught Survey (CUPTS)' },
+                        { id: 'pres', name: 'Postgraduate Research Experience Survey (PRES)' }
+                    ]
+                }
+            };
 
 
-// Escape HTML to prevent injection when rendering evidence text
-function escapeHTML(str) {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
+            // Escape HTML to prevent injection when rendering evidence text
+            function escapeHTML(str) {
+                return str
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
 
-// Get maturity level name
-function getMaturityLevelName(score) {
-    if (!score) return 'Not Scored';
-    const level = Math.floor(score);
-    const isTransitional = score % 1 !== 0;
+            // Get maturity level name
+            function getMaturityLevelName(score) {
+                if (!score) return 'Not Scored';
+                const level = Math.floor(score);
+                const isTransitional = score % 1 !== 0;
 
-    const levels = {
-        1: 'Moving towards Baseline',
-        2: 'Baseline Practice',
-        3: 'Emerging Good Practice',
-        4: 'Established Strong Practice',
-        5: 'Exceptional Practice'
-    };
+                const levels = {
+                    1: 'Moving towards Baseline',
+                    2: 'Baseline Practice',
+                    3: 'Emerging Good Practice',
+                    4: 'Established Strong Practice',
+                    5: 'Exceptional Practice'
+                };
 
-    if (isTransitional) {
-        return `Transitioning (${levels[level]} → ${levels[level + 1]})`;
-    }
-    return levels[level];
-}
+                if (isTransitional) {
+                    return `Transitioning (${levels[level]} → ${levels[level + 1]})`;
+                }
+                return levels[level];
+            }
 
-// Create section report HTML
-function createSectionReportHTML(section, savedData) {
-    const hasScore = savedData && savedData.score;
-    const levelName = hasScore ? getMaturityLevelName(savedData.score) : 'Not Scored';
+            // Create section report HTML
+            function createSectionReportHTML(section, savedData) {
+                const hasScore = savedData && savedData.score;
+                const levelName = hasScore ? getMaturityLevelName(savedData.score) : 'Not Scored';
+                const isUnsure = !!(savedData && savedData.unsure);
 
-    const evidenceHTML = savedData.note?.trim()
-        ? `<strong>Evidence:</strong><p>${escapeHTML(savedData.note).replace(/\n/g, '<br>')}</p>`
-        : (hasScore ? `<em class="no-evidence">No evidence provided</em>` : '');
+                const evidenceHTML = savedData.note?.trim()
+                    ? `<strong>Evidence:</strong><p>${escapeHTML(savedData.note).replace(/\n/g, '<br>')}</p>`
+                    : (hasScore ? `<em class="no-evidence">No evidence provided</em>` : '');
 
-    const levelNum = hasScore ? Math.floor(savedData.score) : 0;
-    const badge = hasScore
-        ? `<span class="sv2-level-badge sv2-lb-${levelNum}">Level ${savedData.score}</span>`
-        : `<span class="sv2-level-badge sv2-lb-0">Not Scored</span>`;
+                const levelNum = hasScore ? Math.floor(savedData.score) : 0;
+                const badge = hasScore
+                    ? `<span class="sv2-level-badge sv2-lb-${levelNum}">Level ${savedData.score}</span>`
+                    : `<span class="sv2-level-badge sv2-lb-0">Not Scored</span>`;
 
-    return `
+                const unsureHTML = isUnsure
+                    ? `<span class="sv2-unsure-flag"><i class="fa-solid fa-circle-question"></i> Not confident in this score</span>`
+                    : '';
+
+                return `
         <div class="section-report">
             <div class="section-report__header">
                 <h4 class="section-report__name">${section.name}</h4>
@@ -379,124 +492,125 @@ function createSectionReportHTML(section, savedData) {
                     ${hasScore ? `<span class="maturity-level">${levelName}</span>` : ''}
                 </div>
             </div>
+            ${unsureHTML}
             ${evidenceHTML ? `<div class="section-report__evidence">${evidenceHTML}</div>` : ''}
         </div>
     `;
-}
+            }
 
-// Update statistics display
-function updateStatistics(stats) {
-    // Completed count
-    document.getElementById('completed-count').textContent = stats.completed;
+            // Update statistics display
+            function updateStatistics(stats) {
+                // Completed count
+                document.getElementById('completed-count').textContent = stats.completed;
 
-    // Overall progress %
-    const completionPercent = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
-    document.getElementById('completion-percent').textContent = `${completionPercent}%`;
+                // Overall progress %
+                const completionPercent = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
+                document.getElementById('completion-percent').textContent = `${completionPercent}%`;
 
-    // Average level
-    const avgEl = document.getElementById('average-score');
-    const avgNameEl = document.getElementById('average-level-name');
-    if (stats.scored > 0) {
-        const avg = parseFloat((stats.totalScore / stats.scored).toFixed(1));
-        avgEl.textContent = avg;
-        if (avgNameEl) avgNameEl.textContent = getMaturityLevelName(avg);
-    } else {
-        avgEl.textContent = '—';
-        if (avgNameEl) avgNameEl.innerHTML = '&nbsp;';
-    }
+                // Average level
+                const avgEl = document.getElementById('average-score');
+                const avgNameEl = document.getElementById('average-level-name');
+                if (stats.scored > 0) {
+                    const avg = parseFloat((stats.totalScore / stats.scored).toFixed(1));
+                    avgEl.textContent = avg;
+                    if (avgNameEl) avgNameEl.textContent = getMaturityLevelName(avg);
+                } else {
+                    avgEl.textContent = '—';
+                    if (avgNameEl) avgNameEl.innerHTML = '&nbsp;';
+                }
 
-    // Highest area
-    const highestEl = document.getElementById('highest-area');
-    const highestBadgeEl = document.getElementById('highest-area-badge');
-    if (highestEl) {
-        highestEl.textContent = stats.highestScore > 0
-            ? (SECTION_SHORT_DISPLAY[stats.highestSectionId] || stats.highestSection)
-            : '—';
-    }
-    if (highestBadgeEl) {
-        if (stats.highestScore > 0) {
-            const l = Math.floor(stats.highestScore);
-            highestBadgeEl.innerHTML = `<span class="sv2-level-badge sv2-lb-${l}">Level ${stats.highestScore}</span>`;
-        } else {
-            highestBadgeEl.innerHTML = '&nbsp;';
-        }
-    }
+                // Highest area
+                const highestEl = document.getElementById('highest-area');
+                const highestBadgeEl = document.getElementById('highest-area-badge');
+                if (highestEl) {
+                    highestEl.textContent = stats.highestScore > 0
+                        ? (SECTION_SHORT_DISPLAY[stats.highestSectionId] || stats.highestSection)
+                        : '—';
+                }
+                if (highestBadgeEl) {
+                    if (stats.highestScore > 0) {
+                        const l = Math.floor(stats.highestScore);
+                        highestBadgeEl.innerHTML = `<span class="sv2-level-badge sv2-lb-${l}">Level ${stats.highestScore}</span>`;
+                    } else {
+                        highestBadgeEl.innerHTML = '&nbsp;';
+                    }
+                }
 
-    // Status chip
-    const statusEl = document.getElementById('report-status');
-    if (statusEl) {
-        if (stats.completed === stats.total && stats.total > 0) {
-            statusEl.textContent = 'Complete';
-            statusEl.className = 'sv2-status-chip complete';
-        } else if (stats.completed > 0) {
-            statusEl.textContent = 'In Progress';
-            statusEl.className = 'sv2-status-chip in-progress';
-        } else {
-            statusEl.textContent = 'Not Started';
-            statusEl.className = 'sv2-status-chip';
-        }
-    }
-}
-
-// Generate report
-function generateReport() {
-    const reportDate = new Date().toLocaleDateString('en-GB', {
-        year: 'numeric', month: 'long', day: 'numeric'
-    });
-    document.getElementById('report-date').textContent = reportDate;
-
-    let stats = {
-        completed: 0, total: 0, totalScore: 0, scored: 0,
-        highestScore: 0, highestSection: '—', highestSectionId: null
-    };
-
-    const reportHTML = Object.entries(SECTIONS).map(([themeName, theme]) => {
-        const sectionsHTML = theme.sections.map(section => {
-            stats.total++;
-            const savedData = getSectionData(section.id);
-
-            if (savedData.score) {
-                stats.completed++;
-                stats.totalScore += savedData.score;
-                stats.scored++;
-                if (savedData.score > stats.highestScore) {
-                    stats.highestScore     = savedData.score;
-                    stats.highestSection   = section.name;
-                    stats.highestSectionId = section.id;
+                // Status chip
+                const statusEl = document.getElementById('report-status');
+                if (statusEl) {
+                    if (stats.completed === stats.total && stats.total > 0) {
+                        statusEl.textContent = 'Complete';
+                        statusEl.className = 'sv2-status-chip complete';
+                    } else if (stats.completed > 0) {
+                        statusEl.textContent = 'In Progress';
+                        statusEl.className = 'sv2-status-chip in-progress';
+                    } else {
+                        statusEl.textContent = 'Not Started';
+                        statusEl.className = 'sv2-status-chip';
+                    }
                 }
             }
 
-            return createSectionReportHTML(section, savedData);
-        }).join('');
+            // Generate report
+            function generateReport() {
+                const reportDate = new Date().toLocaleDateString('en-GB', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+                document.getElementById('report-date').textContent = reportDate;
 
-        return `
+                let stats = {
+                    completed: 0, total: 0, totalScore: 0, scored: 0,
+                    highestScore: 0, highestSection: '—', highestSectionId: null
+                };
+
+                const reportHTML = Object.entries(SECTIONS).map(([themeName, theme]) => {
+                    const sectionsHTML = theme.sections.map(section => {
+                        stats.total++;
+                        const savedData = getSectionData(section.id);
+
+                        if (savedData.score) {
+                            stats.completed++;
+                            stats.totalScore += savedData.score;
+                            stats.scored++;
+                            if (savedData.score > stats.highestScore) {
+                                stats.highestScore = savedData.score;
+                                stats.highestSection = section.name;
+                                stats.highestSectionId = section.id;
+                            }
+                        }
+
+                        return createSectionReportHTML(section, savedData);
+                    }).join('');
+
+                    return `
             <div class="theme-report">
                 <h3 class="theme-report__title">${themeName}</h3>
                 ${sectionsHTML}
             </div>
         `;
-    }).join('');
+                }).join('');
 
-    document.getElementById('report-body').innerHTML = reportHTML;
-    updateStatistics(stats);
-}
+                document.getElementById('report-body').innerHTML = reportHTML;
+                updateStatistics(stats);
+            }
 
-// Download report as HTML file
-function downloadReportHTML(btn) {
-    const summaryPage = btn.closest('main');
-    const summaryClone = summaryPage.cloneNode(true);
+            // Download report as HTML file
+            function downloadReportHTML(btn) {
+                const summaryPage = btn.closest('main');
+                const summaryClone = summaryPage.cloneNode(true);
 
-    // Remove resources section and navigation from the downloaded report
-    const toRemove = summaryClone.querySelectorAll('section, .report-actions, .page-navigation');
-    toRemove.forEach(el => el.remove());
+                // Remove resources section and navigation from the downloaded report
+                const toRemove = summaryClone.querySelectorAll('section, .report-actions, .page-navigation');
+                toRemove.forEach(el => el.remove());
 
-    var reportContent = summaryClone.outerHTML;
-    var styles = document.querySelector('style')?.textContent ?? '';
-    var reportDate = new Date().toLocaleDateString('en-GB');
-    var fileName = 'SVEM-Report-' + new Date().toISOString().split('T')[0] + '.html';
+                var reportContent = summaryClone.outerHTML;
+                var styles = document.querySelector('style')?.textContent ?? '';
+                var reportDate = new Date().toLocaleDateString('en-GB');
+                var fileName = 'SVEM-Report-' + new Date().toISOString().split('T')[0] + '.html';
 
-    // Additional styles for standalone report
-    var standaloneStyles = `
+                // Additional styles for standalone report
+                var standaloneStyles = `
 /* ── Variable fallbacks ── */
 :root {
     --cu-brand-blue: #002554;
@@ -618,130 +732,130 @@ main {
     .sv2-stats-row { grid-template-columns: repeat(4, 1fr); }
 }`;
 
-    // Create standalone HTML document
-    var fullHTML = '<!DOCTYPE html>\n' +
-        '<html lang="en">\n' +
-        '<head>\n' +
-        '    <meta charset="UTF-8">\n' +
-        '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-        '    <title>SVEM Self-Assessment Report - ' + reportDate + '</title>\n' +
-        '    <style>' + styles + standaloneStyles + '</style>\n' +
-        '</head>\n' +
-        '<body>\n' +
-        reportContent + '\n' +
-        '</body>\n' +
-        '</html>';
+                // Create standalone HTML document
+                var fullHTML = '<!DOCTYPE html>\n' +
+                    '<html lang="en">\n' +
+                    '<head>\n' +
+                    '    <meta charset="UTF-8">\n' +
+                    '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+                    '    <title>SVEM Self-Assessment Report - ' + reportDate + '</title>\n' +
+                    '    <style>' + styles + standaloneStyles + '</style>\n' +
+                    '</head>\n' +
+                    '<body>\n' +
+                    reportContent + '\n' +
+                    '</body>\n' +
+                    '</html>';
 
-    // Create and download file
-    var blob = new Blob([fullHTML], { type: 'text/html' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = fileName;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+                // Create and download file
+                var blob = new Blob([fullHTML], { type: 'text/html' });
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
 
-    showToast('Report downloaded successfully');
-}
+                showToast('Report downloaded successfully');
+            }
 
-// Download data as JSON
-function downloadJSON() {
-    const allData = {
-        metadata: {
-            title: 'SVEM Self-Assessment Report',
-            date: new Date().toISOString(),
-            version: '1.0'
-        },
-        assessmentData: {}
-    };
-
-    // Collect all section data
-    Object.keys(SECTIONS).forEach(themeName => {
-        const theme = SECTIONS[themeName];
-        theme.sections.forEach(section => {
-            const savedData = getSectionData(section.id);
-            if (savedData.score > 0 || savedData.note) {
-                allData.assessmentData[section.id] = {
-                    sectionName: section.name,
-                    score: savedData.score || null,
-                    maturityLevel: getMaturityLevelName(savedData.score),
-                    evidence: savedData.note || ''
+            // Download data as JSON
+            function downloadJSON() {
+                const allData = {
+                    metadata: {
+                        title: 'SVEM Self-Assessment Report',
+                        date: new Date().toISOString(),
+                        version: '1.0'
+                    },
+                    assessmentData: {}
                 };
+
+                // Collect all section data
+                Object.keys(SECTIONS).forEach(themeName => {
+                    const theme = SECTIONS[themeName];
+                    theme.sections.forEach(section => {
+                        const savedData = getSectionData(section.id);
+                        if (savedData.score > 0 || savedData.note) {
+                            allData.assessmentData[section.id] = {
+                                sectionName: section.name,
+                                score: savedData.score || null,
+                                maturityLevel: getMaturityLevelName(savedData.score),
+                                evidence: savedData.note || '',
+                                unsure: savedData.unsure || false
+                            };
+                        }
+                    });
+                });
+
+                // Create and download file
+                const dataStr = JSON.stringify(allData, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `SVEM-Assessment-${new Date().toISOString().split('T')[0]}.json`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+
+                // Show toast
+                showToast('Data downloaded successfully');
             }
-        });
-    });
 
-    // Create and download file
-    const dataStr = JSON.stringify(allData, null, 2);
-    const dataBlob = new Blob([dataStr], { type: 'application/json' });
-    const url = URL.createObjectURL(dataBlob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `SVEM-Assessment-${new Date().toISOString().split('T')[0]}.json`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-
-    // Show toast
-    showToast('Data downloaded successfully');
-}
-
-// Show toast notification
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    if (toast) {
-        toast.textContent = message || 'Report Generated';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), CONFIG.TOAST_DURATION);
-    }
-}
-
-// Create visibility watcher for element
-function createVisibilityWatcher(element, callback) {
-    let lastVisibleState = false;
-
-    const checkVisibility = () => {
-        const isVisible = element.offsetParent !== null;
-        if (isVisible && !lastVisibleState) {
-            callback();
-        }
-        lastVisibleState = isVisible;
-    };
-
-    return setInterval(checkVisibility, CONFIG.VISIBILITY_CHECK_INTERVAL);
-}
-
-// Generate report on page load AND when page becomes visible
-(function() {
-    function initializeReports() {
-        generateReport();
-
-        // Also run when page becomes visible (handles Xerte navigation)
-        const summaryPageElement = document.querySelector('.theme-page-container');
-        if (summaryPageElement) {
-            const intervalId = createVisibilityWatcher(summaryPageElement, () => {
-                generateReport();
-            });
-            window._summaryPageInterval = intervalId;
-        }
-
-        window.addEventListener('focus', function() {
-            if (summaryPageElement && summaryPageElement.offsetParent !== null) {
-                generateReport();
+            // Show toast notification
+            function showToast(message) {
+                const toast = document.getElementById('toast');
+                if (toast) {
+                    toast.textContent = message || 'Report Generated';
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), CONFIG.TOAST_DURATION);
+                }
             }
-        });
 
-        document.addEventListener('visibilitychange', function() {
-            if (!document.hidden && summaryPageElement && summaryPageElement.offsetParent !== null) {
-                generateReport();
+            // Create visibility watcher for element
+            function createVisibilityWatcher(element, callback) {
+                let lastVisibleState = false;
+
+                const checkVisibility = () => {
+                    const isVisible = element.offsetParent !== null;
+                    if (isVisible && !lastVisibleState) {
+                        callback();
+                    }
+                    lastVisibleState = isVisible;
+                };
+
+                return setInterval(checkVisibility, CONFIG.VISIBILITY_CHECK_INTERVAL);
             }
-        });
-    }
 
-    initializeReports();
-})();
-</script>
+            // Generate report on page load AND when page becomes visible
+            (function () {
+                function initializeReports() {
+                    generateReport();
 
+                    // Also run when page becomes visible (handles Xerte navigation)
+                    const summaryPageElement = document.querySelector('.theme-page-container');
+                    if (summaryPageElement) {
+                        const intervalId = createVisibilityWatcher(summaryPageElement, () => {
+                            generateReport();
+                        });
+                        window._summaryPageInterval = intervalId;
+                    }
+
+                    window.addEventListener('focus', function () {
+                        if (summaryPageElement && summaryPageElement.offsetParent !== null) {
+                            generateReport();
+                        }
+                    });
+
+                    document.addEventListener('visibilitychange', function () {
+                        if (!document.hidden && summaryPageElement && summaryPageElement.offsetParent !== null) {
+                            generateReport();
+                        }
+                    });
+                }
+
+                initializeReports();
+            })();
+        </script>
