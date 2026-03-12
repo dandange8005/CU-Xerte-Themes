@@ -199,12 +199,12 @@
 
 /* Introduction Text */
 .intro-section {
-    text-align: left;
+    /* text-align: left;
     max-width: 800px;
     margin: 0 auto var(--space-xl) auto;
-    line-height: 1.7;
+    line-height: 1.7; */
     color: var(--text-secondary);
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 .intro-section p {
@@ -1247,18 +1247,15 @@ details.selected-level {
     text-transform: uppercase;
 }
 
-.resources-table thead th:first-child {
-    width: 200px;
+.resources-table thead th:first-child,
+.resources-table td:first-child {
+    display: none;
 }
 
 .resources-table td {
     padding: var(--space-sm) var(--space-md);
     vertical-align: middle;
     border-left: none;
-}
-
-.resources-table tr td:not(:first-of-type) {
-    border-left: 1px solid var(--border-light);
 }
 
 /* Category pill */
