@@ -220,6 +220,15 @@
 </div>
 
 <script>
+// Dark mode init
+$(function () {
+  if (localStorage.getItem('svem-dark-mode') === 'dark') {
+    $('body').addClass('dark-mode');
+  }
+});
+</script>
+
+<script>
   // Initialize Theme 2 page
   // Assumes scoring-xerte.js is loaded globally
 
