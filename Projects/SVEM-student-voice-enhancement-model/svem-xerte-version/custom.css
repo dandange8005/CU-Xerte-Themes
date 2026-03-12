@@ -184,6 +184,34 @@ body.dark-mode {
     margin: 0;
 }
 
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: var(--space-sm);
+}
+
+.dark-mode-toggle:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .dark-mode-toggle {
+  background: var(--bg-gray);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  border-color: var(--text-secondary);
+}
+
 /* Title Page - Responsive */
 @media (max-width: 900px) {
     .title-page {
