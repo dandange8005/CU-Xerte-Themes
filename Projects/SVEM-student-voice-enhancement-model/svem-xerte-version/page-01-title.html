@@ -34,3 +34,25 @@
 <!-- Toast Notification (include on every page) -->
 <div id="toast">Changes Saved
 </div>
+
+<script>
+$(function () {
+  // Dark mode — init + toggle
+  function applyDarkMode(isDark) {
+    $('body').toggleClass('dark-mode', isDark);
+    $('#dark-mode-toggle')
+      .attr('aria-pressed', isDark ? 'true' : 'false')
+      .attr('aria-label', isDark ? 'Disable dark mode' : 'Enable dark mode')
+      .find('.dark-mode-toggle__icon').text(isDark ? '☀' : '☾').end()
+      .find('.dark-mode-toggle__label').text(isDark ? 'Light mode' : 'Dark mode');
+  }
+
+  applyDarkMode(localStorage.getItem('svem-dark-mode') === 'dark');
+
+  $('#dark-mode-toggle').on('click', function () {
+    var isDark = !$('body').hasClass('dark-mode');
+    localStorage.setItem('svem-dark-mode', isDark ? 'dark' : 'light');
+    applyDarkMode(isDark);
+  });
+});
+</script>
