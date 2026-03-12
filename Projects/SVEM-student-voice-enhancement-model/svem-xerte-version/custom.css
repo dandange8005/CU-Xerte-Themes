@@ -81,6 +81,22 @@
     --transition-slow: 0.5s var(--ease-4);
 }
 
+body.dark-mode {
+  --text-primary: #e5e5e5;
+  --text-secondary: #c0c0c0;
+  --text-muted: #888;
+  --text-light-gray: #666;
+  --bg-white: #1a1a1a;
+  --bg-light: #1f1f1f;
+  --bg-gray: #242424;
+  --border-light: #2e2e2e;
+  --status-success-light: #1a2e1a;
+  --status-warning-light: #2e2a14;
+  --status-danger-light: #2e1a1a;
+  --cu-brand-blue: #5b9bd5;
+  background: #111;
+}
+
 
 /* ========================================
   Title / Landing Page
