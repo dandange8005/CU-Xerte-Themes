@@ -351,6 +351,11 @@
 
 <script>
 $(function () {
+    // Dark mode init
+    if (localStorage.getItem('svem-dark-mode') === 'dark') {
+      $('body').addClass('dark-mode');
+    }
+
     var sortState = {};
     var activeFilter = 'all';
 
