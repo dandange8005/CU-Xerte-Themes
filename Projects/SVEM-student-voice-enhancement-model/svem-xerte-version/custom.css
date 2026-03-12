@@ -1440,3 +1440,34 @@ details.selected-level {
     color: var(--cu-brand-blue);
     font-weight: 600;
 }
+
+
+/* ========================================
+   Dark mode overrides
+   Hardcoded values that don't respond to token changes
+   ======================================== */
+
+/* Title page heading uses var(--cu-brand-blue) — override to brighter blue for readability */
+body.dark-mode .title-page__heading {
+  color: #7eb8ff;
+}
+
+/* Title page card shadow — deepen on dark background */
+body.dark-mode .title-page__card {
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.4));
+}
+
+/* Score indicators: all use hardcoded light-mode hex backgrounds */
+/* Note: level-4 uses var(--status-success-light) in light mode so the token override
+   already changes it, but the explicit rule wins via specificity — intentional. */
+body.dark-mode .score-indicator.level-1 { background: #2a2a2a; color: #ccc; }
+body.dark-mode .score-indicator.level-2 { background: #1a2e1e; color: #86efac; }
+body.dark-mode .score-indicator.level-3 { background: #1a2040; color: #93b4fd; }
+body.dark-mode .score-indicator.level-4 { background: #1a2e1a; color: #86efac; }
+body.dark-mode .score-indicator.level-5 { background: #1a2a2e; color: #7dd3e0; }
+body.dark-mode .score-indicator.not-scored { background: #2e1a1a; color: #fca5a5; }
+
+/* Section report border (hardcoded #f0f0f0 in light mode) */
+body.dark-mode .section-report {
+  border-bottom-color: #2e2e2e;
+}
