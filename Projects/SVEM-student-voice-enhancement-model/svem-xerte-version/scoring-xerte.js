@@ -4,6 +4,7 @@
 // Configuration Constants
 const CONFIG = {
     STORAGE_PREFIX: 'sv_',
+    DARK_MODE_KEY: 'svem-dark-mode',
     THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
     TOAST_DURATION: 2000,
     NAVIGATION_DELAY: 500,
@@ -15,6 +16,25 @@ const CONFIG = {
 // ========================================
 // LocalStorage Utility Functions
 // ========================================
+
+function applySVEMDarkMode(isDark) {
+    document.body.classList.toggle('dark-mode', !!isDark);
+}
+
+function initSVEMDarkMode() {
+    const syncDarkMode = () => {
+        applySVEMDarkMode(localStorage.getItem(CONFIG.DARK_MODE_KEY) === 'dark');
+    };
+
+    syncDarkMode();
+
+    if (typeof requestAnimationFrame === 'function') {
+        requestAnimationFrame(syncDarkMode);
+    }
+
+    setTimeout(syncDarkMode, 0);
+    setTimeout(syncDarkMode, CONFIG.CHART_INIT_RETRY);
+}
 
 // Get section data from localStorage with error handling
 function getSectionData(sectionId) {
@@ -53,6 +73,8 @@ function getAllSectionKeys() {
 
 // Initialize when page content is loaded in Xerte
 function initSVEMPage(sectionIds) {
+    initSVEMDarkMode();
+
     if (Array.isArray(sectionIds)) {
         sectionIds.forEach(sectionId => loadSavedData(sectionId));
     }
@@ -416,4 +438,3 @@ $(document).on('click', '.level-group details summary', function() {
         $details.siblings('details').removeAttr('open');
     }
 });
-

@@ -351,10 +351,14 @@
 
 <script>
 $(function () {
-    // Dark mode init
-    if (localStorage.getItem('svem-dark-mode') === 'dark') {
-      $('body').addClass('dark-mode');
+    function syncDarkMode() {
+      $('body').toggleClass('dark-mode', localStorage.getItem('svem-dark-mode') === 'dark');
     }
+
+    syncDarkMode();
+    requestAnimationFrame(syncDarkMode);
+    setTimeout(syncDarkMode, 0);
+    setTimeout(syncDarkMode, 100);
 
     var sortState = {};
     var activeFilter = 'all';

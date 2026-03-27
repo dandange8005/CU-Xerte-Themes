@@ -71,12 +71,16 @@
 
 
 <script>
-// Dark mode init
-$(function () {
-  if (localStorage.getItem('svem-dark-mode') === 'dark') {
-    $('body').addClass('dark-mode');
+(function () {
+  function syncDarkMode() {
+    $('body').toggleClass('dark-mode', localStorage.getItem('svem-dark-mode') === 'dark');
   }
-});
+
+  syncDarkMode();
+  requestAnimationFrame(syncDarkMode);
+  setTimeout(syncDarkMode, 0);
+  setTimeout(syncDarkMode, 100);
+})();
 </script>
 
 <!-- Initialize themes overview - runs on page load AND when page becomes visible -->

@@ -61,8 +61,8 @@
     <!-- SUBSECTION 1: Mid-Module Enhancement -->
     <section id="mme">
       <div class="section-header-wrapper">
-        <h3>Mid-Module Enhancement
-        </h3>
+        <h2>Mid-Module Enhancement
+        </h2>
         <div class="section-badge-wrapper"><span class="score-badge" id="badge-mme">Not Scored</span>
           <button class="toggle-btn" onclick="toggleSection('mme', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
           </button>
@@ -202,8 +202,8 @@
     <!-- SUBSECTION 2: End of Module Enhancement -->
     <section id="me">
       <div class="section-header-wrapper">
-        <h3>End of Module Enhancement
-        </h3>
+        <h2>End of Module Enhancement
+        </h2>
         <div class="section-badge-wrapper"><span class="score-badge" id="badge-me">Not Scored</span>
           <button class="toggle-btn" onclick="toggleSection('me', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
           </button>
@@ -340,8 +340,8 @@
     <!-- SUBSECTION 3: National Student Survey (NSS) -->
     <section id="nss">
       <div class="section-header-wrapper">
-        <h3>National Student Survey (NSS)
-        </h3>
+        <h2>National Student Survey (NSS)
+        </h2>
         <div class="section-badge-wrapper"><span class="score-badge" id="badge-nss">Not Scored</span>
           <button class="toggle-btn" onclick="toggleSection('nss', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
           </button>
@@ -475,8 +475,8 @@
     <!-- SUBSECTION 4: CUPTS -->
     <section id="cupts">
       <div class="section-header-wrapper">
-        <h3>Cardiff University Postgraduate Taught Survey (CUPTS)
-        </h3>
+        <h2>Cardiff University Postgraduate Taught Survey (CUPTS)
+        </h2>
         <div class="section-badge-wrapper"><span class="score-badge" id="badge-cupts">Not Scored</span>
           <button class="toggle-btn" onclick="toggleSection('cupts', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
           </button>
@@ -602,8 +602,8 @@
     <!-- SUBSECTION 5: PRES -->
     <section id="pres">
       <div class="section-header-wrapper">
-        <h3>Postgraduate Research Experience Survey (PRES)
-        </h3>
+        <h2>Postgraduate Research Experience Survey (PRES)
+        </h2>
         <div class="section-badge-wrapper"><span class="score-badge" id="badge-pres">Not Scored</span>
           <button class="toggle-btn" onclick="toggleSection('pres', this); return false;" type="button">Expand All <span class="toggle-icon">+</span>
           </button>
@@ -740,12 +740,21 @@
 </div>
 
 <script>
-// Dark mode init
-$(function () {
-  if (localStorage.getItem('svem-dark-mode') === 'dark') {
-    $('body').addClass('dark-mode');
+(function () {
+  if (typeof initSVEMDarkMode === 'function') {
+    initSVEMDarkMode();
+    return;
   }
-});
+
+  function syncDarkMode() {
+    $('body').toggleClass('dark-mode', localStorage.getItem('svem-dark-mode') === 'dark');
+  }
+
+  syncDarkMode();
+  requestAnimationFrame(syncDarkMode);
+  setTimeout(syncDarkMode, 0);
+  setTimeout(syncDarkMode, 100);
+})();
 </script>
 
 <script>

@@ -82,6 +82,10 @@
 }
 
 body.dark-mode {
+  --background: #111;
+  --clr-body-bg: #111;
+  --text: #e5e5e5;
+  --clr-body-text: #e5e5e5;
   --text-primary: #e5e5e5;
   --text-secondary: #c0c0c0;
   --text-muted: #888;
@@ -94,6 +98,12 @@ body.dark-mode {
   --status-warning-light: #2e2a14;
   --status-danger-light: #2e1a1a;
   --cu-brand-blue: #5b9bd5;
+  background: #111;
+}
+
+body.dark-mode #x_mainHolder,
+body.dark-mode #x_pageHolder,
+body.dark-mode #x_pageDiv {
   background: #111;
 }
 
@@ -848,9 +858,31 @@ details.selected-level {
     line-height: 1.5;
 }
 
+body.dark-mode .evidence-input,
+body.dark-mode input[type="text"],
+body.dark-mode input[type="search"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="url"],
+body.dark-mode select,
+body.dark-mode textarea {
+    background: var(--bg-gray);
+    color: var(--text-primary);
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .evidence-input::placeholder,
+body.dark-mode input[type="text"]::placeholder,
+body.dark-mode input[type="search"]::placeholder,
+body.dark-mode input[type="email"]::placeholder,
+body.dark-mode input[type="url"]::placeholder,
+body.dark-mode textarea::placeholder {
+    color: var(--text-light-gray);
+}
+
 .evidence-input:focus {
     outline: none;
     border-color: var(--cu-brand-blue);
+    box-shadow: 0 0 0 3px rgba(91, 155, 213, 0.18);
 }
 
 .evidence-unsure {
@@ -872,6 +904,11 @@ details.selected-level {
     flex-shrink: 0;
     cursor: pointer;
     margin: 0;
+}
+
+body.dark-mode .evidence-unsure input[type="checkbox"],
+body.dark-mode input[type="checkbox"] {
+    accent-color: var(--cu-brand-blue);
 }
 
 /* --- Page Navigation (prev/next buttons) --- */
@@ -1470,4 +1507,95 @@ body.dark-mode .score-indicator.not-scored { background: #2e1a1a; color: #fca5a5
 /* Section report border (hardcoded #f0f0f0 in light mode) */
 body.dark-mode .section-report {
   border-bottom-color: #2e2e2e;
+}
+
+/* Glossary links */
+body.dark-mode a.x_glossary,
+body.dark-mode #x_mainHolder a.x_glossary,
+body.dark-mode .x_glossary {
+  color: #8ec5ff !important;
+  text-decoration-color: rgba(142, 197, 255, 0.45);
+}
+
+body.dark-mode a.x_glossary:hover,
+body.dark-mode #x_mainHolder a.x_glossary:hover,
+body.dark-mode a.x_glossary:focus,
+body.dark-mode #x_mainHolder a.x_glossary:focus,
+body.dark-mode .x_glossary:hover,
+body.dark-mode .x_glossary:focus {
+  color: #c3e1ff !important;
+  text-decoration-color: currentColor;
+}
+
+/* Card headings */
+body.dark-mode .intro-card__heading,
+body.dark-mode .intro-card h2,
+body.dark-mode .intro-card h3,
+body.dark-mode .theme-card__title,
+body.dark-mode .scoring-explanation > details summary,
+body.dark-mode .scoring-explanation > details summary::after {
+  color: #7eb8ff;
+}
+
+/* Labels and status chips */
+body.dark-mode .theme-label,
+body.dark-mode .level-number,
+body.dark-mode .theme-progress__text,
+body.dark-mode .evidence-box__intro,
+body.dark-mode .evidence-box__checklist,
+body.dark-mode .toggle-btn,
+body.dark-mode .status-badge.status-not-started,
+body.dark-mode .score-badge {
+  color: #b5bec9;
+}
+
+body.dark-mode .status-badge.status-not-started,
+body.dark-mode .score-badge {
+  background: #252525;
+  border: 1px solid #3a3a3a;
+}
+
+body.dark-mode .toggle-btn {
+  border-color: #4a4a4a;
+}
+
+body.dark-mode .toggle-btn:hover {
+  border-color: #7eb8ff;
+  color: #e5f1ff;
+}
+
+/* Level accordions */
+body.dark-mode summary {
+  color: #e5e5e5;
+}
+
+body.dark-mode .level-title-text {
+  color: #e5e5e5;
+}
+
+body.dark-mode summary::after {
+  color: #aab4bf;
+}
+
+body.dark-mode details.selected-level {
+  background-color: #162338;
+  border-color: #5b9bd5;
+}
+
+body.dark-mode details.selected-level summary {
+  background: rgba(126, 184, 255, 0.08);
+  border-bottom-color: #35506f;
+}
+
+body.dark-mode details.selected-level .level-number {
+  color: #c8d8ea;
+}
+
+body.dark-mode details.selected-level .level-title-text {
+  color: #f3f8ff;
+}
+
+body.dark-mode details.selected-level .content-body,
+body.dark-mode details.selected-level .content-body li {
+  color: #d7dce2;
 }

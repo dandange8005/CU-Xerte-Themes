@@ -36,8 +36,7 @@
 </div>
 
 <script>
-$(function () {
-  // Dark mode — init + toggle
+(function () {
   function applyDarkMode(isDark) {
     $('body').toggleClass('dark-mode', isDark);
     $('#dark-mode-toggle')
@@ -47,12 +46,21 @@ $(function () {
       .find('.dark-mode-toggle__label').text(isDark ? 'Light mode' : 'Dark mode');
   }
 
-  applyDarkMode(localStorage.getItem('svem-dark-mode') === 'dark');
+  function syncDarkMode() {
+    applyDarkMode(localStorage.getItem('svem-dark-mode') === 'dark');
+  }
+
+  window.applySVEMDarkMode = syncDarkMode;
+
+  syncDarkMode();
+  requestAnimationFrame(syncDarkMode);
+  setTimeout(syncDarkMode, 0);
+  setTimeout(syncDarkMode, 100);
 
   $('#dark-mode-toggle').on('click', function () {
     var isDark = !$('body').hasClass('dark-mode');
     localStorage.setItem('svem-dark-mode', isDark ? 'dark' : 'light');
     applyDarkMode(isDark);
   });
-});
+})();
 </script>

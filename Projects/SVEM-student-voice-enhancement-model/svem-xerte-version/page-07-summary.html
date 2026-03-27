@@ -1,4 +1,4 @@
-<-- Summary Page for SVEM Self-Assessment Tool -->
+<!-- Summary Page for SVEM Self-Assessment Tool -->
     <style>
         /* sv2- dashboard components: header + stats row */
 
@@ -230,11 +230,11 @@
             <!-- Report Header -->
             <div class="sv2-header">
                 <div>
-                    <h2>Self-Assessment Report</h2>
+                    <h1>Self-Assessment Report</h1>
                     <p>Student Voice Enhancement Model &mdash; Cardiff University</p>
                 </div>
                 <div class="sv2-header-meta">
-                    <span>Date: <strong id="report-date"></strong></span>
+                    <span>Date: <span id="report-date"></span></span>
                     <span class="sv2-status-chip" id="report-status">Not Started</span>
                 </div>
             </div>
@@ -376,10 +376,19 @@
 
 
 
-    <-- script for generating report from localStorage data and handling actions on the summary page -->
+    <!-- script for generating report from localStorage data and handling actions on the summary page -->
         <script>
             // Summary Page JavaScript
             // Generates report from localStorage data
+
+            function syncDarkMode() {
+                document.body.classList.toggle('dark-mode', localStorage.getItem('svem-dark-mode') === 'dark');
+            }
+
+            syncDarkMode();
+            requestAnimationFrame(syncDarkMode);
+            setTimeout(syncDarkMode, 0);
+            setTimeout(syncDarkMode, 100);
 
             // Configuration Constants (shared with scoring-xerte.js)
             const CONFIG = {
@@ -586,7 +595,7 @@
 
                     return `
             <div class="theme-report">
-                <h3 class="theme-report__title">${themeName}</h3>
+                <h2 class="theme-report__title">${themeName}</h2>
                 ${sectionsHTML}
             </div>
         `;

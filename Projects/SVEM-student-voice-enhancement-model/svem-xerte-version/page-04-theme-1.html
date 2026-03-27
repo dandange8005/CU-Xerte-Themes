@@ -382,12 +382,21 @@
 
 
 <script>
-// Dark mode init
-$(function () {
-  if (localStorage.getItem('svem-dark-mode') === 'dark') {
-    $('body').addClass('dark-mode');
+(function () {
+  if (typeof initSVEMDarkMode === 'function') {
+    initSVEMDarkMode();
+    return;
   }
-});
+
+  function syncDarkMode() {
+    $('body').toggleClass('dark-mode', localStorage.getItem('svem-dark-mode') === 'dark');
+  }
+
+  syncDarkMode();
+  requestAnimationFrame(syncDarkMode);
+  setTimeout(syncDarkMode, 0);
+  setTimeout(syncDarkMode, 100);
+})();
 </script>
 
 <!-- Page Initialization Script -->
