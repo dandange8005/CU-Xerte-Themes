@@ -86,14 +86,14 @@ body.dark-mode {
   --clr-body-bg: #111;
   --text: #e5e5e5;
   --clr-body-text: #e5e5e5;
-  --text-primary: #e5e5e5;
+  --text-primary: #e8e8e8;
   --text-secondary: #c0c0c0;
   --text-muted: #888;
   --text-light-gray: #666;
   --bg-white: #1a1a1a;
   --bg-light: #1f1f1f;
   --bg-gray: #242424;
-  --border-light: #2e2e2e;
+  --border-light: #6c6c6c;
   --status-success-light: #1a2e1a;
   --status-warning-light: #2e2a14;
   --status-danger-light: #2e1a1a;
@@ -158,7 +158,7 @@ body.dark-mode #x_pageDiv {
 }
 
 .title-page__description {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     line-height: 1.7;
 }
 
@@ -867,7 +867,7 @@ body.dark-mode select,
 body.dark-mode textarea {
     background: var(--bg-gray);
     color: var(--text-primary);
-    border-color: #3a3a3a;
+    border-color: var(--border-light);
 }
 
 body.dark-mode .evidence-input::placeholder,
@@ -1025,7 +1025,7 @@ body.dark-mode input[type="checkbox"] {
 
 /* Theme Reports (generated dynamically via JS) */
 .theme-report {
-    background: var(--bg-white);
+    background: var(--bg-gray);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
     margin-bottom: var(--space-lg);
@@ -1553,6 +1553,14 @@ body.dark-mode .status-badge.status-not-started,
 body.dark-mode .score-badge {
   background: #252525;
   border: 1px solid #3a3a3a;
+}
+
+body.dark-mode .status-badge.status-complete {
+    color: var(--green-4);
+}
+
+body.dark-mode .status-badge.status-in-progress{
+    color: var(--yellow-4);
 }
 
 body.dark-mode .toggle-btn {
