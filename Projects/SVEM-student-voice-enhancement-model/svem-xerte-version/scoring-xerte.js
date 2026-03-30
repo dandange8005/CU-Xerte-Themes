@@ -19,10 +19,36 @@ const CONFIG = {
 
 function applySVEMDarkMode(isDark) {
     document.body.classList.toggle('dark-mode', !!isDark);
+    var toggle = document.getElementById('dark-mode-toggle');
+    if (toggle) {
+        toggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isDark ? 'Disable dark mode' : 'Enable dark mode');
+        var label = toggle.querySelector('.dark-mode-toggle__label');
+        if (label) label.textContent = isDark ? 'Dark' : 'Light';
+    }
 }
 
 function initSVEMDarkMode() {
-    const syncDarkMode = () => {
+    if (!document.getElementById('dark-mode-toggle')) {
+        var toggle = document.createElement('button');
+        toggle.id = 'dark-mode-toggle';
+        toggle.className = 'dark-mode-toggle';
+        toggle.type = 'button';
+        toggle.setAttribute('role', 'switch');
+        toggle.setAttribute('aria-checked', 'false');
+        toggle.setAttribute('aria-label', 'Enable dark mode');
+        toggle.innerHTML =
+            '<span class="dark-mode-toggle__label">Light</span>' +
+            '<span class="dark-mode-toggle__track"><span class="dark-mode-toggle__thumb"></span></span>';
+        toggle.addEventListener('click', function () {
+            var isDark = !document.body.classList.contains('dark-mode');
+            localStorage.setItem(CONFIG.DARK_MODE_KEY, isDark ? 'dark' : 'light');
+            applySVEMDarkMode(isDark);
+        });
+        document.body.appendChild(toggle);
+    }
+
+    var syncDarkMode = function () {
         applySVEMDarkMode(localStorage.getItem(CONFIG.DARK_MODE_KEY) === 'dark');
     };
 

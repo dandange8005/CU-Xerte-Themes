@@ -89,8 +89,8 @@ body.dark-mode {
   --text-primary: #e8e8e8;
   --text-secondary: #c0c0c0;
   --text-muted: #888;
-  --text-light-gray: #666;
-  --bg-white: #1a1a1a;
+  --text-light-gray: #808080;
+  --bg-white: #2a2a2a;
   --bg-light: #1f1f1f;
   --bg-gray: #242424;
   --border-light: #6c6c6c;
@@ -194,33 +194,51 @@ body.dark-mode #x_pageDiv {
     margin: 0;
 }
 
-/* Dark Mode Toggle Button */
+/* Dark Mode Toggle Switch */
 .dark-mode-toggle {
-  background: transparent;
-  border: 1px solid var(--border-light);
-  color: var(--text-muted);
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  margin-top: var(--space-sm);
+  position: fixed;
+    top: var(--space-md);
+    right: var(--space-lg);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-round);
+    cursor: pointer;
+    transition: box-shadow var(--transition-normal);
+    box-shadow: var(--shadow-sm);
 }
 
-.dark-mode-toggle:hover {
-  border-color: var(--text-primary);
-  color: var(--text-primary);
+.dark-mode-toggle:hover { box-shadow: var(--shadow-md); }
+
+.dark-mode-toggle__label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); user-select: none; }
+
+.dark-mode-toggle__track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  background: var(--border-light);
+  border-radius: 10px;
+  transition: background var(--transition-fast);
 }
 
-body.dark-mode .dark-mode-toggle {
-  background: var(--bg-gray);
-  border-color: var(--text-muted);
-  color: var(--text-primary);
+.dark-mode-toggle__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--bg-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
 }
 
-body.dark-mode .dark-mode-toggle:hover {
-  border-color: var(--text-secondary);
-}
+body.dark-mode .dark-mode-toggle__track { background: var(--cu-brand-blue); }
+body.dark-mode .dark-mode-toggle__thumb { transform: translateX(16px); }
 
 /* Title Page - Responsive */
 @media (max-width: 900px) {
@@ -1025,7 +1043,7 @@ body.dark-mode input[type="checkbox"] {
 
 /* Theme Reports (generated dynamically via JS) */
 .theme-report {
-    background: var(--bg-gray);
+    background: var(--bg-white);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
     margin-bottom: var(--space-lg);
@@ -1111,7 +1129,7 @@ body.dark-mode input[type="checkbox"] {
 .section-report__evidence p {
     margin: 0;
     line-height: 1.5;
-    color: var(--gray-7);
+    color: var(--text-light-gray);
     font-size: 0.9rem;
 }
 
@@ -1414,7 +1432,7 @@ body.dark-mode input[type="checkbox"] {
 .resource-filter-btn {
     background: var(--bg-white);
     border: 1px solid var(--border-light);
-    color: var(--text-muted);
+    color: var(--text-secondary);
     padding: 4px 14px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -1478,6 +1496,66 @@ body.dark-mode input[type="checkbox"] {
     font-weight: 600;
 }
 
+
+/* Resources table dark mode */
+body.dark-mode .resources-table {
+  background: var(--bg-gray);
+}
+
+body.dark-mode .resources-table thead th {
+  background: var(--bg-light);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .resources-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark-mode .resources-table tbody tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+body.dark-mode .resource-link {
+  color: #7eb8ff;
+}
+
+body.dark-mode .resource-link:hover {
+  color: #f9a8b8;
+}
+
+body.dark-mode .resource-category {
+  background: var(--bg-gray);
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .resource-filter-btn {
+  background: var(--bg-gray);
+  border-color: var(--border-light);
+  color: var(--text-muted);
+}
+
+body.dark-mode .resource-filter-btn:hover {
+  border-color: #7eb8ff;
+  color: #7eb8ff;
+}
+
+body.dark-mode .resource-filter-btn.active {
+  background: var(--cu-brand-blue);
+  border-color: var(--cu-brand-blue);
+  color: var(--bg-white);
+}
+
+body.dark-mode .resources-search {
+  background: var(--bg-gray);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+body.dark-mode .resources-search:focus {
+  border-color: var(--cu-brand-blue);
+  box-shadow: 0 0 0 3px rgba(91, 155, 213, 0.15);
+}
 
 /* ========================================
    Dark mode overrides

@@ -25,10 +25,6 @@
   <footer class="title-page__footer">
     <p>&copy; Cardiff University Learning and Teaching Academy
     </p>
-    <button id="dark-mode-toggle" class="dark-mode-toggle" type="button" aria-pressed="false" aria-label="Enable dark mode">
-      <span class="dark-mode-toggle__icon">☾</span>
-      <span class="dark-mode-toggle__label">Dark mode</span>
-    </button>
   </footer>
 </main>
 <!-- Toast Notification (include on every page) -->
@@ -37,30 +33,8 @@
 
 <script>
 (function () {
-  function applyDarkMode(isDark) {
-    $('body').toggleClass('dark-mode', isDark);
-    $('#dark-mode-toggle')
-      .attr('aria-pressed', isDark ? 'true' : 'false')
-      .attr('aria-label', isDark ? 'Disable dark mode' : 'Enable dark mode')
-      .find('.dark-mode-toggle__icon').text(isDark ? '☀' : '☾').end()
-      .find('.dark-mode-toggle__label').text(isDark ? 'Light mode' : 'Dark mode');
+  if (typeof initSVEMDarkMode === 'function') {
+    initSVEMDarkMode();
   }
-
-  function syncDarkMode() {
-    applyDarkMode(localStorage.getItem('svem-dark-mode') === 'dark');
-  }
-
-  window.applySVEMDarkMode = syncDarkMode;
-
-  syncDarkMode();
-  requestAnimationFrame(syncDarkMode);
-  setTimeout(syncDarkMode, 0);
-  setTimeout(syncDarkMode, 100);
-
-  $('#dark-mode-toggle').on('click', function () {
-    var isDark = !$('body').hasClass('dark-mode');
-    localStorage.setItem('svem-dark-mode', isDark ? 'dark' : 'light');
-    applyDarkMode(isDark);
-  });
 })();
 </script>

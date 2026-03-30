@@ -72,13 +72,8 @@
 
 <script>
 (function () {
-  function syncDarkMode() {
-    $('body').toggleClass('dark-mode', localStorage.getItem('svem-dark-mode') === 'dark');
+  if (typeof initSVEMDarkMode === 'function') {
+    initSVEMDarkMode();
   }
-
-  syncDarkMode();
-  requestAnimationFrame(syncDarkMode);
-  setTimeout(syncDarkMode, 0);
-  setTimeout(syncDarkMode, 100);
 })();
 </script>

@@ -401,14 +401,9 @@
             // Summary Page JavaScript
             // Generates report from localStorage data
 
-            function syncDarkMode() {
-                document.body.classList.toggle('dark-mode', localStorage.getItem('svem-dark-mode') === 'dark');
+            if (typeof initSVEMDarkMode === 'function') {
+                initSVEMDarkMode();
             }
-
-            syncDarkMode();
-            requestAnimationFrame(syncDarkMode);
-            setTimeout(syncDarkMode, 0);
-            setTimeout(syncDarkMode, 100);
 
             // Configuration Constants (shared with scoring-xerte.js)
             const CONFIG = {
