@@ -1078,7 +1078,7 @@ body.dark-mode input[type="checkbox"] {
 .section-report__name {
     font-size: 1.1rem;
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--text-secondary)!important;
     font-weight: 600;
 }
 
