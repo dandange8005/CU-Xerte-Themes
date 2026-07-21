@@ -326,7 +326,7 @@
 
             <!-- DataTable -->
             <div class="table-responsive">
-                <table id="comparisonTable" class="display">
+                <table id="comparisonTable" class="display fs-sm">
                     <thead>
                         <tr>
                             <th>Feature</th>
@@ -485,14 +485,14 @@
                             <td>Download Assessment and Feedback in One Document</td>
                             <td><span class="category-badge category-badge--feedback">Feedback</span></td>
                             <td><span class="status-icon">✅</span><strong>Yes</strong> - All feedback (except voice comments) can be exported to annotated PDF. This can include the similarity report if required.</td>
-                            <td><span class="status-icon">❌</span><strong>No</strong> - Original files can be bulk exported but annotations cannot</td>
+                            <td><span class="status-icon">✅</span><strong>Yes</strong> - Both original submissions and annotations can be downloaded in one document, but not the overall feedback</td>
                             <td>Turnitin provides better feedback export capabilities</td>
                         </tr>
                         <tr>
                             <td>Download Assessment and Feedback Separately</td>
                             <td><span class="category-badge category-badge--feedback">Feedback</span></td>
                             <td><span class="status-icon">✅</span><strong>Yes</strong> - Can download original submission separately</td>
-                            <td><span class="status-icon">✅</span><strong>Yes</strong> - Can download original files separately</td>
+                            <td><span class="status-icon">✅</span><strong>Yes</strong> - Can download original files and the overall feedback separately, but not the annotations</td>
                             <td>Both support separate downloads</td>
                         </tr>
 
@@ -526,6 +526,22 @@
                             <td>Both provide manual override capabilities</td>
                         </tr>
 
+                        <!-- Audio and Video Feedback -->
+                        <tr>
+                            <td>Audio Feedback</td>
+                            <td><span class="category-badge category-badge--feedback">Feedback</span></td>
+                            <td><span class="status-icon">✅</span><strong>Yes</strong> - Supports voice comments as overall feedback. Limited to a single 3-minute audio file.</td>
+                            <td><span class="status-icon">✅</span><strong>Yes</strong> - Supports audio recording in the feedback editor. Allows for multiple audio clips to be recorded and attached, each with a limit of 5 minutes.</td>
+                            <td>Both support audio feedback; Turnitin voice comments are not included in downloaded feedback, while Blackboard audio sits within the overall feedback workflow alongside comments.</td>
+                        </tr>
+                        <tr>
+                            <td>Video Feedback</td>
+                            <td><span class="category-badge category-badge--feedback">Feedback</span></td>
+                            <td><span class="status-icon">❌</span><strong>No</strong> – video feedback is currently not available.</td>
+                            <td><span class="status-icon">✅</span><strong>Yes</strong> - Supports video feedback in the feedback editor, including short webcam or screen-based recordings to allow for 'live marking'.</td>
+                            <td>Blackboard is stronger for multimedia feedback, particularly where staff want to provide short recorded explanations or walkthroughs.</td>
+                        </tr>
+
                         <!-- Blind Double Marking -->
                         <tr>
                             <td>Blind Double Marking (Parallel Marking)</td>
@@ -541,6 +557,22 @@
                                 </ul>
                             </td>
                             <td>BB Assignment has built-in support, though with some limitations when Turnitin integration is used</td>
+                        </tr>
+
+                        <!-- Rubrics and Feedback Tools -->
+                        <tr>
+                            <td>Rubrics (set-up and marking)</td>
+                            <td><span class="category-badge category-badge--marking">Marking</span></td>
+                            <td><span class="status-icon">✅</span><strong>Yes</strong> – Supports rubrics, including points, percentage and qualitative-style criteria. Can be used during marking and alongside QuickMarks/written feedback.</td>
+                            <td><span class="status-icon">✅</span><strong>Yes</strong> – Supports rubrics with percentage, percentage range, points and points range scoring. Can be used during marking and released with feedback. Can add criteria-specific feedback as well as a general comment.</td>
+                            <td>Both support rubric-based marking; Blackboard has broader scoring-type options, while Turnitin combines rubrics well with QuickMarks and grading forms.</td>
+                        </tr>
+                        <tr>
+                            <td>Feedback Tools</td>
+                            <td><span class="category-badge category-badge--marking">Marking</span></td>
+                            <td>Comments; QuickMarks; inline comments; bubble comments; highlights; strikethrough; in-margin comments; summary comments; rubric-linked comments.</td>
+                            <td>Comments; annotations; highlights; freehand drawing; text boxes; shapes; stamps/images; overall written feedback; attached feedback files; reusable comments.</td>
+                            <td>Turnitin is stronger for reusable written feedback through QuickMarks; Blackboard provides a broader annotation toolbar and richer document markup options.</td>
                         </tr>
                     </tbody>
                 </table>
