@@ -2,6 +2,73 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - 2026-07-24
+
+### Added - Live-Site Mirror (`svem-xerte-live/`)
+
+Page-by-page mirror of the **published** Xerte resource (`play_24007`), extracted for
+comparison against the local `svem-xerte-version`.
+
+- ✅ Extracted all 9 pages, `custom.css`, and the inlined `scoring-xerte.js`
+- ✅ `scoring-xerte.js` pulled from the **live DOM** (via browser) — it is inlined inside
+  the Xerte project (`data.xml`), NOT a standalone file and NOT loaded from GitHub Pages;
+  this is why it was "missing" from the editor's file list
+- ✅ `DIFF-NOTES.md` documenting every live-vs-local difference, page by page
+- ✅ Key finding: the live/published project is a **newer generation** than
+  `svem-xerte-version` — introduces a `.card`/`.pill` base-class system, `.svem-toast`
+  + ARIA live-region toasts, the `initSVEMShell` / `initSVEMSections` /
+  `renderSVEMEvidenceBoxes` refactor (JS-generated evidence boxes), and a broad
+  accessibility pass (focus-visible rings, keyboard-sortable resources table, SR-only labels)
+- ✅ Assessment/resource **content** is unchanged between live and local (every theme's
+  Level 1–5 bullets and all resource links are byte-identical)
+- ✅ Documented content drifts where live is ahead: page-02 dropped "Draft" from the Medr
+  Learner Engagement Code reference; page-03 has the Enhancement-Plan explainer block
+  commented out
+- ✅ Noted that the live `scoring-xerte.js` and the local WIP have **diverged** (local grew
+  i18n scaffolding; live grew the shell/a11y architecture) — reconciliation is a merge, not
+  an overwrite
+
+### Fixed - Summary Page Script (`svem-xerte-live/page-08.html`)
+
+- ✅ `escapeHTML()` had all five HTML-entity strings decoded during extraction —
+  `'&amp;'`→`'&'`, `'&lt;'`→`'<'`, `'&gt;'`→`'>'`, `'&quot;'`→`'"'`, and fatally
+  `'&#39;'`→`'''` (an unterminated string literal = **SyntaxError** that broke the entire
+  summary `<script>`, so the report never generated). Restored the five entities;
+  `node --check` passes. (Extraction artifact — live site unaffected.)
+
+### Added - Welsh Version rebuilt on live architecture (`svem-xerte-welsh-live/`)
+
+Cymraeg edition of the tool, rebuilt on the **live** English architecture (superseding the
+earlier `svem-xerte-welsh/`, which was based on the old design). Runs as a **separate Xerte
+resource** with its own `sv_cy_` localStorage namespace and the live (no-chart) summary.
+
+- ✅ `scoring-xerte.js` — Welsh engine: `STORAGE_PREFIX = 'sv_cy_'` + all ~30 user-facing
+  strings translated; logic **identical** to the live English engine (verified by diff +
+  `node --check`). `findScoreButton()` matches the Welsh "Gosod fel Lefel N" label; import
+  regex strips the `sv_cy_` prefix
+- ✅ `custom.css` — copied from live verbatim (language-neutral)
+- ✅ All 9 pages built on the live structure with Welsh content:
+  - page-01 title, page-02 introduction, page-03 enhancement plan (mirrors live's
+    commented-out explainer), page-04 themes overview
+  - page-05/06/07 themes — signed-off Welsh assessment content preserved verbatim; upgraded
+    to data-driven evidence boxes, `.pill` badges, ARIA toggles, live init
+  - page-08 summary — live no-chart design, fully translated inline script (`node --check` OK)
+  - page-09 resources — **Welsh document URLs** kept, live accessibility structure applied
+- ✅ Reused signed-off Welsh from `svem-xerte-welsh/` + `terminology-cy.csv`; provisional
+  UI strings and open questions logged in `TRANSLATION-QUERIES-LIVE.md`
+- ⚠️ Known follow-ups (in `TRANSLATION-QUERIES-LIVE.md`): all `PG...` page-IDs still point at
+  the English resource and must be repointed once the Welsh Xerte object exists; the summary
+  page currently omits the "CPD Asynch LTA LC module" section and 2 of 4 teaser links
+  (pending restore); several UI micro-strings are provisional pending sign-off
+
+### Files Created
+- `svem-xerte-live/` - live mirror: `page-01.html`…`page-09.html`, `custom.css`,
+  `scoring-xerte.js`, `DIFF-NOTES.md`
+- `svem-xerte-welsh-live/` - Welsh build: `page-01.html`…`page-09.html`, `custom.css`,
+  `scoring-xerte.js`, `TRANSLATION-QUERIES-LIVE.md`
+
+---
+
 ## [1.6.0] - 2026-02-09
 
 ### Added - Introduction Page Content & Scoring Explanation
@@ -846,4 +913,4 @@ The downloaded HTML includes additional styles for better presentation:
 
 ---
 
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-07-24
