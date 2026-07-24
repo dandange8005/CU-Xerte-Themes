@@ -625,14 +625,14 @@ body.dark-mode .sv2-legend-dash { border-top-color: rgba(255,255,255,0.35); }
         <div class="sv2-level-item sv2-level-item--2">
           <span class="sv2-level-num">2</span>
           <div class="sv2-level-desc">
-            <strong>Baseline Practice</strong>
+            <strong>Developing Practice</strong>
             <span>Minimum standards met</span>
           </div>
         </div>
         <div class="sv2-level-item sv2-level-item--1">
           <span class="sv2-level-num">1</span>
           <div class="sv2-level-desc">
-            <strong>Moving towards Baseline</strong>
+            <strong>Foundational Practice</strong>
             <span>Action required</span>
           </div>
         </div>
@@ -711,17 +711,74 @@ $(function () {
 
 // Config (mirrors scoring-xerte.js — redeclared here for page isolation)
 const CONFIG_V2 = {
-    STORAGE_PREFIX: 'sv_',
     THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
     TOAST_DURATION: 2000,
     VISIBILITY_CHECK_INTERVAL: 500,
     CHART_INIT_RETRY: 100
 };
 
+// ── Language / Localisation (page-local, mirrors scoring-xerte.js) ──
+// SVEM_LANG is a global set by scoring-xerte.js (default 'en') and overridden
+// to 'cy' at the top of the Welsh copy of this page's inline script.
+function svLangV2() {
+    return (typeof SVEM_LANG !== 'undefined' && SVEM_LANG === 'cy') ? 'cy' : 'en';
+}
+function storagePrefixV2() {
+    return svLangV2() === 'cy' ? 'sv_cy_' : 'sv_';
+}
+// Summary-page UI strings. Welsh (cy) values not present in the supplied
+// docx/xlsx are translator-supplied — see TRANSLATION-QUERIES.md.
+const STR_V2 = {
+    en: {
+        notScored: 'Not Scored',
+        level: 'Level',
+        transitioning: (a, b) => `Transitioning: ${a} → ${b}`,
+        evidence: 'Evidence:',
+        noEvidence: 'No evidence provided',
+        notStarted: 'Not Started',
+        inProgress: 'In Progress',
+        complete: 'Complete',
+        reportDownloaded: 'Report downloaded successfully',
+        reportTitle: 'SVEM Self-Assessment Report',
+        dateLocale: 'en-GB',
+        maturity: {
+            1: 'Foundational Practice',
+            2: 'Developing Practice',
+            3: 'Emerging Good Practice',
+            4: 'Established Strong Practice',
+            5: 'Exceptional Practice'
+        }
+    },
+    cy: {
+        notScored: 'Heb ei Sgorio',
+        level: 'Lefel',
+        transitioning: (a, b) => `Trawsnewid: ${a} → ${b}`,
+        evidence: 'Tystiolaeth:',
+        noEvidence: "Dim tystiolaeth wedi'i darparu",
+        notStarted: 'Heb Ddechrau',
+        inProgress: 'Ar y Gweill',
+        complete: "Wedi'i Gwblhau",
+        reportDownloaded: "Adroddiad wedi'i lawrlwytho'n llwyddiannus",
+        reportTitle: 'Adroddiad Hunanasesu — Model Gwella Llais y Myfyrwyr',
+        dateLocale: 'cy-GB',
+        maturity: {
+            1: 'Arfer Sylfaenol',
+            2: 'Arfer Datblygol',
+            3: 'Arfer Da Datblygol',
+            4: 'Arfer Cryf Sefydledig',
+            5: 'Arfer Eithriadol'
+        }
+    }
+};
+function tV2(key) {
+    const lang = svLangV2();
+    return (STR_V2[lang] && key in STR_V2[lang]) ? STR_V2[lang][key] : STR_V2.en[key];
+}
+
 // LocalStorage helper
 function getSectionDataV2(sectionId) {
     try {
-        const data = localStorage.getItem(`${CONFIG_V2.STORAGE_PREFIX}${sectionId}`);
+        const data = localStorage.getItem(`${storagePrefixV2()}${sectionId}`);
         return data ? JSON.parse(data) : { score: 0, note: '' };
     } catch (e) {
         return { score: 0, note: '' };
@@ -784,26 +841,20 @@ function escapeHTMLV2(str) {
 
 // Return the maturity level name for a numeric score
 function getMaturityNameV2(score) {
-    if (!score) return 'Not Scored';
+    if (!score) return tV2('notScored');
     const level = Math.floor(score);
-    const names = {
-        1: 'Moving towards Baseline',
-        2: 'Baseline Practice',
-        3: 'Emerging Good Practice',
-        4: 'Established Strong Practice',
-        5: 'Exceptional Practice'
-    };
+    const names = tV2('maturity');
     if (score % 1 !== 0) {
-        return `Transitioning: ${names[level]} → ${names[level + 1]}`;
+        return tV2('transitioning')(names[level], names[level + 1]);
     }
     return names[level] || '';
 }
 
 // Build a coloured level-badge pill
 function levelBadgeHTML(score) {
-    if (!score) return '<span class="sv2-level-badge sv2-lb-0">Not Scored</span>';
+    if (!score) return `<span class="sv2-level-badge sv2-lb-0">${tV2('notScored')}</span>`;
     const l = Math.floor(score);
-    return `<span class="sv2-level-badge sv2-lb-${l}">Level ${score}</span>`;
+    return `<span class="sv2-level-badge sv2-lb-${l}">${tV2('level')} ${score}</span>`;
 }
 
 // Progress-bar width (score out of 5 → %)
@@ -895,7 +946,7 @@ function generateSpiderChartV2() {
                         title: (ctx) => sectionMeta[ctx[0].dataIndex].name,
                         label: (ctx) => {
                             const s = ctx.parsed.r;
-                            return s === 0 ? 'Not Scored' : `Level ${s} — ${getMaturityNameV2(s)}`;
+                            return s === 0 ? tV2('notScored') : `${tV2('level')} ${s} — ${getMaturityNameV2(s)}`;
                         }
                     }
                 },
@@ -933,8 +984,8 @@ function sectionRowHTML(section, savedData) {
     if (hasScore) {
         const note = savedData.note && savedData.note.trim();
         evidenceHTML = note
-            ? `<div class="sv2-section-evidence"><strong>Evidence:</strong>${escapeHTMLV2(note).replace(/\n/g, '<br>')}</div>`
-            : `<div class="sv2-section-evidence"><em class="sv2-no-evidence">No evidence provided</em></div>`;
+            ? `<div class="sv2-section-evidence"><strong>${tV2('evidence')}</strong>${escapeHTMLV2(note).replace(/\n/g, '<br>')}</div>`
+            : `<div class="sv2-section-evidence"><em class="sv2-no-evidence">${tV2('noEvidence')}</em></div>`;
     }
 
     return `
@@ -990,13 +1041,13 @@ function updateStatsV2(stats) {
     const chip = document.getElementById('report-status');
     if (chip) {
         if (stats.completed === stats.total && stats.total > 0) {
-            chip.textContent = 'Complete';
+            chip.textContent = tV2('complete');
             chip.className   = 'sv2-status-chip complete';
         } else if (stats.completed > 0) {
-            chip.textContent = 'In Progress';
+            chip.textContent = tV2('inProgress');
             chip.className   = 'sv2-status-chip in-progress';
         } else {
-            chip.textContent = 'Not Started';
+            chip.textContent = tV2('notStarted');
             chip.className   = 'sv2-status-chip';
         }
     }
@@ -1006,7 +1057,7 @@ function updateStatsV2(stats) {
 function generateReportV2() {
     // Set report date
     document.getElementById('report-date').textContent =
-        new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+        new Date().toLocaleDateString(tV2('dateLocale'), { year: 'numeric', month: 'long', day: 'numeric' });
 
     const stats = {
         completed: 0, total: 0, totalScore: 0, scored: 0,
@@ -1044,7 +1095,7 @@ function generateReportV2() {
             : null;
         const themeBadge = themeAvg !== null
             ? levelBadgeHTML(themeAvg)
-            : '<span class="sv2-level-badge sv2-lb-0">Not Started</span>';
+            : `<span class="sv2-level-badge sv2-lb-0">${tV2('notStarted')}</span>`;
 
         return `
             <div class="sv2-theme-card">
@@ -1086,7 +1137,7 @@ function downloadReportHTML() {
 
     const styleEl  = document.querySelector('style');
     const styles   = styleEl ? styleEl.textContent : '';
-    const reportDate = new Date().toLocaleDateString('en-GB');
+    const reportDate = new Date().toLocaleDateString(tV2('dateLocale'));
     const fileName   = 'SVEM-Report-' + new Date().toISOString().split('T')[0] + '.html';
 
     const standaloneStyles = `
@@ -1101,11 +1152,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial
 @media print { body { background:#fff; padding:0; } .sv2-page { box-shadow:none; } .sv2-theme-card { page-break-inside:avoid; } }`;
 
     const fullHTML = `<!DOCTYPE html>
-<html lang="en">
+<html lang="${svLangV2()}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVEM Self-Assessment Report — ${reportDate}</title>
+<title>${tV2('reportTitle')} — ${reportDate}</title>
 <style>${styles}${standaloneStyles}</style>
 </head>
 <body>
@@ -1121,7 +1172,7 @@ ${clone.outerHTML}
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
-    showToastV2('Report downloaded successfully');
+    showToastV2(tV2('reportDownloaded'));
 }
 
 // ── Toast ────────────────────────────────────────────────────

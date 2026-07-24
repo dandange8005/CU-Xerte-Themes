@@ -1,0 +1,47 @@
+English,Welsh (chosen),Source,Note
+"Student Voice Enhancement Model","Model Gwella Llais y Myfyrwyr","P.g 1 / Pg.2 docx",
+"Student Voice","Llais y Myfyrwyr","docx (throughout)",
+"Student Voice and Partnership Team","Tîm Llais y Myfyrwyr a Phartneriaeth","Pg 3 docx",
+"Enhancement Plan","Cynllun Gwella","Pg 3 docx",
+"self-reflection","hunanfyfyrio","Pg 3 docx",
+"maturity level","lefel aeddfedrwydd","Pg 3 docx",
+"Review and Enhancement (RE)","Adolygu a Gwella (RE)","docx",
+"Level 1 – Foundational Practice","Lefel 1 – Arfer Sylfaenol","model xlsx (signed-off)","xlsx wins over docx 'Gwaith sylfaenol'"
+"Level 2 – Developing Practice","Lefel 2 – Arfer Datblygol","model xlsx (signed-off)","xlsx wins over docx 'Datblygu gwaith'"
+"Level 3 – Emerging Good Practice","Lefel 3 – Arfer Da Datblygol","model xlsx (signed-off)","xlsx wins over docx 'Gwaith da sy'n dod i'r amlwg'"
+"Level 4 – Established Strong Practice","Lefel 4 – Arfer Cryf Sefydledig","model xlsx (signed-off)","xlsx wins over docx 'Gwaith cryf sefydledig'"
+"Level 5 – Exceptional Practice","Lefel 5 – Arfer Eithriadol","model xlsx (signed-off)","xlsx wins over docx 'Gwaith eithriadol'"
+"Students in Governance","Myfyrwyr mewn Llywodraethu","model xlsx (signed-off)","xlsx wins over docx 'Myfyrwyr ym maes llywodraethu'"
+"Continuing Professional Development (CPD)","Datblygiad Proffesiynol Parhaus (DPP)","model xlsx / Pg 5 docx","acronym DPP; Glossary uses 'CPD' — see TRANSLATION-QUERIES.md"
+"Student Voice Framework (SVF)","Fframwaith Llais y Myfyrwyr (SVF)","Glossary / Pg 5 docx",
+"Student Rep Coordinator (SRC)","Cydlynydd Cynrychiolwyr y Myfyrwyr (SRC)","Glossary / Pg 5 docx",
+"Student Survey Contact (SSC)","Cyswllt Arolwg Myfyrwyr (SSC)","Glossary / Pg 5 docx",
+"Student Experience Lead (SEL)","Arweinydd Profiad y Myfyrwyr (SEL)","Glossary / Pg 5 docx",
+"Student Voice Experience Network (SVEN)","Rhwydwaith Llais a Phrofiad y Myfyrwyr (SVEN)","Glossary / Pg 5 docx",
+"Board of Study (BoS)","Bwrdd Astudiaethau (BoS)","Glossary / Pg 5 docx",
+"Education Student Experience Committee (ESEC)","Pwyllgor Addysg a Phrofiad Myfyrwyr (ESEC)","Glossary / Pg 5 docx",
+"Student Staff Panel (SSP)","Paneli Myfyrwyr a Staff (SSP)","Glossary / docx",
+"Actions and Key Decisions (AKDs)","Cofnod o gamau gweithredu a phenderfyniadau allweddol (AKDs)","Glossary / Pg 6 docx",
+"Enriching Student Life Awards (ESLAs)","Gwobrau Cyfoethogi Bywyd Myfyrwyr (ESLAs)","Glossary / Pg 6 docx",
+"Mid Module Enhancement (MME)","Arolwg Gwella Modiwlau ar Ganol y Semester (MME)","Pg 7 docx / model xlsx","docx also uses 'Gwella ar Ganol Modiwl'"
+"End of Module Enhancement (EME)","Arolwg Gwella ar Ddiwedd Modiwl (GDdM)","Pg 7 docx","acronym rendered GDdM in Pg 7; EME/EM used elsewhere — see queries"
+"National Student Survey (NSS)","Arolwg Cenedlaethol y Myfyrwyr (NSS)","Glossary / docx",
+"Cardiff University Postgraduate Taught Survey (CUPTS)","Arolwg Ôl-raddedigion a Addysgir Prifysgol Caerdydd (CUPTS)","Glossary / docx",
+"Postgraduate Research Experience Survey (PRES)","Arolwg o Brofiad Ymchwilwyr Ôl-raddedig (PRES)","Glossary / docx",
+"Higher Education Achievement Report (HEAR)","Eich Adroddiad Cyflawniad Addysg Uwch (HEAR)","Glossary / Pg 5 docx",
+"Equality Diversity and Inclusion (EDI)","Cydraddoldeb, Amrywiaeth a Chynhwysiant (EDI)","Glossary / Pg 5 docx",
+"Business Intelligence (BI)","Deallusrwydd Busnes (BI)","Glossary / Pg 7 docx",
+"Postgraduate (PG)","Ôl-raddedigion (PG)","Glossary / Pg 7 docx",
+"Postgraduate Taught (PGT)","Ôl-raddedig a addysgir (PGT)","Glossary / Pg 7 docx",
+"Postgraduate Research (PGR)","Ymchwil Ôl-raddedig (PGR)","Glossary / Pg 7 docx",
+"Enter Resource","Nodi adnodd","P.g 1 docx",
+"Next","Nesaf","Pg 2 docx",
+"Back to Themes","Yn ôl at y Themâu","Pg 5/6/7 docx",
+"Save & Continue","Cadw a Pharhau","Pg 5/6/7 docx",
+"Not Scored","Heb ei Sgorio","translator-supplied (UI)","not in source docs — see queries"
+"Not Started","Heb Ddechrau","translator-supplied (UI)","not in source docs — see queries"
+"In Progress","Ar y Gweill","translator-supplied (UI)","not in source docs — see queries"
+"Complete","Wedi'i Gwblhau","Pg 8 docx ('Wedi'u Cwblhau')",
+"Expand All","Ehangu Popeth","translator-supplied (UI)","not in source docs — see queries"
+"Collapse All","Crebachu Popeth","translator-supplied (UI)","not in source docs — see queries"
+"Transitioning to Level N","Trawsnewid i Lefel N","translator-supplied (UI)","'trawsnewid' per Pg 5 scoring explanation"

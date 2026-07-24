@@ -1,0 +1,625 @@
+<!-- Tudalen Grynodeb / Summary Page Content -->
+<div class="theme-page-container">
+  <main class="main-content"><!-- Pennawd yr Adroddiad -->
+    <div class="sv2-header">
+      <div>
+        <h1>Adroddiad Hunanasesu
+        </h1>
+        <p>Model Gwella Llais y Myfyrwyr &mdash; Prifysgol Caerdydd
+        </p>
+      </div>
+      <div class="sv2-header-meta"><span>Dyddiad: <span id="report-date"></span></span> <span class="sv2-status-chip" id="report-status">Heb Ddechrau</span>
+      </div>
+    </div>
+    <!-- Rhes Ystadegau -->
+    <div class="sv2-stats-row">
+      <div class="sv2-stat-card">
+        <div>
+          <div class="sv2-stat-label">Wedi Cwblhau
+          </div>
+          <div class="sv2-stat-value"><span id="completed-count">0</span><span class="sv2-stat-value-total">/8</span>
+          </div>
+          <div class="sv2-stat-sub">adrannau
+          </div>
+        </div>
+        <div class="sv2-stat-icon sv2-stat-icon--blue"><i class="fa-solid fa-list-check"></i>
+        </div>
+      </div>
+      <div class="sv2-stat-card">
+        <div>
+          <div class="sv2-stat-label">Cynnydd
+          </div>
+          <div class="sv2-stat-value" id="completion-percent">0%
+          </div>
+          <div class="sv2-stat-sub">cyffredinol
+          </div>
+        </div>
+        <div class="sv2-stat-icon sv2-stat-icon--green"><i class="fa-solid fa-chart-pie"></i>
+        </div>
+      </div>
+      <div class="sv2-stat-card">
+        <div>
+          <div class="sv2-stat-label">Lefel Gyfartalog
+          </div>
+          <div aria-label="Dim ar gael" class="sv2-stat-value" id="average-score">&mdash;
+          </div>
+          <div class="sv2-stat-sub" id="average-level-name">&nbsp;
+          </div>
+        </div>
+        <div class="sv2-stat-icon sv2-stat-icon--amber"><i class="fa-solid fa-gauge-high"></i>
+        </div>
+      </div>
+      <div class="sv2-stat-card">
+        <div class="sv2-stat-content">
+          <div class="sv2-stat-label">Maes Uchaf
+          </div>
+          <div aria-label="Dim ar gael" class="sv2-stat-value--sm" id="highest-area">&mdash;
+          </div>
+          <div class="sv2-stat-sub" id="highest-area-badge">&nbsp;
+          </div>
+        </div>
+        <div class="sv2-stat-icon sv2-stat-icon--red"><i class="fa-solid fa-trophy"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Corff yr Adroddiad -->
+    <div id="report-body"><!-- Bydd y cynnwys yn cael ei gynhyrchu gan JavaScript --></div>
+    <!-- Camau i Chi -->
+    <section>
+      <div class="section-header-wrapper">
+        <h2>Camau i Chi
+        </h2>
+      </div>
+      <div class="intro-sections-grid">
+        <section class="card intro-card"><i class="intro-card__icon fa-solid fa-file-arrow-down"></i>
+          <h3 class="intro-card__heading">Lawrlwytho eich adroddiad
+          </h3>
+          <p>Cadwch gopi o&#39;ch hunanfyfyrdod ar gyfer eich cofnodion eich hun. Gallwch argraffu hwn neu ei rannu â chydweithwyr.
+          </p>
+          <div class="sv2-actions-row sv2-actions-row--spaced">
+            <button class="btn btn-light btn-sm" onclick="downloadReportHTML(this); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Lawrlwytho Adroddiad (HTML)
+            </button>
+            <button class="btn btn-light btn-sm" onclick="backToMenu(); return false;" type="button"><i class="fa-solid fa-pen-to-square"></i> Parhau i Olygu
+            </button>
+          </div>
+        </section>
+        <section class="card intro-card intro-card--gold"><i class="intro-card__icon fa-solid fa-paper-plane"></i>
+          <h3 class="intro-card__heading">Rhannu eich data â ni
+          </h3>
+          <p>I gael Cynllun Gwella wedi&#39;i deilwra, anfonwch eich data asesu at y Tîm Llais y Myfyrwyr a Phartneriaeth:
+          </p>
+          <ol class="sv2-share-steps">
+            <li><strong>Lawrlwythwch</strong> eich ffeil data asesu gan ddefnyddio&#39;r botwm isod.</li>
+            <li><strong>Atodwch</strong> y ffeil a lawrlwythwyd i e-bost. Rhowch wybod i ni am eich rôl a blaenoriaeth eich Ysgol i&#39;n helpu i deilwra&#39;r cynllun.</li>
+            <li><strong>Anfonwch</strong> ef at <a href="mailto:LTAcademy@cardiff.ac.uk">LTAcademy@cardiff.ac.uk</a> &mdash; bydd y tîm yn dychwelyd cynllun wedi&#39;i deilwra o fewn <strong>20 diwrnod gwaith</strong>.</li>
+          </ol>
+          <div class="sv2-actions-row">
+            <button class="btn btn-light btn-sm" onclick="downloadJSON(); return false;" type="button"><i class="fa-solid fa-file-arrow-down"></i> Lawrlwytho Data Asesu
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- Adnoddau Defnyddiol -->
+    <section>
+      <div class="section-header-wrapper">
+        <h2><i class="fa-solid fa-book-open"></i> Adnoddau Defnyddiol
+        </h2>
+      </div>
+      <div class="card intro-card next-steps-card next-steps-card--blue">
+        <p>Dogfennau a chanllawiau ategol i&#39;ch helpu i ddatblygu arfer Llais y Myfyrwyr yn eich Ysgol.
+        </p>
+        <p><a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(Welsh)/1.%20Student%20Voice%20Roles,%20Structures%20and%20Training/Case%20study%20-%20school%20collaboration%20on%20events-en-cy-R-C.pdf?csf=1&amp;web=1&amp;e=jm8Xjv" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-file-lines"></i> Case study - school collaboration on events</a>
+        </p>
+        <p><a class="resource-link" href="https://cf.sharepoint.com/:b:/r/teams/SVENTEST/Shared%20Documents/Student%20Voice%20Enhancement%20Model/Enhancement%20Model%20Resources%20(Welsh)/4.%20Mid%20Module%20Enhancement/Mid-Module%20Enhancement%20Guidance%20and%20Advice-en-cy-R-C.pdf?csf=1&amp;web=1&amp;e=O1j1KZ" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-file-lines"></i> Mid-Module Enhancement Guidance and Advice</a>
+        </p>
+        <button class="btn btn-light btn-sm" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1770647401918'}); return false;" type="button">Gweld pob adnodd <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+    <!-- Llywio -->
+    <div class="page-navigation">
+      <button class="btn btn-light" onclick="x_navigateToPage(false,{type:'linkID',ID:'PG1765898999143'}); return false;" type="button">&larr; Yn ôl i&#39;r Themâu
+      </button>
+    </div>
+  </main>
+</div>
+<!-- Hysbysiad Toast -->
+<div aria-atomic="true" aria-live="polite" class="svem-toast" data-svem-toast="" role="status">Adroddiad wedi&#39;i Gynhyrchu
+</div>
+
+
+<script>
+// JavaScript y Dudalen Grynodeb — yn cynhyrchu adroddiad o ddata localStorage
+
+if (typeof initSVEMShell === 'function') {
+    initSVEMShell();
+}
+
+// Cysonion Ffurfweddu (yn cyd-fynd â scoring-xerte.js)
+const CONFIG = {
+    STORAGE_PREFIX: 'sv_cy_',
+    THEMES_OVERVIEW_PAGE_ID: 'PG1765898999143',
+    TOAST_DURATION: 2000,
+    NAVIGATION_DELAY: 500,
+    RELOAD_DELAY: 1500,
+    VISIBILITY_CHECK_INTERVAL: 500,
+    CHART_INIT_RETRY: 100
+};
+
+// Ffwythiannau Cyfleustodau localStorage (yn cyd-fynd â scoring-xerte.js)
+function getSectionData(sectionId) {
+    try {
+        const data = localStorage.getItem(`${CONFIG.STORAGE_PREFIX}${sectionId}`);
+        return data ? JSON.parse(data) : { score: 0, note: '' };
+    } catch (e) {
+        console.error(`Error reading section ${sectionId}:`, e);
+        return { score: 0, note: '' };
+    }
+}
+
+// Enwau byr ar gyfer y cerdyn 'Maes Uchaf'
+const SECTION_SHORT_DISPLAY = {
+    'roles': 'Rolau a Strwythurau', 'training': 'Llywodraethu',
+    'reps-ssps': 'Cynrychiolwyr a SSPs', 'mme': 'Canol Modiwl', 'me': 'Diwedd Modiwl',
+    'nss': 'NSS', 'cupts': 'CUPTS', 'pres': 'PRES'
+};
+
+// Ffurfweddiad yr adrannau
+const SECTIONS = {
+    'Thema 1: Strwythurau sy\'n Cefnogi Llais y Myfyrwyr': {
+        sections: [
+            { id: 'roles', name: 'Rolau, Strwythurau a Hyfforddiant Llais y Myfyrwyr' },
+            { id: 'training', name: 'Myfyrwyr mewn Llywodraethu' }
+        ]
+    },
+    'Thema 2: Cynrychiolwyr Myfyrwyr a SSPs': {
+        sections: [
+            { id: 'reps-ssps', name: 'Cynrychiolwyr y Myfyrwyr a Phaneli Myfyrwyr a Staff' }
+        ]
+    },
+    'Thema 3: Mecanweithiau Ffurfiol': {
+        sections: [
+            { id: 'mme', name: 'Arolwg Gwella Modiwlau ar Ganol y Semester' },
+            { id: 'me', name: 'Arolwg Gwella ar Ddiwedd Modiwl' },
+            { id: 'nss', name: 'Arolwg Cenedlaethol y Myfyrwyr (NSS)' },
+            { id: 'cupts', name: 'Arolwg Ôl-raddedigion a Addysgir Prifysgol Caerdydd (CUPTS)' },
+            { id: 'pres', name: 'Arolwg o Brofiad Ymchwilwyr Ôl-raddedig (PRES)' }
+        ]
+    }
+};
+
+
+// Diogelu HTML rhag chwistrelliad wrth rendro testun tystiolaeth
+function escapeHTML(str) {
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Cael enw'r lefel aeddfedrwydd
+function getMaturityLevelName(score) {
+    if (!score) return 'Heb ei Sgorio';
+    const level = Math.floor(score);
+    const isTransitional = score % 1 !== 0;
+
+    const levels = {
+        1: 'Arfer Sylfaenol',
+        2: 'Arfer Datblygol',
+        3: 'Arfer Da Datblygol',
+        4: 'Arfer Cryf Sefydledig',
+        5: 'Arfer Eithriadol'
+    };
+
+    if (isTransitional) {
+        return `Trawsnewid (${levels[level]} → ${levels[level + 1]})`;
+    }
+    return levels[level];
+}
+
+// Creu HTML adroddiad adran
+function createSectionReportHTML(section, savedData) {
+    const hasScore = savedData && savedData.score;
+    const levelName = hasScore ? getMaturityLevelName(savedData.score) : 'Heb ei Sgorio';
+    const isUnsure = !!(savedData && savedData.unsure);
+
+    const evidenceHTML = savedData.note?.trim()
+        ? `<strong>Tystiolaeth:</strong><p>${escapeHTML(savedData.note).replace(/\n/g, '<br>')}</p>`
+        : (hasScore ? `<em class="no-evidence">Dim tystiolaeth wedi'i darparu</em>` : '');
+
+    const levelNum = hasScore ? Math.floor(savedData.score) : 0;
+    const badge = hasScore
+        ? `<span class="sv2-level-badge sv2-lb-${levelNum}">Lefel ${savedData.score}</span>`
+        : `<span class="sv2-level-badge sv2-lb-0">Heb ei Sgorio</span>`;
+
+    const unsureHTML = isUnsure
+        ? `<span class="sv2-unsure-flag"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> Dim yn hyderus yn y sgôr hwn</span>`
+        : '';
+
+    return `
+<div class="section-report">
+<div class="section-report__header">
+    <h3 class="section-report__name">${section.name}</h3>
+    <div class="section-report__score">
+        ${badge}
+        ${hasScore ? `<span class="maturity-level">${levelName}</span>` : ''}
+    </div>
+</div>
+${unsureHTML}
+${evidenceHTML ? `<div class="section-report__evidence">${evidenceHTML}</div>` : ''}
+</div>
+`;
+}
+
+// Diweddaru'r ystadegau
+function updateStatistics(stats) {
+    // Nifer wedi cwblhau
+    document.getElementById('completed-count').textContent = stats.completed;
+
+    // Cynnydd cyffredinol %
+    const completionPercent = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
+    document.getElementById('completion-percent').textContent = `${completionPercent}%`;
+
+    // Lefel gyfartalog
+    const avgEl = document.getElementById('average-score');
+    const avgNameEl = document.getElementById('average-level-name');
+    if (stats.scored > 0) {
+        const avg = parseFloat((stats.totalScore / stats.scored).toFixed(1));
+        avgEl.textContent = avg;
+        if (avgNameEl) avgNameEl.textContent = getMaturityLevelName(avg);
+    } else {
+        avgEl.textContent = '—';
+        if (avgNameEl) avgNameEl.innerHTML = '&nbsp;';
+    }
+
+    // Maes uchaf
+    const highestEl = document.getElementById('highest-area');
+    const highestBadgeEl = document.getElementById('highest-area-badge');
+    if (highestEl) {
+        highestEl.textContent = stats.highestScore > 0
+            ? (SECTION_SHORT_DISPLAY[stats.highestSectionId] || stats.highestSection)
+            : '—';
+    }
+    if (highestBadgeEl) {
+        if (stats.highestScore > 0) {
+            const l = Math.floor(stats.highestScore);
+            highestBadgeEl.innerHTML = `<span class="sv2-level-badge sv2-lb-${l}">Lefel ${stats.highestScore}</span>`;
+        } else {
+            highestBadgeEl.innerHTML = '&nbsp;';
+        }
+    }
+
+    // Sglodyn statws
+    const statusEl = document.getElementById('report-status');
+    if (statusEl) {
+        if (stats.completed === stats.total && stats.total > 0) {
+            statusEl.textContent = 'Wedi\'i Gwblhau';
+            statusEl.className = 'sv2-status-chip complete';
+        } else if (stats.completed > 0) {
+            statusEl.textContent = 'Ar y Gweill';
+            statusEl.className = 'sv2-status-chip in-progress';
+        } else {
+            statusEl.textContent = 'Heb Ddechrau';
+            statusEl.className = 'sv2-status-chip';
+        }
+    }
+}
+
+// Cynhyrchu'r adroddiad
+function generateReport() {
+    const reportDate = new Date().toLocaleDateString('cy-GB', {
+        year: 'numeric', month: 'long', day: 'numeric'
+    });
+    document.getElementById('report-date').textContent = reportDate;
+
+    let stats = {
+        completed: 0, total: 0, totalScore: 0, scored: 0,
+        highestScore: 0, highestSection: '—', highestSectionId: null
+    };
+
+    const reportHTML = Object.entries(SECTIONS).map(([themeName, theme]) => {
+        const sectionsHTML = theme.sections.map(section => {
+            stats.total++;
+            const savedData = getSectionData(section.id);
+
+            if (savedData.score) {
+                stats.completed++;
+                stats.totalScore += savedData.score;
+                stats.scored++;
+                if (savedData.score > stats.highestScore) {
+                    stats.highestScore = savedData.score;
+                    stats.highestSection = section.name;
+                    stats.highestSectionId = section.id;
+                }
+            }
+
+            return createSectionReportHTML(section, savedData);
+        }).join('');
+
+        return `
+<div class="theme-report">
+    <h2 class="theme-report__title">${themeName}</h2>
+    ${sectionsHTML}
+</div>
+`;
+    }).join('');
+
+    document.getElementById('report-body').innerHTML = reportHTML;
+    if (typeof initSVEMA11y === 'function') {
+        initSVEMA11y();
+    }
+    updateStatistics(stats);
+}
+
+// Lawrlwytho'r adroddiad fel ffeil HTML
+function downloadReportHTML(btn) {
+    const summaryPage = btn.closest('main');
+    const summaryClone = summaryPage.cloneNode(true);
+
+    // Tynnu'r adran adnoddau a llywio o'r adroddiad wedi'i lawrlwytho
+    const toRemove = summaryClone.querySelectorAll('section, .report-actions, .page-navigation');
+    toRemove.forEach(el => el.remove());
+
+    var reportContent = summaryClone.outerHTML;
+    var styles = document.querySelector('style')?.textContent ?? '';
+    var reportDate = new Date().toLocaleDateString('cy-GB');
+    var fileName = 'MGLlM-Adroddiad-' + new Date().toISOString().split('T')[0] + '.html';
+
+    // Arddulliau ychwanegol ar gyfer yr adroddiad annibynnol
+    var standaloneStyles = `
+/* ── Variable fallbacks ── */
+:root {
+--cu-brand-blue: #002554;
+--bg-white: #fff; --bg-light: #f9fafb; --bg-gray: #f3f4f6;
+--text-primary: #1f2937; --text-secondary: #374151; --text-muted: #6b7280; --text-light-gray: #9ca3af;
+--border-light: #e5e7eb; --shadow-1: 0 1px 2px rgba(0,0,0,0.05);
+--radius-sm: 4px; --radius-md: 8px;
+--size-1: 0.25rem; --size-2: 0.5rem; --size-3: 0.75rem; --size-5: 1.25rem; --size-7: 2rem;
+}
+
+/* ── Base ── */
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+background: #f0f2f5; margin: 0; padding: 32px 16px; color: #1f2937; font-size: 15px; line-height: 1.6;
+}
+main {
+background: white; max-width: 860px; margin: 0 auto;
+padding: 2.5rem 3rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 12px;
+}
+
+/* ── Report header ── */
+.sv2-header { margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 2px solid #e5e7eb; }
+.sv2-header h2 { font-size: 1.75rem; color: #002554; margin: 0; }
+.sv2-header p  { margin: 4px 0 0; color: #6b7280; font-size: 0.9rem; }
+
+/* ── Theme report cards ── */
+.theme-report {
+border: 1px solid #e5e7eb;
+border-radius: 10px;
+margin-bottom: 1.5rem;
+overflow: hidden;
+page-break-inside: avoid;
+}
+
+.theme-report__title {
+font-size: 0.95rem;
+font-weight: 700;
+color: #fff;
+background: #002554;
+margin: 0;
+padding: 0.65rem 1.25rem;
+letter-spacing: 0.01em;
+}
+
+/* ── Section rows ── */
+.section-report {
+padding: 1rem 1.25rem;
+border-bottom: 1px solid #f3f4f6;
+}
+
+.section-report:last-child { border-bottom: none; }
+
+.section-report__header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 1rem;
+margin-bottom: 0.5rem;
+}
+
+.section-report__name {
+font-size: 0.95rem;
+font-weight: 600;
+color: #374151;
+margin: 0;
+flex: 1;
+}
+
+.section-report__score {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+flex-shrink: 0;
+}
+
+.maturity-level {
+font-size: 0.78rem;
+color: #9ca3af;
+font-style: italic;
+}
+
+/* ── Evidence block ── */
+.section-report__evidence {
+background: #f9fafb;
+border-left: 3px solid #002554;
+border-radius: 0 6px 6px 0;
+padding: 0.6rem 0.9rem;
+margin-top: 0.5rem;
+font-size: 0.85rem;
+color: #6b7280;
+line-height: 1.6;
+}
+
+.section-report__evidence strong {
+display: block;
+font-size: 0.78rem;
+color: #374151;
+margin-bottom: 0.25rem;
+}
+
+.section-report__evidence p {
+margin: 0;
+white-space: pre-wrap;
+word-wrap: break-word;
+}
+
+.no-evidence { font-style: italic; color: #9ca3af; }
+
+/* ── Stats row ── */
+.sv2-stats-row { grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem; }
+.sv2-stat-card { padding: 0.75rem 1rem; }
+.sv2-stat-value { font-size: 1.4rem; }
+
+/* ── Print ── */
+@media print {
+body { background: white; padding: 0; }
+main { box-shadow: none; border-radius: 0; padding: 1rem; }
+.theme-report { page-break-inside: avoid; }
+.sv2-stats-row { grid-template-columns: repeat(4, 1fr); }
+}`;
+
+    // Creu dogfen HTML annibynnol
+    var fullHTML = '<!DOCTYPE html>\n' +
+        '<html lang="cy">\n' +
+        '<head>\n' +
+        '    <meta charset="UTF-8">\n' +
+        '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+        '    <title>Adroddiad Hunanasesu MGLlM - ' + reportDate + '</title>\n' +
+        '    <style>' + styles + standaloneStyles + '</style>\n' +
+        '</head>\n' +
+        '<body>\n' +
+        reportContent + '\n' +
+        '</body>\n' +
+        '</html>';
+
+    // Creu a lawrlwytho'r ffeil
+    var blob = new Blob([fullHTML], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showToast('Adroddiad wedi\'i lawrlwytho\'n llwyddiannus');
+}
+
+// Lawrlwytho data fel JSON
+function downloadJSON() {
+    const allData = {
+        metadata: {
+            title: 'Adroddiad Hunanasesu MGLlM',
+            date: new Date().toISOString(),
+            version: '1.0'
+        },
+        assessmentData: {}
+    };
+
+    // Casglu data pob adran
+    Object.keys(SECTIONS).forEach(themeName => {
+        const theme = SECTIONS[themeName];
+        theme.sections.forEach(section => {
+            const savedData = getSectionData(section.id);
+            if (savedData.score > 0 || savedData.note) {
+                allData.assessmentData[section.id] = {
+                    sectionName: section.name,
+                    score: savedData.score || null,
+                    maturityLevel: getMaturityLevelName(savedData.score),
+                    evidence: savedData.note || '',
+                    unsure: savedData.unsure || false
+                };
+            }
+        });
+    });
+
+    // Creu a lawrlwytho'r ffeil
+    const dataStr = JSON.stringify(allData, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `MGLlM-Asesiad-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    // Dangos toast
+    showToast('Data wedi\'i lawrlwytho\'n llwyddiannus');
+}
+
+// Dangos hysbysiad toast
+function showToast(message) {
+    const toast = typeof getVisibleToast === 'function'
+        ? getVisibleToast()
+        : Array.from(document.querySelectorAll('[data-svem-toast]')).find(function (item) {
+            return item.offsetParent !== null;
+        });
+    if (toast) {
+        toast.textContent = message || 'Adroddiad wedi\'i Gynhyrchu';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), CONFIG.TOAST_DURATION);
+    }
+}
+
+// Creu gwyliwr gwelededd ar gyfer elfen
+function createVisibilityWatcher(element, callback) {
+    let lastVisibleState = false;
+
+    const checkVisibility = () => {
+        const isVisible = element.offsetParent !== null;
+        if (isVisible && !lastVisibleState) {
+            callback();
+        }
+        lastVisibleState = isVisible;
+    };
+
+    return setInterval(checkVisibility, CONFIG.VISIBILITY_CHECK_INTERVAL);
+}
+
+// Cynhyrchu'r adroddiad wrth lwytho'r dudalen A phan ddaw'r dudalen yn weladwy
+(function () {
+    function initializeReports() {
+        generateReport();
+
+        // Hefyd rhedeg pan ddaw'r dudalen yn weladwy (yn trin llywio Xerte)
+        const summaryPageElement = document.querySelector('.theme-page-container');
+        if (summaryPageElement) {
+            const intervalId = createVisibilityWatcher(summaryPageElement, () => {
+                generateReport();
+            });
+            window._summaryPageInterval = intervalId;
+        }
+
+        window.addEventListener('focus', function () {
+            if (summaryPageElement && summaryPageElement.offsetParent !== null) {
+                generateReport();
+            }
+        });
+
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden && summaryPageElement && summaryPageElement.offsetParent !== null) {
+                generateReport();
+            }
+        });
+    }
+
+    initializeReports();
+})();
+
+</script>

@@ -1,0 +1,208 @@
+<!-- Theme 2: Student Representatives and Staff Panels -->
+<div class="theme-page-container">
+  <main class="main-content">
+    <header><span class="theme-label">Thema 2</span>
+      <h1>Cynrychiolwyr Myfyrwyr a Phaneli Staff a Myfyrwyr
+      </h1>
+      <p class="theme-description">Mae'r thema hon yn archwilio sut mae Ysgolion yn recriwtio, cefnogi a chydweithio â Chynrychiolwyr
+        Myfyrwyr trwy Baneli Staff a Myfyrwyr. Mae'n cynnwys hyfforddiant repo, amrywiaeth a chynrychiolaeth,
+        strwythurau cyfarfodydd a phrosesau clir ar gyfer cofnodi camau gweithredu a chau'r ddolen adborth.
+      </p>
+    </header>
+    <!-- Scoring Explanation -->
+    <section class="scoring-explanation">
+      <details>
+        <summary><strong>Esboniad o'r Sgorio</strong> <span class="toggle-hint">(cliciwch i ehangu)</span></summary>
+        <div class="content-body">
+          <p>Mae'r model gwella yn defnyddio graddfa pum lefel i helpu Ysgolion i fyfyrio ar eu gwaith Llais y Myfyrwyr:</p>
+          <ul class="level-scale-list">
+            <li><strong>Lefel 1</strong> – Arfer Sylfaenol</li>
+            <li><strong>Lefel 2</strong> – Arfer Datblygol</li>
+            <li><strong>Lefel 3</strong> – Arfer Da Datblygol</li>
+            <li><strong>Lefel 4</strong> – Arfer Cryf Sefydledig</li>
+            <li><strong>Lefel 5</strong> – Arfer Eithriadol</li>
+          </ul>
+          <p>Rydyn ni'n cydnabod nad yw Ysgolion bob amser yn ffitio'n daclus i mewn i un categori. Mewn llawer o achosion, gall gwaith fod mewn cyfnod o drawsnewid, gan ddangos tystiolaeth glir o gynnydd mewn rhai meysydd. Dyma lle defnyddir <strong>sgoriau .5</strong>.</p>
+          <p>Mae sgôr o .5 yn golygu bod yr Ysgol yn:</p>
+          <ul>
+            <li>dangos elfennau o'r lefel nesaf,</li>
+            <li>ond ddim yn ddigon cyson eto i fodloni'r meini prawf llawn ar gyfer y lefel honno.</li>
+          </ul>
+          <p>Er enghraifft:</p>
+          <ul class="score-examples-list">
+            <li><strong>1.5</strong> = gwell nag Arfer Sylfaenol, yn dechrau dangos arwyddion o Arfer Datblygol.</li>
+            <li><strong>2.5</strong> = gwell nag Arfer Datblygol, yn dechrau dangos arwyddion o Arfer Da Datblygol.</li>
+            <li><strong>3.5</strong> = yn dangos cynnydd da tuag at Arfer Cryf Sefydledig.</li>
+            <li><strong>4.5</strong> = yn agos at Arfer Eithriadol ond heb ei ymgorffori'n llawn eto.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+    <!-- SUBSECTION: Student Reps and SSPs -->
+    <section id="reps-ssps">
+      <div class="section-header-wrapper">
+        <h2>Cynrychiolwyr y Myfyrwyr a Phaneli Myfyrwyr a Staff
+        </h2>
+        <div class="section-badge-wrapper"><span class="pill score-badge" id="badge-reps-ssps">Heb ei Sgorio</span>
+          <button aria-controls="reps-ssps" aria-expanded="false" class="toggle-btn" onclick="toggleSection('reps-ssps', this); return false;" type="button">Ehangu Popeth <span class="toggle-icon">+</span>
+          </button>
+        </div>
+      </div>
+      <div class="section-description">
+        <p><strong>Termau allweddol:</strong></p>
+        <ul>
+          <li>Paneli Myfyrwyr a Staff (SSP)</li>
+          <li>Rhwydwaith Llais a Phrofiad y Myfyrwyr (SVEN)</li>
+          <li>Cofnod o gamau gweithredu a phenderfyniadau allweddol (AKDs)</li>
+          <li>Gwobrau Cyfoethogi Bywyd Myfyrwyr (ESLAs)</li>
+          <li>Adolygu a Gwella (RE)</li>
+        </ul>
+      </div>
+      <div class="level-group"><!-- Level 1 -->
+        <details class="l1">
+          <summary> <span class="level-number">LEFEL 1</span> <span class="level-title-text">Foundational
+              Practice</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>Nid oes gan yr Ysgol system SSP ffurfiol na phroses ar gyfer recriwtio Cynrychiolwyr Myfyrwyr eto.</li>
+              <li>Nid yw camau gweithredu’n cael eu cofnodi na'u cyfathrebu i fyfyrwyr.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('reps-ssps', 1, this); return false;" type="button">Gosod fel Lefel 1
+              </button>
+              <button class="score-btn" onclick="saveScore('reps-ssps', 1.5, this); return false;" type="button">Trawsnewid i Lefel 2 (1.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <!-- Level 2 -->
+        <details class="l2">
+          <summary> <span class="level-number">LEFEL 2</span> <span class="level-title-text">Arfer Datblygol</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>Mae'r Ysgol yn hyrwyddo'r System Cynrychiolwyr ac yn helpu i recriwtio Cynrychiolwyr.</li>
+              <li>Mae'r Ysgol yn aseinio o leiaf un Cynrychiolydd Myfyrwyr fesul carfan, ond prin yw’r ystyriaeth sydd wedi'i rhoi i ddimensiynau amrywiaeth myfyrwyr.</li>
+              <li>Mae'r Ysgol yn rhoi cyfle i Gynrychiolwyr ddod yn Gadeirydd ac Is-gadeirydd.</li>
+              <li>Mae'r Ysgol yn defnyddio templedi ar SVEN i ddiweddaru rhestrau Cynrychiolwyr, cyflwyno'r gweithdy/gweithdai Cynrychiolwyr, ac uwchlwytho Camau Gweithredu a Phenderfyniadau Allweddol (AKDs)/cofnodion a thaflenni crynodeb.</li>
+              <li>Mae AKDs/cofnodion a thaflen grynodeb yn cael eu huwchlwytho i SVEN erbyn diwedd y tymor fan bellaf.</li>
+              <li>Mae'r Ysgol yn trefnu i AKDs gael eu rhannu gyda Chynrychiolwyr Myfyrwyr o fewn pum diwrnod gwaith ar ôl yr SSP. E.e. Eu huwchlwytho i Dysgu Canolog.</li>
+              <li>Dylai AKDs gynnwys tabl o gamau y cytunwyd arnynt, a nodyn o unrhyw gynnydd a wnaed ers y cyfarfod wrth fynd i'r afael â'r camau hynny.</li>
+              <li>Mae'r ddolen adborth yn cael ei chau gyda Chynrychiolwyr Myfyrwyr yn yr SSP canlynol.</li>
+              <li>Mae SRC yn cadw cofnod o unrhyw newidiadau a wneir i ddangos effaith adborth myfyrwyr.</li>
+              <li>Sicrhau y cyflwynir adroddiad cynnydd SSP ar gamau gweithredu yn BoS ac ESEC.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('reps-ssps', 2, this); return false;" type="button">Gosod fel Lefel 2
+              </button>
+              <button class="score-btn" onclick="saveScore('reps-ssps', 2.5, this); return false;" type="button">Trawsnewid i Lefel 3 (2.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <!-- Level 3 -->
+        <details class="l3">
+          <summary> <span class="level-number">LEFEL 3</span> <span class="level-title-text">Arfer Da Datblygol</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>Mae'r Ysgol yn annog Cynrychiolwyr Myfyrwyr i gymryd rhan yn hyfforddiant Cynrychiolwyr Undeb y Myfyrwyr.</li>
+              <li>Mae o leiaf ddau Gynrychiolydd Myfyrwyr ym mhob carfan a rhoddir ystyriaeth i ddimensiynau amrywiaeth myfyrwyr, gan gynnwys ymgorffori darpariaeth ddwyieithog ar gyfer siaradwyr Cymraeg.</li>
+              <li>Mae Cadeirydd ac Is-gadeirydd SSP wedi'u hethol ac mae'r Ysgol yn eu cefnogi yn eu rolau.</li>
+              <li>Mae staff Llais Myfyrwyr a Chynrychiolwyr Myfyrwyr yr Ysgol yn ymwybodol o rolau ei gilydd.</li>
+              <li>Mae aelodaeth SSP wedi'i ffurfioli yn unol â chanllawiau Undeb y Myfyrwyr ac mae presenoldeb yn gyson.</li>
+              <li>Lle y bo'n briodol, mae staff yn cau'r ddolen adborth yn ystod SSP trwy gynnig ymatebion ar unwaith pan mae staff perthnasol yn bresennol.</li>
+              <li>Mae'r Ysgol yn cau'r ddolen adborth gyda Chynrychiolwyr Myfyrwyr yn gyson ac yn dechrau sefydlu prosesau ar gyfer cefnogi Cynrychiolwyr Myfyrwyr i gyfathrebu AKDs i'r garfan gyfan. E.e. Sleidiau bloeddio i'w harddangos cyn/ar ôl/yn ystod darlithoedd gan roi trosolwg o bwyntiau allweddol, newidiadau/ymatebion.</li>
+              <li>Mae SRC yn cadw cofnod o unrhyw newidiadau a wneir i ddangos effaith adborth myfyrwyr a, lle gallai newidiadau cymhlethach ddigwydd, mae cynlluniau gweithredu’n cael eu creu i helpu SSP i gadw golwg ar y canlyniadau y cytunwyd arnynt.</li>
+              <li>Lle bo hynny'n briodol, mae'r Ysgol yn diweddaru manylion Cynrychiolwyr Myfyrwyr sy'n newid ar SVEN.</li>
+              <li>Mae'r Ysgol yn cynnig cyfle i Gynrychiolwyr Myfyrwyr barhau yn eu rôl ar gyfer y flwyddyn academaidd ganlynol.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('reps-ssps', 3, this); return false;" type="button">Gosod fel Lefel 3
+              </button>
+              <button class="score-btn" onclick="saveScore('reps-ssps', 3.5, this); return false;" type="button">Trawsnewid i Lefel 4 (3.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <!-- Level 4 -->
+        <details class="l4">
+          <summary> <span class="level-number">LEFEL 4</span> <span class="level-title-text">Arfer Cryf Sefydledig</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>Mae'r Ysgol yn hyrwyddo Cynrychiolwyr Myfyrwyr yn rhagweithiol fel mecanwaith Llais y Myfyrwyr i garfannau myfyrwyr.</li>
+              <li>Mae Ysgolion yn gweithio tuag at gyflawni cymhareb Undeb Myfyrwyr o 1:40 (Cynrychiolwyr:myfyrwyr) ar gyfer carfanau mwy.</li>
+              <li>Cynrychiolwyr Myfyrwyr yn dychwelyd i gefnogi a hwyluso gweithdy Cynrychiolwyr Myfyrwyr yr Ysgol.</li>
+              <li>Mae enwau/lluniau cynrychiolwyr yn cael eu harddangos mewn ardaloedd myfyrwyr priodol (ar y campws a/neu ar-lein).</li>
+              <li>Mae staff allweddol yr Ysgol yn gallu cyfeirio myfyrwyr at eu Cynrychiolwyr Myfyrwyr priodol.</li>
+              <li>Mae'r Ysgol yn hwyluso cyfathrebu parhaus ac agored â Chynrychiolwyr Myfyrwyr rhwng cyfarfodydd ffurfiol.</li>
+              <li>Mae gan yr Ysgol broses sefydledig ar gyfer cau'r ddolen adborth a chadw myfyrwyr yn y ddolen gyda charfannau cyfan, gan gynnwys rhannu adborth gyda'r Tîm Cyfathrebu â Myfyrwyr.</li>
+              <li>Mae SRC yn gwerthuso effaith camau gweithredu trwy ofyn i Gynrychiolwyr Myfyrwyr yn ystod y cyfarfodydd.</li>
+              <li>Mae'r Ysgol yn rhoi gwybod i Gynrychiolwyr Myfyrwyr am gyfleoedd Llais y Myfyrwyr parhaus e.e. Gwobrau Cyfoethogi Bywyd Myfyrwyr (ESLAs), arolygon, Wythnos Siarad.</li>
+              <li>Cyn diwedd y Flwyddyn Academaidd gyfredol, mae Ysgolion yn hyrwyddo cyfleoedd Cynrychiolwyr Myfyrwyr ar gyfer y flwyddyn i ddod.</li>
+              <li>Mae'r ysgol yn gweithio gyda staff perthnasol i sicrhau bod y system Cynrychiolwyr Myfyrwyr mor gynrychioliadol â phosibl o'r garfan amrywiol o fyfyrwyr, gan gynnwys deunydd dwyieithog ar gyfer siaradwyr Cymraeg.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('reps-ssps', 4, this); return false;" type="button">Gosod fel Lefel 4
+              </button>
+              <button class="score-btn" onclick="saveScore('reps-ssps', 4.5, this); return false;" type="button">Trawsnewid i Lefel 5 (4.5)
+              </button>
+            </div>
+          </div>
+        </details>
+        <!-- Level 5 -->
+        <details class="l5">
+          <summary> <span class="level-number">LEFEL 5</span> <span class="level-title-text">Arfer Eithriadol</span>
+          </summary>
+          <div class="content-body">
+            <ul>
+              <li>Mae'r Ysgol yn cyflawni cymhareb Undeb Myfyrwyr o 1:40 (Cynrychiolydd:myfyrwyr).</li>
+              <li>Mae'r Ysgol yn creu cyfleoedd i staff Llais y Myfyrwyr, Cynrychiolwyr, a myfyrwyr rwydweithio a rhannu gwelliannau sy'n deillio o adborth Llais y Myfyrwyr, gan gynnig llwybrau ymgysylltu amrywiol i gyrraedd grwpiau myfyrwyr amrywiol. Mae prosesau’n cael eu hadolygu i nodi unrhyw leisiau nad ydynt wedi'u cynrychioli eto.</li>
+              <li>Mae ymgyrchoedd dolen adborth yn cael eu cyd-greu gyda myfyrwyr i lywio a rhoi diweddariadau ar newidiadau i staff a myfyrwyr. e.e. Eich Llais ar Waith.</li>
+              <li>Mae'r ysgol yn arddangos gwelliannau ac yn mesur effaith ar y cyd, gan gynnwys enghreifftiau dwyieithog o effaith (os yn berthnasol).</li>
+              <li>Mae SRC yn gweithio ar y cyd â SEL, Arweinwyr Rhaglenni, Arweinwyr Blwyddyn, Timau Addysgu ac ati, i gyfathrebu newidiadau/diweddariadau adborth i fyfyrwyr a staff.</li>
+              <li>Mae SRC yn gwerthuso effaith y camau a gymerwyd trwy ofyn i Gynrychiolwyr Myfyrwyr gasglu adborth gan garfannau a’i gyflwyno yn ystod y cyfarfod.</li>
+              <li>Mae staff Ysgol a Chynrychiolwyr yn cydweithio ar brosiectau Llais y Myfyrwyr/Ymgysylltu a gwelliannau y tu hwnt i'r mecanwaith SSP.</li>
+              <li>Mae’r Ysgol yn ystyried y cyfle i gynnal gweithgareddau i siaradwyr Cymraeg ochr yn ochr â'r SSP.</li>
+              <li>Mae'r Ysgol yn hyrwyddo cyfleoedd pellach i Gynrychiolwyr – h.y. cynadleddau/digwyddiadau.</li>
+              <li>Mae'r Ysgol yn cynnig mentrau gwobrwyo a chydnabod ystyrlon a chyson i Gynrychiolwyr Myfyrwyr.</li>
+              <li>Mae'r Ysgol yn hwyluso rhagor o Gynrychiolaeth Myfyrwyr sy'n digwydd y tu allan i gyfarfodydd fel sesiynau un-i-un, byrddau trafod neu ddulliau ar-lein. Gallai hyn hefyd gynnwys 'Cyfarfodydd Neuadd y Dref' a Fforwm y Coleg, i roi adborth ar faterion fel ystadau ac ati.</li>
+            </ul>
+            <div class="scoring-actions">
+              <button class="score-btn" onclick="saveScore('reps-ssps', 5, this); return false;" type="button">Gosod fel Lefel 5
+              </button>
+            </div>
+          </div>
+        </details>
+      </div>
+      <!-- Evidence Box -->
+      <!-- Blwch Tystiolaeth -->
+      <div class="evidence-box" data-placeholder="Enghraifft: Rydym yn recriwtio o leiaf 2 Gynrychiolydd Myfyrwyr fesul carfan ac yn cynnal SSPs bob tymor. Rhennir Camau Gweithredu a Phenderfyniadau Allweddol o fewn 10 diwrnod..." data-section-id="reps-ssps" data-section-label="Cynrychiolwyr y Myfyrwyr a Phaneli Myfyrwyr a Staff">&nbsp;
+      </div>
+    </section>
+    <!-- Navigation -->
+    <div class="page-navigation">
+      <button class="btn btn-light" onclick="backToMenu(); return false;">&larr; Yn ôl at y Themâu
+      </button>
+      <button class="btn btn-primary" onclick="saveAndContinue(); return false;">Cadw a Pharhau &rarr;
+      </button>
+    </div>
+  </main>
+</div>
+<!-- Toast Notification -->
+<div aria-atomic="true" aria-live="polite" class="svem-toast" data-svem-toast="" role="status">Newidiadau wedi'u Cadw
+</div>
+
+<script>
+// Cychwyn tudalen Thema 2
+// Mae'n tybio bod scoring-xerte.js wedi'i lwytho'n fyd-eang
+
+if (typeof renderSVEMEvidenceBoxes === 'function') {
+  renderSVEMEvidenceBoxes();
+}
+
+// Llwytho data sydd wedi'i gadw ar gyfer adran(nau)'r thema hon
+initSVEMSections(['reps-ssps']);
+</script>

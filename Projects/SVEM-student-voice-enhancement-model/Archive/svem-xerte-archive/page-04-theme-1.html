@@ -70,9 +70,9 @@
               <li>No explicit process for coordinating or overseeing how the School closes the feedback loop across Student Voice mechanisms.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('roles', 1, this); return false;">Set as Level 1
+              <button class="score-btn" data-score="1" onclick="saveScore('roles', 1, this); return false;">Set as Level 1
               </button>
-              <button class="score-btn" onclick="saveScore('roles', 1.5, this); return false;">Transitioning to Level 2 (1.5)
+              <button class="score-btn" data-score="1.5" onclick="saveScore('roles', 1.5, this); return false;">Transitioning to Level 2 (1.5)
               </button>
             </div>
           </div>
@@ -90,9 +90,9 @@
               <li>School begins developing a basic process for closing the feedback loop, with Student Voice roles starting to clarify responsibilities for coordinating and sharing feedback.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('roles', 2, this); return false;">Set as Level 2
+              <button class="score-btn" data-score="2" onclick="saveScore('roles', 2, this); return false;">Set as Level 2
               </button>
-              <button class="score-btn" onclick="saveScore('roles', 2.5, this); return false;">Transitioning to Level 3 (2.5)
+              <button class="score-btn" data-score="2.5" onclick="saveScore('roles', 2.5, this); return false;">Transitioning to Level 3 (2.5)
               </button>
             </div>
           </div>
@@ -116,9 +116,9 @@
               <li>School uses the Enhancement Model to pinpoint priority areas within student voice.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('roles', 3, this); return false;">Set as Level 3
+              <button class="score-btn" data-score="3" onclick="saveScore('roles', 3, this); return false;">Set as Level 3
               </button>
-              <button class="score-btn" onclick="saveScore('roles', 3.5, this); return false;">Transitioning to Level 4 (3.5)
+              <button class="score-btn" data-score="3.5" onclick="saveScore('roles', 3.5, this); return false;">Transitioning to Level 4 (3.5)
               </button>
             </div>
           </div>
@@ -146,9 +146,9 @@
               <li>Student Voice staff identify Student Voice collaboration opportunities with other Schools.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('roles', 4, this); return false;">Set as Level 4
+              <button class="score-btn" data-score="4" onclick="saveScore('roles', 4, this); return false;">Set as Level 4
               </button>
-              <button class="score-btn" onclick="saveScore('roles', 4.5, this); return false;">Transitioning to Level 5 (4.5)
+              <button class="score-btn" data-score="4.5" onclick="saveScore('roles', 4.5, this); return false;">Transitioning to Level 5 (4.5)
               </button>
             </div>
           </div>
@@ -172,7 +172,7 @@
               <li>School Student Voice staff engage in Student Voice collaboration and partnership opportunities with other Schools.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('roles', 5, this); return false;">Set as Level 5
+              <button class="score-btn" data-score="5" onclick="saveScore('roles', 5, this); return false;">Set as Level 5
               </button>
             </div>
           </div>
@@ -241,9 +241,9 @@
               <li>No training or support is provided for student participation in governance.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('training', 1, this); return false;">Set as Level 1
+              <button class="score-btn" data-score="1" onclick="saveScore('training', 1, this); return false;">Set as Level 1
               </button>
-              <button class="score-btn" onclick="saveScore('training', 1.5, this); return false;">Transitioning to Level 2 (1.5)
+              <button class="score-btn" data-score="1.5" onclick="saveScore('training', 1.5, this); return false;">Transitioning to Level 2 (1.5)
               </button>
             </div>
           </div>
@@ -262,9 +262,9 @@
               <li>No structured process is in place for responding to or communicating student impact ('closing the loop') for RE actions.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('training', 2, this); return false;">Set as Level 2
+              <button class="score-btn" data-score="2" onclick="saveScore('training', 2, this); return false;">Set as Level 2
               </button>
-              <button class="score-btn" onclick="saveScore('training', 2.5, this); return false;">Transitioning to Level 3 (2.5)
+              <button class="score-btn" data-score="2.5" onclick="saveScore('training', 2.5, this); return false;">Transitioning to Level 3 (2.5)
               </button>
             </div>
           </div>
@@ -285,9 +285,9 @@
               <li>Some communication about enhancement of RE actions occurs with Reps, but the feedback loop is inconsistently closed.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('training', 3, this); return false;">Set as Level 3
+              <button class="score-btn" data-score="3" onclick="saveScore('training', 3, this); return false;">Set as Level 3
               </button>
-              <button class="score-btn" onclick="saveScore('training', 3.5, this); return false;">Transitioning to Level 4 (3.5)
+              <button class="score-btn" data-score="3.5" onclick="saveScore('training', 3.5, this); return false;">Transitioning to Level 4 (3.5)
               </button>
             </div>
           </div>
@@ -312,9 +312,9 @@
               <li>Schools explicitly evidence continuous student involvement in impact of actions outlined in RE action plan.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('training', 4, this); return false;">Set as Level 4
+              <button class="score-btn" data-score="4" onclick="saveScore('training', 4, this); return false;">Set as Level 4
               </button>
-              <button class="score-btn" onclick="saveScore('training', 4.5, this); return false;">Transitioning to Level 5 (4.5)
+              <button class="score-btn" data-score="4.5" onclick="saveScore('training', 4.5, this); return false;">Transitioning to Level 5 (4.5)
               </button>
             </div>
           </div>
@@ -337,7 +337,7 @@
               <li>Practices are evaluated annually with students, using participation data and Equality, Diversity and Inclusion (EDI) metrics to ensure inclusivity.</li>
             </ul>
             <div class="scoring-actions">
-              <button class="score-btn" onclick="saveScore('training', 5, this); return false;">Set as Level 5
+              <button class="score-btn" data-score="5" onclick="saveScore('training', 5, this); return false;">Set as Level 5
               </button>
             </div>
           </div>
